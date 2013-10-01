@@ -1,0 +1,7 @@
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSCore\bin\Release\CZAOSCore.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSCore\bin\Release\CZAOSCore.pdb
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSCore\bin\Release\KT.Extensions.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSCore\bin\Release\AntiXssLibrary.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSCore\obj\Release\CZAOSCore.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSCore\obj\Release\CZAOSCore.pdb
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSCore\bin\Release\log4net.dll

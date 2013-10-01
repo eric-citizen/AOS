@@ -1,0 +1,60 @@
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\obj\Debug\CZAOSMail.csprojResolveAssemblyReference.cache
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSMail.dll
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSMail.pdb
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSCore.dll
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\KT.Extensions.dll
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\log4net.dll
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\AntiXssLibrary.dll
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSCore.pdb
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\obj\Debug\CZAOSMail.dll
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\obj\Debug\CZAOSMail.pdb
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZBizObjects.dll
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZDataObjects.dll
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZBizObjects.pdb
+C:\Users\ktilley\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZDataObjects.pdb
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSMail.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSMail.pdb
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSCore.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZBizObjects.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZDataObjects.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\KT.Extensions.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\log4net.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\AntiXssLibrary.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSCore.pdb
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZBizObjects.pdb
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZDataObjects.pdb
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\obj\Debug\CZAOSMail.csprojResolveAssemblyReference.cache
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\obj\Debug\CZAOSMail.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\obj\Debug\CZAOSMail.pdb
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSMail.dll
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSMail.pdb
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSCore.dll
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZBizObjects.dll
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZDataObjects.dll
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\KT.Extensions.dll
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\log4net.dll
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\AntiXssLibrary.dll
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSCore.pdb
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZBizObjects.pdb
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZDataObjects.pdb
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\obj\Debug\CZAOSMail.csprojResolveAssemblyReference.cache
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\obj\Debug\CZAOSMail.dll
+C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSMail\obj\Debug\CZAOSMail.pdb
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSMail.dll
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSMail.pdb
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSCore.dll
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZBizObjects.dll
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZDataObjects.dll
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\GithubSharp.Core.dll
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\GithubSharp.Plugins.CacheProviders.ApplicationCacher.dll
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\GithubSharp.Plugins.CacheProviders.WebCache.dll
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\GithubSharp.Plugins.LogProviders.SimpleLogProvider.dll
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\KT.Extensions.dll
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\log4net.dll
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\AntiXssLibrary.dll
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZAOSCore.pdb
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZBizObjects.pdb
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\bin\Debug\CZDataObjects.pdb
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\obj\Debug\CZAOSMail.csprojResolveAssemblyReference.cache
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\obj\Debug\CZAOSMail.dll
+C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSMail\obj\Debug\CZAOSMail.pdb

@@ -1,0 +1,10 @@
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZDataObjects\bin\Release\CZDataObjects.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZDataObjects\bin\Release\CZDataObjects.pdb
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZDataObjects\bin\Release\KT.Extensions.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZDataObjects\bin\Release\AntiXssLibrary.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZDataObjects\obj\Release\CZDataObjects.csprojResolveAssemblyReference.cache
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZDataObjects\obj\Release\CZDataObjects.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZDataObjects\obj\Release\CZDataObjects.pdb
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZDataObjects\bin\Release\CZAOSCore.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZDataObjects\bin\Release\log4net.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZDataObjects\bin\Release\CZAOSCore.pdb

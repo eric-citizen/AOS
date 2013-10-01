@@ -1,0 +1,14 @@
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Release\CZAOSMail.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Release\CZAOSMail.pdb
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Release\CZAOSCore.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Release\CZBizObjects.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Release\CZDataObjects.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Release\KT.Extensions.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Release\log4net.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Release\AntiXssLibrary.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Release\CZAOSCore.pdb
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Release\CZBizObjects.pdb
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\bin\Release\CZDataObjects.pdb
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\obj\Release\CZAOSMail.csprojResolveAssemblyReference.cache
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\obj\Release\CZAOSMail.dll
+C:\Users\ken\Dropbox\Zoo2013\CZAOS\CZAOS\CZAOSMail\obj\Release\CZAOSMail.pdb
