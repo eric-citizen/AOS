@@ -1,10 +1,11 @@
 ﻿var LoginControl = (function (message) {
     var configure = function() {
         $('#login-button').on('click', function () {
-            var username = $('#username').value();
-            var password = $('#password').value();
+            var username = $('#username').val();
+            var password = $('#password').val();
             LoginControl.Login(username, password);
         });
+        alert(window.App.baseURL);
     };
 
     var login = function(username, password) {
