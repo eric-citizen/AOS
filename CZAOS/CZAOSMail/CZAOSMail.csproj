@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{418A9E41-BBC9-431A-A5F8-0664A0C1A68E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CZAOSMail</RootNamespace>
+    <AssemblyName>CZAOSMail</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GithubSharp.Core">
+      <HintPath>..\packages\GithubSharp.Core.0.0.5.1\lib\GithubSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GithubSharp.Plugins.CacheProviders.ApplicationCacher">
+      <HintPath>..\packages\GithubSharp.Plugins.All.0.0.5.1\lib\GithubSharp.Plugins.CacheProviders.ApplicationCacher.dll</HintPath>
+    </Reference>
+    <Reference Include="GithubSharp.Plugins.CacheProviders.WebCache">
+      <HintPath>..\packages\GithubSharp.Plugins.All.0.0.5.1\lib\GithubSharp.Plugins.CacheProviders.WebCache.dll</HintPath>
+    </Reference>
+    <Reference Include="GithubSharp.Plugins.LogProviders.SimpleLogProvider">
+      <HintPath>..\packages\GithubSharp.Plugins.All.0.0.5.1\lib\GithubSharp.Plugins.LogProviders.SimpleLogProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="KT.Extensions">
+      <HintPath>..\..\lib\KT.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Handler\OpenMailHandler.cs" />
+    <Compile Include="Mail\AddressHelper.cs" />
+    <Compile Include="Mail\ObservationMail.cs" />
+    <Compile Include="Mail\EmailBase.cs" />
+    <Compile Include="Mail\MailMessage.cs" />
+    <Compile Include="Mail\Notifications.cs" />
+    <Compile Include="Mail\SiteMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CZAOSCore\CZAOSCore.csproj">
+      <Project>{5793f463-f42f-4dd6-a5f2-c2b7b6d65ab8}</Project>
+      <Name>CZAOSCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CZBizObjects\CZBizObjects.csproj">
+      <Project>{0ccfd644-762b-4910-9d2c-998874019b39}</Project>
+      <Name>CZBizObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CZDataObjects\CZDataObjects.csproj">
+      <Project>{ccb525f0-5f6d-45f7-a4f9-8e0680adad93}</Project>
+      <Name>CZDataObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

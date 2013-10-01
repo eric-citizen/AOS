@@ -1,0 +1,6 @@
+Your administration module username is <% Username %> and your password is <% password %>.
+
+Thank you.
+CZAOS Automated Web Administrator
+
+Please do not reply to this email.

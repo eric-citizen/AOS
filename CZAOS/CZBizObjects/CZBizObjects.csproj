@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CCFD644-762B-4910-9D2C-998874019B39}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CZBizObjects</RootNamespace>
+    <AssemblyName>CZBizObjects</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GithubSharp.Core">
+      <HintPath>..\packages\GithubSharp.Core.0.0.5.1\lib\GithubSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GithubSharp.Plugins.CacheProviders.ApplicationCacher">
+      <HintPath>..\packages\GithubSharp.Plugins.All.0.0.5.1\lib\GithubSharp.Plugins.CacheProviders.ApplicationCacher.dll</HintPath>
+    </Reference>
+    <Reference Include="GithubSharp.Plugins.CacheProviders.WebCache">
+      <HintPath>..\packages\GithubSharp.Plugins.All.0.0.5.1\lib\GithubSharp.Plugins.CacheProviders.WebCache.dll</HintPath>
+    </Reference>
+    <Reference Include="GithubSharp.Plugins.LogProviders.SimpleLogProvider">
+      <HintPath>..\packages\GithubSharp.Plugins.All.0.0.5.1\lib\GithubSharp.Plugins.LogProviders.SimpleLogProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="KT.Extensions">
+      <HintPath>..\..\lib\KT.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminNavigationList.cs" />
+    <Compile Include="AnimalGroupList.cs" />
+    <Compile Include="AnimalList.cs" />
+    <Compile Include="AnimalRegionList.cs" />
+    <Compile Include="BehaviorCategoryList.cs" />
+    <Compile Include="BehaviorList.cs" />
+    <Compile Include="BaseList.cs" />
+    <Compile Include="ChangeLogList.cs" />
+    <Compile Include="AnimalObservationList.cs" />
+    <Compile Include="ObservationReportList.cs" />
+    <Compile Include="ObservationRecordList.cs" />
+    <Compile Include="NoteList.cs" />
+    <Compile Include="EmailTemplateList.cs" />
+    <Compile Include="EmailTrackingList.cs" />
+    <Compile Include="Repository\AnimalGroupRepository.cs" />
+    <Compile Include="Repository\AnimalObservationRepository.cs" />
+    <Compile Include="Repository\ObservationReportRepository.cs" />
+    <Compile Include="Repository\ObservationRecordRepository.cs" />
+    <Compile Include="Repository\NoteRepository.cs" />
+    <Compile Include="Repository\SysCodeRepository.cs" />
+    <Compile Include="Repository\TimedInfoRepository.cs" />
+    <Compile Include="SysCodesList.cs" />
+    <Compile Include="TimedInfoList.cs" />
+    <Compile Include="CrowdList.cs" />
+    <Compile Include="ExhibitBehaviorList.cs" />
+    <Compile Include="ExhibitList.cs" />
+    <Compile Include="ExhibitLocationList.cs" />
+    <Compile Include="GradeList.cs" />
+    <Compile Include="LocationList.cs" />
+    <Compile Include="MembershipList.cs" />
+    <Compile Include="ObservationList.cs" />
+    <Compile Include="ObserverList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AnimalRepository.cs" />
+    <Compile Include="Repository\BehaviorRepository.cs" />
+    <Compile Include="Repository\AnimalRegionRepository.cs" />
+    <Compile Include="Repository\BehaviorCategoryRepository.cs" />
+    <Compile Include="Repository\UserRegionRepository.cs" />
+    <Compile Include="Repository\WindRepository.cs" />
+    <Compile Include="Repository\WeatherConditionRepository.cs" />
+    <Compile Include="Repository\ObserverRepository.cs" />
+    <Compile Include="Repository\ObservationRepository.cs" />
+    <Compile Include="Repository\SchoolDistrictRepository.cs" />
+    <Compile Include="Repository\LocationRepository.cs" />
+    <Compile Include="Repository\GradeRepository.cs" />
+    <Compile Include="Repository\ExhibitLocationRepository.cs" />
+    <Compile Include="Repository\ExhibitBehaviorRepository.cs" />
+    <Compile Include="Repository\ExhibitRepository.cs" />
+    <Compile Include="Repository\CrowdRepository.cs" />
+    <Compile Include="Repository\__EmptyRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Repository\ICZAOSRepository.cs" />
+    <Compile Include="Repository\SchoolRepository.cs" />
+    <Compile Include="SchoolDistrictList.cs" />
+    <Compile Include="SchoolList.cs" />
+    <Compile Include="UserList.cs" />
+    <Compile Include="UserRegionList.cs" />
+    <Compile Include="WeatherConditionList.cs" />
+    <Compile Include="WindList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CZAOSCore\CZAOSCore.csproj">
+      <Project>{5793f463-f42f-4dd6-a5f2-c2b7b6d65ab8}</Project>
+      <Name>CZAOSCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CZDataObjects\CZDataObjects.csproj">
+      <Project>{ccb525f0-5f6d-45f7-a4f9-8e0680adad93}</Project>
+      <Name>CZDataObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

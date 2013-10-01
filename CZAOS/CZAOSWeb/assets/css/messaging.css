@@ -1,0 +1,52 @@
+﻿.message {
+    /*font-family: "Monda",Calibri,Verdana, Tahoma, Arial, Helvetica, sans-serif;*/
+    font-size: 12px;
+    display: block;
+    background-color: #efefef;
+    border: 1px solid #0099FF;
+    padding: 10px 10px 10px 35px;
+    min-width: 200px;
+    max-width: 900px;
+    min-height: 25px;
+    max-height: 600px;
+    overflow: auto;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    line-height: 20px;
+    -ms-word-break: normal;
+    word-break: normal;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+    .message.error {
+        background-image: url(/images/messages/Sign-Error-icon-16.png);
+    }
+
+    .message.info {
+        background-image: url(/images/messages/Button-Info-icon16.png);
+    }
+
+    .message.success {
+        background-image: url(/images/messages/Actions-dialog-ok-apply-icon-16.png);
+    }
+
+    .message.warning {
+        background-image: url(/images/messages/Button-Warning-icon16.png);
+    }
+
+    .message.error24 {
+        background-image: url(/images/messages/Sign-Error-icon.png);
+    }
+
+    .message.info24 {
+        background-image: url(/images/messages/Button-Info-icon.png);
+    }
+
+    .message.success24 {
+        background-image: url(/images/messages/Actions-dialog-ok-apply-icon.png);
+    }
+
+    .message.warning24 {
+        background-image: url(/images/messages/Button-Warning-icon.png);
+    }

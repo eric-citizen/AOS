@@ -1,0 +1,196 @@
+﻿<error errorId="b7499345-00ed-4978-8667-d83cf124bc03" host="HMBLATZ0185" type="System.Data.SqlClient.SqlException" message="A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)" source=".Net SqlClient Data Provider" detail="System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---&gt; System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)&#xD;&#xA;   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)&#xD;&#xA;   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)&#xD;&#xA;   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)&#xD;&#xA;   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)&#xD;&#xA;   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)&#xD;&#xA;   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)&#xD;&#xA;   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)&#xD;&#xA;   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)&#xD;&#xA;   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)&#xD;&#xA;   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)&#xD;&#xA;   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)&#xD;&#xA;   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)&#xD;&#xA;   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)&#xD;&#xA;   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)&#xD;&#xA;   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)&#xD;&#xA;   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)&#xD;&#xA;   at System.Data.SqlClient.SqlConnection.Open()&#xD;&#xA;   at System.Web.DataAccess.SqlConnectionHolder.Open(HttpContext context, Boolean revertImpersonate)&#xD;&#xA;   at System.Web.DataAccess.SqlConnectionHelper.GetConnection(String connectionString, Boolean revertImpersonation)&#xD;&#xA;   at System.Web.Security.SqlMembershipProvider.GetPasswordWithFormat(String username, Boolean updateLastLoginActivityDate, Int32&amp; status, String&amp; password, Int32&amp; passwordFormat, String&amp; passwordSalt, Int32&amp; failedPasswordAttemptCount, Int32&amp; failedPasswordAnswerAttemptCount, Boolean&amp; isApproved, DateTime&amp; lastLoginDate, DateTime&amp; lastActivityDate)&#xD;&#xA;   at System.Web.Security.SqlMembershipProvider.CheckPassword(String username, String password, Boolean updateLastLoginActivityDate, Boolean failIfNotApproved, String&amp; salt, Int32&amp; passwordFormat)&#xD;&#xA;   at System.Web.Security.SqlMembershipProvider.ValidateUser(String username, String password)&#xD;&#xA;   at System.Web.Security.Membership.ValidateUser(String username, String password)&#xD;&#xA;   at CZAOSWeb._default.ValidateLogin(String userName, String password) in c:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSWeb\default.aspx.cs:line 106&#xD;&#xA;   at CZAOSWeb._default.btnSubmitLogin_Click(Object sender, EventArgs e) in c:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSWeb\default.aspx.cs:line 75&#xD;&#xA;   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)&#xD;&#xA;   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)&#xD;&#xA;   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)&#xD;&#xA;   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)&#xD;&#xA;   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;ClientConnectionId:00000000-0000-0000-0000-000000000000&#xD;&#xA;   at System.Web.UI.Page.HandleError(Exception e)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(HttpContext context)&#xD;&#xA;   at ASP.default_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\ead4fb39\a8161608\App_Web_qsdhx0zd.0.cs:line 0&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2013-09-30T19:54:21.6982281Z" statusCode="500" webHostHtmlMessage="&lt;!DOCTYPE html&gt;&#xD;&#xA;&lt;html&gt;&#xD;&#xA;    &lt;head&gt;&#xD;&#xA;        &lt;title&gt;A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)&lt;/title&gt;&#xD;&#xA;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;&#xD;&#xA;        &lt;style&gt;&#xD;&#xA;         body {font-family:&quot;Verdana&quot;;font-weight:normal;font-size: .7em;color:black;} &#xD;&#xA;         p {font-family:&quot;Verdana&quot;;font-weight:normal;color:black;margin-top: -5px}&#xD;&#xA;         b {font-family:&quot;Verdana&quot;;font-weight:bold;color:black;margin-top: -5px}&#xD;&#xA;         H1 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:18pt;color:red }&#xD;&#xA;         H2 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:14pt;color:maroon }&#xD;&#xA;         pre {font-family:&quot;Consolas&quot;,&quot;Lucida Console&quot;,Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}&#xD;&#xA;         .marker {font-weight: bold; color: black;text-decoration: none;}&#xD;&#xA;         .version {color: gray;}&#xD;&#xA;         .error {margin-bottom: 10px;}&#xD;&#xA;         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }&#xD;&#xA;         @media screen and (max-width: 639px) {&#xD;&#xA;          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }&#xD;&#xA;         }&#xD;&#xA;         @media screen and (max-width: 479px) {&#xD;&#xA;          pre { width: 280px; }&#xD;&#xA;         }&#xD;&#xA;        &lt;/style&gt;&#xD;&#xA;    &lt;/head&gt;&#xD;&#xA;&#xD;&#xA;    &lt;body bgcolor=&quot;white&quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;span&gt;&lt;H1&gt;Server Error in '/' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h2&gt; &lt;i&gt;A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;&#xD;&#xA;&#xD;&#xA;            &lt;font face=&quot;Arial, Helvetica, Geneva, SunSans-Regular, sans-serif &quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Description: &lt;/b&gt;An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Exception Details: &lt;/b&gt;System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)&lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Source Error:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;Line 104:        private bool ValidateLogin(string userName, string password)&#xD;&#xA;Line 105:        {&#xD;&#xA;&lt;font color=red&gt;Line 106:            bool membershipOk =  Membership.ValidateUser(userName, password);&#xD;&#xA;&lt;/font&gt;Line 107:&#xD;&#xA;Line 108:            if (membershipOk)&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Source File: &lt;/b&gt; c:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSWeb\default.aspx.cs&lt;b&gt; &amp;nbsp;&amp;nbsp; Line: &lt;/b&gt; 106&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Stack Trace:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;[SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)]&#xD;&#xA;   System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction) +5296071&#xD;&#xA;   System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose) +558&#xD;&#xA;   System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover) +5308555&#xD;&#xA;   System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover) +145&#xD;&#xA;   System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout) +889&#xD;&#xA;   System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance) +307&#xD;&#xA;   System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions) +434&#xD;&#xA;   System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions) +225&#xD;&#xA;   System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions) +37&#xD;&#xA;   System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions) +558&#xD;&#xA;   System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions) +67&#xD;&#xA;   System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp;amp; connection) +1052&#xD;&#xA;   System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp;amp; connection) +78&#xD;&#xA;   System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp;amp; connection) +167&#xD;&#xA;   System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions) +143&#xD;&#xA;   System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry) +83&#xD;&#xA;   System.Data.SqlClient.SqlConnection.Open() +96&#xD;&#xA;   System.Web.DataAccess.SqlConnectionHolder.Open(HttpContext context, Boolean revertImpersonate) +88&#xD;&#xA;   System.Web.DataAccess.SqlConnectionHelper.GetConnection(String connectionString, Boolean revertImpersonation) +239&#xD;&#xA;   System.Web.Security.SqlMembershipProvider.GetPasswordWithFormat(String username, Boolean updateLastLoginActivityDate, Int32&amp;amp; status, String&amp;amp; password, Int32&amp;amp; passwordFormat, String&amp;amp; passwordSalt, Int32&amp;amp; failedPasswordAttemptCount, Int32&amp;amp; failedPasswordAnswerAttemptCount, Boolean&amp;amp; isApproved, DateTime&amp;amp; lastLoginDate, DateTime&amp;amp; lastActivityDate) +821&#xD;&#xA;   System.Web.Security.SqlMembershipProvider.CheckPassword(String username, String password, Boolean updateLastLoginActivityDate, Boolean failIfNotApproved, String&amp;amp; salt, Int32&amp;amp; passwordFormat) +88&#xD;&#xA;   System.Web.Security.SqlMembershipProvider.ValidateUser(String username, String password) +106&#xD;&#xA;   System.Web.Security.Membership.ValidateUser(String username, String password) +26&#xD;&#xA;   CZAOSWeb._default.ValidateLogin(String userName, String password) in c:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSWeb\default.aspx.cs:106&#xD;&#xA;   CZAOSWeb._default.btnSubmitLogin_Click(Object sender, EventArgs e) in c:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSWeb\default.aspx.cs:75&#xD;&#xA;   System.Web.UI.WebControls.Button.OnClick(EventArgs e) +9552602&#xD;&#xA;   System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument) +103&#xD;&#xA;   System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument) +10&#xD;&#xA;   System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument) +13&#xD;&#xA;   System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData) +9642338&#xD;&#xA;   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +1724&#xD;&#xA;&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;    &lt;/body&gt;&#xD;&#xA;&lt;/html&gt;&#xD;&#xA;">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:max-age=0&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_CONTENT_LENGTH:852&#xD;&#xA;HTTP_CONTENT_TYPE:application/x-www-form-urlencoded&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip,deflate,sdch&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8&#xD;&#xA;HTTP_COOKIE:ASP.NET_SessionId=z5wq5xl5jrb4a31q1gidaykj&#xD;&#xA;HTTP_HOST:localhost:53637&#xD;&#xA;HTTP_REFERER:http://localhost:53637/default.aspx?ReturnUrl=%2fadmin%2femail-templates%2ftracking.aspx&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36&#xD;&#xA;HTTP_ORIGIN:http://localhost:53637&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: max-age=0&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Content-Length: 852&#xD;&#xA;Content-Type: application/x-www-form-urlencoded&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip,deflate,sdch&#xD;&#xA;Accept-Language: en-US,en;q=0.8&#xD;&#xA;Cookie: ASP.NET_SessionId=z5wq5xl5jrb4a31q1gidaykj&#xD;&#xA;Host: localhost:53637&#xD;&#xA;Referer: http://localhost:53637/default.aspx?ReturnUrl=%2fadmin%2femail-templates%2ftracking.aspx&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36&#xD;&#xA;Origin: http://localhost:53637&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/17/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSWeb\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="852" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="17" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/17" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/default.aspx" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\jlink\Downloads\CZAOS\CZAOS\CZAOS\CZAOSWeb\default.aspx" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="ReturnUrl=%2fadmin%2femail-templates%2ftracking.aspx" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="39633" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/default.aspx" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="53637" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/8.0" />
+    </item>
+    <item name="URL">
+      <value string="/default.aspx" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="max-age=0" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="852" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip,deflate,sdch" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="ASP.NET_SessionId=z5wq5xl5jrb4a31q1gidaykj" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:53637" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:53637/default.aspx?ReturnUrl=%2fadmin%2femail-templates%2ftracking.aspx" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="http://localhost:53637" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="ReturnUrl">
+      <value string="/admin/email-templates/tracking.aspx" />
+    </item>
+  </queryString>
+  <form>
+    <item name="__EVENTTARGET">
+      <value string="ctl00$body$btnSubmitLogin" />
+    </item>
+    <item name="__EVENTARGUMENT">
+      <value string="" />
+    </item>
+    <item name="__VIEWSTATE">
+      <value string="/wEPDwUKLTEyNzE3MjI5NQ8WAh4TVmFsaWRhdGVSZXF1ZXN0TW9kZQIBFgJmD2QWAgIDD2QWAgIBD2QWAgIBD2QWBGYPZBYEAgEPDxYCHg1XYXRlcm1hcmtUZXh0ZWQWAmYPDxYIHgdEaXNwbGF5CyoqU3lzdGVtLldlYi5VSS5XZWJDb250cm9scy5WYWxpZGF0b3JEaXNwbGF5Ah4JRm9udF9Cb2xkZx4EVGV4dAUBKh4EXyFTQgKAEGRkAgMPDxYCHwFlZBYCZg8PFggfAgsrBAIfA2cfBAUBKh8FAoAQZGQCAQ9kFgQCAQ9kFgJmD2QWAgIBDw8WAh8BZWQWAmYPDxYIHwILKwQCHwNnHwUCgBAfBAUBKmRkAgMPZBYCZg9kFgICAQ8PFgQfAWUeFkFsbG93TXVsdGlwbGVBZGRyZXNzZXNnZBYEZg8PFggfAgsrBAIfA2cfBQKAEB8EBQEqZGQCAQ8PFgIeFFZhbGlkYXRpb25FeHByZXNzaW9uBTgoKFx3KyhbLSsuJ11cdyspKkBcdysoWy0uXVx3KykqXC5cdysoWy0uXVx3KykqKSooWyxdKSopKmRkGAMFEmN0bDAwJGJvZHkkbXZMb2dpbg8PZGZkBRVjdGwwMCRib2R5JG12VXNlck5hbWUPD2RmZAUVY3RsMDAkYm9keSRtdlBhc3N3b3JkDw9kZmQ=" />
+    </item>
+    <item name="ctl00$body$txtUsername">
+      <value string="apiuser" />
+    </item>
+    <item name="ctl00$body$txtPassword">
+      <value string="abcd1234" />
+    </item>
+  </form>
+  <cookies>
+    <item name="ASP.NET_SessionId">
+      <value string="z5wq5xl5jrb4a31q1gidaykj" />
+    </item>
+  </cookies>
+</error>
