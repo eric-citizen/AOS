@@ -126,15 +126,19 @@ h1{
 	font-size: 1.8em;
 	text-shadow: 0 1px 8px rgba(0,0,0,.3);
 }
+<<<<<<< HEAD
 h2{
 	font-size: 1.2em;
 	padding-top: .5em;
 }
 
+=======
+>>>>>>> origin/AdamBranch
 hr{
 	border: 1px solid #4a525c;
 	border-bottom: 0;
 }
+<<<<<<< HEAD
 
 .tabs, .tabs li{
 	padding:0;
@@ -178,6 +182,8 @@ hr{
 	box-sizing: border-box;
 }
 
+=======
+>>>>>>> origin/AdamBranch
 .slider{
 	background: url(../images/control/slide.png);
 	background-size: 100% 100%;

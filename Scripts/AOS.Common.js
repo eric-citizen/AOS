@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/AdamBranch
 $(function(){
     if($('.tabs li')[0])
     {
@@ -11,4 +15,10 @@ $(function(){
 		$('.slide-strip').slideStrip({slide:true, slingBack:false});
 	}
 });
+<<<<<<< HEAD
 var baseURL = "animalobservation.finecitizensdev.com/";
+=======
+=======
+var baseURL = "animalobservation.finecitizensdev.com/";
+>>>>>>> origin/master
+>>>>>>> origin/AdamBranch
