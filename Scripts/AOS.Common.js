@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(function(){
     if($('.tabs li')[0])
     {
@@ -11,3 +12,6 @@ $(function(){
 		$('.slide-strip').slideStrip({slide:true, slingBack:false});
 	}
 });
+=======
+var baseURL = "animalobservation.finecitizensdev.com/";
+>>>>>>> origin/master
