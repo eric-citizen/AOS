@@ -3,3 +3,9 @@
 01 Oct 2013 10:20:50 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 01 Oct 2013 10:20:54 [WARN] Security - User test failed to log in to the admin module.
 01 Oct 2013 10:21:01 [INFO] Security - User test logged in to the admin module successfully.
+01 Oct 2013 11:52:04 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+01 Oct 2013 11:52:04 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+01 Oct 2013 11:52:04 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+01 Oct 2013 11:52:09 [WARN] Security - User test failed to log in to the admin module.
+01 Oct 2013 11:52:14 [WARN] Security - User test failed to log in to the admin module.
+01 Oct 2013 11:52:22 [INFO] Security - User test logged in to the admin module successfully.
