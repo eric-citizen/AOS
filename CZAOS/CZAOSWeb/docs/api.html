@@ -1,0 +1,183 @@
+﻿
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zoo - AOG - WebAPI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="http://animalobservationsystem.finecitizensdev.com/helpers/css/bootstrap.min.css" rel="stylesheet" media="screen">
+      <style>
+          .muted
+          {
+              padding-left:10px;
+          }
+
+          ul li
+          {
+              margin-bottom:6px;
+          }
+      </style>
+  </head>
+  <body>
+    <div style="margin-bottom: 200px" class="container">
+      <hr>
+      <h2>WebAPI</h2>
+      <p>
+          Following Microsoft recommended design principals and patterns I'm pleased to demo the proposed Api structure for the AOS.
+          <a href="http://www.asp.net/web-api" target="_blank">More</a>
+          <br />
+          See the page at <a href="http://animalobservationsystem.finecitizensdev.com/api-tests.html">http://animalobservationsystem.finecitizensdev.com/api-tests.html</a> for full working examples.
+          <br />
+          See <a href="#controllers">below</a> for a list of currently supported controllers.
+      </p>
+      <hr>
+      <br>
+      <h4 class="lead">WebAPI Security</h4>
+      <p>
+          The API requires authentication against a list of approved users stored in the CZAOS database. Once successfully authenticated the Api will
+          return a token (valid only for this session) so authentication is only needed on the first request.
+      </p>
+        <p>
+            <b>All</b> subsequent requests must include this token within the request headers (for more information on including request headers see <a href="http://api.jquery.com/jQuery.ajax/">here</a>).
+        </p>
+      <p>
+          <b>All</b> responses are encapsulated in the .Net <a href="http://codebetter.com/glennblock/2012/05/24/two-ways-to-work-with-http-responses-in-apicontroller-httpresponsemessage-and-httpresponseexception/">HttpResponseMessage</a> object.
+      </p>
+        <h5 class="lead">Authentication</h5>
+        <p>
+            We will have a datastore of users or user roles that can access the api. In order to authenticate the client will user the <code>SecurityController</code>:
+            </p>
+            <ul>
+                <li>
+                    <code>GET Login</code><code>api/security/login</code>
+                    <br />
+                    This call looks for a header named "Authorization", and expects a base64 encoded value in the form of username:password (e.g. apiuser:abcd1234).
+                    <br />
+                    Unsuccessful attempts are returned a 401 Unauthorized response.
+                    <pre>
+        function login() {
+
+            var API_URL = "api/security/login";            
+            var creds = "YXBpdXNlcjphYmNkMTIzNA=="; //apiuser:abcd1234
+
+            $.ajax({
+                type: "GET",
+                cache: false,
+                url: API_URL,
+                beforeSend: function (request) {
+                    request.setRequestHeader("Authorization", creds);
+                },      
+                processData: false,
+                statusCode: {
+                    401: function (data) {                        
+                        showError("Login unsuccessful"); //showError stub
+                    },
+                    200: function(data)
+                    {
+                        setToken(data); //persist the token - the demo site uses https://github.com/carhartl/jquery-cookie
+                        console.log("token: " + data);
+                        showMessage("Logged In. Token is " + data);
+                        writeWelcomeMessage(); //another stub
+                    }
+                }
+            })
+            .done(function (result) {
+                console.log("done: " + result);                
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console.log("Request Failed: " + API_URL + " Err: " + err);                
+
+            })
+            .always(function () {
+                console.log("login - always");
+            });
+
+        }
+                    </pre>
+                </li>
+                <li>
+                    <code>GET Logout</code><code>api/security/logout</code>
+                    <br />
+                    Clears the current session on the server.
+                </li>
+            </ul>
+        
+        <br>
+      <h5 class="lead">Examples</h5>
+      <p>
+          URI schemes follow a consistent pattern: <code>api/controller/action</code>. This is inline with Microsoft WebAPI documentation.
+      </p>
+      <br>
+      <code>GET /api/user</code><span class="muted"> Get currently authenticated user.</span><br>
+      <code>GET /api/user/?email=</code><span class="muted"> Get a user by their email address.</span><br><br>
+      <code>GET /api/schools</code><span class="muted"> Gets all schools.</span>(see function getSchools in api test page)<br>
+      <code>GET /api/schools/?district=Bexley</code><span class="muted"> Gets all schools in the Bexley district.</span><br>
+        <code>POST /api/schools</code><span class="muted">Adds a new schools. (see function addNewSchool in api test page)</span><br>
+        <code>PUT /api/schools</code><span class="muted">Updates given school. (see function updateSchool in api test page)</span><br>
+        <code>DELETE /api/schools</code><span class="muted">Delete a school by id. (see function deleteSchool in api test page)</span><br><br>
+
+      
+        <h5 id="controllers" class="lead">Implementations</h5>
+        <p>
+            Note: Object details/fields to come, but can be figured out from the responses to the GET requests for each of the controllers below:
+        </p>
+        <ul>
+            <li>
+                <code>AnimalController</code>
+                <ul>
+                    <li>
+                        <code>GET /api/animal/</code> - Get all
+                    </li>
+                    <li>
+                        <code>GET /api/animal/id</code> - Get individual by Id
+                    </li>
+                    <li>
+                        <code>POST /api/animal/</code> - Create new
+                    </li>
+                    <li>
+                        <code>PUT /api/animal/</code> - Update existing
+                    </li>
+                    <li>
+                        <code>DELETE /api/animal/</code> - Delete
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <code>AnimalRegionController</code>
+            </li>
+            <li>
+                <code>BehaviorCategoryController</code>
+            </li>
+            <li>
+                <code>BehaviorController</code>
+            </li>
+            <li>
+                <code>CrowdController</code>
+            </li>
+            <li>
+                <code>ExhibitBehaviorController</code>
+            </li>
+            <li>
+                <code>ExhibitController</code>
+            </li>
+            <li>
+                <code>ExhibitLocationController</code>
+            </li>
+            <li>
+                <code>GradeController</code>
+            </li>
+            <li>
+                <code>LocationController</code>
+            </li>
+            <li>
+                <code>SchoolDistrictController</code>
+            </li>
+            <li>
+                <code>SchoolsController</code>
+            </li>
+        </ul>
+        </div>
+    
+  </body>
+</html>

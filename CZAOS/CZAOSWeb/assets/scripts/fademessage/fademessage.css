@@ -1,0 +1,84 @@
+﻿#blackout
+{
+	background-color: #000;
+	filter:alpha(opacity=50);
+	opacity:0.5;
+	moz-opacity:0.5;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    z-index: 20000;
+    background-image:url(/images/transparent.png);    
+    display: block;
+    width: 100%;
+    height: 1100px;    
+}
+
+#fade_message
+{
+	display: none;
+	width: 320px;
+	min-height: 90px;
+	border: 4px solid #dcdcdc;	
+	background-color: #fff;
+	padding: 10px 10px 10px 45px;
+	font-size: 14px;
+	line-height: 20px;
+	background-repeat: no-repeat;
+	background-position: 10px 10px;	
+	/* position: absolute;
+	left: 400px;
+	top: 200px; */
+	z-index: 20001;
+	/* font-weight: bold; */
+	cursor: pointer;
+	text-align:left;color: #333;
+}
+
+#fade_message p
+{
+	margin-bottom: 5px;color: #333;
+}
+
+#fade_message h4
+{
+	color: #333;
+}
+
+#fade_message_text
+{
+	padding: 8px;
+	color: #333;
+}
+
+#fade_close
+{
+	float: right;
+	position: relative;
+	top: -10px;
+	left: 10px;
+	cursor: pointer;
+	background-color: blue;
+	width: 100px;
+	height: 200px;	
+}
+
+.fade_message {	
+	background-color: #000;
+	filter:alpha(opacity=40);
+	opacity:0.4;
+	moz-opacity:0.4;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    background-image:url(/assets/images/site/transparent.png);    
+    display: block;
+    width: 100%;
+    /* height: 1100px; set w jq */
+    color: #333;
+    
+}
+

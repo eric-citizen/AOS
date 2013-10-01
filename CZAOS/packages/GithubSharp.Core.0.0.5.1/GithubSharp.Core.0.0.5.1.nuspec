@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>GithubSharp.Core</id>
+    <version>0.0.5.1</version>
+    <title>GithubSharp.Core</title>
+    <authors>Erik Zaadi</authors>
+    <owners>Erik Zaadi</owners>
+    <projectUrl>http://github.com/erikzaadi/GithubSharp</projectUrl>
+    <iconUrl>https://github.com/erikzaadi/GithubSharp/raw/master/Samples/MvcSample/MvcUI/images/githubsharp.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# integration with Githubs v2 apis - Core Module</description>
+    <summary>C# integration with Githubs v2 apis - Core Module</summary>
+    <tags>Github</tags>
+  </metadata>
+</package>

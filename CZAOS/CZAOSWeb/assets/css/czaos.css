@@ -1,0 +1,716 @@
+﻿body {
+    font-family: Raleway, Verdana, Geneva, 'DejaVu Sans', sans-serif;
+    font-size:12px;
+    line-height:18px;
+}
+
+/* override jquery ui styles */
+.ui-dialog .ui-dialog-title, .ui-widget
+{
+    font-family: Raleway, Verdana, Geneva, 'DejaVu Sans', sans-serif !important;
+}
+
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-family: Raleway, Verdana, Geneva, 'DejaVu Sans', sans-serif !important;
+}
+
+header
+{
+    height: 145px;
+    width:100%;
+    border-bottom: 10px solid #0099FF;
+    position: relative;
+    background-color:#eee;
+}
+
+header #app-title
+{
+    font-weight: 500;
+    font-size: 22px;       
+    padding-top: 8px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+header #iconlist
+{
+    width:1089px;
+    margin: auto;    
+    list-style-type: none;
+}
+
+header #iconlist li
+{    
+    height: 106px;
+    width: 118px;
+    display: inline-block;    
+}
+
+#iconlist-1
+{
+    background-image: url(/images/zoo/body-movement.png); 
+	/* background-repeat: no-repeat;*/
+	background-position: 0 0; 
+}
+#iconlist-2
+{
+    background-image: url(../../images/zoo/intake.png);    
+	/* background-repeat: no-repeat;*/
+	background-position: 0 0; 
+}
+#iconlist-3
+{
+    background-image: url(../../images/zoo/elimination.png);
+	/* background-repeat: no-repeat;*/
+	background-position: 0 0; 
+}
+#iconlist-4
+{
+   background-image: url(../../images/zoo/inactive.png);
+	background-position: 0 0; 
+}
+#iconlist-5
+{
+   background-image: url(../../images/zoo/locomotion.png);
+	background-position: 0 0; 
+}
+#iconlist-6
+{background-image: url(../../images/zoo/object-interaction.png);
+    
+	background-position: 0 0; 
+}
+#iconlist-7
+{
+    background-image: url(../../images/zoo/out-of-sight.png);
+	background-position: 0 0; 
+}
+#iconlist-8
+{
+    background-image: url(../../images/zoo/reproductive.png);
+	background-position: 0 0; 
+}
+#iconlist-9
+{
+    background-image: url(../../images/zoo/social-interaction.png);
+	background-position: 0 0; 
+}
+
+
+#titleborder
+{
+    height: 1px;
+    background-color: #000;
+}
+#body-container {
+    width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+a{
+    text-decoration: none;
+    color:#0097FB!important; /* or 2D47C0 or 2475FB */
+}
+a:hover{
+    text-decoration: underline;
+    color:#2D2D9F;
+}
+
+a.add-link
+{
+    padding-right: 10px;
+}
+
+select
+{
+    min-width: 150px;
+}
+select, textarea  {
+    font-family: Raleway, Verdana, Geneva, 'DejaVu Sans', sans-serif;
+    font-size:12px;
+    padding: 2px 0 2px 3px;    
+}
+
+textarea  {    
+    line-height:18px;
+}
+
+.button{
+    min-width: 100px;
+    padding: 5px 14px;
+    font-family: Raleway, Verdana, Geneva, 'DejaVu Sans', sans-serif;
+    font-size:12px;
+    cursor: pointer;
+    font-weight:600;
+}
+
+nav
+{
+    margin: 10px 0;
+}
+
+nav a
+{
+    margin-right: 7px;
+    text-transform: capitalize;
+}
+
+nav #admin-nav-list
+{
+    list-style-type: none;
+}
+
+nav #admin-nav-list li
+{
+    display: inline-block;
+}
+
+nav #admin-nav-list li a
+{
+    font-size: 14px;
+}
+
+#body-container h1
+{
+    font-weight: bold;
+    font-size: 16px;    
+    margin: 8px 0;
+}
+
+.logout-link
+{
+    float: right;
+    font-weight: 600;
+    font-size: 14px;
+}
+/*#region confirm delete control */
+.gcc-confirm
+{
+	text-indent:-9999px;
+	background-image: url(/images/Actions-dialog-ok-apply-icon-16.png); 
+	background-repeat: no-repeat;
+	background-position: left center; 
+	color: #fff;
+    display:inline-block;width:16px;
+}
+.del-cancel
+{
+	text-indent:-9999px;
+	background-image: url(/images/Actions-dialog-cancel-icon16.png); 
+	background-repeat: no-repeat;
+	background-position: left center; 
+	color: transparent;    
+    
+    display:inline-block;width:16px;
+     
+}
+
+.del-cancel:hover
+{
+	text-indent:-9999px;
+	color: transparent;    
+    padding: 3px 0 3px 0;   
+    display:inline-block;width:16px;
+}
+
+.del-row-item .gcc-confirm
+{
+    margin-right:3px;
+}
+
+.del-row-item .gcc-confirm:hover
+{
+    text-decoration:none;
+}
+.del-row-item .del-cancel
+{
+    margin-left:3px;
+}
+
+/*#endregion */
+
+/*#region simple confirm control */
+    
+div.scc-box
+{
+    display: none;
+    padding: 10px;
+    background-image:url(/images/question.gif);   
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+}
+
+div.scc-box div.scc-title
+{
+    font-weight:bold;
+    font-size: 1.1em;
+    padding-left:40px;
+}
+
+div.scc-box div.scc-content
+{
+    text-align: left;
+    padding-top:25px;
+    padding-left:10px;
+}
+
+div.scc-box div.scc-buttons
+{
+    clear:both;
+    padding: 10px 10px 10px 35px;
+    /*text-align: center;*/
+}
+
+div.scc-box div.scc-buttons .cms-button{
+    margin-right:20px;
+}
+
+/*#endregion */
+
+/*#region alphabet control */
+.alphabet-container
+{
+    margin-bottom: 5px;
+}
+.alphabet-letter 
+{
+    padding-right: 5px;
+}
+
+.alphabet-selected
+{
+    font-weight: bold;
+    font-style: italic;
+    color: #999;
+}
+/*#endregion */
+
+/*#region gridview */
+.gridview
+{
+    border: solid 1px #aaa;
+}
+
+.gridview td
+{    
+    padding: 2px 5px 2px 2px;
+}
+
+.gridview th{
+    text-align: left;
+    background-color: #eee;
+    padding: 4px 5px 4px 2px;
+    border-bottom: solid 1px #aaa;
+    font-weight: bold;
+    color: #000;
+}
+
+.gridview th a{
+    text-align: left;
+    font-weight: bold;
+    color: #999;
+}
+
+.gridview th a:hover{
+    text-align: left;
+    font-weight: bold;
+    color: #999;
+}
+
+.hilite-row
+{
+    background-color: #0099FF!important;
+}
+
+.hilite-row a
+{
+    color: #fff!important;
+}
+
+.cell-wait
+{
+    background-image: url(/images/progress.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: -9999px;   
+}
+
+.cell-link-wait
+{    
+    background-image: url(/images/progress.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    display:inline-block;
+    text-indent: -9999px;   
+}
+
+.cell-link-wait a
+{    
+    color:transparent;
+}
+
+.div-wait
+{
+    background-image: url(/images/progress.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: -9999px;   
+}
+
+.gv-edit-link
+{
+    background-image: url(/images/edit-icon.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: -9999px;    
+    display:block;
+    /*width:16px; */
+    padding: 0 4px;
+}
+
+.gv-view-link
+{
+    background-image: url(/images/Zoom-icon.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: -9999px;    
+    display:block;
+    /*width:16px; */
+    padding: 0 4px;
+}
+
+.gv-edit-link-inline
+{
+    background-image: url(/images/edit-icon.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: -9999px;    
+    display: inline-block;width:16px;padding: 0 4px;
+}
+
+.gridview td span.inactive-record
+{
+    color: #dcdcdc;
+}
+
+.pagerPanel
+{
+    display: inline-block;
+    padding: 5px 0;    
+    float: right;
+}
+/*#endregion */
+
+/*#region forms */
+.form-fieldset
+{
+    min-width: 400px;
+    padding: 20px;
+    margin:10px;
+}
+
+.form-fieldset legend, h2
+{
+    color: green;
+    font-size: 16px;
+    padding-bottom: 2px;
+}
+
+.form-fieldset ul
+{
+    max-width:700px;
+}
+
+.form-fieldset ul li label 
+{
+    display:block;
+    width:150px;
+    float:left;
+    font-weight:bold;
+    /*margin-bottom:10px;*/
+}
+
+.form-fieldset ul li
+{
+    text-align: left;
+    padding: 4px 0 4px 8px;    
+    display:block;clear:both; 
+    line-height: 24px;
+}
+
+.form-fieldset ul li.required, label.required
+{
+    background-image: url(/images/required.png);
+    background-position: left 7px;
+    background-repeat: no-repeat;
+}
+
+label.required
+{
+    padding-left: 10px;
+}
+.form-fieldset ul li.required:hover
+{
+    
+}
+.form-fieldset input[type=text], .form-fieldset input[type=password],  input[type=text]
+{
+    padding: 2px;
+    height: 20px;    
+    font-family: Raleway, Verdana, Geneva, 'DejaVu Sans', sans-serif;
+    font-size:12px;
+    color: #333;
+}
+
+.form-fieldset textarea 
+{
+    padding: 2px;
+    display: block;
+    min-width: 130px;
+}
+
+.form-fieldset span.error, span.error
+{
+    background-image: url(/images/err-required.png);
+    background-position: left 2px;
+    background-repeat: no-repeat;
+    text-indent: -9999px; 
+    /* text-indent: -9999px;    
+    display: inline-block!important;
+    width:15px!important; */
+    height: 15px;    
+    margin-left:5px;
+    padding: 0 15px 3px;
+    white-space: nowrap;
+    color: transparent;
+}
+
+.form-fieldset span.verbose-error, span.verbose-error
+{
+    color: red;    
+    background-image: url(/images/err-required.png);
+    background-position: left 2px;
+    background-repeat: no-repeat;
+    padding: 0 0 3px 20px;
+    margin-left: 5px;
+}
+
+.password_strength
+{
+    display: block;     
+    color: red;   
+    background-image: url(/images/err-required.png);
+    background-position: left 3px;
+    background-repeat: no-repeat;
+    padding: 0 0 3px 20px;  
+}
+.password_strength_3, .password_strength_4, .password_strength_5
+{
+    background-image: url(/images/Actions-dialog-ok-apply-icon-16.png); 
+	background-repeat: no-repeat;
+	background-position: left center;     
+    color: #999;
+    display: inline;
+}
+
+
+
+.input-read-only {
+ border: 0 solid #fff;
+}
+
+.hasDatepicker
+{
+    width: 100px;
+}
+
+#user-email-list
+{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+
+#user-email-list li
+{
+    display:inline;
+}
+
+#user-email-list li label, #user-email-list li input
+{
+    display:inline!important;    
+    float:none;
+}
+
+#pwd-req-link
+{
+    position: absolute;
+    top:10px;
+    right:10px;
+    font-size:11px;
+}
+/*#endregion */
+
+/* controls */
+/*#region name */
+.pagerPanel table td
+{
+    padding: 0 5px;
+}
+
+#tabs div.tab{
+    /*min-height: 200px;*/
+}
+/*#endregion */
+
+table.checkbox-list
+{
+    width:100%;
+    padding-top:10px;
+}
+.checkbox-list td
+{
+    padding-bottom:5px;
+}
+.checkbox-list td label
+{
+    font-weight: normal!important;
+    float: none!important;
+    display: inline!important;
+    padding-left: 5px;
+}
+
+.rdo-table label
+{
+    font-weight: normal!important;
+    float: none!important;
+    display: inline!important;
+    padding-left: 5px;
+}
+
+#user-emailprefs-list
+{
+    
+}
+#user-emailprefs-list label
+{    
+    display: inline!important;    
+    width: 570px;
+}
+
+#user-emailprefs-list input
+{
+    float: right;
+}
+
+.group-container
+{
+    margin: 5px 0;
+}
+.group-checkboxlist
+{
+    height: 150px;
+    width: 350px;
+    border: 1px solid #dcdcdc;
+    padding: 3px;
+    overflow: auto;
+    margin-top:5px;
+}
+
+.group-name
+{
+    font-weight: bold;
+    color: red;
+}
+
+
+/* ETB CTL */
+.etb-update:hover, .etb-cancel:hover
+{
+	text-indent:-999em;
+	color: transparent;
+}
+
+.etb-cancel
+{
+	text-indent:-9999px;
+    display:inline-block;
+    width:16px;
+	background-image: url(/images/Actions-dialog-cancel-icon16.png); 
+	background-repeat: no-repeat;
+	background-position: center center; 	
+}
+.etb-update
+{
+	text-indent:-999em;
+    display:inline-block;
+    width:16px;
+	background-image: url(/images/Actions-dialog-ok-apply-icon-16.png); 
+	background-repeat: no-repeat;
+	background-position: left center; 
+	color: #fff; /*color: transparent;*/
+}
+
+.etb-update img
+{
+    padding-left:10px;
+}
+
+.download-link
+{
+    text-indent:-999em;
+    display:inline-block;
+    width:16px;
+	background-image: url(/images/download-icon.png); 
+	background-repeat: no-repeat;
+	background-position: left center; 
+	color: #fff;
+}
+
+.upload-link
+{
+    display:block;
+    padding: 5px 0 0 25px;
+    background-image: url(/images/upload-icon.png); 
+	background-repeat: no-repeat;
+	background-position: left center; 
+}
+
+.send-password
+{
+    text-indent:-999em;
+    display:inline-block;
+    width:16px;
+	background-image: url(/images/send-password-icon.png); 
+	background-repeat: no-repeat;
+	background-position: left center; 
+	color: #fff;
+}
+
+#logdiv
+{
+    width:600px;
+    max-height: 500px;
+    overflow-y:auto;
+    border: 1px solid #dcdcdc;
+    padding: 0 20px 20px 20px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    margin-left:10px;
+}
+
+#masterlinks
+{
+    clear: both;
+    padding-bottom: 5px 0;
+    list-style-type: none;
+}
+
+#masterlinks li
+{
+    display: inline;
+    padding-right:10px;
+}
