@@ -1,11 +1,93 @@
-01 Oct 2013 10:20:50 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-01 Oct 2013 10:20:50 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
-01 Oct 2013 10:20:50 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-01 Oct 2013 10:20:54 [WARN] Security - User test failed to log in to the admin module.
-01 Oct 2013 10:21:01 [INFO] Security - User test logged in to the admin module successfully.
-01 Oct 2013 11:52:04 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-01 Oct 2013 11:52:04 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
-01 Oct 2013 11:52:04 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-01 Oct 2013 11:52:09 [WARN] Security - User test failed to log in to the admin module.
-01 Oct 2013 11:52:14 [WARN] Security - User test failed to log in to the admin module.
-01 Oct 2013 11:52:22 [INFO] Security - User test logged in to the admin module successfully.
+02 Oct 2013 09:40:20 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 09:40:20 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 09:40:20 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 09:41:04 [INFO] Security - User test logged in to the admin module successfully.
+02 Oct 2013 10:12:22 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 10:12:22 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 10:12:22 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 10:17:20 [INFO] Security - User test logged in to the admin module successfully.
+02 Oct 2013 10:44:19 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 10:44:19 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 10:44:19 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 10:44:23 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+02 Oct 2013 10:46:05 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 10:46:05 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 10:46:05 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 10:46:10 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+02 Oct 2013 10:47:09 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 10:47:09 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 10:47:09 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 10:47:11 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+02 Oct 2013 10:49:18 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 10:49:18 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 10:49:18 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 10:49:20 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+02 Oct 2013 10:57:07 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 10:57:07 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 10:57:07 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 10:57:09 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+02 Oct 2013 11:14:39 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:14:39 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 11:14:39 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:14:43 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+02 Oct 2013 11:20:02 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:20:02 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 11:20:02 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:20:05 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+02 Oct 2013 11:21:15 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:21:15 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 11:21:15 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:21:19 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:21:19 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 11:21:19 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:21:21 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+02 Oct 2013 11:22:14 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:22:14 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 11:22:14 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:22:17 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+02 Oct 2013 11:36:56 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:36:56 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 11:36:56 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:36:59 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+02 Oct 2013 11:37:02 [ERROR] Errors - Exception occurred 
+(Username = test)
+System.Web.HttpCompileException (0x80004005): c:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS Repo\CZAOS\CZAOSWeb\admin\observation\default.aspx(19): error CS1061: 'ASP.admin_observation_default_aspx' does not contain a definition for 'AlphabetFilter_AlphabetSelected' and no extension method 'AlphabetFilter_AlphabetSelected' accepting a first argument of type 'ASP.admin_observation_default_aspx' could be found (are you missing a using directive or an assembly reference?)
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+02 Oct 2013 11:37:43 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:37:43 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 11:37:43 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:37:47 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+02 Oct 2013 11:43:14 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:43:14 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 11:43:14 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:43:30 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+02 Oct 2013 11:49:31 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:49:31 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 11:49:31 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:49:35 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+02 Oct 2013 11:50:05 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:50:05 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+02 Oct 2013 11:50:05 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+02 Oct 2013 11:50:07 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)

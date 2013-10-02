@@ -13,22 +13,58 @@ namespace CZAOSWeb.admin.observation {
     public partial class _default {
         
         /// <summary>
-        /// AlphabetFilter control.
+        /// cztDataSourceRecent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CZAOSWeb.controls.AlphabetFilter AlphabetFilter;
+        protected global::System.Web.UI.WebControls.ObjectDataSource cztDataSourceRecent;
         
         /// <summary>
-        /// cztDataSource control.
+        /// GridViewSortExtender1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource cztDataSource;
+        protected global::KT.WebControls.GridViewSortExtender GridViewSortExtender1;
+        
+        /// <summary>
+        /// gvObsRec control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvObsRec;
+        
+        /// <summary>
+        /// GridPager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CZAOSWeb.controls.GridPager GridPager1;
+        
+        /// <summary>
+        /// MessageDiv1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.MessageDiv MessageDiv1;
+        
+        /// <summary>
+        /// cztDataSourceUpcoming control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource cztDataSourceUpcoming;
         
         /// <summary>
         /// gvse control.
@@ -40,13 +76,13 @@ namespace CZAOSWeb.admin.observation {
         protected global::KT.WebControls.GridViewSortExtender gvse;
         
         /// <summary>
-        /// gvObs control.
+        /// gvObsUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvObs;
+        protected global::System.Web.UI.WebControls.GridView gvObsUp;
         
         /// <summary>
         /// gvPagerControl control.
