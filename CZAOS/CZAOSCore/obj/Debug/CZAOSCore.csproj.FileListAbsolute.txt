@@ -31,3 +31,15 @@ C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSCore
 C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSCore\obj\Debug\CZAOSCore.csprojResolveAssemblyReference.cache
 C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSCore\obj\Debug\CZAOSCore.dll
 C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZAOSCore\obj\Debug\CZAOSCore.pdb
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\CZAOSCore.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\CZAOSCore.pdb
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\GithubSharp.Core.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\GithubSharp.Plugins.CacheProviders.ApplicationCacher.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\GithubSharp.Plugins.CacheProviders.WebCache.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\GithubSharp.Plugins.LogProviders.SimpleLogProvider.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\KT.Extensions.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\log4net.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\AntiXssLibrary.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\obj\Debug\CZAOSCore.csprojResolveAssemblyReference.cache
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\obj\Debug\CZAOSCore.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\obj\Debug\CZAOSCore.pdb

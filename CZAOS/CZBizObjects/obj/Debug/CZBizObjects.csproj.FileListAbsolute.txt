@@ -59,3 +59,19 @@ C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZBizObje
 C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZBizObjects\obj\Debug\CZBizObjects.csprojResolveAssemblyReference.cache
 C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZBizObjects\obj\Debug\CZBizObjects.dll
 C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS\CZAOS\CZBizObjects\obj\Debug\CZBizObjects.pdb
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\bin\Debug\CZBizObjects.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\bin\Debug\CZBizObjects.pdb
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\bin\Debug\CZAOSCore.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\bin\Debug\CZDataObjects.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\bin\Debug\GithubSharp.Core.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\bin\Debug\GithubSharp.Plugins.CacheProviders.ApplicationCacher.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\bin\Debug\GithubSharp.Plugins.CacheProviders.WebCache.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\bin\Debug\GithubSharp.Plugins.LogProviders.SimpleLogProvider.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\bin\Debug\KT.Extensions.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\bin\Debug\log4net.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\bin\Debug\AntiXssLibrary.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\bin\Debug\CZAOSCore.pdb
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\bin\Debug\CZDataObjects.pdb
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\obj\Debug\CZBizObjects.csprojResolveAssemblyReference.cache
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\obj\Debug\CZBizObjects.dll
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZBizObjects\obj\Debug\CZBizObjects.pdb

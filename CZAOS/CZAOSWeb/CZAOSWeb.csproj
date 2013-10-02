@@ -103,6 +103,7 @@
   <ItemGroup>
     <Content Include="admin\animal-regions\default.aspx" />
     <Content Include="admin\animals\default.aspx" />
+    <Content Include="admin\animals\index.aspx" />
     <Content Include="admin\behavior\behaviors.aspx" />
     <Content Include="admin\behavior\default.aspx" />
     <Content Include="admin\changes\default.aspx" />
@@ -172,6 +173,7 @@
     <Content Include="assets\email-templates\password-reminder.htm" />
     <Content Include="assets\email-templates\pwdReminder.txt" />
     <Content Include="assets\scripts\api.js" />
+    <Content Include="assets\scripts\app.js" />
     <Content Include="assets\scripts\controls.js" />
     <Content Include="assets\scripts\czaos.js" />
     <Content Include="assets\scripts\dialogs.js" />
@@ -191,6 +193,7 @@
     <Content Include="assets\scripts\simplemodal\css\basic.css" />
     <Content Include="assets\scripts\simplemodal\img\basic\x.png" />
     <Content Include="assets\scripts\simplemodal\js\jquery.simplemodal.1.4.4.min.js" />
+    <Content Include="assets\scripts\AnimalControl.js" />
     <Content Include="assets\scripts\toastr\index.html" />
     <Content Include="assets\scripts\toastr\toastr-responsive.css" />
     <Content Include="assets\scripts\toastr\toastr.css" />
@@ -243,6 +246,10 @@
     <Content Include="images\zoo\out-of-sight.png" />
     <Content Include="images\zoo\reproductive.png" />
     <Content Include="images\zoo\social-interaction.png" />
+    <Content Include="Scripts\knockout-2.3.0.debug.js" />
+    <Content Include="Scripts\knockout-2.3.0.js" />
+    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -261,6 +268,13 @@
     </Compile>
     <Compile Include="admin\animals\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\animals\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\animals\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\behavior\behaviors.aspx.cs">
       <DependentUpon>behaviors.aspx</DependentUpon>
