@@ -12,7 +12,8 @@
             </nav>
         </div>
         <div class="step" id="region-knockout-scope">
-            <div class="title">Region<span class="create-button" data-bind="click: CreateNew">Add New Region</span></div>
+            <div class="title">Region</div>
+            <div class="create-button" data-bind="click: CreateNew">Add New Region</div>
             <ul id="step_1" data-bind="foreach: Regions">
                 <li style="display: none" data-bind="visible: Active">
                     <span data-bind="text: AnimalRegionName, click: $root.UpdateSelectedRegion"></span>
@@ -21,7 +22,8 @@
             </ul>
         </div>
         <div class="step" id="exhibit-knockout-scope">
-            <div class="title">Exhibit<span class="create-button" data-bind="click: CreateNew">Add New Exhibit</span></div>
+            <div class="title">Exhibit</div>
+            <div class="create-button" data-bind="click: CreateNew">Add New Exhibit</div>
             <ul id="step_2" data-bind="foreach: Exhibits">
                 <li style="display: none" data-bind="visible: $root.Display($data)">
                     <span data-bind="text: ExhibitName, click: $root.UpdateSelectedExhibit"></span>
@@ -30,7 +32,8 @@
             </ul>
         </div>
         <div class="step" id="animal-knockout-scope">
-            <div class="title">Animal<span class="create-button" data-bind="click: CreateNew">Add New Animal</span></div>
+            <div class="title">Animal</div>
+            <div class="create-button" data-bind="click: CreateNew">Add New Animal</div>
             <ul id="step_3" data-bind="foreach: Animals">
                 <li style="display: none" data-bind="visible: $root.Display($data)">
                     <span data-bind="text: CommonName, click: $root.UpdateSelectedAnimal"></span>

@@ -97,8 +97,6 @@ tr.hilite-row:nth-child(even) td{
     background: #ccc;
 }
 .step li{
-<<<<<<< HEAD
-=======
     padding-left: 1em;@import url(http://fonts.googleapis.com/css?family=ABeeZee|Syncopate:400,700);
 
 body {
@@ -198,7 +196,6 @@ tr.hilite-row:nth-child(even) td{
     background: #ccc;
 }
 .step li{
->>>>>>> origin/fcBranch
     padding-left: 1em;
 }
 .steps{
@@ -265,8 +262,6 @@ tr.hilite-row:nth-child(even) td{
     height: 280px;
     overflow: scroll;
     background: #fff;
-<<<<<<< HEAD
-=======
 }
 }
 .step li.active{
@@ -336,5 +331,4 @@ tr.hilite-row:nth-child(even) td{
     height: 280px;
     overflow: scroll;
     background: #fff;
->>>>>>> origin/fcBranch
 }
