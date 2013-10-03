@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpages/Dialog.Master" AutoEventWireup="true" CodeBehind="view-observation.aspx.cs" Inherits="CZAOSWeb.admin.observation.view_observation" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="view-observation.aspx.cs" Inherits="CZAOSWeb.admin.observation.view_observation" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
@@ -16,19 +16,19 @@
 
         <ul>
             <li>
-                <table class="w100pc">
-                    <tr>
-                        <td class="b">Date:</td>
-                        <td><asp:Literal runat="server" ID="litDate"></asp:Literal></td>
-                        <td class="b">Start:</td>
-                        <td><asp:Literal runat="server" ID="litStart"></asp:Literal></td>
-                        <td class="b">End:</td>
-                        <td><asp:Literal runat="server" ID="litEnd"></asp:Literal></td>
-                    </tr>
-                </table>
-                
+                <label>Category:</label>
+                <asp:Literal runat="server" ID="litCategory"></asp:Literal>
             </li>
-            
+            <li>
+                <label>Observers:</label><br />        
+                <asp:Repeater runat="server" ID="rptObservers">
+                    <ItemTemplate>
+                        <asp:Literal runat="server" ID="litObsName" Text='<%#Bind("DisplayName") %>'></asp:Literal>
+                        <br />
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:Literal runat="server" ID="litObsCount"></asp:Literal> observers
+            </li>                
             <asp:Panel ID="pnlLoginInfo" runat="server" >
             <li>
                 <table id="cred-table" class="w100pc" >
@@ -46,29 +46,35 @@
                     </tr>
                 </table>
             </li>
-                <li>
-                    <table class="w100pc" >
-                        <tr>
-                            <td class="b">District:</td>
-                            <td><asp:Literal runat="server" ID="litDistrict"></asp:Literal></td>
-                            <td class="b">School:</td>
-                            <td><asp:Literal runat="server" ID="litSchool"></asp:Literal></td>
-                            <td class="b">Grade:</td>
-                            <td><asp:Literal runat="server" ID="litGrade"></asp:Literal></td>
-                        </tr>
-                    
-                    </table>
-                </li>
-            </asp:Panel>
-            
             <li>
-                <label>Category:</label>
-                <asp:Literal runat="server" ID="litCategory"></asp:Literal>
+                <table class="w100pc" >
+                    <tr>
+                        <td class="b">District:</td>
+                        <td><asp:Literal runat="server" ID="litDistrict"></asp:Literal></td>
+                        <td class="b">School:</td>
+                        <td><asp:Literal runat="server" ID="litSchool"></asp:Literal></td>
+                        <td class="b">Grade:</td>
+                        <td><asp:Literal runat="server" ID="litGrade"></asp:Literal></td>
+                    </tr>                    
+                </table>
             </li>
+            </asp:Panel>
+            <li>
+                <table class="w100pc">
+                    <tr>
+                        <td class="b">Date:</td>
+                        <td><asp:Literal runat="server" ID="litDate"></asp:Literal></td>
+                        <td class="b">Start:</td>
+                        <td><asp:Literal runat="server" ID="litStart"></asp:Literal></td>
+                        <td class="b">End:</td>
+                        <td><asp:Literal runat="server" ID="litEnd"></asp:Literal></td>
+                    </tr>
+                </table>                
+            </li>            
             <asp:Panel ID="pnlTimer" runat="server" >
 
-                <li>
-                    <table class="w100pc">
+            <li>
+                <table class="w100pc">
                     <tr>
                         <td class="b" style="width:110px;">Timed Interval:</td>
                         <td><asp:Literal runat="server" ID="litInterval"></asp:Literal></td>
@@ -77,29 +83,14 @@
                         <td class="b w100">Manual:</td>
                         <td><asp:Literal runat="server" ID="litManual"></asp:Literal></td>
                     </tr>
-                </table>
-                    
-                </li>
-
+                </table>                    
+            </li>
             </asp:Panel>
-            <li>
-                <label>Observers:</label>
-                        <br />        
-                 <asp:Repeater runat="server" ID="rptObservers">
-                     <ItemTemplate>
-                         <asp:Literal runat="server" ID="litObsName" Text='<%#Bind("DisplayName") %>'></asp:Literal>
-                         <br />
-                     </ItemTemplate>
-                 </asp:Repeater>
-
-                <asp:Literal runat="server" ID="litObsCount"></asp:Literal> observers
-            </li>    
             <li>
                 <span class="b">Region:</span>
                 <asp:Literal runat="server" ID="litRegion"></asp:Literal>
                 <span class="b pl10">Exhibit:</span>
                 <asp:Literal runat="server" ID="litExhibit"></asp:Literal>
-
             </li>     
             <li>
                 <label>Groups</label>
@@ -117,8 +108,6 @@
                              </div>
                      </ItemTemplate>
                  </asp:Repeater>
-                 
-
             </li>        
         </ul>
     </fieldset>

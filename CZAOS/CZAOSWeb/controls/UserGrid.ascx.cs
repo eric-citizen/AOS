@@ -73,15 +73,15 @@ namespace CZAOSWeb.controls
 
                 Literal litDName = e.Row.FindControl("litDName") as Literal;
                 Literal litUserType = e.Row.FindControl("litUserType") as Literal;
-                Literal litExpDate = e.Row.FindControl("litExpDate") as Literal;
+                //Literal litExpDate = e.Row.FindControl("litExpDate") as Literal;
 
                 litDName.Text = czuser.DisplayName;
                 litUserType.Text = czuser.UserType;
 
                 if(czuser.ExpirationDate.HasValue)
                 {
-                    DateTime ed = (DateTime)czuser.ExpirationDate;
-                    litExpDate.Text = ed.ToString("MM/dd/yyy");
+                    //DateTime ed = (DateTime)czuser.ExpirationDate;
+                    //litExpDate.Text = ed.ToString("MM/dd/yyy");
                 }
                 
 
@@ -113,7 +113,7 @@ namespace CZAOSWeb.controls
                 if (user.IsOnline)
                 {
                     e.Row.Cells[(int)DataColumns.Username].CssClass = "parent-row-highlight";
-                    e.Row.Cells[(int)DataColumns.LastActivityDate].ToolTip = "This user is currently online";
+                    //e.Row.Cells[(int)DataColumns.LastActivityDate].ToolTip = "This user is currently online";
                 }
 
             }

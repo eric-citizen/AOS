@@ -1,0 +1,171 @@
+﻿<error errorId="b71b11e0-af0d-46fe-af76-82812f96605a" host="HMBLATZ0185" type="System.NullReferenceException" message="Object reference not set to an instance of an object." source="KT.Extensions" detail="System.NullReferenceException: Object reference not set to an instance of an object.&#xD;&#xA;   at KT.Extensions.SessionExtensions.AddToSession(HttpSessionState session, String key, Object value)&#xD;&#xA;   at CZAOSWeb.Security.AdminPermissionsModule.CheckPermissions(HttpContext context) in c:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS Repo\CZAOS\CZAOSWeb\_code\Security\AdminPermissionsModule.cs:line 111&#xD;&#xA;   at CZAOSWeb.Security.AdminPermissionsModule.context_PreRequestHandlerExecute(Object sender, EventArgs e) in c:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS Repo\CZAOS\CZAOSWeb\_code\Security\AdminPermissionsModule.cs:line 27&#xD;&#xA;   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="edumacator" time="2013-10-02T20:26:41.2230469Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:max-age=0&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip,deflate,sdch&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8&#xD;&#xA;HTTP_COOKIE:ASP.NET_SessionId=jtdqx1bbovvirsjfridy4kfn; CZ_ROLES=TWvQDipEdFzxdgvZ4x9OdH_whxFy0flzdeY0ceTP1OEd4F-u5MgEhNOSlEkyf6txSkcpg-ZBP1KsTdiNTS-SblG7d10pp-WkNL1B66BAj-ifdECkJ72M1kOV2z0I3N8BTRsBTXxZMC5P-jw9fgPPhtdJiWwZWBEVSTxBB-IWKeBNP-koKsaC9VWZ-ZgwVxqDb7X7b_pZm8WuccdSqm4XPDyxSeNiy8vK0BcftGyYvENflXzbM7Ssj8tWavieURfkO6CFHR_1zYPzSpl0wLBXRtsXqdC307V3hnYc4mX-JcO0BbC38ja_gJTQl-JjxqnHboWx-ow9xYGHHHhzmViGw0I-mPMRgwe6fB-VozTsgNjw8E8pspfP7B0dnDEamdeP-BLROOMjrRPiueU4KX-oBLKAN69micbPy9pE261fpDGDlsbalOm3sEsajDTk38DZx6eF9q2rnsIePBU7OMxjwQ-fzqU-Q6Co-iE0b3JhP3PqAjt70; CZ_AUTHENT=94AA597A70BB125CA746FF3E20E7102308AB93B53DCA8731E3915EE8A73FF0A41CE994641F99282B3B0AAB216204BA8A87AE19A9DBFEDF06913391D8C46EEC20820CED88B5673424C96F6F11468B3921B991AD2B&#xD;&#xA;HTTP_HOST:localhost:53637&#xD;&#xA;HTTP_REFERER:http://localhost:53637/default.aspx?ReturnUrl=%2fadmin%2fusers%2f&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: max-age=0&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip,deflate,sdch&#xD;&#xA;Accept-Language: en-US,en;q=0.8&#xD;&#xA;Cookie: ASP.NET_SessionId=jtdqx1bbovvirsjfridy4kfn; CZ_ROLES=TWvQDipEdFzxdgvZ4x9OdH_whxFy0flzdeY0ceTP1OEd4F-u5MgEhNOSlEkyf6txSkcpg-ZBP1KsTdiNTS-SblG7d10pp-WkNL1B66BAj-ifdECkJ72M1kOV2z0I3N8BTRsBTXxZMC5P-jw9fgPPhtdJiWwZWBEVSTxBB-IWKeBNP-koKsaC9VWZ-ZgwVxqDb7X7b_pZm8WuccdSqm4XPDyxSeNiy8vK0BcftGyYvENflXzbM7Ssj8tWavieURfkO6CFHR_1zYPzSpl0wLBXRtsXqdC307V3hnYc4mX-JcO0BbC38ja_gJTQl-JjxqnHboWx-ow9xYGHHHhzmViGw0I-mPMRgwe6fB-VozTsgNjw8E8pspfP7B0dnDEamdeP-BLROOMjrRPiueU4KX-oBLKAN69micbPy9pE261fpDGDlsbalOm3sEsajDTk38DZx6eF9q2rnsIePBU7OMxjwQ-fzqU-Q6Co-iE0b3JhP3PqAjt70; CZ_AUTHENT=94AA597A70BB125CA746FF3E20E7102308AB93B53DCA8731E3915EE8A73FF0A41CE994641F99282B3B0AAB216204BA8A87AE19A9DBFEDF06913391D8C46EEC20820CED88B5673424C96F6F11468B3921B991AD2B&#xD;&#xA;Host: localhost:53637&#xD;&#xA;Referer: http://localhost:53637/default.aspx?ReturnUrl=%2fadmin%2fusers%2f&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/17/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS Repo\CZAOS\CZAOSWeb\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="Forms" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="edumacator" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="edumacator" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="edumacator" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="17" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/17" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/admin/users/" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS Repo\CZAOS\CZAOSWeb\admin\users\" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="21062" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/admin/users/" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="53637" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/8.0" />
+    </item>
+    <item name="URL">
+      <value string="/admin/users/" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="max-age=0" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip,deflate,sdch" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="ASP.NET_SessionId=jtdqx1bbovvirsjfridy4kfn; CZ_ROLES=TWvQDipEdFzxdgvZ4x9OdH_whxFy0flzdeY0ceTP1OEd4F-u5MgEhNOSlEkyf6txSkcpg-ZBP1KsTdiNTS-SblG7d10pp-WkNL1B66BAj-ifdECkJ72M1kOV2z0I3N8BTRsBTXxZMC5P-jw9fgPPhtdJiWwZWBEVSTxBB-IWKeBNP-koKsaC9VWZ-ZgwVxqDb7X7b_pZm8WuccdSqm4XPDyxSeNiy8vK0BcftGyYvENflXzbM7Ssj8tWavieURfkO6CFHR_1zYPzSpl0wLBXRtsXqdC307V3hnYc4mX-JcO0BbC38ja_gJTQl-JjxqnHboWx-ow9xYGHHHhzmViGw0I-mPMRgwe6fB-VozTsgNjw8E8pspfP7B0dnDEamdeP-BLROOMjrRPiueU4KX-oBLKAN69micbPy9pE261fpDGDlsbalOm3sEsajDTk38DZx6eF9q2rnsIePBU7OMxjwQ-fzqU-Q6Co-iE0b3JhP3PqAjt70; CZ_AUTHENT=94AA597A70BB125CA746FF3E20E7102308AB93B53DCA8731E3915EE8A73FF0A41CE994641F99282B3B0AAB216204BA8A87AE19A9DBFEDF06913391D8C46EEC20820CED88B5673424C96F6F11468B3921B991AD2B" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:53637" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:53637/default.aspx?ReturnUrl=%2fadmin%2fusers%2f" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="ASP.NET_SessionId">
+      <value string="jtdqx1bbovvirsjfridy4kfn" />
+    </item>
+    <item name="CZ_ROLES">
+      <value string="TWvQDipEdFzxdgvZ4x9OdH_whxFy0flzdeY0ceTP1OEd4F-u5MgEhNOSlEkyf6txSkcpg-ZBP1KsTdiNTS-SblG7d10pp-WkNL1B66BAj-ifdECkJ72M1kOV2z0I3N8BTRsBTXxZMC5P-jw9fgPPhtdJiWwZWBEVSTxBB-IWKeBNP-koKsaC9VWZ-ZgwVxqDb7X7b_pZm8WuccdSqm4XPDyxSeNiy8vK0BcftGyYvENflXzbM7Ssj8tWavieURfkO6CFHR_1zYPzSpl0wLBXRtsXqdC307V3hnYc4mX-JcO0BbC38ja_gJTQl-JjxqnHboWx-ow9xYGHHHhzmViGw0I-mPMRgwe6fB-VozTsgNjw8E8pspfP7B0dnDEamdeP-BLROOMjrRPiueU4KX-oBLKAN69micbPy9pE261fpDGDlsbalOm3sEsajDTk38DZx6eF9q2rnsIePBU7OMxjwQ-fzqU-Q6Co-iE0b3JhP3PqAjt70" />
+    </item>
+    <item name="CZ_AUTHENT">
+      <value string="94AA597A70BB125CA746FF3E20E7102308AB93B53DCA8731E3915EE8A73FF0A41CE994641F99282B3B0AAB216204BA8A87AE19A9DBFEDF06913391D8C46EEC20820CED88B5673424C96F6F11468B3921B991AD2B" />
+    </item>
+  </cookies>
+</error>

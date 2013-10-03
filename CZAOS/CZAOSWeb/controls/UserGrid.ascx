@@ -58,24 +58,19 @@
                     <HeaderStyle HorizontalAlign="Left" />
                     <ItemStyle HorizontalAlign="Left" Width="100px" />
                 </asp:TemplateField>
-
-                
-                <asp:TemplateField HeaderText="Expiration">                   
+                                
+                <%--<asp:TemplateField HeaderText="Expiration">                   
                     <ItemTemplate>    
                         <asp:Literal runat="server" ID="litExpDate" ></asp:Literal>                        
                     </ItemTemplate>
                     <HeaderStyle HorizontalAlign="Left" />
                     <ItemStyle HorizontalAlign="Left" Width="70px"/>
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
 
                 <asp:ButtonField Text="Unlock" CommandName="UnlockUser">
                     <ItemStyle HorizontalAlign="Center" Width="60px" />
                     <HeaderStyle HorizontalAlign="Center" />
                 </asp:ButtonField>
-                  
-                <asp:BoundField DataField="LastActivityDate" SortExpression="LastActivityDate" DataFormatString="{0:MMM dd yyy hh:mm tt }" HeaderText="Last Activity" HtmlEncode="False">
-                    <ItemStyle HorizontalAlign="Left" Width="160px" />
-                </asp:BoundField>
 
                 <asp:TemplateField>
                     <ItemStyle HorizontalAlign="Center" Width="16px" CssClass="cell-link-click" />
