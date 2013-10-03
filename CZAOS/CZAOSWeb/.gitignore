@@ -6,6 +6,10 @@
 *.user
 *.sln.docstates
 
+#Error logs
+assets/elmah
+logs
+
 # Build results
 
 [Dd]ebug/

@@ -125,7 +125,10 @@ namespace CZDataObjects
             base.AddParameter("@DOB",item.DOB);
             base.AddParameter("@CZArrival",item.CZArrival);
             base.AddParameter("@Active",item.Active);
+<<<<<<< HEAD
             base.AddParameter("@ExhibitID",item.ExhibitID);
+=======
+>>>>>>> Stopped Ignoring SQL folder
             
         }
 
