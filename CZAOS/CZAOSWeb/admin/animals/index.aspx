@@ -12,21 +12,30 @@
             </nav>
         </div>
         <div class="step" id="region-knockout-scope">
-            <div class="title">Region</div>
+            <div class="title">Region<span class="create-button" data-bind="click: CreateNew">Add New Region</span></div>
             <ul id="step_1" data-bind="foreach: Regions">
-                <li data-bind="text: AnimalRegionName, click: $root.UpdateSelectedRegion, visible: Active"></li>
+                <li style="display: none" data-bind="visible: Active">
+                    <span data-bind="text: AnimalRegionName, click: $root.UpdateSelectedRegion"></span>
+                    <span class="edit-button" data-bind="click: $root.Edit">Edit</span>
+                </li>
             </ul>
         </div>
         <div class="step" id="exhibit-knockout-scope">
-            <div class="title">Exhibit</div>
+            <div class="title">Exhibit<span class="create-button" data-bind="click: CreateNew">Add New Exhibit</span></div>
             <ul id="step_2" data-bind="foreach: Exhibits">
-                <li data-bind="text: ExhibitName, click: $root.UpdateSelectedExhibit, visible: $root.Display($data)"></li>
+                <li style="display: none" data-bind="visible: $root.Display($data)">
+                    <span data-bind="text: ExhibitName, click: $root.UpdateSelectedExhibit"></span>
+                    <span class="edit-button" data-bind="click: $root.Edit">Edit</span>
+                </li>
             </ul>
         </div>
         <div class="step" id="animal-knockout-scope">
-            <div class="title">Animal</div>
+            <div class="title">Animal<span class="create-button" data-bind="click: CreateNew">Add New Animal</span></div>
             <ul id="step_3" data-bind="foreach: Animals">
-                <li data-bind="text: CommonName, click: $root.UpdateSelectedAnimal, visible: $root.Display($data)"></li>
+                <li style="display: none" data-bind="visible: $root.Display($data)">
+                    <span data-bind="text: CommonName, click: $root.UpdateSelectedAnimal"></span>
+                    <span class="edit-button" data-bind="click: $root.Edit">Edit</span>
+                </li>
             </ul>
         </div>
     </div>

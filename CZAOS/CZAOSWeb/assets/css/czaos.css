@@ -72,7 +72,7 @@ textarea  {
 .form-fieldset li{
     padding-bottom: 10px;
 }
-tr, td, th{
+tr, td, th, .step li{
     padding: 1em 1em 1em 2em;
     text-align: left;
     background: #fff;
@@ -95,4 +95,72 @@ tr:nth-child(even) td{
 }
 tr.hilite-row:nth-child(even) td{
     background: #ccc;
+}
+.step li{
+    padding-left: 1em;
+}
+.steps{
+    background:#e3e4e6;
+}
+.steps .title_bar{
+    background: #b3b6bb;
+    color:#4b525c;
+    padding: 15px;
+    font-size: 14px;
+}
+.menu_drop{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 20px;
+    text-align: right;
+    padding: 15px;
+}
+.menu_drop:hover:before{
+    content:'\2630';
+    padding: 5px;
+    background: #e3e4e6;
+}
+.menu_drop:hover ul{
+    display: block;
+    background: #e3e4e6;
+    border: 1px solid #fff;
+}
+.menu_drop ul{
+    display: none;
+}
+.menu_drop:hover ul li{
+    font-size: 12px;
+    text-align: left;
+}
+.menu_drop ul li a{
+    width: 150px;
+    display: inline-block;
+    padding: 1em;
+}
+.menu_drop:before{
+    content:'\2630';
+    padding: 5px;
+}
+.step{
+    display: inline-block;
+    width: 32%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 15px;
+    padding-right: 0px;
+    vertical-align: top;
+}
+.step .title{
+    font-family: "Syncopate";
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: #444;
+    padding-bottom: 3px;
+}
+.step ul{
+    height: 280px;
+    overflow: scroll;
+    background: #fff;
 }

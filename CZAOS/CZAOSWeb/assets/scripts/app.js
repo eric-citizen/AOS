@@ -13,7 +13,7 @@ window.App.ApiHelper = (function() {
     };
 
     var getAll = function(apiURL) {
-        var promise = $.ajax({
+        return $.ajax({
             url: window.App.baseURL + apiURL,
             beforeSend: function(request) {
                 request.setRequestHeader("CZAOSToken", getToken());
@@ -22,8 +22,6 @@ window.App.ApiHelper = (function() {
             type: 'GET',
             contentType: 'application/json; charaset=urt-8'
         });
-        
-        return promise;
     };
 
     var get = function(apiURL, id) {
@@ -49,5 +47,24 @@ window.App.ApiHelper = (function() {
         Post: post,
         Put: put,
         Remove: remove
+    };
+})();
+
+window.App.DialogControl = (function() {
+    var open = function(selector, target, content) {
+        $(selector).dialog({
+            open: function (event, ui) {
+                return $(target).load(content);
+            }
+        });
+    };
+
+    var close = function() {
+
+    };
+
+    return {
+        Open: open,
+        Close: close
     };
 })();
