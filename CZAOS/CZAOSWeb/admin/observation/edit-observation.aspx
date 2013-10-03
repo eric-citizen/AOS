@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Edit Observation" Language="C#" MasterPageFile="~/masterpages/Dialog.Master" AutoEventWireup="true" CodeBehind="edit-observation.aspx.cs" Inherits="CZAOSWeb.admin.observation.edit_observation" %>
+﻿<%@ Page Title="Edit Observation" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="edit-observation.aspx.cs" Inherits="CZAOSWeb.admin.observation.edit_observation" %>
 <%@ Register Src="~/controls/GridConfirmControl.ascx" TagPrefix="uc1" TagName="GridConfirmControl" %>
 <%@ Register Src="~/controls/GroupControl.ascx" TagPrefix="uc1" TagName="GroupControl" %>
 <%@ Register Src="~/controls/EditableTextBox.ascx" TagPrefix="uc1" TagName="EditableTextBox" %>

@@ -31,31 +31,31 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.Literal fieldsetLegend;
         
         /// <summary>
-        /// litDate control.
+        /// litCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litDate;
+        protected global::System.Web.UI.WebControls.Literal litCategory;
         
         /// <summary>
-        /// litStart control.
+        /// rptObservers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litStart;
+        protected global::System.Web.UI.WebControls.Repeater rptObservers;
         
         /// <summary>
-        /// litEnd control.
+        /// litObsCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litEnd;
+        protected global::System.Web.UI.WebControls.Literal litObsCount;
         
         /// <summary>
         /// pnlLoginInfo control.
@@ -130,13 +130,31 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.Literal litGrade;
         
         /// <summary>
-        /// litCategory control.
+        /// litDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litCategory;
+        protected global::System.Web.UI.WebControls.Literal litDate;
+        
+        /// <summary>
+        /// litStart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litStart;
+        
+        /// <summary>
+        /// litEnd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litEnd;
         
         /// <summary>
         /// pnlTimer control.
@@ -173,24 +191,6 @@ namespace CZAOSWeb.admin.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litManual;
-        
-        /// <summary>
-        /// rptObservers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptObservers;
-        
-        /// <summary>
-        /// litObsCount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litObsCount;
         
         /// <summary>
         /// litRegion control.

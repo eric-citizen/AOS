@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 02 Oct 2013 08:45:21 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 02 Oct 2013 08:45:21 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
 02 Oct 2013 08:45:21 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
@@ -121,3 +122,12 @@ LOG: Attempting download of new URL file:///C:/Users/aperks/Documents/GitHub/AOS
 03 Oct 2013 10:12:50 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
 03 Oct 2013 10:12:51 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 03 Oct 2013 10:13:08 [INFO] Security - User test logged in to the admin module successfully.
+=======
+03 Oct 2013 09:29:21 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+03 Oct 2013 09:29:21 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+03 Oct 2013 09:29:21 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+03 Oct 2013 09:29:53 [INFO] Security - User test logged in to the admin module successfully.
+03 Oct 2013 10:12:57 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+03 Oct 2013 10:12:57 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+03 Oct 2013 10:12:57 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+>>>>>>> origin/Jay

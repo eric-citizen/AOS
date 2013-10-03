@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 02 Oct 2013 08:45:56 [INFO] Security - User hmbtest logged in to the admin module successfully.
 02 Oct 2013 09:01:34 [INFO] Security - User test logged in to the admin module successfully. 
 (Username = hmbtest)
@@ -5,3 +6,6 @@
 (Username = test)
 02 Oct 2013 13:40:22 [INFO] Security - User test logged in to the admin module successfully.
 03 Oct 2013 10:13:08 [INFO] Security - User test logged in to the admin module successfully.
+=======
+03 Oct 2013 09:29:53 [INFO] Security - User test logged in to the admin module successfully.
+>>>>>>> origin/Jay

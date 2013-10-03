@@ -1,2 +1,28 @@
 01 Oct 2013 10:20:54 [WARN] Security - User test failed to log in to the admin module.
 01 Oct 2013 10:21:01 [INFO] Security - User test logged in to the admin module successfully.
+<<<<<<< HEAD
+=======
+01 Oct 2013 11:52:09 [WARN] Security - User test failed to log in to the admin module.
+01 Oct 2013 11:52:14 [WARN] Security - User test failed to log in to the admin module.
+01 Oct 2013 11:52:22 [INFO] Security - User test logged in to the admin module successfully.
+01 Oct 2013 12:19:32 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+01 Oct 2013 12:32:09 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+01 Oct 2013 14:03:42 [INFO] Security - User test logged in to the admin module successfully.
+01 Oct 2013 14:11:02 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+01 Oct 2013 14:13:30 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+01 Oct 2013 14:27:56 [WARN] Security - User test failed to log in to the admin module. 
+(Username = test)
+01 Oct 2013 14:28:02 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+01 Oct 2013 14:28:44 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+01 Oct 2013 14:29:38 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+01 Oct 2013 14:30:22 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+01 Oct 2013 14:59:42 [INFO] Security - User test logged in to the admin module successfully.
+>>>>>>> origin/Jay
