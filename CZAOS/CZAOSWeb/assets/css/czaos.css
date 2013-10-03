@@ -2,6 +2,7 @@
     font-family: Raleway, Verdana, Geneva, 'DejaVu Sans', sans-serif;
     font-size:12px;
     line-height:18px;
+    background: #e4e5e9;
 }
 
 /* override jquery ui styles */
@@ -16,7 +17,11 @@
 .ui-widget button {
 	font-family: Raleway, Verdana, Geneva, 'DejaVu Sans', sans-serif !important;
 }
-
+input{
+    border: 3px solid #a2a6ad;
+    border-radius: 2em;
+    padding: .5em;
+}
 header
 {
     height: 145px;

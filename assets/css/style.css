@@ -126,10 +126,64 @@ h1{
 	font-size: 1.8em;
 	text-shadow: 0 1px 8px rgba(0,0,0,.3);
 }
+<<<<<<< HEAD
+h2{
+	font-size: 1.2em;
+	padding-top: .5em;
+}
+
+=======
+>>>>>>> origin/AdamBranch
 hr{
 	border: 1px solid #4a525c;
 	border-bottom: 0;
 }
+<<<<<<< HEAD
+
+.tabs, .tabs li{
+	padding:0;
+	margin:0;
+	list-style: none;
+	display: inline-block;
+	vertical-align: top;
+}
+.tabs{
+	margin-left: .4em;
+	position: relative;
+	width: 100%;
+	margin-top: 1em;
+}
+.tabs .active h2{
+	background: #4b525c;
+	color: #fff;
+}
+.tabs h2{
+	font-size: .8em;
+	background: #b3b6bb;
+	color: #4b525c;
+	border-radius: .4em;
+	padding: 1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-left: -.4em;
+}
+.tabs .content{
+	display: none;
+}
+.tabs .active .content{
+	background: #e3e4e6;
+	padding: .5em;
+	display: block;
+	position: absolute;
+	top: 2em;
+	left: -.35em;
+	width: 100%;
+	border-top: 4px #4b525c solid;
+	box-sizing: border-box;
+}
+
+=======
+>>>>>>> origin/AdamBranch
 .slider{
 	background: url(../images/control/slide.png);
 	background-size: 100% 100%;

@@ -178,7 +178,6 @@ C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\bin\CZAOSCore.pdb
 C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\bin\CZAOSMail.pdb
 C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\bin\CZBizObjects.pdb
 C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\bin\CZDataObjects.pdb
-C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\bin\Newtonsoft.Json.xml
 C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\bin\System.Net.Http.Formatting.xml
 C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\bin\System.Web.Http.xml
 C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\bin\System.Web.Http.WebHost.xml
