@@ -78,3 +78,46 @@ System.Web.HttpParseException (0x80004005): Only Content controls are allowed di
 02 Oct 2013 16:28:34 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 02 Oct 2013 16:28:34 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
 02 Oct 2013 16:28:34 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+03 Oct 2013 10:08:49 [ERROR] Errors - Exception occurred
+System.IO.FileNotFoundException: Could not load file or assembly 'Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed' or one of its dependencies. The system cannot find the file specified.
+File name: 'Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed'
+   at System.Net.Http.Formatting.JsonMediaTypeFormatter..ctor()
+   at System.Net.Http.Formatting.MediaTypeFormatterCollection.CreateDefaultFormatters()
+   at System.Net.Http.Formatting.MediaTypeFormatterCollection..ctor()
+   at System.Web.Http.HttpConfiguration.DefaultFormatters()
+   at System.Web.Http.HttpConfiguration..ctor(HttpRouteCollection routes)
+   at System.Web.Http.GlobalConfiguration.<.cctor>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at System.Web.Http.GlobalConfiguration.get_Configuration()
+   at System.Web.Http.RouteCollectionExtensions.MapHttpRoute(RouteCollection routes, String name, String routeTemplate, Object defaults, Object constraints, HttpMessageHandler handler)
+   at System.Web.Http.RouteCollectionExtensions.MapHttpRoute(RouteCollection routes, String name, String routeTemplate, Object defaults)
+   at CZAOSWeb.Global.Application_Start(Object sender, EventArgs e) in c:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\Global.asax.cs:line 31
+
+=== Pre-bind state information ===
+LOG: User = HMBNET\aperks
+LOG: DisplayName = Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+ (Fully-specified)
+LOG: Appbase = file:///C:/Users/aperks/Documents/GitHub/AOS/CZAOS/CZAOSWeb/
+LOG: Initial PrivatePath = C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\bin
+Calling assembly : System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35.
+===
+LOG: This bind starts in default load context.
+LOG: Using application configuration file: C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\web.config
+LOG: Using host configuration file: C:\Users\aperks\Documents\IISExpress\config\aspnet.config
+LOG: Using machine configuration file from C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config.
+LOG: Post-policy reference: Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/7515287e/c963cffd/Newtonsoft.Json.DLL.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/7515287e/c963cffd/Newtonsoft.Json/Newtonsoft.Json.DLL.
+LOG: Attempting download of new URL file:///C:/Users/aperks/Documents/GitHub/AOS/CZAOS/CZAOSWeb/bin/Newtonsoft.Json.DLL.
+LOG: Attempting download of new URL file:///C:/Users/aperks/Documents/GitHub/AOS/CZAOS/CZAOSWeb/bin/Newtonsoft.Json/Newtonsoft.Json.DLL.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/7515287e/c963cffd/Newtonsoft.Json.EXE.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/7515287e/c963cffd/Newtonsoft.Json/Newtonsoft.Json.EXE.
+LOG: Attempting download of new URL file:///C:/Users/aperks/Documents/GitHub/AOS/CZAOS/CZAOSWeb/bin/Newtonsoft.Json.EXE.
+LOG: Attempting download of new URL file:///C:/Users/aperks/Documents/GitHub/AOS/CZAOS/CZAOSWeb/bin/Newtonsoft.Json/Newtonsoft.Json.EXE.
+
+03 Oct 2013 10:12:50 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+03 Oct 2013 10:12:50 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+03 Oct 2013 10:12:51 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+03 Oct 2013 10:13:08 [INFO] Security - User test logged in to the admin module successfully.

@@ -184,3 +184,4 @@ C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\bin\System.Web.Http.WebHost.
 C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\obj\Debug\CZAOSWeb.csprojResolveAssemblyReference.cache
 C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\obj\Debug\CZAOSWeb.dll
 C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\obj\Debug\CZAOSWeb.pdb
+C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSWeb\bin\Newtonsoft.Json.xml
