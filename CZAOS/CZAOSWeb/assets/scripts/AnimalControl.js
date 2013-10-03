@@ -24,7 +24,7 @@
     var updateSelectedRegion = function (region, event) {
         //get the currently active item and remove the active class
         $('#region-knockout-scope .active').toggleClass('active');
-        $(event.target).toggleClass('active');
+        $(event.target.parentElement).toggleClass('active');
 
         app.RegionControl().SelectedRegion(region);
     };
@@ -68,7 +68,7 @@
     var updateSelectedExhibit = function (exhibit, event) {
         //get the currently active item and remove the active class
         $('#exhibit-knockout-scope .active').toggleClass('active');
-        $(event.target).toggleClass('active');
+        $(event.target.parentElement).toggleClass('active');
         
         app.ExhibitControl().SelectedExhibit(exhibit);
     };
@@ -113,7 +113,7 @@
     var updateSelectedAnimal = function (animal, event) {
         //get the currently active item and remove the active class
         $('#animal-knockout-scope .active').toggleClass('active');
-        $(event.target).toggleClass('active');
+        $(event.target.parentElement).toggleClass('active');
         app.AnimalControl().SelectedAnimal(animal);
     };
 
