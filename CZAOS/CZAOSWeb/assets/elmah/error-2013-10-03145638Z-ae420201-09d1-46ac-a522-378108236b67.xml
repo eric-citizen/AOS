@@ -1,0 +1,171 @@
+﻿<error errorId="ae420201-09d1-46ac-a522-378108236b67" host="HMBLATZ0185" type="System.Web.HttpException" message="Type 'System.Web.UI.WebControls.TableItemStyle' does not have a public property named 'Display'." source="System.Web" detail="System.Web.HttpParseException (0x80004005): Type 'System.Web.UI.WebControls.TableItemStyle' does not have a public property named 'Display'. ---&gt; System.Web.HttpParseException (0x80004005): Type 'System.Web.UI.WebControls.TableItemStyle' does not have a public property named 'Display'. ---&gt; System.Web.HttpException (0x80004005): Type 'System.Web.UI.WebControls.TableItemStyle' does not have a public property named 'Display'.&#xD;&#xA;   at System.Web.UI.ControlBuilder.AddProperty(String filter, String name, String value, Boolean mainDirectiveMode)&#xD;&#xA;   at System.Web.UI.ControlBuilder.PreprocessAttribute(String filter, String attribname, String attribvalue, Boolean mainDirectiveMode, Int32 line, Int32 column)&#xD;&#xA;   at System.Web.UI.ControlBuilder.PreprocessAttributes(ParsedAttributeCollection attribs)&#xD;&#xA;   at System.Web.UI.ControlBuilder.Init(TemplateParser parser, ControlBuilder parentBuilder, Type type, String tagName, String id, IDictionary attribs)&#xD;&#xA;   at System.Web.UI.ControlBuilder.CreateBuilderFromType(TemplateParser parser, ControlBuilder parentBuilder, Type type, String tagName, String id, IDictionary attribs, Int32 line, String sourceFileName)&#xD;&#xA;   at System.Web.UI.ControlBuilder.GetChildPropertyBuilder(String tagName, IDictionary attribs, Type&amp; childType, TemplateParser templateParser, Boolean defaultProperty)&#xD;&#xA;   at System.Web.UI.ControlBuilder.CreateChildBuilder(String filter, String tagName, IDictionary attribs, TemplateParser parser, ControlBuilder parentBuilder, String id, Int32 line, VirtualPath virtualPath, Type&amp; childType, Boolean defaultProperty)&#xD;&#xA;   at System.Web.UI.TemplateParser.ProcessBeginTag(Match match, String inputText)&#xD;&#xA;   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)&#xD;&#xA;   at System.Web.UI.TemplateParser.ProcessException(Exception ex)&#xD;&#xA;   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)&#xD;&#xA;   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)&#xD;&#xA;   at System.Web.UI.TemplateParser.ProcessException(Exception ex)&#xD;&#xA;   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)&#xD;&#xA;   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)&#xD;&#xA;   at System.Web.UI.TemplateParser.ParseFile(String physicalPath, VirtualPath virtualPath)&#xD;&#xA;   at System.Web.UI.TemplateParser.ParseInternal()&#xD;&#xA;   at System.Web.UI.TemplateParser.Parse()&#xD;&#xA;   at System.Web.Compilation.BaseTemplateBuildProvider.get_CodeCompilerType()&#xD;&#xA;   at System.Web.Compilation.BuildProvider.GetCompilerTypeFromBuildProvider(BuildProvider buildProvider)&#xD;&#xA;   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()&#xD;&#xA;   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()&#xD;&#xA;   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)&#xD;&#xA;   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)&#xD;&#xA;   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)&#xD;&#xA;   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)&#xD;&#xA;   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)&#xD;&#xA;   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)&#xD;&#xA;   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)&#xD;&#xA;   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="test" time="2013-10-03T14:56:38.2409762Z" statusCode="500" webHostHtmlMessage="&lt;!DOCTYPE html&gt;&#xD;&#xA;&lt;html&gt;&#xD;&#xA;    &lt;head&gt;&#xD;&#xA;        &lt;title&gt;Parser Error&lt;/title&gt;&#xD;&#xA;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;&#xD;&#xA;        &lt;style&gt;&#xD;&#xA;         body {font-family:&quot;Verdana&quot;;font-weight:normal;font-size: .7em;color:black;} &#xD;&#xA;         p {font-family:&quot;Verdana&quot;;font-weight:normal;color:black;margin-top: -5px}&#xD;&#xA;         b {font-family:&quot;Verdana&quot;;font-weight:bold;color:black;margin-top: -5px}&#xD;&#xA;         H1 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:18pt;color:red }&#xD;&#xA;         H2 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:14pt;color:maroon }&#xD;&#xA;         pre {font-family:&quot;Consolas&quot;,&quot;Lucida Console&quot;,Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}&#xD;&#xA;         .marker {font-weight: bold; color: black;text-decoration: none;}&#xD;&#xA;         .version {color: gray;}&#xD;&#xA;         .error {margin-bottom: 10px;}&#xD;&#xA;         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }&#xD;&#xA;         @media screen and (max-width: 639px) {&#xD;&#xA;          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }&#xD;&#xA;         }&#xD;&#xA;         @media screen and (max-width: 479px) {&#xD;&#xA;          pre { width: 280px; }&#xD;&#xA;         }&#xD;&#xA;        &lt;/style&gt;&#xD;&#xA;    &lt;/head&gt;&#xD;&#xA;&#xD;&#xA;    &lt;body bgcolor=&quot;white&quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;span&gt;&lt;H1&gt;Server Error in '/' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h2&gt; &lt;i&gt;Parser Error&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;&#xD;&#xA;&#xD;&#xA;            &lt;font face=&quot;Arial, Helvetica, Geneva, SunSans-Regular, sans-serif &quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Description: &lt;/b&gt;An error occurred during the parsing of a resource required to service this request.   Please review the following specific parse error details and modify your source file appropriately.&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Parser Error Message: &lt;/b&gt;Type 'System.Web.UI.WebControls.TableItemStyle' does not have a public property named 'Display'.&lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Source Error:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;Line 65:                     &amp;lt;/ItemTemplate&amp;gt;&#xD;&#xA;Line 66:                     &amp;lt;HeaderStyle HorizontalAlign=&amp;quot;Left&amp;quot; /&amp;gt;&#xD;&#xA;&lt;font color=red&gt;Line 67:                     &amp;lt;ItemStyle HorizontalAlign=&amp;quot;Left&amp;quot; Width=&amp;quot;70px&amp;quot; Display=&amp;quot;none&amp;quot;/&amp;gt;&#xD;&#xA;&lt;/font&gt;Line 68:                 &amp;lt;/asp:TemplateField&amp;gt;&#xD;&#xA;Line 69: &lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Source File: &lt;/b&gt; /controls/UserGrid.ascx&lt;b&gt; &amp;nbsp;&amp;nbsp; Line: &lt;/b&gt; 67&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;    &lt;/body&gt;&#xD;&#xA;&lt;/html&gt;&#xD;&#xA;">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_CONTENT_LENGTH:0&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip,deflate,sdch&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8&#xD;&#xA;HTTP_COOKIE:ASP.NET_SessionId=ykd3b4cht1ualyqr1x0gz4s4; CZ_AUTHENT=0990ECEC7AE4699A116748634B9955311A1202F070C518B7550AE91AD6AFD3A523166AAE52D171DE40285382237471AD755A79EDF11F1D6E6E6DB79C0551DC1376922B997B3C920023B26F2FB66D2D447217D73E; CZ_ROLES=HjDShzm7HrEyZtWk-wXlb8A5VjoTdmsu1pPQSNM01I8RtHL_ssM6FKXZa9qZCiwp3BAt8EQvuDJvcXCKxvm0UDkKKKv63vBy6A4CxUnsiYDJvutEhyVzhHU1Zpt9BUemS30x8T7kvJ5L3GDt_oEK20Rd7ekln4KeMUtiaXaLi14q0_nIdWCj6ZlEs-eYvZuYl1FTsWfmhnjNyJT7ptmH5YcELfgs07gYAsiBd1OBrz2NsJQZHxuurh4lmmHOSyaZUcYdIMqCMn0-NCw4HsytQmANhh94SdToiyRcPIvbfSBuOmrHZEHpvm1FUE4DnSYH3ug1IoCpEswYUMSTlyPUxMumE8lPv6mpTOX_EX9GzJ5qpizEBaMNcpTVSDQaQboXnNSJt9DAxuZ64lEJTCZNd_8HTeUSplarTPOn1Z5fnqQWliG00DSahbXCWujVsJWeZTKEO63KdqRG2Onh1A_WVtpgNKKMufPRPH4niYynWKacZa9Q0&#xD;&#xA;HTTP_HOST:localhost:53637&#xD;&#xA;HTTP_REFERER:http://localhost:53637/admin/observation/&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Content-Length: 0&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip,deflate,sdch&#xD;&#xA;Accept-Language: en-US,en;q=0.8&#xD;&#xA;Cookie: ASP.NET_SessionId=ykd3b4cht1ualyqr1x0gz4s4; CZ_AUTHENT=0990ECEC7AE4699A116748634B9955311A1202F070C518B7550AE91AD6AFD3A523166AAE52D171DE40285382237471AD755A79EDF11F1D6E6E6DB79C0551DC1376922B997B3C920023B26F2FB66D2D447217D73E; CZ_ROLES=HjDShzm7HrEyZtWk-wXlb8A5VjoTdmsu1pPQSNM01I8RtHL_ssM6FKXZa9qZCiwp3BAt8EQvuDJvcXCKxvm0UDkKKKv63vBy6A4CxUnsiYDJvutEhyVzhHU1Zpt9BUemS30x8T7kvJ5L3GDt_oEK20Rd7ekln4KeMUtiaXaLi14q0_nIdWCj6ZlEs-eYvZuYl1FTsWfmhnjNyJT7ptmH5YcELfgs07gYAsiBd1OBrz2NsJQZHxuurh4lmmHOSyaZUcYdIMqCMn0-NCw4HsytQmANhh94SdToiyRcPIvbfSBuOmrHZEHpvm1FUE4DnSYH3ug1IoCpEswYUMSTlyPUxMumE8lPv6mpTOX_EX9GzJ5qpizEBaMNcpTVSDQaQboXnNSJt9DAxuZ64lEJTCZNd_8HTeUSplarTPOn1Z5fnqQWliG00DSahbXCWujVsJWeZTKEO63KdqRG2Onh1A_WVtpgNKKMufPRPH4niYynWKacZa9Q0&#xD;&#xA;Host: localhost:53637&#xD;&#xA;Referer: http://localhost:53637/admin/observation/&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/17/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS Repo\CZAOS\CZAOSWeb\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="Forms" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="test" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="test" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="test" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="17" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/17" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/admin/users/default.aspx" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS Repo\CZAOS\CZAOSWeb\admin\users\default.aspx" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="1104" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/admin/users/default.aspx" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="53637" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/8.0" />
+    </item>
+    <item name="URL">
+      <value string="/admin/users/default.aspx" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip,deflate,sdch" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="ASP.NET_SessionId=ykd3b4cht1ualyqr1x0gz4s4; CZ_AUTHENT=0990ECEC7AE4699A116748634B9955311A1202F070C518B7550AE91AD6AFD3A523166AAE52D171DE40285382237471AD755A79EDF11F1D6E6E6DB79C0551DC1376922B997B3C920023B26F2FB66D2D447217D73E; CZ_ROLES=HjDShzm7HrEyZtWk-wXlb8A5VjoTdmsu1pPQSNM01I8RtHL_ssM6FKXZa9qZCiwp3BAt8EQvuDJvcXCKxvm0UDkKKKv63vBy6A4CxUnsiYDJvutEhyVzhHU1Zpt9BUemS30x8T7kvJ5L3GDt_oEK20Rd7ekln4KeMUtiaXaLi14q0_nIdWCj6ZlEs-eYvZuYl1FTsWfmhnjNyJT7ptmH5YcELfgs07gYAsiBd1OBrz2NsJQZHxuurh4lmmHOSyaZUcYdIMqCMn0-NCw4HsytQmANhh94SdToiyRcPIvbfSBuOmrHZEHpvm1FUE4DnSYH3ug1IoCpEswYUMSTlyPUxMumE8lPv6mpTOX_EX9GzJ5qpizEBaMNcpTVSDQaQboXnNSJt9DAxuZ64lEJTCZNd_8HTeUSplarTPOn1Z5fnqQWliG00DSahbXCWujVsJWeZTKEO63KdqRG2Onh1A_WVtpgNKKMufPRPH4niYynWKacZa9Q0" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:53637" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:53637/admin/observation/" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="ASP.NET_SessionId">
+      <value string="ykd3b4cht1ualyqr1x0gz4s4" />
+    </item>
+    <item name="CZ_AUTHENT">
+      <value string="0990ECEC7AE4699A116748634B9955311A1202F070C518B7550AE91AD6AFD3A523166AAE52D171DE40285382237471AD755A79EDF11F1D6E6E6DB79C0551DC1376922B997B3C920023B26F2FB66D2D447217D73E" />
+    </item>
+    <item name="CZ_ROLES">
+      <value string="HjDShzm7HrEyZtWk-wXlb8A5VjoTdmsu1pPQSNM01I8RtHL_ssM6FKXZa9qZCiwp3BAt8EQvuDJvcXCKxvm0UDkKKKv63vBy6A4CxUnsiYDJvutEhyVzhHU1Zpt9BUemS30x8T7kvJ5L3GDt_oEK20Rd7ekln4KeMUtiaXaLi14q0_nIdWCj6ZlEs-eYvZuYl1FTsWfmhnjNyJT7ptmH5YcELfgs07gYAsiBd1OBrz2NsJQZHxuurh4lmmHOSyaZUcYdIMqCMn0-NCw4HsytQmANhh94SdToiyRcPIvbfSBuOmrHZEHpvm1FUE4DnSYH3ug1IoCpEswYUMSTlyPUxMumE8lPv6mpTOX_EX9GzJ5qpizEBaMNcpTVSDQaQboXnNSJt9DAxuZ64lEJTCZNd_8HTeUSplarTPOn1Z5fnqQWliG00DSahbXCWujVsJWeZTKEO63KdqRG2Onh1A_WVtpgNKKMufPRPH4niYynWKacZa9Q0" />
+    </item>
+  </cookies>
+</error>
