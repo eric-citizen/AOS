@@ -59,13 +59,13 @@
                     <ItemStyle HorizontalAlign="Left" Width="100px" />
                 </asp:TemplateField>
                                 
-                <%--<asp:TemplateField HeaderText="Expiration">                   
+                <asp:TemplateField HeaderText="Expiration">                   
                     <ItemTemplate>    
                         <asp:Literal runat="server" ID="litExpDate" ></asp:Literal>                        
                     </ItemTemplate>
                     <HeaderStyle HorizontalAlign="Left" />
-                    <ItemStyle HorizontalAlign="Left" Width="70px"/>
-                </asp:TemplateField>--%>
+                    <ItemStyle HorizontalAlign="Left" Width="70px" />
+                </asp:TemplateField>
 
                 <asp:ButtonField Text="Unlock" CommandName="UnlockUser">
                     <ItemStyle HorizontalAlign="Center" Width="60px" />
