@@ -149,6 +149,7 @@ tr.hilite-row:nth-child(even) td{
     -moz-box-sizing: border-box;
     padding: 15px;
     padding-right: 0px;
+    vertical-align: top;
 }
 .step .title{
     font-family: "Syncopate";
