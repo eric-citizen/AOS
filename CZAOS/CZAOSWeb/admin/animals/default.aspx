@@ -1,94 +1,59 @@
-﻿<%@ Page Title="Manage Animals" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="CZAOSWeb.admin.Animals._default" %>
-<%@ Register Src="~/controls/GridConfirmControl.ascx" TagPrefix="uc1" TagName="GridConfirmControl" %>
-<%@ Register Src="~/controls/GridPager.ascx" TagPrefix="uc1" TagName="GridPager" %>
-<%@ Register Src="~/controls/AlphabetFilter.ascx" TagPrefix="uc1" TagName="AlphabetFilter" %>
+﻿<%@ Page Title="Manage Animals" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="CZAOSWeb.admin.animals.index" %>
+<%@ Import Namespace="System.Web.Http.Routing" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-
-    <a class="add-link ui-dialog-link" href="/admin/animals/edit-animal.aspx" data-args="500, 700, true, null, 1" title="Add New Animal">Add New Animal</a>
-
-    <div class="alphabet-container">  
-        <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
+<asp:Content runat="server" ContentPlaceHolderID="body">
+    <div class="steps">
+        <div class="title_bar">
+            Add / Modify / Delete Set-Up Data :: <span class="section_name">Animals</span>
+            <nav class="menu_drop">
+                <ul>
+                    <li><a href="Animals">Animals</a></li>
+                    <li><a href="Habitats">Habitats</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="step" id="region-knockout-scope">
+            <div class="title">Region</div>
+            <div class="add-link ui-dialog-link" href="/admin/animal-regions/edit-region.aspx" data-args="270, 600, true, null, 1">Add New Region</div>
+            <ul id="step_1" data-bind="foreach: Regions">
+                <li style="display: none" data-bind="visible: Active">
+                    <span data-bind="text: AnimalRegionName, click: $root.UpdateSelectedRegion"></span>
+                    <span class="ui-dialog-link gv-edit-link" data-args="270, 600, true, null, 1" data-bind="click: $root.Edit, attr: { href: '/admin/animal-regions/edit-region.aspx?regionId=' + $data.AnimalRegionCode() }">Edit</span>
+                </li>
+            </ul>
+        </div>
+        <div class="step" id="exhibit-knockout-scope">
+            <div class="title">Exhibit</div>
+            <div class="add-link ui-dialog-link" href="/admin/exhibits/edit-exhibit.aspx" data-args="350, 700, true, null, 1">Add New Exhibit</div>
+            <ul id="step_2" data-bind="foreach: Exhibits">
+                <li style="display: none" data-bind="visible: $root.Display($data)">
+                    <span data-bind="text: ExhibitName, click: $root.UpdateSelectedExhibit"></span>
+                    <span class="ui-dialog-link gv-edit-link" data-args="250, 700, true, null, 1" data-bind="click: $root.Edit, attr: {href: '/admin/exhibits/edit-exhibit.aspx?exId=' + $data.ExhibitID() }">Edit</span>
+                </li>
+            </ul>
+        </div>
+        <div class="step" id="animal-knockout-scope">
+            <div class="title">Animal</div>
+            <div class="add-link ui-dialog-link" href="/admin/animals/edit-animal.aspx" data-args="500, 700, true, null, 1">Add New Animal</div>
+            <ul id="step_3" data-bind="foreach: Animals">
+                <li style="display: none" data-bind="visible: $root.Display($data)">
+                    <span data-bind="text: CommonName, click: $root.UpdateSelectedAnimal"></span>
+                    <span class="ui-dialog-link gv-edit-link" data-args="500, 700, true, null, 1" data-bind="click: $root.Edit, attr: { href: '/admin/animals/edit-animal.aspx?animalId=' + $data.AnimalID() }">Edit</span>
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <div class="pr">
-        <label class="required">Free Text Search:</label>
-        <span style="display:inline-block; width:220px;">
-            <mack:RequiredTextBox runat="server" ID="txtFreeText" MaxLength="50" Width="150px" ValidationGroup="freetext" ValidatorCssClass="error" ValidatorToolTip="Please enter search text"></mack:RequiredTextBox>
-        </span>
-        <mack:WaitButton runat="server" ID="btnSearch" Text="Search" CssClass="button" ValidationGroup="freetext" OnClick="btnSearch_Click"/>
-        <asp:LinkButton runat="server" ID="lnkClear" Text="Clear" OnClick="lnkClear_Click"></asp:LinkButton>
-    </div>
-
-    <asp:ObjectDataSource ID="cztDataSource" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting"
-        SelectMethod="GetItemCollection" TypeName="CZBizObjects.AnimalList"
-        EnablePaging="True" SortParameterName="sortExpression" SelectCountMethod="GetCount" OldValuesParameterFormatString="original_{0}">
-       
-        <SelectParameters>        
-            <asp:Parameter Name="filterExpression" type="string" DefaultValue="" />
-        </SelectParameters>
-        
-    </asp:ObjectDataSource>
-
-    <mack:GridViewSortExtender runat="server" ID="gvse"
-        AscendingImageUrl="~/images/down.png" DescendingImageUrl="~/images/up.png" GridViewID="gvAnimals" TransparentImageUrl="~/images/transparent.png" />
-
-    <asp:GridView ID="gvAnimals" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="gridview"
-        PageSize="20" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false" 
-        DataKeyNames="AnimalID" OnRowDataBound="gvAnimals_RowDataBound" OnRowCommand="gvAnimals_RowCommand">
-        <Columns>
-
-            <asp:BoundField DataField="CommonName" SortExpression="CommonName" HeaderText="Common Name">                
-            </asp:BoundField>
-            
-            <asp:BoundField DataField="HouseName" SortExpression="HouseName" HeaderText="House Name">
-                <ItemStyle Width="300px" />
-            </asp:BoundField>  
-
-            <asp:BoundField DataField="ZooID" SortExpression="ZooID" HeaderText="Zoo ID">
-                <ItemStyle Width="80px" />
-            </asp:BoundField>
-                
-            <asp:TemplateField SortExpression="AnimalRegion" HeaderText="Animal Region" ItemStyle-Width="250px">                    
-                <ItemTemplate>
-                    <asp:Label runat="server" ID="lblAnimalRegion" Text='<%# Bind("AnimalRegion") %>'></asp:Label>
-                    <asp:HyperLink runat="server" ID="lnkAnimalRegionEdit" CssClass="ui-dialog-link gv-edit-link-inline" data-args="270, 600, true, null, 1" Text="Edit" ToolTip="Edit Animal Region" NavigateUrl='<%# Bind("AnimalRegionCode","~/admin/animal-regions/edit-region.aspx?regionId={0}") %>'></asp:HyperLink>                
-                </ItemTemplate> 
-            </asp:TemplateField>
-
-            <asp:TemplateField SortExpression="Active" HeaderText="Active" ItemStyle-Width="50px" HeaderStyle-CssClass="tac" ItemStyle-CssClass="tac cell-wait-click">                    
-                <ItemTemplate>
-                    <asp:CheckBox runat="server" ID="activeCheckBox" Checked='<%# Bind("Active") %>' OnCheckedChanged="IsActiveCheckChanged" AutoPostBack="true" />
-                </ItemTemplate> 
-            </asp:TemplateField>
-
-            <asp:TemplateField>
-                <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="500, 700, true, null, 1" Text="Edit" ToolTip="Edit Animal" NavigateUrl='<%# Bind("AnimalID","~/admin/animals/edit-animal.aspx?animalId={0}") %>'></asp:HyperLink>
-                </ItemTemplate> 
-                <ItemStyle Width="60px" CssClass="tac" />               
-            </asp:TemplateField>
-
-            <asp:TemplateField ShowHeader="False">
-                <ItemTemplate>
-                    <uc1:GridConfirmControl runat="server" ID="GridConfirmControl" CommandArgument='<%#Bind("AnimalID") %>' CommandName="DeleteAnimal" />
-                </ItemTemplate>                
-                <ItemStyle Width="60px" CssClass="tac" />
-            </asp:TemplateField>
-
-        </Columns>
-
-        
-    </asp:GridView>
-
-    <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvAnimals" />
-
-    <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvAnimals" Text="No records found!"></mack:MessageDiv>
-
-     
+    
 
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="scripts" runat="server">
+
+<asp:Content ContentPlaceHolderID="scripts" runat="server">
+    <script src="/assets/scripts/AnimalControl.js"></script>
+    <script language="javascript">
+        $(function() {
+            window.App.RegionControl().Configure();
+            window.App.ExhibitControl().Configure();
+            window.App.AnimalControl().Configure();
+        });
+    </script>
 </asp:Content>

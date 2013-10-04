@@ -21,6 +21,10 @@
 
     };
 
+    var edit = function (region, event) {
+        event.preventDefault();
+        CZAOSUIDialogs.ShowDialogFromArgs($(event.target));
+    };
     var updateSelectedRegion = function (region, event) {
         //get the currently active item and remove the active class
         $('#region-knockout-scope .active').toggleClass('active');
@@ -32,6 +36,7 @@
     app.RegionControl().UpdateSelectedRegion = updateSelectedRegion;
     app.RegionControl().Configure = configure;
     app.RegionControl().CreateNew = createNew;
+    app.RegionControl().Edit = edit;
 })(window.App);
 
 (function (app) {
@@ -56,6 +61,11 @@
     var createNew = function () {
 
     };
+
+    var edit = function (exhibit, event) {
+        event.preventDefault();
+        CZAOSUIDialogs.ShowDialogFromArgs($(event.target));
+    };
     
     var display = function (exhibit) {
         if (!app.RegionControl().SelectedRegion().AnimalRegionCode) {
@@ -77,6 +87,7 @@
     app.ExhibitControl().UpdateSelectedExhibit = updateSelectedExhibit;
     app.ExhibitControl().Configure = configure;
     app.ExhibitControl().CreateNew = createNew;
+    app.ExhibitControl().Edit = edit;
 })(window.App);
 
 (function (app) {
@@ -101,6 +112,11 @@
     var createNew = function () {
 
     };
+    
+    var edit = function (animal, event) {
+        event.preventDefault();
+        CZAOSUIDialogs.ShowDialogFromArgs($(event.target));
+    };
 
     var display = function (animal) {
         if (!app.RegionControl().SelectedRegion().AnimalRegionCode) {
@@ -121,4 +137,5 @@
     app.AnimalControl().UpdateSelectedAnimal = updateSelectedAnimal;
     app.AnimalControl().Configure = configure;
     app.AnimalControl().CreateNew = createNew;
+    app.AnimalControl().Edit = edit;
 })(window.App);
