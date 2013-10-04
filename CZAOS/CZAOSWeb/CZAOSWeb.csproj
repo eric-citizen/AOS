@@ -102,8 +102,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\animal-regions\default.aspx" />
+    <Content Include="admin\animals\old_default.aspx" />
     <Content Include="admin\animals\default.aspx" />
-    <Content Include="admin\animals\index.aspx" />
     <Content Include="admin\behavior\behaviors.aspx" />
     <Content Include="admin\behavior\default.aspx" />
     <Content Include="admin\changes\default.aspx" />
@@ -262,19 +262,19 @@
     <Compile Include="admin\animal-regions\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\animals\old_default.aspx.cs">
+      <DependentUpon>old_default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\animals\old_default.aspx.designer.cs">
+      <DependentUpon>old_default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\animals\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\animals\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\animals\index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\animals\index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\behavior\behaviors.aspx.cs">
       <DependentUpon>behaviors.aspx</DependentUpon>
