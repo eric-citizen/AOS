@@ -208,14 +208,16 @@ tr.hilite-row:nth-child(even) td{
   background-image: linear-gradient(to bottom,#cccccc, #999999);
 }
 .add-link{
-    border: 1px solid #888;
     display: inline-block;
-    padding: .2em .5em;
-    padding-bottom: .15em;
-    /*padding-left: 2em;*/
+    padding: 1em;
+    padding-left: 3em;
     border-radius: .5em;
     margin: .5em 0;
-    background: #eee;
+    color: #a4a7ad;
+    background: url(../images/add.png) center left no-repeat;
+}
+.add-link:hover{
+    color: #444;
 }
 /*Fading slideStrip CSS*/
 ul.fade-strip {
