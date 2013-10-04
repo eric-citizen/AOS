@@ -154,6 +154,7 @@ tr.hilite-row:nth-child(even) td{
 }
 .step{
     display: inline-block;
+    vertical-align: top;
     width: 32%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -174,6 +175,9 @@ tr.hilite-row:nth-child(even) td{
     background: #fff;
 }
 
+.step li.active {
+    background: #5195a3;
+}
 /* General slideStrip CSS*/
 
 .slideStrip{
