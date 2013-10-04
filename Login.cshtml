@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Master.cshtml";
+}
+
+<div>
+    <label><input id="username" type="text"/>Username</label>
+    <label><input id="password" type="password"/>Password</label>
+    <input type="button" value="Login" id="login-button"/>
+</div>
+
+<script type="text/javascript" src="Scripts/LoginControl.js"></script>
+<script>
+    $().ready(function () {
+        LoginControl.Configure();
+    });
+</script>

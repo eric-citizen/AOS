@@ -6,7 +6,7 @@
         <asp:MultiView runat="server" ID="mvLogin" ActiveViewIndex="0">
         <asp:View runat="server" ID="vwLogin">
 
-            <fieldset class="form-fieldset">
+            <fieldset class="form-fieldset" id="login">
                 <legend>Administrative Login</legend>
 
                 <ul>
