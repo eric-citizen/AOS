@@ -29,105 +29,7 @@ input{
 }
 select{
     min-width: 150px;
-}
-select, textarea  {
-    font-size:12px;
-    padding: 2px 0 2px 3px;
-}
-select{
-    -webkit-appearance: none;
-    border: 2px solid #a2a6ad;
-    font-family: "ABeeZee";
-    border-radius: 2em;
-    padding: .5em 1em;
-}
-
-textarea  {    
-    line-height:18px;
-}
-.button{
-    border: 1px solid #5195a3;
-    font-family: "Syncopate";
-    text-transform: uppercase;
-    color: #fff;
-    background: #5195a3;
-    padding: .5em 1em .3em;
-    font-size: 14px;
-    cursor: pointer;
-}
-.button:hover{
-    background: #62b7c7;
-}
-.form-fieldset label{
-    display: block;
-    color: #492210;
-    font-family: "Syncopate";
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: -3px;
-}
-.form-fieldset legend{
-    display: none;
-}
-.form-fieldset li{
-    padding-bottom: 10px;
-}
-tr, td, th, .step li{
-    padding: 1em 1em 1em 2em;
-    text-align: left;
-    background: #fff;
-    border-bottom: 1px solid #c5c7ca;
-}
-th{
-    background: #b3b6bb;
-    color: #fff;
-}
-th a{
-    color: #fff;
-    cursor: pointer;
-}
-tr.hilite-row, tr.hilite-row td{
-    background: #ddd;
-    cursor: pointer;
-}
-tr:nth-child(even) td{
-    background: #efefef;
-}
-tr.hilite-row:nth-child(even) td{
-    background: #ccc;
-}
-.step li{
-    padding-left: 1em;@import url(http://fonts.googleapis.com/css?family=ABeeZee|Syncopate:400,700);
-
-body {
-    font-family: 'ABeeZee', Geneva, 'DejaVu Sans', sans-serif;
-    font-size:12px;
-    line-height:18px;
-}
-h1{
-    font-family: "Syncopate";
-    text-transform: uppercase;
-    font-size: 16px;
-}
-#body-container {
-    padding:20px;
-}
-a{
-    text-decoration: none;
-    color:#0097FB;
-}
-a:hover{
-    text-decoration: underline;
-    color:#2D2D9F;
-}
-input{
-    border: 2px solid #a2a6ad;
-    font-family: "ABeeZee";
-    border-radius: 2em;
-    padding: .5em 1em;
-}
-select{
-    min-width: 150px;
+    background: #fff url(../images/dropdown-arrow.png) center right no-repeat;
 }
 select, textarea  {
     font-size:12px;
@@ -238,8 +140,17 @@ tr.hilite-row:nth-child(even) td{
     padding: 1em;
 }
 .menu_drop:before{
-    content:'\2630';
+    content: '\2630';
     padding: 5px;
+}
+.menu_drop.topnav{
+    padding: 7px;
+    z-index: 500;
+}
+#lnkLogout{
+    position: absolute;
+    top: 7px;
+    right: 50px;
 }
 .step{
     display: inline-block;
@@ -248,7 +159,6 @@ tr.hilite-row:nth-child(even) td{
     -moz-box-sizing: border-box;
     padding: 15px;
     padding-right: 0px;
-    vertical-align: top;
 }
 .step .title{
     font-family: "Syncopate";
@@ -263,72 +173,227 @@ tr.hilite-row:nth-child(even) td{
     overflow: scroll;
     background: #fff;
 }
+
+/* General slideStrip CSS*/
+
+.slideStrip{
+    position: relative;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
 }
-.step li.active{
-    background: #4f909e;
+
+.slideStrip ul li img{
+    width: 100%;
 }
-.steps{
-    background:#e3e4e6;
+
+.controls .button {
+  font-size: 16px;
+  width: 1em;
+  height: 1em;
+  background-color: #ebebeb;
+  box-shadow: inset 0 0.1em 0.2em rgba(0, 0, 0, 0.3), inset 0.1em 0.2em 0.4em rgba(120, 120, 60, 0.1), inset -0.1em -0.2em 0.4em rgba(40, 80, 100, 0.1), 0 0.1em 0.2em rgba(255, 255, 255, 0.8);
+  border-radius: 0.5em;
+  margin: 0.2em;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
 }
-.steps .title_bar{
-    background: #b3b6bb;
-    color:#4b525c;
-    padding: 15px;
-    font-size: 14px;
+.controls .button.active {
+  background-color: #cccccc;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cccccc), color-stop(100%, #999999));
+  background-image: -webkit-linear-gradient(top, #cccccc, #999999);
+  background-image: linear-gradient(to bottom,#cccccc, #999999);
 }
-.menu_drop{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    font-size: 20px;
-    text-align: right;
-    padding: 15px;
-}
-.menu_drop:hover:before{
-    content:'\2630';
-    padding: 5px;
-    background: #e3e4e6;
-}
-.menu_drop:hover ul{
-    display: block;
-    background: #e3e4e6;
-    border: 1px solid #fff;
-}
-.menu_drop ul{
-    display: none;
-}
-.menu_drop:hover ul li{
-    font-size: 12px;
-    text-align: left;
-}
-.menu_drop ul li a{
-    width: 150px;
+.add-link{
+    border: 1px solid #888;
     display: inline-block;
+    padding: .2em .5em;
+    padding-bottom: .15em;
+    /*padding-left: 2em;*/
+    border-radius: .5em;
+    margin: .5em 0;
+    background: #eee;
+}
+/*Fading slideStrip CSS*/
+ul.fade-strip {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width:100%;
+}
+ul.fade-strip  li {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    opacity: 0;
+    z-index: 0;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity  .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity  .5s;
+    transition: opacity .5s;
+}
+
+ul.fade-strip  li.active{
+    z-index: 1;
+    opacity:1;
+}
+
+/*Sliding slideStrip CSS*/
+ul.slide-strip {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    -webkit-transition: -webkit-transform .5s;
+    -moz-transition: -moz-transform  .5s;
+    -ms-transition: -ms-transform  .5s;
+    -o-transition: -o-transform  .5s;
+    transition: transform  .5s;
+    -webkit-backface-visibility: hidden;
+}
+ul.slide-strip li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0em;
+    overflow: hidden;
+}
+
+
+body{
+    margin: 0;
+    background: #e4e5e9;
+    font-family: "ABeeZee", Arial, sans-serif;
+}
+#slide, #slide2, #slide3{
+    width:33%;
+    text-align: center;
+}
+#slide li{
+    padding-bottom: 15%;
+}
+#slide img, #slide2 img, #slide3 img{
+    padding: 20%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+#slide img{
+    padding-bottom: 5%;
+}
+header{
+    background: #4a525c;
+    color: #fff;
+    padding: .5em;
+}
+#backdrop{
+    background: url(../images/background/gradient.png), url(../images/background/sky.jpg);
+    background-size: 100% 100%, cover;
     padding: 1em;
 }
-.menu_drop:before{
-    content:'\2630';
-    padding: 5px;
+h1,h2,h3,h4{
+    margin:0;
+    padding: 0;
+    font-family: 'Syncopate', sans-serif;
+    text-transform: uppercase;
 }
-.step{
+h1{
+    padding-top: .5em;
+    line-height: .65em;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.8em;
+    text-shadow: 0 1px 8px rgba(0,0,0,.3);
+}
+h2{
+    font-size: 1.2em;
+    padding-top: .5em;
+}
+
+hr{
+    border: 1px solid #4a525c;
+    border-bottom: 0;
+}
+
+.tabs, .tabs li{
+    padding:0;
+    margin:0;
+    list-style: none;
     display: inline-block;
-    width: 32%;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    padding: 15px;
-    padding-right: 0px;
     vertical-align: top;
 }
-.step .title{
-    font-family: "Syncopate";
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 700;
-    color: #444;
-    padding-bottom: 3px;
+.tabs{
+    margin-left: .4em;
+    position: relative;
+    width: 100%;
+    margin-top: 1em;
 }
-.step ul{
-    height: 280px;
-    overflow: scroll;
-    background: #fff;
+.tabs .active h2{
+    background: #4b525c;
+    color: #fff;
+}
+.tabs h2{
+    font-size: .8em;
+    background: #b3b6bb;
+    color: #4b525c;
+    border-radius: .4em;
+    padding: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left: -.4em;
+}
+.tabs .content{
+    display: none;
+}
+.tabs .active .content{
+    background: #e3e4e6;
+    padding: .5em;
+    display: block;
+    position: absolute;
+    top: 2em;
+    left: -.35em;
+    width: 100%;
+    border-top: 4px #4b525c solid;
+    box-sizing: border-box;
+}
+#div-dialog{
+    background: #e4e5e9!important;
+}
+.slider{
+    background: url(../images/control/slide.png);
+    background-size: 100% 100%;
+}
+.slideStrip{
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+}
+#login{
+    margin: 0 auto;
+    margin-top: 20px;
+    width:320px;
+}
+#login input[type='text'],#login input[type='password']{
+    width:92%;
+}
+header ul, header li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1px;
+}
+header li{
+    width: 32px;
+    display: inline-block;
+    margin-right: 10px;
+}
+header li img{
+    width: 100%;
 }
