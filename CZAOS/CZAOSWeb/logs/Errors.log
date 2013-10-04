@@ -1,20 +1,10 @@
-03 Oct 2013 10:56:38 [ERROR] Errors - Exception occurred 
+04 Oct 2013 11:45:55 [ERROR] Errors - Exception occurred 
 (Username = test)
-System.Web.HttpParseException (0x80004005): Type 'System.Web.UI.WebControls.TableItemStyle' does not have a public property named 'Display'. ---> System.Web.HttpParseException (0x80004005): Type 'System.Web.UI.WebControls.TableItemStyle' does not have a public property named 'Display'. ---> System.Web.HttpException (0x80004005): Type 'System.Web.UI.WebControls.TableItemStyle' does not have a public property named 'Display'.
-   at System.Web.UI.ControlBuilder.AddProperty(String filter, String name, String value, Boolean mainDirectiveMode)
-   at System.Web.UI.ControlBuilder.PreprocessAttribute(String filter, String attribname, String attribvalue, Boolean mainDirectiveMode, Int32 line, Int32 column)
-   at System.Web.UI.ControlBuilder.PreprocessAttributes(ParsedAttributeCollection attribs)
-   at System.Web.UI.ControlBuilder.Init(TemplateParser parser, ControlBuilder parentBuilder, Type type, String tagName, String id, IDictionary attribs)
-   at System.Web.UI.ControlBuilder.CreateBuilderFromType(TemplateParser parser, ControlBuilder parentBuilder, Type type, String tagName, String id, IDictionary attribs, Int32 line, String sourceFileName)
-   at System.Web.UI.ControlBuilder.GetChildPropertyBuilder(String tagName, IDictionary attribs, Type& childType, TemplateParser templateParser, Boolean defaultProperty)
-   at System.Web.UI.ControlBuilder.CreateChildBuilder(String filter, String tagName, IDictionary attribs, TemplateParser parser, ControlBuilder parentBuilder, String id, Int32 line, VirtualPath virtualPath, Type& childType, Boolean defaultProperty)
-   at System.Web.UI.TemplateParser.ProcessBeginTag(Match match, String inputText)
-   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
-   at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+System.Web.HttpParseException (0x80004005): The server tag is not well formed. ---> System.Web.HttpException (0x80004005): The server tag is not well formed.
+   at System.Web.UI.TemplateParser.ProcessError(String message)
+   at System.Web.UI.TemplateParser.DetectSpecialServerTagError(String text, Int32 textPos)
    at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
    at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
-   at System.Web.UI.TemplateParser.ProcessException(Exception ex)
-   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
    at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
    at System.Web.UI.TemplateParser.ParseFile(String physicalPath, VirtualPath virtualPath)
    at System.Web.UI.TemplateParser.ParseInternal()

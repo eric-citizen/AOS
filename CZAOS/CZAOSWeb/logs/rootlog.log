@@ -1,33 +1,28 @@
-03 Oct 2013 09:29:21 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-03 Oct 2013 09:29:21 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
-03 Oct 2013 09:29:21 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-03 Oct 2013 09:29:53 [INFO] Security - User test logged in to the admin module successfully.
-03 Oct 2013 10:12:57 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-03 Oct 2013 10:12:57 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
-03 Oct 2013 10:12:57 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-03 Oct 2013 10:43:04 [INFO] Security - User test logged in to the admin module successfully.
-03 Oct 2013 10:55:03 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-03 Oct 2013 10:55:03 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
-03 Oct 2013 10:55:03 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-03 Oct 2013 10:56:29 [INFO] Security - User test logged in to the admin module successfully. 
+04 Oct 2013 09:40:56 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 09:40:56 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+04 Oct 2013 09:40:56 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 09:41:01 [INFO] Security - User test logged in to the admin module successfully.
+04 Oct 2013 09:44:59 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 09:44:59 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+04 Oct 2013 09:44:59 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 10:00:05 [INFO] Security - User test logged in to the admin module successfully. 
 (Username = test)
-03 Oct 2013 10:56:38 [ERROR] Errors - Exception occurred 
+04 Oct 2013 10:23:51 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 10:23:51 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+04 Oct 2013 10:23:51 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 10:23:55 [INFO] Security - User test logged in to the admin module successfully. 
 (Username = test)
-System.Web.HttpParseException (0x80004005): Type 'System.Web.UI.WebControls.TableItemStyle' does not have a public property named 'Display'. ---> System.Web.HttpParseException (0x80004005): Type 'System.Web.UI.WebControls.TableItemStyle' does not have a public property named 'Display'. ---> System.Web.HttpException (0x80004005): Type 'System.Web.UI.WebControls.TableItemStyle' does not have a public property named 'Display'.
-   at System.Web.UI.ControlBuilder.AddProperty(String filter, String name, String value, Boolean mainDirectiveMode)
-   at System.Web.UI.ControlBuilder.PreprocessAttribute(String filter, String attribname, String attribvalue, Boolean mainDirectiveMode, Int32 line, Int32 column)
-   at System.Web.UI.ControlBuilder.PreprocessAttributes(ParsedAttributeCollection attribs)
-   at System.Web.UI.ControlBuilder.Init(TemplateParser parser, ControlBuilder parentBuilder, Type type, String tagName, String id, IDictionary attribs)
-   at System.Web.UI.ControlBuilder.CreateBuilderFromType(TemplateParser parser, ControlBuilder parentBuilder, Type type, String tagName, String id, IDictionary attribs, Int32 line, String sourceFileName)
-   at System.Web.UI.ControlBuilder.GetChildPropertyBuilder(String tagName, IDictionary attribs, Type& childType, TemplateParser templateParser, Boolean defaultProperty)
-   at System.Web.UI.ControlBuilder.CreateChildBuilder(String filter, String tagName, IDictionary attribs, TemplateParser parser, ControlBuilder parentBuilder, String id, Int32 line, VirtualPath virtualPath, Type& childType, Boolean defaultProperty)
-   at System.Web.UI.TemplateParser.ProcessBeginTag(Match match, String inputText)
-   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
-   at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+04 Oct 2013 11:45:46 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 11:45:47 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+04 Oct 2013 11:45:47 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 11:45:50 [INFO] Security - User test logged in to the admin module successfully.
+04 Oct 2013 11:45:55 [ERROR] Errors - Exception occurred 
+(Username = test)
+System.Web.HttpParseException (0x80004005): The server tag is not well formed. ---> System.Web.HttpException (0x80004005): The server tag is not well formed.
+   at System.Web.UI.TemplateParser.ProcessError(String message)
+   at System.Web.UI.TemplateParser.DetectSpecialServerTagError(String text, Int32 textPos)
    at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
    at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
-   at System.Web.UI.TemplateParser.ProcessException(Exception ex)
-   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
    at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
    at System.Web.UI.TemplateParser.ParseFile(String physicalPath, VirtualPath virtualPath)
    at System.Web.UI.TemplateParser.ParseInternal()
@@ -45,3 +40,18 @@ System.Web.HttpParseException (0x80004005): Type 'System.Web.UI.WebControls.Tabl
    at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
    at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+04 Oct 2013 11:52:12 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 11:52:12 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+04 Oct 2013 11:52:12 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 11:52:15 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+04 Oct 2013 11:58:35 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 11:58:35 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+04 Oct 2013 11:58:35 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 11:58:39 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)
+04 Oct 2013 12:33:20 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 12:33:20 [INFO] root - =*=*=*=*=*=* Application_Start =*=*=*=*=*=*
+04 Oct 2013 12:33:20 [INFO] root - =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+04 Oct 2013 12:33:25 [INFO] Security - User test logged in to the admin module successfully. 
+(Username = test)

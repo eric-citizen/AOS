@@ -1,0 +1,171 @@
+﻿<error errorId="052a4c53-4a45-4cd0-83e7-b46b3f82fce5" host="HMBLATZ0185" type="System.Web.HttpException" message="DataBinding: 'CZDataObjects.School' does not contain a property with the name 'School'." source="System.Web" detail="System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---&gt; System.Web.HttpException (0x80004005): DataBinding: 'CZDataObjects.School' does not contain a property with the name 'School'.&#xD;&#xA;   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)&#xD;&#xA;   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName, String format)&#xD;&#xA;   at System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)&#xD;&#xA;   at System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)&#xD;&#xA;   at System.Web.UI.WebControls.ListControl.PerformSelect()&#xD;&#xA;   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()&#xD;&#xA;   at CZAOSWeb.admin.observation._default.Page_Load(Object sender, EventArgs e) in c:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS Repo\CZAOS\CZAOSWeb\admin\observation\default.aspx.cs:line 41&#xD;&#xA;   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)&#xD;&#xA;   at System.Web.UI.Control.OnLoad(EventArgs e)&#xD;&#xA;   at System.Web.UI.Control.LoadRecursive()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.HandleError(Exception e)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(HttpContext context)&#xD;&#xA;   at ASP.admin_observation_default_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\cbc9b813\4f0fcc8c\App_Web_bswgejam.1.cs:line 0&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="test" time="2013-10-03T20:51:18.8092191Z" statusCode="500" webHostHtmlMessage="&lt;!DOCTYPE html&gt;&#xD;&#xA;&lt;html&gt;&#xD;&#xA;    &lt;head&gt;&#xD;&#xA;        &lt;title&gt;DataBinding: 'CZDataObjects.School' does not contain a property with the name 'School'.&lt;/title&gt;&#xD;&#xA;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;&#xD;&#xA;        &lt;style&gt;&#xD;&#xA;         body {font-family:&quot;Verdana&quot;;font-weight:normal;font-size: .7em;color:black;} &#xD;&#xA;         p {font-family:&quot;Verdana&quot;;font-weight:normal;color:black;margin-top: -5px}&#xD;&#xA;         b {font-family:&quot;Verdana&quot;;font-weight:bold;color:black;margin-top: -5px}&#xD;&#xA;         H1 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:18pt;color:red }&#xD;&#xA;         H2 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:14pt;color:maroon }&#xD;&#xA;         pre {font-family:&quot;Consolas&quot;,&quot;Lucida Console&quot;,Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}&#xD;&#xA;         .marker {font-weight: bold; color: black;text-decoration: none;}&#xD;&#xA;         .version {color: gray;}&#xD;&#xA;         .error {margin-bottom: 10px;}&#xD;&#xA;         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }&#xD;&#xA;         @media screen and (max-width: 639px) {&#xD;&#xA;          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }&#xD;&#xA;         }&#xD;&#xA;         @media screen and (max-width: 479px) {&#xD;&#xA;          pre { width: 280px; }&#xD;&#xA;         }&#xD;&#xA;        &lt;/style&gt;&#xD;&#xA;    &lt;/head&gt;&#xD;&#xA;&#xD;&#xA;    &lt;body bgcolor=&quot;white&quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;span&gt;&lt;H1&gt;Server Error in '/' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h2&gt; &lt;i&gt;DataBinding: 'CZDataObjects.School' does not contain a property with the name 'School'.&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;&#xD;&#xA;&#xD;&#xA;            &lt;font face=&quot;Arial, Helvetica, Geneva, SunSans-Regular, sans-serif &quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Description: &lt;/b&gt;An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Exception Details: &lt;/b&gt;System.Web.HttpException: DataBinding: 'CZDataObjects.School' does not contain a property with the name 'School'.&lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Source Error:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;Line 39:                 SchoolListUp.DataTextField = &amp;quot;School&amp;quot;;&#xD;&#xA;Line 40:                 SchoolListUp.DataValueField = &amp;quot;SchoolID&amp;quot;;&#xD;&#xA;&lt;font color=red&gt;Line 41:                 SchoolListUp.DataBind();&#xD;&#xA;&lt;/font&gt;Line 42:             }&#xD;&#xA;Line 43:         }&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Source File: &lt;/b&gt; c:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS Repo\CZAOS\CZAOSWeb\admin\observation\default.aspx.cs&lt;b&gt; &amp;nbsp;&amp;nbsp; Line: &lt;/b&gt; 41&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Stack Trace:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;[HttpException (0x80004005): DataBinding: &amp;#39;CZDataObjects.School&amp;#39; does not contain a property with the name &amp;#39;School&amp;#39;.]&#xD;&#xA;   System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName) +9501049&#xD;&#xA;   System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName, String format) +8&#xD;&#xA;   System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource) +9554785&#xD;&#xA;   System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e) +113&#xD;&#xA;   System.Web.UI.WebControls.ListControl.PerformSelect() +34&#xD;&#xA;   System.Web.UI.WebControls.BaseDataBoundControl.DataBind() +30&#xD;&#xA;   CZAOSWeb.admin.observation._default.Page_Load(Object sender, EventArgs e) in c:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS Repo\CZAOS\CZAOSWeb\admin\observation\default.aspx.cs:41&#xD;&#xA;   System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e) +51&#xD;&#xA;   System.Web.UI.Control.OnLoad(EventArgs e) +92&#xD;&#xA;   System.Web.UI.Control.LoadRecursive() +54&#xD;&#xA;   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +772&#xD;&#xA;&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;    &lt;/body&gt;&#xD;&#xA;&lt;/html&gt;&#xD;&#xA;">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_CONTENT_LENGTH:0&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip,deflate,sdch&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8&#xD;&#xA;HTTP_COOKIE:ASP.NET_SessionId=sjkyuvhkah2jx4leyirs5orl; CZ_AUTHENT=B083CB8EAB227C71462B38A3FAB95AC397BEC1E805350C49935DC2F197AE9A568F9B3AFF3EEF1F5521B10C4766450A78860FF4D42D66DE5FE80FFF6C67CCBB34727C05BD26F2C8E05A96BE0631A0F49CEC131B1B; CZ_ROLES=UagzNIq8M52GqzqLHluXL3YUfoPR3w9GHyOlWdbOvpJkuC7MSCEwlgbjh9VhoofbbY0YwnzkqK4VmxEQUcEM97jtjd0jiQA3hHTeg_8TdnWP_pZXQ_pfSJPYKRekEHkwSYzpTe6W3GsYx2kdXmITn4feQ7cZnNbOYIsjW_phIjPm712n4whJJ0fYoKL1UZkGU_AR07faKLDVh5aSlytZR49u0fWIwD5Ph9GVqtfsw4NOfuRTNL9lM4lAv3BNxIUTLQrTwSntbAXVQXorOqqMViAvG9l8NCpxUJm8lqLQdz2cYxywrNw1x08AJQIMF_wyundARvUpyXaqGNryZdyr32z3vXABJR8ByCRFbvaQyI64dTCiyCsZjNIhipNpEmDu2u9-VsjZKCoY0MXUNYGtm1IKi54n4HhApW4SQq61K6jddCTOzihR3IPwdsEldHIDZlpPQyf2LAGB1XUlIU9EBG09YA804g848_DuBqnc7duLqw_b0&#xD;&#xA;HTTP_HOST:localhost:53637&#xD;&#xA;HTTP_REFERER:http://localhost:53637/admin/&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Content-Length: 0&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip,deflate,sdch&#xD;&#xA;Accept-Language: en-US,en;q=0.8&#xD;&#xA;Cookie: ASP.NET_SessionId=sjkyuvhkah2jx4leyirs5orl; CZ_AUTHENT=B083CB8EAB227C71462B38A3FAB95AC397BEC1E805350C49935DC2F197AE9A568F9B3AFF3EEF1F5521B10C4766450A78860FF4D42D66DE5FE80FFF6C67CCBB34727C05BD26F2C8E05A96BE0631A0F49CEC131B1B; CZ_ROLES=UagzNIq8M52GqzqLHluXL3YUfoPR3w9GHyOlWdbOvpJkuC7MSCEwlgbjh9VhoofbbY0YwnzkqK4VmxEQUcEM97jtjd0jiQA3hHTeg_8TdnWP_pZXQ_pfSJPYKRekEHkwSYzpTe6W3GsYx2kdXmITn4feQ7cZnNbOYIsjW_phIjPm712n4whJJ0fYoKL1UZkGU_AR07faKLDVh5aSlytZR49u0fWIwD5Ph9GVqtfsw4NOfuRTNL9lM4lAv3BNxIUTLQrTwSntbAXVQXorOqqMViAvG9l8NCpxUJm8lqLQdz2cYxywrNw1x08AJQIMF_wyundARvUpyXaqGNryZdyr32z3vXABJR8ByCRFbvaQyI64dTCiyCsZjNIhipNpEmDu2u9-VsjZKCoY0MXUNYGtm1IKi54n4HhApW4SQq61K6jddCTOzihR3IPwdsEldHIDZlpPQyf2LAGB1XUlIU9EBG09YA804g848_DuBqnc7duLqw_b0&#xD;&#xA;Host: localhost:53637&#xD;&#xA;Referer: http://localhost:53637/admin/&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/17/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS Repo\CZAOS\CZAOSWeb\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="Forms" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="test" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="test" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="test" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="17" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/17" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/admin/observation/default.aspx" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\jlink\Documents\Visual Studio 2012\Projects\CZAOS\CZAOS Repo\CZAOS\CZAOSWeb\admin\observation\default.aspx" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="29952" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/admin/observation/default.aspx" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="53637" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/8.0" />
+    </item>
+    <item name="URL">
+      <value string="/admin/observation/default.aspx" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip,deflate,sdch" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="ASP.NET_SessionId=sjkyuvhkah2jx4leyirs5orl; CZ_AUTHENT=B083CB8EAB227C71462B38A3FAB95AC397BEC1E805350C49935DC2F197AE9A568F9B3AFF3EEF1F5521B10C4766450A78860FF4D42D66DE5FE80FFF6C67CCBB34727C05BD26F2C8E05A96BE0631A0F49CEC131B1B; CZ_ROLES=UagzNIq8M52GqzqLHluXL3YUfoPR3w9GHyOlWdbOvpJkuC7MSCEwlgbjh9VhoofbbY0YwnzkqK4VmxEQUcEM97jtjd0jiQA3hHTeg_8TdnWP_pZXQ_pfSJPYKRekEHkwSYzpTe6W3GsYx2kdXmITn4feQ7cZnNbOYIsjW_phIjPm712n4whJJ0fYoKL1UZkGU_AR07faKLDVh5aSlytZR49u0fWIwD5Ph9GVqtfsw4NOfuRTNL9lM4lAv3BNxIUTLQrTwSntbAXVQXorOqqMViAvG9l8NCpxUJm8lqLQdz2cYxywrNw1x08AJQIMF_wyundARvUpyXaqGNryZdyr32z3vXABJR8ByCRFbvaQyI64dTCiyCsZjNIhipNpEmDu2u9-VsjZKCoY0MXUNYGtm1IKi54n4HhApW4SQq61K6jddCTOzihR3IPwdsEldHIDZlpPQyf2LAGB1XUlIU9EBG09YA804g848_DuBqnc7duLqw_b0" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:53637" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:53637/admin/" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="ASP.NET_SessionId">
+      <value string="sjkyuvhkah2jx4leyirs5orl" />
+    </item>
+    <item name="CZ_AUTHENT">
+      <value string="B083CB8EAB227C71462B38A3FAB95AC397BEC1E805350C49935DC2F197AE9A568F9B3AFF3EEF1F5521B10C4766450A78860FF4D42D66DE5FE80FFF6C67CCBB34727C05BD26F2C8E05A96BE0631A0F49CEC131B1B" />
+    </item>
+    <item name="CZ_ROLES">
+      <value string="UagzNIq8M52GqzqLHluXL3YUfoPR3w9GHyOlWdbOvpJkuC7MSCEwlgbjh9VhoofbbY0YwnzkqK4VmxEQUcEM97jtjd0jiQA3hHTeg_8TdnWP_pZXQ_pfSJPYKRekEHkwSYzpTe6W3GsYx2kdXmITn4feQ7cZnNbOYIsjW_phIjPm712n4whJJ0fYoKL1UZkGU_AR07faKLDVh5aSlytZR49u0fWIwD5Ph9GVqtfsw4NOfuRTNL9lM4lAv3BNxIUTLQrTwSntbAXVQXorOqqMViAvG9l8NCpxUJm8lqLQdz2cYxywrNw1x08AJQIMF_wyundARvUpyXaqGNryZdyr32z3vXABJR8ByCRFbvaQyI64dTCiyCsZjNIhipNpEmDu2u9-VsjZKCoY0MXUNYGtm1IKi54n4HhApW4SQq61K6jddCTOzihR3IPwdsEldHIDZlpPQyf2LAGB1XUlIU9EBG09YA804g848_DuBqnc7duLqw_b0" />
+    </item>
+  </cookies>
+</error>

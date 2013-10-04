@@ -11,7 +11,41 @@
             <li><a href="#RecentObservations">Recent Observations</a></li>
             <li><a href="#UpcomingObservations">Upcoming Observations</a></li>
         </ul>
+
         <div id="RecentObservations">
+            <div onClick="$('#filterRec').toggle();">
+                <hr />
+                <h2>Filter Sessions</h2></div>
+                <div id="filterRec">              
+                    <hr />
+                    <div id="AnimalDateRec" style="width:50%;float:left">
+                        <label>Animal</label><br />
+                        <asp:DropDownList id="AnimalListRec" AutoPostBack="True" runat="server"/><br />
+
+                        <label>Timeframe</label><br />
+                        <input type="date" id="dateFromRec" runat="server" /> -- <input type="date" id="dateToRec" runat="server"/><br />
+
+                        <asp:RadioButton id="timedRec" runat="server" Checked="True" Text="Timed" AutoPostBack="false" GroupName="BehaviorTimed" /><br />
+                        <asp:RadioButton ID="behaviorRec" runat="server" Text="Behavior" AutoPostBack="false" GroupName="BehaviorTimed" /><br />
+                    </div>
+
+                    <div id="schoolRec" style="width:50%;float:right">
+                        <asp:CheckBox id="includeStudentObservationsRec" runat="server" Checked="true" Text="Include Student Observations" AutoPostBack="false"/><br />
+
+                        <label>District</label><br />
+                        <asp:DropDownList id="DistrictListRec" AutoPostBack="true" OnSelectedIndexChanged="districtChange" runat="server"/><br />
+
+                        <label>School</label><br />
+                        <asp:DropDownList id="SchoolListRec" AutoPostBack="True" runat="server"/><br />
+                    </div>
+
+                    <%--<input  type="button" onclick="" value="Search" runat="server"/>--%>
+                    <asp:Button id="searchRec" Text="Search" runat="server" PostBackUrl="./#RecentObservations" />
+                </div>
+
+            <hr />
+            <h2>Recent Observations</h2>
+            <hr />
             <a class="add-link ui-dialog-link" data-args="650, 650, true, null, 1" href="/admin/observation/edit-observation.aspx">Add New Observation</a>
 
             <asp:ObjectDataSource ID="cztDataSourceRecent" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting_Recent"
@@ -67,6 +101,44 @@
             <mack:MessageDiv runat="server" ID="MessageDiv1" ListControlID="gvObsRec" Text="No records found!"></mack:MessageDiv>
         </div>
         <div id="UpcomingObservations">
+            <div onClick="$('#filterUp').toggle();"><h2>Filter Sessions</h2></div>
+            <div id="filterUp">              
+
+                <div id="AnimalDateUp" style="width:50%;float:left">
+                    <label>Animal</label><br />
+                    <asp:DropDownList id="AnimalListUp"
+                        AutoPostBack="True"
+                        runat="server"/><br />
+
+                    <label>Timeframe</label><br />
+                    <input type="date" id="fromUp" /> -- <input type="date" id="toUp" /><br />
+
+                    <input type="checkbox" checked id="timedUp" />Timed<br />
+                    <input type="checkbox" checked id="behaviorUp" />Behavior<br />
+
+                </div>
+
+                <div id="schoolUp" style="width:50%;float:right">
+
+                    <input type="checkbox" checked id="includeStudentObservationsUp" />Include Student Observations<br />
+
+                    <label>District</label><br />
+                    <asp:DropDownList id="DistrictListUp"
+                        AutoPostBack="true"
+                        OnSelectedIndexChanged="districtChange"
+                        runat="server"/><br />
+
+                    <label>School</label><br />
+                    <asp:DropDownList id="SchoolListUp"
+                        AutoPostBack="True"
+                        runat="server"/><br />
+
+                </div>
+                <input id="searchUp" type="button" onclick="" value="Search"/>
+            </div>
+            <br />
+            <h2>Upcoming Observations</h2>
+            <br />
             <a class="add-link ui-dialog-link" data-args="650, 650, true, null, 1" href="/admin/observation/edit-observation.aspx">Add New Observation</a>
 
             <asp:ObjectDataSource ID="cztDataSourceUpcoming" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting_Upcoming"
