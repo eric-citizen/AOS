@@ -22,7 +22,6 @@ namespace CZAOSWeb.controls
             UserType,
             Expiration,
             Unlock,
-            LastActivityDate,
             SendPassword,            
             DeleteUser      
         }
@@ -73,17 +72,17 @@ namespace CZAOSWeb.controls
 
                 Literal litDName = e.Row.FindControl("litDName") as Literal;
                 Literal litUserType = e.Row.FindControl("litUserType") as Literal;
-                //Literal litExpDate = e.Row.FindControl("litExpDate") as Literal;
+                Literal litExpDate = e.Row.FindControl("litExpDate") as Literal;
 
                 litDName.Text = czuser.DisplayName;
                 litUserType.Text = czuser.UserType;
 
                 if(czuser.ExpirationDate.HasValue)
                 {
-                    //DateTime ed = (DateTime)czuser.ExpirationDate;
-                    //litExpDate.Text = ed.ToString("MM/dd/yyy");
+                    DateTime ed = (DateTime)czuser.ExpirationDate;
+                    litExpDate.Text = ed.ToString("MM/dd/yyy");
                 }
-                
+
 
                 if (page.IsMasterAdmin)
                 {
@@ -96,7 +95,7 @@ namespace CZAOSWeb.controls
                         e.Row.Cells[(int)DataColumns.Username].ToolTip = user.GetPassword();
                     }
 
-                }                
+                }
 
                 if (!user.IsLockedOut)
                 {
