@@ -43,3 +43,17 @@ C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\AntiXssLibrary.dl
 C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\obj\Debug\CZAOSCore.csprojResolveAssemblyReference.cache
 C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\obj\Debug\CZAOSCore.dll
 C:\Users\aperks\Documents\GitHub\AOS\CZAOS\CZAOSCore\obj\Debug\CZAOSCore.pdb
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\CZAOSCore.dll
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\CZAOSCore.pdb
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\GithubSharp.Core.dll
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\GithubSharp.Plugins.CacheProviders.ApplicationCacher.dll
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\GithubSharp.Plugins.CacheProviders.WebCache.dll
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\GithubSharp.Plugins.LogProviders.SimpleLogProvider.dll
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\KT.Extensions.dll
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\log4net.dll
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\AntiXssLibrary.dll
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\obj\Debug\CZAOSCore.csprojResolveAssemblyReference.cache
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\obj\Debug\CZAOSCore.dll
+C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSCore\obj\Debug\CZAOSCore.pdb
