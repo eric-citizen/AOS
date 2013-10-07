@@ -24,7 +24,7 @@
         </div>
         <div class="step" id="exhibit-knockout-scope">
             <div class="title">Exhibit</div>
-            <div class="add-link ui-dialog-link" href="/admin/exhibits/edit-exhibit.aspx" data-args="350, 700, true, null, 1">Add New Exhibit</div>
+            <div class="add-link ui-dialog-link" href="/admin/exhibits/edit-exhibit.aspx" data-args="350, 700, true, null, 1" data-bind="enable: AddEnabled()">Add New Exhibit</div>
             <ul id="step_2" data-bind="foreach: Exhibits">
                 <li style="display: none" data-bind="visible: $root.Display($data)">
                     <span data-bind="text: ExhibitName, click: $root.UpdateSelectedExhibit"></span>
@@ -34,7 +34,7 @@
         </div>
         <div class="step" id="animal-knockout-scope">
             <div class="title">Animal</div>
-            <div class="add-link ui-dialog-link" href="/admin/animals/edit-animal.aspx" data-args="500, 700, true, null, 1">Add New Animal</div>
+            <div class="add-link ui-dialog-link" href="/admin/animals/edit-animal.aspx" data-args="500, 700, true, null, 1" data-bind="enable: AddEnabled()">Add New Animal</div>
             <ul id="step_3" data-bind="foreach: Animals">
                 <li style="display: none" data-bind="visible: $root.Display($data)">
                     <span data-bind="text: CommonName, click: $root.UpdateSelectedAnimal"></span>
