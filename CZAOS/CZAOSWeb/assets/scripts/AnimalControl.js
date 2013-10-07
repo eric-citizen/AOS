@@ -119,10 +119,10 @@
     };
 
     var display = function (animal) {
-        if (!app.RegionControl().SelectedRegion().AnimalRegionCode) {
+        if (!app.ExhibitControl().SelectedExhibit().ExhibitID) {
             return false;
         } else {
-            return animal.AnimalRegionCode() == app.RegionControl().SelectedRegion().AnimalRegionCode();
+            return animal.ExhibitID() == app.ExhibitControl().SelectedExhibit().ExhibitID();
         }
     };
 

@@ -30,6 +30,7 @@ namespace CZDataObjects
                 mstrDOB = record.Get<string>("DOB").EnsureNotNull();
                 mstrCZArrival = record.Get<string>("CZArrival").EnsureNotNull();
                 mblnActive = record.Get<bool>("Active");
+			    mintExhibitID = record.Get<int>("ExhibitID");
 
                 if (!isNew)
                 {
@@ -60,6 +61,7 @@ namespace CZDataObjects
         private string mstrDOB = string.Empty;
         private string mstrCZArrival = string.Empty;
         private bool mblnActive;
+        private int mintExhibitID;
 
         private string mstrAnimalRegion = string.Empty;
         private string mstrRegionName = string.Empty;
@@ -215,6 +217,19 @@ namespace CZDataObjects
             set
             {
                 mblnActive = value;
+            }
+        }
+
+        [DataMember(Name = "ExhibitID")]
+        public int ExhibitID
+        {
+            get
+            {
+                return mintExhibitID;
+            }
+            set
+            {
+                mintExhibitID = value;
             }
         }
 
