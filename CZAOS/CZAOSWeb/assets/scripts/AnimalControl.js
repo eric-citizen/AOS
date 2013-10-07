@@ -45,6 +45,12 @@
     app.ExhibitControl().SelectedExhibit = ko.observable({});
     
     var configure = function () {
+        if (app.RegionControl) {
+            app.RegionControl().SelectedRegion.subscribe(function() {
+                app.ExhibitControl().SelectedExhibit({});
+                $('#exhibit-knockout-scope .active').toggleClass('active');
+            });
+        }
 
         load();
     };
@@ -58,6 +64,10 @@
         });
     };
 
+    var addEnabled = function () {
+        return app.RegionControl().SelectedRegion().AnimalRegionCode;
+    };
+    
     var createNew = function () {
 
     };
@@ -88,6 +98,7 @@
     app.ExhibitControl().Configure = configure;
     app.ExhibitControl().CreateNew = createNew;
     app.ExhibitControl().Edit = edit;
+    app.ExhibitControl().AddEnabled = addEnabled;
 })(window.App);
 
 (function (app) {
@@ -96,7 +107,12 @@
     app.AnimalControl().SelectedAnimal = ko.observable({});
     
     var configure = function () {
-
+        if (app.ExhibitControl) {
+            app.ExhibitControl().SelectedExhibit.subscribe(function() {
+                app.AnimalControl().SelectedAnimal({});
+                $('#animal-knockout-scope .active').toggleClass('active');
+            });
+        }
         load();
     };
 
@@ -107,6 +123,10 @@
             app.AnimalControl().Animals = ko.mapping.fromJSON(data);
             ko.applyBindings(app.AnimalControl, $('#animal-knockout-scope')[0]);
         });
+    };
+
+    var addEnabled = function() {
+        return app.ExhibitControl().SelectedExhibit().ExhibitID;
     };
 
     var createNew = function () {
@@ -132,10 +152,11 @@
         $(event.target.parentElement).toggleClass('active');
         app.AnimalControl().SelectedAnimal(animal);
     };
-
+    
     app.AnimalControl().Display = display;
     app.AnimalControl().UpdateSelectedAnimal = updateSelectedAnimal;
     app.AnimalControl().Configure = configure;
     app.AnimalControl().CreateNew = createNew;
     app.AnimalControl().Edit = edit;
+    app.AnimalControl().AddEnabled = addEnabled;
 })(window.App);
