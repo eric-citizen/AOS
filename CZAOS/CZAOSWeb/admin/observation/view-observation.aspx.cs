@@ -76,14 +76,14 @@ namespace CZAOSWeb.admin.observation
                     litStart.Text = obs.ObserveStart.ToShortTimeString();
                     litEnd.Text = obs.ObserveEnd.ToShortTimeString();
                     litCategory.Text = obs.Category;
-                   // pnlTimer.Visible = litCategory.Text.Equals("Timed");
+                    pnlTimer.Visible = litCategory.Text.Equals("Timed");
                     
-                    //if (pnlTimer.Visible)
-                    //{
+                    if (pnlTimer.Visible)
+                    {
                         litInterval.Text = obs.Interval.ToString() +" minutes.";
                         litTimer.Text = obs.Timer ? "Yes" : "No";
                         litManual.Text = obs.Manual ? "Yes" : "No";
-                    //}
+                    }
 
                     ObserverList observers = ObserverList.GetActive(obs.ObservationID);
                     litObsCount.Text = obs.ObserverNo.ToString();

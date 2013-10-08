@@ -92,34 +92,32 @@
             <div id="time" style="height: 100%; width: 50%; float: left; display: inline-block">
                 <label>Date</label>
                 <asp:Literal runat="server" ID="litDate"></asp:Literal>
-                <br />
-                <br />
+                <br /><br />
+
                 <label>Start</label>
                 <asp:Literal runat="server" ID="litStart"></asp:Literal>
-                <br />
-                <br />
+                <br /><br />
+
                 <label>End</label>
                 <asp:Literal runat="server" ID="litEnd"></asp:Literal>
-                <br />
-                <br />
+            </div>
+            <div id="timed" style="height: 100%; width: 50%; float: right; display: inline-block">
                 <label>Category</label>
                 <asp:Literal runat="server" ID="litCategory"></asp:Literal>
-            </div>
-            <div id="timer" style="height: 100%; width: 50%; float: right; display: inline-block">
-                <label>Manual</label>
-                <asp:Literal runat="server" ID="litManual"></asp:Literal>
-                <br />
-                <br />
-                <label>Timed</label>
-                <label id="timed" runat="server"></label>
-                <br />
-                <br />
-                <label>Show Timer</label>
-                <asp:Literal runat="server" ID="litTimer"></asp:Literal>
-                <br />
-                <br />
-                <label>Timed Interval</label>
-                <asp:Literal runat="server" ID="litInterval"></asp:Literal>
+                <br /><br />
+
+                <asp:Panel runat="server" ID="pnlTimer">
+                    <label>Manual</label>
+                    <asp:Literal runat="server" ID="litManual"></asp:Literal>
+                    <br /><br />
+
+                    <label>Show Timer</label>
+                    <asp:Literal runat="server" ID="litTimer"></asp:Literal>
+                    <br /><br />
+
+                    <label>Timed Interval</label>
+                    <asp:Literal runat="server" ID="litInterval"></asp:Literal>
+                </asp:Panel>
             </div>
         </div>
 
