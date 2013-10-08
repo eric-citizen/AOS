@@ -56,7 +56,7 @@ namespace CZAOSWeb.controls
             get
             {
                 List<int> ids = new List<int>();
-                foreach (ListItem item in cblAnimals.Items)
+                foreach (ListItem item in lstAnimals.Items)
                 {
                     if (item.Selected)
                         ids.Add(item.Value.ToInt32());
@@ -68,7 +68,7 @@ namespace CZAOSWeb.controls
             {
                 List<int> ids = value;
 
-                foreach (ListItem item in cblAnimals.Items)
+                foreach (ListItem item in lstAnimals.Items)
                 {
                     if (ids.Contains(item.Value.ToInt32()))
                         item.Selected = true;
@@ -119,7 +119,7 @@ namespace CZAOSWeb.controls
             get
             {
                 int count = 0;
-                foreach (ListItem item in cblAnimals.Items)
+                foreach (ListItem item in lstAnimals.Items)
                 {
                     if (item.Selected)
                         count++;
@@ -159,7 +159,7 @@ namespace CZAOSWeb.controls
 
         public void DeselectLastOption()
         {
-            cblAnimals.Items[cblAnimals.SelectedIndex].Selected = false;
+            lstAnimals.Items[lstAnimals.SelectedIndex].Selected = false;
         }
 
         public void LoadGroup(string animalRegionCode)
@@ -168,12 +168,12 @@ namespace CZAOSWeb.controls
 
             AnimalList list = AnimalList.GetActiveAnimals(animalRegionCode);
 
-            cblAnimals.DataSource = list;
-            cblAnimals.DataBind();
+            lstAnimals.DataSource = list;
+            lstAnimals.DataBind();
 
         }
 
-        //protected void cblAnimals_SelectedIndexChanged(object sender, EventArgs e)
+        //protected void lstAnimals_SelectedIndexChanged(object sender, EventArgs e)
         //{
         //    int selected = this.SelectedCount;
         //    SysCode config = SysCodeList.Get("maxanimalgroupcount");
@@ -187,15 +187,15 @@ namespace CZAOSWeb.controls
         //    }
         //    else
         //    {
-        //        cblAnimals.Items[cblAnimals.SelectedIndex].Selected = false;
+        //        lstAnimals.Items[lstAnimals.SelectedIndex].Selected = false;
         //    }            
             
         //}
 
         public void Clear()
         {
-            cblAnimals.Items.Clear();
-            //foreach (ListItem item in cblAnimals.Items)
+            lstAnimals.Items.Clear();
+            //foreach (ListItem item in lstAnimals.Items)
             //{
             //    item.Selected = false;
             //}

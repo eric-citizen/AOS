@@ -94,6 +94,33 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.Literal litType;
         
         /// <summary>
+        /// ddNumObs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.RequiredDropDownList ddNumObs;
+        
+        /// <summary>
+        /// lstObservers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lstObservers;
+        
+        /// <summary>
+        /// lstval control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.ListBoxValidator lstval;
+        
+        /// <summary>
         /// dteDate control.
         /// </summary>
         /// <remarks>
@@ -130,22 +157,13 @@ namespace CZAOSWeb.admin.observation {
         protected global::KT.WebControls.RequiredDropDownList ddCategory;
         
         /// <summary>
-        /// ddTimeInterval control.
+        /// pnlTimed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddTimeInterval;
-        
-        /// <summary>
-        /// rdoTimer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rdoTimer;
+        protected global::System.Web.UI.WebControls.Panel pnlTimed;
         
         /// <summary>
         /// rdoManual control.
@@ -157,31 +175,22 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.RadioButtonList rdoManual;
         
         /// <summary>
-        /// ddNumObs control.
+        /// rdoTimer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddNumObs;
+        protected global::System.Web.UI.WebControls.RadioButtonList rdoTimer;
         
         /// <summary>
-        /// cbxObservers control.
+        /// ddTimeInterval control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList cbxObservers;
-        
-        /// <summary>
-        /// cboxval control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::KT.WebControls.CheckBoxListValidator cboxval;
+        protected global::KT.WebControls.RequiredDropDownList ddTimeInterval;
         
         /// <summary>
         /// ddAnimalRegion control.
