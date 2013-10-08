@@ -41,90 +41,113 @@
             </asp:View>
             <asp:View runat="server" ID="vwPro">
 
-                <ul>
-                    <li class="clear">
-                        <label>Type:</label>
-                        <asp:Literal runat="server" ID="litType"></asp:Literal>
-                    </li>
-                    <li class="required">
-                    <label>Date:</label>
-                    <mack:DatePicker runat="server" ID="dteDate" Required="true" CssClass="focusme" ErrorMessage="&nbsp;" ValidatorCssClass="error" ValidatorToolTip="select the observation date" OnInit="dteDate_Init"></mack:DatePicker>
-                    </li>
-                    <li class="required">
-                        <label>Start Time:</label>
+                <label>Observation Type:</label>
+                <asp:Literal runat="server" ID="litType"></asp:Literal>
+                <br /><br />
+
+                <div id="observers" style="width:960px;display:inline-block">
+
+                    <h2>Observer(s)</h2>
+
+                    <div id="numObservers" style="height:100%;width:50%;display:inline-block;float:left">
+                        <label>Number of Observers</label><br />
+
+                        <mack:RequiredDropDownList runat="server" ID="ddNumObs" ValidatorToolTip="select the number of observers" Required="true" InitialValue="-1"
+                            ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" AutoPostBack="true" OnSelectedIndexChanged="ddNumObs_SelectedIndexChanged">                                            
+                        </mack:RequiredDropDownList>
+                    </div>
+                    <div id="attending" style="height:100%;width:50%;display:inline-block;float:right">
+                            
+                        <%--<div style="height: 130px; width:300px; overflow: auto; border: solid 1px #dcdcdc;" class="p5 mt5">--%>
+                            <asp:ListBox runat="server" ID="lstObservers" ClientIDMode="Static" SelectionMode="Multiple" Rows="10"
+                                DataTextField="DisplayName" DataValueField="UserName" CssClass="" ></asp:ListBox>
+                        <%--</div>--%>
+                        
+                        Selected Observers:<span id="user-count" class="pl10">0</span>
+                        <mack:ListBoxValidator runat="server" ID="lstval" ControlToValidate="lstObservers"
+                            CssClass="error" ToolTip="Select {0} observers" SetFocusOnError="true"
+                            MinimumNumberOfSelectedCheckBoxes="1" ></mack:ListBoxValidator>
+                    </div>                
+                </div>
+
+                <div id="observation" style="width:960px;display:inline-block">
+                    
+                    <h2>Observation</h2>
+
+                    <div id="dateTime" style="height:100%;width:50%;display:inline-block;float:left">
+                        <label>Date</label><br />
+                        <mack:DatePicker runat="server" ID="dteDate" Required="true" CssClass="focusme" ErrorMessage="&nbsp;" ValidatorCssClass="error" 
+                            ValidatorToolTip="select the observation date" OnInit="dteDate_Init"></mack:DatePicker>
+                        <br /><br />
+
+                        <label>Start Time</label><br />
                         <mack:RequiredTextBox runat="server" ID="txtStartTime" ClientIDMode="Static" MaxLength="7" Required="true" Width="100px" CssClass="starttime"
-                            ErrorMessage="*" ValidatorCssClass="error" ValidatorToolTip="Enter the start time"></mack:RequiredTextBox>     
-                    </li>
-                    <li class="required">
-                        <label>End Time:</label>
+                            ErrorMessage="*" ValidatorCssClass="error" ValidatorToolTip="Enter the start time"></mack:RequiredTextBox>
+                        <br /><br />
+
+                        <label>End Time</label><br />
                         <mack:RequiredTextBox runat="server" ID="txtEndTime" ClientIDMode="Static" MaxLength="7" Required="true" Width="100px" CssClass="endtime"
-                            ErrorMessage="*" ValidatorCssClass="error" ValidatorToolTip="Enter the end time"></mack:RequiredTextBox>     
-                    </li>
-                    <li class="required">
-                        <label>Category:</label>
+                            ErrorMessage="*" ValidatorCssClass="error" ValidatorToolTip="Enter the end time"></mack:RequiredTextBox>
+
+                    </div>
+                    <div id="timeDetails" style="height:100%;width:50%;display:inline-block;float:right">
+                        <label>Category</label><br />
                         <mack:RequiredDropDownList runat="server" ID="ddCategory" ClientIDMode="Static" ValidatorToolTip="select a category" Required="true" InitialValue="-1"
                             ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" CssClass="cat-dd" >
                             <asp:ListItem Selected="True" Value="-1" Text="Select Category"></asp:ListItem>
                             <asp:ListItem Value="Behavior" Text="Behavior"></asp:ListItem>
                             <asp:ListItem Value="Timed" Text="Timed"></asp:ListItem>
                         </mack:RequiredDropDownList>
-                    </li>
-                    <li class="timed" style="display:none;">
-                        <label>Timed Interval:</label>
-                        <mack:RequiredDropDownList runat="server" ID="ddTimeInterval" ValidatorToolTip="select an interval" Required="true" InitialValue="-1"
+                        <br /><br />
+
+                        <asp:Panel runat="server" ID="pnlTimed">
+                            <label>Manual</label>
+                            <asp:RadioButtonList runat="server" ID="rdoManual" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table" CssClass="rdo-table">
+                                <asp:ListItem Value="Yes" Text="Yes" ></asp:ListItem>
+                                <asp:ListItem Value="No" Text="No" Selected="True" ></asp:ListItem>
+                            </asp:RadioButtonList>
+                            <br /><br />
+
+                            <label>Timer</label><br />
+                            <asp:RadioButtonList runat="server" ID="rdoTimer" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table" CssClass="rdo-table">
+                                <asp:ListItem Value="Show" Text="Show" Selected="True"></asp:ListItem>
+                                <asp:ListItem Value="Hide" Text="Hide" ></asp:ListItem>
+                            </asp:RadioButtonList>
+                            <br /><br />
+
+                            <label>Time Interval</label><br />
+                            <mack:RequiredDropDownList runat="server" ID="ddTimeInterval" ValidatorToolTip="select an interval" Required="true" InitialValue="-1"
                             ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" >                                            
                         </mack:RequiredDropDownList>
-                        <br />
-                        <label>Timer:</label>
-                        <asp:RadioButtonList runat="server" ID="rdoTimer" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table" CssClass="rdo-table">
-                            <asp:ListItem Value="Show" Text="Show" Selected="True"></asp:ListItem>
-                            <asp:ListItem Value="Hide" Text="Hide" ></asp:ListItem>
-                        </asp:RadioButtonList>
-                        <br />
-                        <label>Manual:</label>
-                        <asp:RadioButtonList runat="server" ID="rdoManual" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table" CssClass="rdo-table">
-                            <asp:ListItem Value="Yes" Text="Yes" ></asp:ListItem>
-                            <asp:ListItem Value="No" Text="No" Selected="True" ></asp:ListItem>
-                        </asp:RadioButtonList>
-                    </li>
+                        </asp:Panel>
+                    </div>
+                </div>
+
+                <div id="animals" style="width:960px;display:inline-block">
+                                        
+                    <h2>Animal(s)</h2>
+
+                    <div id="animalInfo" style="height:100%;width:50%;display:inline-block;float:left">
                     
-                    <li class="required">
-                        <label># of Observers:</label>
-                        <mack:RequiredDropDownList runat="server" ID="ddNumObs" ValidatorToolTip="select the number of observers" Required="true" InitialValue="-1"
-                            ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" AutoPostBack="true" OnSelectedIndexChanged="ddNumObs_SelectedIndexChanged">                                            
-                        </mack:RequiredDropDownList>
-                        <br />
-                        <div style="height: 130px; width:300px;overflow: auto; border: solid 1px #dcdcdc;" class="p5 mt5">
-                        <asp:CheckBoxList runat="server" ID="cbxObservers" ClientIDMode="Static" DataTextField="DisplayName" DataValueField="UserName" CssClass="checkbox-list"></asp:CheckBoxList>
-                        </div>
-                        
-                        Selected Observers:<span id="user-count" class="pl10">0</span>
-                        <mack:CheckBoxListValidator runat="server" ID="cboxval" ControlToValidate="cbxObservers"
-                            CssClass="error" ToolTip="Select {0} observers" SetFocusOnError="true"
-                            MinimumNumberOfSelectedCheckBoxes="1" ></mack:CheckBoxListValidator>
-                        
-                        
-                    </li>                   
-                     
-                    <li class="required">
-                        <label>Animal Region:</label>
-                        <mack:RequiredDropDownList runat="server" ID="ddAnimalRegion" ClientIDMode="Static" DataValueField="AnimalRegionCode" DataTextField="AnimalRegionName" Required="true" InitialValue="-1"
-                            ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" AutoPostBack="true" OnSelectedIndexChanged="ddAnimalRegion_SelectedIndexChanged" ></mack:RequiredDropDownList>
-                        <br />
-                        <div id="region-exhibit-containerx">
-                            <label>Exhibit:</label>
-                            <mack:RequiredDropDownList runat="server" ID="ddExhibit" ClientIDMode="Static" DataValueField="ExhibitID" DataTextField="ExhibitName" Required="false" OnPreRender="ddExhibit_PreRender"></mack:RequiredDropDownList>                                   
-                        </div>                
-                    </li>
-                    
-                   
-                    <li id="groups-container" class="required">
-                        <label>Groups:</label>
+                        <label>Animal Region</label><br />
+                        <mack:RequiredDropDownList runat="server" ID="ddAnimalRegion" ClientIDMode="Static" DataValueField="AnimalRegionCode" 
+                            DataTextField="AnimalRegionName" Required="true" InitialValue="-1" ErrorMessage="&nbsp;" ValidatorCssClass="error" 
+                            SetFocusOnError="true" AutoPostBack="true" OnSelectedIndexChanged="ddAnimalRegion_SelectedIndexChanged" ></mack:RequiredDropDownList>
+                        <br /><br />
+
+
+                        <label>Exhibit</label>
+                        <mack:RequiredDropDownList runat="server" ID="ddExhibit" ClientIDMode="Static" DataValueField="ExhibitID" DataTextField="ExhibitName" 
+                            Required="false" OnPreRender="ddExhibit_PreRender"></mack:RequiredDropDownList>
+                        <br /><br />
+
+                        <label>Groups</label>
                         <mack:RequiredDropDownList runat="server" ID="ddGroupCount" ValidatorToolTip="select the number of groups" Required="true" InitialValue="-1"
                             ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" AutoPostBack="true" OnSelectedIndexChanged="ddGroupCount_SelectedIndexChanged" >                                                 
                         </mack:RequiredDropDownList>
-                    </li>
-                    <li>
+
+                    </div>
+                    <div id="groupInfo" style="height:100%;width:50%;display:inline-block;float:right">
                         <asp:PlaceHolder runat="server" ID="groupsPlaceHolder">
                             <uc1:GroupControl runat="server" ID="GroupControl1" />
                             <uc1:GroupControl runat="server" ID="GroupControl2" />
@@ -137,13 +160,15 @@
                             <uc1:GroupControl runat="server" ID="GroupControl9" />
                             <uc1:GroupControl runat="server" ID="GroupControl10" />
                         </asp:PlaceHolder>
+                        <br />
 
-                        <div>
-                            <span id="gc-grand-total">0</span> of 40 total animals selected.
-                        </div>
-                    </li>                           
-                     
-                </ul>
+                        <span id="gc-grand-total">0</span> of 40 total animals selected.
+                    </div>
+                </div>
+
+                <div id="reports" style="width:960px;display:inline-block">
+
+                </div>
 
                 <div class="floatRight">
                     <mack:WaitButton runat="server" ID="btnSave" OnClick="btnSave_Click" CssClass="button" Text="Save" />
@@ -288,11 +313,11 @@
 
         $('#ddCategory, #ddSchoolCat').on('change', function () {
             if (this.value != "-1" && this.value === "Behavior") {
-                $(".timed").hide();
+                $("#pnlTimed").hide();
                 //ValidatorEnable(val, enable)
             }
             if (this.value != "-1" && this.value === "Timed") {
-                $(".timed").show();
+                $("#pnlTimed").show();
             }
             else {
                 
@@ -344,7 +369,7 @@
             });
         });
 
-        $('#cbxObservers :checkbox').click(function () {
+        $('#lstObservers :selected').click(function () {
             var $this = $(this);
             var count = parseInt($("#user-count").html());
             // $this will contain a reference to the checkbox   
@@ -363,10 +388,10 @@
         $(function () {
 
             var count = parseInt($("#user-count").html());
-            $('#cbxObservers :checkbox').each(function () {
+            $('#cbxObservers :selected').each(function () {
 
                 var $this = $(this);
-                if ($this.is(':checked')) {
+                if ($this.is(':selected')) {
                     count++;
                 }
             });

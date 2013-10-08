@@ -185,7 +185,7 @@ namespace CZAOSWeb.admin.observation
 
                     ObserverList olist = ObserverList.GetActive(obs.ObservationID);
 
-                    foreach (ListItem lio in cbxObservers.Items)
+                    foreach (ListItem lio in lstObservers.Items)
                     {
                         if (olist.ContainsUser(lio.Value))
                         {
@@ -251,7 +251,7 @@ namespace CZAOSWeb.admin.observation
         {
             UserList users;
 
-            //cbxObservers
+            //lstObservers
             if (pro)
             {
                 users = UserList.GetActiveProfessionalUsers();
@@ -261,8 +261,8 @@ namespace CZAOSWeb.admin.observation
                 users = UserList.GetActiveAmateurUsers();
             }
 
-            cbxObservers.DataSource = users;
-            cbxObservers.DataBind();
+            lstObservers.DataSource = users;
+            lstObservers.DataBind();
 
         }
 
@@ -313,8 +313,8 @@ namespace CZAOSWeb.admin.observation
 
         protected void ddNumObs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboxval.MinimumNumberOfSelectedCheckBoxes = ddNumObs.SelectedValue.ToInt32();
-            cboxval.ToolTip = "Select {0} observers".FormatWith(cboxval.MinimumNumberOfSelectedCheckBoxes);
+            lstval.MinimumNumberOfItems = ddNumObs.SelectedValue.ToInt32();
+            lstval.ToolTip = "Select {0} observers".FormatWith(lstval.MinimumNumberOfItems);
         }
 
         protected void ddGroupCount_SelectedIndexChanged(object sender, EventArgs e)
@@ -494,7 +494,7 @@ namespace CZAOSWeb.admin.observation
 
             }
 
-            foreach (ListItem observer in cbxObservers.Items)
+            foreach (ListItem observer in lstObservers.Items)
             {
                 if (observer.Selected)
                 {
@@ -600,7 +600,7 @@ namespace CZAOSWeb.admin.observation
 
             //clear out observers then add selected
             ObserverList.DeleteByObservation(this.ObservationID);
-            foreach (ListItem observer in cbxObservers.Items)
+            foreach (ListItem observer in lstObservers.Items)
             {
                 if (observer.Selected)
                 {
