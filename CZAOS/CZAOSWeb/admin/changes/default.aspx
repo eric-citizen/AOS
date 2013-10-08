@@ -45,7 +45,7 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkView" CssClass="ui-dialog-link gv-view-link" data-args="600, 700, true, null, 0" Text="Edit" ToolTip="View Changes" NavigateUrl='<%# Bind("ID","~/admin/changes/view-changes.aspx?id={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkView" CssClass="ui-dialog-link gv-view-link" data-args="600, 700, true, null, 0" Text="View" ToolTip="View Changes" NavigateUrl='<%# Bind("ID","~/admin/changes/view-changes.aspx?id={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>

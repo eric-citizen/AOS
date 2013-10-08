@@ -63,19 +63,27 @@ namespace CZAOSWeb.admin.observation
                 }
                 else
                 {
+
+
+                    var strDetail = obs.ObserveStart.ToShortDateString() + " // " + obs.ObservationID + " // " + obs.ObservationTypeName + " // " + obs.Exhibit;
+                    litHead.Text = strDetail;
+                    litFoot.Text = strDetail;
+                    lnkHeadEdit.NavigateUrl = String.Format("~/admin/observation/edit-observation.aspx?observationId={0}", obs.ObservationID);
+                    lnkFootEdit.NavigateUrl = String.Format("~/admin/observation/edit-observation.aspx?observationId={0}", obs.ObservationID);
+
                     fieldsetLegend.Text = obs.ObservationTypeName;
                     litDate.Text = obs.ObserveStart.ToShortDateString();
                     litStart.Text = obs.ObserveStart.ToShortTimeString();
                     litEnd.Text = obs.ObserveEnd.ToShortTimeString();
                     litCategory.Text = obs.Category;
-                    pnlTimer.Visible = litCategory.Text.Equals("Timed");
+                   // pnlTimer.Visible = litCategory.Text.Equals("Timed");
                     
-                    if (pnlTimer.Visible)
-                    {
+                    //if (pnlTimer.Visible)
+                    //{
                         litInterval.Text = obs.Interval.ToString() +" minutes.";
                         litTimer.Text = obs.Timer ? "Yes" : "No";
                         litManual.Text = obs.Manual ? "Yes" : "No";
-                    }
+                    //}
 
                     ObserverList observers = ObserverList.GetActive(obs.ObservationID);
                     litObsCount.Text = obs.ObserverNo.ToString();
@@ -85,16 +93,21 @@ namespace CZAOSWeb.admin.observation
                     litRegion.Text = obs.AnimalRegion;
                     litExhibit.Text = obs.Exhibit;
 
+                    rptAnimal.DataSource = AnimalObservationList.GetActive(this.ObservationID);
+                    rptAnimal.DataBind();
+
                     rptGroups.DataSource = AnimalGroupList.GetActiveByObservationID(obs.ObservationID);
                     rptGroups.DataBind();
 
                     if (obs.ObserveType == Observation.ObservationTypeEnum.Professional)
                     {
-                        pnlLoginInfo.Visible = false;
+                        pnlSchool.Visible = false;
+                        pnlLogin.Visible = false;
                     }
                     else
                     {
-                        pnlLoginInfo.Visible = true;
+                        pnlSchool.Visible = true;
+                        pnlLogin.Visible = true;
 
                         litTeacherName.Text = obs.TeacherName;
                         litTeacherLogin.Text = obs.TeacherLogin;
@@ -120,6 +133,16 @@ namespace CZAOSWeb.admin.observation
 
             rptGroupAnimals.DataSource = list;
             rptGroupAnimals.DataBind();
+        }
+
+        protected void btnHeadDelete_Click(object sender, EventArgs e)
+        {
+            if (base.IsMasterAdmin)
+            {
+                Observation obs = ObservationList.Get(this.ObservationID);
+                ObservationList.DeleteItem(obs);
+                this.Toast(PageExtensions.ToastMessageType.success, "Observation permanently deleted.", "Record Deleted");
+            }
         }
     }
 }

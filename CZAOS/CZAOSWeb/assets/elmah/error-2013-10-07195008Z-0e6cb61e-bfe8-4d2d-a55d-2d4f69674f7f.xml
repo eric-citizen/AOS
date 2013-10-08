@@ -1,0 +1,176 @@
+﻿<error errorId="0e6cb61e-bfe8-4d2d-a55d-2d4f69674f7f" host="HMBLATZ0185" type="System.NullReferenceException" message="Object reference not set to an instance of an object." source="CZAOSWeb" detail="System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---&gt; System.NullReferenceException: Object reference not set to an instance of an object.&#xD;&#xA;   at CZAOSWeb.admin.observation.view_observation.LoadData() in c:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSWeb\admin\observation\view-observation.aspx.cs:line 66&#xD;&#xA;   at CZAOSWeb.admin.observation.view_observation.Page_Load(Object sender, EventArgs e) in c:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSWeb\admin\observation\view-observation.aspx.cs:line 46&#xD;&#xA;   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)&#xD;&#xA;   at System.Web.UI.Control.OnLoad(EventArgs e)&#xD;&#xA;   at System.Web.UI.Control.LoadRecursive()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.HandleError(Exception e)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(HttpContext context)&#xD;&#xA;   at ASP.admin_observation_view_observation_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\31475cf4\bcc5cb63\App_Web_mptwag2u.1.cs:line 0&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="test" time="2013-10-07T19:50:08.8501807Z" statusCode="500" webHostHtmlMessage="&lt;!DOCTYPE html&gt;&#xD;&#xA;&lt;html&gt;&#xD;&#xA;    &lt;head&gt;&#xD;&#xA;        &lt;title&gt;Object reference not set to an instance of an object.&lt;/title&gt;&#xD;&#xA;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;&#xD;&#xA;        &lt;style&gt;&#xD;&#xA;         body {font-family:&quot;Verdana&quot;;font-weight:normal;font-size: .7em;color:black;} &#xD;&#xA;         p {font-family:&quot;Verdana&quot;;font-weight:normal;color:black;margin-top: -5px}&#xD;&#xA;         b {font-family:&quot;Verdana&quot;;font-weight:bold;color:black;margin-top: -5px}&#xD;&#xA;         H1 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:18pt;color:red }&#xD;&#xA;         H2 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:14pt;color:maroon }&#xD;&#xA;         pre {font-family:&quot;Consolas&quot;,&quot;Lucida Console&quot;,Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}&#xD;&#xA;         .marker {font-weight: bold; color: black;text-decoration: none;}&#xD;&#xA;         .version {color: gray;}&#xD;&#xA;         .error {margin-bottom: 10px;}&#xD;&#xA;         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }&#xD;&#xA;         @media screen and (max-width: 639px) {&#xD;&#xA;          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }&#xD;&#xA;         }&#xD;&#xA;         @media screen and (max-width: 479px) {&#xD;&#xA;          pre { width: 280px; }&#xD;&#xA;         }&#xD;&#xA;        &lt;/style&gt;&#xD;&#xA;    &lt;/head&gt;&#xD;&#xA;&#xD;&#xA;    &lt;body bgcolor=&quot;white&quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;span&gt;&lt;H1&gt;Server Error in '/' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h2&gt; &lt;i&gt;Object reference not set to an instance of an object.&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;&#xD;&#xA;&#xD;&#xA;            &lt;font face=&quot;Arial, Helvetica, Geneva, SunSans-Regular, sans-serif &quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Description: &lt;/b&gt;An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Exception Details: &lt;/b&gt;System.NullReferenceException: Object reference not set to an instance of an object.&lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Source Error:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;Line 64:                 else&#xD;&#xA;Line 65:                 {&#xD;&#xA;&lt;font color=red&gt;Line 66:                     fieldsetLegend.Text = obs.ObservationTypeName;&#xD;&#xA;&lt;/font&gt;Line 67:                     litDate.Text = obs.ObserveStart.ToShortDateString();&#xD;&#xA;Line 68:                     litStart.Text = obs.ObserveStart.ToShortTimeString();&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Source File: &lt;/b&gt; c:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSWeb\admin\observation\view-observation.aspx.cs&lt;b&gt; &amp;nbsp;&amp;nbsp; Line: &lt;/b&gt; 66&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Stack Trace:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;[NullReferenceException: Object reference not set to an instance of an object.]&#xD;&#xA;   CZAOSWeb.admin.observation.view_observation.LoadData() in c:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSWeb\admin\observation\view-observation.aspx.cs:66&#xD;&#xA;   CZAOSWeb.admin.observation.view_observation.Page_Load(Object sender, EventArgs e) in c:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSWeb\admin\observation\view-observation.aspx.cs:46&#xD;&#xA;   System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e) +51&#xD;&#xA;   System.Web.UI.Control.OnLoad(EventArgs e) +92&#xD;&#xA;   System.Web.UI.Control.LoadRecursive() +54&#xD;&#xA;   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +772&#xD;&#xA;&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;    &lt;/body&gt;&#xD;&#xA;&lt;/html&gt;&#xD;&#xA;">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:max-age=0&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip,deflate,sdch&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8&#xD;&#xA;HTTP_COOKIE:ASP.NET_SessionId=lwnpninmy4nrp4bw5emzo0ol; CZ_AUTHENT=25BD320A2D102E5AE25AB39C008BD0D008D2CD26841241AE2C92810C03394ACC874D9F31EAA85E54F6FF696AC14B98580DDC3691AE2966699AE8DCBAEF96EC7D5514215ED13700E8A7FA6747D6B97ED82BE9AE6A; CZ_ROLES=LGHNiEoik6MvAsGOGwpnbK5ls7VP-TiYL83KEluuEoEHuE2dqzYTnAKNDrIKQYtU5vitaymyElOYh35jZEz1QEPA3Xgh-ifDu0rbRLOLQYaMxM9o_6T2k-X-eEes3G9qJQrHwViQHDfkOaoyKKA72l-fxwzd4Uu3tkJb2F12AJaYczqUmW7WjeOyRuCCGIXHLYaKiVEQv7RJ1RCTXQgN2lZJ4mFLF-FWefLqs_hz6UojDe-6Ey0eIufV_nbOkvmLwDgHvdDpz4yZF7eqEXXnG6Vl_7-D9aKvOPtIj8SFnPFvHJl_JSuzs7kCSEn18TmfB6wmOU1EgNLJU9bAax1WbtrSvSffUTEVvP3lUsqNqaSxDg7tzHJcwZ2Dj9DE0qphYJgiDwuqIqvyVXHeXKn8ciMweHJOIj7UFYBp2oppLrJZ99SKOLfKt5Q5W1rpca1i_-BfCy8iUf_dcW1FpA01R-0gTHe93xdAx8ZiCWM6G5hxYHPc0&#xD;&#xA;HTTP_HOST:localhost:53637&#xD;&#xA;HTTP_REFERER:http://localhost:53637/admin/observation/&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.69 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: max-age=0&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip,deflate,sdch&#xD;&#xA;Accept-Language: en-US,en;q=0.8&#xD;&#xA;Cookie: ASP.NET_SessionId=lwnpninmy4nrp4bw5emzo0ol; CZ_AUTHENT=25BD320A2D102E5AE25AB39C008BD0D008D2CD26841241AE2C92810C03394ACC874D9F31EAA85E54F6FF696AC14B98580DDC3691AE2966699AE8DCBAEF96EC7D5514215ED13700E8A7FA6747D6B97ED82BE9AE6A; CZ_ROLES=LGHNiEoik6MvAsGOGwpnbK5ls7VP-TiYL83KEluuEoEHuE2dqzYTnAKNDrIKQYtU5vitaymyElOYh35jZEz1QEPA3Xgh-ifDu0rbRLOLQYaMxM9o_6T2k-X-eEes3G9qJQrHwViQHDfkOaoyKKA72l-fxwzd4Uu3tkJb2F12AJaYczqUmW7WjeOyRuCCGIXHLYaKiVEQv7RJ1RCTXQgN2lZJ4mFLF-FWefLqs_hz6UojDe-6Ey0eIufV_nbOkvmLwDgHvdDpz4yZF7eqEXXnG6Vl_7-D9aKvOPtIj8SFnPFvHJl_JSuzs7kCSEn18TmfB6wmOU1EgNLJU9bAax1WbtrSvSffUTEVvP3lUsqNqaSxDg7tzHJcwZ2Dj9DE0qphYJgiDwuqIqvyVXHeXKn8ciMweHJOIj7UFYBp2oppLrJZ99SKOLfKt5Q5W1rpca1i_-BfCy8iUf_dcW1FpA01R-0gTHe93xdAx8ZiCWM6G5hxYHPc0&#xD;&#xA;Host: localhost:53637&#xD;&#xA;Referer: http://localhost:53637/admin/observation/&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.69 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/17/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSWeb\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="Forms" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="test" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="test" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="test" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="17" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/17" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/admin/observation/view-observation.aspx" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\jlink\Documents\GitHub\AOS\CZAOS\CZAOSWeb\admin\observation\view-observation.aspx" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="observationId=19" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="26212" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/admin/observation/view-observation.aspx" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="53637" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/8.0" />
+    </item>
+    <item name="URL">
+      <value string="/admin/observation/view-observation.aspx" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="max-age=0" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip,deflate,sdch" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="ASP.NET_SessionId=lwnpninmy4nrp4bw5emzo0ol; CZ_AUTHENT=25BD320A2D102E5AE25AB39C008BD0D008D2CD26841241AE2C92810C03394ACC874D9F31EAA85E54F6FF696AC14B98580DDC3691AE2966699AE8DCBAEF96EC7D5514215ED13700E8A7FA6747D6B97ED82BE9AE6A; CZ_ROLES=LGHNiEoik6MvAsGOGwpnbK5ls7VP-TiYL83KEluuEoEHuE2dqzYTnAKNDrIKQYtU5vitaymyElOYh35jZEz1QEPA3Xgh-ifDu0rbRLOLQYaMxM9o_6T2k-X-eEes3G9qJQrHwViQHDfkOaoyKKA72l-fxwzd4Uu3tkJb2F12AJaYczqUmW7WjeOyRuCCGIXHLYaKiVEQv7RJ1RCTXQgN2lZJ4mFLF-FWefLqs_hz6UojDe-6Ey0eIufV_nbOkvmLwDgHvdDpz4yZF7eqEXXnG6Vl_7-D9aKvOPtIj8SFnPFvHJl_JSuzs7kCSEn18TmfB6wmOU1EgNLJU9bAax1WbtrSvSffUTEVvP3lUsqNqaSxDg7tzHJcwZ2Dj9DE0qphYJgiDwuqIqvyVXHeXKn8ciMweHJOIj7UFYBp2oppLrJZ99SKOLfKt5Q5W1rpca1i_-BfCy8iUf_dcW1FpA01R-0gTHe93xdAx8ZiCWM6G5hxYHPc0" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:53637" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:53637/admin/observation/" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.69 Safari/537.36" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="observationId">
+      <value string="19" />
+    </item>
+  </queryString>
+  <cookies>
+    <item name="ASP.NET_SessionId">
+      <value string="lwnpninmy4nrp4bw5emzo0ol" />
+    </item>
+    <item name="CZ_AUTHENT">
+      <value string="25BD320A2D102E5AE25AB39C008BD0D008D2CD26841241AE2C92810C03394ACC874D9F31EAA85E54F6FF696AC14B98580DDC3691AE2966699AE8DCBAEF96EC7D5514215ED13700E8A7FA6747D6B97ED82BE9AE6A" />
+    </item>
+    <item name="CZ_ROLES">
+      <value string="LGHNiEoik6MvAsGOGwpnbK5ls7VP-TiYL83KEluuEoEHuE2dqzYTnAKNDrIKQYtU5vitaymyElOYh35jZEz1QEPA3Xgh-ifDu0rbRLOLQYaMxM9o_6T2k-X-eEes3G9qJQrHwViQHDfkOaoyKKA72l-fxwzd4Uu3tkJb2F12AJaYczqUmW7WjeOyRuCCGIXHLYaKiVEQv7RJ1RCTXQgN2lZJ4mFLF-FWefLqs_hz6UojDe-6Ey0eIufV_nbOkvmLwDgHvdDpz4yZF7eqEXXnG6Vl_7-D9aKvOPtIj8SFnPFvHJl_JSuzs7kCSEn18TmfB6wmOU1EgNLJU9bAax1WbtrSvSffUTEVvP3lUsqNqaSxDg7tzHJcwZ2Dj9DE0qphYJgiDwuqIqvyVXHeXKn8ciMweHJOIj7UFYBp2oppLrJZ99SKOLfKt5Q5W1rpca1i_-BfCy8iUf_dcW1FpA01R-0gTHe93xdAx8ZiCWM6G5hxYHPc0" />
+    </item>
+  </cookies>
+</error>
