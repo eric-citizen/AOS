@@ -657,7 +657,10 @@ namespace CZAOSWeb.admin.observation
         private void LoadEduData(Observation obs)
         {           
             this.LoadObservers(false);
-            
+
+            litSchType.Text = obs.ObservationTypeName;
+
+
             dteSchoolDate.Text = obs.ObserveStart.ToShortDateString();
             txtSchoolStart.Text = obs.ObserveStart.ToShortTimeString();
             txtSchoolEnd.Text = obs.ObserveEnd.ToShortTimeString();
