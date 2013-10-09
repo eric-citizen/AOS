@@ -7,9 +7,90 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CZAOSWeb.admin.animals {
+namespace CZAOSWeb.admin.Animals {
     
     
-    public partial class index {
+    public partial class _default {
+        
+        /// <summary>
+        /// AlphabetFilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CZAOSWeb.controls.AlphabetFilter AlphabetFilter;
+        
+        /// <summary>
+        /// txtFreeText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.RequiredTextBox txtFreeText;
+        
+        /// <summary>
+        /// btnSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.WaitButton btnSearch;
+        
+        /// <summary>
+        /// lnkClear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkClear;
+        
+        /// <summary>
+        /// cztDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource cztDataSource;
+        
+        /// <summary>
+        /// gvse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.GridViewSortExtender gvse;
+        
+        /// <summary>
+        /// gvAnimals control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvAnimals;
+        
+        /// <summary>
+        /// gvPagerControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CZAOSWeb.controls.GridPager gvPagerControl;
+        
+        /// <summary>
+        /// divEmpty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.MessageDiv divEmpty;
     }
 }

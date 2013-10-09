@@ -1,13 +1,13 @@
 ﻿(function (app) {
-    var apiURL = "/api/animal";
-    app.AnimalControl = ko.observable({});
-    app.AnimalControl().SelectedAnimal = ko.observable({});
-    
+    var apiURL = "/api/exhibitbehavior";
+    app.BehaviorCategoryControl = ko.observable({});
+    app.BehaviorCategoryControl().SelectedBehaviorCategory = ko.observable({});
+
     var configure = function () {
         if (app.ExhibitControl) {
-            app.ExhibitControl().SelectedExhibit.subscribe(function() {
-                app.AnimalControl().SelectedAnimal({});
-                $('#animal-knockout-scope .active').toggleClass('active');
+            app.ExhibitControl().SelectedExhibit.subscribe(function () {
+                app.BehaviorCategoryControl().SelectedBehaviorCategory({});
+                $('#behavior-category-knockout-scope .active').toggleClass('active');
             });
         }
         load();
@@ -17,29 +17,29 @@
         app.ApiHelper.GetAll(apiURL).done(function (data) {
             //need to stringify data before ko.mapping will work
             data = JSON.stringify(data);
-            app.AnimalControl().Animals = ko.mapping.fromJSON(data);
-            ko.applyBindings(app.AnimalControl, $('#animal-knockout-scope')[0]);
+            app.BehaviorCategoryControl().Animals = ko.mapping.fromJSON(data);
+            ko.applyBindings(app.BehaviorCategoryControl, $('#behavior-category-knockout-scope')[0]);
         });
     };
 
-    var addEnabled = function() {
+    var addEnabled = function () {
         return app.ExhibitControl().SelectedExhibit().ExhibitID;
     };
 
     var createNew = function () {
 
     };
-    
-    var edit = function (animal, event) {
+
+    var edit = function (behaviorCategory, event) {
         event.preventDefault();
         CZAOSUIDialogs.ShowDialogFromArgs($(event.target));
     };
 
-    var display = function (animal) {
-        if (!app.ExhibitControl().SelectedExhibit().ExhibitName) {
+    var display = function (behaviorCategory) {
+        if (!app.BehaviorCategoryControl().SelectedBehaviorCategory().ExhibitID) {
             return false;
         } else {
-            return animal.CommonName() == app.ExhibitControl().SelectedExhibit().ExhibitName();
+            return behaviorCategory.ExhibitID() == app.ExhibitControl().SelectedExhibit().ExhibitID();
         }
     };
 
@@ -49,7 +49,7 @@
         $(event.target.parentElement).toggleClass('active');
         app.AnimalControl().SelectedAnimal(animal);
     };
-    
+
     app.AnimalControl().Display = display;
     app.AnimalControl().UpdateSelectedAnimal = updateSelectedAnimal;
     app.AnimalControl().Configure = configure;
