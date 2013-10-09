@@ -125,8 +125,6 @@ namespace CZDataObjects
             base.AddParameter("@DOB",item.DOB);
             base.AddParameter("@CZArrival",item.CZArrival);
             base.AddParameter("@Active",item.Active);
-            base.AddParameter("@ExhibitID",item.ExhibitID);
-            
         }
 
 	}

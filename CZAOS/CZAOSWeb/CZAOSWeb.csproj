@@ -102,10 +102,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\animal-regions\default.aspx" />
-    <Content Include="admin\animals\old_default.aspx" />
     <Content Include="admin\animals\default.aspx" />
+    <Content Include="admin\animals\setup_wizard.aspx" />
     <Content Include="admin\behavior\behaviors.aspx" />
     <Content Include="admin\behavior\default.aspx" />
+    <Content Include="admin\behavior\index.aspx" />
     <Content Include="admin\changes\default.aspx" />
     <Content Include="admin\changes\view-changes.aspx" />
     <Content Include="admin\crowds\default.aspx" />
@@ -117,6 +118,7 @@
     <Content Include="admin\email-templates\default.aspx" />
     <Content Include="admin\email-templates\edit-template.aspx" />
     <Content Include="admin\exhibits\edit-exhibit-location.aspx" />
+    <Content Include="admin\exhibits\index.aspx" />
     <Content Include="admin\location\sort-location.aspx" />
     <Content Include="admin\location\edit-location.aspx" />
     <Content Include="admin\exhibits\edit-exhibit-behavior.aspx" />
@@ -175,9 +177,11 @@
     <Content Include="assets\email-templates\pwdReminder.txt" />
     <Content Include="assets\scripts\api.js" />
     <Content Include="assets\scripts\app.js" />
+    <Content Include="assets\scripts\BehaviorControl.js" />
     <Content Include="assets\scripts\controls.js" />
     <Content Include="assets\scripts\czaos.js" />
     <Content Include="assets\scripts\dialogs.js" />
+    <Content Include="assets\scripts\ExhibitControl.js" />
     <Content Include="assets\scripts\fademessage\fademessage.css" />
     <Content Include="assets\scripts\jquery.alphanumeric.pack.js" />
     <Content Include="assets\scripts\jquery.cookie.js" />
@@ -188,8 +192,10 @@
     <Content Include="assets\scripts\jquery.password_strength.js" />
     <Content Include="assets\scripts\jquery.timepicker.css" />
     <Content Include="assets\scripts\jquery.timepicker.js" />
+    <Content Include="assets\scripts\LocationControl.js" />
     <Content Include="assets\scripts\login.js" />
     <Content Include="assets\scripts\modernizr-2.6.2.js" />
+    <Content Include="assets\scripts\RegionControl.js" />
     <Content Include="assets\scripts\services.js" />
     <Content Include="assets\scripts\simplemodal\css\basic.css" />
     <Content Include="assets\scripts\simplemodal\img\basic\x.png" />
@@ -263,19 +269,19 @@
     <Compile Include="admin\animal-regions\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\animals\old_default.aspx.cs">
-      <DependentUpon>old_default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\animals\old_default.aspx.designer.cs">
-      <DependentUpon>old_default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="admin\animals\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\animals\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\animals\setup_wizard.aspx.cs">
+      <DependentUpon>setup_wizard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\animals\setup_wizard.aspx.designer.cs">
+      <DependentUpon>setup_wizard.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\behavior\behaviors.aspx.cs">
       <DependentUpon>behaviors.aspx</DependentUpon>
@@ -290,6 +296,13 @@
     </Compile>
     <Compile Include="admin\behavior\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\behavior\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\behavior\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\changes\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -367,6 +380,13 @@
     </Compile>
     <Compile Include="admin\exhibits\edit-exhibit-location.aspx.designer.cs">
       <DependentUpon>edit-exhibit-location.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\exhibits\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\exhibits\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\location\sort-location.aspx.cs">
       <DependentUpon>sort-location.aspx</DependentUpon>
