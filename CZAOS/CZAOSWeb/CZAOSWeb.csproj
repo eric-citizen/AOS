@@ -103,7 +103,7 @@
   <ItemGroup>
     <Content Include="admin\animal-regions\default.aspx" />
     <Content Include="admin\animals\default.aspx" />
-    <Content Include="admin\animals\setup_wizard.aspx" />
+    <Content Include="admin\animals\setup-wizard.aspx" />
     <Content Include="admin\behavior\behaviors.aspx" />
     <Content Include="admin\behavior\default.aspx" />
     <Content Include="admin\behavior\index.aspx" />
@@ -177,6 +177,7 @@
     <Content Include="assets\email-templates\pwdReminder.txt" />
     <Content Include="assets\scripts\api.js" />
     <Content Include="assets\scripts\app.js" />
+    <Content Include="assets\scripts\BehaviorCategoryControl.js" />
     <Content Include="assets\scripts\BehaviorControl.js" />
     <Content Include="assets\scripts\controls.js" />
     <Content Include="assets\scripts\czaos.js" />
@@ -276,12 +277,12 @@
     <Compile Include="admin\animals\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\animals\setup_wizard.aspx.cs">
-      <DependentUpon>setup_wizard.aspx</DependentUpon>
+    <Compile Include="admin\animals\setup-wizard.aspx.cs">
+      <DependentUpon>setup-wizard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\animals\setup_wizard.aspx.designer.cs">
-      <DependentUpon>setup_wizard.aspx</DependentUpon>
+    <Compile Include="admin\animals\setup-wizard.aspx.designer.cs">
+      <DependentUpon>setup-wizard.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\behavior\behaviors.aspx.cs">
       <DependentUpon>behaviors.aspx</DependentUpon>

@@ -9,9 +9,19 @@ namespace CZBizObjects.Repository
 {
     public class BehaviorCategoryRepository : ICZAOSRepository<BehaviorCategory>
     {
+        static readonly ICZAOSRepository<ExhibitBehavior> ebRepository = new ExhibitBehaviorRepository();
+
         public IEnumerable<BehaviorCategory> GetAll()
         {
             List<BehaviorCategory> records = BehaviorCategoryList.GetActive();
+            return records;
+        }
+
+        public IEnumerable<BehaviorCategory> GetAll(int exhibitId)
+        {
+            IEnumerable<BehaviorCategory> records = BehaviorCategoryList.GetActive();
+            var exhibitBehaviors = ebRepository.GetAll().Where(eb => eb.ExhibitID == exhibitId);
+            records = records.Where(c => exhibitBehaviors.Any(e => e.BvrCatID == c.BvrCatID));
             return records;
         }
 

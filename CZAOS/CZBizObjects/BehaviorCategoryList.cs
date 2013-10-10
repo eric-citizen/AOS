@@ -143,7 +143,7 @@ namespace CZBizObjects
             return GetItemCollection(0, 0, "SortOrder ASC", filter);
         }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
+	    [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static BehaviorCategoryList GetActive()
         {
             List<BehaviorCategory> items = GetCacheList();
@@ -157,7 +157,7 @@ namespace CZBizObjects
             return new BehaviorCategoryList(items);
         }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
+	    [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static BehaviorCategory Get(int id)
         {
             BehaviorCategoryList items = GetActive();
@@ -166,8 +166,7 @@ namespace CZBizObjects
             return item;
         }
 
-		#endregion
-
+	    #endregion
 	}   
 
 }
