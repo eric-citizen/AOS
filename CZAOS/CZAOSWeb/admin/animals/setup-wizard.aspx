@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Manage Animals" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="setup_wizard.aspx.cs" Inherits="CZAOSWeb.admin.animals.index" %>
+﻿<%@ Page Title="Manage Animals" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="setup-wizard.aspx.cs" Inherits="CZAOSWeb.admin.animals.index" %>
 <%@ Import Namespace="System.Web.Http.Routing" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="body">
