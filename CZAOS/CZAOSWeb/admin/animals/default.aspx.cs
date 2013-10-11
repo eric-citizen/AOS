@@ -149,5 +149,10 @@ namespace CZAOSWeb.admin.Animals
             txtFreeText.Clear();
             gvAnimals.DataBind();
         }
+
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            gvAnimals.DataBind();
+        }
     }
 }

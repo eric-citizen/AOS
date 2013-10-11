@@ -35,55 +35,62 @@
     <mack:GridViewSortExtender runat="server" ID="gvse"
         AscendingImageUrl="~/images/down.png" DescendingImageUrl="~/images/up.png" GridViewID="gvAnimals" TransparentImageUrl="~/images/transparent.png" />
 
-    <asp:GridView ID="gvAnimals" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="gridview"
-        PageSize="20" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false" 
-        DataKeyNames="AnimalID" OnRowDataBound="gvAnimals_RowDataBound" OnRowCommand="gvAnimals_RowCommand">
-        <Columns>
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true">
+    </asp:ScriptManager>
+    
+    <asp:UpdatePanel runat="server" >
+        <ContentTemplate>
+            <asp:GridView ID="gvAnimals" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="gridview"
+                PageSize="20" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false" 
+                DataKeyNames="AnimalID" OnRowDataBound="gvAnimals_RowDataBound" OnRowCommand="gvAnimals_RowCommand">
+                <Columns>
 
-            <asp:BoundField DataField="CommonName" SortExpression="CommonName" HeaderText="Common Name">                
-            </asp:BoundField>
+                    <asp:BoundField DataField="CommonName" SortExpression="CommonName" HeaderText="Common Name">                
+                    </asp:BoundField>
             
-            <asp:BoundField DataField="HouseName" SortExpression="HouseName" HeaderText="House Name">
-                <ItemStyle Width="300px" />
-            </asp:BoundField>  
+                    <asp:BoundField DataField="HouseName" SortExpression="HouseName" HeaderText="House Name">
+                        <ItemStyle Width="300px" />
+                    </asp:BoundField>  
 
-            <asp:BoundField DataField="ZooID" SortExpression="ZooID" HeaderText="Zoo ID">
-                <ItemStyle Width="80px" />
-            </asp:BoundField>
+                    <asp:BoundField DataField="ZooID" SortExpression="ZooID" HeaderText="Zoo ID">
+                        <ItemStyle Width="80px" />
+                    </asp:BoundField>
                 
-            <asp:TemplateField SortExpression="AnimalRegion" HeaderText="Animal Region" ItemStyle-Width="250px">                    
-                <ItemTemplate>
-                    <asp:Label runat="server" ID="lblAnimalRegion" Text='<%# Bind("AnimalRegion") %>'></asp:Label>
-                    <asp:HyperLink runat="server" ID="lnkAnimalRegionEdit" CssClass="ui-dialog-link gv-edit-link-inline" data-args="270, 600, true, null, 1" Text="Edit" ToolTip="Edit Animal Region" NavigateUrl='<%# Bind("AnimalRegionCode","~/admin/animal-regions/edit-region.aspx?regionId={0}") %>'></asp:HyperLink>                
-                </ItemTemplate> 
-            </asp:TemplateField>
+                    <asp:TemplateField SortExpression="AnimalRegion" HeaderText="Animal Region" ItemStyle-Width="250px">                    
+                        <ItemTemplate>
+                            <asp:Label runat="server" ID="lblAnimalRegion" Text='<%# Bind("AnimalRegion") %>'></asp:Label>
+                            <asp:HyperLink runat="server" ID="lnkAnimalRegionEdit" CssClass="ui-dialog-link gv-edit-link-inline" data-args="270, 600, true, null, 1" Text="Edit" ToolTip="Edit Animal Region" NavigateUrl='<%# Bind("AnimalRegionCode","~/admin/animal-regions/edit-region.aspx?regionId={0}") %>'></asp:HyperLink>                
+                        </ItemTemplate> 
+                    </asp:TemplateField>
 
-            <asp:TemplateField SortExpression="Active" HeaderText="Active" ItemStyle-Width="50px" HeaderStyle-CssClass="tac" ItemStyle-CssClass="tac cell-wait-click">                    
-                <ItemTemplate>
-                    <asp:CheckBox runat="server" ID="activeCheckBox" Checked='<%# Bind("Active") %>' OnCheckedChanged="IsActiveCheckChanged" AutoPostBack="true" />
-                </ItemTemplate> 
-            </asp:TemplateField>
+                    <asp:TemplateField SortExpression="Active" HeaderText="Active" ItemStyle-Width="50px" HeaderStyle-CssClass="tac" ItemStyle-CssClass="tac cell-wait-click">                    
+                        <ItemTemplate>
+                            <asp:CheckBox runat="server" ID="activeCheckBox" Checked='<%# Bind("Active") %>' OnCheckedChanged="IsActiveCheckChanged" AutoPostBack="true" />
+                        </ItemTemplate> 
+                    </asp:TemplateField>
 
-            <asp:TemplateField>
-                <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="500, 700, true, null, 1" Text="Edit" ToolTip="Edit Animal" NavigateUrl='<%# Bind("AnimalID","~/admin/animals/edit-animal.aspx?animalId={0}") %>'></asp:HyperLink>
-                </ItemTemplate> 
-                <ItemStyle Width="60px" CssClass="tac" />               
-            </asp:TemplateField>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="500, 700, true, null, 1" Text="Edit" ToolTip="Edit Animal" NavigateUrl='<%# Bind("AnimalID","~/admin/animals/edit-animal.aspx?animalId={0}") %>'></asp:HyperLink>
+                        </ItemTemplate> 
+                        <ItemStyle Width="60px" CssClass="tac" />               
+                    </asp:TemplateField>
 
-            <asp:TemplateField ShowHeader="False">
-                <ItemTemplate>
-                    <uc1:GridConfirmControl runat="server" ID="GridConfirmControl" CommandArgument='<%#Bind("AnimalID") %>' CommandName="DeleteAnimal" />
-                </ItemTemplate>                
-                <ItemStyle Width="60px" CssClass="tac" />
-            </asp:TemplateField>
-
-        </Columns>
-
+                    <asp:TemplateField ShowHeader="False">
+                        <ItemTemplate>
+                            <uc1:GridConfirmControl runat="server" ID="GridConfirmControl" CommandArgument='<%#Bind("AnimalID") %>' CommandName="DeleteAnimal" />
+                        </ItemTemplate>                
+                        <ItemStyle Width="60px" CssClass="tac" />
+                    </asp:TemplateField>
+                </Columns>
         
-    </asp:GridView>
+            </asp:GridView>
+
+        </ContentTemplate>
+    </asp:UpdatePanel>
 
     <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvAnimals" />
+    <asp:Button ID="btnRefresh" Text="refresh" runat="server" onclick="btnRefresh_Click" />
 
     <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvAnimals" Text="No records found!"></mack:MessageDiv>
 
