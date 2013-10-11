@@ -175,8 +175,6 @@ tr.hilite-row:nth-child(even) td{
     background: #fff;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .step li.active {
     background: #5195a3;
 }
@@ -292,12 +290,9 @@ body{
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
-=======
-=======
 .step li.active {
     background: #5195a3;
 }
->>>>>>> Updated css
 /* General slideStrip CSS*/
 
 .slideStrip{
@@ -410,7 +405,6 @@ body{
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
->>>>>>> added images, updated css
 #slide img{
     padding-bottom: 5%;
 }
