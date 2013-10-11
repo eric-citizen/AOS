@@ -41,6 +41,7 @@ select{
     font-family: "ABeeZee";
     border-radius: 2em;
     padding: .5em 1em;
+    padding-right: 4em;
 }
 
 textarea  {    
@@ -490,6 +491,37 @@ hr{
     background: url(../images/control/slide.png);
     background-size: 100% 100%;
 }
+#weatherControl li{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 10%;
+    text-align: center;
+}
+#crowdControl li{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 10%;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Syncopate', sans-serif;
+    text-transform: uppercase;
+}
+#crowdControl li img{
+    width:30%;
+}
+h1,h2{
+    padding: 15px;
+}
+h2{
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #4b2008;
+}
+#crowdControl li.selected{
+    font-size: 20px;
+}#crowdControl li.selected div span{
+    border-bottom: 4px solid #4a525c;
+}
 .slideStrip{
     position: relative;
     overflow: hidden;
@@ -517,4 +549,95 @@ header li{
 }
 header li img{
     width: 100%;
+}
+#loginPanel{
+    width: 320px;
+    margin:  0 auto;
+    padding-top: 5em;
+}
+#loginPanel span{
+    font-family: "Syncopate";
+    text-transform: uppercase;
+    font-weight: bold;
+    color:#4b2008;
+}
+#loginPanel .logo{
+    font-family: "Syncopate";
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 22px;
+    line-height: 30px;
+    color: #4a525c;
+    padding-bottom: 4em;
+    /*background:  url(../images/icons/observation/account-white.png) no-repeat bottom center;*/
+}
+#loginPanel input, #loginPanel select{
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+#loginPanel input[type='submit']{
+    width: auto;
+    margin-top: 2em;
+    font-family: "Syncopate";
+    text-transform: uppercase;
+    background: #5096a4;
+    border-color: #5096a4;
+    color: #fff;
+}
+
+#enviromentData{
+    background: url("../images/background/gradient.png"), url("../images/background/sky.jpg");
+    background-size: 100% 100%, 100% 100%;
+}
+#enviromentData h1{
+    padding-top: 20px;
+}
+#weatherAPIoutput{
+    padding:1em;
+    color: #4a525c;
+    text-align: center;
+}
+#weatherAPIoutput .temp{
+    font-size: 120px;
+    line-height: 100px;
+    font-weight: 200;
+    font-family: "Syncopate";
+    text-transform: uppercase;
+}
+#weatherAPIoutput .summary, #weatherAPIoutput .windspeed{
+    display: inline-block;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 14px;
+}
+#saveWeather, #saveRecord{
+    display: inline-block;
+    border-radius: 15px;
+    margin: 1em;
+}
+#timer{
+    width: 100%;
+    position: relative;
+    height: 40px;
+}
+
+#timer .timebar{
+    width:50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    background: red;
+    z-index: 1;
+}
+#timer .time{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+#weatherAPIoutput .temp:after{
+    content:'°F';
+    font-size: 120px;
 }
