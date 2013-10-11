@@ -40,12 +40,6 @@ namespace CZAOSWeb
                 defaults: new { id = System.Web.Http.RouteParameter.Optional }
             );
 
-            RouteTable.Routes.MapHttpRoute(
-               name: "ActionApi",
-               routeTemplate: "api/{controller}/{action}/{id}",
-               defaults: new { id = RouteParameter.Optional }
-            );
-
             //RouteTable.Routes.MapHttpRoute("DefaultApiWithId", "api/{controller}/{id}", new { id = RouteParameter.Optional }, new { id = @"\d+" });
             //RouteTable.Routes.MapHttpRoute("DefaultApiWithAction", "api/{controller}/{action}");
             //RouteTable.Routes.MapHttpRoute("DefaultApiGet", "api/{controller}", new { action = "Get" }, new { httpMethod = new HttpMethodConstraint("Get") });
