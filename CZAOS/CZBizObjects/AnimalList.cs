@@ -62,6 +62,12 @@ namespace CZBizObjects
 			return AnimalProvider.Instance().GetItem(id);
 		}
 
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static Animal GetItemByZooID(string id)
+        {
+            return AnimalProvider.Instance().GetItemByZooID(id);
+        }
+
 		public static int GetCount()
         {
             return AnimalProvider.Instance().GetCount(string.Empty);

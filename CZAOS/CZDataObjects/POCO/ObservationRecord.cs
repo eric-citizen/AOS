@@ -23,7 +23,8 @@ namespace CZDataObjects
 				this.ObservationRecordID = record.Get<int>("ObservationRecordID");
                 mintObservationID = record.Get<int>("ObservationID");
                 mstrUsername = record.Get<string>("Username");
-                mintAnimalID = record.Get<int>("AnimalID");
+                mintZooID = record.Get<string>("ZooID");
+                //mintAnimalID = record.Get<int>("AnimalID");
                 mstrBvrCat = record.Get<string>("BvrCat");
                 mstrBvrCatCode = record.Get<string>("BvrCatCode");
                 mstrBehavior = record.Get<string>("Behavior");
@@ -44,6 +45,7 @@ namespace CZDataObjects
         private int mintObservationID;
         private string mstrUsername = String.Empty;
         private int mintAnimalID;
+        private string mintZooID = String.Empty;
         private string mstrBvrCat = String.Empty;
         private string mstrBvrCatCode = String.Empty;
         private string mstrBehavior = String.Empty;
@@ -82,15 +84,27 @@ namespace CZDataObjects
             }
         }
 
-        public int AnimalID
+        //public int AnimalID
+        //{
+        //    get
+        //    {
+        //        return mintAnimalID;
+        //    }
+        //    set
+        //    {
+        //        mintAnimalID = value;
+        //    }
+        //}
+
+        public string ZooID
         {
             get
             {
-                return mintAnimalID;
+                return mintZooID;
             }
             set
             {
-                mintAnimalID = value;
+                mintZooID = value;
             }
         }
 

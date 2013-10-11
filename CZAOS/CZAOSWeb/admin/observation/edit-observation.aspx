@@ -2,7 +2,7 @@
 <%@ Register Src="~/controls/GridConfirmControl.ascx" TagPrefix="uc1" TagName="GridConfirmControl" %>
 <%@ Register Src="~/controls/GroupControl.ascx" TagPrefix="uc1" TagName="GroupControl" %>
 <%@ Register Src="~/controls/EditableTextBox.ascx" TagPrefix="uc1" TagName="EditableTextBox" %>
-
+<%@ MasterType VirtualPath="~/masterpages/Main.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="/assets/scripts/jquery.timepicker.css" rel="stylesheet" />
