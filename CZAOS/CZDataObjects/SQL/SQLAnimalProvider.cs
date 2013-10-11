@@ -125,14 +125,6 @@ namespace CZDataObjects
             base.AddParameter("@DOB",item.DOB);
             base.AddParameter("@CZArrival",item.CZArrival);
             base.AddParameter("@Active",item.Active);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            base.AddParameter("@ExhibitID",item.ExhibitID);
-=======
->>>>>>> Stopped Ignoring SQL folder
-            
-=======
->>>>>>> Reverted things to no longer use Animal Wizard
         }
 
 	}
