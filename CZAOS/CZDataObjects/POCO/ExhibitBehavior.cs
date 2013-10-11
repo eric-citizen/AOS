@@ -23,6 +23,8 @@ namespace CZDataObjects
                 mintExhibitID = record.Get<int>("ExhibitID");
                 mintBehaviorID = record.Get<int>("BehaviorID");
                 mblnActive = record.Get<bool>("Active");
+                mintBvrCatID = record.Get<int>("BvrCatID");
+
 
                 if (!isNew)
                 {
@@ -47,6 +49,7 @@ namespace CZDataObjects
         private bool mblnActive;
         private string mstrExhibitName;
         private string mstrBehavior;
+        private int mintBvrCatID;
 
         public string ExhibitName
         {
@@ -105,6 +108,18 @@ namespace CZDataObjects
             set
             {
                 mblnActive = value;
+            }
+        }
+
+        public int BvrCatID
+        {
+            get
+            {
+                return mintBvrCatID;
+            }
+            set
+            {
+                mintBvrCatID = value;
             }
         }
 

@@ -16,9 +16,11 @@
 </ul>
 <div class="menu_drop topnav">
     <ul>
+        <li><a href="/admin/observation/">Observations</a></li>
         <li><a href="/admin/animals/">Animals</a></li>
-       <!--  <li><a href="/admin/animals/">Habitats</a></li> -->
-        <li><a href="/admin/behavior/">Behaviors</a></li>
+        <li><a href="/admin/exhibits/">Exhibits</a></li> 
+        <li><a href="/admin/exhibits/index.aspx">Exhibit Locations</a></li>
+        <li><a href="/admin/behavior/">Behavior Categories</a></li>
         <li><a href="/admin/weather/">Weather</a></li>
         <li><a href="/admin/schools/">Schools</a></li>
         <li><a href="/admin/changes/">Change Log</a></li>

@@ -6,6 +6,10 @@
 *.user
 *.sln.docstates
 
+#Error logs
+assets/elmah
+logs
+
 # Build results
 
 [Dd]ebug/
@@ -17,6 +21,8 @@ build/
 *.dll
 *.pdb
 *.cache
+assets/elmah/
+logs/
 
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
 !packages/*/build/

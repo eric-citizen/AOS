@@ -3,22 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using CZBizObjects;
 using CZBizObjects.Repository;
 using CZDataObjects;
 using System.Text;
+using KT.Extensions;
 
 namespace CZAOSWeb.api
 {
     public class BehaviorCategoryController : CZAOSController<BehaviorCategory> //ApiController
     {
-        static readonly ICZAOSRepository<BehaviorCategory> repository = new BehaviorCategoryRepository();
+        static readonly BehaviorCategoryRepository repository = new BehaviorCategoryRepository();
 
         public override HttpResponseMessage GetAll()
         {
-            IEnumerable<BehaviorCategory> records = repository.GetAll();
-            var response = Request.CreateResponse<IEnumerable<BehaviorCategory>>(HttpStatusCode.OK, records);
+            string exhibitId = HttpContext.Current.Request.Headers["exhibitId"];
+            int id = 0;
+
+            if (exhibitId.IsNumeric())
+                id = exhibitId.ToInt32();
+
+            var records = id > 0 ? repository.GetAll(id) : repository.GetAll();
+
+            var response = Request.CreateResponse(HttpStatusCode.OK, records);
             return response;
         }
 
@@ -40,6 +49,16 @@ namespace CZAOSWeb.api
 
             return response;
         }
+
+        //public HttpResponseMessage GetBehaviorCategoriesByExhibit(int exhibitID)
+        //{
+        //    var categories = repository.GetAll();
+        //    var exhibitBehaviors = ebRepository.GetAll().Where(eb => eb.ExhibitID == exhibitID);
+        //    categories = categories.Where(c => exhibitBehaviors.Any(e => e.BvrCatID == c.BvrCatID));
+
+        //    var response = Request.CreateResponse(HttpStatusCode.OK, categories);
+        //    return response;
+        //}
 
         //http://localhost:53637/api/schools/?district=Bexley
         //public HttpResponseMessage GetBehaviorCategorysByRegionCode(string regionCode)
