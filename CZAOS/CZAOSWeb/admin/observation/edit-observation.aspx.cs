@@ -101,6 +101,7 @@ namespace CZAOSWeb.admin.observation
             if (this.ObservationID == 0)
             {
                 //add a new animal!
+                Master.ContentTitle = "Add New Observation";
                 fieldsetLegend.Text = "Add New Observation";
 
                 gvReports.Visible = false;
@@ -110,6 +111,7 @@ namespace CZAOSWeb.admin.observation
             }
             else
             {
+                Master.ContentTitle = "Edit Observation";
                 fieldsetLegend.Text = "Edit Observation";
                 
             }            
@@ -398,8 +400,8 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.CreateNewProObservation())
                 {
-                    Dialog dl = this.Master as Dialog;
-                    dl.RefreshParent();
+                    //Dialog dl = this.Master as Dialog   ;
+                    //dl.RefreshParent();
                 }
 
             }
@@ -407,8 +409,8 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.UpdateProObservation())
                 {
-                    Dialog dl = this.Master as Dialog;
-                    dl.RefreshParent();
+                    //Dialog dl = this.Master as Dialog;
+                    //dl.RefreshParent();
                 }
 
             }
@@ -839,8 +841,8 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.CreateNewEduObservation())
                 {
-                    Dialog dl = this.Master as Dialog;
-                    dl.RefreshParent();
+                    //Dialog dl = this.Master as Dialog;
+                    //dl.RefreshParent();
                 }
 
             }
@@ -848,8 +850,8 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.UpdateEduObservation())
                 {
-                    Dialog dl = this.Master as Dialog;
-                    dl.RefreshParent();
+                    //Dialog dl = this.Master as Dialog;
+                    //dl.RefreshParent();
                 }
 
             }

@@ -49,7 +49,7 @@
             <hr />
             <h2>Recent Observations</h2>
             <hr />
-            <a class="add-link ui-dialog-link" data-args="650, 650, true, null, 1" href="/admin/observation/edit-observation.aspx">Add New Observation</a>
+            <a class="add-link" href="/admin/observation/edit-observation.aspx">Add New Observation</a>
 
             <asp:ObjectDataSource ID="cztDataSourceRecent" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting_Recent"
                 SelectMethod="GetItemCollection" TypeName="CZBizObjects.ObservationList"
@@ -168,14 +168,14 @@
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:HyperLink runat="server" ID="lnkView" CssClass="ui-dialog-link gv-view-link" data-args="650, 650, true, null, 1" Text="View" ToolTip="View this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation.aspx?observationId={0}") %>'></asp:HyperLink>
+                            <asp:HyperLink runat="server" ID="lnkView" CssClass="gv-view-link" data-args="650, 650, true, null, 1" Text="View" ToolTip="View this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation.aspx?observationId={0}") %>'></asp:HyperLink>
                         </ItemTemplate>
                         <ItemStyle Width="60px" CssClass="tac" />
                     </asp:TemplateField>
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="650, 650, true, null, 1" Text="Edit" ToolTip="Edit this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/edit-observation.aspx?observationId={0}") %>'></asp:HyperLink>
+                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="Edit" ToolTip="Edit this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/edit-observation.aspx?observationId={0}") %>'></asp:HyperLink>
                         </ItemTemplate>
                         <ItemStyle Width="60px" CssClass="tac" />
                     </asp:TemplateField>

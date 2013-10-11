@@ -70,6 +70,27 @@ namespace CZDataObjects
             }
 		}
 
+        public Animal GetItemByZooID(string id)
+        {
+            lock (base.SyncLock_LOCK)
+            {
+                Animal item = null;
+
+                base.AddParameter("@ZooID", id);
+
+                using (DbDataReader reader = base.ExecuteReader("czt_Animal_Get_By_ZooID",
+                                System.Data.CommandType.StoredProcedure, ConnectionState.CloseOnExit))
+                {
+                    if (reader.Read())
+                    {
+                        item = new Animal(reader);
+                    }
+                }
+
+                return item;
+            }
+        }
+
         public Animal AddItem(Animal item)
 		{
 			this.AddParameters(item);  
