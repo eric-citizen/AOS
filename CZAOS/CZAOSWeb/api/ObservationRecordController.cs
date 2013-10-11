@@ -72,34 +72,6 @@ namespace CZAOSWeb.api
 
         }
 
-        [HttpPost]
-        public HttpResponseMessage SubmitObservationRecords(IEnumerable<ObservationRecord> items)
-        {
-            HttpResponseMessage response;
-
-            if (items == null)
-            {
-                response = new HttpResponseMessage(HttpStatusCode.NotFound);
-                response.Content = new StringContent("Invalid ObservationRecord");
-                throw new HttpResponseException(response);
-            }
-
-            if (ModelState.IsValid)
-            {
-                foreach (var item in items)
-                {
-                    repository.Add(item);
-                }
-                response = Request.CreateResponse(HttpStatusCode.Created);
-            }
-            else
-            {
-                response = Request.CreateResponse<List<string>>(HttpStatusCode.BadRequest, ModelState.ToJson());
-            }
-
-            return response;
-        }
-
         public override HttpResponseMessage Put(ObservationRecord item)
         {
             HttpResponseMessage response;
