@@ -35,7 +35,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 
 </head>
-<body> 
+<body style="width:960px;margin-left:auto;margin-right:auto"> 
     <form id="form1" runat="server">
         
      <mack:AutoLogout ID="AutoLogout2" runat="server" 

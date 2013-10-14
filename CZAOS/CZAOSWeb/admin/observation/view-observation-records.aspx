@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     
-        <div id="ObservationRecordList" style="width:960px">
+        <div id="ObservationRecordList" style="width:100%">
             <header style="border:1px solid #cccccc">
                 <label>Observation Data</label><br />
                 <asp:Literal runat="server" ID="litHeader"></asp:Literal>

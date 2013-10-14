@@ -49,6 +49,15 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.HyperLink lnkHeadEdit;
         
         /// <summary>
+        /// lnkHeadRecords control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkHeadRecords;
+        
+        /// <summary>
         /// btnHeadDelete control.
         /// </summary>
         /// <remarks>
@@ -281,6 +290,15 @@ namespace CZAOSWeb.admin.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkFootEdit;
+        
+        /// <summary>
+        /// lnkFootRecords control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkFootRecords;
         
         /// <summary>
         /// btnFootDelete control.

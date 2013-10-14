@@ -20,7 +20,7 @@
                     <hr />
                     <div id="AnimalDateRec" style="width:50%;float:left">
                         <label>Animal</label><br />
-                        <asp:DropDownList id="AnimalListRec" AutoPostBack="True" runat="server"/><br /><br />
+                        <asp:DropDownList id="AnimalListRec" AutoPostBack="True" runat="server" Width="300px"/><br /><br />
 
                         <label>Timeframe</label><br />
                         <input type="date" id="dateFromRec" runat="server" /> -- <input type="date" id="dateToRec" runat="server"/><br /><br />
@@ -87,6 +87,13 @@
                         <ItemStyle Width="60px" CssClass="tac" />
                     </asp:TemplateField>
 
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="Records" ToolTip="View Observation Records" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation-records.aspx?observationId={0}") %>'></asp:HyperLink>
+                        </ItemTemplate>
+                        <ItemStyle Width="60px" CssClass="tac" />
+                    </asp:TemplateField>
+
                     <asp:TemplateField ShowHeader="False">
                         <ItemTemplate>
                             <uc1:GridConfirmControl runat="server" ID="GridConfirmControl" CommandArgument='<%#Bind("ObservationID") %>' CommandName="DeleteObservation" />
@@ -111,7 +118,7 @@
                 <hr />
                 <div id="AnimalDateUp" style="width:50%;float:left">
                     <label>Animal</label><br />
-                    <asp:DropDownList id="AnimalListUp" AutoPostBack="True" runat="server"/><br /><br />
+                    <asp:DropDownList id="AnimalListUp" AutoPostBack="True" runat="server" Width="300px"/><br /><br />
 
                     <label>Timeframe</label><br />
                     <input type="date" id="dateFromUp" runat="server" /> -- <input type="date" id="dateToUp" runat="server"/><br /><br />
@@ -176,6 +183,13 @@
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:HyperLink runat="server" ID="lnkEdit" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="Edit" ToolTip="Edit this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/edit-observation.aspx?observationId={0}") %>'></asp:HyperLink>
+                        </ItemTemplate>
+                        <ItemStyle Width="60px" CssClass="tac" />
+                    </asp:TemplateField>
+
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="Records" ToolTip="View Observation Records" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation-records.aspx?observationId={0}") %>'></asp:HyperLink>
                         </ItemTemplate>
                         <ItemStyle Width="60px" CssClass="tac" />
                     </asp:TemplateField>

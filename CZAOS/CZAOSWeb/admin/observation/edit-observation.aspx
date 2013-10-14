@@ -42,14 +42,14 @@
             <asp:View runat="server" ID="vwPro">
 
 
-                <div id="proHeader" style="width:960px">
+                <div id="proHeader" style="width:100%">
                     <label>Observation Type:</label>
                     <asp:Literal runat="server" ID="litType"></asp:Literal>
                     <br />
                     <br />
                 </div>
 
-                <div id="observers" style="width:960px;display:inline-block">
+                <div id="observers" style="width:100%;display:inline-block">
 
                     <h2>Observer(s)</h2>
 
@@ -74,7 +74,7 @@
                     </div>                
                 </div>
 
-                <div id="observation" style="width:960px;display:inline-block">
+                <div id="observation" style="width:100%;display:inline-block">
                     
                     <h2>Observation</h2>
 
@@ -127,7 +127,7 @@
                     </div>
                 </div>
 
-                <div id="animals" style="width:960px;display:inline-block">
+                <div id="animals" style="width:100%;display:inline-block">
                                         
                     <h2>Animal(s)</h2>
 
@@ -170,7 +170,7 @@
                     </div>
                 </div>
 
-                <div id="reports" style="width:960px;display:inline-block">
+                <div id="reports" style="width:100%;display:inline-block">
 
                 </div>
 
@@ -185,11 +185,12 @@
                 <asp:Literal runat="server" ID="litSchType"></asp:Literal>
                 <br /><br />
 
-                <div id="schObservers" style="width:960px;display:inline-block">
+                <div id="schObservers" style="width:100%;display:inline-block">
                     <h2>Observer(s)</h2><br />
 
                     <div id="observerType" style="height:100%;width:50%;display:inline-block;float:left">
                         <label>Observer Type</label><br />
+                        <asp:Literal runat="server" ID="litSchObserverType" Text="Student"></asp:Literal>
                     </div>
                     <div id="numOfObservers" style="height:100%;width:50%;display:inline-block;float:right">
                         <label>Number of Observers</label><br />
@@ -201,7 +202,7 @@
 
                 </div>
 
-                <div id="school" style="width:960px;display:inline-block">
+                <div id="school" style="width:100%;display:inline-block">
                     <h2>School</h2><br />
 
 
@@ -234,7 +235,7 @@
 
                 </div>
 
-                <div id="schObservation" style="width:960px;display:inline-block">
+                <div id="schObservation" style="width:100%;display:inline-block">
                     <h2>Observation</h2><br />
 
                     <div id="schDateTime" style="height:100%;width:50%;display:inline-block;float:left">
@@ -289,7 +290,7 @@
 
                 </div>
 
-                <div id="schAnimals" style="width:960px;display:inline-block">
+                <div id="schAnimals" style="width:100%;display:inline-block">
                     <h2>Animal(s)</h2><br />
 
                     <div id="schAnimalInfo" style="height:100%;width:50%;display:inline-block;float:left">
@@ -313,7 +314,7 @@
 
                 </div>
 
-                <div id="schReports" style="width:960px;display:inline-block;border:1px solid #cccccc">
+                <div id="schReports" style="width:100%;display:inline-block;border:1px solid #cccccc">
                     <h2>Reports</h2><br />
 
                     <asp:GridView runat="server" ID="gvReports" Width="100%" CssClass="gridview" AutoGenerateColumns="false" 
