@@ -220,6 +220,7 @@
                     if(cantakerecord){
                         observationRecords.data.records.push(new record({AnimalID:$("#observationAnimals").val(), LocationID:$("#zoneControl li.selected").attr('name'), BvrCatCode:$("#behaviorControl li.selected").attr('name')}));
                         console.log(observationRecords.data.records);
+                        observationRecords.saveToLocal();
                     }
                     cantakerecord=false;
                 })
