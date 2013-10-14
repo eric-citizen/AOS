@@ -49,49 +49,30 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.HyperLink lnkHeadEdit;
         
         /// <summary>
-<<<<<<< HEAD
         /// lnkHeadRecords control.
-=======
-        /// btnHeadDelete control.
->>>>>>> origin/AdamBranch
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.HyperLink lnkHeadRecords;
         
         /// <summary>
         /// btnHeadDelete control.
-=======
-        protected global::System.Web.UI.WebControls.Button btnHeadDelete;
-        
-        /// <summary>
-        /// litObsCount control.
->>>>>>> origin/AdamBranch
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Button btnHeadDelete;
         
         /// <summary>
         /// litObsCount control.
-=======
-        protected global::System.Web.UI.WebControls.Literal litObsCount;
-        
-        /// <summary>
-        /// pnlLogin control.
->>>>>>> origin/AdamBranch
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Literal litObsCount;
         
         /// <summary>
@@ -101,8 +82,6 @@ namespace CZAOSWeb.admin.observation {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-=======
->>>>>>> origin/AdamBranch
         protected global::System.Web.UI.WebControls.Panel pnlLogin;
         
         /// <summary>
@@ -313,7 +292,6 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.HyperLink lnkFootEdit;
         
         /// <summary>
-<<<<<<< HEAD
         /// lnkFootRecords control.
         /// </summary>
         /// <remarks>
@@ -323,8 +301,6 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.HyperLink lnkFootRecords;
         
         /// <summary>
-=======
->>>>>>> origin/AdamBranch
         /// btnFootDelete control.
         /// </summary>
         /// <remarks>

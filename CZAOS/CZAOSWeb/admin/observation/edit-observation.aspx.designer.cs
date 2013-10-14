@@ -164,7 +164,6 @@ namespace CZAOSWeb.admin.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlTimed;
-<<<<<<< HEAD
         
         /// <summary>
         /// rdoManual control.
@@ -177,34 +176,11 @@ namespace CZAOSWeb.admin.observation {
         
         /// <summary>
         /// rdoTimer control.
-=======
-        
-        /// <summary>
-        /// rdoManual control.
->>>>>>> origin/AdamBranch
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-<<<<<<< HEAD
-        protected global::System.Web.UI.WebControls.RadioButtonList rdoTimer;
-        
-        /// <summary>
-        /// ddTimeInterval control.
-=======
-        protected global::System.Web.UI.WebControls.RadioButtonList rdoManual;
-        
-        /// <summary>
-        /// rdoTimer control.
->>>>>>> origin/AdamBranch
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-<<<<<<< HEAD
-=======
         protected global::System.Web.UI.WebControls.RadioButtonList rdoTimer;
         
         /// <summary>
@@ -214,7 +190,6 @@ namespace CZAOSWeb.admin.observation {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
->>>>>>> origin/AdamBranch
         protected global::KT.WebControls.RequiredDropDownList ddTimeInterval;
         
         /// <summary>
@@ -363,7 +338,6 @@ namespace CZAOSWeb.admin.observation {
         
         /// <summary>
         /// litSchType control.
-<<<<<<< HEAD
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -373,18 +347,12 @@ namespace CZAOSWeb.admin.observation {
         
         /// <summary>
         /// litSchObserverType control.
-=======
->>>>>>> origin/AdamBranch
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Literal litSchObserverType;
-=======
-        protected global::System.Web.UI.WebControls.Literal litSchType;
->>>>>>> origin/AdamBranch
         
         /// <summary>
         /// ddlSchoolObserverCount control.

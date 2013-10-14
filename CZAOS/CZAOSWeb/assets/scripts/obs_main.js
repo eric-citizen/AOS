@@ -232,7 +232,6 @@
                     data: $.toJSON(params),
                     contentType: 'application/json; charset=utf-8'
                 });
-<<<<<<< HEAD
                 $("#saveRecord").click(function(){
                     if(cantakerecord){
                         observationRecords.data.records.push(new record({AnimalID:$("#observationAnimals").val(), LocationID:$("#zoneControl li.selected").attr('name'), BvrCatCode:$("#behaviorControl li.selected").attr('name')}));
@@ -241,8 +240,6 @@
                     }
                     cantakerecord=false;
                 })
-=======
->>>>>>> origin/AdamBranch
             }
 
             checkLogin = function(api,pass){
