@@ -15,6 +15,12 @@ namespace CZBizObjects.Repository
             return records;
         }
 
+        public IEnumerable<ExhibitLocation> GetAll(int id)
+        {
+            List<ExhibitLocation> records = ExhibitLocationList.GetActive().Where(e => e.ExhibitID == id).ToList();
+            return records;
+        }
+
         public ExhibitLocation Get(int id)
         {
             return ExhibitLocationList.Get(id);

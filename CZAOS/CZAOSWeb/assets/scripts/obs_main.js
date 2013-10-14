@@ -254,7 +254,8 @@
                     data: $.toJSON(params),
                     contentType: 'application/json; charset=utf-8'
                 }).done(function(data){
-                    if(data.StudentPass==pass){
+                    if (data.StudentPass == pass) {
+                        exhibitID = data.ExhibitID;
                         console.log(data);
                         alert('Welcome Student');
                         var sn=$("#studentNumber");
@@ -266,7 +267,7 @@
                         $('#step1').fadeOut(0);
                         czaos_get('animalObservation',{},'#observationAnimals',false,{observationId:observationID});
                         czaos_get('behaviorCategory',{},'#behaviorControl',true,{exhibitId:exhibitID});
-                        czaos_get('location',{},'#zoneControl',false,{exhibitId:exhibitID});
+                        czaos_get('exhibitlocation',{},'#zoneControl',false,{exhibitId:exhibitID});
                         czaos_get('crowd/',{},'#crowdControl',true);
                         czaos_get('weatherCondition/',{},'#weatherControl',true);
 
@@ -293,7 +294,7 @@
             checkLogin('observation/'+id,pass);
             
         }
-        function gotoWeather(){
+        function gotoWeather() {
              $('#step2').fadeOut(0);
              $('#enviromentData').fadeIn(0);
              
@@ -319,21 +320,26 @@
                 }
             },1000);
         }
-        function startObservation(){
-             $('#enviromentPanel').fadeOut(0);
-             $('#observationPanel').fadeIn(0);
-             $(window).trigger('resize');
+        function startObservation() {
+            //check to make sure weather and crowd have been selected
+            if (!obsWeather.weatherID || !obsWeather.CrowdID) {
+                alert('Please select an option for both weather and crowd');
+            } else {
+                $('#enviromentPanel').fadeOut(0);
+                $('#observationPanel').fadeIn(0);
+                $(window).trigger('resize');
 
-             $("#saveRecord").click(function () {
-                 if (cantakerecord) {
-                     observationRecords.data.records.push(new record({ ZooID: $("#observationAnimals").val() , LocationID: $("#zoneControl").val(), BvrCatCode: $("#behaviorControl li.selected").attr('name') }));
-                     console.log(observationRecords.data.records);
-                     observationRecords.saveToLocal();
-                 }
-                 cantakerecord = false;
-             });
+                $("#saveRecord").click(function() {
+                    if (cantakerecord) {
+                        observationRecords.data.records.push(new record({ ZooID: $("#observationAnimals").val(), LocationID: $("#zoneControl").val(), BvrCat: $("#behaviorControl li.selected").attr('data-category'), BvrCatCode: $("#behaviorControl li.selected").attr('name') }));
+                        console.log(observationRecords.data.records);
+                        observationRecords.saveToLocal();
+                    }
+                    cantakerecord = false;
+                });
 
-             startTime(10);
+                startTime(10);
+            }
         }
 
         function finishObservation() {

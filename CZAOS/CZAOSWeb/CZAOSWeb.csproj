@@ -344,6 +344,7 @@
     <Content Include="default.aspx" />
     <Content Include="dialogs\reminders.aspx" />
     <Content Include="docs\api.html" />
+    <Content Include="frontend.html" />
     <Content Include="Global.asax" />
     <Content Include="images\16x16empty.png" />
     <Content Include="images\Actions-dialog-cancel-icon16.png" />
