@@ -115,7 +115,7 @@ namespace CZDataObjects
         {
             base.AddParameter("@ObservationID",item.ObservationID);
             base.AddParameter("@Username",item.Username);
-            base.AddParameter("@AnimalID",item.AnimalID);
+            base.AddParameter("@ZooID",item.ZooID);
             base.AddParameter("@BvrCat",item.BvrCat);
             base.AddParameter("@BvrCatCode",item.BvrCatCode);
             base.AddParameter("@Behavior",item.Behavior);

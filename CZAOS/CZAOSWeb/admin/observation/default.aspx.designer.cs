@@ -46,7 +46,7 @@ namespace CZAOSWeb.admin.observation {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton timedRec;
+        protected global::System.Web.UI.WebControls.CheckBox timedRec;
         
         /// <summary>
         /// behaviorRec control.
@@ -55,16 +55,16 @@ namespace CZAOSWeb.admin.observation {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton behaviorRec;
+        protected global::System.Web.UI.WebControls.CheckBox behaviorRec;
         
         /// <summary>
-        /// includeStudentObservationsRec control.
+        /// searchStudentObservationsRec control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox includeStudentObservationsRec;
+        protected global::System.Web.UI.WebControls.CheckBox searchStudentObservationsRec;
         
         /// <summary>
         /// DistrictListRec control.
@@ -92,6 +92,15 @@ namespace CZAOSWeb.admin.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button searchRec;
+        
+        /// <summary>
+        /// clearRec control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button clearRec;
         
         /// <summary>
         /// cztDataSourceRecent control.
@@ -148,6 +157,51 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.DropDownList AnimalListUp;
         
         /// <summary>
+        /// dateFromUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dateFromUp;
+        
+        /// <summary>
+        /// dateToUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dateToUp;
+        
+        /// <summary>
+        /// timedUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox timedUp;
+        
+        /// <summary>
+        /// behaviorUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox behaviorUp;
+        
+        /// <summary>
+        /// searchStudentObservationsUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox searchStudentObservationsUp;
+        
+        /// <summary>
         /// DistrictListUp control.
         /// </summary>
         /// <remarks>
@@ -164,6 +218,24 @@ namespace CZAOSWeb.admin.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList SchoolListUp;
+        
+        /// <summary>
+        /// SearchUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SearchUp;
+        
+        /// <summary>
+        /// clearUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button clearUp;
         
         /// <summary>
         /// cztDataSourceUpcoming control.

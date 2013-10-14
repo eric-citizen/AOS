@@ -6,8 +6,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     
-        <div id="ObservationRecordList">
-
+        <div id="ObservationRecordList" style="width:960px">
+            <header style="border:1px solid #cccccc">
+                <label>Observation Data</label><br />
+                <asp:Literal runat="server" ID="litHeader"></asp:Literal>
+            </header>
+            <br />
             <asp:HiddenField runat="server" ID="hdnID" />
 
             <asp:ObjectDataSource ID="cztDataSource" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting"
@@ -25,11 +29,12 @@
 
             <asp:GridView ID="gvObs" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="gridview"
                 PageSize="20" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false"
-                DataKeyNames="ObservationID"><%--OnRowCommand="gvObs_RowCommand"  OnRowDataBound="gvObs_RowDataBound"--%>
+                DataKeyNames="ObservationID" OnRowDataBound="gvObs_RowDataBound"><%--OnRowCommand="gvObs_RowCommand"  --%>
                 <Columns>
 
-                    <asp:BoundField DataField="Username" SortExpression="Username" HeaderText="Username" ItemStyle-Width="100px"></asp:BoundField>
                     <asp:BoundField DataField="ObserverTime" SortExpression="ObserverTime" HeaderText="Time" ItemStyle-Width="100px"></asp:BoundField>
+                    <asp:BoundField DataField="ZooID" SortExpression="ZooID" HeaderText="Animal" ItemStyle-Width="100px"></asp:BoundField>
+                    <asp:BoundField DataField="BvrCat" SortExpression="BvrCat" HeaderText="Behavior Category" ItemStyle-Width="100px"></asp:BoundField>
                     <asp:BoundField DataField="Behavior" SortExpression="Behavior" HeaderText="Behavior" ItemStyle-Width="100px"></asp:BoundField>
                     <asp:BoundField DataField="LocationID" SortExpression="LocationID" HeaderText="Location" ItemStyle-Width="100px"></asp:BoundField>
                     <asp:BoundField DataField="Flagged" SortExpression="Flagged" HeaderText="Flagged" ItemStyle-Width="100px"></asp:BoundField>
@@ -41,7 +46,13 @@
 
             <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvObs" />
 
-            <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvObs" Text="No records found!"></mack:MessageDiv>
+            <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvObs" Text="No records found!"></mack:MessageDiv><br />
+            <footer style="border:1px solid #cccccc">
+                <label>Observation Data</label><br />
+                <asp:Literal runat="server" ID="litFooter"></asp:Literal>
+            </footer>
+
+
         </div>
 
      

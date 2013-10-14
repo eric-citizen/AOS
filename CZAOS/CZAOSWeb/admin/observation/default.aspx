@@ -20,33 +20,36 @@
                     <hr />
                     <div id="AnimalDateRec" style="width:50%;float:left">
                         <label>Animal</label><br />
-                        <asp:DropDownList id="AnimalListRec" AutoPostBack="True" runat="server"/><br />
+                        <asp:DropDownList id="AnimalListRec" AutoPostBack="True" runat="server"/><br /><br />
 
                         <label>Timeframe</label><br />
-                        <input type="date" id="dateFromRec" runat="server" /> -- <input type="date" id="dateToRec" runat="server"/><br />
+                        <input type="date" id="dateFromRec" runat="server" /> -- <input type="date" id="dateToRec" runat="server"/><br /><br />
 
-                        <asp:RadioButton id="timedRec" runat="server" Checked="True" Text="Timed" AutoPostBack="false" GroupName="BehaviorTimed" /><br />
-                        <asp:RadioButton ID="behaviorRec" runat="server" Text="Behavior" AutoPostBack="false" GroupName="BehaviorTimed" /><br />
+                        <label>Observation Category</label><br />
+                        <asp:Checkbox id="timedRec" runat="server" Checked="True" Text="Timed" AutoPostBack="false" /><br />
+                        <asp:Checkbox ID="behaviorRec" runat="server" Text="Behavior" AutoPostBack="false" /><br />
                     </div>
 
                     <div id="schoolRec" style="width:50%;float:right">
-                        <asp:CheckBox id="includeStudentObservationsRec" runat="server" Checked="true" Text="Include Student Observations" AutoPostBack="false"/><br />
+                        <asp:CheckBox id="searchStudentObservationsRec" runat="server" Checked="false" 
+                            AutoPostBack="true" OnCheckedChanged="searchStudentObservationsRec_CheckedChanged"
+                            Text="Search Student Observations" /><br /><br />
 
                         <label>District</label><br />
-                        <asp:DropDownList id="DistrictListRec" AutoPostBack="true" OnSelectedIndexChanged="districtChange" runat="server"/><br />
+                        <asp:DropDownList id="DistrictListRec" AutoPostBack="true" OnSelectedIndexChanged="districtChange" Enabled="false" runat="server"/><br /><br />
 
                         <label>School</label><br />
-                        <asp:DropDownList id="SchoolListRec" AutoPostBack="True" runat="server"/><br />
+                        <asp:DropDownList id="SchoolListRec" AutoPostBack="false" Enabled="false" runat="server"/><br /><br />
                     </div>
 
-                    <%--<input  type="button" onclick="" value="Search" runat="server"/>--%>
-                    <asp:Button id="searchRec" Text="Search" runat="server" PostBackUrl="./#RecentObservations" />
+                    <asp:Button id="searchRec" Text="Search" runat="server" OnClick="searchRec_Click" />
+                    <asp:Button id="clearRec" Text="Clear Search" runat="server" OnClick="clearRec_Click"/>
                 </div>
 
             <hr />
             <h2>Recent Observations</h2>
             <hr />
-            <a class="add-link ui-dialog-link" data-args="650, 650, true, null, 1" href="/admin/observation/edit-observation.aspx">Add New Observation</a>
+            <a class="add-link" href="/admin/observation/edit-observation.aspx">Add New Observation</a>
 
             <asp:ObjectDataSource ID="cztDataSourceRecent" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting_Recent"
                 SelectMethod="GetItemCollection" TypeName="CZBizObjects.ObservationList"
@@ -101,44 +104,43 @@
             <mack:MessageDiv runat="server" ID="MessageDiv1" ListControlID="gvObsRec" Text="No records found!"></mack:MessageDiv>
         </div>
         <div id="UpcomingObservations">
-            <div onClick="$('#filterUp').toggle();"><h2>Filter Sessions</h2></div>
+            <div onClick="$('#filterUp').toggle();">
+                <hr />
+                <h2>Filter Sessions</h2></div>
             <div id="filterUp">              
-
+                <hr />
                 <div id="AnimalDateUp" style="width:50%;float:left">
                     <label>Animal</label><br />
-                    <asp:DropDownList id="AnimalListUp"
-                        AutoPostBack="True"
-                        runat="server"/><br />
+                    <asp:DropDownList id="AnimalListUp" AutoPostBack="True" runat="server"/><br /><br />
 
                     <label>Timeframe</label><br />
-                    <input type="date" id="fromUp" /> -- <input type="date" id="toUp" /><br />
+                    <input type="date" id="dateFromUp" runat="server" /> -- <input type="date" id="dateToUp" runat="server"/><br /><br />
 
-                    <input type="checkbox" checked id="timedUp" />Timed<br />
-                    <input type="checkbox" checked id="behaviorUp" />Behavior<br />
+                    <label>Observation Category</label><br />
+                    <asp:checkbox runat="server" AutoPostBack="false" id="timedUp" Text="Timed" Checked="true" /><br />
+                    <asp:checkbox runat="server" AutoPostBack="false" id="behaviorUp" Text="Behavior"/><br />
 
                 </div>
 
                 <div id="schoolUp" style="width:50%;float:right">
 
-                    <input type="checkbox" checked id="includeStudentObservationsUp" />Include Student Observations<br />
+                    <asp:checkbox id="searchStudentObservationsUp" runat="server" Checked="false" 
+                        AutoPostBack="true" OnCheckedChanged="searchStudentObservationsUp_CheckedChanged"
+                        Text="Search Student Observations" /><br /><br />
 
                     <label>District</label><br />
-                    <asp:DropDownList id="DistrictListUp"
-                        AutoPostBack="true"
-                        OnSelectedIndexChanged="districtChange"
-                        runat="server"/><br />
+                    <asp:DropDownList id="DistrictListUp" AutoPostBack="true" OnSelectedIndexChanged="districtChange" runat="server"/><br /><br />
 
                     <label>School</label><br />
-                    <asp:DropDownList id="SchoolListUp"
-                        AutoPostBack="True"
-                        runat="server"/><br />
+                    <asp:DropDownList id="SchoolListUp" AutoPostBack="false" runat="server"/><br /><br />
 
                 </div>
-                <input id="searchUp" type="button" onclick="" value="Search"/>
+                    <asp:Button id="SearchUp" Text="Search" runat="server" OnClick="searchUp_Click" PostBackUrl="~/admin/observation/default.aspx#UpcomingObservations"/>
+                    <asp:Button id="clearUp" Text="Clear Search" runat="server" OnClick="clearUp_Click"/>
             </div>
-            <br />
+            <hr />
             <h2>Upcoming Observations</h2>
-            <br />
+            <hr />
             <a class="add-link ui-dialog-link" data-args="650, 650, true, null, 1" href="/admin/observation/edit-observation.aspx">Add New Observation</a>
 
             <asp:ObjectDataSource ID="cztDataSourceUpcoming" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting_Upcoming"
@@ -159,21 +161,21 @@
                 DataKeyNames="ObservationID" OnRowCommand="gvObsUp_RowCommand" OnRowDataBound="gvObsUp_RowDataBound">
                 <Columns>
 
-                    <asp:BoundField DataField="ObserveStart" SortExpression="ObserveStart" HeaderText="Date" DataFormatString="{0:dddd, MMMM dd yyy hh:mm tt}"></asp:BoundField>
+                    <asp:BoundField DataField="ObserveStart" SortExpression="ObserveStart" HeaderText="Date" DataFormatString="{0:g}"></asp:BoundField>
                     <asp:BoundField DataField="ObservationID" SortExpression="ObservationID" HeaderText="Obs.ID" ItemStyle-Width="100px"></asp:BoundField>
                     <asp:BoundField DataField="ObserveType" SortExpression="ObserveType" HeaderText="User Type" ItemStyle-Width="150px"></asp:BoundField>
                     <asp:BoundField DataField="Exhibit" SortExpression="Exhibit" HeaderText="Exhibit" ItemStyle-Width="150px"></asp:BoundField>
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:HyperLink runat="server" ID="lnkView" CssClass="ui-dialog-link gv-view-link" data-args="650, 650, true, null, 1" Text="View" ToolTip="View this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation.aspx?observationId={0}") %>'></asp:HyperLink>
+                            <asp:HyperLink runat="server" ID="lnkView" CssClass="gv-view-link" data-args="650, 650, true, null, 1" Text="View" ToolTip="View this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation.aspx?observationId={0}") %>'></asp:HyperLink>
                         </ItemTemplate>
                         <ItemStyle Width="60px" CssClass="tac" />
                     </asp:TemplateField>
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="650, 650, true, null, 1" Text="Edit" ToolTip="Edit this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/edit-observation.aspx?observationId={0}") %>'></asp:HyperLink>
+                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="Edit" ToolTip="Edit this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/edit-observation.aspx?observationId={0}") %>'></asp:HyperLink>
                         </ItemTemplate>
                         <ItemStyle Width="60px" CssClass="tac" />
                     </asp:TemplateField>

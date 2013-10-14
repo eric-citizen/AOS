@@ -101,6 +101,7 @@ namespace CZAOSWeb.admin.observation
             if (this.ObservationID == 0)
             {
                 //add a new animal!
+                Master.ContentTitle = "Add New Observation";
                 fieldsetLegend.Text = "Add New Observation";
 
                 gvReports.Visible = false;
@@ -110,6 +111,7 @@ namespace CZAOSWeb.admin.observation
             }
             else
             {
+                Master.ContentTitle = "Edit Observation";
                 fieldsetLegend.Text = "Edit Observation";
                 
             }            
@@ -185,7 +187,7 @@ namespace CZAOSWeb.admin.observation
 
                     ObserverList olist = ObserverList.GetActive(obs.ObservationID);
 
-                    foreach (ListItem lio in cbxObservers.Items)
+                    foreach (ListItem lio in lstObservers.Items)
                     {
                         if (olist.ContainsUser(lio.Value))
                         {
@@ -251,7 +253,7 @@ namespace CZAOSWeb.admin.observation
         {
             UserList users;
 
-            //cbxObservers
+            //lstObservers
             if (pro)
             {
                 users = UserList.GetActiveProfessionalUsers();
@@ -261,8 +263,8 @@ namespace CZAOSWeb.admin.observation
                 users = UserList.GetActiveAmateurUsers();
             }
 
-            cbxObservers.DataSource = users;
-            cbxObservers.DataBind();
+            lstObservers.DataSource = users;
+            lstObservers.DataBind();
 
         }
 
@@ -313,8 +315,8 @@ namespace CZAOSWeb.admin.observation
 
         protected void ddNumObs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboxval.MinimumNumberOfSelectedCheckBoxes = ddNumObs.SelectedValue.ToInt32();
-            cboxval.ToolTip = "Select {0} observers".FormatWith(cboxval.MinimumNumberOfSelectedCheckBoxes);
+            lstval.MinimumNumberOfItems = ddNumObs.SelectedValue.ToInt32();
+            lstval.ToolTip = "Select {0} observers".FormatWith(lstval.MinimumNumberOfItems);
         }
 
         protected void ddGroupCount_SelectedIndexChanged(object sender, EventArgs e)
@@ -398,8 +400,8 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.CreateNewProObservation())
                 {
-                    Dialog dl = this.Master as Dialog;
-                    dl.RefreshParent();
+                    //Dialog dl = this.Master as Dialog   ;
+                    //dl.RefreshParent();
                 }
 
             }
@@ -407,8 +409,8 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.UpdateProObservation())
                 {
-                    Dialog dl = this.Master as Dialog;
-                    dl.RefreshParent();
+                    //Dialog dl = this.Master as Dialog;
+                    //dl.RefreshParent();
                 }
 
             }
@@ -494,7 +496,7 @@ namespace CZAOSWeb.admin.observation
 
             }
 
-            foreach (ListItem observer in cbxObservers.Items)
+            foreach (ListItem observer in lstObservers.Items)
             {
                 if (observer.Selected)
                 {
@@ -600,7 +602,7 @@ namespace CZAOSWeb.admin.observation
 
             //clear out observers then add selected
             ObserverList.DeleteByObservation(this.ObservationID);
-            foreach (ListItem observer in cbxObservers.Items)
+            foreach (ListItem observer in lstObservers.Items)
             {
                 if (observer.Selected)
                 {
@@ -657,7 +659,10 @@ namespace CZAOSWeb.admin.observation
         private void LoadEduData(Observation obs)
         {           
             this.LoadObservers(false);
-            
+
+            litSchType.Text = obs.ObservationTypeName;
+
+
             dteSchoolDate.Text = obs.ObserveStart.ToShortDateString();
             txtSchoolStart.Text = obs.ObserveStart.ToShortTimeString();
             txtSchoolEnd.Text = obs.ObserveEnd.ToShortTimeString();
@@ -836,8 +841,8 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.CreateNewEduObservation())
                 {
-                    Dialog dl = this.Master as Dialog;
-                    dl.RefreshParent();
+                    //Dialog dl = this.Master as Dialog;
+                    //dl.RefreshParent();
                 }
 
             }
@@ -845,8 +850,8 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.UpdateEduObservation())
                 {
-                    Dialog dl = this.Master as Dialog;
-                    dl.RefreshParent();
+                    //Dialog dl = this.Master as Dialog;
+                    //dl.RefreshParent();
                 }
 
             }

@@ -6,6 +6,14 @@
 *.user
 *.sln.docstates
 
+<<<<<<< HEAD
+#Error logs
+=======
+#Error Files
+>>>>>>> origin/fcBranch
+assets/elmah
+logs
+
 # Build results
 
 [Dd]ebug/
@@ -14,11 +22,18 @@ x64/
 build/
 [Bb]in/
 [Oo]bj/
+<<<<<<< HEAD
 *.dll
 *.pdb
 *.cache
 assets/elmah/
 logs/
+<<<<<<< HEAD
+=======
+=======
+
+>>>>>>> origin/fcBranch
+>>>>>>> origin/master
 
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
 !packages/*/build/
@@ -112,6 +127,10 @@ csx
 AppPackages/
 
 # Others
+<<<<<<< HEAD
+=======
+sql/
+>>>>>>> origin/fcBranch
 *.Cache
 ClientBin/
 [Ss]tyle[Cc]op.*

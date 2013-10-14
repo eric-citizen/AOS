@@ -32,6 +32,7 @@ namespace CZDataObjects
 	{
         List<Animal> GetItemCollection(int startRowIndex, int maximumRows, string sortExpression, string filterExpression);
         Animal GetItem(int id);
+        Animal GetItemByZooID(string id);
 
         Animal AddItem(Animal item);
         void UpdateItem(Animal item);

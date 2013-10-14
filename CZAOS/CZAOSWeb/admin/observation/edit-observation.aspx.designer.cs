@@ -94,6 +94,33 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.Literal litType;
         
         /// <summary>
+        /// ddNumObs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.RequiredDropDownList ddNumObs;
+        
+        /// <summary>
+        /// lstObservers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lstObservers;
+        
+        /// <summary>
+        /// lstval control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.ListBoxValidator lstval;
+        
+        /// <summary>
         /// dteDate control.
         /// </summary>
         /// <remarks>
@@ -130,22 +157,13 @@ namespace CZAOSWeb.admin.observation {
         protected global::KT.WebControls.RequiredDropDownList ddCategory;
         
         /// <summary>
-        /// ddTimeInterval control.
+        /// pnlTimed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddTimeInterval;
-        
-        /// <summary>
-        /// rdoTimer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rdoTimer;
+        protected global::System.Web.UI.WebControls.Panel pnlTimed;
         
         /// <summary>
         /// rdoManual control.
@@ -157,31 +175,22 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.RadioButtonList rdoManual;
         
         /// <summary>
-        /// ddNumObs control.
+        /// rdoTimer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddNumObs;
+        protected global::System.Web.UI.WebControls.RadioButtonList rdoTimer;
         
         /// <summary>
-        /// cbxObservers control.
+        /// ddTimeInterval control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList cbxObservers;
-        
-        /// <summary>
-        /// cboxval control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::KT.WebControls.CheckBoxListValidator cboxval;
+        protected global::KT.WebControls.RequiredDropDownList ddTimeInterval;
         
         /// <summary>
         /// ddAnimalRegion control.
@@ -328,31 +337,22 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.View vwEdu;
         
         /// <summary>
-        /// dteSchoolDate control.
+        /// litSchType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.DatePicker dteSchoolDate;
+        protected global::System.Web.UI.WebControls.Literal litSchType;
         
         /// <summary>
-        /// txtSchoolStart control.
+        /// ddlSchoolObserverCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.RequiredTextBox txtSchoolStart;
-        
-        /// <summary>
-        /// txtSchoolEnd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::KT.WebControls.RequiredTextBox txtSchoolEnd;
+        protected global::KT.WebControls.RequiredDropDownList ddlSchoolObserverCount;
         
         /// <summary>
         /// ddDistrict control.
@@ -391,13 +391,31 @@ namespace CZAOSWeb.admin.observation {
         protected global::KT.WebControls.RequiredTextBox txtTeacherName;
         
         /// <summary>
-        /// ddlSchoolObserverCount control.
+        /// dteSchoolDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddlSchoolObserverCount;
+        protected global::KT.WebControls.DatePicker dteSchoolDate;
+        
+        /// <summary>
+        /// txtSchoolStart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.RequiredTextBox txtSchoolStart;
+        
+        /// <summary>
+        /// txtSchoolEnd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.RequiredTextBox txtSchoolEnd;
         
         /// <summary>
         /// ddSchoolCat control.
@@ -409,13 +427,13 @@ namespace CZAOSWeb.admin.observation {
         protected global::KT.WebControls.RequiredDropDownList ddSchoolCat;
         
         /// <summary>
-        /// ddSchoolInterval control.
+        /// rdoSchoolManual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddSchoolInterval;
+        protected global::System.Web.UI.WebControls.RadioButtonList rdoSchoolManual;
         
         /// <summary>
         /// rdoSchoolTimer control.
@@ -427,13 +445,13 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.RadioButtonList rdoSchoolTimer;
         
         /// <summary>
-        /// rdoSchoolManual control.
+        /// ddSchoolInterval control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rdoSchoolManual;
+        protected global::KT.WebControls.RequiredDropDownList ddSchoolInterval;
         
         /// <summary>
         /// ddSchoolAnimRegions control.
@@ -490,12 +508,15 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.HyperLink lnkUpload;
         
         /// <summary>
-        /// btnSaveEdu control.
+        /// Master property.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Auto-generated property.
         /// </remarks>
-        protected global::KT.WebControls.WaitButton btnSaveEdu;
+        public new CZAOSWeb.masterpages.Main Master {
+            get {
+                return ((CZAOSWeb.masterpages.Main)(base.Master));
+            }
+        }
     }
 }
