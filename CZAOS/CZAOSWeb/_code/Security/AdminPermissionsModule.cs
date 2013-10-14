@@ -29,6 +29,9 @@ namespace CZAOSWeb.Security
 
         private void CheckPermissions(HttpContext context)
         {
+            if (context.Request.CurrentExecutionFilePath.Contains("api/"))
+                return;
+
             //only check pages in admin module
             RequestProperties props = RequestProperties.Current;
 
