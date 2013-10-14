@@ -13,7 +13,7 @@ using KT.Extensions;
 
 namespace CZAOSWeb.api
 {
-    public class ObservationRecordController : CZAOSController<ObservationRecord> //ApiController
+    public class ObservationRecordController : ObservationRecordController<ObservationRecord> //ApiController
     {
         static readonly IObservationRepository<ObservationRecord> repository = new ObservationRecordRepository();
 
@@ -43,11 +43,11 @@ namespace CZAOSWeb.api
             return response;
         }     
 
-        public override HttpResponseMessage Post(ObservationRecord item)
+        public override HttpResponseMessage Post(IEnumerable<ObservationRecord> records)
         {
             HttpResponseMessage response;
 
-            if (item == null)
+            if (records == null)
             {
                 response = new HttpResponseMessage(HttpStatusCode.NotFound);
                 response.Content = new StringContent("Invalid ObservationRecord");
@@ -55,12 +55,13 @@ namespace CZAOSWeb.api
             }
 
             if (ModelState.IsValid)
-            {                
-                item = repository.Add(item);
-                response = Request.CreateResponse<ObservationRecord>(HttpStatusCode.Created, item);
+            {
+                foreach (var item in records)
+                {
+                    repository.Add(item);
+                }
 
-                string uri = Url.Link("DefaultApi", new { id = item.ObservationRecordID });
-                response.Headers.Location = new Uri(uri);
+                response = Request.CreateResponse(HttpStatusCode.Created);
 
             }
             else

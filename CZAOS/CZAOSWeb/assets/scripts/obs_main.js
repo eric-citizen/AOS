@@ -180,6 +180,9 @@
                 });
             }
 
+            
+            
+
             czaos_get = function (api,params,who,strip,data2){
                 var params= params || {};
                 $.ajax({
@@ -211,19 +214,24 @@
                         }
                     }
                 });
-                $("#saveWeather").click(function(){
-                    obsWeather = new weather({Temperature:$(".temp").text(),weatherID:$("#weatherControl li.selected").attr('name'), CrowdID:$("#crowdControl li.selected").attr('name')});
-                    console.log(obsWeather);
-                    startObservation();
+               
+            }
+
+            czaos_post = function (api,params,data2) {
+                params = params || {};
+                $.ajax({
+                    url: 'api/' + api,
+                    beforeSend: function (request) {
+                        request.setRequestHeader("CZAOSToken", getToken());
+                        for (var i in data2) {
+                            request.setRequestHeader(i, data2[i]);
+                        }
+                    },
+                    cache: false,
+                    type: 'POST',
+                    data: $.toJSON(params),
+                    contentType: 'application/json; charset=utf-8'
                 });
-                $("#saveRecord").click(function(){
-                    if(cantakerecord){
-                        observationRecords.data.records.push(new record({AnimalID:$("#observationAnimals").val(), LocationID:$("#zoneControl li.selected").attr('name'), BvrCatCode:$("#behaviorControl li.selected").attr('name')}));
-                        console.log(observationRecords.data.records);
-                        observationRecords.saveToLocal();
-                    }
-                    cantakerecord=false;
-                })
             }
 
             checkLogin = function(api,pass){
@@ -250,7 +258,7 @@
                         $('#step1').fadeOut(0);
                         czaos_get('animalObservation',{},'#observationAnimals',false,{observationId:observationID});
                         czaos_get('behaviorCategory',{},'#behaviorControl',true,{exhibitId:exhibitID});
-                        czaos_get('location',{},'#zoneControl',true,{exhibitId:exhibitID});
+                        czaos_get('location',{},'#zoneControl',false,{exhibitId:exhibitID});
                         czaos_get('crowd/',{},'#crowdControl',true);
                         czaos_get('weatherCondition/',{},'#weatherControl',true);
 
@@ -281,7 +289,13 @@
              $('#step2').fadeOut(0);
              $('#enviromentData').fadeIn(0);
              
-             username=$("#studentNumber").val();
+             username = $("#studentNumber").val();
+
+             $("#saveWeather").click(function () {
+                 obsWeather = new weather({ Temperature: $(".temp").text(), weatherID: $("#weatherControl li.selected").attr('name'), CrowdID: $("#crowdControl li.selected").attr('name') });
+                 console.log(obsWeather);
+                 startObservation();
+             });
         }
 
         function startTime(time){
@@ -301,7 +315,33 @@
              $('#enviromentPanel').fadeOut(0);
              $('#observationPanel').fadeIn(0);
              $(window).trigger('resize');
+
+             $("#saveRecord").click(function () {
+                 if (cantakerecord) {
+                     observationRecords.data.records.push(new record({ ZooID: $("#observationAnimals").val() , LocationID: $("#zoneControl").val(), BvrCatCode: $("#behaviorControl li.selected").attr('name') }));
+                     console.log(observationRecords.data.records);
+                     observationRecords.saveToLocal();
+                 }
+                 cantakerecord = false;
+             });
+
              startTime(10);
+        }
+
+        function finishObservation() {
+            $('#observationPanel').fadeOut(0);
+            $('#finalizePanel').fadeIn(0);
+            $(window).trigger('resize');
+            
+            //set up listeners for finish observation button
+            $('#finalizeObservation').click(function () {
+                //attempt to send all records from local storage to the server
+                observationRecords.loadFromLocal();
+                var records = observationRecords.data.records;
+                //if success show finished page
+                czaos_post('observationrecord', records, {});
+                //if failure attempt to resend
+            });
         }
 
         function getWeatherHere(){
@@ -325,12 +365,13 @@
             this.ObservationID  = observationID;
             this.Username       = username;
             this.AnimalID       = ref.AnimalID;
+            this.ZooID          = ref.ZooID;
             this.BvrCat         = ref.BvrCat;
             this.BvrCatCode     = ref.BvrCatCode;
             this.Behavior       = ref.Behavior;
             this.BehaviorCode   = ref.BehaviorCode;
             this.LocationID     = ref.LocationID;
-            this.ObserveTime    = new Date();
+            this.ObserverTime    = new Date();
             this.Deleted        = 0;
             this.Flagged        = 0;
         }
