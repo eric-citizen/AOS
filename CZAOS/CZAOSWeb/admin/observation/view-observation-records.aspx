@@ -10,6 +10,7 @@
             <header style="border:1px solid #cccccc">
                 <label>Observation Data</label><br />
                 <asp:Literal runat="server" ID="litHeader"></asp:Literal>
+                <button ID="btnHeadBack" Class="floatRight" OnClick="history.go(-1);return false;">Back</button>
             </header>
             <br />
             <asp:HiddenField runat="server" ID="hdnID" />
