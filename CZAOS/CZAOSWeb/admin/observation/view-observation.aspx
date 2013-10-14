@@ -14,17 +14,28 @@
             Observation
         </legend>
 
+<<<<<<< HEAD
         <div class="detail" id="detailHead" style="width:100%;border: 2px solid black">
+=======
+        <div class="detail" id="detailHead" style="border: 2px solid black">
+>>>>>>> origin/AdamBranch
             <h2>Observation Details</h2>
             <asp:Literal runat="server" ID="litHead" />
             <a href="javascript:void(0)" onclick="window.print();" class="print-link">Print</a>
             <asp:HyperLink runat="server" ID="lnkHeadEdit" CssClass="gv-edit-link" Text="Edit" ToolTip="Edit this item" ></asp:HyperLink>
+<<<<<<< HEAD
             <asp:HyperLink runat="server" ID="lnkHeadRecords" CssClass="gv-edit-link" Text="View Records" ToolTip="View Observation Records" ></asp:HyperLink>
             <asp:Button runat="server" ID="btnHeadDelete" class="gv-delete-link" OnClick="btnHeadDelete_Click" Text="Delete"></asp:Button>
             <button ID="btnHeadBack" Class="floatRight" OnClick="history.go(-1);return false;">Back</button>
         </div>
 
         <div id="observers" style="width: 100%; display: inline-block; border: 2px solid black">
+=======
+            <asp:Button runat="server" ID="btnHeadDelete" class="gv-delete-link" OnClick="btnHeadDelete_Click" Text="Delete"></asp:Button>
+        </div>
+
+        <div id="observers" style="width: 960px; display: inline-block; border: 2px solid black">
+>>>>>>> origin/AdamBranch
             <div class="title">  
                 <h2>Observer(s)</h2><br />
             </div>
@@ -61,7 +72,11 @@
         </div>
 
         <asp:Panel ID="pnlSchool" runat="server">
+<<<<<<< HEAD
             <div id="school" style="width: 100%; display: inline-block; border: 2px solid black">
+=======
+            <div id="school" style="width: 960px; display: inline-block; border: 2px solid black">
+>>>>>>> origin/AdamBranch
             <div class="title">
                 <h2>School</h2><br />
             </div>
@@ -87,7 +102,11 @@
         </div>
         </asp:Panel>
 
+<<<<<<< HEAD
         <div id="observation" style="width: 100%; display: inline-block; border: 2px solid black">
+=======
+        <div id="observation" style="width: 960px; display: inline-block; border: 2px solid black">
+>>>>>>> origin/AdamBranch
             <div class="title">
                 <h2>Observation</h2><br />
             </div>
@@ -123,7 +142,11 @@
             </div>
         </div>
 
+<<<<<<< HEAD
         <div id="Animals" style="width: 100%; display: inline-block; border: 2px solid black">
+=======
+        <div id="Animals" style="width: 960px; display: inline-block; border: 2px solid black">
+>>>>>>> origin/AdamBranch
             <div class="title">
                 <h2>Animal(s)</h2><br />
             </div>
@@ -163,15 +186,23 @@
             </div>
         </div>
 
+<<<<<<< HEAD
         <div class="detail" id="detailFoot" style="width:100%;border: 2px solid black">
+=======
+        <div class="detail" id="detailFoot" style="border: 2px solid black">
+>>>>>>> origin/AdamBranch
             <h2>Observation Details</h2>
             <asp:Literal runat="server" ID="litFoot" />
             <a href="javascript:void(0)" onclick="window.print();" class="print-link">Print</a>
             <asp:HyperLink runat="server" ID="lnkFootEdit" CssClass="gv-edit-link" Text="Edit" ToolTip="Edit this item" ></asp:HyperLink>
+<<<<<<< HEAD
             <asp:HyperLink runat="server" ID="lnkFootRecords" CssClass="gv-edit-link" Text="View Records" ToolTip="View Observation Records" ></asp:HyperLink>
             <asp:Button runat="server" ID="btnFootDelete" class="gv-delete-link" OnClick="btnHeadDelete_Click" Text="Delete"></asp:Button>
             <Button ID="btnFootBack" Class="floatRight" OnClick="history.go(-1);return false;">Back</Button>
 
+=======
+            <asp:Button runat="server" ID="btnFootDelete" class="gv-delete-link" OnClick="btnHeadDelete_Click" Text="Delete"></asp:Button>
+>>>>>>> origin/AdamBranch
         </div>
 
 

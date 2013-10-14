@@ -6,7 +6,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     
+<<<<<<< HEAD
         <div id="ObservationRecordList" style="width:100%">
+=======
+        <div id="ObservationRecordList" style="width:960px">
+>>>>>>> origin/AdamBranch
             <header style="border:1px solid #cccccc">
                 <label>Observation Data</label><br />
                 <asp:Literal runat="server" ID="litHeader"></asp:Literal>

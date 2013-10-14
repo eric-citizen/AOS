@@ -55,17 +55,20 @@
                 </ul>
             </section>
             <h2>Zone</h2>
-            <section class="slider">
+                <div><select id="zoneControl"></select></div>
+<!--            <section class="slider">
                 <ul id="zoneControl" class="slide-strip" style="width:20%">
                 </ul>
-            </section>
-            <section class="slider">
-                <ul id="zoneControl" class="slide-strip" style="width:20%">
-                </ul>
-            </section>
+            </section>-->
+            <div style="text-align: left">
+                <div id='gotoFinalizationPage' class="button" onclick="finishObservation()">Finalize Observation</div>
+            </div>
             <div style="text-align: right">
                 <div id='saveRecord' class="button">Save Record</div>
             </div>
+        </div>
+        <div id="finalizePanel" style="display: none">
+            <div><span>Click to Finalize Observation</span><div id="finalizeObservation" class="button">Finalize</div></div>
         </div>
     </div>
 
@@ -112,7 +115,7 @@
     <div>Teacher: %TeacherName%, %TeacherLogin% (%TeacherPass%)</div>
 </script>
 <script id="animal" type="simple/template">
-    <option value="%AnimalID%">%HouseName%</option>
+    <option value="%ZooID%">%HouseName%</option>
 </script>
 <script id="animalObservation" type="simple/template">
     <option value="%AnimalID%">%CommonName% : %GroupID%</option>
@@ -129,11 +132,14 @@
     <li name="%WeatherID%"><img src="assets/images/icons/weather/%WeatherID%.png"/>%Weather%</li>
 </script>
 <script id="behaviorCategory" type="simple/template">
-    <li name="%BvrCatID%"><img src="assets/images/icons/observation/behaviors/%BvrCatCode%.png"/><div><span>%BvrCat%</span></div></li>
+    <li name="%BvrCatCode%"><img src="assets/images/icons/observation/behaviors/%BvrCatCode%.png"/><div><span>%BvrCat%</span></div></li>
 </script>
 <script id="location" type="simple/template">
-    <li name="%LocationID%"><img src="assets/images/icons/observation/behaviors/%Description%.png"/><div><span>%Description%</span></div></li>
+    <option value=%LocationID%>%Description%</option>
 </script>
+<!--<script id="location" type="simple/template">
+    <li name="%LocationID%"><img src="assets/images/icons/observation/behaviors/%Description%.png"/><div><span>%Description%</span></div></li>
+</script>-->
 
 </body>
 </html>

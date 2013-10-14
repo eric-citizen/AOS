@@ -24,4 +24,15 @@ namespace CZAOSWeb.api
 
         #endregion
     }
+
+    public abstract class ObservationRecordController<T> : ApiController
+    {
+        public abstract HttpResponseMessage GetAll();
+        public abstract HttpResponseMessage Get(int id);
+
+        //[Authorize(Roles = "Administrators")]
+        public abstract HttpResponseMessage Delete(int id);
+        public abstract HttpResponseMessage Post(IEnumerable<T> item);
+        public abstract HttpResponseMessage Put(T item);
+    }
 }
