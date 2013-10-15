@@ -517,6 +517,15 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.HyperLink lnkUpload;
         
         /// <summary>
+        /// btnSchSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.WaitButton btnSchSave;
+        
+        /// <summary>
         /// Master property.
         /// </summary>
         /// <remarks>

@@ -110,5 +110,26 @@ namespace CZAOSWeb.admin.observation
 
         }
 
+        protected void gvObs_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "FlagRecord" && base.IsMasterAdmin)
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+
+                var ObsRec = ObservationRecordList.GetItem(id);
+
+                if (ObsRec.Flagged == false)
+                    ObsRec.Flagged = true;
+                else
+                    ObsRec.Flagged = false;
+
+                ObservationRecordList.UpdateItem(ObsRec);
+                this.Toast(PageExtensions.ToastMessageType.success, "Observation record has been flagged.", "Record Flagged");
+            }
+
+            gvObs.DataBind();
+        }
+
+
     }
 }

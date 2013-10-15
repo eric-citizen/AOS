@@ -45,6 +45,7 @@
                 <div id="proHeader" style="width:100%">
                     <label>Observation Type:</label>
                     <asp:Literal runat="server" ID="litType"></asp:Literal>
+                    <button ID="btnHeadBack" Class="floatRight" OnClick="history.go(-1);return false;">Back</button>
                     <br />
                     <br />
                 </div>
@@ -351,7 +352,9 @@
                         data-args="350, 500, true, null, 1" ></asp:HyperLink>
                 </div>
 
-
+                <div class="floatRight">
+                    <mack:WaitButton runat="server" ID="btnSchSave" OnClick="btnSaveEdu_Click" CssClass="button" Text="Save" />
+                </div>
 
             </asp:View>
         </asp:MultiView>

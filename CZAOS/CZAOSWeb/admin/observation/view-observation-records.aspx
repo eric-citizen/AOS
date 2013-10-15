@@ -10,6 +10,7 @@
             <header style="border:1px solid #cccccc">
                 <label>Observation Data</label><br />
                 <asp:Literal runat="server" ID="litHeader"></asp:Literal>
+                <button ID="btnHeadBack" Class="floatRight" OnClick="history.go(-1);return false;">Back</button>
             </header>
             <br />
             <asp:HiddenField runat="server" ID="hdnID" />
@@ -29,15 +30,24 @@
 
             <asp:GridView ID="gvObs" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="gridview"
                 PageSize="20" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false"
-                DataKeyNames="ObservationID" OnRowDataBound="gvObs_RowDataBound"><%--OnRowCommand="gvObs_RowCommand"  --%>
+                DataKeyNames="ObservationID" OnRowDataBound="gvObs_RowDataBound" OnRowCommand="gvObs_RowCommand">
                 <Columns>
 
-                    <asp:BoundField DataField="ObserverTime" SortExpression="ObserverTime" HeaderText="Time" ItemStyle-Width="100px"></asp:BoundField>
-                    <asp:BoundField DataField="ZooID" SortExpression="ZooID" HeaderText="Animal" ItemStyle-Width="100px"></asp:BoundField>
-                    <asp:BoundField DataField="BvrCat" SortExpression="BvrCat" HeaderText="Behavior Category" ItemStyle-Width="100px"></asp:BoundField>
+                    <asp:BoundField DataField="ObserverTime" SortExpression="ObserverTime" HeaderText="Time" ItemStyle-Width="60px"></asp:BoundField>
+                    <asp:BoundField DataField="ZooID" SortExpression="ZooID" HeaderText="Animal" ItemStyle-Width="150px"></asp:BoundField>
+                    <asp:BoundField DataField="BvrCat" SortExpression="BvrCat" HeaderText="Behavior Category" ItemStyle-Width="150px"></asp:BoundField>
                     <asp:BoundField DataField="Behavior" SortExpression="Behavior" HeaderText="Behavior" ItemStyle-Width="100px"></asp:BoundField>
                     <asp:BoundField DataField="LocationID" SortExpression="LocationID" HeaderText="Location" ItemStyle-Width="100px"></asp:BoundField>
-                    <asp:BoundField DataField="Flagged" SortExpression="Flagged" HeaderText="Flagged" ItemStyle-Width="100px"></asp:BoundField>
+
+                    <asp:TemplateField HeaderText="Flagged">
+                        <ItemTemplate>
+                            <asp:LinkButton runat="server" ID="btnFlag" SortExpression="Flagged" HeaderText="Flagged" CausesValidation="false" 
+                                CommandArgument='<%#Bind("ObservationRecordID") %>' CommandName="FlagRecord" ToolTip="Flag Record" 
+                                Text='<%#Bind("Flagged") %>' ></asp:LinkButton>
+                        </ItemTemplate>
+                        <ItemStyle Width="30px" />
+                    </asp:TemplateField>
+
 
                 </Columns>
 
