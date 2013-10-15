@@ -696,6 +696,16 @@ header li img{
     border-radius: 15px;
     margin: 1em;
 }
+
+#finalizeObservation{
+    border-radius: 15px;
+    margin: 1em;
+}
+
+#zoneControl {
+    margin-bottom: 15px;
+}
+
 #timer{
     width: 100%;
     position: relative;

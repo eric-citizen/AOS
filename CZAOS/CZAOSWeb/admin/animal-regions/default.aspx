@@ -5,7 +5,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-    dial
     <a class="add-link ui-dialog-link" href="/admin/animal-regions/edit-region.aspx" data-args="270, 600, true, null, 1" title="Add New Region">Add New Region</a>
 
     <asp:ObjectDataSource ID="cztDataSource" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting"

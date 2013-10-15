@@ -113,10 +113,6 @@
     <Content Include="admin\crowds\edit-crowd.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\edit-profile.aspx" />
-    <Content Include="admin\email-templates\view-tracking.aspx" />
-    <Content Include="admin\email-templates\tracking.aspx" />
-    <Content Include="admin\email-templates\default.aspx" />
-    <Content Include="admin\email-templates\edit-template.aspx" />
     <Content Include="admin\exhibits\edit-exhibit-location.aspx" />
     <Content Include="admin\exhibits\index.aspx" />
     <Content Include="admin\location\sort-location.aspx" />
@@ -129,13 +125,7 @@
     <Content Include="admin\behavior\edit-behavior-category.aspx" />
     <Content Include="admin\animals\edit-animal.aspx" />
     <Content Include="admin\animal-regions\edit-region.aspx" />
-    <Content Include="admin\master\config.aspx" />
-    <Content Include="admin\master\logs.aspx" />
-    <Content Include="admin\master\index.html" />
-    <Content Include="admin\master\masterlinks.ascx" />
     <Content Include="admin\nav\default.aspx" />
-    <Content Include="admin\master\edit-config.aspx" />
-    <Content Include="admin\master\sql.aspx" />
     <Content Include="admin\nav\edit-nav.aspx" />
     <Content Include="admin\observation\reports.aspx" />
     <Content Include="admin\observation\edit-animalgroups.aspx" />
@@ -149,7 +139,6 @@
     <Content Include="admin\exhibits\locations.aspx" />
     <Content Include="admin\exhibits\default.aspx" />
     <Content Include="admin\location\default.aspx" />
-    <Content Include="admin\master\db.aspx" />
     <Content Include="admin\observation\observers.aspx" />
     <Content Include="admin\observation\default.aspx" />
     <Content Include="admin\observation\edit-observation.aspx" />
@@ -159,7 +148,6 @@
     <Content Include="admin\schools\default.aspx" />
     <Content Include="admin\schools\grades.aspx" />
     <Content Include="admin\schools\edit-grade.aspx" />
-    <Content Include="admin\services\services.asmx" />
     <Content Include="admin\users\default.aspx" />
     <Content Include="admin\weather\edit-wind.aspx" />
     <Content Include="admin\weather\edit-weather.aspx" />
@@ -344,6 +332,7 @@
     <Content Include="default.aspx" />
     <Content Include="dialogs\reminders.aspx" />
     <Content Include="docs\api.html" />
+    <Content Include="frontend.html" />
     <Content Include="Global.asax" />
     <Content Include="images\16x16empty.png" />
     <Content Include="images\Actions-dialog-cancel-icon16.png" />
@@ -474,34 +463,6 @@
     <Compile Include="admin\edit-profile.aspx.designer.cs">
       <DependentUpon>edit-profile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\email-templates\view-tracking.aspx.cs">
-      <DependentUpon>view-tracking.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\email-templates\view-tracking.aspx.designer.cs">
-      <DependentUpon>view-tracking.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\email-templates\tracking.aspx.cs">
-      <DependentUpon>tracking.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\email-templates\tracking.aspx.designer.cs">
-      <DependentUpon>tracking.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\email-templates\default.aspx.cs">
-      <DependentUpon>default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\email-templates\default.aspx.designer.cs">
-      <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\email-templates\edit-template.aspx.cs">
-      <DependentUpon>edit-template.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\email-templates\edit-template.aspx.designer.cs">
-      <DependentUpon>edit-template.aspx</DependentUpon>
-    </Compile>
     <Compile Include="admin\exhibits\edit-exhibit-location.aspx.cs">
       <DependentUpon>edit-exhibit-location.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -586,40 +547,12 @@
     <Compile Include="admin\animal-regions\edit-region.aspx.designer.cs">
       <DependentUpon>edit-region.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\master\config.aspx.cs">
-      <DependentUpon>config.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\master\config.aspx.designer.cs">
-      <DependentUpon>config.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\master\logs.aspx.cs">
-      <DependentUpon>logs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\master\logs.aspx.designer.cs">
-      <DependentUpon>logs.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\master\masterlinks.ascx.cs">
-      <DependentUpon>masterlinks.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\master\masterlinks.ascx.designer.cs">
-      <DependentUpon>masterlinks.ascx</DependentUpon>
-    </Compile>
     <Compile Include="admin\nav\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\nav\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\master\edit-config.aspx.cs">
-      <DependentUpon>edit-config.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\master\edit-config.aspx.designer.cs">
-      <DependentUpon>edit-config.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\nav\edit-nav.aspx.cs">
       <DependentUpon>edit-nav.aspx</DependentUpon>
@@ -712,13 +645,6 @@
     <Compile Include="admin\location\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\master\db.aspx.cs">
-      <DependentUpon>db.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\master\db.aspx.designer.cs">
-      <DependentUpon>db.aspx</DependentUpon>
-    </Compile>
     <Compile Include="admin\observation\observers.aspx.cs">
       <DependentUpon>observers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -781,10 +707,6 @@
     </Compile>
     <Compile Include="admin\schools\edit-grade.aspx.designer.cs">
       <DependentUpon>edit-grade.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\services\services.asmx.cs">
-      <DependentUpon>services.asmx</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="admin\users\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
