@@ -352,7 +352,9 @@
                         data-args="350, 500, true, null, 1" ></asp:HyperLink>
                 </div>
 
-
+                <div class="floatRight">
+                    <mack:WaitButton runat="server" ID="btnSchSave" OnClick="btnSaveEdu_Click" CssClass="button" Text="Save" />
+                </div>
 
             </asp:View>
         </asp:MultiView>
