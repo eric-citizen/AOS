@@ -242,40 +242,40 @@
                 })
             }
 
-            checkLogin = function(api,pass){
-                var params= params || {};
+            checkLogin = function(api, pass) {
+                var params = params || {};
                 $.ajax({
-                    url: 'api/'+api,
-                    beforeSend: function (request) {
+                    url: 'api/' + api,
+                    beforeSend: function(request) {
                         request.setRequestHeader("CZAOSToken", getToken());
                     },
                     cache: false,
                     type: 'GET',
                     data: $.toJSON(params),
                     contentType: 'application/json; charset=utf-8'
-                }).done(function(data){
+                }).done(function(data) {
                     if (data.StudentPass == pass) {
                         exhibitID = data.ExhibitID;
                         console.log(data);
                         alert('Welcome Student');
-                        var sn=$("#studentNumber");
-                        for(var i = 0 ; i != parseInt(data.ObserverNo);i++){
-                            $(sn).append("<option val='"+(i+1)+"'>Student #"+(i+1)+"</option>");
+                        var sn = $("#studentNumber");
+                        for (var i = 0; i != parseInt(data.ObserverNo); i++) {
+                            $(sn).append("<option val='" + (i + 1) + "'>Student #" + (i + 1) + "</option>");
                         }
                         $('body').addClass(data.Exhibit);
                         $('#step2').fadeIn(0);
                         $('#step1').fadeOut(0);
-                        czaos_get('animalObservation',{},'#observationAnimals',false,{observationId:observationID});
-                        czaos_get('behaviorCategory',{},'#behaviorControl',true,{exhibitId:exhibitID});
-                        czaos_get('exhibitlocation',{},'#zoneControl',false,{exhibitId:exhibitID});
-                        czaos_get('crowd/',{},'#crowdControl',true);
-                        czaos_get('weatherCondition/',{},'#weatherControl',true);
+                        czaos_get('animalObservation', {}, '#observationAnimals', false, { observationId: observationID });
+                        czaos_get('behaviorCategory', {}, '#behaviorControl', true, { exhibitId: exhibitID });
+                        czaos_get('exhibitlocation', {}, '#zoneControl', false, { exhibitId: exhibitID });
+                        czaos_get('crowd/', {}, '#crowdControl', true);
+                        czaos_get('weatherCondition/', {}, '#weatherControl', true);
 
-                    }else{
-                        alert('Sorry wrong password. try again.')
+                    } else {
+                        alert('Sorry wrong password. try again.');
                     }
                 });
-            }
+            };
 
         login();
 
