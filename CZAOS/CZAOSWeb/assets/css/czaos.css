@@ -33,8 +33,7 @@ select{
 }
 .listbox {
     background: #fff;
-    border-top-right-radius: 0em;
-    border-bottom-right-radius: 0em;
+    border-radius: 0em;
 }
 select, textarea  {
     font-size:12px;
