@@ -42,7 +42,7 @@
             <asp:View runat="server" ID="vwPro">
 
 
-                <div id="proHeader" style="width:100%">
+                <div id="proHeader" class="obsSection" style="border-top: 2px solid #a2a6ad">
                     <label>Observation Type:</label>
                     <asp:Literal runat="server" ID="litType"></asp:Literal>
                     <button ID="btnHeadBack" Class="floatRight" OnClick="history.go(-1);return false;">Back</button>
@@ -50,22 +50,22 @@
                     <br />
                 </div>
 
-                <div id="observers" style="width:100%;display:inline-block">
+                <div id="observers" class="obsSection">
 
                     <h2>Observer(s)</h2>
 
-                    <div id="numObservers" style="height:100%;width:50%;display:inline-block;float:left">
+                    <div id="numObservers" class="obsSectionInnerLeft">
                         <label>Number of Observers</label><br />
 
                         <mack:RequiredDropDownList runat="server" ID="ddNumObs" ValidatorToolTip="select the number of observers" Required="true" InitialValue="-1"
                             ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" AutoPostBack="true" OnSelectedIndexChanged="ddNumObs_SelectedIndexChanged">                                            
                         </mack:RequiredDropDownList>
                     </div>
-                    <div id="attending" style="height:100%;width:50%;display:inline-block;float:right">
+                    <div id="attending" class="obsSectionInnerRight">
                             
                         <%--<div style="height: 130px; width:300px; overflow: auto; border: solid 1px #dcdcdc;" class="p5 mt5">--%>
                             <asp:ListBox runat="server" ID="lstObservers" ClientIDMode="Static" SelectionMode="Multiple" Rows="10"
-                                DataTextField="DisplayName" DataValueField="UserName" CssClass="" ></asp:ListBox>
+                                DataTextField="DisplayName" DataValueField="UserName" CssClass="listbox" ></asp:ListBox><br />
                         <%--</div>--%>
                         
                         Selected Observers:<span id="user-count" class="pl10">0</span>
@@ -75,11 +75,11 @@
                     </div>                
                 </div>
 
-                <div id="observation" style="width:100%;display:inline-block">
+                <div id="observation" class="obsSection">
                     
                     <h2>Observation</h2>
 
-                    <div id="dateTime" style="height:100%;width:50%;display:inline-block;float:left">
+                    <div id="dateTime" class="obsSectionInnerLeft">
                         <label>Date</label><br />
                         <mack:DatePicker runat="server" ID="dteDate" Required="true" CssClass="focusme" ErrorMessage="&nbsp;" ValidatorCssClass="error" 
                             ValidatorToolTip="select the observation date" OnInit="dteDate_Init"></mack:DatePicker>
@@ -95,7 +95,7 @@
                             ErrorMessage="*" ValidatorCssClass="error" ValidatorToolTip="Enter the end time"></mack:RequiredTextBox>
 
                     </div>
-                    <div id="timeDetails" style="height:100%;width:50%;display:inline-block;float:right">
+                    <div id="timeDetails" class="obsSectionInnerRight">
                         <label>Category</label><br />
                         <mack:RequiredDropDownList runat="server" ID="ddCategory" ClientIDMode="Static" ValidatorToolTip="select a category" Required="true" InitialValue="-1"
                             ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" CssClass="cat-dd" >
@@ -128,11 +128,11 @@
                     </div>
                 </div>
 
-                <div id="animals" style="width:100%;display:inline-block">
+                <div id="animals" class="obsSection">
                                         
                     <h2>Animal(s)</h2>
 
-                    <div id="animalInfo" style="height:100%;width:50%;display:inline-block;float:left">
+                    <div id="animalInfo" class="obsSectionInnerLeft">
                     
                         <label>Animal Region</label><br />
                         <mack:RequiredDropDownList runat="server" ID="ddAnimalRegion" ClientIDMode="Static" DataValueField="AnimalRegionCode" 
@@ -152,7 +152,7 @@
                         </mack:RequiredDropDownList>
 
                     </div>
-                    <div id="groupInfo" style="height:100%;width:50%;display:inline-block;float:right">
+                    <div id="groupInfo" class="obsSectionInnerRight">
                         <asp:PlaceHolder runat="server" ID="groupsPlaceHolder">
                             <uc1:GroupControl runat="server" ID="GroupControl1" />
                             <uc1:GroupControl runat="server" ID="GroupControl2" />
@@ -171,7 +171,7 @@
                     </div>
                 </div>
 
-                <div id="reports" style="width:100%;display:inline-block">
+                <div id="reports" class="obsSection">
 
                 </div>
 
@@ -186,14 +186,14 @@
                 <asp:Literal runat="server" ID="litSchType"></asp:Literal>
                 <br /><br />
 
-                <div id="schObservers" style="width:100%;display:inline-block">
+                <div id="schObservers" class="obsSection">
                     <h2>Observer(s)</h2><br />
 
-                    <div id="observerType" style="height:100%;width:50%;display:inline-block;float:left">
+                    <div id="observerType" class="obsSectionInnerLeft">
                         <label>Observer Type</label><br />
                         <asp:Literal runat="server" ID="litSchObserverType" Text="Student"></asp:Literal>
                     </div>
-                    <div id="numOfObservers" style="height:100%;width:50%;display:inline-block;float:right">
+                    <div id="numOfObservers" class="obsSectionInnerRight">
                         <label>Number of Observers</label><br />
                         <mack:RequiredDropDownList runat="server" ID="ddlSchoolObserverCount" ValidatorToolTip="select the number of observers" 
                             Required="true" InitialValue="-1" ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" 
@@ -203,11 +203,11 @@
 
                 </div>
 
-                <div id="school" style="width:100%;display:inline-block">
+                <div id="school" class="obsSection">
                     <h2>School</h2><br />
 
 
-                    <div id="schoolInfo" style="height:100%;width:50%;display:inline-block;float:left">
+                    <div id="schoolInfo" class="obsSectionInnerLeft">
                         <label>District</label><br />
                         <mack:RequiredDropDownList runat="server" ID="ddDistrict" ClientIDMode="Static" DataValueField="DistrictID" 
                             DataTextField="District" Required="true" InitialValue="-1" ErrorMessage="&nbsp;" ValidatorCssClass="error" 
@@ -221,7 +221,7 @@
                             SetFocusOnError="true" InitialValue="-1" ValidatorToolTip="please select a school"></mack:RequiredDropDownList>
 
                     </div>
-                    <div id="classInfo" style="height:100%;width:50%;display:inline-block;float:right">
+                    <div id="classInfo" class="obsSectionInnerRight">
                         <label>Grade</label><br />
                         <mack:RequiredDropDownList runat="server" ID="ddGrade" ClientIDMode="Static" DataValueField="GradeID" 
                             DataTextField="GradeName" Required="true" InitialValue="-1" ErrorMessage="&nbsp;" ValidatorCssClass="error" 
@@ -236,10 +236,10 @@
 
                 </div>
 
-                <div id="schObservation" style="width:100%;display:inline-block">
+                <div id="schObservation" class="obsSection">
                     <h2>Observation</h2><br />
 
-                    <div id="schDateTime" style="height:100%;width:50%;display:inline-block;float:left">
+                    <div id="schDateTime" class="obsSectionInnerLeft">
                         <label>Date</label><br />
                         <mack:DatePicker runat="server" ID="dteSchoolDate" Required="true" CssClass="focusme" 
                             ErrorMessage="&nbsp;" ValidatorCssClass="error" ValidatorToolTip="select the observation date" 
@@ -257,7 +257,7 @@
                             Required="true" Width="100px" CssClass="endtime" ErrorMessage="*" ValidatorCssClass="error" 
                             ValidatorToolTip="Enter the end time"></mack:RequiredTextBox>     
                         </div>
-                    <div id="schTimeDetails" style="height:100%;width:50%;display:inline-block;float:right">
+                    <div id="schTimeDetails" class="obsSectionInnerRight">
                         <label>Category</label><br />
                         <mack:RequiredDropDownList runat="server" ID="ddSchoolCat" ClientIDMode="Static" ValidatorToolTip="select a category" 
                             Required="true" InitialValue="-1" ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" CssClass="cat-dd" >
@@ -291,10 +291,10 @@
 
                 </div>
 
-                <div id="schAnimals" style="width:100%;display:inline-block">
+                <div id="schAnimals" class="obsSection">
                     <h2>Animal(s)</h2><br />
 
-                    <div id="schAnimalInfo" style="height:100%;width:50%;display:inline-block;float:left">
+                    <div id="schAnimalInfo" class="obsSectionInnerLeft">
                         <label>Region</label><br />
                         <mack:RequiredDropDownList runat="server" ID="ddSchoolAnimRegions" ClientIDMode="Static" DataValueField="AnimalRegionCode" 
                             DataTextField="AnimalRegionName" Required="true" InitialValue="-1" ErrorMessage="&nbsp;" ValidatorCssClass="error" 
@@ -306,7 +306,7 @@
                             DataTextField="ExhibitName" Required="false" OnPreRender="ddSchoolExhibit_PreRender"></mack:RequiredDropDownList>                                   
 
                     </div>
-                    <div id="schGroupInfo" style="height:100%;width:50%;display:inline-block;float:right">
+                    <div id="schGroupInfo" class="obsSectionInnerRight">
                         <label>Animals</label><br />
                         <uc1:GroupControl runat="server" ID="schoolAnimalGroup" GroupNameVisible="false" />             
 
@@ -315,7 +315,7 @@
 
                 </div>
 
-                <div id="schReports" style="width:100%;display:inline-block;border:1px solid #cccccc">
+                <div id="schReports" class="obsSection" style="width:100%;display:inline-block;border:1px solid #cccccc">
                     <h2>Reports</h2><br />
 
                     <asp:GridView runat="server" ID="gvReports" Width="100%" CssClass="gridview" AutoGenerateColumns="false" 

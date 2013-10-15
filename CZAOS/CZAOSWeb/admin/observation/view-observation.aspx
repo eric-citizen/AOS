@@ -14,21 +14,23 @@
             Observation
         </legend>
 
-        <div class="detail" id="detailHead" style="width:100%;border: 2px solid black">
+        <div id="detailHead" class="obsSection" style="border-top: 2px solid #a2a6ad">
             <h2>Observation Details</h2>
-            <asp:Literal runat="server" ID="litHead" />
-            <a href="javascript:void(0)" onclick="window.print();" class="print-link">Print</a>
-            <asp:HyperLink runat="server" ID="lnkHeadEdit" CssClass="gv-edit-link" Text="Edit" ToolTip="Edit this item" ></asp:HyperLink>
-            <asp:HyperLink runat="server" ID="lnkHeadRecords" CssClass="gv-edit-link" Text="View Records" ToolTip="View Observation Records" ></asp:HyperLink>
-            <asp:Button runat="server" ID="btnHeadDelete" class="gv-delete-link" OnClick="btnHeadDelete_Click" Text="Delete"></asp:Button>
-            <button ID="btnHeadBack" Class="floatRight" OnClick="history.go(-1);return false;">Back</button>
+            <div style="padding-left: 15px">
+                <asp:Literal runat="server" ID="litHead" />
+                <span class="print"><a href="javascript:void(0)" onclick="window.print();" >Print</a></span>
+                <span class="edit"><asp:HyperLink runat="server" ID="lnkHeadEdit" Text="Edit" ToolTip="Edit this item"></asp:HyperLink></span>
+                <span class="edit"><asp:HyperLink runat="server" ID="lnkHeadRecords" Text="View Records" ToolTip="View Observation Records"></asp:HyperLink></span>
+                <asp:ImageButton runat="server" ID="btnHeadDelete" ImageUrl="~/assets/images/icons/admin/delete.png" OnClick="btnHeadDelete_Click" CssClass="delete" Text="Delete"></asp:ImageButton>
+                <button id="btnHeadBack" class="floatRight" onclick="history.go(-1);return false;">Back</button>
+            </div> 
         </div>
 
-        <div id="observers" style="width: 100%; display: inline-block; border: 2px solid black">
+        <div id="observers" class="obsSection">
             <div class="title">  
                 <h2>Observer(s)</h2><br />
             </div>
-            <div id="observersMeta" style="height: 100%; width: 50%; float: left; display: inline-block">
+            <div id="observersMeta" class="obsSectionInnerLeft">
                 <label>Number of Observers</label>
                 <asp:Literal runat="server" ID="litObsCount"></asp:Literal>&nbsp;observers
                 <br />
@@ -49,7 +51,7 @@
                     <asp:Literal runat="server" ID="litStudentPassword"></asp:Literal>
                 </asp:Panel>
             </div>
-            <div id="observerList" style="height: 100%; width: 50%; float: right; display: inline-block">
+            <div id="observerList" class="obsSectionInnerRight">
                 <label>Attendee(s)</label>
                 <asp:Repeater runat="server" ID="rptObservers">
                     <ItemTemplate>
@@ -61,11 +63,11 @@
         </div>
 
         <asp:Panel ID="pnlSchool" runat="server">
-            <div id="school" style="width: 100%; display: inline-block; border: 2px solid black">
+            <div id="school" class="obsSection">
             <div class="title">
                 <h2>School</h2><br />
             </div>
-            <div id="districtSchool" style="height: 100%; width: 50%; float: left; display: inline-block">
+            <div id="districtSchool" class="obsSectionInnerLeft">
                 
                 <label>District</label>
                 <asp:Literal runat="server" ID="litDistrict"></asp:Literal>
@@ -75,7 +77,7 @@
                 <label>School</label>
                 <asp:Literal runat="server" ID="litSchool"></asp:Literal>
             </div>
-            <div id="gradeTeacher" style="height: 100%; width: 50%; float: right; display: inline-block">
+            <div id="gradeTeacher" class="obsSectionInnerRight">
                 <label>Grade</label>
                 <asp:Literal runat="server" ID="litGrade"></asp:Literal>
                 <br />
@@ -87,11 +89,11 @@
         </div>
         </asp:Panel>
 
-        <div id="observation" style="width: 100%; display: inline-block; border: 2px solid black">
+        <div id="observation" class="obsSection">
             <div class="title">
                 <h2>Observation</h2><br />
             </div>
-            <div id="time" style="height: 100%; width: 50%; float: left; display: inline-block">
+            <div id="time" class="obsSectionInnerLeft">
                 <label>Date</label>
                 <asp:Literal runat="server" ID="litDate"></asp:Literal>
                 <br /><br />
@@ -103,7 +105,7 @@
                 <label>End</label>
                 <asp:Literal runat="server" ID="litEnd"></asp:Literal>
             </div>
-            <div id="timed" style="height: 100%; width: 50%; float: right; display: inline-block">
+            <div id="timed" class="obsSectionInnerRight">
                 <label>Category</label>
                 <asp:Literal runat="server" ID="litCategory"></asp:Literal>
                 <br /><br />
@@ -123,11 +125,11 @@
             </div>
         </div>
 
-        <div id="Animals" style="width: 100%; display: inline-block; border: 2px solid black">
+        <div id="Animals" class="obsSection">
             <div class="title">
                 <h2>Animal(s)</h2><br />
             </div>
-            <div id="regionExhibit" style="height: 100%; width: 50%; float: left; display: inline-block">
+            <div id="regionExhibit" class="obsSectionInnerLeft">
                 <label>Region</label>
                 <asp:Literal runat="server" ID="litRegion"></asp:Literal>
                 <br />
@@ -135,7 +137,7 @@
                 <label>Exhibit</label>
                 <asp:Literal runat="server" ID="litExhibit"></asp:Literal>
             </div>
-            <div id="animalList" style="height: 100%; width: 50%; float: right; display: inline-block">
+            <div id="animalList" class="obsSectionInnerRight">
                 <label>Animal(s)</label>
                 <asp:repeater runat="server" id="rptAnimal">
                     <ItemTemplate>
@@ -163,15 +165,16 @@
             </div>
         </div>
 
-        <div class="detail" id="detailFoot" style="width:100%;border: 2px solid black">
+        <div  id="detailFoot" class="obsSection">
             <h2>Observation Details</h2>
-            <asp:Literal runat="server" ID="litFoot" />
-            <a href="javascript:void(0)" onclick="window.print();" class="print-link">Print</a>
-            <asp:HyperLink runat="server" ID="lnkFootEdit" CssClass="gv-edit-link" Text="Edit" ToolTip="Edit this item" ></asp:HyperLink>
-            <asp:HyperLink runat="server" ID="lnkFootRecords" CssClass="gv-edit-link" Text="View Records" ToolTip="View Observation Records" ></asp:HyperLink>
-            <asp:Button runat="server" ID="btnFootDelete" class="gv-delete-link" OnClick="btnHeadDelete_Click" Text="Delete"></asp:Button>
-            <Button ID="btnFootBack" Class="floatRight" OnClick="history.go(-1);return false;">Back</Button>
-
+            <div style="padding-left: 15px">
+                <asp:Literal runat="server" ID="litFoot" />
+                <span class="print"><a href="javascript:void(0)" onclick="window.print();" class="print-link">Print</a></span>
+                <span class="edit"><asp:HyperLink runat="server" ID="lnkFootEdit" CssClass="gv-edit-link" Text="Edit" ToolTip="Edit this item"></asp:HyperLink></span>
+                <span class="edit"><asp:HyperLink runat="server" ID="lnkFootRecords" CssClass="gv-edit-link" Text="View Records" ToolTip="View Observation Records"></asp:HyperLink></span>
+                <asp:ImageButton runat="server" ID="btnFootDelete" ImageUrl="~/assets/images/icons/admin/delete.png" OnClick="btnHeadDelete_Click" CssClass="delete" Text="Delete"></asp:ImageButton>
+                <button id="btnFootBack" class="floatRight" onclick="history.go(-1);return false;">Back</button>
+            </div>
         </div>
 
 
