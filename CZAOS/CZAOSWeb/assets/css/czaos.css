@@ -11,7 +11,7 @@ h1{
     font-size: 16px;
 }
 #body-container {
-    padding:20px;
+    /*padding:20px;*/
 }
 a{
     text-decoration: none;
@@ -31,6 +31,10 @@ select{
     min-width: 150px;
     background: #fff url(../images/dropdown-arrow.png) center right no-repeat;
 }
+.listbox {
+    background: #fff;
+    border-radius: 0em;
+}
 select, textarea  {
     font-size:12px;
     padding: 2px 0 2px 3px;
@@ -42,6 +46,79 @@ select{
     border-radius: 2em;
     padding: .5em 1em;
     padding-right: 4em;
+}
+
+.obsSection {
+    border-bottom: 2px solid #a2a6ad;
+    border-right: 2px solid #a2a6ad;
+    border-left: 2px solid #a2a6ad;
+    width: 956px;
+    display: inline-block;
+}
+
+.obsSection h2{
+    padding-left: 15px;
+}
+
+.obsSectionInnerLeft {
+    padding-left: 15px;
+    width: 45%;
+    display: inline-block;
+    float: left;
+}
+
+.obsSectionInnerRight {
+    width: 50%;
+    display: inline-block;
+    float: right;
+    padding-bottom: 5px;
+}
+
+.edit {
+    background: url('../images/icons/admin/edit.png') center left no-repeat;
+    background-size: 8px 16px;
+    width: 8px;
+    height: 20px;
+    display: inline-block;
+    float: right;
+}
+.edit a {
+    display: inline-block;
+    overflow: hidden;
+    width: 0;
+    height: 14px;
+    padding-left: 10px;
+}
+.delete {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    width:20px; 
+    height:20px;
+    display: inline-block;
+    float:right;
+}
+.delete a {
+    display: inline-block;
+    overflow: hidden;
+    width: 0;
+    height: 14px;
+    padding-left: 10px;
+}
+.print {
+    background: url('../images/icons/admin/print.png') center left no-repeat;
+    background-size: 15px 14.5px;
+    width:20px; 
+    height:20px;
+    display: inline-block;
+    float:right;
+}
+.print a {
+    display: inline-block;
+    overflow: hidden;
+    width: 0;
+    height: 14px;
+    padding-left: 10px;
 }
 
 textarea  {    
@@ -510,7 +587,7 @@ hr{
     width:30%;
 }
 h1,h2{
-    padding: 15px;
+    padding-bottom: 15px;
 }
 h2{
     font-size: 1.6em;
