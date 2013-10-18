@@ -37,6 +37,7 @@ select{
 }
 .alphabet-container {
     float:right;
+    display: inline-block;
 }
 select, textarea  {
     font-size:12px;
@@ -124,6 +125,11 @@ select{
     padding-left: 10px;
 }
 
+.animalSearch {
+    width: 50%;
+    display:inline-block;
+}
+
 textarea  {    
     line-height:18px;
 }
@@ -190,48 +196,91 @@ tr.hilite-row:nth-child(even) td{
     padding: 15px;
     font-size: 14px;
 }
-.menu_drop{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    font-size: 20px;
-    text-align: right;
-    padding: 15px;
+#app-title {
+    display:inline-block;
+    width:91.5%;
+    font-size: 18px;
 }
-.menu_drop:hover:before{
-    content:'\2630';
-    padding: 5px;
-    background: #e3e4e6;
+nav {
+    display:inline-block;
 }
-.menu_drop:hover ul{
-    display: block;
-    background: #e3e4e6;
-    border: 1px solid #fff;
-}
-.menu_drop ul{
-    display: none;
-}
-.menu_drop:hover ul li{
-    font-size: 12px;
-    text-align: left;
-}
-.menu_drop ul li a{
-    width: 150px;
-    display: inline-block;
-    padding: 1em;
-}
-.menu_drop:before{
-    content: '\2630';
-    padding: 5px;
-}
-.menu_drop.topnav{
-    padding: 7px;
+nav ul ul {
+	display: none;
     z-index: 500;
+	background: #5f6975; 
+    border-radius:0;
+    padding: 0;
+	position: absolute; 
+    top: 100%;
+    right: -15%;
+}
+
+nav ul li:hover > ul {
+	display: block;
+}
+
+
+nav ul{
+    background: #efefef; 
+	padding: 0;
+	border-radius: 5px;  
+	list-style: none;
+	position: relative;
+	display: inline-block;
+    vertical-align: top;
+}
+nav ul:after {
+	content: ""; 
+    clear: both; 
+    display: block;
+}
+
+nav ul li {
+	float: left;
+}
+nav ul li:hover {
+	background: #4b545f;
+}
+nav ul li:hover a {
+	color: #fff;
+}
+		
+nav ul li a {
+	display: block; 
+    padding: 2px 8px;
+	color: #757575; 
+    text-decoration: none;
+}	
+nav ul ul li {
+	float: none; 
+    width: 15em;
+	border-top: 1px solid #6b727c;
+	border-bottom: 1px solid #575f6a; 
+    position: relative;
+}
+nav ul ul li a {
+	padding: 5px 20px;
+	color: #fff;
+}	
+nav ul ul li a:hover {
+	background: #4b545f;
 }
 #lnkLogout{
-    position: absolute;
-    top: 7px;
-    right: 50px;
+    background: #efefef; 
+	padding: 1.5px;
+	border-radius: 5px;  
+    text-decoration: none;
+    display: inline-block;
+    color: #757575; 
+
+}
+#lnkLogout:hover {
+    background: #4b545f;
+	background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
+	background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+	background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);
+	border-radius: 4px;  
+    color:#fff;
 }
 .step{
     display: inline-block;
@@ -493,6 +542,7 @@ header{
     background: #4a525c;
     color: #fff;
     padding: .5em;
+    padding-right: 0
 }
 #backdrop{
     background: url(../images/background/gradient.png), url(../images/background/sky.jpg);
@@ -615,17 +665,6 @@ h2{
 }
 #login input[type='text'],#login input[type='password']{
     width:92%;
-}
-header ul, header li{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    line-height: 1px;
-}
-header li{
-    width: 32px;
-    display: inline-block;
-    margin-right: 10px;
 }
 header li img{
     width: 100%;

@@ -25,6 +25,12 @@
                 <asp:Literal runat="server" ID="litName"></asp:Literal>
             </li>
             <li class="required">
+                <label>Behavior Category</label>
+                <mack:RequiredDropDownList runat="server" ID="ddlBehaviorCategory" AutoPostBack="true" Required="true" DataTextField="BvrCat" DataValueField="BvrCatID"
+                    SetFocusOnError="true" ErrorMessage="*" ValidatorCssClass="error" ValidatorToolTip="select a behavior category" InitialValue="-1"
+                    OnSelectedIndexChanged="ddlBehaviorCategory_SelectedIndexChanged" ></mack:RequiredDropDownList>
+            </li>
+            <li class="required">
                 <label>Behavior:</label>
                  <mack:RequiredDropDownList runat="server" ID="ddlBehavior" Required="true" DataTextField="BehaviorName" DataValueField="BehaviorID" 
                      SetFocusOnError="true" ErrorMessage="*" ValidatorCssClass="error" ValidatorToolTip="select a behavior" InitialValue="-1"  ></mack:RequiredDropDownList>

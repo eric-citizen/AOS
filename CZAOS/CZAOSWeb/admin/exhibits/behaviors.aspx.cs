@@ -70,10 +70,10 @@ namespace CZAOSWeb.admin.Behavior
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                HyperLink lnkEdit = e.Row.FindControl("lnkEdit") as HyperLink;
-                CZDataObjects.ExhibitBehavior item = e.Row.DataItem as CZDataObjects.ExhibitBehavior;
-
-                //lnkEdit.NavigateUrl = "~/admin/dialogs/edit-exhibit-behavior.aspx?exbId={0}".FormatWith(item.ExhibitBehaviorID);
+                var item = e.Row.DataItem as CZDataObjects.ExhibitBehavior;
+                var bhvCatID = e.Row.Cells[0].Text.ToInt32();
+                    
+                e.Row.Cells[0].Text = BehaviorCategoryList.GetItem(bhvCatID).BvrCat;
                 litExhibitName.Text = item.ExhibitName;
             }           
 

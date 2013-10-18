@@ -32,20 +32,17 @@
         DataKeyNames="BvrCatID" OnRowDataBound="gvBCat_RowDataBound" OnRowCommand="gvBCat_RowCommand">
         <Columns>
 
-            <asp:BoundField DataField="BvrCat" SortExpression="BvrCat" HeaderText="Name">                
+            <asp:BoundField DataField="BvrCat" SortExpression="BvrCat" HeaderText="Name">
+                <ItemStyle Width="100px" />                
             </asp:BoundField>
             
             <asp:BoundField DataField="BvrCatCode" SortExpression="BvrCatCode" HeaderText="Code">
-                <ItemStyle Width="300px" />
+                <ItemStyle Width="60px" />
             </asp:BoundField> 
 
-            <asp:BoundField DataField="BehaviorCount" SortExpression="BehaviorCount" HeaderText="Behavior Count" HeaderStyle-CssClass="tar">
-                <ItemStyle Width="110px" CssClass="tar" />
-            </asp:BoundField> 
-
-            <asp:TemplateField ItemStyle-Width="60px">                    
+            <asp:TemplateField ItemStyle-Width="100px" HeaderText="Behavior Count">                    
                 <ItemTemplate>                    
-                    <asp:HyperLink runat="server" ID="lnkBehaviorEdit" CssClass="ui-dialog-link gv-edit-link-inline" data-args="700, 650, true, null, 1" Text="Edit" ToolTip="Edit this category's behaviors" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/behaviors.aspx?bcatId={0}") %>'></asp:HyperLink>                
+                    <asp:HyperLink runat="server" ID="lnkBehaviorEdit" CssClass="ui-dialog-link gv-edit-link-inline" data-args="700, 650, true, null, 1" Text='<%#Bind("BehaviorCount") %>' ToolTip="Edit this category's behaviors" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/behaviors.aspx?bcatId={0}") %>'></asp:HyperLink>                
                 </ItemTemplate> 
             </asp:TemplateField>
 
