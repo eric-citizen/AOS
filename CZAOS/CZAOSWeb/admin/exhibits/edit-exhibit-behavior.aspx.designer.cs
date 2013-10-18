@@ -49,6 +49,15 @@ namespace CZAOSWeb.admin.dialogs {
         protected global::System.Web.UI.WebControls.Literal litName;
         
         /// <summary>
+        /// ddlBehaviorCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.RequiredDropDownList ddlBehaviorCategory;
+        
+        /// <summary>
         /// ddlBehavior control.
         /// </summary>
         /// <remarks>

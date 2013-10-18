@@ -13,7 +13,7 @@
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
     </div>
 
-    <div class="pr">
+    <div class="animalSearch">
         <label class="required">Free Text Search:</label>
         <span style="display:inline-block; width:220px;">
             <mack:RequiredTextBox runat="server" ID="txtFreeText" MaxLength="50" Width="150px" ValidationGroup="freetext" ValidatorCssClass="error" ValidatorToolTip="Please enter search text"></mack:RequiredTextBox>
@@ -21,7 +21,7 @@
         <mack:WaitButton runat="server" ID="btnSearch" Text="Search" CssClass="button" ValidationGroup="freetext" OnClick="btnSearch_Click"/>
         <asp:LinkButton runat="server" ID="lnkClear" Text="Clear" OnClick="lnkClear_Click"></asp:LinkButton>
     </div>
-
+ 
     <asp:ObjectDataSource ID="cztDataSource" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting"
         SelectMethod="GetItemCollection" TypeName="CZBizObjects.AnimalList"
         EnablePaging="True" SortParameterName="sortExpression" SelectCountMethod="GetCount" OldValuesParameterFormatString="original_{0}">
@@ -59,7 +59,6 @@
                     <asp:TemplateField SortExpression="AnimalRegion" HeaderText="Animal Region" ItemStyle-Width="250px">                    
                         <ItemTemplate>
                             <asp:Label runat="server" ID="lblAnimalRegion" Text='<%# Bind("AnimalRegion") %>'></asp:Label>
-                            <asp:HyperLink runat="server" ID="lnkAnimalRegionEdit" CssClass="ui-dialog-link gv-edit-link-inline" data-args="270, 600, true, null, 1" Text="Edit" ToolTip="Edit Animal Region" NavigateUrl='<%# Bind("AnimalRegionCode","~/admin/animal-regions/edit-region.aspx?regionId={0}") %>'></asp:HyperLink>                
                         </ItemTemplate> 
                     </asp:TemplateField>
 

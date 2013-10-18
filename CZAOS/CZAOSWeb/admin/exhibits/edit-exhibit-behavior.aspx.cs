@@ -49,7 +49,7 @@ namespace CZAOSWeb.admin.dialogs
         protected override void Page_Init(object sender, EventArgs e)
         {
             base.Page_Init(sender, e);
-            this.LoadBehaviors();
+            this.LoadBehaviorCategories();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -80,9 +80,18 @@ namespace CZAOSWeb.admin.dialogs
             }
         }
 
+        private void LoadBehaviorCategories()
+        {
+            ddlBehaviorCategory.DataSource = BehaviorCategoryList.GetActive();
+            ddlBehaviorCategory.DataBind();
+            ddlBehaviorCategory.AddEmptyListItem("Select Behavior Category", "-1");
+
+        }
+
         private void LoadBehaviors()
         {
-            ddlBehavior.DataSource = BehaviorList.GetActiveItemCollection();
+            var strFilter = string.Format("Active = 1 AND BvrCatID = {0}", ddlBehaviorCategory.SelectedValue);
+            ddlBehavior.DataSource = BehaviorList.GetItemCollection(0, 0, string.Empty, strFilter);
             ddlBehavior.DataBind();
             ddlBehavior.AddEmptyListItem("Select Behavior", "-1");
         }
@@ -98,6 +107,7 @@ namespace CZAOSWeb.admin.dialogs
             else
             {
                 litName.Text = item.ExhibitName;
+                ddlBehaviorCategory.SelectListItemByValue(item.BvrCatID.ToString());
                 ddlBehavior.SelectListItemByValue(item.BehaviorID.ToString());
                 this.ExhibitID = item.ExhibitID;
 
@@ -119,6 +129,7 @@ namespace CZAOSWeb.admin.dialogs
 
                     item = new CZDataObjects.ExhibitBehavior();
                     item.ExhibitID = this.ExhibitID;
+                    item.BvrCatID = ddlBehaviorCategory.SelectedValue.ToInt32();
                     item.BehaviorID = ddlBehavior.SelectedValue.ToInt32(); //txtBehaviorCode.HtmlEncodedText().Trim();
                     item.Active = chkActive.Checked;                    
 
@@ -134,6 +145,7 @@ namespace CZAOSWeb.admin.dialogs
                     item = ExhibitBehaviorList.GetItem(this.BehaviorID);
 
                     item.ExhibitID = this.ExhibitID;
+                    item.BvrCatID = ddlBehaviorCategory.SelectedValue.ToInt32();
                     item.BehaviorID = ddlBehavior.SelectedValue.ToInt32(); //txtBehaviorCode.HtmlEncodedText().Trim();
                     item.Active = chkActive.Checked;
 
@@ -153,6 +165,11 @@ namespace CZAOSWeb.admin.dialogs
             {
                 this.DisplayError("There are one or more data errors. Please correct and try again.");
             }
+        }
+
+        protected void ddlBehaviorCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadBehaviors();
         }
     }
 }

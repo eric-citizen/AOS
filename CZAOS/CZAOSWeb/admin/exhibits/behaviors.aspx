@@ -36,6 +36,7 @@
         DataKeyNames="ExhibitBehaviorID" PagerSettings-Visible="false" >
         <Columns>
             
+            <asp:BoundField DataField="BvrCatID" SortExpression="BvrCatID" HeaderText="Behavior Category" />
             <asp:BoundField DataField="Behavior" SortExpression="Behavior" HeaderText="Behavior">                
             </asp:BoundField> 
 
@@ -43,14 +44,6 @@
                 <ItemTemplate>
                     <asp:CheckBox runat="server" ID="activeCheckBox" Checked='<%# Bind("Active") %>' OnCheckedChanged="IsActiveCheckChanged" AutoPostBack="true" />
                 </ItemTemplate> 
-            </asp:TemplateField>
-
-            <asp:TemplateField>
-                <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="250, 600, true, null, 1" Text="Edit" ToolTip="Edit Exhibit Behavior" 
-                        NavigateUrl='<%# Bind("ExhibitBehaviorID","~/admin/exhibits/edit-exhibit-behavior.aspx?exbId={0}") %>'></asp:HyperLink>
-                </ItemTemplate> 
-                <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>
 
             <asp:TemplateField ShowHeader="False">

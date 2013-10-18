@@ -840,8 +840,7 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.CreateNewEduObservation())
                 {
-                    //Dialog dl = this.Master as Dialog;
-                    //dl.RefreshParent();
+                    Response.Redirect("default.aspx", false);
                 }
 
             }
@@ -849,8 +848,8 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.UpdateEduObservation())
                 {
-                    //Dialog dl = this.Master as Dialog;
-                    //dl.RefreshParent();
+                    var strRedirect = string.Format("view-observationId={0}", ObservationID);
+                    Response.Redirect(strRedirect, false);
                 }
 
             }
