@@ -538,7 +538,7 @@ body{
 #slide img{
     padding-bottom: 5%;
 }
-header{
+header, footer{
     background: #4a525c;
     color: #fff;
     padding: .5em;
