@@ -25,6 +25,8 @@ namespace CZAOSWeb.admin.observation
             var metaString = obs.ObserveStart.ToShortDateString() + " // " + obs.ObservationID.ToString() + " // " + obs.ObserveType.ToString() + " // " + obs.Exhibit.ToString();
             litHeader.Text = metaString;
             litFooter.Text = metaString;
+
+            
         }
 
         protected void cztDataSource_Selected(object sender, ObjectDataSourceStatusEventArgs e)

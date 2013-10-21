@@ -13,16 +13,18 @@
             <asp:Literal runat="server" ID="fieldsetLegend"></asp:Literal>
             Observation
         </legend>
+        
+        <button id="btnHeadBack" class="floatLeft" style="margin-bottom: 20px" onclick="history.go(-1);return false;">Back</button>
 
         <div id="detailHead" class="obsSection" style="border-top: 2px solid #a2a6ad">
             <h2>Observation Details</h2>
             <div style="padding-left: 15px">
                 <asp:Literal runat="server" ID="litHead" />
-                <span class="print"><a href="javascript:void(0)" onclick="window.print();" >Print</a></span>
-                <span class="edit"><asp:HyperLink runat="server" ID="lnkHeadEdit" Text="Edit" ToolTip="Edit this item"></asp:HyperLink></span>
-                <span class="edit"><asp:HyperLink runat="server" ID="lnkHeadRecords" Text="View Records" ToolTip="View Observation Records"></asp:HyperLink></span>
+                <span class="print"><a href="javascript:void(0)" onclick="window.print();" ></a></span>
+                <div class="vr"></div>
                 <asp:ImageButton runat="server" ID="btnHeadDelete" ImageUrl="~/assets/images/icons/admin/delete.png" OnClick="btnHeadDelete_Click" CssClass="delete" Text="Delete"></asp:ImageButton>
-                <button id="btnHeadBack" class="floatRight" onclick="history.go(-1);return false;">Back</button>
+                <span class="records"><asp:HyperLink runat="server" ID="lnkHeadRecords" Text="" ToolTip="View Observation Records"></asp:HyperLink></span>
+                <span class="edit"><asp:HyperLink runat="server" ID="lnkHeadEdit" Text="" ToolTip="Edit this item"></asp:HyperLink></span>
             </div> 
         </div>
 
@@ -170,13 +172,14 @@
             <div style="padding-left: 15px">
                 <asp:Literal runat="server" ID="litFoot" />
                 <span class="print"><a href="javascript:void(0)" onclick="window.print();" class="print-link">Print</a></span>
-                <span class="edit"><asp:HyperLink runat="server" ID="lnkFootEdit" CssClass="gv-edit-link" Text="Edit" ToolTip="Edit this item"></asp:HyperLink></span>
-                <span class="edit"><asp:HyperLink runat="server" ID="lnkFootRecords" CssClass="gv-edit-link" Text="View Records" ToolTip="View Observation Records"></asp:HyperLink></span>
+                <div class="vr"></div>
                 <asp:ImageButton runat="server" ID="btnFootDelete" ImageUrl="~/assets/images/icons/admin/delete.png" OnClick="btnHeadDelete_Click" CssClass="delete" Text="Delete"></asp:ImageButton>
-                <button id="btnFootBack" class="floatRight" onclick="history.go(-1);return false;">Back</button>
+                <span class="records"><asp:HyperLink runat="server" ID="lnkFootRecords" CssClass="gv-edit-link" Text="View Records" ToolTip="View Observation Records"></asp:HyperLink></span>
+                <span class="edit"><asp:HyperLink runat="server" ID="lnkFootEdit" CssClass="gv-edit-link" Text="Edit" ToolTip="Edit this item"></asp:HyperLink></span>
             </div>
         </div>
-
+        
+        <button id="btnFootBack" class="floatLeft" onclick="history.go(-1);return false;">Back</button>
 
     </fieldset>
 </asp:Content>
