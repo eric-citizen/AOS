@@ -59,11 +59,11 @@ namespace CZAOSWeb.controls
             }
         }
 
-        public string ImageUrl
-        {
-            get { return imgConfirm.ImageUrl; }
-            set { imgConfirm.ImageUrl = value; }
-        }
+        //public string ImageUrl
+        //{
+        //    get { return imgConfirm.ImageUrl; }
+        //    set { imgConfirm.ImageUrl = value; }
+        //}
 
         public string ToolTip
         {

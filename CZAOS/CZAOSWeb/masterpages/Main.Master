@@ -52,8 +52,8 @@
 			<nav>
                 <asp:LinkButton runat="server" ID="lnkLogout" Text="Logout" CausesValidation="false" OnClick="lnkLogout_Click" CssClass="logout-link"></asp:LinkButton>
                 <ul>
-				    <li><a href="#">&#9776</a>
-					    <ul>
+				    <li><a id="menu" href="#">&#9776</a>
+					    <ul id="menuDropDown">
                             <uc1:AdminNav runat="server" ID="AdminNav" />
 					    </ul>
 				    </li>
@@ -111,6 +111,15 @@
         <script src="/assets/scripts/services.js"></script>
         <script src="/assets/scripts/czaos.js"></script>
         <script src="/assets/scripts/app.js"></script>
+
+        <script>
+            $(function () {
+                $("#menu").click(function() {
+                    $("#menuDropDown").toggle("");
+                });
+            });
+
+        </script>
 
         <asp:ContentPlaceHolder ID="scripts" runat="server">
         </asp:ContentPlaceHolder>

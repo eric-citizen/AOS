@@ -13,12 +13,10 @@
         </ul>
 
         <div id="RecentObservations">
-            <div onClick="$('#filterRec').toggle();">
-                <hr />
-                <h2>Filter Sessions</h2></div>
+            <div class="filter">
+                <h2 onClick="$('#filterRec').toggle();">Filter Sessions</h2>
                 <div id="filterRec">              
-                    <hr />
-                    <div id="AnimalDateRec" style="width:50%;float:left">
+                    <div id="AnimalDateRec" class="obsSectionInnerLeft">
                         <label>Animal</label><br />
                         <asp:DropDownList id="AnimalListRec" AutoPostBack="True" runat="server" Width="300px"/><br /><br />
 
@@ -30,7 +28,7 @@
                         <asp:Checkbox ID="behaviorRec" runat="server" Text="Behavior" AutoPostBack="false" /><br />
                     </div>
 
-                    <div id="schoolRec" style="width:50%;float:right">
+                    <div id="schoolRec" class="obsSectionInnerRight">
                         <asp:CheckBox id="searchStudentObservationsRec" runat="server" Checked="false" 
                             AutoPostBack="true" OnCheckedChanged="searchStudentObservationsRec_CheckedChanged"
                             Text="Search Student Observations" /><br /><br />
@@ -40,11 +38,12 @@
 
                         <label>School</label><br />
                         <asp:DropDownList id="SchoolListRec" AutoPostBack="false" Enabled="false" runat="server"/><br /><br />
+                        <asp:Button id="searchRec" Text="Search" runat="server" OnClick="searchRec_Click" />
+                        <asp:Button id="clearRec" Text="Clear Search" runat="server" OnClick="clearRec_Click"/>
                     </div>
 
-                    <asp:Button id="searchRec" Text="Search" runat="server" OnClick="searchRec_Click" />
-                    <asp:Button id="clearRec" Text="Clear Search" runat="server" OnClick="clearRec_Click"/>
                 </div>
+            </div>
 
             <hr />
             <h2>Recent Observations</h2>
@@ -75,21 +74,21 @@
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:HyperLink runat="server" ID="lnkView" CssClass="gv-view-link" data-args="650, 650, true, null, 1" Text="View" ToolTip="View this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation.aspx?observationId={0}") %>'></asp:HyperLink>
+                            <span class="view"><asp:HyperLink runat="server" ID="lnkView" CssClass="gv-view-link" data-args="650, 650, true, null, 1" Text="" ToolTip="View this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation.aspx?observationId={0}") %>'></asp:HyperLink></span>
                         </ItemTemplate>
                         <ItemStyle Width="60px" CssClass="tac" />
                     </asp:TemplateField>
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="Edit" ToolTip="Edit this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/edit-observation.aspx?observationId={0}") %>'></asp:HyperLink>
+                            <span class="edit"><asp:HyperLink runat="server" ID="lnkEdit" CssClass="" data-args="650, 650, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/edit-observation.aspx?observationId={0}") %>'></asp:HyperLink></span>
                         </ItemTemplate>
                         <ItemStyle Width="60px" CssClass="tac" />
                     </asp:TemplateField>
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="Records" ToolTip="View Observation Records" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation-records.aspx?observationId={0}") %>'></asp:HyperLink>
+                            <span class="records"><asp:HyperLink runat="server" ID="lnkRecords" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="" ToolTip="View Observation Records" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation-records.aspx?observationId={0}") %>'></asp:HyperLink></span>
                         </ItemTemplate>
                         <ItemStyle Width="60px" CssClass="tac" />
                     </asp:TemplateField>
@@ -111,39 +110,38 @@
             <mack:MessageDiv runat="server" ID="MessageDiv1" ListControlID="gvObsRec" Text="No records found!"></mack:MessageDiv>
         </div>
         <div id="UpcomingObservations">
-            <div onClick="$('#filterUp').toggle();">
-                <hr />
-                <h2>Filter Sessions</h2></div>
-            <div id="filterUp">              
-                <hr />
-                <div id="AnimalDateUp" style="width:50%;float:left">
-                    <label>Animal</label><br />
-                    <asp:DropDownList id="AnimalListUp" AutoPostBack="True" runat="server" Width="300px"/><br /><br />
+            <div class="filter" onClick="$('#filterUp').toggle();">
+                <h2>Filter Sessions</h2>
+                <div id="filterUp">              
+                    <div id="AnimalDateUp" class="obsSectionInnerLeft">
+                        <label>Animal</label><br />
+                        <asp:DropDownList id="AnimalListUp" AutoPostBack="True" runat="server" Width="300px"/><br /><br />
 
-                    <label>Timeframe</label><br />
-                    <input type="date" id="dateFromUp" runat="server" /> -- <input type="date" id="dateToUp" runat="server"/><br /><br />
+                        <label>Timeframe</label><br />
+                        <input type="date" id="dateFromUp" runat="server" /> -- <input type="date" id="dateToUp" runat="server"/><br /><br />
 
-                    <label>Observation Category</label><br />
-                    <asp:checkbox runat="server" AutoPostBack="false" id="timedUp" Text="Timed" Checked="true" /><br />
-                    <asp:checkbox runat="server" AutoPostBack="false" id="behaviorUp" Text="Behavior"/><br />
+                        <label>Observation Category</label><br />
+                        <asp:checkbox runat="server" AutoPostBack="false" id="timedUp" Text="Timed" Checked="true" /><br />
+                        <asp:checkbox runat="server" AutoPostBack="false" id="behaviorUp" Text="Behavior"/><br />
 
+                    </div>
+
+                    <div id="schoolUp" class="obsSectionInnerRight">
+
+                        <asp:checkbox id="searchStudentObservationsUp" runat="server" Checked="false" 
+                            AutoPostBack="true" OnCheckedChanged="searchStudentObservationsUp_CheckedChanged"
+                            Text="Search Student Observations" /><br /><br />
+
+                        <label>District</label><br />
+                        <asp:DropDownList id="DistrictListUp" AutoPostBack="true" OnSelectedIndexChanged="districtChange" runat="server"/><br /><br />
+
+                        <label>School</label><br />
+                        <asp:DropDownList id="SchoolListUp" AutoPostBack="false" runat="server"/><br /><br />
+                        <asp:Button id="SearchUp" Text="Search" runat="server" OnClick="searchUp_Click" PostBackUrl="~/admin/observation/default.aspx#UpcomingObservations"/>
+                        <asp:Button id="clearUp" Text="Clear Search" runat="server" OnClick="clearUp_Click"/>
+
+                    </div>
                 </div>
-
-                <div id="schoolUp" style="width:50%;float:right">
-
-                    <asp:checkbox id="searchStudentObservationsUp" runat="server" Checked="false" 
-                        AutoPostBack="true" OnCheckedChanged="searchStudentObservationsUp_CheckedChanged"
-                        Text="Search Student Observations" /><br /><br />
-
-                    <label>District</label><br />
-                    <asp:DropDownList id="DistrictListUp" AutoPostBack="true" OnSelectedIndexChanged="districtChange" runat="server"/><br /><br />
-
-                    <label>School</label><br />
-                    <asp:DropDownList id="SchoolListUp" AutoPostBack="false" runat="server"/><br /><br />
-
-                </div>
-                    <asp:Button id="SearchUp" Text="Search" runat="server" OnClick="searchUp_Click" PostBackUrl="~/admin/observation/default.aspx#UpcomingObservations"/>
-                    <asp:Button id="clearUp" Text="Clear Search" runat="server" OnClick="clearUp_Click"/>
             </div>
             <hr />
             <h2>Upcoming Observations</h2>
@@ -175,21 +173,21 @@
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:HyperLink runat="server" ID="lnkView" CssClass="gv-view-link" data-args="650, 650, true, null, 1" Text="View" ToolTip="View this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation.aspx?observationId={0}") %>'></asp:HyperLink>
+                            <span class="view"><asp:HyperLink runat="server" ID="lnkView" CssClass="gv-view-link" data-args="650, 650, true, null, 1" Text="" ToolTip="View this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation.aspx?observationId={0}") %>'></asp:HyperLink></span>
                         </ItemTemplate>
                         <ItemStyle Width="60px" CssClass="tac" />
                     </asp:TemplateField>
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="Edit" ToolTip="Edit this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/edit-observation.aspx?observationId={0}") %>'></asp:HyperLink>
+                            <span class="edit"><asp:HyperLink runat="server" ID="lnkEdit" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/edit-observation.aspx?observationId={0}") %>'></asp:HyperLink></span>
                         </ItemTemplate>
                         <ItemStyle Width="60px" CssClass="tac" />
                     </asp:TemplateField>
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:HyperLink runat="server" ID="lnkRecords" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="Records" ToolTip="View Observation Records" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation-records.aspx?observationId={0}") %>'></asp:HyperLink>
+                            <span class="records"><asp:HyperLink runat="server" ID="lnkRecords" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="" ToolTip="View Observation Records" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation-records.aspx?observationId={0}") %>'></asp:HyperLink></span>
                         </ItemTemplate>
                         <ItemStyle Width="60px" CssClass="tac" />
                     </asp:TemplateField>

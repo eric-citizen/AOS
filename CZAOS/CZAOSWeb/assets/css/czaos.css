@@ -53,11 +53,10 @@ select{
 }
 
 .obsSection {
-    border-bottom: 2px solid #a2a6ad;
-    border-right: 2px solid #a2a6ad;
-    border-left: 2px solid #a2a6ad;
+    border: 2px solid #a2a6ad;
     width: 956px;
     display: inline-block;
+    margin-bottom: 20px;
 }
 
 .obsSection h2{
@@ -80,56 +79,131 @@ select{
 
 .edit {
     background: url('../images/icons/admin/edit.png') center left no-repeat;
-    background-size: 8px 16px;
-    width: 8px;
-    height: 20px;
+    background-size: 15px 30px;
+    width: 15px;
+    height: 30px;
     display: inline-block;
     float: right;
+    margin-left: 5px;
 }
 .edit a {
     display: inline-block;
     overflow: hidden;
-    width: 0;
-    height: 14px;
-    padding-left: 10px;
+    width: 15px;
+    height: 30px;
+}
+.view {
+    background: url('../images/icons/admin/info-gray.png') center left no-repeat;
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    float: right;
+    margin-left: 5px;
+}
+.view a {
+    display: inline-block;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+}
+.records {
+    background: url('../images/icons/admin/data.png') center left no-repeat;
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    float: right;
+    margin-left: 5px;
+}
+.records a {
+    display: inline-block;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+}
+.flagged {
+    background: url('../images/icons/admin/flagged.png') center left no-repeat;
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-left: 5px;
+}
+.flagged a {
+    display: inline-block;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+}
+.not-flagged {
+    background: url('../images/icons/admin/unflagged.png') center left no-repeat;
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-left: 5px;
+}
+.not-flagged a {
+    display: inline-block;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
 }
 .delete {
+    background: url('../images/icons/admin/delete.png') center left no-repeat;
+    background-size: 30px 29px;
     margin: 0px;
     padding: 0px;
     border: none;
-    width:20px; 
-    height:20px;
+    width:30px; 
+    height:30px;
     display: inline-block;
     float:right;
+    margin-left: 5px;
 }
 .delete a {
     display: inline-block;
     overflow: hidden;
-    width: 0;
-    height: 14px;
-    padding-left: 10px;
+    width: 30px;
+    height: 30px;
 }
 .print {
     background: url('../images/icons/admin/print.png') center left no-repeat;
-    background-size: 15px 14.5px;
-    width:20px; 
-    height:20px;
+    background-size: 30px 30px;
+    width:30px; 
+    height:30px;
     display: inline-block;
     float:right;
+    margin-left: 5px;
 }
 .print a {
     display: inline-block;
     overflow: hidden;
-    width: 0;
-    height: 14px;
-    padding-left: 10px;
+    width: 30px;
+    height: 30px;
 }
-
+.vr{
+    border-left: 2px solid #a2a6ad;
+    height: 28px;
+    float: right;
+}
 .animalSearch {
     width: 50%;
     display:inline-block;
 }
-
+.filter {
+    background-color: #efefef;
+    border: 2px solid #a2a6ad;
+    display: inline-block;
+    width: 99.5%
+}
+.filter h2 {
+    padding-left: 1.5em;
+    color: #4a525c;
+    background: url(../images/icons/admin/see-less.png) center left no-repeat #a2a6ad;
+    background-size: 25px 25px;
+}
 textarea  {    
     line-height:18px;
 }
@@ -215,9 +289,9 @@ nav ul ul {
     right: -15%;
 }
 
-nav ul li:hover > ul {
+/*nav ul li:hover > ul {
 	display: block;
-}
+}*/
 
 
 nav ul{
@@ -565,7 +639,7 @@ h1{
 }
 h2{
     font-size: 1.2em;
-    padding-top: .5em;
+    padding: .5em 0;
 }
 
 hr{
@@ -639,7 +713,7 @@ hr{
 #crowdControl li img{
     width:30%;
 }
-h1,h2{
+h1{
     padding-bottom: 15px;
 }
 h2{
