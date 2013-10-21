@@ -49,7 +49,17 @@
         <div id="app-title">
             Columbus Zoo &amp; Aquarium Animal Observation System : Administration
         </div>
-        <ul id="iconlist">
+			<nav>
+                <asp:LinkButton runat="server" ID="lnkLogout" Text="Logout" CausesValidation="false" OnClick="lnkLogout_Click" CssClass="logout-link"></asp:LinkButton>
+                <ul>
+				    <li><a id="menu" href="#">&#9776</a>
+					    <ul id="menuDropDown">
+                            <uc1:AdminNav runat="server" ID="AdminNav" />
+					    </ul>
+				    </li>
+			    </ul>
+            </nav>
+<%--        <ul id="iconlist">
             <li id="iconlist-1"></li>
             <li id="iconlist-2"></li>
             <li id="iconlist-3"></li>
@@ -59,16 +69,10 @@
             <li id="iconlist-7"></li>
             <li id="iconlist-8"></li>
             <li id="iconlist-9"></li>
-        </ul>
+        </ul>--%>
     </header>
     <div class="clear" id="titleborder"></div>
     <div id="body-container">
-
-        <nav>
-            <asp:LinkButton runat="server" ID="lnkLogout" Text="Logout" CausesValidation="false" OnClick="lnkLogout_Click" CssClass="logout-link"></asp:LinkButton>
-            <uc1:AdminNav runat="server" ID="AdminNav" />
-
-            
             <!--
             <a href="/admin/default.aspx">Home</a>
             <a href="/admin/observation">Observations</a>    
@@ -87,7 +91,6 @@
             <a href="/admin/users/default.aspx">Users</a>     
             -->
                    
-        </nav>
         <h1><asp:Literal runat="server" ID="litContentTitle"></asp:Literal></h1>
         <asp:ContentPlaceHolder ID="body" runat="server"> 
         
@@ -108,6 +111,15 @@
         <script src="/assets/scripts/services.js"></script>
         <script src="/assets/scripts/czaos.js"></script>
         <script src="/assets/scripts/app.js"></script>
+
+        <script>
+            $(function () {
+                $("#menu").click(function() {
+                    $("#menuDropDown").toggle("");
+                });
+            });
+
+        </script>
 
         <asp:ContentPlaceHolder ID="scripts" runat="server">
         </asp:ContentPlaceHolder>

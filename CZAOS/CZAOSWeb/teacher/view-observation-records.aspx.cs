@@ -12,7 +12,7 @@ using CZDataObjects.Extensions;
 using CZAOSCore.basepages;
 using CZAOSWeb.controls;
 
-namespace CZAOSWeb.admin.observation
+namespace CZAOSWeb.teacher.observation
 {
     public partial class view_observation_records : MainBase
     {
@@ -25,8 +25,6 @@ namespace CZAOSWeb.admin.observation
             var metaString = obs.ObserveStart.ToShortDateString() + " // " + obs.ObservationID.ToString() + " // " + obs.ObserveType.ToString() + " // " + obs.Exhibit.ToString();
             litHeader.Text = metaString;
             litFooter.Text = metaString;
-
-            
         }
 
         protected void cztDataSource_Selected(object sender, ObjectDataSourceStatusEventArgs e)

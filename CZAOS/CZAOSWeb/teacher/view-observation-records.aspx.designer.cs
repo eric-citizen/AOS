@@ -7,81 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CZAOSWeb.admin.dialogs {
+namespace CZAOSWeb.teacher.observation {
     
     
-    public partial class edit_exhibit_behavior {
+    public partial class view_observation_records {
         
         /// <summary>
-        /// hdnItemID control.
+        /// litHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.HiddenID hdnItemID;
+        protected global::System.Web.UI.WebControls.Literal litHeader;
         
         /// <summary>
-        /// hdnExhibitID control.
+        /// hdnID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.HiddenID hdnExhibitID;
+        protected global::System.Web.UI.WebControls.HiddenField hdnID;
         
         /// <summary>
-        /// fieldsetLegend control.
+        /// cztDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal fieldsetLegend;
+        protected global::System.Web.UI.WebControls.ObjectDataSource cztDataSource;
         
         /// <summary>
-        /// litName control.
+        /// gvse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litName;
+        protected global::KT.WebControls.GridViewSortExtender gvse;
         
         /// <summary>
-        /// ddlBehaviorCategory control.
+        /// gvObs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddlBehaviorCategory;
+        protected global::System.Web.UI.WebControls.GridView gvObs;
         
         /// <summary>
-        /// ddlBehavior control.
+        /// gvPagerControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddlBehavior;
+        protected global::CZAOSWeb.controls.GridPager gvPagerControl;
         
         /// <summary>
-        /// chkActive control.
+        /// divEmpty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkActive;
+        protected global::KT.WebControls.MessageDiv divEmpty;
         
         /// <summary>
-        /// btnSave control.
+        /// litFooter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.WaitButton btnSave;
+        protected global::System.Web.UI.WebControls.Literal litFooter;
     }
 }

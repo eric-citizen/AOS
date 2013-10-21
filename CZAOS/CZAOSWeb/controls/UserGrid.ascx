@@ -19,10 +19,9 @@
                 
 </asp:ObjectDataSource>
 
-<div class="alphabet-container">  
-    
+<div>  
     <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
-
+    
     <mack:GridViewSortExtender runat="server" ID="gvse"
         AscendingImageUrl="~/images/down.png" DescendingImageUrl="~/images/up.png" GridViewID="userGridView" TransparentImageUrl="~/images/transparent.png"   />
 
@@ -59,7 +58,7 @@
                     <ItemStyle HorizontalAlign="Left" Width="100px" />
                 </asp:TemplateField>
                                 
-                <asp:TemplateField HeaderText="Expiration">                   
+                <asp:TemplateField HeaderText="Expiration" Visible="false">                   
                     <ItemTemplate>    
                         <asp:Literal runat="server" ID="litExpDate" ></asp:Literal>                        
                     </ItemTemplate>

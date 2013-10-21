@@ -28,7 +28,7 @@
         AscendingImageUrl="~/images/down.png" DescendingImageUrl="~/images/up.png" GridViewID="gvLog" TransparentImageUrl="~/images/transparent.png" />
 
     <asp:GridView ID="gvLog" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="gridview"
-        PageSize="50" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false" 
+        PageSize="20" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false" 
         DataKeyNames="ID" >
         <Columns>
 

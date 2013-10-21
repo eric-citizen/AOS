@@ -29,34 +29,36 @@ namespace CZAOSWeb.Security
 
         private void CheckPermissions(HttpContext context)
         {
-            if (context.Request.CurrentExecutionFilePath.Contains("api/"))
-                return;
-
-            //only check pages in admin module
             RequestProperties props = RequestProperties.Current;
 
-            if (!context.Request.CurrentExecutionFilePath.StartsWith("/admin/") || !props.IsPage)
-            {
-                if (!props.IsExtensionless)
-                {
-                    return;
-                }
-                else
-                {
-                    if (!props.IsPage && !props.IsExtensionless)
-                    {
-                        return;
-                    }
-                }
-            }
+            //this module just checks that the authenticated web app administrator has the required permissions for the requested url.
+            //the url can be a page [admin/animals/default.aspx] or extensionless [admin/animals/]
+            //we need to handle both scenarios:
 
+            //user is not authenticated, so no need to check whether they have permissions or not - they don't have any!
             if (!context.User.Identity.IsAuthenticated)
             {
                 return;
             }
-            else
+            else //user authenticated - if request is neither for a page or an extensionless page we can bail. Also, only check requests for admin urls.
             {
-                //page.ViewStateUserKey = page.User.Identity.Name;
+                //not for an admin resourse - you can safely bail
+                if (!context.Request.CurrentExecutionFilePath.StartsWith("/admin/"))
+                {
+                    return;
+                }
+
+                //not for an admin page, either aspx or extensionless - you can safely bail
+                if (!props.IsPage && !props.IsExtensionless)
+                {
+                    return;
+                }
+
+                //if we reach here we should check for admin permissions beacuse:
+                //  1) User is autenticated
+                //  2) Request is for a page (or extensionless page) located within the /admin/ folder.               
+
+                
                 if (context.Handler is System.Web.UI.Page)
                 {
                     System.Web.UI.Page @this = (System.Web.UI.Page)context.Handler;
@@ -76,7 +78,7 @@ namespace CZAOSWeb.Security
             string rolename = CZAOSCore.Enums.CoreUserTypeRoles.MasterAdmin.ToString();            
             if (Roles.IsUserInRole(rolename))
             {
-                return;
+                //return;
             }
 
             string url = props.StrippedVirtualPath;
@@ -88,7 +90,10 @@ namespace CZAOSWeb.Security
             if ((nav == null))
             {
                 Logger.Log(LogTarget.Security, MessageLevel.Warning, "User {0} attempted to access {1} but no permissions were found in the datastore.".FormatWith(context.User.Identity.Name, url));
-                context.Session.AddToSession("nopermissions", true);
+
+                if (context.Session != null)
+                    context.Session.AddToSession("nopermissions", true);
+
                 context.Response.SafeRedirect("/admin/default.aspx");
                 return;
             }
@@ -97,7 +102,10 @@ namespace CZAOSWeb.Security
                 if (nav.RoleList.Count == 0)
                 {
                     Logger.Log(LogTarget.Security, MessageLevel.Warning, "User {0} attempted to access {1} but has zero permissions.".FormatWith(context.User.Identity.Name, url));
-                    context.Session.AddToSession("nopermissions", true);
+
+                    if (context.Session != null)
+                        context.Session.AddToSession("nopermissions", true);
+
                     context.Response.SafeRedirect("/admin/default.aspx");
                     return;
                 }
@@ -111,7 +119,10 @@ namespace CZAOSWeb.Security
                     else
                     {
                         Logger.Log(LogTarget.Security, MessageLevel.Warning, "User {0} attempted to access {1} with no permissions.".FormatWith(context.User.Identity.Name, url));
-                        context.Session.AddToSession("nopermissions", true);
+
+                        if(context.Session != null)
+                            context.Session.AddToSession("nopermissions", true);
+
                         context.Response.SafeRedirect("/admin/default.aspx");
                         break;
                     }
