@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Animal Observation System</title>
+
+        <link href="assets/css/reset.css" rel="stylesheet" />
+        <link href="assets/css/czaos.css" rel="stylesheet" />
+        <link href="assets/css/helpers.css" rel="stylesheet" />
+        <link href="assets/css/messaging.css" rel="stylesheet" />
+        <link href="assets/scripts/toastr/toastr.css" rel="stylesheet" />
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" type="text/javascript"> </script> 
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"> </script> 
+        <script src="/assets/scripts/modernizr-2.6.2.js"> </script>
+        <script src="assets/scripts/jquery.json-2.4.min.js"> </script>
+        <script src="assets/scripts/jquery.cookie.js"> </script>
+        <script src="assets/scripts/jquery.slideStrips.v1.js"> </script>
+        <script src="assets/scripts/toastr/toastr.js"> </script>
+        <script src="assets/scripts/Base64.js"> </script>
+        <script src="Scripts/underscore.min.js"> </script>
+        <script src="Scripts/knockout-2.3.0.js"> </script>
+        <script src="Scripts/knockout.mapping-latest.js"> </script>
+    
+        <script src="assets/scripts/Locus.js"> </script>
+        <script src="assets/scripts/SimpleTemplate.js"> </script>
+        <script src="assets/scripts/Observation.FrontEnd.Common.js"> </script>
+        <script src="assets/scripts/obs_professional.js"> </script>
+        <script src="assets/scripts/AnimalGroupControl.js"> </script>
+
+    </head>
+    <body>
+        <!--        <div class="progress">
+                        <div class="bar" style="width: 60%;"></div>
+                    </div> -->
+
+        <div id="observationData">
+        </div>
+        <div id="enviromentData" style='display: none;'>
+            <header>---</header>
+            <div id="enviromentPanel">
+                <h1>Enviroment</h1>
+                <hr>
+                <h2>Weather</h2>
+                <div id="weatherAPIoutput"></div>
+                <section class="slider">
+                    <ul id="weatherControl" class="slide-strip" style="width: 20%">
+                    </ul>
+                </section>
+                <h2>Crowd</h2>
+                <section class="slider">
+                    <ul id="crowdControl" class="slide-strip" style="width: 33%">
+                    </ul>
+                </section>
+                <div style="text-align: right">
+                    <div id='saveWeather' class="button">Save & Continue</div>
+                </div>
+            </div>
+            <div id="observationPanel" style="display: none">
+                <div class="clearfix">
+                    <h1>Observation</h1>
+                    <hr>
+                    <div id="timer">
+                        <div class="timebar"></div>
+                        <div class="time">0</div>
+                    </div>
+                
+                    <div id="animalgroup-knockout-scope" style="float: left; width: 50%">
+                        <h1>Groups</h1>
+                        <div data-bind="foreach: AnimalGroups()"><!-- Make each group a jQuery UI accordian-->
+                            <div data-bind="text: 'Group ' + $data.id"></div>
+                            <ul data-bind="foreach: Animals">
+                                <li>
+                                    <label >
+                                        <!-- bind the name property of our object as the checkbox value -->
+                                        <input type="checkbox" data-bind="value: ZooID, checked: $root.SelectedAnimals" />
+                                        <span data-bind="text: HouseName"></span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="float: right; width: 50%">
+                        <h1>Entry</h1>
+
+                        <h2>Behavior Category</h2>
+                        <!--Drop down list of Selectable Behavior Categories-->
+                        <h2>Behavior</h2>
+                        <!--Drop down list of Selectable Behaviors-->
+
+                        <h2>Zone</h2>
+                        <!--Drop down list of Selectable Zones-->
+
+                    </div>
+                </div>
+                <div class="clearfix" >
+                    <div style="float: left; text-align: left;">
+                        <div id='gotoFinalizationPage' class="button" onclick=" finishObservation() ">Finalize Observation</div>
+                    </div>
+                    <div style="text-align: right">
+                        <div id='saveRecord' class="button">Save Record</div>
+                    </div>
+                </div>
+            </div>
+                
+            
+
+                
+                
+                
+                
+
+                
+        </div>
+        
+        
+        
+        
+        <!-- Login Area !-->
+
+        <div id="loginPanel">
+            <div id="step1">
+                <div class="logo">The Animal<br>Observation System</div>
+                <div><span>UserName</span><br><input id="username" value="proobserver"/></div>
+                <div><span>Password</span><br><input id="pass" value="1212asas"/></div>
+                <div style="text-align: right"><input type='submit' id="Submit1" onclick=" loginProfessional(); "/></div>
+            </div>
+            <div id="step2" style="display: none">
+                <div class="logo">The Animal<br>Observation System</div>
+                <div><span>Observation #</span><br><input id="obsID" value="16"/></div>
+                <div style="text-align: right"><input type='submit' id="studentLogin" onclick=" loginToObservation(); "/></div>
+            </div>
+            <div id="observationInfo" style="display: none">
+                <div>
+                    <div>
+                        <h2>Observation</h2>
+                        <span>Observation ID:</span><div id="observationId">19</div>
+                        <span>Date:</span><div id="date">10/15/2013</div>
+                        <span>Time:</span><div id="time">11:30 - 12:00</div>
+                        <span>Observation Interval:</span><div id="interval">1 minute</div>
+                        <span># of Observers</span><div id="observerCount">15</div>
+                    </div>
+                    <div style="border-style: solid; border-top: 2px; margin-top: 15px">
+                        <h2>Animals</h2>
+                        <span>Region:</span><div id="region">Region</div>
+                        <span>Exhibit:</span><div id="exhibit">Exhibit</div>
+                        <span>Animals:</span><div id="animal-list"></div>
+                    </div>
+                </div>
+                <div style="text-align: center"><input type='submit' value="Start Observation" id="startObs" onclick=" gotoWeather(); "/></div>
+
+            </div>
+        
+            <div id="finalizePanel" style="display: none">
+                <div class="logo">The Animal<br>Observation System</div>
+                <div style="text-align: center"><span>Click to Finalize Observation</span></div>
+                <div style="text-align: center" id="finalizeObservation" class="button">Finalize</div>
+            </div>
+        </div>
+    
+    
+
+
+
+
+        <!-- Templates -->
+        <script id="users" type="simple/template">
+    <div>%DisplayName%</div>
+</script>
+        <script id="observation" type="simple/template">
+    <h1>%ObservationTypeName% :: %ObservationID%</h1>
+    <div>Region: %AnimalRegion% (%AnimalRegionCode%)</div>
+    <div>Exhibit: %Exhibit% (%ExhibitID%)</div>
+    <div>Observers: %ObserverNo%</div>
+    <div>Student Pass: %StudentPass%</div>
+    <div>Teacher: %TeacherName%, %TeacherLogin% (%TeacherPass%)</div>
+</script>
+        <script id="crowd" type="simple/template">
+    <li name="%CrowdID%"><img src="assets/images/icons/observation/crowd/%CrowdID%.png"/><div><span>%CrowdName%</span></div></li>
+</script>
+        <script id="weatherAPI" type="simple/template">
+    <div class="temp">%temperature%</div>
+    <div class="summary">%summary%</div>
+    <div class="windspeed">%windSpeed%mph Winds</div>
+</script>
+        <script id="weatherCondition" type="simple/template">
+    <li name="%WeatherID%"><img src="assets/images/icons/weather/%WeatherID%.png"/>%Weather%</li>
+</script>
+        <script id="exhibitlocation" type="simple/template">
+    <option value=%LocationID%>%Location%</option>
+</script>
+    </body>
+</html>
