@@ -314,7 +314,6 @@
     <Content Include="assets\scripts\login.js" />
     <Content Include="assets\scripts\modernizr-2.6.2.js" />
     <Content Include="assets\scripts\Observation.FrontEnd.Common.js" />
-    <Content Include="assets\scripts\obs_main.js" />
     <Content Include="assets\scripts\obs_professional.js" />
     <Content Include="assets\scripts\obs_student.js" />
     <Content Include="assets\scripts\obs_teacher.js" />
