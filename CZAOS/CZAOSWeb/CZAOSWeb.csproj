@@ -288,8 +288,10 @@
     <Content Include="assets\images\icons\weather\sunny.png" />
     <Content Include="assets\images\icons\weather\windy-active.png" />
     <Content Include="assets\images\icons\weather\windy.png" />
+    <Content Include="assets\scripts\AnimalGroupControl.js" />
     <Content Include="assets\scripts\api.js" />
     <Content Include="assets\scripts\app.js" />
+    <Content Include="assets\scripts\Base64.js" />
     <Content Include="assets\scripts\BehaviorCategoryControl.js" />
     <Content Include="assets\scripts\BehaviorControl.js" />
     <Content Include="assets\scripts\controls.js" />
@@ -308,19 +310,31 @@
     <Content Include="assets\scripts\jquery.timepicker.css" />
     <Content Include="assets\scripts\jquery.timepicker.js" />
     <Content Include="assets\scripts\LocationControl.js" />
+    <Content Include="assets\scripts\Locus.js" />
     <Content Include="assets\scripts\login.js" />
     <Content Include="assets\scripts\modernizr-2.6.2.js" />
+    <Content Include="assets\scripts\Observation.FrontEnd.Common.js" />
     <Content Include="assets\scripts\obs_main.js" />
+    <Content Include="assets\scripts\obs_professional.js" />
+    <Content Include="assets\scripts\obs_student.js" />
+    <Content Include="assets\scripts\obs_teacher.js" />
     <Content Include="assets\scripts\RegionControl.js" />
     <Content Include="assets\scripts\services.js" />
     <Content Include="assets\scripts\simplemodal\css\basic.css" />
     <Content Include="assets\scripts\simplemodal\img\basic\x.png" />
     <Content Include="assets\scripts\simplemodal\js\jquery.simplemodal.1.4.4.min.js" />
     <Content Include="assets\scripts\AnimalControl.js" />
+    <Content Include="assets\scripts\SimpleTemplate.js" />
     <Content Include="assets\scripts\toastr\index.html" />
+    <Content Include="assets\scripts\toastr\TimeControl.js" />
     <Content Include="assets\scripts\toastr\toastr-responsive.css" />
     <Content Include="assets\scripts\toastr\toastr.css" />
     <Content Include="assets\scripts\toastr\toastr.js" />
+    <Content Include="Content\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="controls\AdminNav.ascx" />
     <Content Include="controls\AlphabetFilter.ascx" />
     <Content Include="controls\EditableTextBox.ascx" />
@@ -332,7 +346,18 @@
     <Content Include="default.aspx" />
     <Content Include="dialogs\reminders.aspx" />
     <Content Include="docs\api.html" />
-    <Content Include="frontend.html" />
+    <Content Include="ProfessionalPage.html" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js" />
+    <Content Include="StudentPage.html" />
     <Content Include="Global.asax" />
     <Content Include="images\16x16empty.png" />
     <Content Include="images\Actions-dialog-cancel-icon16.png" />
@@ -374,6 +399,7 @@
     <Content Include="Scripts\knockout-2.3.0.js" />
     <Content Include="Scripts\knockout.mapping-latest.debug.js" />
     <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="TeacherPage.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -890,6 +916,8 @@
     <Content Include="config\connections.config" />
     <Content Include="admin\web.config" />
     <None Include="Properties\PublishProfiles\FC_FTP.pubxml" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\underscore.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

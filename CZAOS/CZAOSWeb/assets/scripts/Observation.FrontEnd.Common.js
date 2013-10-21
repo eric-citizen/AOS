@@ -1,12 +1,16 @@
 ﻿window.AOS = window.AOS || {};
 
-$(function (app) {
+$(function () {
+    
+    Date.prototype.time = function () {
+        return ((this.getHours() < 10) ? "0" : "") + this.getHours() + ":" + ((this.getMinutes() < 10) ? "0" : "") + this.getMinutes();
+    };
 
-    app.setToken = function(token) {
+    window.AOS.setToken = function(token) {
         $.cookie('CZAOSCookie', token);
     };
 
-    app.getToken = function () {
+    window.AOS.getToken = function () {
         if ($.cookie('CZAOSCookie') == null) {
             return "";
         } else {
@@ -14,17 +18,17 @@ $(function (app) {
         }
     };
 
-    app.deleteToken = function() {
+    window.AOS.deleteToken = function() {
         $.removeCookie('CZAOSCookie');
         $.cookie('CZAOSCookie') == null;
     };
 
-    app.czaos_get = function(api, params, who, strip, data2) {
+    window.AOS.czaos_get = function(api, params, who, strip, data2) {
         var params = params || {};
         $.ajax({
             url: 'api/' + api,
             beforeSend: function(request) {
-                request.setRequestHeader("CZAOSToken", getToken());
+                request.setRequestHeader("CZAOSToken", window.AOS.getToken());
                 for (var i in data2) {
                     request.setRequestHeader(i, data2[i]);
                 }
@@ -53,12 +57,12 @@ $(function (app) {
 
     };
     
-    app.czaos_post = function (api, params, data2) {
+    window.AOS.czaos_post = function (api, params, data2) {
         params = params || {};
-        $.ajax({
+        return $.ajax({
             url: 'api/' + api,
             beforeSend: function (request) {
-                request.setRequestHeader("CZAOSToken", getToken());
+                request.setRequestHeader("CZAOSToken", window.AOS.getToken());
                 for (var i in data2) {
                     request.setRequestHeader(i, data2[i]);
                 }
@@ -69,8 +73,28 @@ $(function (app) {
             contentType: 'application/json; charset=utf-8'
         });
     };
+    
+    window.AOS.get = function (api, params) {
+        return $.ajax({
+            url: 'api/' + api,
+            beforeSend: function (request) {
+                request.setRequestHeader("CZAOSToken", window.AOS.getToken());
+                for (var i in params) {
+                    request.setRequestHeader(i, params[i]);
+                }
+            },
+            cache: false,
+            type: 'GET',
+            contentType: 'application/json; charaset=urt-8',
+            statusCode: {
+                404: function (data) {
+                    alert(data.statusText);
+                }
+            }
+        });
+    };
 
-    app.login = function() {
+    window.AOS.login = function() {
         var API_URL = "api/security/login";
         var creds = "YXBpdXNlcjphYmNkMTIzNA==";
         $.ajax({
@@ -86,7 +110,7 @@ $(function (app) {
                     // alert("Login unsuccessful");
                 },
                 200: function(data) {
-                    app.setToken(data);
+                    window.AOS.setToken(data);
                     // alert('login sucessful')
                 }
             }
@@ -106,4 +130,4 @@ $(function (app) {
             });
     };
     
-})(window.AOS);
+});

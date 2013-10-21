@@ -1,8 +1,24 @@
 $(function () {
+    //set up toastr options
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "positionClass": "toast-top-right",
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "3000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+
     //initialize obs_student
     SimpleTemplate.loadTemplates();
 
-    deleteToken();
+    window.AOS.deleteToken();
 
     checkLogin = function(api, pass) {
         var params = params || {};
@@ -27,30 +43,31 @@ $(function () {
                 $('body').addClass(data.Exhibit);
                 $('#step2').fadeIn(0);
                 $('#step1').fadeOut(0);
-                czaos_get('animalObservation', {}, '#observationAnimals', false, { observationId: observationID });
-                czaos_get('behaviorCategory', {}, '#behaviorControl', true, { exhibitId: exhibitID });
-                czaos_get('exhibitlocation', {}, '#zoneControl', false, { exhibitId: exhibitID });
-                czaos_get('crowd/', {}, '#crowdControl', true);
-                czaos_get('weatherCondition/', {}, '#weatherControl', true);
+                window.AOS.czaos_get('animalObservation', {}, '#observationAnimals', false, { observationId: observationID });
+                window.AOS.czaos_get('behaviorCategory', {}, '#behaviorControl', true, { exhibitId: exhibitID });
+                window.AOS.czaos_get('exhibitlocation', {}, '#zoneControl', false, { exhibitId: exhibitID });
+                window.AOS.czaos_get('crowd/', {}, '#crowdControl', true);
+                window.AOS.czaos_get('weatherCondition/', {}, '#weatherControl', true);
 
             } else {
-                alert('Sorry wrong password. try again.');
+                alert('Sorry wrong password. Try again.');
             }
         });
     };
 
-login();
+    window.AOS.login();
 
 });
 
 var observationID=0;
 var exhibitID=0;
 var obsWeather;
-var username='none';
+var username = 'none';
+var paused = true;
 var observationRecords = new Locus("observationRecords");
 observationRecords.clear();
 observationRecords.data.records=[];
-var cantakerecord = true;
+var hasTakenRecord = false;
 
 
 function loginStudent(){
@@ -73,18 +90,24 @@ function gotoWeather() {
         });
 }
 
-function startTime(time){
+function startTime(time) {
+    paused = false;
     var count=0;
-            
-    var interval= setInterval(function(){
-        $(".timebar").css('width',((count/time)*100)+'%');
-        count++;
-        if(count==time){
-            cantakerecord=true;
-            clearInterval(interval);
-            startTime(time);
+    var interval = setInterval(function () {
+        if (!paused) {
+            $(".timebar").css('width', ((count / time) * 100) + '%');
+            count++;
+            if (count == time) {
+                if (hasTakenRecord) {
+                    observationRecords.data.records.push(recordToBeSaved);
+                    observationRecords.saveToLocal();
+                }
+                hasTakenRecord = false;
+                clearInterval(interval);
+                startTime(time);
+            }
         }
-    },1000);
+    }, 1000);
 }
 function startObservation() {
     //check to make sure weather and crowd have been selected
@@ -96,12 +119,16 @@ function startObservation() {
         $(window).trigger('resize');
 
         $("#saveRecord").click(function() {
-            if (cantakerecord) {
-                observationRecords.data.records.push(new record({ ZooID: $("#observationAnimals").val(), LocationID: $("#zoneControl").val(), BvrCat: $("#behaviorControl li.selected").attr('data-category'), BvrCatCode: $("#behaviorControl li.selected").attr('name') }));
-                console.log(observationRecords.data.records);
-                observationRecords.saveToLocal();
+            if (!hasTakenRecord) {
+                recordToBeSaved = new record({ ZooID: $("#observationAnimals").val(), LocationID: $("#zoneControl").val(), BvrCat: $("#behaviorControl li.selected").attr('data-category'), BvrCatCode: $("#behaviorControl li.selected").attr('name') });
+                //observationRecords.data.records.push(new record({ ZooID: $("#observationAnimals").val(), LocationID: $("#zoneControl").val(), BvrCat: $("#behaviorControl li.selected").attr('data-category'), BvrCatCode: $("#behaviorControl li.selected").attr('name') }));
+                console.log(recordToBeSaved);
+                toastr.success("Your observation has been saved", "Record Saved");
+                hasTakenRecord = true;
+            } else {
+                recordToBeSaved = new record({ ZooID: $("#observationAnimals").val(), LocationID: $("#zoneControl").val(), BvrCat: $("#behaviorControl li.selected").attr('data-category'), BvrCatCode: $("#behaviorControl li.selected").attr('name') });
+                toastr.success("Your observation was updated successfully", "Record Updated");
             }
-            cantakerecord = false;
         });
 
         startTime(10);
@@ -109,18 +136,42 @@ function startObservation() {
 }
 
 function finishObservation() {
+    paused = true;
     $('#observationPanel').fadeOut(0);
     $('#finalizePanel').fadeIn(0);
     $(window).trigger('resize');
+    $('#backToObservation').click(function () {
+        $('#observationPanel').fadeIn(0);
+        $('#finalizePanel').fadeOut(0);
+        paused = false;
+    });
             
     //set up listeners for finish observation button
     $('#finalizeObservation').click(function () {
-        //attempt to send all records from local storage to the server
-        observationRecords.loadFromLocal();
-        var records = observationRecords.data.records;
-        //if success show finished page
-        czaos_post('observationrecord', records, {});
-        //if failure attempt to resend
+        handleSave();
+    });
+}
+
+function handleSave() {
+    //disable buttons
+    $('#finalizeObservation').attr("disabled", "disabled");
+    $('#finalizeObservation').toggleClass("disabled");
+    
+    toastr.info("Your observation is being saved", "Please wait");
+    //attempt to send all records from local storage to the server
+    observationRecords.loadFromLocal();
+    var records = observationRecords.data.records;
+    //if success show finished page
+    window.AOS.czaos_post('observationrecord', records, {}).done(function (data) {
+        toastr.options.timeOut = 0;
+        toastr.options.onclick = function () {
+            location.reload();
+        };
+        toastr.success("Please click to refresh page.", "Observation Records Successfully Saved");
+    }).fail(function (data) {
+        $('#finalizeObservation').toggleClass('disabled');
+        $('#finalizeObservation').removeAttr('disabled');
+        toastr.error("Please try again.", "There was an error saving your observation");
     });
 }
 
@@ -168,4 +219,6 @@ var weather = function(ref) {
     this.Deleted = 0;
     this.Flagged = 0;
 };
-var watch=navigator.geolocation.getCurrentPosition(showPosition);
+var watch = navigator.geolocation.getCurrentPosition(showPosition);
+
+var recordToBeSaved;
