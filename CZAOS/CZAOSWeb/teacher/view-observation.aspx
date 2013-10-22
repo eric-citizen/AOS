@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="view-observation.aspx.cs" Inherits="CZAOSWeb.admin.observation.view_observation" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="view-observation.aspx.cs" Inherits="CZAOSWeb.teacher.observation.view_observation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -18,11 +18,8 @@
             <h2>Observation Details</h2>
             <div style="padding-left: 15px">
                 <asp:Literal runat="server" ID="litHead" />
-                <span class="print"><a href="javascript:void(0)" onclick="window.print();" >Print</a></span>
-                <span class="edit"><asp:HyperLink runat="server" ID="lnkHeadEdit" Text="Edit" ToolTip="Edit this item"></asp:HyperLink></span>
-                <span class="edit"><asp:HyperLink runat="server" ID="lnkHeadRecords" Text="View Records" ToolTip="View Observation Records"></asp:HyperLink></span>
-                <asp:ImageButton runat="server" ID="btnHeadDelete" ImageUrl="~/assets/images/icons/admin/delete.png" OnClick="btnHeadDelete_Click" CssClass="delete" Text="Delete"></asp:ImageButton>
-                <button id="btnHeadBack" class="floatRight" onclick="history.go(-1);return false;">Back</button>
+                <span class="print"><a href="javascript:void(0)" onclick="window.print();" ></a></span>
+                <span class="records"><asp:HyperLink runat="server" ID="lnkHeadRecords" Text="" ToolTip="View Observation Records"></asp:HyperLink></span>
             </div> 
         </div>
 
@@ -169,11 +166,8 @@
             <h2>Observation Details</h2>
             <div style="padding-left: 15px">
                 <asp:Literal runat="server" ID="litFoot" />
-                <span class="print"><a href="javascript:void(0)" onclick="window.print();" class="print-link">Print</a></span>
-                <span class="edit"><asp:HyperLink runat="server" ID="lnkFootEdit" CssClass="gv-edit-link" Text="Edit" ToolTip="Edit this item"></asp:HyperLink></span>
-                <span class="edit"><asp:HyperLink runat="server" ID="lnkFootRecords" CssClass="gv-edit-link" Text="View Records" ToolTip="View Observation Records"></asp:HyperLink></span>
-                <asp:ImageButton runat="server" ID="btnFootDelete" ImageUrl="~/assets/images/icons/admin/delete.png" OnClick="btnHeadDelete_Click" CssClass="delete" Text="Delete"></asp:ImageButton>
-                <button id="btnFootBack" class="floatRight" onclick="history.go(-1);return false;">Back</button>
+                <span class="print"><a href="javascript:void(0)" onclick="window.print();" class="print-link"></a></span>
+                <span class="records"><asp:HyperLink runat="server" ID="lnkFootRecords" CssClass="gv-edit-link" Text= "" ToolTip="View Observation Records"></asp:HyperLink></span>
             </div>
         </div>
 

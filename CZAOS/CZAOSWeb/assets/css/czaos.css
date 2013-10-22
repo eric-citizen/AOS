@@ -53,6 +53,7 @@ select{
 }
 
 .obsSection {
+    background: #fff;
     border: 2px solid #a2a6ad;
     width: 956px;
     display: inline-block;
@@ -152,7 +153,7 @@ select{
 }
 .delete {
     background: url('../images/icons/admin/delete.png') center left no-repeat;
-    background-size: 30px 29px;
+    background-size: 30px 30px;
     margin: 0px;
     padding: 0px;
     border: none;
@@ -167,6 +168,33 @@ select{
     overflow: hidden;
     width: 30px;
     height: 30px;
+}
+.hideDelete {
+    display:none;
+}
+.showDelete {
+    display:inline-block;
+}
+.confirmDelete {
+    background: url('../images/icons/observation/select-all-groups.png') center left no-repeat;
+    background-size: 15px 15px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    width:15px; 
+    height:15px;
+    display: inline-block;
+}
+.cancelDelete {
+    background: url('../images/icons/observation/close-gray.png') center left no-repeat;
+    background-size: 15px 15px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    width:15px; 
+    height:15px;
+    display: inline-block;
+    float:right;
 }
 .print {
     background: url('../images/icons/admin/print.png') center left no-repeat;
@@ -191,6 +219,9 @@ select{
 .animalSearch {
     width: 50%;
     display:inline-block;
+}
+#filterUp, #filterRec {
+    display:none;
 }
 .filter {
     background-color: #efefef;
@@ -239,6 +270,7 @@ tr, td, th, .step li{
     text-align: left;
     background: #fff;
     border-bottom: 1px solid #c5c7ca;
+    vertical-align:middle;
 }
 th{
     background: #b3b6bb;
@@ -288,12 +320,6 @@ nav ul ul {
     top: 100%;
     right: -15%;
 }
-
-/*nav ul li:hover > ul {
-	display: block;
-}*/
-
-
 nav ul{
     background: #efefef; 
 	padding: 0;

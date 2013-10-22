@@ -1,16 +1,27 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="GridConfirmControl.ascx.cs" Inherits="CZAOSWeb.controls.GridConfirmControl" %>
 
-<span class="delete"><asp:HyperLink runat="server" ID="hyperValue" CssClass="del-link" NavigateUrl="javascript:void(0);" ToolTip="Delete">    
-        <%--<asp:Image runat="server" ID="imgConfirm" ImageUrl="~/images/trash-icon16.png" Width="16px" Height="16px" />--%>
-</asp:HyperLink></span>
+<%--<asp:Button runat="server" ID="hyperValue" CssClass="delete" OnClick="deleteClick" ToolTip="Delete">    
+</asp:Button>
 
-<div class="del-row-item" style="display:none;">
+<asp:Panel runat="server" ID="delRowItem" CssClass="hideDelete">
     <asp:LinkButton ID="lnkDelete" runat="server" CausesValidation="false" 
-        CommandName="DeleteItem" Text="" ToolTip="Confirm" CssClass="delete" 
+        CommandName="DeleteItem" Text="" ToolTip="Confirm" CssClass="confirmDelete" 
         OnClick="lnkDelete_Click">
-            <img src="/images/16x16empty.png" style="width:16px; height:16px;" alt=""/>
         </asp:LinkButton>
-    <a href="javascript:void(0);" class="del-cancel" title="Cancel">
-        <img src="/images/16x16empty.png" style="" alt="" />
-    </a>
+    <asp:LinkButton ID="lnkCancel" runat="server" CausesValidation="false" 
+        CommandName="DeleteItem" Text="" ToolTip="Cancel" CssClass="cancelDelete" > 
+        </asp:LinkButton>
+</asp:Panel>--%>
+
+<div onclick="$(this).parent().children('div').toggle();" class="delete"></div>
+
+<div style="display:none">
+    <asp:LinkButton ID="lnkDelete" runat="server" CausesValidation="false" 
+        CommandName="DeleteItem" Text="" ToolTip="Confirm" CssClass="confirmDelete" 
+        OnClick="lnkDelete_Click">
+        </asp:LinkButton>
+    <%--<asp:LinkButton ID="lnkCancel" runat="server" CausesValidation="false" 
+        Text="" ToolTip="Cancel" CssClass="cancelDelete" > 
+        </asp:LinkButton>--%>
+    <a href="javascript: void(0);" onclick="$(this).parent().parent().children('div').toggle();" title="Cancel" id="lnkCancel" class="cancelDelete"></a>
 </div>
