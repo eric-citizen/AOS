@@ -302,6 +302,16 @@ tr.hilite-row:nth-child(even) td{
     padding: 15px;
     font-size: 14px;
 }
+.send-password
+{
+    text-indent:-999em;
+    display:inline-block;
+    width:16px;
+	background-image: url(/images/send-password-icon.png); 
+	background-repeat: no-repeat;
+	background-position: left center; 
+	color: #fff;
+}
 #app-title {
     display:inline-block;
     width:91.5%;
@@ -490,6 +500,7 @@ div.scc-box div.scc-buttons .cms-button{
 }
 
 /*#endregion */
+
 /*Fading slideStrip CSS*/
 ul.fade-strip {
     list-style: none;
