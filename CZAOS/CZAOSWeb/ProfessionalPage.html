@@ -36,7 +36,7 @@
         <div id="observationData">
         </div>
         <div id="enviromentData" style='display: none;'>
-            <header>---</header>
+            <header></header>
             <div id="enviromentPanel">
                 <h1>Enviroment</h1>
                 <hr>
@@ -64,43 +64,53 @@
                         <div class="time">0</div>
                     </div>
                 
-                    <div id="animalgroup-knockout-scope" style="float: left; width: 50%">
-                        <h1>Groups</h1>
-                        <div data-bind="foreach: AnimalGroups()"><!-- Make each group a jQuery UI accordian-->
-                            <div data-bind="text: 'Group ' + $data.id"></div>
-                            <ul data-bind="foreach: Animals">
-                                <li>
-                                    <label >
-                                        <!-- bind the name property of our object as the checkbox value -->
-                                        <input type="checkbox" data-bind="value: ZooID, checked: $root.SelectedAnimals" />
-                                        <span data-bind="text: HouseName"></span>
-                                    </label>
-                                </li>
-                            </ul>
+                    <div id="animalgroup-knockout-scope">
+                        <h1>Animals</h1>
+                        <div class="animal-group" data-bind="foreach: AnimalGroups()"><!-- Make each group a jQuery UI accordian-->
+                            <h2 class="animal-group-header" data-bind="text: 'Group ' + $data.id"></h2>
+                            <div class="animal-group-list">
+                                <ul  data-bind="foreach: Animals">
+                                    <li>
+                                        <label>
+                                            <!-- bind the name property of our object as the checkbox value -->
+                                            <input type="checkbox" data-bind="value: ZooID, checked: $root.SelectedAnimals" />
+                                            <span data-bind="text: HouseName"></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div class="button">All</div><div class="button">None</div>
+                            </div>
                         </div>
                     </div>
-                    <div style="float: right; width: 50%">
+                    <div id="entry-panel">
                         <h1>Entry</h1>
 
                         <h2>Behavior Category</h2>
                         <!--Drop down list of Selectable Behavior Categories-->
+                        <select></select>
                         <h2>Behavior</h2>
                         <!--Drop down list of Selectable Behaviors-->
+                        <select></select>
 
                         <h2>Zone</h2>
                         <!--Drop down list of Selectable Zones-->
+                        <select></select>
+                        
+                        <div id="button-container" class="clearfix" style="display: none">
+                            <div style="float: left">
+                                <div id='saveRecord' class="button">Save Record</div>
+                            </div>
+                            <div style="float: right">
+                                <div id='gotoFinalizationPage' class="button" onclick=" finishObservation() ">Finalize Observation</div>
+                            </div>
+                            
+                        </div>
 
                     </div>
                 </div>
-                <div class="clearfix" >
-                    <div style="float: left; text-align: left;">
-                        <div id='gotoFinalizationPage' class="button" onclick=" finishObservation() ">Finalize Observation</div>
-                    </div>
-                    <div style="text-align: right">
-                        <div id='saveRecord' class="button">Save Record</div>
-                    </div>
-                </div>
+                
             </div>
+
                 
             
 
@@ -127,9 +137,9 @@
             <div id="step2" style="display: none">
                 <div class="logo">The Animal<br>Observation System</div>
                 <div><span>Observation #</span><br><input id="obsID" value="16"/></div>
-                <div style="text-align: right"><input type='submit' id="studentLogin" onclick=" loginToObservation(); "/></div>
+                <div style="margin-bottom: 15px; text-align: center;"><input type='submit' id="studentLogin" onclick=" loginToObservation(); "/></div>
             </div>
-            <div id="observationInfo" style="display: none">
+            <div id="observationInfo" style="border-top: 1px solid; display: none; text-align: center;">
                 <div>
                     <div>
                         <h2>Observation</h2>
