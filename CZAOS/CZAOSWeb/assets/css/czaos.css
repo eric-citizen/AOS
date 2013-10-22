@@ -787,7 +787,7 @@ header li img{
     font-size: 22px;
     line-height: 30px;
     color: #4a525c;
-    padding-bottom: 4em;
+    padding-bottom: 3em;
     /*background:  url(../images/icons/observation/account-white.png) no-repeat bottom center;*/
 }
 #loginPanel input, #loginPanel select{
@@ -836,7 +836,7 @@ header li img{
     margin: 1em;
 }
 
-#finalizeObservation{
+#finalizeObservation, #backToObservation {
     border-radius: 15px;
     margin: 1em;
 }
@@ -851,6 +851,10 @@ header li img{
     height: 40px;
 }
 
+#finalizeObservation .disabled {
+    background: #444444;
+    border-color: #444444;
+}
 #timer .timebar{
     width:50%;
     position: absolute;
@@ -869,4 +873,35 @@ header li img{
 #weatherAPIoutput .temp:after{
     content:'°F';
     font-size: 120px;
+}
+
+#observationInfo h2 {
+    text-align: left;
+    padding-left: 0px;
+}
+
+#observationInfo span {
+    margin-left: 10px
+}
+
+#observationInfo span + div{
+    margin-left: 20px;
+}
+
+/*--------------------------*/
+
+.clearfix:before,
+.clearfix:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after {
+  clear: both;
 }

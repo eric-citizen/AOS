@@ -23,13 +23,13 @@ namespace CZDataObjects
                 mintExhibitID = record.Get<int>("ExhibitID");
                 mintBehaviorID = record.Get<int>("BehaviorID");
                 mblnActive = record.Get<bool>("Active");
-                mintBvrCatID = record.Get<int>("BvrCatID");
 
 
                 if (!isNew)
                 {
                     mstrExhibitName = record.Get<string>("ExhibitName");
                     mstrBehavior = record.Get<string>("Behavior");
+                    mintBvrCatID = record.Get<int>("BvrCatID");
                 }
           
 			}
