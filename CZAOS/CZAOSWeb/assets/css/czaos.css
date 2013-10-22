@@ -453,6 +453,43 @@ nav ul ul li a:hover {
 .add-link:hover{
     color: #444;
 }
+/*#region simple confirm control */
+    
+div.scc-box
+{
+    display: none;
+    padding: 10px;
+    background-image:url(/images/question.gif);   
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+}
+
+div.scc-box div.scc-title
+{
+    font-weight:bold;
+    font-size: 1.1em;
+    padding-left:40px;
+}
+
+div.scc-box div.scc-content
+{
+    text-align: left;
+    padding-top:25px;
+    padding-left:10px;
+}
+
+div.scc-box div.scc-buttons
+{
+    clear:both;
+    padding: 10px 10px 10px 35px;
+    /*text-align: center;*/
+}
+
+div.scc-box div.scc-buttons .cms-button{
+    margin-right:20px;
+}
+
+/*#endregion */
 /*Fading slideStrip CSS*/
 ul.fade-strip {
     list-style: none;
