@@ -850,7 +850,7 @@ header li img{
 }
 
 #observationInfo h2 {
-    text-align: left;
+    text-align: center;
     padding-left: 0px;
 }
 
@@ -858,10 +858,84 @@ header li img{
     margin-left: 10px
 }
 
+#observationPanel input[type='checkbox'] {
+    vertical-align: bottom;
+}
+
 #observationInfo span + div{
     margin-left: 20px;
 }
 
+#animalgroup-knockout-scope {
+    float: left; 
+    width: 50%
+}
+
+#button-container {
+    text-align: center
+}
+
+.animal-group{
+    width: 75%;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.animal-group .button {
+    display: inline-block;
+    border-radius: 15px;
+    margin: 1em;
+    margin-left: 0px;
+}
+
+.animal-group-list span {
+    font-weight: bold;
+    color:#4b2008;
+}
+
+.animal-group-header {
+    /*background-color: rgba(0, 0, 0, 0.18);*/
+    padding-left: 5px;
+    background-color: #5096a4;
+    border-radius: 10px 10px 0 0;
+    border-right: 1px solid rgba(2, 2, 2, 0.28);
+    border-left: 1px solid rgba(2, 2, 2, 0.28);
+    border-top: 1px solid rgba(250, 250, 250, 0.27);
+    -webkit-box-shadow: rgba(255,255,255,0.3) 0 1px 0, rgba(0,0,0,0.3) 0 -1px 0;
+    box-shadow: rgba(255,255,255,0.3) 0 1px 0, rgba(0,0,0,0.3) 0 -1px 0;
+    -webkit-box-shadow: 0 0 3px rgba(1, 1, 1, 0.7);
+    box-shadow: 0 0 5px rgba(1, 1, 1, 0.7);
+}
+
+
+
+.animal-group-list {
+    background-color: #fff;
+    -webkit-box-shadow: -3px 0 5px -3px rgba(1, 1, 1, 0.87), 3px 0 5px -3px rgba(1, 1, 1, 0.87);
+    box-shadow: -3px 0 5px -3px rgba(1, 1, 1, 0.87), 3px 0 5px -3px rgba(1, 1, 1, 0.87);
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid;
+}
+
+#entry-panel {
+    float: right; 
+    width: 50%
+}
+
+#entry-panel h2 {
+    margin-left: 20px;
+}
+
+#entry-panel select {
+    margin-left: 20px;
+    width: 60%;
+}
 /*--------------------------*/
 
 .clearfix:before,

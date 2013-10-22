@@ -17,6 +17,7 @@
             }));
 
             ko.applyBindings(app.AnimalControl, $('#animalgroup-knockout-scope')[0]);
+            //$('#animalgroup-knockout-scope').accordion({ header: "h2" });
         });
     };
 

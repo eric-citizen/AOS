@@ -176,6 +176,7 @@ function startObservation() {
         window.AOS.AnimalControl().Configure(observationID);
         $('#enviromentPanel').fadeOut(0);
         $('#observationPanel').fadeIn(0);
+        $('#button-container').fadeIn(0);
         $(window).trigger('resize');
 
         $("#saveRecord").click(function() {
