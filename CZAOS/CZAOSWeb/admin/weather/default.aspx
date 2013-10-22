@@ -9,7 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
-    <a class="add-link ui-dialog-link" href="/admin/weather/edit-weather.aspx" title="Add New Weather Condition" data-width="600" data-height="240" data-rp="1">Add Weather Condition</a>    
+    <a class="add-link ui-dialog-link" href="/admin/weather/edit-weather.aspx" title="Add New Weather Condition" data-width="300" data-height="175" data-rp="1">Add Weather Condition</a>    
     
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
@@ -43,7 +43,7 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="240, 600, true, null, 1" Text="Edit" ToolTip="Edit Condition" NavigateUrl='<%# Bind("WeatherID","~/admin/weather/edit-weather.aspx?weatherId={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="175, 300, true, null, 1" Text="" ToolTip="Edit Condition" NavigateUrl='<%# Bind("WeatherID","~/admin/weather/edit-weather.aspx?weatherId={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>

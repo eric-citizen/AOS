@@ -82,6 +82,7 @@ namespace CZAOSWeb.controls
         protected void Page_Load(object sender, EventArgs e)
         {
             lnkDelete.CommandArgument = this.CommandArgument;
+            
         }
 
         protected void lnkDelete_Click(object sender, EventArgs e)

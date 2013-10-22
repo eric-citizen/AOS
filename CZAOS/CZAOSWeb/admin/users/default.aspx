@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     
-    <a href="edit-user.aspx" class="ui-dialog-link" data-args="700, 800, true, null, 1" title="Add New User">Add New User</a>
+    <a href="edit-user.aspx" class="add-link ui-dialog-link" data-args="700, 800, true, null, 1" title="Add New User">Add New User</a>
 
     <!-- jquery tabs ui //-->
     <div id="tabs">
