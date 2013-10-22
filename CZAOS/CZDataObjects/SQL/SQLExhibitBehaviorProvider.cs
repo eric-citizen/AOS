@@ -112,8 +112,6 @@ namespace CZDataObjects
             base.AddParameter("@ExhibitID",item.ExhibitID);
             base.AddParameter("@BehaviorID",item.BehaviorID);
             base.AddParameter("@Active",item.Active);
-            base.AddParameter("@BvrCatID", item.BvrCatID);
-            
         }
 
 	}

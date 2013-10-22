@@ -144,6 +144,8 @@ function finishObservation() {
         $('#observationPanel').fadeIn(0);
         $('#finalizePanel').fadeOut(0);
         paused = false;
+        $('#finalizeObservation').unbind('click');
+        $('#backToObservation').unbind('click');
     });
             
     //set up listeners for finish observation button
