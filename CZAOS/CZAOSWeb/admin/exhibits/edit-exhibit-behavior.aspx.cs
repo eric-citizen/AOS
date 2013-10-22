@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -127,9 +128,8 @@ namespace CZAOSWeb.admin.dialogs
                 {                
 
 
-                    item = new CZDataObjects.ExhibitBehavior();
+                    item = new ExhibitBehavior();
                     item.ExhibitID = this.ExhibitID;
-                    item.BvrCatID = ddlBehaviorCategory.SelectedValue.ToInt32();
                     item.BehaviorID = ddlBehavior.SelectedValue.ToInt32(); //txtBehaviorCode.HtmlEncodedText().Trim();
                     item.Active = chkActive.Checked;                    
 
