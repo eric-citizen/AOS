@@ -37,6 +37,15 @@ namespace CZAOSWeb.Security
 
             if (!context.Request.CurrentExecutionFilePath.StartsWith("/admin/") || !props.IsPage)
             {
+                if (context.Request.CurrentExecutionFilePath.StartsWith("/teacher/")) 
+                {
+                    var login = context.Request.QueryString["login"]; ;
+                    var pass = context.Request.QueryString["pass"]; ;
+                    var id = context.Request.QueryString["observationID"];
+                    var obs = ObservationList.Get(id.ToInt32());
+                    if (obs.TeacherLogin == login && obs.TeacherPass == pass)
+                        return;
+                }
                 if (!props.IsExtensionless)
                 {
                     return;
@@ -101,22 +110,17 @@ namespace CZAOSWeb.Security
                     context.Response.SafeRedirect("/admin/default.aspx");
                     return;
                 }
-
                 foreach (string role in nav.RoleList)
                 {
                     if (Roles.IsUserInRole(role))
                     {
                         return;
                     }
-                    else
-                    {
-                        Logger.Log(LogTarget.Security, MessageLevel.Warning, "User {0} attempted to access {1} with no permissions.".FormatWith(context.User.Identity.Name, url));
-                        context.Session.AddToSession("nopermissions", true);
-                        context.Response.SafeRedirect("/admin/default.aspx");
-                        break;
-                    }
+                    
                 }
-                
+                Logger.Log(LogTarget.Security, MessageLevel.Warning, "User {0} attempted to access {1} with no permissions.".FormatWith(context.User.Identity.Name, url));
+                context.Session.AddToSession("nopermissions", true);
+                context.Response.SafeRedirect("/admin/default.aspx");
 
             }
 

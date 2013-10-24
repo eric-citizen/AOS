@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-    <a class="add-link ui-dialog-link" href="/admin/animal-regions/edit-region.aspx" data-args="300, 300, true, null, 1" title="Add New Region">Add New Region</a>
+<%--    <a class="add-link ui-dialog-link" href="/admin/animal-regions/edit-region.aspx" data-args="300, 300, true, null, 1" title="Add New Region">Add New Region</a>--%>
 
     <asp:ObjectDataSource ID="cztDataSource" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting"
         SelectMethod="GetItemCollection" TypeName="CZBizObjects.AnimalRegionList"
@@ -46,19 +46,19 @@
                 </ItemTemplate> 
             </asp:TemplateField>
 
-            <asp:TemplateField>
+<%--            <asp:TemplateField>
                 <ItemTemplate>
                     <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="300, 300, true, null, 1" Text="" ToolTip="Edit Animal Region" NavigateUrl='<%# Bind("AnimalRegionCode","~/admin/animal-regions/edit-region.aspx?regionId={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
-            </asp:TemplateField>
+            </asp:TemplateField>--%>
 
-            <asp:TemplateField ShowHeader="False" >
+<%--            <asp:TemplateField ShowHeader="False" >
                 <ItemTemplate>
                     <uc1:GridConfirmControl runat="server" ID="GridConfirmControl" CommandArgument='<%#Bind("AnimalRegionCode") %>' CommandName="DeleteRegionCode" />
                 </ItemTemplate>                
                 <ItemStyle Width="60px" CssClass="tac" />
-            </asp:TemplateField>
+            </asp:TemplateField>--%>
 
         </Columns>        
 

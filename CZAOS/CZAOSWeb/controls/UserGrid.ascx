@@ -66,13 +66,15 @@
                     <ItemStyle HorizontalAlign="Left" Width="70px" />
                 </asp:TemplateField>
 
-                <asp:ButtonField Text="Unlock" CommandName="UnlockUser">
-                    <ItemStyle HorizontalAlign="Center" Width="60px" />
-                    <HeaderStyle HorizontalAlign="Center" />
-                </asp:ButtonField>
+                <asp:TemplateField>
+                    <ItemStyle HorizontalAlign="Center" Width="60px" CssClass="" />
+                    <ItemTemplate>
+                        <asp:LinkButton runat="server" ID="lnkUnlockUser" CssClass="unlock-user" Text="Unlock" ToolTip="Unlock User" CommandName="UnlockUser"></asp:LinkButton>
+                    </ItemTemplate>                                 
+                </asp:TemplateField>
                 
                 <asp:TemplateField>
-                    <ItemStyle HorizontalAlign="Center" Width="16px" CssClass="cell-link-click" />
+                    <ItemStyle HorizontalAlign="Center" Width="30px" CssClass="" />
                     <ItemTemplate>
                         <asp:LinkButton runat="server" ID="lnkSendPassword" CssClass="send-password" Text="SendPassword" ToolTip="Send user credentials" CommandArgument='<%# Bind("UserName") %>' CommandName="SendPassword"></asp:LinkButton>
                     </ItemTemplate>                                 

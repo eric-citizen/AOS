@@ -17,6 +17,7 @@ namespace CZAOSWeb.admin.Exhibits
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!this.IsPostBack)
             {
                 if (!base.IsMasterAdmin)

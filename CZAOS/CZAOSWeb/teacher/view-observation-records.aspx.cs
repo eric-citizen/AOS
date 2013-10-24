@@ -25,6 +25,8 @@ namespace CZAOSWeb.teacher.observation
             var metaString = obs.ObserveStart.ToShortDateString() + " // " + obs.ObservationID.ToString() + " // " + obs.ObserveType.ToString() + " // " + obs.Exhibit.ToString();
             litHeader.Text = metaString;
             litFooter.Text = metaString;
+
+            
         }
 
         protected void cztDataSource_Selected(object sender, ObjectDataSourceStatusEventArgs e)
@@ -112,7 +114,7 @@ namespace CZAOSWeb.teacher.observation
 
         protected void gvObs_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "FlagRecord" && base.IsMasterAdmin)
+            if (e.CommandName == "FlagRecord")
             {
                 int id = Convert.ToInt32(e.CommandArgument);
 

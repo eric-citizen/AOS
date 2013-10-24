@@ -1,4 +1,4 @@
-﻿<%@ Page Title="View Observation Records" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="view-observation-records.aspx.cs" Inherits="CZAOSWeb.admin.observation.view_observation_records" %>
+﻿<%@ Page Title="View Observation Records" Language="C#" MasterPageFile="~/masterpages/Teacher.Master" AutoEventWireup="true" CodeBehind="view-observation-records.aspx.cs" Inherits="CZAOSWeb.teacher.observation.view_observation_records" %>
 <%@ Register Src="~/controls/GridConfirmControl.ascx" TagPrefix="uc1" TagName="GridConfirmControl" %>
 <%@ Register Src="~/controls/GridPager.ascx" TagPrefix="uc1" TagName="GridPager" %>
 
@@ -41,9 +41,9 @@
 
                     <asp:TemplateField HeaderText="Flagged">
                         <ItemTemplate>
-                            <asp:LinkButton runat="server" ID="btnFlag" SortExpression="Flagged" HeaderText="Flagged" CausesValidation="false" 
+                            <span class="flaggable"><asp:LinkButton runat="server" ID="btnFlag" SortExpression="Flagged" HeaderText="Flagged" CausesValidation="false" 
                                 CommandArgument='<%#Bind("ObservationRecordID") %>' CommandName="FlagRecord" ToolTip="Flag Record" 
-                                Text='<%#Bind("Flagged") %>' ></asp:LinkButton>
+                                Text='<%#Bind("Flagged") %>'></asp:LinkButton></span>
                         </ItemTemplate>
                         <ItemStyle Width="30px" />
                     </asp:TemplateField>
@@ -67,4 +67,23 @@
 
      
 
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="scripts" runat="server">
+
+    <script>
+        $(function () {
+            //if ($(".flaggable a").InnerText == "False")
+            //    $(".flaggable").addClass("not-flagged").removeClass("flagged");
+            $.each($(".flaggable"), function (i , obj) {
+                if ($(this).text() == "True")
+                    $(this).addClass('flagged');
+                else
+                    $(this).addClass('not-flagged');
+            });
+            //if ($("span.flaggable a").Text() == "True")
+            //    $("span.flaggable").addClass("flagged");//.removeClass("not-flagged");
+
+        });
+    </script>
 </asp:Content>
