@@ -7,8 +7,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
-    <a class="add-link ui-dialog-link" href="/admin/location/edit-location.aspx" data-args="300, 700, true, null, 1" title="Add New Location">Add New Location</a>
-    <a class="add-link ui-dialog-link" href="/admin/location/sort-location.aspx" data-args="720, 700, true, null, 1" title="Edit Sort Order">Edit Sort Order</a>
+    <a class="add-link ui-dialog-link" href="/admin/location/edit-location.aspx" data-args="325, 350, true, null, 1" title="Add New Location">Add New Location</a>
+    <a class="add-link ui-dialog-link" href="/admin/location/sort-location.aspx" data-args="600, 500, true, null, 1" title="Edit Sort Order">Edit Sort Order</a>
 
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
@@ -54,7 +54,7 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="300, 700, true, null, 1" Text="Edit" ToolTip="Edit Location" NavigateUrl='<%# Bind("LocationID","~/admin/location/edit-location.aspx?locId={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="325, 300, true, null, 1" Text="" ToolTip="Edit Location" NavigateUrl='<%# Bind("LocationID","~/admin/location/edit-location.aspx?locId={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>

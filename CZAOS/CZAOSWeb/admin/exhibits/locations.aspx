@@ -8,11 +8,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
     <mack:HiddenID runat="server" ID="hdnExhibitID" ClientIDMode="Static" />
-    <a class="add-link ui-dialog-link" href="/admin/exhibits/edit-exhibit-location.aspx?exId=<%= this.ExhibitID %>" data-args="250, 600, true, null, 1" title="Add New Exhibit Location">Add New Exhibit Location</a>        
 
     <div>
-        <b>Exhibit:</b><asp:Literal runat="server" ID="litExhibitName"></asp:Literal>
+        <h2>Exhibit:&nbsp;<asp:Literal runat="server" ID="litExhibitName"></asp:Literal></h2>
     </div>
+
+    <a class="add-link ui-dialog-link" href="/admin/exhibits/edit-exhibit-location.aspx?exId=<%= this.ExhibitID %>" data-args="250, 600, true, null, 1" title="Add New Exhibit Location">Add New Exhibit Location</a>        
 
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
@@ -32,7 +33,7 @@
         AscendingImageUrl="~/images/down.png" DescendingImageUrl="~/images/up.png" GridViewID="gvExhibitLocations" TransparentImageUrl="~/images/transparent.png" />
 
     <asp:GridView ID="gvExhibitLocations" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="gridview"
-        PageSize="20" AutoGenerateColumns="False" Width="100%" OnRowDataBound="gvExhibitLocations_RowDataBound" OnRowCommand="gvExhibitLocations_RowCommand"
+        PageSize="10" AutoGenerateColumns="False" Width="100%" OnRowDataBound="gvExhibitLocations_RowDataBound" OnRowCommand="gvExhibitLocations_RowCommand"
         DataKeyNames="ExhibitLocationID" PagerSettings-Visible="false"  >
         <Columns>
             
@@ -43,14 +44,6 @@
                 <ItemTemplate>
                     <asp:CheckBox runat="server" ID="activeCheckBox" Checked='<%# Bind("Active") %>' OnCheckedChanged="IsActiveCheckChanged" AutoPostBack="true" />
                 </ItemTemplate> 
-            </asp:TemplateField>
-
-            <asp:TemplateField>
-                <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="250, 600, true, null, 1" Text="Edit" ToolTip="Edit Exhibit Location" 
-                        NavigateUrl='<%# Bind("ExhibitLocationID","~/admin/exhibits/edit-exhibit-location.aspx?locId={0}") %>'></asp:HyperLink>
-                </ItemTemplate> 
-                <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>
 
             <asp:TemplateField ShowHeader="False">

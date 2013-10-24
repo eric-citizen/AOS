@@ -37,7 +37,7 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="250, 700, true, null, 1" Text="Edit" ToolTip="Edit Crowd" NavigateUrl='<%# Bind("CrowdID","~/admin/crowds/edit-crowd.aspx?cId={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="175, 300, true, null, 1" Text="" ToolTip="Edit Crowd" NavigateUrl='<%# Bind("CrowdID","~/admin/crowds/edit-crowd.aspx?cId={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>

@@ -38,15 +38,15 @@
                 <ItemStyle Width="300px" />
             </asp:BoundField>
             
-           <asp:TemplateField ItemStyle-Width="100px" HeaderText="Behavior Count">                    
+           <asp:TemplateField ItemStyle-Width="100px" HeaderText="Behavior Count" SortExpression="BehaviorCount">                    
                 <ItemTemplate>                    
-                    <asp:HyperLink runat="server" ID="lnkBehaviorEdit" CssClass="ui-dialog-link gv-edit-link-inline" data-args="650, 800, true, null, 1" Text='<%#Bind("BehaviorCount")%>' ToolTip="Edit Behaviors" NavigateUrl='<%# Bind("ExhibitID","~/admin/exhibits/behaviors.aspx?exId={0}") %>'></asp:HyperLink>                
+                    <asp:HyperLink runat="server" ID="lnkBehaviorEdit" CssClass="ui-dialog-link" data-args="750, 800, true, null, 1" Text='<%#Bind("BehaviorCount")%>' ToolTip="Edit Behaviors" NavigateUrl='<%# Bind("ExhibitID","~/admin/exhibits/behaviors.aspx?exId={0}") %>'></asp:HyperLink>                
                 </ItemTemplate> 
             </asp:TemplateField>                
 
-            <asp:TemplateField ItemStyle-Width="100px" HeaderText="Location Count">                    
+            <asp:TemplateField ItemStyle-Width="100px" HeaderText="Location Count" SortExpression="LocationCount">                    
                 <ItemTemplate>                    
-                    <asp:HyperLink runat="server" ID="lnkLocationEdit" CssClass="ui-dialog-link gv-edit-link-inline" data-args="650, 800, true, null, 1" Text='<%#Bind("LocationCount") %>' ToolTip="Edit Locations" NavigateUrl='<%# Bind("ExhibitID","~/admin/exhibits/locations.aspx?exId={0}") %>'></asp:HyperLink>                
+                    <asp:HyperLink runat="server" ID="lnkLocationEdit" CssClass="ui-dialog-link" data-args="750, 800, true, null, 1" Text='<%#Bind("LocationCount") %>' ToolTip="Edit Locations" NavigateUrl='<%# Bind("ExhibitID","~/admin/exhibits/locations.aspx?exId={0}") %>'></asp:HyperLink>                
                 </ItemTemplate> 
             </asp:TemplateField> 
 
@@ -58,7 +58,7 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="250, 700, true, null, 1" Text="Edit" ToolTip="Edit this item" NavigateUrl='<%# Bind("ExhibitID","~/admin/exhibits/edit-exhibit.aspx?exId={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="225, 300, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("ExhibitID","~/admin/exhibits/edit-exhibit.aspx?exId={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>

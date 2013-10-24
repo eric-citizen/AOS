@@ -70,7 +70,7 @@
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="500, 700, true, null, 1" Text="Edit" ToolTip="Edit Animal" NavigateUrl='<%# Bind("AnimalID","~/admin/animals/edit-animal.aspx?animalId={0}") %>'></asp:HyperLink>
+                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="600, 700, true, null, 1" Text="" ToolTip="Edit Animal" NavigateUrl='<%# Bind("AnimalID","~/admin/animals/edit-animal.aspx?animalId={0}") %>'></asp:HyperLink>
                         </ItemTemplate> 
                         <ItemStyle Width="60px" CssClass="tac" />               
                     </asp:TemplateField>
@@ -79,7 +79,7 @@
                         <ItemTemplate>
                             <uc1:GridConfirmControl runat="server" ID="GridConfirmControl" CommandArgument='<%#Bind("AnimalID") %>' CommandName="DeleteAnimal" />
                         </ItemTemplate>                
-                        <ItemStyle Width="60px" CssClass="tac" />
+<%--                        <ItemStyle Width="60px" CssClass="tac" />--%>
                     </asp:TemplateField>
                 </Columns>
         

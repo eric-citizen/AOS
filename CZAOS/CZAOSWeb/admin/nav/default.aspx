@@ -36,7 +36,7 @@
             </asp:BoundField> 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="400, 500, true, null, 1" Text="Edit" ToolTip="Edit Condition" NavigateUrl='<%# Bind("ID","~/admin/nav/edit-nav.aspx?navId={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="325, 400, true, null, 1" Text="" ToolTip="Edit Condition" NavigateUrl='<%# Bind("ID","~/admin/nav/edit-nav.aspx?navId={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>

@@ -29,6 +29,12 @@ namespace CZBizObjects
         {
             this.AddRange(GetItemCollection());
         }
+
+        public void LoadActive()
+        {
+            this.AddRange(GetItemCollection(0, 0, "", "Active = 1"));
+        }
+
 		#endregion
 
 		#region ADMIN METHODS

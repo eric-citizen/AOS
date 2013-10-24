@@ -5,7 +5,7 @@
     <asp:HiddenField runat="server" ID="hdnUserID" />
 
     <!-- jquery tabs ui //-->
-    <div id="tabs" class="no-tab-persist" style="width: 740px; margin: 0 auto;">
+    <div id="tabs" class="no-tab-persist" style="width: 740px; margin: 0 0;">
 
         <ul>
             <li><asp:HyperLink runat="server" ID="lnkAdmin" NavigateUrl="#tab1">Profile</asp:HyperLink></li>
