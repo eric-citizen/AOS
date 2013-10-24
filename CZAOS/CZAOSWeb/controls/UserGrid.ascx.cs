@@ -20,8 +20,9 @@ namespace CZAOSWeb.controls
             DisplayName,
             Email,
             UserType,
-            Expiration,
+            //Expiration,
             Unlock,
+            //LastActivityDate,
             SendPassword,            
             DeleteUser      
         }

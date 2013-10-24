@@ -15,6 +15,12 @@ namespace CZBizObjects.Repository
             return records;
         }
 
+        public IEnumerable<ExhibitBehavior> GetAll(int id)
+        {
+            List<ExhibitBehavior> records = ExhibitBehaviorList.GetActive().Where(x => x.ExhibitID == id).ToList();
+            return records;
+        }
+
         public ExhibitBehavior Get(int id)
         {
             return ExhibitBehaviorList.Get(id);

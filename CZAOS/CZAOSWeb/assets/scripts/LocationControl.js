@@ -1,40 +1,25 @@
 ﻿(function (app) {
-    var apiURL = "/api/exhibitlocation";
+    var apiURL = "exhibitlocation",
+        exhibitID = 0;
     app.LocationControl = ko.observable({});
+    app.LocationControl().SelectedLocation = ko.observable({});
 
-    var configure = function () {
+    var configure = function (id) {
+        exhibitID = id;
         load();
     };
 
     var load = function () {
-        app.ApiHelper.GetAll(apiURL).done(function (data) {
-            //need to stringify data before ko.mapping will work
+        app.get(apiURL, { exhibitId: exhibitID }).done(function (data) {
+            //get the locations that aren't masked for professionals
+            data = _.filter(data, function (category) {
+                return !category.MaskProf;
+            });
             data = JSON.stringify(data);
-            app.LocationControl().Locations = ko.mapping.fromJSON(data);
+            app.LocationControl().SelectableLocations = ko.mapping.fromJSON(data);
             ko.applyBindings(app.LocationControl, $('#location-knockout-scope')[0]);
         });
     };
-    
-    var createNew = function () {
 
-    };
-
-    var edit = function (location, event) {
-        event.preventDefault();
-        CZAOSUIDialogs.ShowDialogFromArgs($(event.target));
-    };
-
-    var display = function (location) {
-        //check to make sure SelectedExhibit exists, then check to make sure it has an ExhibitID
-        if (app.ExhibitControl().SelectedExhibit && app.ExhibitControl().SelectedExhibit() && app.ExhibitControl().SelectedExhibit().ExhibitID) {
-            return location.ExhibitID() == app.ExhibitControl().SelectedExhibit().ExhibitID();
-        } else {
-            return false;
-        }
-    };
-
-    app.LocationControl().Display = display;
     app.LocationControl().Configure = configure;
-    app.LocationControl().CreateNew = createNew;
-    app.LocationControl().Edit = edit;
-})(window.App);
+})(window.AOS);
