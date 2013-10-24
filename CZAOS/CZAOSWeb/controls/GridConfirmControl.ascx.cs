@@ -65,11 +65,11 @@ namespace CZAOSWeb.controls
         //    set { imgConfirm.ImageUrl = value; }
         //}
 
-        public string ToolTip
-        {
-            get { return hyperValue.ToolTip; }
-            set { hyperValue.ToolTip = value; }
-        }
+        //public string ToolTip
+        //{
+        //    get { return hyperValue.ToolTip; }
+        //    set { hyperValue.ToolTip = value; }
+        //}
 
         //=======================================================
         //Service provided by Telerik (www.telerik.com)
@@ -82,11 +82,22 @@ namespace CZAOSWeb.controls
         protected void Page_Load(object sender, EventArgs e)
         {
             lnkDelete.CommandArgument = this.CommandArgument;
+            
         }
 
         protected void lnkDelete_Click(object sender, EventArgs e)
         {
             OnDelete(lnkDelete.CommandArgument);
         }
+
+        //protected void deleteClick(object sender, EventArgs e)
+        //{
+        //    if (delRowItem.CssClass == "hideDelete")
+        //        delRowItem.CssClass = "showDelete";
+        //    else
+        //    {
+        //        delRowItem.CssClass = "hideDelete";
+        //    }
+        //}
     }
 }

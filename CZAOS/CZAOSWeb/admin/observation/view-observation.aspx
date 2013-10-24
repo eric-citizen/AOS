@@ -171,11 +171,11 @@
             <h2>Observation Details</h2>
             <div style="padding-left: 15px">
                 <asp:Literal runat="server" ID="litFoot" />
-                <span class="print"><a href="javascript:void(0)" onclick="window.print();" class="print-link">Print</a></span>
+                <span class="print"><a href="javascript:void(0)" onclick="window.print();" class="print-link"></a></span>
                 <div class="vr"></div>
-                <asp:ImageButton runat="server" ID="btnFootDelete" ImageUrl="~/assets/images/icons/admin/delete.png" OnClick="btnHeadDelete_Click" CssClass="delete" Text="Delete"></asp:ImageButton>
-                <span class="records"><asp:HyperLink runat="server" ID="lnkFootRecords" CssClass="gv-edit-link" Text="View Records" ToolTip="View Observation Records"></asp:HyperLink></span>
-                <span class="edit"><asp:HyperLink runat="server" ID="lnkFootEdit" CssClass="gv-edit-link" Text="Edit" ToolTip="Edit this item"></asp:HyperLink></span>
+                <asp:ImageButton runat="server" ID="btnFootDelete" ImageUrl="~/assets/images/icons/admin/delete.png" OnClick="btnHeadDelete_Click" CssClass="delete" Text=""></asp:ImageButton>
+                <span class="records"><asp:HyperLink runat="server" ID="lnkFootRecords" CssClass="gv-edit-link" Text="" ToolTip="View Observation Records"></asp:HyperLink></span>
+                <span class="edit"><asp:HyperLink runat="server" ID="lnkFootEdit" CssClass="gv-edit-link" Text="" ToolTip="Edit this item"></asp:HyperLink></span>
             </div>
         </div>
         

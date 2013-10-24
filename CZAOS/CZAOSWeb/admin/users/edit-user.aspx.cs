@@ -38,6 +38,9 @@ namespace CZAOSWeb.admin.users
 
             this.LoadRoles();
             this.LoadUserTypes();
+
+            if (UserID.Length > 0)
+                txtUsername.ReadOnly = true;
         }
 
         protected void Page_Load(object sender, EventArgs e)

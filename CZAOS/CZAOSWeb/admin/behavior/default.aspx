@@ -42,7 +42,7 @@
 
             <asp:TemplateField ItemStyle-Width="100px" HeaderText="Behavior Count">                    
                 <ItemTemplate>                    
-                    <asp:HyperLink runat="server" ID="lnkBehaviorEdit" CssClass="ui-dialog-link gv-edit-link-inline" data-args="700, 650, true, null, 1" Text='<%#Bind("BehaviorCount") %>' ToolTip="Edit this category's behaviors" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/behaviors.aspx?bcatId={0}") %>'></asp:HyperLink>                
+                    <asp:HyperLink runat="server" ID="lnkBehaviorEdit" CssClass="ui-dialog-link" data-args="775, 650, true, null, 1" Text='<%#Bind("BehaviorCount") %>' ToolTip="Edit this category's behaviors" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/behaviors.aspx?bcatId={0}") %>'></asp:HyperLink>                
                 </ItemTemplate> 
             </asp:TemplateField>
 
@@ -54,7 +54,7 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="700, 650, true, null, 1" Text="Edit" ToolTip="Edit this item" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/edit-behavior-category.aspx?bcatId={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="400, 400, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/edit-behavior-category.aspx?bcatId={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>

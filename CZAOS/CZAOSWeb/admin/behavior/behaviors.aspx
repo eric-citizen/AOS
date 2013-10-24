@@ -33,7 +33,7 @@
         AscendingImageUrl="~/images/down.png" DescendingImageUrl="~/images/up.png" GridViewID="gvBCat" TransparentImageUrl="~/images/transparent.png" />
 
     <asp:GridView ID="gvBCat" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="gridview"
-        PageSize="20" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false" 
+        PageSize="10" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false" 
         DataKeyNames="BehaviorID" OnRowDataBound="gvBCat_RowDataBound" OnRowCommand="gvBCat_RowCommand">
         <Columns>
 
@@ -52,7 +52,7 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="400, 500, true, null, 1" Text="Edit" ToolTip="Edit this item" ></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="400, 500, true, null, 1" Text="" ToolTip="Edit this item" ></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>

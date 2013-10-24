@@ -68,10 +68,8 @@ namespace CZAOSWeb.teacher.observation
                     var strDetail = obs.ObserveStart.ToShortDateString() + " // " + obs.ObservationID + " // " + obs.ObservationTypeName + " // " + obs.Exhibit;
                     litHead.Text = strDetail;
                     litFoot.Text = strDetail;
-                    lnkHeadEdit.NavigateUrl = String.Format("~/admin/observation/edit-observation.aspx?observationId={0}", obs.ObservationID);
-                    lnkFootEdit.NavigateUrl = String.Format("~/admin/observation/edit-observation.aspx?observationId={0}", obs.ObservationID);
-                    lnkHeadRecords.NavigateUrl = String.Format("~/admin/observation/view-observation-records.aspx?observationId={0}", obs.ObservationID);
-                    lnkFootRecords.NavigateUrl = String.Format("~/admin/observation/view-observation-records.aspx?observationId={0}", obs.ObservationID);
+                    lnkHeadRecords.NavigateUrl = String.Format("~/teacher/view-observation-records.aspx?observationId={0}", obs.ObservationID);
+                    lnkFootRecords.NavigateUrl = String.Format("~/teacher/view-observation-records.aspx?observationId={0}", obs.ObservationID);
 
                     fieldsetLegend.Text = obs.ObservationTypeName;
                     litDate.Text = obs.ObserveStart.ToShortDateString();

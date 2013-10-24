@@ -38,8 +38,8 @@
 
                         <label>School</label><br />
                         <asp:DropDownList id="SchoolListRec" AutoPostBack="false" Enabled="false" runat="server"/><br /><br />
-                        <asp:Button id="searchRec" Text="Search" runat="server" OnClick="searchRec_Click" />
-                        <asp:Button id="clearRec" Text="Clear Search" runat="server" OnClick="clearRec_Click"/>
+                        <asp:Button id="searchRec" CssClass="button" Text="Search" runat="server" OnClick="searchRec_Click" />
+                        <asp:Button id="clearRec" CssClass="button" Text="Clear Search" runat="server" OnClick="clearRec_Click"/>
                     </div>
 
                 </div>
@@ -110,8 +110,8 @@
             <mack:MessageDiv runat="server" ID="MessageDiv1" ListControlID="gvObsRec" Text="No records found!"></mack:MessageDiv>
         </div>
         <div id="UpcomingObservations">
-            <div class="filter" onClick="$('#filterUp').toggle();">
-                <h2>Filter Sessions</h2>
+            <div class="filter">
+                <h2 onClick="$('#filterUp').toggle();">Filter Sessions</h2>
                 <div id="filterUp">              
                     <div id="AnimalDateUp" class="obsSectionInnerLeft">
                         <label>Animal</label><br />
@@ -133,12 +133,12 @@
                             Text="Search Student Observations" /><br /><br />
 
                         <label>District</label><br />
-                        <asp:DropDownList id="DistrictListUp" AutoPostBack="true" OnSelectedIndexChanged="districtChange" runat="server"/><br /><br />
+                        <asp:DropDownList id="DistrictListUp" AutoPostBack="true" OnSelectedIndexChanged="districtChange" runat="server" Enabled="false"/><br /><br />
 
                         <label>School</label><br />
-                        <asp:DropDownList id="SchoolListUp" AutoPostBack="false" runat="server"/><br /><br />
-                        <asp:Button id="SearchUp" Text="Search" runat="server" OnClick="searchUp_Click" PostBackUrl="~/admin/observation/default.aspx#UpcomingObservations"/>
-                        <asp:Button id="clearUp" Text="Clear Search" runat="server" OnClick="clearUp_Click"/>
+                        <asp:DropDownList id="SchoolListUp" AutoPostBack="false" runat="server" Enabled="false"/><br /><br />
+                        <asp:Button id="SearchUp" CssClass="button" Text="Search" runat="server" OnClick="searchUp_Click" PostBackUrl="~/admin/observation/default.aspx#UpcomingObservations"/>
+                        <asp:Button id="clearUp" CssClass="button" Text="Clear Search" runat="server" OnClick="clearUp_Click"/>
 
                     </div>
                 </div>
@@ -146,7 +146,7 @@
             <hr />
             <h2>Upcoming Observations</h2>
             <hr />
-            <a class="add-link ui-dialog-link" data-args="650, 650, true, null, 1" href="/admin/observation/edit-observation.aspx">Add New Observation</a>
+            <a class="add-link" href="/admin/observation/edit-observation.aspx">Add New Observation</a>
 
             <asp:ObjectDataSource ID="cztDataSourceUpcoming" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting_Upcoming"
                 SelectMethod="GetItemCollection" TypeName="CZBizObjects.ObservationList"

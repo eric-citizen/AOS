@@ -108,7 +108,7 @@ namespace CZBizObjects
             UserList activeAdmins = new UserList();
             List<string> userIds = new List<string>();
 
-            activeAdmins.Load();
+            activeAdmins.LoadActive();
 
             foreach (CZDataObjects.CZUser admin in activeAdmins)
             {
@@ -158,10 +158,10 @@ namespace CZBizObjects
                     {
                         admin = Membership.GetUser(user);
 
-                        //if (userIds.Contains(admin.ProviderUserKey.ToString()))
-                        //{
+                        if (admin.IsApproved == true)
+                        {
                             list.Add(admin);
-                        //}
+                        }
 
                     }
                     else
@@ -170,10 +170,10 @@ namespace CZBizObjects
                         {
                             admin = Membership.GetUser(user);
 
-                            //if (userIds.Contains(admin.ProviderUserKey.ToString()))
-                            //{
+                            if (admin.IsApproved == true)
+                            {
                                 list.Add(admin);
-                            //}
+                            }
 
                         }
 

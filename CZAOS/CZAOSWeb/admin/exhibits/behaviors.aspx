@@ -8,11 +8,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
     <mack:HiddenID runat="server" ID="hdnExhibitID" ClientIDMode="Static" />
-    <a class="add-link ui-dialog-link" href="/admin/exhibits/edit-exhibit-behavior.aspx?exId=<%= this.ExhibitID %>" data-args="250, 600, true, null, 1" title="Add New Exhibit Behavior">Add New Exhibit Behavior</a>        
 
     <div>
-        <b>Exhibit:</b><asp:Literal runat="server" ID="litExhibitName"></asp:Literal>
+        <h2>Exhibit:&nbsp;<asp:Literal runat="server" ID="litExhibitName"></asp:Literal></h2>
     </div>
+    <a class="add-link ui-dialog-link" href="/admin/exhibits/edit-exhibit-behavior.aspx?exId=<%= this.ExhibitID %>" data-args="275, 300, true, null, 1" title="Add New Exhibit Behavior">Add New Exhibit Behavior</a>        
 
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
@@ -32,7 +32,7 @@
         AscendingImageUrl="~/images/down.png" DescendingImageUrl="~/images/up.png" GridViewID="gvExhibitBehaviors" TransparentImageUrl="~/images/transparent.png" />
 
     <asp:GridView ID="gvExhibitBehaviors" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="gridview"
-        PageSize="20" AutoGenerateColumns="False" Width="100%" OnRowDataBound="gvExhibitBehaviors_RowDataBound" OnRowCommand="gvExhibitBehaviors_RowCommand"
+        PageSize="10" AutoGenerateColumns="False" Width="100%" OnRowDataBound="gvExhibitBehaviors_RowDataBound" OnRowCommand="gvExhibitBehaviors_RowCommand"
         DataKeyNames="ExhibitBehaviorID" PagerSettings-Visible="false" >
         <Columns>
             

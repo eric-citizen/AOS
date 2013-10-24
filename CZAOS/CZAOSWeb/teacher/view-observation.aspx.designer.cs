@@ -40,15 +40,6 @@ namespace CZAOSWeb.teacher.observation {
         protected global::System.Web.UI.WebControls.Literal litHead;
         
         /// <summary>
-        /// lnkHeadEdit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkHeadEdit;
-        
-        /// <summary>
         /// lnkHeadRecords control.
         /// </summary>
         /// <remarks>
@@ -56,15 +47,6 @@ namespace CZAOSWeb.teacher.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkHeadRecords;
-        
-        /// <summary>
-        /// btnHeadDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnHeadDelete;
         
         /// <summary>
         /// litObsCount control.
@@ -283,15 +265,6 @@ namespace CZAOSWeb.teacher.observation {
         protected global::System.Web.UI.WebControls.Literal litFoot;
         
         /// <summary>
-        /// lnkFootEdit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkFootEdit;
-        
-        /// <summary>
         /// lnkFootRecords control.
         /// </summary>
         /// <remarks>
@@ -299,14 +272,5 @@ namespace CZAOSWeb.teacher.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkFootRecords;
-        
-        /// <summary>
-        /// btnFootDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnFootDelete;
     }
 }
