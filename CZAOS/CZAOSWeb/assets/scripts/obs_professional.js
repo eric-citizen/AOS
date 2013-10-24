@@ -55,6 +55,7 @@
                     $('#step1').fadeOut(0);
 
                     exhibitID = observation.ExhibitID;
+                    timerInterval = observation.Interval;
                     console.log(observation);
                 });
             }
@@ -101,6 +102,7 @@ var exhibitID = 0;
 var obsWeather;
 var username = 'none';
 var paused = true;
+var timerInterval = 0;
 var observationRecords = new Locus("observationRecords");
 observationRecords.clear();
 observationRecords.data.records = [];
@@ -176,6 +178,7 @@ function startTime(time) {
     var count = 0;
     var interval = setInterval(function() {
         if (!paused) {
+            displayTime(count);
             $(".timebar").css('width', ((count / time) * 100) + '%');
             count++;
             if (count == time) {
@@ -193,6 +196,11 @@ function startTime(time) {
     }, 1000);
 }
 
+function displayTime(count) {
+    var minutes = Math.floor(count / 60);
+    $('.time').html(minutes + ':'+ (count % 60) +'/' + timerInterval + ':' + '00');
+}
+
 function startObservation() {
     //check to make sure weather and crowd have been selected
     if (!obsWeather.weatherID || !obsWeather.CrowdID) {
@@ -201,10 +209,11 @@ function startObservation() {
         window.AOS.AnimalControl().Configure(observationID);
         window.AOS.LocationControl().Configure(exhibitID);
         window.AOS.BehaviorCategoryControl().Configure(exhibitID).done(function () {
+            //show appropriate objects and start the timer
             $('#enviromentPanel').fadeOut(0);
             $('#observationPanel').fadeIn(0);
             $('#button-container').fadeIn(0);
-            startTime(10);
+            startTime(timerInterval);
         });
         //window.AOS.BehaviorControl().Configure(exhibitID);
 
