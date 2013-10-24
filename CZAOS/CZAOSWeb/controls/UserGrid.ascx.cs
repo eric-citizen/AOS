@@ -50,7 +50,11 @@ namespace CZAOSWeb.controls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            MainBase page = this.Page as MainBase;
+            if (!page.IsMasterAdmin)
+            {
+                userGridView.Columns[userGridView.Columns.Count - 1].Visible = false; //hide delete column from all but master admins
+            }
         }
 
        

@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
-    <a class="add-link ui-dialog-link" href="/admin/animals/edit-animal.aspx" data-args="500, 700, true, null, 1" title="Add New Animal">Add New Animal</a>
+<%--    <a class="add-link ui-dialog-link" href="/admin/animals/edit-animal.aspx" data-args="500, 700, true, null, 1" title="Add New Animal">Add New Animal</a>--%>
 
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
@@ -68,7 +68,7 @@
                         </ItemTemplate> 
                     </asp:TemplateField>
 
-                    <asp:TemplateField>
+<%--                    <asp:TemplateField>
                         <ItemTemplate>
                             <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="600, 700, true, null, 1" Text="" ToolTip="Edit Animal" NavigateUrl='<%# Bind("AnimalID","~/admin/animals/edit-animal.aspx?animalId={0}") %>'></asp:HyperLink>
                         </ItemTemplate> 
@@ -79,8 +79,8 @@
                         <ItemTemplate>
                             <uc1:GridConfirmControl runat="server" ID="GridConfirmControl" CommandArgument='<%#Bind("AnimalID") %>' CommandName="DeleteAnimal" />
                         </ItemTemplate>                
-<%--                        <ItemStyle Width="60px" CssClass="tac" />--%>
-                    </asp:TemplateField>
+<%--                        <ItemStyle Width="60px" CssClass="tac" />
+                    </asp:TemplateField>--%>
                 </Columns>
         
             </asp:GridView>

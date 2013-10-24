@@ -41,9 +41,9 @@
 
                     <asp:TemplateField HeaderText="Flagged">
                         <ItemTemplate>
-                            <span class="not-flagged flaggable"><asp:LinkButton runat="server" ID="btnFlag" SortExpression="Flagged" HeaderText="Flagged" CausesValidation="false" 
+                            <span class="flaggable"><asp:LinkButton runat="server" ID="btnFlag" SortExpression="Flagged" HeaderText="Flagged" CausesValidation="false" 
                                 CommandArgument='<%#Bind("ObservationRecordID") %>' CommandName="FlagRecord" ToolTip="Flag Record" 
-                                Text='<%#Bind("Flagged") %>' ></asp:LinkButton></span>
+                                Text='<%#Bind("Flagged") %>'></asp:LinkButton></span>
                         </ItemTemplate>
                         <ItemStyle Width="30px" />
                     </asp:TemplateField>
@@ -73,12 +73,12 @@
 
     <script>
         $(function () {
-            if ($(".flaggable a").InnerHtml == 'false')
-                $(".flaggable").removeClass('flagged').addClass('not-flagged');
-
-            if ($(".flaggable a").InnerHtml == 'true')
-                $(".flaggable").removeClass('not-flagged').addClass('flagged');
-
+            $.each($(".flaggable"), function (i , obj) {
+                if ($(this).text() == "True")
+                    $(this).addClass('flagged');
+                else
+                    $(this).addClass('not-flagged');
+            });
         });
     </script>
 </asp:Content>

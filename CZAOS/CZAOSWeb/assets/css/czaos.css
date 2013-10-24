@@ -123,33 +123,25 @@ select{
     width: 30px;
     height: 30px;
 }
+.flaggable {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+.flaggable a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-indent:-999em;
+	color: #fff;
+}
 .flagged {
     background: url('../images/icons/admin/flagged.png') center left no-repeat;
     background-size: 30px 30px;
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    margin-left: 5px;
-}
-.flagged a {
-    display: inline-block;
-    overflow: hidden;
-    width: 30px;
-    height: 30px;
 }
 .not-flagged {
     background: url('../images/icons/admin/unflagged.png') center left no-repeat;
     background-size: 30px 30px;
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    margin-left: 5px;
-}
-.not-flagged a {
-    display: inline-block;
-    overflow: hidden;
-    width: 30px;
-    height: 30px;
 }
 .delete {
     background: url('../images/icons/admin/delete.png') center left no-repeat;
@@ -306,10 +298,22 @@ tr.hilite-row:nth-child(even) td{
 {
     text-indent:-999em;
     display:inline-block;
-    width:16px;
-	background-image: url(/images/send-password-icon.png); 
+    width:30px;
+	background-image: url(../images/icons/admin/send-pass.png); 
 	background-repeat: no-repeat;
 	background-position: left center; 
+    background-size: 30px 30px;
+	color: #fff;
+}
+.unlock-user
+{
+    text-indent:-999em;
+    display:inline-block;
+    width:30px;
+	background-image: url(../images/icons/admin/unlock-user.png); 
+	background-repeat: no-repeat;
+	background-position: left center; 
+    background-size: 30px 30px;
 	color: #fff;
 }
 #app-title {
