@@ -21,6 +21,23 @@
         });
     };
 
+    var addAllFromGroup = function (group) {
+        var animalIds = _.map(group.Animals, function(animal) {
+            return animal.ZooID;
+        });
+        var idsToAdd = _.difference(animalIds, app.AnimalControl().SelectedAnimals());
+        _.each(idsToAdd, function(animalId) {
+            app.AnimalControl().SelectedAnimals.push(animalId);
+        });
+    };
+
+    var removeAllFromGroup = function (group) {
+        var animalIds = _.map(group.Animals, function (animal) {
+            return animal.ZooID;
+        });
+        app.AnimalControl().SelectedAnimals.removeAll(animalIds);
+    };
+
     var addRecordToGroup = function (record) {
         //if no groups yet, then create one
         if (app.AnimalControl().AnimalGroups().length == 0) {
@@ -51,4 +68,6 @@
     };
 
     app.AnimalControl().Configure = configure;
+    app.AnimalControl().AddAllFromGroup = addAllFromGroup;
+    app.AnimalControl().RemoveAllFromGroup = removeAllFromGroup;
 })(window.AOS);

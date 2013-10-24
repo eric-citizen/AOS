@@ -26,6 +26,9 @@
         <script src="assets/scripts/Observation.FrontEnd.Common.js"> </script>
         <script src="assets/scripts/obs_professional.js"> </script>
         <script src="assets/scripts/AnimalGroupControl.js"> </script>
+        <script src="assets/scripts/LocationControl.js"> </script>
+        <script src="assets/scripts/BehaviorCategoryControl.js"> </script>
+        <script src="assets/scripts/BehaviorControl.js"> </script>
 
     </head>
     <body>
@@ -78,7 +81,7 @@
                                         </label>
                                     </li>
                                 </ul>
-                                <div class="button">All</div><div class="button">None</div>
+                                <div class="button" data-bind="click: $root.AddAllFromGroup">All</div><div class="button" data-bind="click: $root.RemoveAllFromGroup">None</div>
                             </div>
                         </div>
                     </div>
@@ -87,22 +90,34 @@
 
                         <h2>Behavior Category</h2>
                         <!--Drop down list of Selectable Behavior Categories-->
-                        <select></select>
+                        <div id="behavior-category-knockout-scope">
+                            <select data-bind="options: SelectableCategories, optionsText: 'BvrCat', value: SelectedCategory"></select>
+                        </div>
+                        
                         <h2>Behavior</h2>
                         <!--Drop down list of Selectable Behaviors-->
-                        <select></select>
+                        <div id="behavior-knockout-scope">
+                            <select data-bind="options: SelectableBehaviors, optionsText: 'Behavior', value: SelectedBehavior"></select>
+                        </div>
 
                         <h2>Zone</h2>
                         <!--Drop down list of Selectable Zones-->
-                        <select></select>
+                        <div id="location-knockout-scope">
+                            <select data-bind="options: SelectableLocations, optionsText: 'Location', value: SelectedLocation"></select>
+                        </div>
+                        
                         
                         <div id="button-container" class="clearfix" style="display: none">
-                            <div style="float: left">
+                            
+                            <input type="button" style="text-align: center" id="saveRecord" class="button" value="Save Record"/>
+                            <!--<div style="text-align: center"><span>Click to Finish Observation</span></div>-->
+                            <input type="button" style="text-align: center" id="gotoFinalizationPage" class="button" value="Finish Observation"/>
+<!--                            <div style="float: left">
                                 <div id='saveRecord' class="button">Save Record</div>
-                            </div>
-                            <div style="float: right">
+                            </div>-->
+<!--                            <div style="float: right">
                                 <div id='gotoFinalizationPage' class="button" onclick=" finishObservation() ">Finalize Observation</div>
-                            </div>
+                            </div>-->
                             
                         </div>
 
@@ -162,8 +177,9 @@
         
             <div id="finalizePanel" style="display: none">
                 <div class="logo">The Animal<br>Observation System</div>
-                <div style="text-align: center"><span>Click to Finalize Observation</span></div>
-                <div style="text-align: center" id="finalizeObservation" class="button">Finalize</div>
+                <input type="button" style="text-align: center" id="backToObservation" class="button" value="Back To Observation"/>
+                <!--<div style="text-align: center"><span>Click to Finish Observation</span></div>-->
+                <input type="button" style="text-align: center" id="finalizeObservation" class="button" value="Finalize"/>
             </div>
         </div>
     

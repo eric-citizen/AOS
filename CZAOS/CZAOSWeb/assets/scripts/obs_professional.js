@@ -1,4 +1,19 @@
-﻿$(function() {
+﻿$(function () {
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "positionClass": "toast-top-right",
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "3000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+    
     //initialize obs_student
     SimpleTemplate.loadTemplates();
 
@@ -18,12 +33,12 @@
             type: 'GET',
             data: $.toJSON(params),
             contentType: 'application/json; charset=utf-8',
-            statusCode: { 
+            statusCode: {
                 404: function(data) {
                     alert('Could not find the observation.');
                 }
             }
-        }).done(function (data) {
+        }).done(function(data) {
             //check if the user is set up for this observation
             if (userCanAccessObservation(data)) {
                 //if yes make all api calls
@@ -35,12 +50,12 @@
                     getObservationData();
 
                     //transition to next step
-                    $('body').addClass(data.Exhibit);
+                    $('body').addClass(observation.Exhibit);
                     $('#step2').fadeIn(0);
                     $('#step1').fadeOut(0);
 
-                    exhibitID = data.ExhibitID;
-                    console.log(data);
+                    exhibitID = observation.ExhibitID;
+                    console.log(observation);
                 });
             }
         });
@@ -85,6 +100,7 @@ var observationID = 0;
 var exhibitID = 0;
 var obsWeather;
 var username = 'none';
+var paused = true;
 var observationRecords = new Locus("observationRecords");
 observationRecords.clear();
 observationRecords.data.records = [];
@@ -108,7 +124,7 @@ function gotoObservationDetails() {
 
 function populateObservationInfo(observation) {
     //make get requests to get appropriate data
-    window.AOS.get('animalobservation', { observationId: observationID }).done(function (data) {
+    window.AOS.get('animalobservation', { observationId: observationID }).done(function(data) {
         //display all of the animals CommmonName or house name?
         for (var i in data) {
             $('#animal-list').append('<div>' + data[i].CommonName + '</div>');
@@ -117,7 +133,7 @@ function populateObservationInfo(observation) {
     });
 
     //set fields from observation object
-    window.AOS.get('exhibit/' + observation.ExhibitID, {}).done(function (data) {
+    window.AOS.get('exhibit/' + observation.ExhibitID, {}).done(function(data) {
         //display AnimalRegion or RegionName?
         $('#region').html(data.RegionName);
         $('#exhibit').html(data.Exhibit);
@@ -144,7 +160,8 @@ function getObservationData() {
 }
 
 function gotoWeather() {
-    $('#loginPanel').fadeOut(0);
+    $('#step2').fadeOut(0);
+    $('#observationInfo').fadeOut(0);
     $('#enviromentData').fadeIn(0);
 
     $("#saveWeather").click(function() {
@@ -155,15 +172,23 @@ function gotoWeather() {
 }
 
 function startTime(time) {
+    paused = false;
     var count = 0;
-
     var interval = setInterval(function() {
-        $(".timebar").css('width', ((count / time) * 100) + '%');
-        count++;
-        if (count == time) {
-            cantakerecord = true;
-            clearInterval(interval);
-            startTime(time);
+        if (!paused) {
+            $(".timebar").css('width', ((count / time) * 100) + '%');
+            count++;
+            if (count == time) {
+                if (hasTakenRecord) {
+                    _.each(recordsToBeSaved, function(record) {
+                        observationRecords.data.records.push(record);
+                    });
+                    observationRecords.saveToLocal();
+                }
+                hasTakenRecord = false;
+                clearInterval(interval);
+                startTime(time);
+            }
         }
     }, 1000);
 }
@@ -174,41 +199,101 @@ function startObservation() {
         alert('Please select an option for both weather and crowd');
     } else {
         window.AOS.AnimalControl().Configure(observationID);
-        $('#enviromentPanel').fadeOut(0);
-        $('#observationPanel').fadeIn(0);
-        $('#button-container').fadeIn(0);
+        window.AOS.LocationControl().Configure(exhibitID);
+        window.AOS.BehaviorCategoryControl().Configure(exhibitID).done(function () {
+            $('#enviromentPanel').fadeOut(0);
+            $('#observationPanel').fadeIn(0);
+            $('#button-container').fadeIn(0);
+            startTime(10);
+        });
+        //window.AOS.BehaviorControl().Configure(exhibitID);
+
         $(window).trigger('resize');
 
-        $("#saveRecord").click(function() {
-            if (cantakerecord) {
-                observationRecords.data.records.push(new record({ ZooID: $("#observationAnimals").val(), LocationID: $("#zoneControl").val(), BvrCat: $("#behaviorControl li.selected").attr('data-category'), BvrCatCode: $("#behaviorControl li.selected").attr('name') }));
-                console.log(observationRecords.data.records);
-                observationRecords.saveToLocal();
+        $("#saveRecord").click(function () {
+            var aos = window.AOS;
+            updateRecordsToBeSaved({
+                LocationID: aos.LocationControl().SelectedLocation().LocationID(),
+                BvrCat: aos.BehaviorCategoryControl().SelectedCategory().BvrCat(),
+                BvrCatCode: aos.BehaviorCategoryControl().SelectedCategory().BvrCatCode(),
+                Behavior: aos.BehaviorControl().SelectedBehavior().Behavior(),
+                BehaviorCode: aos.BehaviorControl().SelectedBehavior().BehaviorCode()
+            });
+            if (!hasTakenRecord) {
+                toastr.success("Your observation has been saved", "Record Saved");
+                hasTakenRecord = true;
+            } else {
+                toastr.success("Your observation was updated successfully", "Record Updated");
             }
-            cantakerecord = false;
         });
 
-        startTime(10);
+        //startTime(10);
     }
 }
 
-function saveObservationRecord() {
-    //populate appropriate fields of record and save to local storage
+function updateRecordsToBeSaved(params) {
+    //clear current items in array
+    recordsToBeSaved = [];
+    //add record to recordsToBeSaved foreach animal selected
+    _.each(window.AOS.AnimalControl().SelectedAnimals(), function (animal) {
+        recordsToBeSaved.push(
+        new record(
+            {
+                ZooID: animal.ZooID,
+                LocationID: params.LocationID,
+                BvrCat: params.BvrCat,
+                BvrCatCode: params.BvrCatCode,
+                Behavior: params.Behavior,
+                BehaviorCode: params.BehaviorCode
+            }));
+    });
+    console.log(recordsToBeSaved);
 }
 
 function finishObservation() {
+    paused = true;
     $('#observationPanel').fadeOut(0);
     $('#finalizePanel').fadeIn(0);
     $(window).trigger('resize');
+    $('#backToObservation').click(function () {
+        $('#observationPanel').fadeIn(0);
+        $('#finalizePanel').fadeOut(0);
+        paused = false;
+        $('#finalizeObservation').unbind('click');
+        $('#backToObservation').unbind('click');
+    });
 
     //set up listeners for finish observation button
-    $('#finalizeObservation').click(function() {
-        //attempt to send all records from local storage to the server
-        observationRecords.loadFromLocal();
-        var records = observationRecords.data.records;
-        //if success show finished page
-        czaos_post('observationrecord', records, {});
-        //if failure attempt to resend
+    $('#finalizeObservation').click(function () {
+        handleSave();
+    });
+}
+
+function handleSave() {
+    var $errorToast, $infoToast;
+    //disable buttons
+    $('#finalizeObservation').attr("disabled", "disabled");
+    $('#finalizeObservation').toggleClass("disabled");
+
+    if ($errorToast) {
+        toastr.clear($errorToast);
+    }
+    $infoToast = toastr.info("Your observation is being saved", "Please wait");
+    //attempt to send all records from local storage to the server
+    observationRecords.loadFromLocal();
+    var records = observationRecords.data.records;
+    //if success show finished page
+    window.AOS.czaos_post('observationrecord', records, {}).done(function (data) {
+        toastr.clear($infoToast);
+        toastr.options.timeOut = 0;
+        toastr.options.onclick = function () {
+            location.reload();
+        };
+        toastr.success("Please click to refresh page.", "Observation Records Successfully Saved");
+    }).fail(function (data) {
+        $('#finalizeObservation').toggleClass('disabled');
+        $('#finalizeObservation').removeAttr('disabled');
+        $errorToast = toastr.error("Please try again.", "There was an error saving your observation");
     });
 }
 
@@ -224,14 +309,14 @@ function getWeatherHere() {
 function userCanAccessObservation(observerRecords) {
     //iterate through each record and return true if there is a record
     //where record.Username = username
-    $(observerRecords).filter(function () {
+    $(observerRecords).filter(function() {
         return this.Username = username;
     });
     if (observerRecords.length <= 0) {
         alert('You are not authorized to access this observation.');
         return false;
     }
-    //also filter on whether the record is Locked or Deleted and return appropriate message
+        //also filter on whether the record is Locked or Deleted and return appropriate message
     else if (observerRecords[0].Locked) {
         alert('The observation is locked.');
         return false;
@@ -263,10 +348,12 @@ var record = function(ref) {
     this.Behavior = ref.Behavior;
     this.BehaviorCode = ref.BehaviorCode;
     this.LocationID = ref.LocationID;
-    this.ObserverTime = new Date();
+    this.ObserverTime = new Date().toUTCString();
     this.Deleted = 0;
     this.Flagged = 0;
 };
+var recordsToBeSaved = [];
+
 var weather = function(ref) {
     this.ObservationID = observationID;
     this.Username = username;
