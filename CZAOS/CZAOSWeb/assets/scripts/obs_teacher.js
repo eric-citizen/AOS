@@ -10,7 +10,12 @@
             },
             cache: false,
             type: 'GET',
-            contentType: 'application/json; charset=utf-8'
+            contentType: 'application/json; charset=utf-8',
+            statusCode: {
+                404: function (data) {
+                    alert('Could not find the observation.');
+                }
+            }
         }).done(function(data) {
             if (data.TeacherPass == pass && data.TeacherLogin == login) {
                 exhibitID = data.ExhibitID;
