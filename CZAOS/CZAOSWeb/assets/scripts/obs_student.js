@@ -44,8 +44,8 @@ $(function () {
                 $('#step2').fadeIn(0);
                 $('#step1').fadeOut(0);
                 window.AOS.czaos_get('animalObservation', {}, '#observationAnimals', false, { observationId: observationID });
-                window.AOS.czaos_get('behaviorCategory', {}, '#behaviorControl', true, { exhibitId: exhibitID });
-                window.AOS.czaos_get('exhibitlocation', {}, '#zoneControl', false, { exhibitId: exhibitID });
+                window.AOS.czaos_get_student_filtered_list('behaviorCategory', {}, '#behaviorControl', true, { exhibitId: exhibitID });
+                window.AOS.czaos_get_student_filtered_list('exhibitlocation', {}, '#zoneControl', false, { exhibitId: exhibitID });
                 window.AOS.czaos_get('crowd/', {}, '#crowdControl', true);
                 window.AOS.czaos_get('weatherCondition/', {}, '#weatherControl', true);
 
@@ -155,16 +155,21 @@ function finishObservation() {
 }
 
 function handleSave() {
+    var $errorToast, $infoToast;
     //disable buttons
     $('#finalizeObservation').attr("disabled", "disabled");
     $('#finalizeObservation').toggleClass("disabled");
-    
-    toastr.info("Your observation is being saved", "Please wait");
+
+    if ($errorToast) {
+        toastr.clear($errorToast);
+    }
+    $infoToast = toastr.info("Your observation is being saved", "Please wait");
     //attempt to send all records from local storage to the server
     observationRecords.loadFromLocal();
     var records = observationRecords.data.records;
     //if success show finished page
     window.AOS.czaos_post('observationrecord', records, {}).done(function (data) {
+        toastr.clear($infoToast);
         toastr.options.timeOut = 0;
         toastr.options.onclick = function () {
             location.reload();
@@ -173,7 +178,7 @@ function handleSave() {
     }).fail(function (data) {
         $('#finalizeObservation').toggleClass('disabled');
         $('#finalizeObservation').removeAttr('disabled');
-        toastr.error("Please try again.", "There was an error saving your observation");
+        $errorToast = toastr.error("Please try again.", "There was an error saving your observation");
     });
 }
 

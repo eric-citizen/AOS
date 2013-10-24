@@ -3,22 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using CZBizObjects;
 using CZBizObjects.Repository;
 using CZDataObjects;
 using System.Text;
+using KT.Extensions;
 
 namespace CZAOSWeb.api
 {
     public class ExhibitBehaviorController : CZAOSController<ExhibitBehavior> //ApiController
     {
-        static readonly ICZAOSRepository<ExhibitBehavior> repository = new ExhibitBehaviorRepository();
+        static readonly ExhibitBehaviorRepository repository = new ExhibitBehaviorRepository();
 
         public override HttpResponseMessage GetAll()
         {
-            IEnumerable<ExhibitBehavior> records = repository.GetAll();
-            var response = Request.CreateResponse<IEnumerable<ExhibitBehavior>>(HttpStatusCode.OK, records);
+            string exhibitId = HttpContext.Current.Request.Headers["exhibitId"];
+            int id = 0;
+
+            if (exhibitId.IsNumeric())
+                id = exhibitId.ToInt32();
+
+            var records = id > 0 ? repository.GetAll(id) : repository.GetAll();
+
+            var response = Request.CreateResponse(HttpStatusCode.OK, records);
             return response;
         }
 

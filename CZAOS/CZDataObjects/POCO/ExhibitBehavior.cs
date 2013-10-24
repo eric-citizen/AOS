@@ -29,6 +29,7 @@ namespace CZDataObjects
                 {
                     mstrExhibitName = record.Get<string>("ExhibitName");
                     mstrBehavior = record.Get<string>("Behavior");
+                    mstrBehaviorCode = record.Get<string>("BehaviorCode");
                     mintBvrCatID = record.Get<int>("BvrCatID");
                 }
           
@@ -49,6 +50,7 @@ namespace CZDataObjects
         private bool mblnActive;
         private string mstrExhibitName;
         private string mstrBehavior;
+        private string mstrBehaviorCode;
         private int mintBvrCatID;
 
         public string ExhibitName
@@ -64,6 +66,14 @@ namespace CZDataObjects
             get
             {
                 return mstrBehavior;
+            }
+        }
+
+        public string BehaviorCode
+        {
+            get
+            {
+                return mstrBehaviorCode;
             }
         }
 
