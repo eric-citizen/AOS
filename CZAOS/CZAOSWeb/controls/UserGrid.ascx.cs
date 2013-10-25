@@ -22,8 +22,8 @@ namespace CZAOSWeb.controls
             UserType,
             //Expiration,
             Unlock,
-            //LastActivityDate,
-            SendPassword,            
+            SendPassword,  
+            EditUser,
             DeleteUser      
         }
 
@@ -51,7 +51,11 @@ namespace CZAOSWeb.controls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            MainBase page = this.Page as MainBase;
+            if (!page.IsMasterAdmin)
+            {
+                userGridView.Columns[userGridView.Columns.Count - 1].Visible = false; //hide delete column from all but master admins
+            }
         }
 
        
@@ -81,7 +85,7 @@ namespace CZAOSWeb.controls
                 if(czuser.ExpirationDate.HasValue)
                 {
                     DateTime ed = (DateTime)czuser.ExpirationDate;
-                    litExpDate.Text = ed.ToString("MM/dd/yyy");
+                    //litExpDate.Text = ed.ToString("MM/dd/yyy");
                 }
 
 
@@ -105,7 +109,7 @@ namespace CZAOSWeb.controls
                 }
                 else
                 {
-                    LinkButton sendPwdLink = (LinkButton)e.Row.Cells[(int)DataColumns.SendPassword].Controls[0];
+                    LinkButton sendPwdLink = (LinkButton)e.Row.Cells[(int)DataColumns.SendPassword].Controls[1];
                     sendPwdLink.Enabled = false;
                     sendPwdLink.ToolTip = "Cannot send password when user account is locked";
                 }                
@@ -157,6 +161,7 @@ namespace CZAOSWeb.controls
                 {
                     editUser.UnlockUser();
                     p.Toast("User unlocked", "");
+                    Response.Redirect("default.aspx", false);
                 }
 
 
@@ -208,8 +213,7 @@ namespace CZAOSWeb.controls
 
         private string GetUsername(System.Web.UI.WebControls.GridViewCommandEventArgs e)
         {
-            int intIndex = Convert.ToInt32(e.CommandArgument);
-            return Convert.ToString(userGridView.DataKeys[intIndex].Values[0]);
+            return e.CommandArgument.ToString();
         }
 
         protected void userGridView_PreRender(object sender, EventArgs e)

@@ -91,9 +91,9 @@ namespace CZBizObjects
         }
 
 		[DataObjectMethod(DataObjectMethodType.Delete, false)]
-        public static void DeleteItem(Crowd item)
+        public static void DeleteItem(EmailTracking item)
         {          
-            DeleteItem(item.CrowdID);
+            DeleteItem(item.ID);
         }
 
 		[DataObjectMethod(DataObjectMethodType.Delete, false)]

@@ -141,7 +141,7 @@ namespace CZAOSWeb
                 else if (user.IsLockedOut)
                 {
                     this.ShowMessage(string.Format("user.IsLockedOut", AppSettings.GetSetting("AdminReplyAddress")));
-                    user.UnlockUser();
+                    //user.UnlockUser();
 
                 }
                 else if (!user.IsApproved)
