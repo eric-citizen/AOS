@@ -22,8 +22,13 @@ namespace CZAOSWeb.controls
             UserType,
             //Expiration,
             Unlock,
+<<<<<<< HEAD
             SendPassword,  
             EditUser,
+=======
+            //LastActivityDate,
+            SendPassword,            
+>>>>>>> feb1721df6f3a023e0ce9c9ad679138330750b91
             DeleteUser      
         }
 

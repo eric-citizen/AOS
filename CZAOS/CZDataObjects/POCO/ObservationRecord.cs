@@ -172,7 +172,7 @@ namespace CZDataObjects
         {
             get
             {
-                return mdteObserverTime;
+                return mdteObserverTime.ToLocalTime();
             }
             set
             {

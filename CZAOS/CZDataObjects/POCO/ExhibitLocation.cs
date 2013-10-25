@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using CZDataObjects.Extensions;
 using KT.Extensions;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
@@ -26,6 +27,8 @@ namespace CZDataObjects
 
                 if (!isNew)
                 {
+                    mblnMaskAma = record.Get<string>("MaskAma").FromYesNoString();
+                    mblnMaskProf = record.Get<string>("MaskProf").FromYesNoString();
                     mstrLocation = record.Get<string>("Location");
                     mstrExhibit = record.Get<string>("Exhibit");
                 }
@@ -46,7 +49,9 @@ namespace CZDataObjects
         private int mintLocationID;
         private bool mblnActive;
         private string mstrLocation;
-        private string mstrExhibit;
+        private string mstrExhibit; 
+        private bool mblnMaskAma;
+        private bool mblnMaskProf;
 			
         public string Location
         {
@@ -93,6 +98,30 @@ namespace CZDataObjects
             set
             {
                 mintLocationID = value;
+            }
+        }
+
+        public bool MaskAma
+        {
+            get
+            {
+                return mblnMaskAma;
+            }
+            set
+            {
+                mblnMaskAma = value;
+            }
+        }
+
+        public bool MaskProf
+        {
+            get
+            {
+                return mblnMaskProf;
+            }
+            set
+            {
+                mblnMaskProf = value;
             }
         }
 
