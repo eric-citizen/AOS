@@ -20,9 +20,10 @@ namespace CZAOSWeb.controls
             DisplayName,
             Email,
             UserType,
-            Expiration,
+            //Expiration,
             Unlock,
-            SendPassword,            
+            SendPassword,  
+            EditUser,
             DeleteUser      
         }
 
@@ -84,7 +85,7 @@ namespace CZAOSWeb.controls
                 if(czuser.ExpirationDate.HasValue)
                 {
                     DateTime ed = (DateTime)czuser.ExpirationDate;
-                    litExpDate.Text = ed.ToString("MM/dd/yyy");
+                    //litExpDate.Text = ed.ToString("MM/dd/yyy");
                 }
 
 
