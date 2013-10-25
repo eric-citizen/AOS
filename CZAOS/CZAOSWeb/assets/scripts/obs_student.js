@@ -30,7 +30,12 @@ $(function () {
             cache: false,
             type: 'GET',
             data: $.toJSON(params),
-            contentType: 'application/json; charset=utf-8'
+            contentType: 'application/json; charset=utf-8',
+            statusCode: {
+                404: function (data) {
+                    alert('Could not find the observation.');
+                }
+            }
         }).done(function(data) {
             if (data.StudentPass == pass) {
                 exhibitID = data.ExhibitID;
