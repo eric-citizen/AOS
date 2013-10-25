@@ -69,7 +69,7 @@
                 <asp:TemplateField>
                     <ItemStyle HorizontalAlign="Center" Width="60px" CssClass="" />
                     <ItemTemplate>
-                        <asp:LinkButton runat="server" ID="lnkUnlockUser" CssClass="unlock-user" Text="Unlock" ToolTip="Unlock User" CommandName="UnlockUser"></asp:LinkButton>
+                        <asp:LinkButton runat="server" ID="lnkUnlockUser" CssClass="unlock-user" Text="Unlock" ToolTip="Unlock User" CommandArgument='<%# Bind("UserName") %>' CommandName="UnlockUser"></asp:LinkButton>
                     </ItemTemplate>                                 
                 </asp:TemplateField>
                 
