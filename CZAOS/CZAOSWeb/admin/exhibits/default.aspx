@@ -31,7 +31,7 @@
         DataKeyNames="ExhibitID">
         <Columns>
 
-            <asp:BoundField DataField="ExhibitName" SortExpression="ExhibitName" HeaderText="Name">                
+            <asp:BoundField DataField="ExhibitName" SortExpression="Exhibit" HeaderText="Name">                
             </asp:BoundField>
             
             <asp:BoundField DataField="AnimalRegion" SortExpression="AnimalRegion" HeaderText="Animal Region">

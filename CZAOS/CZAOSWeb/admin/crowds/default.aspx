@@ -26,7 +26,7 @@
         DataKeyNames="CrowdID" OnRowCommand="gvCrowds_RowCommand" OnRowDataBound="gvCrowds_RowDataBound">
         <Columns>
 
-            <asp:BoundField DataField="CrowdName" SortExpression="CrowdName" HeaderText="Crowd">                
+            <asp:BoundField DataField="CrowdName" SortExpression="Crowd" HeaderText="Crowd">                
             </asp:BoundField>            
             
             <asp:TemplateField SortExpression="Active" HeaderText="Active" ItemStyle-Width="50px" HeaderStyle-CssClass="tac" ItemStyle-CssClass="tac cell-wait-click">                    
