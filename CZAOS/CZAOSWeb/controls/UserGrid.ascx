@@ -58,13 +58,13 @@
                     <ItemStyle HorizontalAlign="Left" Width="100px" />
                 </asp:TemplateField>
                                 
-                <asp:TemplateField HeaderText="Expiration" Visible="false">                   
+                <%--<asp:TemplateField HeaderText="Expiration" Visible="false">                   
                     <ItemTemplate>    
                         <asp:Literal runat="server" ID="litExpDate" ></asp:Literal>                        
                     </ItemTemplate>
                     <HeaderStyle HorizontalAlign="Left" />
                     <ItemStyle HorizontalAlign="Left" Width="70px" />
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
 
                 <asp:TemplateField>
                     <ItemStyle HorizontalAlign="Center" Width="60px" CssClass="" />
