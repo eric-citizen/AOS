@@ -109,7 +109,7 @@ namespace CZAOSWeb.controls
                 }
                 else
                 {
-                    LinkButton sendPwdLink = (LinkButton)e.Row.Cells[(int)DataColumns.SendPassword].Controls[0];
+                    LinkButton sendPwdLink = (LinkButton)e.Row.Cells[(int)DataColumns.SendPassword].Controls[1];
                     sendPwdLink.Enabled = false;
                     sendPwdLink.ToolTip = "Cannot send password when user account is locked";
                 }                
@@ -161,6 +161,7 @@ namespace CZAOSWeb.controls
                 {
                     editUser.UnlockUser();
                     p.Toast("User unlocked", "");
+                    Response.Redirect("default.aspx", false);
                 }
 
 
@@ -212,8 +213,7 @@ namespace CZAOSWeb.controls
 
         private string GetUsername(System.Web.UI.WebControls.GridViewCommandEventArgs e)
         {
-            int intIndex = Convert.ToInt32(e.CommandArgument);
-            return Convert.ToString(userGridView.DataKeys[intIndex].Values[0]);
+            return e.CommandArgument.ToString();
         }
 
         protected void userGridView_PreRender(object sender, EventArgs e)
