@@ -423,6 +423,15 @@ var CZAOSUIDialogs = new function () {
 
 };
 
+function pageLoad(sender, args) {
+    $(".ui-dialog-link").unbind("click");
+    $(".ui-dialog-link").click(function (event) {
+        event.preventDefault();
+        CZAOSUIDialogs.ShowDialogFromArgs($(this));
+
+    });
+};
+
 function refreshParentDelay(delay) {
 
     if (delay == null) {

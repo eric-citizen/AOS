@@ -806,6 +806,11 @@ h2{
     -webkit-transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
 }
+
+#observation-page {
+    font-size: 14px;
+}
+
 #login{
     margin: 0 auto;
     margin-top: 20px;

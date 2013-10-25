@@ -99,6 +99,11 @@ namespace CZAOSWeb.admin.Exhibits
             gvExhibit.PageIndex = 0;
             gvExhibit.DataBind();
         }
+
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            gvExhibit.DataBind();
+        }
        
     }
 }

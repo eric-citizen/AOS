@@ -55,7 +55,7 @@
                     $('#step1').fadeOut(0);
 
                     exhibitID = observation.ExhibitID;
-                    timerInterval = observation.Interval;
+                    timerInterval = observation.Interval * 60;
                     console.log(observation);
                 });
             }
@@ -180,7 +180,6 @@ function startTime(time) {
         if (!paused) {
             displayTime(count);
             $(".timebar").css('width', ((count / time) * 100) + '%');
-            count++;
             if (count == time) {
                 if (hasTakenRecord) {
                     _.each(recordsToBeSaved, function(record) {
@@ -192,13 +191,16 @@ function startTime(time) {
                 clearInterval(interval);
                 startTime(time);
             }
+            count++;
         }
     }, 1000);
 }
 
 function displayTime(count) {
-    var minutes = Math.floor(count / 60);
-    $('.time').html(minutes + ':'+ (count % 60) +'/' + timerInterval + ':' + '00');
+    var time = timerInterval - count;
+    var minutes = Math.floor(time / 60);
+    var seconds = time % 60;
+    $('.time').html(minutes + ':'+ ((seconds < 10) ? "0" : "") + seconds );
 }
 
 function startObservation() {

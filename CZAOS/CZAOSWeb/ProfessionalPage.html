@@ -32,160 +32,150 @@
 
     </head>
     <body>
-        <!--        <div class="progress">
-                        <div class="bar" style="width: 60%;"></div>
-                    </div> -->
+        <div id="observation-page">
+            <!--        <div class="progress">
+                            <div class="bar" style="width: 60%;"></div>
+                        </div> -->
 
-        <div id="observationData">
-        </div>
-        <div id="enviromentData" style='display: none;'>
-            <header></header>
-            <div id="enviromentPanel">
-                <h1>Enviroment</h1>
-                <hr>
-                <h2>Weather</h2>
-                <div id="weatherAPIoutput"></div>
-                <section class="slider">
-                    <ul id="weatherControl" class="slide-strip" style="width: 20%">
-                    </ul>
-                </section>
-                <h2>Crowd</h2>
-                <section class="slider">
-                    <ul id="crowdControl" class="slide-strip" style="width: 33%">
-                    </ul>
-                </section>
-                <div style="text-align: right">
-                    <div id='saveWeather' class="button">Save & Continue</div>
-                </div>
+            <div id="observationData">
             </div>
-            <div id="observationPanel" style="display: none">
-                <div class="clearfix">
-                    <h1>Observation</h1>
+            <div id="enviromentData" style='display: none;'>
+                <header></header>
+                <div id="enviromentPanel">
+                    <h1>Enviroment</h1>
                     <hr>
-                    <div id="timer">
-                        <div class="timebar"></div>
-                        <div class="time"></div>
+                    <h2>Weather</h2>
+                    <div id="weatherAPIoutput"></div>
+                    <section class="slider">
+                        <ul id="weatherControl" class="slide-strip" style="width: 20%">
+                        </ul>
+                    </section>
+                    <h2>Crowd</h2>
+                    <section class="slider">
+                        <ul id="crowdControl" class="slide-strip" style="width: 33%">
+                        </ul>
+                    </section>
+                    <div style="text-align: right">
+                        <div id='saveWeather' class="button">Save & Continue</div>
                     </div>
+                </div>
+                <div id="observationPanel" style="display: none">
+                    <div class="clearfix">
+                        <h1>Observation</h1>
+                        <hr>
+                        <div id="timer">
+                            <div class="timebar"></div>
+                            <div class="time"></div>
+                        </div>
                 
-                    <div id="animalgroup-knockout-scope">
-                        <h1>Animals</h1>
-                        <div class="animal-group" data-bind="foreach: AnimalGroups()"><!-- Make each group a jQuery UI accordian-->
-                            <h2 class="animal-group-header" data-bind="text: 'Group ' + $data.id"></h2>
-                            <div class="animal-group-list">
-                                <ul  data-bind="foreach: Animals">
-                                    <li>
-                                        <label>
-                                            <!-- bind the name property of our object as the checkbox value -->
-                                            <input type="checkbox" data-bind="value: ZooID, checked: $root.SelectedAnimals" />
-                                            <span data-bind="text: HouseName"></span>
-                                        </label>
-                                    </li>
-                                </ul>
-                                <div class="button" data-bind="click: $root.AddAllFromGroup">All</div><div class="button" data-bind="click: $root.RemoveAllFromGroup">None</div>
+                        <div id="animalgroup-knockout-scope">
+                            <h1>Animals</h1>
+                            <div class="animal-group" data-bind="foreach: AnimalGroups()"><!-- Make each group a jQuery UI accordian-->
+                                <h2 class="animal-group-header" data-bind="text: 'Group ' + $data.id"></h2>
+                                <div class="animal-group-list">
+                                    <ul  data-bind="foreach: Animals">
+                                        <li>
+                                            <label>
+                                                <!-- bind the name property of our object as the checkbox value -->
+                                                <input type="checkbox" data-bind="value: ZooID, checked: $root.SelectedAnimals" />
+                                                <span data-bind="text: HouseName"></span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <div class="button" data-bind="click: $root.AddAllFromGroup">All</div><div class="button" data-bind="click: $root.RemoveAllFromGroup">None</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="entry-panel">
-                        <h1>Entry</h1>
+                        <div id="entry-panel">
+                            <h1>Entry</h1>
 
-                        <h2>Behavior Category</h2>
-                        <!--Drop down list of Selectable Behavior Categories-->
-                        <div id="behavior-category-knockout-scope">
-                            <select data-bind="options: SelectableCategories, optionsText: 'BvrCat', value: SelectedCategory"></select>
-                        </div>
+                            <h2>Behavior Category</h2>
+                            <!--Drop down list of Selectable Behavior Categories-->
+                            <div id="behavior-category-knockout-scope">
+                                <select data-bind="options: SelectableCategories, optionsText: 'BvrCat', value: SelectedCategory"></select>
+                            </div>
                         
-                        <h2>Behavior</h2>
-                        <!--Drop down list of Selectable Behaviors-->
-                        <div id="behavior-knockout-scope">
-                            <select data-bind="options: SelectableBehaviors, optionsText: 'Behavior', value: SelectedBehavior"></select>
-                        </div>
+                            <h2>Behavior</h2>
+                            <!--Drop down list of Selectable Behaviors-->
+                            <div id="behavior-knockout-scope">
+                                <select data-bind="options: SelectableBehaviors, optionsText: 'Behavior', value: SelectedBehavior"></select>
+                            </div>
 
-                        <h2>Zone</h2>
-                        <!--Drop down list of Selectable Zones-->
-                        <div id="location-knockout-scope">
-                            <select data-bind="options: SelectableLocations, optionsText: 'Location', value: SelectedLocation"></select>
-                        </div>
+                            <h2>Zone</h2>
+                            <!--Drop down list of Selectable Zones-->
+                            <div id="location-knockout-scope">
+                                <select data-bind="options: SelectableLocations, optionsText: 'Location', value: SelectedLocation"></select>
+                            </div>
                         
                         
-                        <div id="button-container" class="clearfix" style="display: none">
+                            <div id="button-container" class="clearfix" style="display: none">
                             
-                            <input type="button" style="text-align: center" id="saveRecord" class="button" value="Save Record"/>
-                            <!--<div style="text-align: center"><span>Click to Finish Observation</span></div>-->
-                            <input type="button" style="text-align: center" id="gotoFinalizationPage" class="button" value="Finish Observation"/>
-<!--                            <div style="float: left">
-                                <div id='saveRecord' class="button">Save Record</div>
-                            </div>-->
-<!--                            <div style="float: right">
-                                <div id='gotoFinalizationPage' class="button" onclick=" finishObservation() ">Finalize Observation</div>
-                            </div>-->
+                                <input type="button" style="text-align: center" id="saveRecord" class="button" value="Save Record"/>
+                                <!--<div style="text-align: center"><span>Click to Finish Observation</span></div>-->
+                                <input type="button" style="text-align: center" id="gotoFinalizationPage" class="button" value="Finish Observation"/>
+                                <!--                            <div style="float: left">
+                                                                    <div id='saveRecord' class="button">Save Record</div>
+                                                                </div>-->
+                                <!--                            <div style="float: right">
+                                                                    <div id='gotoFinalizationPage' class="button" onclick=" finishObservation() ">Finalize Observation</div>
+                                                                </div>-->
                             
-                        </div>
+                            </div>
 
+                        </div>
                     </div>
+                
                 </div>
-                
+
+       
             </div>
 
-                
-            
+        
+            <!-- Login Area !-->
 
-                
-                
-                
-                
-
-                
-        </div>
-        
-        
-        
-        
-        <!-- Login Area !-->
-
-        <div id="loginPanel">
-            <div id="step1">
-                <div class="logo">The Animal<br>Observation System</div>
-                <div><span>UserName</span><br><input id="username" value="proobserver"/></div>
-                <div><span>Password</span><br><input id="pass" value="1212asas"/></div>
-                <div style="text-align: right"><input type='submit' id="Submit1" onclick=" loginProfessional(); "/></div>
-            </div>
-            <div id="step2" style="display: none">
-                <div class="logo">The Animal<br>Observation System</div>
-                <div><span>Observation #</span><br><input id="obsID" value="16"/></div>
-                <div style="margin-bottom: 15px; text-align: center;"><input type='submit' id="studentLogin" onclick=" loginToObservation(); "/></div>
-            </div>
-            <div id="observationInfo" style="border-top: 1px solid; display: none; text-align: center;">
-                <div>
+            <div id="loginPanel">
+                <div id="step1">
+                    <div class="logo">The Animal<br>Observation System</div>
+                    <div><span>UserName</span><br><input id="username" value="proobserver"/></div>
+                    <div><span>Password</span><br><input id="pass" value="1212asas"/></div>
+                    <div style="text-align: right"><input type='submit' id="Submit1" class="button" onclick=" loginProfessional(); "/></div>
+                </div>
+                <div id="step2" style="display: none">
+                    <div class="logo">The Animal<br>Observation System</div>
+                    <div><span>Observation #</span><br><input id="obsID" value="16"/></div>
+                    <div style="margin-bottom: 15px; text-align: center;"><input type='submit' id="studentLogin" class="button" onclick=" loginToObservation(); "/></div>
+                </div>
+                <div id="observationInfo" style="border-top: 1px solid; display: none; text-align: center;">
                     <div>
-                        <h2>Observation</h2>
-                        <span>Observation ID:</span><div id="observationId">19</div>
-                        <span>Date:</span><div id="date">10/15/2013</div>
-                        <span>Time:</span><div id="time">11:30 - 12:00</div>
-                        <span>Observation Interval:</span><div id="interval">1 minute</div>
-                        <span># of Observers</span><div id="observerCount">15</div>
+                        <div>
+                            <h2>Observation</h2>
+                            <span>Observation ID:</span><div id="observationId">19</div>
+                            <span>Date:</span><div id="date">10/15/2013</div>
+                            <span>Time:</span><div id="time">11:30 - 12:00</div>
+                            <span>Observation Interval:</span><div id="interval">1 minute</div>
+                            <span># of Observers</span><div id="observerCount">15</div>
+                        </div>
+                        <div style="border-style: solid; border-top: 2px; margin-top: 15px">
+                            <h2>Animals</h2>
+                            <span>Region:</span><div id="region">Region</div>
+                            <span>Exhibit:</span><div id="exhibit">Exhibit</div>
+                            <span>Animals:</span><div id="animal-list"></div>
+                        </div>
                     </div>
-                    <div style="border-style: solid; border-top: 2px; margin-top: 15px">
-                        <h2>Animals</h2>
-                        <span>Region:</span><div id="region">Region</div>
-                        <span>Exhibit:</span><div id="exhibit">Exhibit</div>
-                        <span>Animals:</span><div id="animal-list"></div>
-                    </div>
+                    <div style="text-align: center"><input type='submit' value="Start Observation" id="startObs" onclick=" gotoWeather(); "/></div>
+
                 </div>
-                <div style="text-align: center"><input type='submit' value="Start Observation" id="startObs" onclick=" gotoWeather(); "/></div>
-
-            </div>
         
-            <div id="finalizePanel" style="display: none">
-                <div class="logo">The Animal<br>Observation System</div>
-                <input type="button" style="text-align: center" id="backToObservation" class="button" value="Back To Observation"/>
-                <!--<div style="text-align: center"><span>Click to Finish Observation</span></div>-->
-                <input type="button" style="text-align: center" id="finalizeObservation" class="button" value="Finalize"/>
+                <div id="finalizePanel" style="display: none">
+                    <div class="logo">The Animal<br>Observation System</div>
+                    <input type="button" style="text-align: center" id="backToObservation" class="button" value="Back To Observation"/>
+                    <!--<div style="text-align: center"><span>Click to Finish Observation</span></div>-->
+                    <input type="button" style="text-align: center" id="finalizeObservation" class="button" value="Finalize"/>
+                </div>
             </div>
+    
+    
         </div>
-    
-    
-
-
 
 
         <!-- Templates -->
