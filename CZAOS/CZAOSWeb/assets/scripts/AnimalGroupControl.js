@@ -15,7 +15,9 @@
             _.each(data, (function(item) {
                 addRecordToGroup(item);
             }));
-
+            app.AnimalControl().AnimalGroups(_.sortBy(app.AnimalControl().AnimalGroups(), function(group) {
+                return group.id;
+            }));
             ko.applyBindings(app.AnimalControl, $('#animalgroup-knockout-scope')[0]);
             //$('#animalgroup-knockout-scope').accordion({ header: "h2" });
         });

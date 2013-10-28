@@ -33,10 +33,6 @@
     </head>
     <body>
         <div id="observation-page">
-            <!--        <div class="progress">
-                            <div class="bar" style="width: 60%;"></div>
-                        </div> -->
-
             <div id="observationData">
             </div>
             <div id="enviromentData" style='display: none;'>
@@ -107,7 +103,6 @@
                                 <select data-bind="options: SelectableLocations, optionsText: 'Location', value: SelectedLocation"></select>
                             </div>
                         
-                        
                             <div id="button-container" class="clearfix" style="display: none">
                             
                                 <input type="button" style="text-align: center" id="saveRecord" class="button" value="Save Record"/>
@@ -121,13 +116,9 @@
                                                                 </div>-->
                             
                             </div>
-
                         </div>
                     </div>
-                
                 </div>
-
-       
             </div>
 
         
@@ -136,7 +127,7 @@
             <div id="loginPanel">
                 <div id="step1">
                     <div class="logo">The Animal<br>Observation System</div>
-                    <div><span>UserName</span><br><input id="username" value="proobserver"/></div>
+                    <div style="margin-bottom: 10px"><span>UserName</span><br><input id="username" value="proobserver"/></div>
                     <div><span>Password</span><br><input id="pass" value="1212asas"/></div>
                     <div style="text-align: right"><input type='submit' id="Submit1" class="button" onclick=" loginProfessional(); "/></div>
                 </div>
@@ -174,9 +165,7 @@
                 </div>
             </div>
     
-    
         </div>
-
 
         <!-- Templates -->
         <script id="users" type="simple/template">
