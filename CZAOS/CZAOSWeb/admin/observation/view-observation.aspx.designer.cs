@@ -112,6 +112,15 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.Literal litStudentPassword;
         
         /// <summary>
+        /// pnlAttending control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlAttending;
+        
+        /// <summary>
         /// rptObservers control.
         /// </summary>
         /// <remarks>
@@ -209,6 +218,15 @@ namespace CZAOSWeb.admin.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlTimer;
+        
+        /// <summary>
+        /// pnlManTimer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlManTimer;
         
         /// <summary>
         /// litManual control.

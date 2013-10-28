@@ -86,12 +86,12 @@
                         <br /><br />
 
                         <label>Start Time</label><br />
-                        <mack:RequiredTextBox runat="server" ID="txtStartTime" ClientIDMode="Static" MaxLength="7" Required="true" Width="100px" CssClass="starttime"
+                        <mack:RequiredTextBox runat="server" ID="txtStartTime" ClientIDMode="Static" MaxLength="8" Required="true" Width="100px" CssClass="starttime"
                             ErrorMessage="*" ValidatorCssClass="error" ValidatorToolTip="Enter the start time"></mack:RequiredTextBox>
                         <br /><br />
 
                         <label>End Time</label><br />
-                        <mack:RequiredTextBox runat="server" ID="txtEndTime" ClientIDMode="Static" MaxLength="7" Required="true" Width="100px" CssClass="endtime"
+                        <mack:RequiredTextBox runat="server" ID="txtEndTime" ClientIDMode="Static" MaxLength="8" Required="true" Width="100px" CssClass="endtime"
                             ErrorMessage="*" ValidatorCssClass="error" ValidatorToolTip="Enter the end time"></mack:RequiredTextBox>
 
                     </div>
@@ -335,7 +335,7 @@
                 </div>
 
                 <div class="floatRight">
-                    <mack:WaitButton runat="server" ID="btnSchSave" OnClick="btnSaveEdu_Click" CssClass="button" Text="Save" />
+                    <mack:WaitButton runat="server" ID="btnSchSave" OnClick="btnSaveEdu_Click" CssClass="button" Text="Save" ToolTip="Save Educational Observation" />
                 </div>
 
             </asp:View>
