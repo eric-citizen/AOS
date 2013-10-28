@@ -119,10 +119,7 @@ csx
 AppPackages/
 
 # Others
-<<<<<<< HEAD
-=======
-sql/
->>>>>>> origin/fcBranch
+
 *.Cache
 ClientBin/
 [Ss]tyle[Cc]op.*

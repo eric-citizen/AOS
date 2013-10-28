@@ -138,7 +138,7 @@ function populateObservationInfo(observation) {
     window.AOS.get('exhibit/' + observation.ExhibitID, {}).done(function(data) {
         //display AnimalRegion or RegionName?
         $('#region').html(data.RegionName);
-        $('#exhibit').html(data.Exhibit);
+        $('#exhibit').html(data.ExhibitName);
     });
 
     $('body').addClass(observation.Exhibit);
@@ -266,13 +266,7 @@ function finishObservation() {
     $('#observationPanel').fadeOut(0);
     $('#finalizePanel').fadeIn(0);
     $(window).trigger('resize');
-    $('#backToObservation').click(function () {
-        $('#observationPanel').fadeIn(0);
-        $('#finalizePanel').fadeOut(0);
-        paused = false;
-        $('#finalizeObservation').unbind('click');
-        $('#backToObservation').unbind('click');
-    });
+    $('#backToObservation').click(returnToObservation);
 
     //set up listeners for finish observation button
     $('#finalizeObservation').click(function () {
@@ -280,12 +274,25 @@ function finishObservation() {
     });
 }
 
+function returnToObservation() {
+    $('#observationPanel').fadeIn(0);
+    $('#finalizePanel').fadeOut(0);
+    paused = false;
+    $('#finalizeObservation').unbind('click');
+    $('#backToObservation').unbind('click');
+}
+
 function handleSave() {
     var $errorToast, $infoToast;
     //disable buttons
-    $('#finalizeObservation').attr("disabled", "disabled");
-    $('#finalizeObservation').toggleClass("disabled");
-
+    //$('#finalizeObservation').attr("disabled", "disabled");
+    $('#finalizeObservation').unbind("click");
+    $('#backToObservation').unbind("click");
+    $('#finalizeObservation').toggleClass("button");
+    $('#finalizeObservation').toggleClass("disabled-button");
+    $('#backToObservation').toggleClass("button");
+    $('#backToObservation').toggleClass("disabled-button");
+    
     if ($errorToast) {
         toastr.clear($errorToast);
     }
@@ -302,8 +309,14 @@ function handleSave() {
         };
         toastr.success("Please click to refresh page.", "Observation Records Successfully Saved");
     }).fail(function (data) {
-        $('#finalizeObservation').toggleClass('disabled');
-        $('#finalizeObservation').removeAttr('disabled');
+        //$('#finalizeObservation').toggleClass('disabled');
+        //$('#finalizeObservation').removeAttr('disabled');
+        $('#finalizeObservation').click(handleSave);
+        $('#backToObservation').click(returnToObservation);
+        $('#backToObservation').toggleClass("button");
+        $('#backToObservation').toggleClass("disabled-button");
+        $('#finalizeObservation').toggleClass("button");
+        $('#finalizeObservation').toggleClass("disabled-button");
         $errorToast = toastr.error("Please try again.", "There was an error saving your observation");
     });
 }
