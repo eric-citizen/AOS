@@ -78,6 +78,31 @@ select{
     padding-bottom: 5px;
 }
 
+.weather {
+    display: block;
+    border: 2px solid #4a525c;
+    width: 98.5%;
+    padding: 0 5px;
+    margin-bottom: 10px;
+}
+.weather label {
+    color: #4a525c;
+    display: block;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.innerWeather {
+    display: inline-block;
+    /*margin-right: 5px;*/
+    width: 23%
+}
+.innerWeather label {
+    color: #4a525c;
+    font-weight: bold;
+    display:block;
+    font-size: 1em;
+}
+
 .edit {
     background: url('../images/icons/admin/edit.png') center left no-repeat;
     background-size: 15px 30px;

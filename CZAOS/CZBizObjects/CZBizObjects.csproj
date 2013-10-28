@@ -80,6 +80,7 @@
     <Compile Include="Repository\NoteRepository.cs" />
     <Compile Include="Repository\SysCodeRepository.cs" />
     <Compile Include="Repository\TimedInfoRepository.cs" />
+    <Compile Include="Repository\WeatherRepository.cs" />
     <Compile Include="SysCodesList.cs" />
     <Compile Include="TimedInfoList.cs" />
     <Compile Include="CrowdList.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="UserList.cs" />
     <Compile Include="UserRegionList.cs" />
     <Compile Include="WeatherConditionList.cs" />
+    <Compile Include="WeatherList.cs" />
     <Compile Include="WindList.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -138,6 +138,7 @@
     <Content Include="admin\master\sql.aspx" />
     <Content Include="admin\nav\default.aspx" />
     <Content Include="admin\nav\edit-nav.aspx" />
+    <Content Include="admin\observation\create-observation-records.aspx" />
     <Content Include="admin\observation\reports.aspx" />
     <Content Include="admin\observation\edit-animalgroups.aspx" />
     <Content Include="admin\observation\edit-timedinfo.aspx" />
@@ -663,6 +664,13 @@
     <Compile Include="admin\nav\edit-nav.aspx.designer.cs">
       <DependentUpon>edit-nav.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\observation\create-observation-records.aspx.cs">
+      <DependentUpon>create-observation-records.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\observation\create-observation-records.aspx.designer.cs">
+      <DependentUpon>create-observation-records.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\observation\reports.aspx.cs">
       <DependentUpon>reports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -872,6 +880,7 @@
     <Compile Include="api\ExhibitBehaviorController.cs" />
     <Compile Include="api\ExhibitController.cs" />
     <Compile Include="api\CrowdController.cs" />
+    <Compile Include="api\WeatherController.cs" />
     <Compile Include="api\WindController.cs" />
     <Compile Include="api\UserController.cs" />
     <Compile Include="api\SecurityController.cs" />
