@@ -230,8 +230,11 @@ var CZAOSUIDialogs = new function () {
             close: function () {
                 iframe.attr("src", "");
                 if (refreshParent === "1") {
+                    if (__doPostBack('btnRefresh_Click')) {
+                    } else {
+                        location.reload();
+                    }
                     //parent.location.reload();
-                    location.reload();
                 };
             }
         });
