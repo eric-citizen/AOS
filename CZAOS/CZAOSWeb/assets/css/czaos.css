@@ -243,6 +243,17 @@ textarea  {
 .button:hover{
     background: #62b7c7;
 }
+
+.disabled-button {
+    border: 1px solid #4b545f;
+    font-family: "Syncopate";
+    text-transform: uppercase;
+    color: #fff;
+    padding: .5em 1em .3em;
+    font-size: 14px;
+    background: #999999;
+}
+
 .form-fieldset label{
     display: block;
     color: #492210;
@@ -923,10 +934,10 @@ header li img{
     height: 40px;
 }
 
-#finalizeObservation .disabled {
+/*#finalizeObservation .disabled {
     background: #444444;
     border-color: #444444;
-}
+}*/
 #timer .timebar{
     /*width:50%;*/
     position: absolute;

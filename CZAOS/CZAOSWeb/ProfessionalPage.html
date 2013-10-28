@@ -107,7 +107,7 @@
                             
                                 <input type="button" style="text-align: center" id="saveRecord" class="button" value="Save Record"/>
                                 <!--<div style="text-align: center"><span>Click to Finish Observation</span></div>-->
-                                <input type="button" style="text-align: center" id="gotoFinalizationPage" class="button" value="Finish Observation"/>
+                                <input type="button" style="text-align: center" id="gotoFinalizationPage" class="button" onclick=" finishObservation()" value="Finish Observation"/>
                                 <!--                            <div style="float: left">
                                                                     <div id='saveRecord' class="button">Save Record</div>
                                                                 </div>-->
@@ -159,9 +159,11 @@
         
                 <div id="finalizePanel" style="display: none">
                     <div class="logo">The Animal<br>Observation System</div>
-                    <input type="button" style="text-align: center" id="backToObservation" class="button" value="Back To Observation"/>
+                    <!--<input type="button" style="text-align: center" id="backToObservation" class="button" value="Back To Observation"/>-->
+                    <div class="button" style="text-align: center" id="backToObservation">Back To Observation</div>
+                    <div class="button" style="text-align: center" id="finalizeObservation">Finalize</div>
                     <!--<div style="text-align: center"><span>Click to Finish Observation</span></div>-->
-                    <input type="button" style="text-align: center" id="finalizeObservation" class="button" value="Finalize"/>
+                    <!--<input type="button" style="text-align: center" id="finalizeObservation" class="button" value="Finalize"/>-->
                 </div>
             </div>
     
