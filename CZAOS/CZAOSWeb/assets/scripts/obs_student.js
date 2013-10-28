@@ -39,6 +39,7 @@ $(function () {
         }).done(function(data) {
             if (data.StudentPass == pass) {
                 exhibitID = data.ExhibitID;
+                timerInterval = data.Interval * 60;
                 console.log(data);
                 alert('Welcome Student');
                 var sn = $("#studentNumber");
@@ -69,6 +70,7 @@ var exhibitID=0;
 var obsWeather;
 var username = 'none';
 var paused = true;
+var timerInterval = 0;
 var observationRecords = new Locus("observationRecords");
 observationRecords.clear();
 observationRecords.data.records=[];
@@ -100,8 +102,8 @@ function startTime(time) {
     var count=0;
     var interval = setInterval(function () {
         if (!paused) {
+            displayTime(count);
             $(".timebar").css('width', ((count / time) * 100) + '%');
-            count++;
             if (count == time) {
                 if (hasTakenRecord) {
                     observationRecords.data.records.push(recordToBeSaved);
@@ -111,9 +113,18 @@ function startTime(time) {
                 clearInterval(interval);
                 startTime(time);
             }
+            count++;
         }
     }, 1000);
 }
+
+function displayTime(count) {
+    var time = timerInterval - count;
+    var minutes = Math.floor(time / 60);
+    var seconds = time % 60;
+    $('.time').html(minutes + ':' + ((seconds < 10) ? "0" : "") + seconds);
+}
+
 function startObservation() {
     //check to make sure weather and crowd have been selected
     if (!obsWeather.weatherID || !obsWeather.CrowdID) {
@@ -136,7 +147,7 @@ function startObservation() {
             }
         });
 
-        startTime(10);
+        startTime(timerInterval);
     }
 }
 
@@ -162,8 +173,14 @@ function finishObservation() {
 function handleSave() {
     var $errorToast, $infoToast;
     //disable buttons
-    $('#finalizeObservation').attr("disabled", "disabled");
-    $('#finalizeObservation').toggleClass("disabled");
+    //$('#finalizeObservation').attr("disabled", "disabled");
+    //$('#finalizeObservation').toggleClass("disabled");
+    $('#finalizeObservation').unbind("click");
+    $('#backToObservation').unbind("click");
+    $('#finalizeObservation').toggleClass("button");
+    $('#finalizeObservation').toggleClass("disabled-button");
+    $('#backToObservation').toggleClass("button");
+    $('#backToObservation').toggleClass("disabled-button");
 
     if ($errorToast) {
         toastr.clear($errorToast);
@@ -181,8 +198,14 @@ function handleSave() {
         };
         toastr.success("Please click to refresh page.", "Observation Records Successfully Saved");
     }).fail(function (data) {
-        $('#finalizeObservation').toggleClass('disabled');
-        $('#finalizeObservation').removeAttr('disabled');
+        //$('#finalizeObservation').toggleClass('disabled');
+        //$('#finalizeObservation').removeAttr('disabled');
+        $('#finalizeObservation').click(handleSave);
+        $('#backToObservation').click(returnToObservation);
+        $('#backToObservation').toggleClass("button");
+        $('#backToObservation').toggleClass("disabled-button");
+        $('#finalizeObservation').toggleClass("button");
+        $('#finalizeObservation').toggleClass("disabled-button");
         $errorToast = toastr.error("Please try again.", "There was an error saving your observation");
     });
 }
