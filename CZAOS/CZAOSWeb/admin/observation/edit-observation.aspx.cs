@@ -400,7 +400,8 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.CreateNewProObservation())
                 {
-                    Response.Redirect("default.aspx", false);
+                    var strRedirect = string.Format("view-observation.aspx?observationId={0}", ObservationID);
+                    Response.Redirect(strRedirect, false);
                 }
 
             }
@@ -408,7 +409,7 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.UpdateProObservation())
                 {
-                    var strRedirect = string.Format("view-observationId={0}", ObservationID);
+                    var strRedirect = string.Format("view-observation.aspx?observationId={0}", ObservationID);
                     Response.Redirect(strRedirect, false);
                 }
 
@@ -838,7 +839,8 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.CreateNewEduObservation())
                 {
-                    Response.Redirect("default.aspx", false);
+                    var strRedirect = string.Format("view-observation.aspx?observationId={0}", ObservationID);
+                    Response.Redirect(strRedirect, false);
                 }
 
             }
@@ -846,7 +848,7 @@ namespace CZAOSWeb.admin.observation
             {
                 if (this.UpdateEduObservation())
                 {
-                    var strRedirect = string.Format("view-observationId={0}", ObservationID);
+                    var strRedirect = string.Format("view-observation.aspx?observationId={0}", ObservationID);
                     Response.Redirect(strRedirect, false);
                 }
 
