@@ -25,7 +25,7 @@ namespace CZAOSWeb.admin.observation
             var metaString = obs.ObserveStart.ToShortDateString() + " // " + obs.ObservationID.ToString() + " // " + obs.ObserveType.ToString() + " // " + obs.Exhibit.ToString();
             litHeader.Text = metaString;
             litFooter.Text = metaString;
-
+            GetWeather();
             
         }
 
@@ -132,6 +132,14 @@ namespace CZAOSWeb.admin.observation
             gvObs.DataBind();
         }
 
+        protected void GetWeather()
+        {
+            var weather = WeatherList.GetItem(ObservationID);
 
+            litTemp.Text = weather.Temperature.ToString();
+            litWind.Text = weather.Wind;
+            litWeatherCond.Text = weather.WeatherDescription;
+            litCrowd.Text = weather.Crowd;
+        }
     }
 }

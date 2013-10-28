@@ -93,6 +93,7 @@
     <Compile Include="POCO\School.cs" />
     <Compile Include="POCO\SchoolDistrict.cs" />
     <Compile Include="POCO\UserRegion.cs" />
+    <Compile Include="POCO\Weather.cs" />
     <Compile Include="POCO\WeatherCondition.cs" />
     <Compile Include="POCO\Wind.cs" />
     <Compile Include="Providers\AdminNavigationProvider.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Providers\SchoolProvider.cs" />
     <Compile Include="Providers\UserRegionProvider.cs" />
     <Compile Include="Providers\WeatherConditionProvider.cs" />
+    <Compile Include="Providers\WeatherProvider.cs" />
     <Compile Include="Providers\WindProvider.cs" />
     <Compile Include="SQL\SQLAdminNavigationProvider.cs" />
     <Compile Include="SQL\SQLObservationReportProvider.cs" />
@@ -158,6 +160,7 @@
     <Compile Include="Providers\UserProvider.cs" />
     <Compile Include="SQL\SQLUserRegionProvider.cs" />
     <Compile Include="SQL\SQLWeatherConditionProvider.cs" />
+    <Compile Include="SQL\SQLWeatherProvider.cs" />
     <Compile Include="SQL\SQLWindProvider.cs" />
   </ItemGroup>
   <ItemGroup>
