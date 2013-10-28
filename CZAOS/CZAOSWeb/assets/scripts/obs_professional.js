@@ -138,7 +138,7 @@ function populateObservationInfo(observation) {
     window.AOS.get('exhibit/' + observation.ExhibitID, {}).done(function(data) {
         //display AnimalRegion or RegionName?
         $('#region').html(data.RegionName);
-        $('#exhibit').html(data.Exhibit);
+        $('#exhibit').html(data.ExhibitName);
     });
 
     $('body').addClass(observation.Exhibit);

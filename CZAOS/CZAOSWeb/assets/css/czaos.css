@@ -866,6 +866,7 @@ header li img{
     /*background:  url(../images/icons/observation/account-white.png) no-repeat bottom center;*/
 }
 #loginPanel input, #loginPanel select{
+    font-size: 16px;
     width: 100%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
