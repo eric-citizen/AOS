@@ -436,24 +436,6 @@ namespace CZAOSWeb.admin.observation {
         protected global::KT.WebControls.RequiredDropDownList ddSchoolCat;
         
         /// <summary>
-        /// rdoSchoolManual control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rdoSchoolManual;
-        
-        /// <summary>
-        /// rdoSchoolTimer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rdoSchoolTimer;
-        
-        /// <summary>
         /// ddSchoolInterval control.
         /// </summary>
         /// <remarks>
@@ -472,15 +454,6 @@ namespace CZAOSWeb.admin.observation {
         protected global::KT.WebControls.RequiredDropDownList ddSchoolAnimRegions;
         
         /// <summary>
-        /// ddSchoolExhibit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddSchoolExhibit;
-        
-        /// <summary>
         /// schoolAnimalGroup control.
         /// </summary>
         /// <remarks>
@@ -488,6 +461,15 @@ namespace CZAOSWeb.admin.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::CZAOSWeb.controls.GroupControl schoolAnimalGroup;
+        
+        /// <summary>
+        /// ddSchoolExhibit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.RequiredDropDownList ddSchoolExhibit;
         
         /// <summary>
         /// gvReports control.

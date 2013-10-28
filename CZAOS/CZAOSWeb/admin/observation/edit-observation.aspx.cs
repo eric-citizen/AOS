@@ -675,8 +675,6 @@ namespace CZAOSWeb.admin.observation
             else //timed
             {
                 ddSchoolInterval.SelectListItemByValue(obs.Interval.ToString()) ;
-                rdoSchoolTimer.SelectedIndex = obs.Timer ? 0 : 1;  
-                rdoSchoolManual.SelectedIndex = obs.Manual ? 0 : 1;  
             }
             
             ddDistrict.SelectListItemByValue(obs.DistrictID.ToString());
@@ -895,8 +893,8 @@ namespace CZAOSWeb.admin.observation
             else //timed
             {
                 obs.Interval = ddSchoolInterval.SelectedValue.ToInt32();
-                obs.Timer = (rdoSchoolTimer.SelectedIndex == 0);
-                obs.Manual = (rdoSchoolManual.SelectedIndex == 0);
+                obs.Timer = true;
+                obs.Manual = false;
             }
 
             obs.DistrictID = ddDistrict.SelectedValue.ToInt32();
@@ -961,8 +959,8 @@ namespace CZAOSWeb.admin.observation
             else //timed
             {
                 obs.Interval = ddSchoolInterval.SelectedValue.ToInt32();
-                obs.Timer = (rdoSchoolTimer.SelectedIndex == 0);
-                obs.Manual = (rdoSchoolManual.SelectedIndex == 0);
+                obs.Timer = true;
+                obs.Manual = false;
             }
 
             obs.ObserverNo = ddlSchoolObserverCount.SelectedValue.ToInt32();

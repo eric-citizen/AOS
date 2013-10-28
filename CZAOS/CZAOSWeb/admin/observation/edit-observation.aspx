@@ -247,38 +247,22 @@
                         <br /><br />
 
                         <label>Start</label><br />
-                        <mack:RequiredTextBox runat="server" ID="txtSchoolStart" ClientIDMode="Static" MaxLength="7" 
+                        <mack:RequiredTextBox runat="server" ID="txtSchoolStart" ClientIDMode="Static" MaxLength="8" 
                             Required="true" Width="100px" CssClass="starttime" ErrorMessage="*" ValidatorCssClass="error" 
                             ValidatorToolTip="Enter the start time"></mack:RequiredTextBox>     
                         <br /><br />
 
                         <label>End</label><br />
-                        <mack:RequiredTextBox runat="server" ID="txtSchoolEnd" ClientIDMode="Static" MaxLength="7" 
+                        <mack:RequiredTextBox runat="server" ID="txtSchoolEnd" ClientIDMode="Static" MaxLength="8" 
                             Required="true" Width="100px" CssClass="endtime" ErrorMessage="*" ValidatorCssClass="error" 
                             ValidatorToolTip="Enter the end time"></mack:RequiredTextBox>     
                         </div>
                     <div id="schTimeDetails" class="obsSectionInnerRight">
                         <label>Category</label><br />
                         <mack:RequiredDropDownList runat="server" ID="ddSchoolCat" ClientIDMode="Static" ValidatorToolTip="select a category" 
-                            Required="true" InitialValue="-1" ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" CssClass="cat-dd" >
-                            <asp:ListItem Selected="True" Value="-1" Text="Select Category"></asp:ListItem>
-                            <asp:ListItem Value="Behavior" Text="Behavior"></asp:ListItem>
+                            Required="true" ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" CssClass="cat-dd" >
                             <asp:ListItem Value="Timed" Text="Timed"></asp:ListItem>
                         </mack:RequiredDropDownList>
-                        <br /><br />
-
-                        <label>Manual Entry</label><br />
-                        <asp:RadioButtonList runat="server" ID="rdoSchoolManual" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table" CssClass="rdo-table">
-                            <asp:ListItem Value="Yes" Text="Yes" ></asp:ListItem>
-                            <asp:ListItem Value="No" Text="No" Selected="True" ></asp:ListItem>
-                        </asp:RadioButtonList>
-                        <br /><br />
-
-                        <label>Show Timer</label><br />
-                        <asp:RadioButtonList runat="server" ID="rdoSchoolTimer" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table" CssClass="rdo-table">
-                            <asp:ListItem Value="Show" Text="Show" Selected="True"></asp:ListItem>
-                            <asp:ListItem Value="Hide" Text="Hide" ></asp:ListItem>
-                        </asp:RadioButtonList>
                         <br /><br />
 
                         <label>Timed Interval</label><br />
@@ -301,15 +285,13 @@
                             SetFocusOnError="true" AutoPostBack="true" OnSelectedIndexChanged="ddSchoolAnimRegions_SelectedIndexChanged" ></mack:RequiredDropDownList>
                         <br /><br />
 
+                        <label>Animals (By Region)</label><br />
+                        <uc1:GroupControl runat="server" ID="schoolAnimalGroup" GroupNameVisible="false" />
+                    </div>
+                    <div id="schExhibitInfo" class="obsSectionInnerRight">
                         <label>Exhibit</label><br />
                         <mack:RequiredDropDownList runat="server" ID="ddSchoolExhibit" ClientIDMode="Static" DataValueField="ExhibitID" 
-                            DataTextField="ExhibitName" Required="false" OnPreRender="ddSchoolExhibit_PreRender"></mack:RequiredDropDownList>                                   
-
-                    </div>
-                    <div id="schGroupInfo" class="obsSectionInnerRight">
-                        <label>Animals</label><br />
-                        <uc1:GroupControl runat="server" ID="schoolAnimalGroup" GroupNameVisible="false" />             
-
+                            DataTextField="ExhibitName" Required="false" OnPreRender="ddSchoolExhibit_PreRender"></mack:RequiredDropDownList>
                     </div>
 
 
