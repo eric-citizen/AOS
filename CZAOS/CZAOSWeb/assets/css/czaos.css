@@ -780,6 +780,12 @@ hr{
     padding: 10%;
     text-align: center;
 }
+#behaviorControl li{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 10%;
+    text-align: center;
+}
 #crowdControl li{
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1011,7 +1017,7 @@ header li img{
     border-top: 1px solid #333;
     border-radius: 0 0 10px 10px;
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding-left: 10px;
     padding-bottom: 0px;
     border-bottom: 1px solid;
@@ -1030,6 +1036,8 @@ header li img{
     margin-left: 20px;
     width: 60%;
 }
+
+
 /*--------------------------*/
 
 .clearfix:before,
