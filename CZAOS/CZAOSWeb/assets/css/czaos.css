@@ -27,8 +27,12 @@ input{
     border-radius: 2em;
     padding: .5em 1em;
 }
-select{
+select {
     min-width: 150px;
+    -moz-background-size: 400px;
+    -o-background-size: 400px;
+    -webkit-background-size: 400px;
+    background-size: 400px;
     background: #fff url(../images/dropdown-arrow.png) center right no-repeat;
 }
 .listbox {
@@ -48,7 +52,7 @@ select{
     border: 2px solid #a2a6ad;
     font-family: "ABeeZee";
     border-radius: 2em;
-    padding: .5em 1em;
+    padding: .4em 1em;
     padding-right: 4em;
 }
 
@@ -900,7 +904,7 @@ header li img{
     /*background:  url(../images/icons/observation/account-white.png) no-repeat bottom center;*/
 }
 #loginPanel input, #loginPanel select{
-    font-size: 16px;
+    font-size: 14px;
     width: 100%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;

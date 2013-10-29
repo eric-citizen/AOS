@@ -98,7 +98,7 @@ namespace CZAOSWeb.Security
             {
                 Logger.Log(LogTarget.Security, MessageLevel.Warning, "User {0} attempted to access {1} but no permissions were found in the datastore.".FormatWith(context.User.Identity.Name, url));
                 context.Session.AddToSession("nopermissions", true);
-                context.Response.SafeRedirect("/admin/default.aspx");
+                context.Response.SafeRedirect("/admin/observation/default.aspx");
                 return;
             }
             else
@@ -107,7 +107,7 @@ namespace CZAOSWeb.Security
                 {
                     Logger.Log(LogTarget.Security, MessageLevel.Warning, "User {0} attempted to access {1} but has zero permissions.".FormatWith(context.User.Identity.Name, url));
                     context.Session.AddToSession("nopermissions", true);
-                    context.Response.SafeRedirect("/admin/default.aspx");
+                    context.Response.SafeRedirect("/admin/observation/default.aspx");
                     return;
                 }
                 foreach (string role in nav.RoleList)
@@ -120,7 +120,7 @@ namespace CZAOSWeb.Security
                 }
                 Logger.Log(LogTarget.Security, MessageLevel.Warning, "User {0} attempted to access {1} with no permissions.".FormatWith(context.User.Identity.Name, url));
                 context.Session.AddToSession("nopermissions", true);
-                context.Response.SafeRedirect("/admin/default.aspx");
+                context.Response.SafeRedirect("/admin/observation/default.aspx");
 
             }
 
