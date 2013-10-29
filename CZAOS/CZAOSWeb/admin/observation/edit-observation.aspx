@@ -195,10 +195,8 @@
                     </div>
                     <div id="numOfObservers" class="obsSectionInnerRight">
                         <label>Number of Observers</label><br />
-                        <mack:RequiredDropDownList runat="server" ID="ddlSchoolObserverCount" ValidatorToolTip="select the number of observers" 
-                            Required="true" InitialValue="-1" ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" 
-                            AutoPostBack="false" >                                            
-                        </mack:RequiredDropDownList>
+                        <mack:RequiredTextBox runat="server" ID="txtSchoolObserverCount" ValidatorToolTip="Enter the number of observers"
+                            Required="true" ErrorMessage="*" SetFocusOnError="true" TextMode="Number"></mack:RequiredTextBox>
                     </div>
 
                 </div>
