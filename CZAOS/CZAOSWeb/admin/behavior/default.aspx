@@ -27,7 +27,7 @@
     <mack:GridViewSortExtender runat="server" ID="gvse"
         AscendingImageUrl="~/images/down.png" DescendingImageUrl="~/images/up.png" GridViewID="gvBCat" TransparentImageUrl="~/images/transparent.png" />
 
-    <asp:GridView ID="gvBCat" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="gridview"
+    <asp:GridView ID="gvBCat" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="grid view"
         PageSize="20" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false" 
         DataKeyNames="BvrCatID" OnRowDataBound="gvBCat_RowDataBound" OnRowCommand="gvBCat_RowCommand">
         <Columns>
@@ -40,7 +40,7 @@
                 <ItemStyle Width="60px" />
             </asp:BoundField> 
 
-            <asp:TemplateField ItemStyle-Width="100px" HeaderText="Behavior Count">                    
+            <asp:TemplateField ItemStyle-Width="100px" HeaderText="Behavior Count" SortExpression="BehaviorCount">                    
                 <ItemTemplate>                    
                     <asp:HyperLink runat="server" ID="lnkBehaviorEdit" CssClass="ui-dialog-link" data-args="775, 650, true, null, 1" Text='<%#Bind("BehaviorCount") %>' ToolTip="Edit this category's behaviors" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/behaviors.aspx?bcatId={0}") %>'></asp:HyperLink>                
                 </ItemTemplate> 

@@ -29,7 +29,7 @@
                 <ItemStyle Width="120px" />
             </asp:BoundField>
 
-            <asp:BoundField DataField="AnimalRegionName" SortExpression="AnimalRegionName" HeaderText="Animal Region">
+            <asp:BoundField DataField="AnimalRegionName" SortExpression="AnimalRegion" HeaderText="Animal Region">
                 <ItemStyle Width="220px" />
             </asp:BoundField>
 

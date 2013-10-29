@@ -110,6 +110,8 @@ namespace CZAOSWeb.admin.observation
                     {
                         pnlSchool.Visible = true;
                         pnlLogin.Visible = true;
+                        pnlAttending.Visible = false;
+                        pnlManTimer.Visible = false;
 
                         litTeacherName.Text = obs.TeacherName;
                         litTeacherLogin.Text = obs.TeacherLogin;
