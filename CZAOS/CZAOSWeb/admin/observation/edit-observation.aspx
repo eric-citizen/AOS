@@ -263,9 +263,14 @@
                         <br /><br />
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <label>Timed Interval (Minutes)</label><br />
 =======
                         <label>Timed Interval</label><br />
+>>>>>>> origin/master
+=======
+                        <label>Timed Interval (Minutes)</label><br />
+
 >>>>>>> origin/master
                         <mack:RequiredDropDownList runat="server" ID="ddSchoolInterval" ValidatorToolTip="select an interval" Required="true" 
                             InitialValue="-1" ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" >                                            

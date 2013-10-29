@@ -57,7 +57,11 @@ namespace CZAOSWeb.admin.observation
                     gvObsRec.Columns[gvObsRec.Columns.Count - 1].Visible = false; //hide delete column from all but master admins
                     gvObsUp.Columns[gvObsUp.Columns.Count - 1].Visible = false; //hide delete column from all but master admins
                 }
+<<<<<<< HEAD
                 if (base.IsObserver)
+=======
+                if(base.IsObserver)
+>>>>>>> origin/master
                 {
                     gvObsRec.Columns[gvObsRec.Columns.Count - 2].Visible = false; //hide records column from all but master admins
                     gvObsRec.Columns[gvObsRec.Columns.Count - 3].Visible = false; //hide edit column from all but master admins
