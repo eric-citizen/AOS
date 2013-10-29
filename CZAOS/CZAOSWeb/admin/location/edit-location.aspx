@@ -34,11 +34,11 @@
                     ErrorMessage="*" ValidatorCssClass="error" ValidatorToolTip="Enter a unique location code" ></mack:RequiredTextBox>     
             </li>            
             <li>
-                <label>MaskAma:</label>   
+                <label>Show to Amateurs:</label>   
                 <asp:CheckBox runat="server" ID="chkMaskAma" Checked="false" />  
             </li>
             <li>
-                <label>MaskProf:</label>   
+                <label>Show to Professionals:</label>   
                 <asp:CheckBox runat="server" ID="chkMaskPro" Checked="false" />  
             </li>
             

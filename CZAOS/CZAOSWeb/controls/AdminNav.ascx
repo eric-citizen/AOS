@@ -2,7 +2,7 @@
     <asp:Repeater runat="server" ID="rptMenu" OnItemDataBound="rptMenu_ItemDataBound" OnPreRender="rptMenu_PreRender">
         <HeaderTemplate>
             <li>
-                <a href="/admin">Home</a>
+                <a href="/admin/edit-profile.aspx">Edit Profile</a>
             </li>
         </HeaderTemplate>
         <ItemTemplate >

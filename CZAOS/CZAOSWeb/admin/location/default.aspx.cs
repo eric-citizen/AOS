@@ -95,8 +95,13 @@ namespace CZAOSWeb.admin.Location
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 CZDataObjects.Location loc = e.Row.DataItem as CZDataObjects.Location;
-                e.Row.Cells[2].Text = loc.MaskAma.ToYesNoString();
-                e.Row.Cells[3].Text = loc.MaskProf.ToYesNoString();
+
+                //This value is being inverted because of the wording. 
+                //The wording in the database is 'Mask', but the wording while creating the item is 'Show'
+                var ama = !loc.MaskAma;
+                var pro = !loc.MaskProf;
+                e.Row.Cells[2].Text = ama.ToYesNoString();
+                e.Row.Cells[3].Text = pro.ToYesNoString();
             }
         }
        
