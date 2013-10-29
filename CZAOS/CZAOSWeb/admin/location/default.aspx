@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
     <a class="add-link ui-dialog-link" href="/admin/location/edit-location.aspx" data-args="325, 350, true, null, 1" title="Add New Location">Add New Location</a>
-    <a class="add-link ui-dialog-link" href="/admin/location/sort-location.aspx" data-args="600, 500, true, null, 1" title="Edit Sort Order">Edit Sort Order</a>
+<%--    <a class="add-link ui-dialog-link" href="/admin/location/sort-location.aspx" data-args="600, 500, true, null, 1" title="Edit Sort Order">Edit Sort Order</a>--%>
 
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
