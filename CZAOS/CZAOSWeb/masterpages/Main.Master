@@ -59,37 +59,9 @@
 				    </li>
 			    </ul>
             </nav>
-<%--        <ul id="iconlist">
-            <li id="iconlist-1"></li>
-            <li id="iconlist-2"></li>
-            <li id="iconlist-3"></li>
-            <li id="iconlist-4"></li>
-            <li id="iconlist-5"></li>
-            <li id="iconlist-6"></li>
-            <li id="iconlist-7"></li>
-            <li id="iconlist-8"></li>
-            <li id="iconlist-9"></li>
-        </ul>--%>
     </header>
     <div class="clear" id="titleborder"></div>
     <div id="body-container">
-            <!--
-            <a href="/admin/default.aspx">Home</a>
-            <a href="/admin/observation">Observations</a>    
-            <a href="/admin/animal-regions/default.aspx">Animal Regions</a>
-            <a href="/admin/animals/default.aspx">Animals</a>
-            <a href="/admin/behavior/">behavior categories</a>            
-            <a href="/admin/changes/default.aspx">change log</a>
-            <a href="/admin/crowds/default.aspx">crowds</a>
-            <a href="/admin/exhibits/">exhibits</a>
-            <a href="/admin/location/">location</a>
-            <a href="/admin/schools/">schools</a>
-            <a href="/admin/schools/districts.aspx">school districts</a>
-            <a href="/admin/schools/grades.aspx">school grades</a>
-            <a href="/admin/weather/default.aspx">weather conditions</a>
-            <a href="/admin/weather/wind.aspx">wind</a>
-            <a href="/admin/users/default.aspx">Users</a>     
-            -->
                    
         <h1><asp:Literal runat="server" ID="litContentTitle"></asp:Literal></h1>
         <asp:ContentPlaceHolder ID="body" runat="server"> 
@@ -114,7 +86,11 @@
 
         <script>
             $(function () {
-                $("#menu").click(function() {
+                $("html").click(function () {
+                    $("#menuDropDown").hide("");
+                });
+                $("#menu").click(function (event) {
+                    event.stopPropagation();
                     $("#menuDropDown").toggle("");
                 });
             });
