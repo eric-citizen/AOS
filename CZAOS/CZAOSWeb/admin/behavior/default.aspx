@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Manage Animals" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="CZAOSWeb.admin.Behavior._default" %>
+﻿<%@ Page Title="Manage Behavior Categories" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="CZAOSWeb.admin.Behavior._default" %>
 <%@ Register Src="~/controls/GridConfirmControl.ascx" TagPrefix="uc1" TagName="GridConfirmControl" %>
 <%@ Register Src="~/controls/GridPager.ascx" TagPrefix="uc1" TagName="GridPager" %>
 <%@ Register Src="~/controls/AlphabetFilter.ascx" TagPrefix="uc1" TagName="AlphabetFilter" %>
@@ -27,12 +27,12 @@
     <mack:GridViewSortExtender runat="server" ID="gvse"
         AscendingImageUrl="~/images/down.png" DescendingImageUrl="~/images/up.png" GridViewID="gvBCat" TransparentImageUrl="~/images/transparent.png" />
 
-    <asp:GridView ID="gvBCat" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="grid view"
+    <asp:GridView ID="gvBCat" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="gridview"
         PageSize="20" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false" 
         DataKeyNames="BvrCatID" OnRowDataBound="gvBCat_RowDataBound" OnRowCommand="gvBCat_RowCommand">
         <Columns>
 
-            <asp:BoundField DataField="BvrCat" SortExpression="BvrCat" HeaderText="Name">
+            <asp:BoundField DataField="BvrCat" SortExpression="BvrCat" HeaderText="Category Name">
                 <ItemStyle Width="100px" />                
             </asp:BoundField>
             

@@ -34,7 +34,7 @@ namespace CZBizObjects
 		[DataObjectMethod(DataObjectMethodType.Select, false)]
 		public static AnimalRegionList GetItemCollection(int startRowIndex, int maximumRows, string sortExpression, string filterExpression)
 		{
-            sortExpression = sortExpression.EnsureNotNull("AnimalRegion, RegionName"); 
+            sortExpression = sortExpression.EnsureNotNull("AnimalRegion"); 
 			return new AnimalRegionList(AnimalRegionProvider.Instance().GetItemCollection(startRowIndex, maximumRows, sortExpression, filterExpression));
 		}
 

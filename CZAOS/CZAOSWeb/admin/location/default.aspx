@@ -39,10 +39,10 @@
                 <ItemStyle Width="50px" CssClass="tar" />
             </asp:BoundField> 
 
-            <asp:BoundField DataField="maskAMA" SortExpression="maskAMA" HeaderText="MaskAma">
+            <asp:BoundField DataField="maskAMA" SortExpression="maskAMA" HeaderText="Show to Amateurs">
                 <ItemStyle Width="50px" CssClass="tac" />
             </asp:BoundField> 
-            <asp:BoundField DataField="maskProf" SortExpression="maskProf" HeaderText="MaskProf">
+            <asp:BoundField DataField="maskProf" SortExpression="maskProf" HeaderText="Show to Professionals">
                 <ItemStyle Width="50px" CssClass="tac" />
             </asp:BoundField> 
 

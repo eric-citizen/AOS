@@ -38,11 +38,11 @@
                 <mack:RequiredTextBox runat="server" ID="txtDesc" MaxLength="100" Width="200px" Required="false" ></mack:RequiredTextBox>     
             </li>
             <li>
-                <label>MaskAma:</label>   
+                <label>Show to Amateurs:</label>   
                 <asp:CheckBox runat="server" ID="chkMaskAma" Checked="false" />  
             </li>
             <li>
-                <label>MaskProf:</label>   
+                <label>Show to Professionals:</label>   
                 <asp:CheckBox runat="server" ID="chkMaskPro" Checked="false" />  
             </li>
             

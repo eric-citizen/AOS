@@ -59,8 +59,12 @@ namespace CZAOSWeb.admin.dialogs
                 txtCategory.Text = item.BvrCat;
                 txtCategoryCode.Text = item.BvrCatCode;
                 txtDesc.Text = item.Description;
-                chkMaskAma.Checked = item.MaskAma;
-                chkMaskPro.Checked = item.MaskProf;                
+
+                //This value is being inverted because of the wording. 
+                //The wording in the database is 'Mask', but the wording while creating the item is 'Show'
+                chkMaskAma.Checked = !item.MaskAma;
+                chkMaskPro.Checked = !item.MaskProf;  
+              
                 chkActive.Checked = item.Active;
 
             }
@@ -86,8 +90,12 @@ namespace CZAOSWeb.admin.dialogs
                     item.BvrCatCode = txtCategoryCode.HtmlEncodedText().Trim();
                     item.Description = txtDesc.HtmlEncodedText().Trim();
 
-                    item.MaskAma = chkMaskAma.Checked;
-                    item.MaskProf = chkMaskPro.Checked;
+                    //This value is being inverted because of the wording. 
+                    //The wording in the database is 'Mask', but the wording while creating the item is 'Show'
+                    item.MaskAma = !chkMaskAma.Checked;
+                    item.MaskProf = !chkMaskPro.Checked;
+
+
                     item.Active = chkActive.Checked;
 
                     BehaviorCategoryList.AddItem(item);
@@ -104,8 +112,10 @@ namespace CZAOSWeb.admin.dialogs
                     item.BvrCatCode = txtCategoryCode.HtmlEncodedText().Trim();
                     item.Description = txtDesc.HtmlEncodedText().Trim();
 
-                    item.MaskAma = chkMaskAma.Checked;
-                    item.MaskProf = chkMaskPro.Checked;
+                    //This value is being inverted because of the wording. 
+                    //The wording in the database is 'Mask', but the wording while creating the item is 'Show'
+                    item.MaskAma = !chkMaskAma.Checked;
+                    item.MaskProf = !chkMaskPro.Checked;
 
                     item.Active = chkActive.Checked;
 

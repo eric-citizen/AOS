@@ -57,9 +57,13 @@ namespace CZAOSWeb.admin.dialogs
             else
             {
                 txtDescription.Text = item.Description;
-                txtLocationCode.Text = item.LocationCode;                
-                chkMaskAma.Checked = item.MaskAma;
-                chkMaskPro.Checked = item.MaskProf;                
+                txtLocationCode.Text = item.LocationCode;
+
+                //This value is being inverted because of the wording. 
+                //The wording in the database is 'Mask', but the wording while creating the item is 'Show'
+                chkMaskAma.Checked = !item.MaskAma;
+                chkMaskPro.Checked = !item.MaskProf;    
+            
                 chkActive.Checked = item.Active;
 
             }
@@ -80,8 +84,11 @@ namespace CZAOSWeb.admin.dialogs
                     item.LocationCode = txtLocationCode.HtmlEncodedText().Trim();
                     item.Description = txtDescription.HtmlEncodedText().Trim();
 
-                    item.MaskAma = chkMaskAma.Checked;
-                    item.MaskProf = chkMaskPro.Checked;
+                    //This value is being inverted because of the wording. 
+                    //The wording in the database is 'Mask', but the wording while creating the item is 'Show'
+                    item.MaskAma = !chkMaskAma.Checked;
+                    item.MaskProf = !chkMaskPro.Checked;
+
                     item.Active = chkActive.Checked;
 
                     LocationList.AddItem(item);
@@ -98,8 +105,11 @@ namespace CZAOSWeb.admin.dialogs
                     item.LocationCode = txtLocationCode.HtmlEncodedText().Trim();
                     item.Description = txtDescription.HtmlEncodedText().Trim();
 
-                    item.MaskAma = chkMaskAma.Checked;
-                    item.MaskProf = chkMaskPro.Checked;
+                    //This value is being inverted because of the wording. 
+                    //The wording in the database is 'Mask', but the wording while creating the item is 'Show'
+                    item.MaskAma = !chkMaskAma.Checked;
+                    item.MaskProf = !chkMaskPro.Checked;
+
                     item.Active = chkActive.Checked;
 
                     LocationList.UpdateItem(item);
