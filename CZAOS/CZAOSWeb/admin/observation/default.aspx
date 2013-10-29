@@ -15,7 +15,7 @@
         <div id="UpcomingObservations">
             <div class="filter">
                 <h2 id="filterUpH2" class="filter-hide" onClick="">Filter Sessions</h2>
-                <div id="filterUp">              
+                <div id="filterUp" class="filterInner">              
                     <div id="AnimalDateUp" class="obsSectionInnerLeft">
                         <label>Animal</label><br />
                         <asp:DropDownList id="AnimalListUp" AutoPostBack="True" runat="server" Width="300px"/><br /><br />
@@ -114,7 +114,7 @@
         <div id="RecentObservations">
             <div class="filter">
                 <h2 id="filterRecH2" class="filter-hide" onClick="">Filter Sessions</h2>
-                <div id="filterRec">              
+                <div id="filterRec" class="filterInner">              
                     <div id="AnimalDateRec" class="obsSectionInnerLeft">
                         <label>Animal</label><br />
                         <asp:DropDownList id="AnimalListRec" AutoPostBack="True" runat="server" Width="300px"/><br /><br />
@@ -221,11 +221,11 @@
 
             $("#filterUpH2").click(function () {
                 $('#filterUp').toggle();
-                $("#filterUpH2").removeClass("filter-hide").addClass("filter-show");
+                $("#filterUpH2").toggleClass("filter-hide").toggleClass("filter-show");
             });
             $("#filterRecH2").click(function () {
                 $('#filterRec').toggle();
-                $("#filterRecH2").removeClass("filter-hide").addClass("filter-show");
+                $("#filterRecH2").toggleClass("filter-hide").toggleClass("filter-show");
             });
 
             //alert('close');

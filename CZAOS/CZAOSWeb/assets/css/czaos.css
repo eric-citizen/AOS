@@ -250,6 +250,9 @@ select{
     display: inline-block;
     width: 99.5%
 }
+.filterInner {
+    padding: 5px;
+}
 .filter h2 {
     padding-left: 1.5em;
     color: #4a525c;
