@@ -160,15 +160,15 @@ namespace CZBizObjects
             return new UserList(pros.ToList());
         }
 
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static UserList GetActiveAmateurUsers()
-        {
-            List<CZDataObjects.CZUser> users = GetActiveUsers();
+        //[DataObjectMethod(DataObjectMethodType.Select, false)]
+        //public static UserList GetActiveAmateurUsers()
+        //{
+        //    List<CZDataObjects.CZUser> users = GetActiveUsers();
 
-            IEnumerable<CZUser> pros = users.Where(s => s.UserType == CoreUserTypes.Amateur.ToString() || s.UserType == CoreUserTypes.Education.ToString());
+        //    IEnumerable<CZUser> pros = users.Where(s => s.UserType == CoreUserTypes.Amateur.ToString() || s.UserType == CoreUserTypes.Education.ToString());
 
-            return new UserList(pros.ToList());
-        }
+        //    return new UserList(pros.ToList());
+        //}
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static CZUser GetUser(string username)
