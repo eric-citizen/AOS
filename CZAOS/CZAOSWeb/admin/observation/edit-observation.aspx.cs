@@ -680,7 +680,7 @@ namespace CZAOSWeb.admin.observation
 
             txtTeacherName.Text = obs.TeacherName;
 
-            ddlSchoolObserverCount.SelectListItemByValue(obs.ObserverNo.ToString());
+            txtSchoolObserverCount.Text = obs.ObserverNo.ToString();
             ddSchoolExhibit.SelectListItemByValue(obs.ExhibitID.ToString());
             Exhibit ex = ExhibitList.Get(obs.ExhibitID);
             ddSchoolAnimRegions.SelectListItemByValue(ex.AnimalRegionCode);
@@ -728,19 +728,6 @@ namespace CZAOSWeb.admin.observation
 
                 ddSchoolInterval.Items.Add(item);
             }
-
-            for (int i = 1; i < 51; i++)
-            {
-                ListItem item = new ListItem(i.ToString(), i.ToString());
-
-                if (!this.IsPostBack && i == 1)
-                {
-                    item.Selected = true;
-                }
-
-                ddlSchoolObserverCount.Items.Add(item);
-            }
-
         }
 
         private void LoadSchoolAnimalRegions()
@@ -795,11 +782,6 @@ namespace CZAOSWeb.admin.observation
                 this.LoadSchools(ddDistrict.SelectedItem.Value.ToInt32());
             }
             
-        }
-
-        protected void ddlSchoolObserverCount_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         protected void ddSchoolAnimRegions_SelectedIndexChanged(object sender, EventArgs e)
@@ -896,7 +878,7 @@ namespace CZAOSWeb.admin.observation
             obs.SchoolID = ddSchool.SelectedValue.ToInt32();
             obs.GradeID = ddGrade.SelectedValue.ToInt32();
 
-            obs.ObserverNo = ddlSchoolObserverCount.SelectedValue.ToInt32();
+            obs.ObserverNo = txtSchoolObserverCount.Text.ToInt32();
 
             obs.ExhibitID = ddSchoolExhibit.SelectedValue.ToInt32();
 
@@ -958,7 +940,7 @@ namespace CZAOSWeb.admin.observation
                 obs.Manual = false;
             }
 
-            obs.ObserverNo = ddlSchoolObserverCount.SelectedValue.ToInt32();
+            obs.ObserverNo = txtSchoolObserverCount.Text.ToInt32();
 
             obs.ExhibitID = ddSchoolExhibit.SelectedValue.ToInt32();
             obs.TeacherName = txtTeacherName.Text;
