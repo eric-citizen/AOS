@@ -147,7 +147,7 @@ namespace CZAOSWeb.admin.observation
                 {
                     mvObs.ActiveViewIndex = 1;
 
-                    this.LoadObservers(true);
+                    this.LoadObservers();
 
                     dteDate.Text = obs.ObserveStart.ToShortDateString();
                     txtStartTime.Text = obs.ObserveStart.ToShortTimeString();
@@ -249,19 +249,18 @@ namespace CZAOSWeb.admin.observation
             
         }        
 
-        private void LoadObservers(bool pro)
+        private void LoadObservers()
         {
-            UserList users;
 
             //lstObservers
-            if (pro)
-            {
-                users = UserList.GetActiveProfessionalUsers();
-            }
-            else
-            {
-                users = UserList.GetActiveAmateurUsers();
-            }
+            //if (pro)
+            //{
+            var users = UserList.GetActiveProfessionalUsers();
+            //}
+            //else
+            //{
+            //    users = UserList.GetActiveAmateurUsers();
+            //}
 
             lstObservers.DataSource = users;
             lstObservers.DataBind();
@@ -305,12 +304,12 @@ namespace CZAOSWeb.admin.observation
 
             if (ddType.SelectedIndex == 1) //PRO
             {
-                this.LoadObservers(true);
+                LoadObservers();
             }
-            else //EDU-AM ddType.SelectedIndex == 2
-            {
-                this.LoadObservers(false);
-            }
+            //else //EDU-AM ddType.SelectedIndex == 2
+            //{
+            //    this.LoadObservers(false);
+            //}
         }
 
         protected void ddNumObs_SelectedIndexChanged(object sender, EventArgs e)
@@ -658,7 +657,7 @@ namespace CZAOSWeb.admin.observation
 
         private void LoadEduData(Observation obs)
         {           
-            this.LoadObservers(false);
+            //this.LoadObservers(false);
 
             litSchType.Text = obs.ObservationTypeName;
 

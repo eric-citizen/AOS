@@ -19,7 +19,7 @@ namespace CZAOSCore.Enums
     {
         Professional,
         Education,
-        Amateur
+        //Amateur
     }
 
     public class Helpers
