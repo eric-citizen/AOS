@@ -141,7 +141,7 @@ namespace CZBizObjects
                 filter = "Active = 0";
             }
 
-            return new AnimalRegionList(GetItemCollection(0, 0, "RegionName ASC, AnimalRegion ASC", filter));
+            return new AnimalRegionList(GetItemCollection(0, 0, "AnimalRegion ASC", filter));
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]

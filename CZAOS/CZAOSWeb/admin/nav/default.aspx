@@ -9,7 +9,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
     <a class="add-link ui-dialog-link" href="/admin/nav/edit-nav.aspx" title="Add New Nav Item" data-width="500" data-height="400" data-rp="1">Add Nav Item</a>   
-    <uc1:SimpleConfirmControl runat="server" ID="sccInit" Content="Are you sure? Current nav records will be erased!" LinkText="Initialize Nav" Title="Initialize Nav" OnConfirm="sccInit_Confirm" />
+    <%--<uc1:SimpleConfirmControl runat="server" ID="sccInit" Content="Are you sure? Current nav records will be erased!" LinkText="Initialize Nav" Title="Initialize Nav" OnConfirm="sccInit_Confirm" />--%>
     
 
     <asp:ObjectDataSource ID="cztDataSource" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting"
