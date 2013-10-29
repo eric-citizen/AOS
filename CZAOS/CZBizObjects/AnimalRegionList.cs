@@ -34,7 +34,7 @@ namespace CZBizObjects
 		[DataObjectMethod(DataObjectMethodType.Select, false)]
 		public static AnimalRegionList GetItemCollection(int startRowIndex, int maximumRows, string sortExpression, string filterExpression)
 		{
-            sortExpression = sortExpression.EnsureNotNull("AnimalRegion, RegionName"); 
+            sortExpression = sortExpression.EnsureNotNull("AnimalRegion"); 
 			return new AnimalRegionList(AnimalRegionProvider.Instance().GetItemCollection(startRowIndex, maximumRows, sortExpression, filterExpression));
 		}
 
@@ -141,7 +141,7 @@ namespace CZBizObjects
                 filter = "Active = 0";
             }
 
-            return new AnimalRegionList(GetItemCollection(0, 0, "RegionName ASC, AnimalRegion ASC", filter));
+            return new AnimalRegionList(GetItemCollection(0, 0, "AnimalRegion ASC", filter));
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]

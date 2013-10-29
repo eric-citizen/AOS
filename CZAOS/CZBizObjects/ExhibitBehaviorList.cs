@@ -33,7 +33,7 @@ namespace CZBizObjects
 		[DataObjectMethod(DataObjectMethodType.Select, false)]
 		public static ExhibitBehaviorList GetItemCollection(int startRowIndex, int maximumRows, string sortExpression, string filterExpression)
 		{
-            sortExpression = sortExpression.EnsureNotNull("ExhibitName , SortOrder, Behavior");
+            sortExpression = sortExpression.EnsureNotNull("ExhibitName, Behavior");
 			return new ExhibitBehaviorList(ExhibitBehaviorProvider.Instance().GetItemCollection(startRowIndex, maximumRows, sortExpression, filterExpression));
 		}
 

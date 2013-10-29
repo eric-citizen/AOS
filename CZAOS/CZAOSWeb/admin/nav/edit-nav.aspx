@@ -27,6 +27,7 @@
                  <asp:CheckBoxList runat="server" ID="cbxRoles" CssClass="checkbox-list">
                      <asp:ListItem Text="Pro Admin" Value="Administrator"></asp:ListItem>
                      <asp:ListItem Text="Education Admin" Value="EducationAdmin"></asp:ListItem>
+                     <asp:ListItem Text="Observer" Value="Observer"></asp:ListItem>
                  </asp:CheckBoxList>
             </li>
             
