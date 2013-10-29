@@ -8,110 +8,13 @@
 
     <div id="observationTabs">
         <ul>
-            <li><a href="#RecentObservations">Recent Observations</a></li>
             <li><a href="#UpcomingObservations">Upcoming Observations</a></li>
+            <li><a href="#RecentObservations">Recent Observations</a></li>
         </ul>
 
-        <div id="RecentObservations">
-            <div class="filter">
-                <h2 onClick="$('#filterRec').toggle();">Filter Sessions</h2>
-                <div id="filterRec">              
-                    <div id="AnimalDateRec" class="obsSectionInnerLeft">
-                        <label>Animal</label><br />
-                        <asp:DropDownList id="AnimalListRec" AutoPostBack="True" runat="server" Width="300px"/><br /><br />
-
-                        <label>Timeframe</label><br />
-                        <input type="date" id="dateFromRec" runat="server" /> -- <input type="date" id="dateToRec" runat="server"/><br /><br />
-
-                        <label>Observation Category</label><br />
-                        <asp:Checkbox id="timedRec" runat="server" Checked="True" Text="Timed" AutoPostBack="false" /><br />
-                        <asp:Checkbox ID="behaviorRec" runat="server" Text="Behavior" AutoPostBack="false" /><br />
-                    </div>
-
-                    <div id="schoolRec" class="obsSectionInnerRight">
-                        <asp:CheckBox id="searchStudentObservationsRec" runat="server" Checked="false" 
-                            AutoPostBack="true" OnCheckedChanged="searchStudentObservationsRec_CheckedChanged"
-                            Text="Search Student Observations" /><br /><br />
-
-                        <label>District</label><br />
-                        <asp:DropDownList id="DistrictListRec" AutoPostBack="true" OnSelectedIndexChanged="districtChange" Enabled="false" runat="server"/><br /><br />
-
-                        <label>School</label><br />
-                        <asp:DropDownList id="SchoolListRec" AutoPostBack="false" Enabled="false" runat="server"/><br /><br />
-                        <asp:Button id="searchRec" CssClass="button" Text="Search" runat="server" OnClick="searchRec_Click" />
-                        <asp:Button id="clearRec" CssClass="button" Text="Clear Search" runat="server" OnClick="clearRec_Click"/>
-                    </div>
-
-                </div>
-            </div>
-
-            <hr />
-            <h2>Recent Observations</h2>
-            <hr />
-            <a class="add-link" href="/admin/observation/edit-observation.aspx">Add New Observation</a>
-
-            <asp:ObjectDataSource ID="cztDataSourceRecent" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting_Recent"
-                SelectMethod="GetItemCollection" TypeName="CZBizObjects.ObservationList"
-                EnablePaging="True" SortParameterName="sortExpression" SelectCountMethod="GetCount" OldValuesParameterFormatString="original_{0}">
-
-                <SelectParameters>
-                    <asp:Parameter Name="filterExpression" Type="string" DefaultValue="" />
-                </SelectParameters>
-
-            </asp:ObjectDataSource>
-            <mack:GridViewSortExtender runat="server" ID="GridViewSortExtender1"
-                AscendingImageUrl="~/images/down.png" DescendingImageUrl="~/images/up.png" GridViewID="gvObsRec" TransparentImageUrl="~/images/transparent.png" />
-
-            <asp:GridView  ID="gvObsRec" runat="server" DataSourceID="cztDataSourceRecent" AllowSorting="True" AllowPaging="True" CssClass="gridview"
-                PageSize="20" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false"
-                DataKeyNames="ObservationID" OnRowCommand="gvObsRec_RowCommand" OnRowDataBound="gvObsRec_RowDataBound">
-                <Columns>
-
-                    <asp:BoundField DataField="ObserveStart" SortExpression="ObserveStart" HeaderText="Date" DataFormatString="{0:g}"></asp:BoundField>
-                    <asp:BoundField DataField="ObservationID" SortExpression="ObservationID" HeaderText="Obs.ID" ItemStyle-Width="100px"></asp:BoundField>
-                    <asp:BoundField DataField="ObserveType" SortExpression="ObserveType" HeaderText="User Type" ItemStyle-Width="150px"></asp:BoundField>
-                    <asp:BoundField DataField="Exhibit" SortExpression="Exhibit" HeaderText="Exhibit" ItemStyle-Width="150px"></asp:BoundField>
-
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <span class="view"><asp:HyperLink runat="server" ID="lnkView" CssClass="gv-view-link" data-args="650, 650, true, null, 1" Text="" ToolTip="View this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation.aspx?observationId={0}") %>'></asp:HyperLink></span>
-                        </ItemTemplate>
-                        <ItemStyle Width="60px" CssClass="tac" />
-                    </asp:TemplateField>
-
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <span class="edit"><asp:HyperLink runat="server" ID="lnkEdit" CssClass="" data-args="650, 650, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/edit-observation.aspx?observationId={0}") %>'></asp:HyperLink></span>
-                        </ItemTemplate>
-                        <ItemStyle Width="60px" CssClass="tac" />
-                    </asp:TemplateField>
-
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <span class="records"><asp:HyperLink runat="server" ID="lnkRecords" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="" ToolTip="View Observation Records" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation-records.aspx?observationId={0}") %>'></asp:HyperLink></span>
-                        </ItemTemplate>
-                        <ItemStyle Width="60px" CssClass="tac" />
-                    </asp:TemplateField>
-
-                    <asp:TemplateField ShowHeader="False">
-                        <ItemTemplate>
-                            <uc1:GridConfirmControl runat="server" ID="GridConfirmControl" CommandArgument='<%#Bind("ObservationID") %>' CommandName="DeleteObservation" />
-                        </ItemTemplate>
-                        <ItemStyle Width="60px" CssClass="tac" />
-                    </asp:TemplateField>
-
-                </Columns>
-
-
-            </asp:GridView>
-
-            <uc1:GridPager runat="server" ID="GridPager1" GridViewID="gvObsRec" />
-
-            <mack:MessageDiv runat="server" ID="MessageDiv1" ListControlID="gvObsRec" Text="No records found!"></mack:MessageDiv>
-        </div>
         <div id="UpcomingObservations">
             <div class="filter">
-                <h2 onClick="$('#filterUp').toggle();">Filter Sessions</h2>
+                <h2 id="filterUpH2" class="filter-hide" onClick="">Filter Sessions</h2>
                 <div id="filterUp">              
                     <div id="AnimalDateUp" class="obsSectionInnerLeft">
                         <label>Animal</label><br />
@@ -208,6 +111,103 @@
 
             <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvObsUp" Text="No records found!"></mack:MessageDiv>
         </div>
+        <div id="RecentObservations">
+            <div class="filter">
+                <h2 id="filterRecH2" class="filter-hide" onClick="">Filter Sessions</h2>
+                <div id="filterRec">              
+                    <div id="AnimalDateRec" class="obsSectionInnerLeft">
+                        <label>Animal</label><br />
+                        <asp:DropDownList id="AnimalListRec" AutoPostBack="True" runat="server" Width="300px"/><br /><br />
+
+                        <label>Timeframe</label><br />
+                        <input type="date" id="dateFromRec" runat="server" /> -- <input type="date" id="dateToRec" runat="server"/><br /><br />
+
+                        <label>Observation Category</label><br />
+                        <asp:Checkbox id="timedRec" runat="server" Checked="True" Text="Timed" AutoPostBack="false" /><br />
+                        <asp:Checkbox ID="behaviorRec" runat="server" Text="Behavior" AutoPostBack="false" /><br />
+                    </div>
+
+                    <div id="schoolRec" class="obsSectionInnerRight">
+                        <asp:CheckBox id="searchStudentObservationsRec" runat="server" Checked="false" 
+                            AutoPostBack="true" OnCheckedChanged="searchStudentObservationsRec_CheckedChanged"
+                            Text="Search Student Observations" /><br /><br />
+
+                        <label>District</label><br />
+                        <asp:DropDownList id="DistrictListRec" AutoPostBack="true" OnSelectedIndexChanged="districtChange" Enabled="false" runat="server"/><br /><br />
+
+                        <label>School</label><br />
+                        <asp:DropDownList id="SchoolListRec" AutoPostBack="false" Enabled="false" runat="server"/><br /><br />
+                        <asp:Button id="searchRec" CssClass="button" Text="Search" runat="server" OnClick="searchRec_Click" />
+                        <asp:Button id="clearRec" CssClass="button" Text="Clear Search" runat="server" OnClick="clearRec_Click"/>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr />
+            <h2>Recent Observations</h2>
+            <hr />
+            <a class="add-link" href="/admin/observation/edit-observation.aspx">Add New Observation</a>
+
+            <asp:ObjectDataSource ID="cztDataSourceRecent" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting_Recent"
+                SelectMethod="GetItemCollection" TypeName="CZBizObjects.ObservationList"
+                EnablePaging="True" SortParameterName="sortExpression" SelectCountMethod="GetCount" OldValuesParameterFormatString="original_{0}">
+
+                <SelectParameters>
+                    <asp:Parameter Name="filterExpression" Type="string" DefaultValue="" />
+                </SelectParameters>
+
+            </asp:ObjectDataSource>
+            <mack:GridViewSortExtender runat="server" ID="GridViewSortExtender1"
+                AscendingImageUrl="~/images/down.png" DescendingImageUrl="~/images/up.png" GridViewID="gvObsRec" TransparentImageUrl="~/images/transparent.png" />
+
+            <asp:GridView  ID="gvObsRec" runat="server" DataSourceID="cztDataSourceRecent" AllowSorting="True" AllowPaging="True" CssClass="gridview"
+                PageSize="20" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false"
+                DataKeyNames="ObservationID" OnRowCommand="gvObsRec_RowCommand" OnRowDataBound="gvObsRec_RowDataBound">
+                <Columns>
+
+                    <asp:BoundField DataField="ObserveStart" SortExpression="ObserveStart" HeaderText="Date" DataFormatString="{0:g}"></asp:BoundField>
+                    <asp:BoundField DataField="ObservationID" SortExpression="ObservationID" HeaderText="Obs.ID" ItemStyle-Width="100px"></asp:BoundField>
+                    <asp:BoundField DataField="ObserveType" SortExpression="ObserveType" HeaderText="User Type" ItemStyle-Width="150px"></asp:BoundField>
+                    <asp:BoundField DataField="Exhibit" SortExpression="Exhibit" HeaderText="Exhibit" ItemStyle-Width="150px"></asp:BoundField>
+
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <span class="view"><asp:HyperLink runat="server" ID="lnkView" CssClass="gv-view-link" data-args="650, 650, true, null, 1" Text="" ToolTip="View this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation.aspx?observationId={0}") %>'></asp:HyperLink></span>
+                        </ItemTemplate>
+                        <ItemStyle Width="60px" CssClass="tac" />
+                    </asp:TemplateField>
+
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <span class="edit"><asp:HyperLink runat="server" ID="lnkEdit" CssClass="" data-args="650, 650, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/edit-observation.aspx?observationId={0}") %>'></asp:HyperLink></span>
+                        </ItemTemplate>
+                        <ItemStyle Width="60px" CssClass="tac" />
+                    </asp:TemplateField>
+
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <span class="records"><asp:HyperLink runat="server" ID="lnkRecords" CssClass="gv-edit-link" data-args="650, 650, true, null, 1" Text="" ToolTip="View Observation Records" NavigateUrl='<%# Bind("ObservationID","~/admin/observation/view-observation-records.aspx?observationId={0}") %>'></asp:HyperLink></span>
+                        </ItemTemplate>
+                        <ItemStyle Width="60px" CssClass="tac" />
+                    </asp:TemplateField>
+
+                    <asp:TemplateField ShowHeader="False">
+                        <ItemTemplate>
+                            <uc1:GridConfirmControl runat="server" ID="GridConfirmControl" CommandArgument='<%#Bind("ObservationID") %>' CommandName="DeleteObservation" />
+                        </ItemTemplate>
+                        <ItemStyle Width="60px" CssClass="tac" />
+                    </asp:TemplateField>
+
+                </Columns>
+
+
+            </asp:GridView>
+
+            <uc1:GridPager runat="server" ID="GridPager1" GridViewID="gvObsRec" />
+
+            <mack:MessageDiv runat="server" ID="MessageDiv1" ListControlID="gvObsRec" Text="No records found!"></mack:MessageDiv>
+        </div>
     </div >
 
      
@@ -218,6 +218,15 @@
     <script>
         $(function() {
             $("#observationTabs").tabs();
+
+            $("#filterUpH2").click(function () {
+                $('#filterUp').toggle();
+                $("#filterUpH2").removeClass("filter-hide").addClass("filter-show");
+            });
+            $("#filterRecH2").click(function () {
+                $('#filterRec').toggle();
+                $("#filterRecH2").removeClass("filter-hide").addClass("filter-show");
+            });
 
             //alert('close');
             //$('#div-dialog').dialog('close');

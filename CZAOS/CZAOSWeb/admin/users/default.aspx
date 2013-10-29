@@ -12,7 +12,7 @@
     <div id="tabs">
         <ul>
             <li><asp:HyperLink runat="server" ID="lnkAdmin" NavigateUrl="#tab1">Administrators</asp:HyperLink></li>            
-            <li><asp:HyperLink runat="server" ID="lnkTeachers" NavigateUrl="#tab2">Education Admin</asp:HyperLink></li>
+            <li><asp:HyperLink runat="server" ID="lnkEduAdmin" NavigateUrl="#tab2">Education Admin</asp:HyperLink></li>
             <li><asp:HyperLink runat="server" ID="lnkStudents" NavigateUrl="#tab3">Observer</asp:HyperLink></li>      
             <li><asp:HyperLink runat="server" ID="lnkMaster" NavigateUrl="#tab4">Master Admin</asp:HyperLink></li>           
         </ul>     

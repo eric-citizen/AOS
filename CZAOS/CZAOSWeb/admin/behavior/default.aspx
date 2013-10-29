@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
     <a class="add-link ui-dialog-link" href="/admin/behavior/edit-behavior-category.aspx" data-args="400, 700, true, null, 0" title="Add New Behavior Category">Add New Behavior Category</a>
-    <a class="add-link ui-dialog-link" href="/admin/behavior/sort-behavior-category.aspx" data-args="600, 700, true, null, 0">Edit Sort Order</a>
+<%--    <a class="add-link ui-dialog-link" href="/admin/behavior/sort-behavior-category.aspx" data-args="600, 700, true, null, 0">Edit Sort Order</a>--%>
 
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
