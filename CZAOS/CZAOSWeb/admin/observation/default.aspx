@@ -137,7 +137,7 @@
 
                         <label>School</label><br />
                         <asp:DropDownList id="SchoolListRec" AutoPostBack="false" Enabled="false" runat="server"/><br /><br />
-                        <asp:Button id="searchRec" CssClass="button" Text="Search" runat="server" OnClick="searchRec_Click" />
+                        <asp:Button id="searchRec" CssClass="button" Text="Search" runat="server" OnClick="searchRec_Click" PostBackUrl="~/admin/observation/default.aspx#RecentObservations"/>
                         <asp:Button id="clearRec" CssClass="button" Text="Clear Search" runat="server" OnClick="clearRec_Click"/>
                     </div>
 

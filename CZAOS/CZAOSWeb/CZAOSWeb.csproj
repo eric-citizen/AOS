@@ -414,6 +414,7 @@
     <Content Include="Scripts\knockout.mapping-latest.js" />
     <Content Include="TeacherPage.html" />
     <Content Include="teacher\view-observation-records.aspx" />
+    <Content Include="teacher\view-observation.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1000,6 +1001,13 @@
     </Compile>
     <Compile Include="teacher\view-observation-records.aspx.designer.cs">
       <DependentUpon>view-observation-records.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacher\view-observation.aspx.cs">
+      <DependentUpon>view-observation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teacher\view-observation.aspx.designer.cs">
+      <DependentUpon>view-observation.aspx</DependentUpon>
     </Compile>
     <Compile Include="_code\Security\AdminPermissionsModule.cs" />
   </ItemGroup>

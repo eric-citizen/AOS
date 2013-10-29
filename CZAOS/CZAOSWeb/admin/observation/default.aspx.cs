@@ -57,7 +57,7 @@ namespace CZAOSWeb.admin.observation
                     gvObsRec.Columns[gvObsRec.Columns.Count - 1].Visible = false; //hide delete column from all but master admins
                     gvObsUp.Columns[gvObsUp.Columns.Count - 1].Visible = false; //hide delete column from all but master admins
                 }
-                if(base.IsObserver)
+                if (base.IsObserver)
                 {
                     gvObsRec.Columns[gvObsRec.Columns.Count - 2].Visible = false; //hide records column from all but master admins
                     gvObsRec.Columns[gvObsRec.Columns.Count - 3].Visible = false; //hide edit column from all but master admins
@@ -113,14 +113,15 @@ namespace CZAOSWeb.admin.observation
                 //filterExpression += "Animal = " + AnimalListRec.SelectedValue;
 
                 if (dateFromRec.Value == "" || dateToRec.Value == "")
-                {// Do Nothing
+                {
+                    filterExpression += " AND ObserveStart < '" + date + "'";
                 }
                 else
                 {
                     filterExpression += " AND ObserveStart > '" + dateFromRec.Value + "' AND ObserveStart < '" + dateToRec.Value + "'";
                 }
 
-                e.InputParameters["filterExpression"] = filterExpression + " AND ObserveStart < '" + date + "'";
+                e.InputParameters["filterExpression"] = filterExpression;
 
             }
         }
@@ -158,7 +159,7 @@ namespace CZAOSWeb.admin.observation
                     filterExpression += " AND ObserveStart > '" + dateFromUp.Value + "' AND ObserveStart < '" + dateToUp.Value + "'";
                 }
 
-                e.InputParameters["filterExpression"] = filterExpression + " AND ObserveStart < '" + date + "'";
+                e.InputParameters["filterExpression"] = filterExpression;
 
             }
         }
