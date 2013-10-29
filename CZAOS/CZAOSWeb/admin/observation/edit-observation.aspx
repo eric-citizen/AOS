@@ -81,8 +81,8 @@
 
                     <div id="dateTime" class="obsSectionInnerLeft">
                         <label>Date</label><br />
-                        <mack:DatePicker runat="server" ID="dteDate" Required="true" CssClass="focusme" ErrorMessage="&nbsp;" ValidatorCssClass="error" 
-                            ValidatorToolTip="select the observation date" OnInit="dteDate_Init"></mack:DatePicker>
+                        <mack:DatePicker runat="server" ID="dteDate" Required="true" SetFocusOnError="true" CssClass="focusme" ErrorMessage="&nbsp;" ValidatorCssClass="error" 
+                            ValidatorToolTip="select the observation date"></mack:DatePicker>
                         <br /><br />
 
                         <label>Start Time</label><br />
@@ -120,7 +120,7 @@
                             </asp:RadioButtonList>
                             <br /><br />
 
-                            <label>Time Interval</label><br />
+                            <label>Time Interval (Minutes)</label><br />
                             <mack:RequiredDropDownList runat="server" ID="ddTimeInterval" ValidatorToolTip="select an interval" Required="true" InitialValue="-1"
                             ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" >                                            
                         </mack:RequiredDropDownList>
@@ -242,8 +242,7 @@
                     <div id="schDateTime" class="obsSectionInnerLeft">
                         <label>Date</label><br />
                         <mack:DatePicker runat="server" ID="dteSchoolDate" Required="true" CssClass="focusme" 
-                            ErrorMessage="&nbsp;" ValidatorCssClass="error" ValidatorToolTip="select the observation date" 
-                            OnInit="dteDate_Init"></mack:DatePicker>
+                            ErrorMessage="&nbsp;" ValidatorCssClass="error" ValidatorToolTip="select the observation date"></mack:DatePicker>
                         <br /><br />
 
                         <label>Start</label><br />
@@ -265,7 +264,7 @@
                         </mack:RequiredDropDownList>
                         <br /><br />
 
-                        <label>Timed Interval</label><br />
+                        <label>Timed Interval (Minutes)</label><br />
                         <mack:RequiredDropDownList runat="server" ID="ddSchoolInterval" ValidatorToolTip="select an interval" Required="true" 
                             InitialValue="-1" ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" >                                            
                         </mack:RequiredDropDownList>

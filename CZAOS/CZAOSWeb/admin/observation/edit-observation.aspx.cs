@@ -625,12 +625,6 @@ namespace CZAOSWeb.admin.observation
              
         }
 
-        protected void dteDate_Init(object sender, EventArgs e)
-        {
-            dteDate.MinimumDate = System.DateTime.Now;
-            dteSchoolDate.MinimumDate = System.DateTime.Now;
-        }
-
         protected void ddAnimalRegion_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.LoadExhibits();
