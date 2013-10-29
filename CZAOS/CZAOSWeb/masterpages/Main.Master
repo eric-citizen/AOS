@@ -67,16 +67,17 @@
                     </ul>
                 </div>
             </nav>
-        </header>
-        <div class="clear" id="titleborder"></div>
-        <div id="body-container">
+    </header>
+    <div class="clear" id="titleborder"></div>
+    <div id="body-container">
+                   
+        <h1><asp:Literal runat="server" ID="litContentTitle"></asp:Literal></h1>
+        <asp:ContentPlaceHolder ID="body" runat="server"> 
+        
 
-            <h1>
-                <asp:Literal runat="server" ID="litContentTitle"></asp:Literal></h1>
-            <asp:ContentPlaceHolder ID="body" runat="server">
-            </asp:ContentPlaceHolder>
+        </asp:ContentPlaceHolder>
 
-        </div>
+    </div>
 
         <script src="/assets/scripts/simplemodal/js/jquery.simplemodal.1.4.4.min.js"></script>
         <script src="/assets/scripts/toastr/toastr.js"></script>
@@ -94,11 +95,11 @@
         <script>
             $(function () {
                 $("html").click(function () {
-                    $("#menuDropDown2").hide("");
+                    $("#menuDropDown").hide("");
                 });
-                $("#menu2").click(function (event) {
+                $("#menu").click(function (event) {
                     event.stopPropagation();
-                    $("#menuDropDown2").toggle("");
+                    $("#menuDropDown").toggle("");
                 });
             });
 
