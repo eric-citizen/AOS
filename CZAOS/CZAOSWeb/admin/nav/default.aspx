@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
-    <a class="add-link ui-dialog-link" href="/admin/nav/edit-nav.aspx" title="Add New Nav Item" data-width="500" data-height="400" data-rp="1">Add Nav Item</a>   
+    <a class="add-link ui-dialog-link" href="/admin/nav/edit-nav.aspx" title="Add New Nav Item" data-width="400" data-height="425" data-rp="1">Add Nav Item</a>   
     <%--<uc1:SimpleConfirmControl runat="server" ID="sccInit" Content="Are you sure? Current nav records will be erased!" LinkText="Initialize Nav" Title="Initialize Nav" OnConfirm="sccInit_Confirm" />--%>
     
 
@@ -36,7 +36,7 @@
             </asp:BoundField> 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="325, 400, true, null, 1" Text="" ToolTip="Edit Condition" NavigateUrl='<%# Bind("ID","~/admin/nav/edit-nav.aspx?navId={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="425, 400, true, null, 1" Text="" ToolTip="Edit Condition" NavigateUrl='<%# Bind("ID","~/admin/nav/edit-nav.aspx?navId={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>
