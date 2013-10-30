@@ -883,7 +883,7 @@ header li img{
     width: 100%;
 }
 #loginPanel{
-    width: 320px;
+    width: 350px;
     margin:  0 auto;
     padding-top: 5em;
 }
@@ -1009,9 +1009,9 @@ header li img{
     padding-left: 0px;
 }
 
-#observationInfo span {
+/*#observationInfo span {
     margin-left: 10px
-}
+}*/
 
 #observationPanel input[type='checkbox'] {
     vertical-align: bottom;
@@ -1024,9 +1024,9 @@ header li img{
     min-width: 250px;
 }
 
-#observationInfo span + div{
+/*#observationInfo span + div{
     margin-left: 20px;
-}
+}*/
 
 #animalgroup-knockout-scope {
     float: left;
