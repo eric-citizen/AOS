@@ -54,7 +54,7 @@ namespace CZDataObjects
             {
                 Weather item = null;                
 
-                base.AddParameter("@Id", id);
+                base.AddParameter("@ObservationId", id);
 
 				using (DbDataReader reader = base.ExecuteReader("czt_Weather_Get",
 								System.Data.CommandType.StoredProcedure, ConnectionState.CloseOnExit))
