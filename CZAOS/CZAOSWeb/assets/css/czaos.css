@@ -164,6 +164,19 @@ select{
     text-indent:-999em;
 	color: #fff;
 }
+.edit-button {
+    text-decoration: none;
+    font-size: 1.05em;
+    color: #000;
+    border: 2px solid #a2a6ad;
+    border-radius: 2em;
+    padding: 2px 4px;
+    background-color: rgb(239, 239, 239);
+}
+.edit-button:hover{
+    text-decoration: none;
+    color: #001;
+}
 .flagged {
     background: url('../images/icons/admin/flagged.png') center left no-repeat;
     background-size: 30px 30px;

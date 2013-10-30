@@ -22,9 +22,9 @@ namespace CZAOSWeb.admin.schools
             {
                 if (!base.IsMasterAdmin)
                 {
-                    gvSchools.Columns[gvSchools.Columns.Count - 1].Visible = false; //hide delete column from all but master admins
+                    gvDistricts.Columns[gvDistricts.Columns.Count - 1].Visible = false; //hide delete column from all but master admins
                 }
-
+                
             }
         }
 
@@ -40,57 +40,57 @@ namespace CZAOSWeb.admin.schools
         {
             if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
             {
-                e.InputParameters["filterExpression"] = "School LIKE '" + AlphabetFilter.Filter + "%'";
+                e.InputParameters["filterExpression"] = "District LIKE '" + AlphabetFilter.Filter + "%'";
             }
             else
             {
                 e.InputParameters["filterExpression"] = string.Empty;
             }
 
-        }
+        }        
 
         protected void IsActiveCheckChanged(object sender, EventArgs e)
         {
             CheckBox cb = (CheckBox)sender;
             GridViewRow row = (GridViewRow)cb.NamingContainer;
-            int id = Convert.ToInt32(gvSchools.DataKeys[row.RowIndex].Value);
+            int id = Convert.ToInt32(gvDistricts.DataKeys[row.RowIndex].Value);
 
-            School item = SchoolList.GetItem(id);
-            item.Active = cb.Checked;
-            SchoolList.UpdateItem(item);
+            SchoolDistrict cat = SchoolDistrictList.GetItem(id);
+            cat.Active = cb.Checked;
+            SchoolDistrictList.UpdateItem(cat);
 
-            if (item.Active)
+            if (cat.Active)
             {
-                this.Toast(PageExtensions.ToastMessageType.success, "School activated successfully.", "Record Updated");
+                this.Toast(PageExtensions.ToastMessageType.success, "District activated successfully.", "Record Updated");
             }
             else
             {
-                this.Toast(PageExtensions.ToastMessageType.success, "School inactivated successfully.", "Record Updated");
+                this.Toast(PageExtensions.ToastMessageType.success, "District inactivated successfully.", "Record Updated");
             }
 
-            gvSchools.DataBind();
-
+            gvDistricts.DataBind();
+            
         }
 
         protected void AlphabetFilter_AlphabetSelected(object sender, EventArgs e)
         {
-            gvSchools.PageIndex = 0;
-            gvSchools.DataBind();
+            gvDistricts.PageIndex = 0;
+            gvDistricts.DataBind();
         }
 
-        protected void gvSchools_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gvDistricts_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "DeleteSchool" && base.IsMasterAdmin)
+            if (e.CommandName == "DeleteDistrict" && base.IsMasterAdmin)
             {
                 int id = Convert.ToInt32(e.CommandArgument);
-                SchoolList.DeleteItem(id);
-                this.Toast(PageExtensions.ToastMessageType.success, "School permanently deleted.", "Record Deleted");
+                SchoolDistrictList.DeleteItem(id);
+                this.Toast(PageExtensions.ToastMessageType.success, "District permanently deleted.", "Record Deleted");
             }
 
-            gvSchools.DataBind();
+            gvDistricts.DataBind();
         }
 
-        protected void gvSchools_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void gvDistricts_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
@@ -98,5 +98,10 @@ namespace CZAOSWeb.admin.schools
             }
         }
 
+        protected void btnSchools_Click(object sender, EventArgs e)
+        {
+
+        }
+       
     }
 }
