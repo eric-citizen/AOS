@@ -333,7 +333,7 @@
                 </div>
 
                 <div class="floatRight">
-                    <mack:WaitButton runat="server" ID="btnSchSave" OnClick="btnSaveEdu_Click" CssClass="button" Text="Save" ToolTip="Save Educational Observation" />
+                    <mack:WaitButton runat="server" ID="btnSchSave" OnClientClick="alert('hello')" OnClick="btnSaveEdu_Click" CssClass="button" Text="Save" ToolTip="Save Educational Observation" />
                 </div>
 
             </asp:View>
@@ -354,6 +354,11 @@
             this.setHours(this.getHours() + h);
             return this;
         }
+
+        //show message when user attempts to leave page without saving
+        $(window).bind('beforeunload', function () {
+            return 'Are you sure you want to leave? All changes will be lost.';
+        });
 
         $('#ddCategory, #ddSchoolCat').on('change', function () {
             if (this.value != "-1" && this.value === "Behavior") {
