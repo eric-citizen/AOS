@@ -1007,7 +1007,13 @@ header li img{
 }
 #enviromentData h1{
     padding-top: 20px;
+    margin-left: 20px;
 }
+
+#enviromentPanel h2 {
+    margin-left: 20px;
+}
+
 #weatherAPIoutput{
     padding:1em;
     color: #4a525c;
@@ -1070,9 +1076,10 @@ header li img{
 }
 #timer .time{
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 2px;
+    right: 5px;
     z-index: 2;
+    font-size: 18px;
 }
 #weatherAPIoutput .temp:after{
     content:'°F';
@@ -1090,6 +1097,13 @@ header li img{
 
 #observationPanel input[type='checkbox'] {
     vertical-align: bottom;
+}
+
+#observationPanel select {
+    font-size: 14px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    min-width: 250px;
 }
 
 #observationInfo span + div{

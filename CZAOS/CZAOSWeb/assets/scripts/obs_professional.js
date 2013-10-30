@@ -181,12 +181,17 @@ function startTime(time) {
             displayTime(count);
             $(".timebar").css('width', ((count / time) * 100) + '%');
             if (count == time) {
-                if (hasTakenRecord) {
-                    _.each(recordsToBeSaved, function(record) {
+                //if the user did not save the record for this interval, go ahead and take whatever values are currently selected as the record
+                if (!hasTakenRecord) {
+                    updateRecordsToBeSaved();
+                }
+                //save records to local storage and display message
+                _.each(recordsToBeSaved, function (record) {
                         observationRecords.data.records.push(record);
                     });
-                    observationRecords.saveToLocal();
-                }
+                observationRecords.saveToLocal();
+                toastr.success("Your observation for this interval has been saved", "Record Saved");
+
                 hasTakenRecord = false;
                 clearInterval(interval);
                 startTime(time);
@@ -222,14 +227,8 @@ function startObservation() {
         $(window).trigger('resize');
 
         $("#saveRecord").click(function () {
-            var aos = window.AOS;
-            updateRecordsToBeSaved({
-                LocationID: aos.LocationControl().SelectedLocation().LocationID(),
-                BvrCat: aos.BehaviorCategoryControl().SelectedCategory().BvrCat(),
-                BvrCatCode: aos.BehaviorCategoryControl().SelectedCategory().BvrCatCode(),
-                Behavior: aos.BehaviorControl().SelectedBehavior().Behavior(),
-                BehaviorCode: aos.BehaviorControl().SelectedBehavior().BehaviorCode()
-            });
+            updateRecordsToBeSaved();
+            
             if (!hasTakenRecord) {
                 toastr.success("Your observation has been saved", "Record Saved");
                 hasTakenRecord = true;
@@ -242,7 +241,8 @@ function startObservation() {
     }
 }
 
-function updateRecordsToBeSaved(params) {
+function updateRecordsToBeSaved() {
+    var aos = window.AOS;
     //clear current items in array
     recordsToBeSaved = [];
     //add record to recordsToBeSaved foreach animal selected
@@ -251,11 +251,11 @@ function updateRecordsToBeSaved(params) {
         new record(
             {
                 ZooID: animal.ZooID,
-                LocationID: params.LocationID,
-                BvrCat: params.BvrCat,
-                BvrCatCode: params.BvrCatCode,
-                Behavior: params.Behavior,
-                BehaviorCode: params.BehaviorCode
+                LocationID: aos.LocationControl().SelectedLocation().LocationID(),
+                BvrCat: aos.BehaviorCategoryControl().SelectedCategory().BvrCat(),
+                BvrCatCode: aos.BehaviorCategoryControl().SelectedCategory().BvrCatCode(),
+                Behavior: aos.BehaviorControl().SelectedBehavior().Behavior(),
+                BehaviorCode: aos.BehaviorControl().SelectedBehavior().BehaviorCode()
             }));
     });
     console.log(recordsToBeSaved);

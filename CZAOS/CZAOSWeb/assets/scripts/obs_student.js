@@ -105,10 +105,15 @@ function startTime(time) {
             displayTime(count);
             $(".timebar").css('width', ((count / time) * 100) + '%');
             if (count == time) {
-                if (hasTakenRecord) {
-                    observationRecords.data.records.push(recordToBeSaved);
-                    observationRecords.saveToLocal();
+                //if the user did not save the record for this interval, go ahead and take whatever values are currently selected as the record
+                if (!hasTakenRecord) {
+                    updateRecordToBeSaved();
                 }
+                //save record to local storage and display message
+                observationRecords.data.records.push(recordToBeSaved);
+                observationRecords.saveToLocal();
+                toastr.success("Your observation for this interval has been saved", "Record Saved");
+                
                 hasTakenRecord = false;
                 clearInterval(interval);
                 startTime(time);
@@ -136,13 +141,11 @@ function startObservation() {
 
         $("#saveRecord").click(function() {
             if (!hasTakenRecord) {
-                recordToBeSaved = new record({ ZooID: $("#observationAnimals").val(), LocationID: $("#zoneControl").val(), BvrCat: $("#behaviorControl li.selected").attr('data-category'), BvrCatCode: $("#behaviorControl li.selected").attr('name') });
-                //observationRecords.data.records.push(new record({ ZooID: $("#observationAnimals").val(), LocationID: $("#zoneControl").val(), BvrCat: $("#behaviorControl li.selected").attr('data-category'), BvrCatCode: $("#behaviorControl li.selected").attr('name') }));
-                console.log(recordToBeSaved);
+                updateRecordToBeSaved();
                 toastr.success("Your observation has been saved", "Record Saved");
                 hasTakenRecord = true;
             } else {
-                recordToBeSaved = new record({ ZooID: $("#observationAnimals").val(), LocationID: $("#zoneControl").val(), BvrCat: $("#behaviorControl li.selected").attr('data-category'), BvrCatCode: $("#behaviorControl li.selected").attr('name') });
+                updateRecordToBeSaved();
                 toastr.success("Your observation was updated successfully", "Record Updated");
             }
         });
@@ -257,3 +260,8 @@ var weather = function(ref) {
 var watch = navigator.geolocation.getCurrentPosition(showPosition);
 
 var recordToBeSaved;
+
+function updateRecordToBeSaved() {
+    recordToBeSaved = new record({ ZooID: $("#observationAnimals").val(), LocationID: $("#zoneControl").val(), BvrCat: $("#behaviorControl li.selected").attr('data-category'), BvrCatCode: $("#behaviorControl li.selected").attr('name') });
+    console.log(recordToBeSaved);
+}
