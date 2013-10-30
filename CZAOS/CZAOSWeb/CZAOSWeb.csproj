@@ -156,9 +156,9 @@
     <Content Include="admin\observation\default.aspx" />
     <Content Include="admin\observation\edit-observation.aspx" />
     <Content Include="admin\schools\edit-district.aspx" />
-    <Content Include="admin\schools\districts.aspx" />
-    <Content Include="admin\schools\edit-school.aspx" />
     <Content Include="admin\schools\default.aspx" />
+    <Content Include="admin\schools\edit-school.aspx" />
+    <Content Include="admin\schools\schools.aspx" />
     <Content Include="admin\schools\grades.aspx" />
     <Content Include="admin\schools\edit-grade.aspx" />
     <Content Include="admin\users\default.aspx" />
@@ -788,12 +788,12 @@
     <Compile Include="admin\schools\edit-district.aspx.designer.cs">
       <DependentUpon>edit-district.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\schools\districts.aspx.cs">
-      <DependentUpon>districts.aspx</DependentUpon>
+    <Compile Include="admin\schools\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\schools\districts.aspx.designer.cs">
-      <DependentUpon>districts.aspx</DependentUpon>
+    <Compile Include="admin\schools\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\schools\edit-school.aspx.cs">
       <DependentUpon>edit-school.aspx</DependentUpon>
@@ -802,12 +802,12 @@
     <Compile Include="admin\schools\edit-school.aspx.designer.cs">
       <DependentUpon>edit-school.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\schools\default.aspx.cs">
-      <DependentUpon>default.aspx</DependentUpon>
+    <Compile Include="admin\schools\schools.aspx.cs">
+      <DependentUpon>schools.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\schools\default.aspx.designer.cs">
-      <DependentUpon>default.aspx</DependentUpon>
+    <Compile Include="admin\schools\schools.aspx.designer.cs">
+      <DependentUpon>schools.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\schools\grades.aspx.cs">
       <DependentUpon>grades.aspx</DependentUpon>

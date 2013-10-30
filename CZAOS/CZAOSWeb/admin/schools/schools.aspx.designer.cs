@@ -10,7 +10,16 @@
 namespace CZAOSWeb.admin.schools {
     
     
-    public partial class districts {
+    public partial class schools {
+        
+        /// <summary>
+        /// hdnItemID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.HiddenID hdnItemID;
         
         /// <summary>
         /// AlphabetFilter control.
@@ -40,13 +49,13 @@ namespace CZAOSWeb.admin.schools {
         protected global::KT.WebControls.GridViewSortExtender gvse;
         
         /// <summary>
-        /// gvDistricts control.
+        /// gvSchools control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvDistricts;
+        protected global::System.Web.UI.WebControls.GridView gvSchools;
         
         /// <summary>
         /// gvPagerControl control.
