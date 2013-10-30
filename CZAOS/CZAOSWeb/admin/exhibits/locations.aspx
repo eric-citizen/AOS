@@ -13,7 +13,7 @@
         <h2>Exhibit:&nbsp;<asp:Literal runat="server" ID="litExhibitName"></asp:Literal></h2>
     </div>
 
-    <a class="add-link ui-dialog-link" href="/admin/exhibits/edit-exhibit-location.aspx?exId=<%= this.ExhibitID %>" data-args="250, 600, true, null, 1" title="Add New Exhibit Location">Add New Exhibit Location</a>        
+    <a class="add-link ui-dialog-link" href="/admin/exhibits/edit-exhibit-location.aspx?exId=<%= this.ExhibitID %>" data-args="225, 250, true, null, 1" title="Add New Exhibit Location">Add New Exhibit Location</a>        
 
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />

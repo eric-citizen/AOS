@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
-    <a class="add-link ui-dialog-link" href="/admin/behavior/edit-behavior-category.aspx" data-args="400, 700, true, null, 0" title="Add New Behavior Category">Add New Behavior Category</a>
+    <a class="add-link ui-dialog-link" href="/admin/behavior/edit-behavior-category.aspx" data-args="400, 300, true, null, 0" title="Add New Behavior Category">Add New Behavior Category</a>
 <%--    <a class="add-link ui-dialog-link" href="/admin/behavior/sort-behavior-category.aspx" data-args="600, 700, true, null, 0">Edit Sort Order</a>--%>
 
     <div class="alphabet-container">  
@@ -27,7 +27,7 @@
     <mack:GridViewSortExtender runat="server" ID="gvse"
         AscendingImageUrl="~/images/down.png" DescendingImageUrl="~/images/up.png" GridViewID="gvBCat" TransparentImageUrl="~/images/transparent.png" />
 
-    <asp:GridView ID="gvBCat" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="grid view"
+    <asp:GridView ID="gvBCat" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="gridview"
         PageSize="20" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false" 
         DataKeyNames="BvrCatID" OnRowDataBound="gvBCat_RowDataBound" OnRowCommand="gvBCat_RowCommand">
         <Columns>
@@ -54,7 +54,7 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="400, 400, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/edit-behavior-category.aspx?bcatId={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="400, 300, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/edit-behavior-category.aspx?bcatId={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>

@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
-    <a class="add-link ui-dialog-link" href="/admin/exhibits/edit-exhibit.aspx" data-args="350, 700, true, null, 1">Add New Exhibit</a>
+    <a class="add-link ui-dialog-link" href="/admin/exhibits/edit-exhibit.aspx" data-args="225, 250, true, null, 1">Add New Exhibit</a>
 
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
@@ -63,7 +63,7 @@
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="225, 300, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("ExhibitID", "~/admin/exhibits/edit-exhibit.aspx?exId={0}") %>'></asp:HyperLink>
+                            <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="225, 250, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("ExhibitID", "~/admin/exhibits/edit-exhibit.aspx?exId={0}") %>'></asp:HyperLink>
                         </ItemTemplate> 
                         <ItemStyle Width="60px" CssClass="tac" />               
                     </asp:TemplateField>

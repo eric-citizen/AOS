@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
-    <a class="add-link ui-dialog-link" href="/admin/crowds/edit-crowd.aspx" data-args="250, 700, true, null, 1" title="Add New Crowd">Add New Crowd</a>        
+    <a class="add-link ui-dialog-link" href="/admin/crowds/edit-crowd.aspx" data-args="175, 250, true, null, 1" title="Add New Crowd">Add New Crowd</a>        
 
     <asp:ObjectDataSource ID="cztDataSource" runat="server" OnSelected="cztDataSource_Selected" 
         SelectMethod="GetItemCollection" TypeName="CZBizObjects.CrowdList"
@@ -37,7 +37,7 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="175, 300, true, null, 1" Text="" ToolTip="Edit Crowd" NavigateUrl='<%# Bind("CrowdID","~/admin/crowds/edit-crowd.aspx?cId={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="175, 250, true, null, 1" Text="" ToolTip="Edit Crowd" NavigateUrl='<%# Bind("CrowdID","~/admin/crowds/edit-crowd.aspx?cId={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>

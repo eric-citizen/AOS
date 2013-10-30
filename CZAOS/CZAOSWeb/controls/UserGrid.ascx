@@ -82,7 +82,7 @@
                 
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="850, 800, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("ProviderUserKey","~/admin/users/edit-user.aspx?UserId={0}") %>'></asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="775, 750, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("ProviderUserKey","~/admin/users/edit-user.aspx?UserId={0}") %>'></asp:HyperLink>
                     </ItemTemplate>       
                     <ItemStyle Width="60px" CssClass="tac"/>         
                 </asp:TemplateField>
