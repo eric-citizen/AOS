@@ -51,15 +51,17 @@
                         <ItemStyle Width="300px" />
                     </asp:BoundField>
             
-                    <asp:TemplateField ItemStyle-Width="110px" HeaderText="Behavior Count" SortExpression="BehaviorCount">                    
+                    <asp:TemplateField ItemStyle-Width="150px" HeaderText="Behavior Count" SortExpression="BehaviorCount" HeaderStyle-CssClass="tac">                    
                         <ItemTemplate>                    
-                            <asp:HyperLink runat="server" ID="lnkBehaviorEdit" CssClass="ui-dialog-link" data-args="750, 800, true, null, 1" Text='<%#Bind("BehaviorCount") %>' ToolTip="Edit Behaviors" NavigateUrl='<%# Bind("ExhibitID", "~/admin/exhibits/behaviors.aspx?exId={0}") %>'></asp:HyperLink>                
+                            <asp:Literal runat="server" ID="litBvrCt" Text='<%#Bind("BehaviorCount") %>'></asp:Literal>                 
+                            <asp:HyperLink runat="server" ID="lnkBehaviorEdit" CssClass="edit-button ui-dialog-link" data-args="750, 800, true, null, 1" Text="Edit Behaviors" ToolTip="Edit Behaviors" NavigateUrl='<%# Bind("ExhibitID", "~/admin/exhibits/behaviors.aspx?exId={0}") %>'></asp:HyperLink>                
                         </ItemTemplate> 
                     </asp:TemplateField>                
 
-                    <asp:TemplateField ItemStyle-Width="110px" HeaderText="Location Count" SortExpression="LocationCount">                    
+                    <asp:TemplateField ItemStyle-Width="150px" HeaderText="Location Count" SortExpression="LocationCount" HeaderStyle-CssClass="tac">                    
                         <ItemTemplate>                    
-                            <asp:HyperLink runat="server" ID="lnkLocationEdit" CssClass="ui-dialog-link" data-args="750, 800, true, null, 1" Text='<%#Bind("LocationCount") %>' ToolTip="Edit Locations" NavigateUrl='<%# Bind("ExhibitID", "~/admin/exhibits/locations.aspx?exId={0}") %>'></asp:HyperLink>                
+                    <asp:Literal runat="server" ID="litLocCt" Text='<%#Bind("LocationCount") %>'></asp:Literal>                 
+                            <asp:HyperLink runat="server" ID="lnkLocationEdit" CssClass="edit-button ui-dialog-link" data-args="750, 800, true, null, 1" Text="Edit Locations" ToolTip="Edit Locations" NavigateUrl='<%# Bind("ExhibitID", "~/admin/exhibits/locations.aspx?exId={0}") %>'></asp:HyperLink>                
                         </ItemTemplate> 
                     </asp:TemplateField> 
 

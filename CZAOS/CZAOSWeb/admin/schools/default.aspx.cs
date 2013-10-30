@@ -38,49 +38,16 @@ namespace CZAOSWeb.admin.schools
 
         protected void cztDataSource_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
         {
-            string freeText = txtFreeText.HtmlEncodedText();
-
-            if (freeText.IsNullOrEmpty())
+            if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
             {
-                if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
-                {
-                    e.InputParameters["filterExpression"] = "CommonName LIKE '" + AlphabetFilter.Filter + "%'";
-                }
-                else
-                {
-                    e.InputParameters["filterExpression"] = string.Empty;
-                }
+                e.InputParameters["filterExpression"] = "District LIKE '" + AlphabetFilter.Filter + "%'";
             }
             else
             {
-                StringBuilder sb = new StringBuilder();
-
-                sb.AppendFormat("CommonName LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("ZooID LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("HouseName LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("ScientificName LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("AnimalRegion LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("RegionName LIKE '%{0}%' ", freeText);
-
-                e.InputParameters["filterExpression"] = sb.ToString();
+                e.InputParameters["filterExpression"] = string.Empty;
             }
-        }
 
-        protected void btnSearch_Click(object sender, EventArgs e)
-        {
-            gvDistricts.DataBind();
-        }
-
-        protected void lnkClear_Click(object sender, EventArgs e)
-        {
-            txtFreeText.Clear();
-            gvDistricts.DataBind();
-        }
-
-        protected void btnRefresh_Click(object sender, EventArgs e)
-        {
-            gvDistricts.DataBind();
-        }
+        }        
 
         protected void IsActiveCheckChanged(object sender, EventArgs e)
         {
