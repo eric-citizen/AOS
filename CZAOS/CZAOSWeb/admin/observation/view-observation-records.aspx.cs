@@ -135,11 +135,20 @@ namespace CZAOSWeb.admin.observation
         protected void GetWeather()
         {
             var weather = WeatherList.GetItem(ObservationID);
-
-            litTemp.Text = weather.Temperature.ToString();
-            litWind.Text = weather.Wind;
-            litWeatherCond.Text = weather.WeatherDescription;
-            litCrowd.Text = weather.Crowd;
+            if (weather != null)
+            {
+                litTemp.Text = weather.Temperature.ToString();
+                litWind.Text = weather.Wind;
+                litWeatherCond.Text = weather.WeatherDescription;
+                litCrowd.Text = weather.Crowd;
+            }
+            else
+            {
+                litTemp.Text = "N/A";
+                litWind.Text = "N/A";
+                litWeatherCond.Text = "No weather data.";
+                litCrowd.Text = "N/A";
+            }
         }
     }
 }

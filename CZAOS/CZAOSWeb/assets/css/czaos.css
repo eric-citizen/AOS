@@ -384,6 +384,9 @@ tr.hilite-row:nth-child(even) td{
     width:91.5%;
     font-size: 18px;
 }
+#menu {
+    text-decoration: none;
+}
 nav {
     display:inline-block;
 }

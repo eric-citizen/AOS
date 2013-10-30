@@ -40,10 +40,10 @@
                 <ItemStyle Width="60px" />
             </asp:BoundField> 
 
-            <asp:TemplateField ItemStyle-Width="50px" HeaderText="Behavior Count" SortExpression="BehaviorCount" ItemStyle-CssClass="tac">                    
+            <asp:TemplateField ItemStyle-Width="50px" HeaderText="Behavior Count" SortExpression="BehaviorCount" HeaderStyle-CssClass="tac" ItemStyle-CssClass="tar">                    
                 <ItemTemplate>   
                     <asp:Literal runat="server" ID="litBvrCt" Text='<%#Bind("BehaviorCount") %>'></asp:Literal>                 
-                    <asp:HyperLink runat="server" ID="lnkBehaviorEdit" CssClass="edit ui-dialog-link" data-args="775, 650, true, null, 1" Text="" ToolTip="Edit this category's behaviors" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/behaviors.aspx?bcatId={0}") %>'></asp:HyperLink>                
+                    <asp:HyperLink runat="server" ID="lnkBehaviorEdit" CssClass="edit-button ui-dialog-link" data-args="775, 650, true, null, 1" Text="Edit Behaviors" ToolTip="Edit this category's behaviors" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/behaviors.aspx?bcatId={0}") %>'></asp:HyperLink>                
                 </ItemTemplate> 
             </asp:TemplateField>
 
