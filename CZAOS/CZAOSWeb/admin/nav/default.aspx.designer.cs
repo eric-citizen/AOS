@@ -13,15 +13,6 @@ namespace CZAOSWeb.admin.master {
     public partial class nav {
         
         /// <summary>
-        /// sccInit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CZAOSWeb.controls.SimpleConfirmControl sccInit;
-        
-        /// <summary>
         /// cztDataSource control.
         /// </summary>
         /// <remarks>

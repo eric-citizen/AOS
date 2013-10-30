@@ -9,7 +9,7 @@
 
     <mack:HiddenID runat="server" ID="hdnItemID" ClientIDMode="Static" />
     <a class="add-link ui-dialog-link" href="/admin/behavior/edit-behavior.aspx?bcatId=<%= this.CategoryID %>" data-args="400, 500, true, null, 1">Add New Behavior</a>
-    <a class="sort-link ui-dialog-link" href="/admin/behavior/sort-behavior.aspx?bcatId=<%= this.CategoryID %>" data-args="600, 500, true, null, 1">Edit Sort Order</a>
+<%--    <a class="sort-link ui-dialog-link" href="/admin/behavior/sort-behavior.aspx?bcatId=<%= this.CategoryID %>" data-args="600, 500, true, null, 1">Edit Sort Order</a>--%>
     
     <div>
         <span class="b pr5">Behavior Category:</span><asp:Literal runat="server" ID="litCatName"></asp:Literal>

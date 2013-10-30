@@ -74,6 +74,30 @@ namespace CZAOSCore.basepages
             }
         }
 
+        public bool IsAdministrator
+        {
+            get
+            {
+                return Roles.IsUserInRole(CoreUserTypeRoles.Administrator.ToString());
+            }
+        }
+
+        public bool IsEducationAdmin
+        {
+            get
+            {
+                return Roles.IsUserInRole(CoreUserTypeRoles.EducationAdmin.ToString());
+            }
+        }
+
+        public bool IsObserver
+        {
+            get
+            {
+                return Roles.IsUserInRole(CoreUserTypeRoles.Observer.ToString());
+            }
+        }
+
         public int FormsTimeout
         {
             get

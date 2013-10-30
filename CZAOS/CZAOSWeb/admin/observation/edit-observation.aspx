@@ -81,8 +81,8 @@
 
                     <div id="dateTime" class="obsSectionInnerLeft">
                         <label>Date</label><br />
-                        <mack:DatePicker runat="server" ID="dteDate" Required="true" CssClass="focusme" ErrorMessage="&nbsp;" ValidatorCssClass="error" 
-                            ValidatorToolTip="select the observation date" OnInit="dteDate_Init"></mack:DatePicker>
+                        <mack:DatePicker runat="server" ID="dteDate" Required="true" SetFocusOnError="true" CssClass="focusme" ErrorMessage="&nbsp;" ValidatorCssClass="error" 
+                            ValidatorToolTip="select the observation date"></mack:DatePicker>
                         <br /><br />
 
                         <label>Start Time</label><br />
@@ -120,7 +120,7 @@
                             </asp:RadioButtonList>
                             <br /><br />
 
-                            <label>Time Interval</label><br />
+                            <label>Time Interval (Minutes)</label><br />
                             <mack:RequiredDropDownList runat="server" ID="ddTimeInterval" ValidatorToolTip="select an interval" Required="true" InitialValue="-1"
                             ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" >                                            
                         </mack:RequiredDropDownList>
@@ -195,10 +195,8 @@
                     </div>
                     <div id="numOfObservers" class="obsSectionInnerRight">
                         <label>Number of Observers</label><br />
-                        <mack:RequiredDropDownList runat="server" ID="ddlSchoolObserverCount" ValidatorToolTip="select the number of observers" 
-                            Required="true" InitialValue="-1" ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" 
-                            AutoPostBack="false" >                                            
-                        </mack:RequiredDropDownList>
+                        <mack:RequiredTextBox runat="server" ID="txtSchoolObserverCount" ValidatorToolTip="Enter the number of observers"
+                            Required="true" ErrorMessage="*" SetFocusOnError="true" TextMode="Number"></mack:RequiredTextBox>
                     </div>
 
                 </div>
@@ -242,8 +240,7 @@
                     <div id="schDateTime" class="obsSectionInnerLeft">
                         <label>Date</label><br />
                         <mack:DatePicker runat="server" ID="dteSchoolDate" Required="true" CssClass="focusme" 
-                            ErrorMessage="&nbsp;" ValidatorCssClass="error" ValidatorToolTip="select the observation date" 
-                            OnInit="dteDate_Init"></mack:DatePicker>
+                            ErrorMessage="&nbsp;" ValidatorCssClass="error" ValidatorToolTip="select the observation date"></mack:DatePicker>
                         <br /><br />
 
                         <label>Start</label><br />
@@ -265,7 +262,8 @@
                         </mack:RequiredDropDownList>
                         <br /><br />
 
-                        <label>Timed Interval</label><br />
+                        <label>Timed Interval (Minutes)</label><br />
+
                         <mack:RequiredDropDownList runat="server" ID="ddSchoolInterval" ValidatorToolTip="select an interval" Required="true" 
                             InitialValue="-1" ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" >                                            
                         </mack:RequiredDropDownList>
@@ -335,7 +333,7 @@
                 </div>
 
                 <div class="floatRight">
-                    <mack:WaitButton runat="server" ID="btnSchSave" OnClick="btnSaveEdu_Click" CssClass="button" Text="Save" ToolTip="Save Educational Observation" />
+                    <mack:WaitButton runat="server" ID="btnSchSave" OnClientClick="alert('hello')" OnClick="btnSaveEdu_Click" CssClass="button" Text="Save" ToolTip="Save Educational Observation" />
                 </div>
 
             </asp:View>
@@ -356,6 +354,11 @@
             this.setHours(this.getHours() + h);
             return this;
         }
+
+        //show message when user attempts to leave page without saving
+        $(window).bind('beforeunload', function () {
+            return 'Are you sure you want to leave? All changes will be lost.';
+        });
 
         $('#ddCategory, #ddSchoolCat').on('change', function () {
             if (this.value != "-1" && this.value === "Behavior") {

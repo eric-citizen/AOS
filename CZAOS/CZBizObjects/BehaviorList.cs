@@ -34,7 +34,7 @@ namespace CZBizObjects
 		[DataObjectMethod(DataObjectMethodType.Select, false)]
 		public static BehaviorList GetItemCollection(int startRowIndex, int maximumRows, string sortExpression, string filterExpression)
 		{
-            sortExpression = sortExpression.EnsureNotNull("BvrCatID, SortOrder"); 
+            sortExpression = sortExpression.EnsureNotNull("Behavior"); 
 			return new BehaviorList(BehaviorProvider.Instance().GetItemCollection(startRowIndex, maximumRows, sortExpression, filterExpression));
 		}
 
