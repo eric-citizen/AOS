@@ -129,7 +129,7 @@ function populateObservationInfo(observation) {
     window.AOS.get('animalobservation', { observationId: observationID }).done(function(data) {
         //display all of the animals CommmonName or house name?
         for (var i in data) {
-            $('#animal-list').append('<div>' + data[i].CommonName + '</div>');
+            $('#animal-list').append('<div>' + data[i].HouseName + ' : ' + data[i].CommonName + ' : ' + data[i].ZooID + '</div>');
         }
         console.log(data);
     });
