@@ -5,13 +5,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">    
 
-    <div class="pr">
+    <div class="animalSearch pb5">
         <label class="required">Free Text Search:</label>
-        <span style="display:inline-block; width:220px;">
-            <mack:RequiredTextBox runat="server" ID="txtFreeText" MaxLength="50" Width="150px" ValidationGroup="freetext" ValidatorCssClass="error" ValidatorToolTip="Please enter search text"></mack:RequiredTextBox>
-        </span>
+        <mack:RequiredTextBox runat="server" ID="txtFreeText" MaxLength="50" Width="150px" ValidationGroup="freetext" ValidatorCssClass="error" ValidatorToolTip="Please enter search text"></mack:RequiredTextBox>
         <mack:WaitButton runat="server" ID="btnSearch" Text="Search" CssClass="button" ValidationGroup="freetext" OnClick="btnSearch_Click"/>
-        <asp:LinkButton runat="server" ID="lnkClear" Text="Clear" OnClick="lnkClear_Click"></asp:LinkButton>
+        <asp:LinkButton runat="server" ID="lnkClear" Text="Clear" CssClass="edit-button button" OnClick="lnkClear_Click"></asp:LinkButton>
     </div>
 
     <asp:ObjectDataSource ID="cztDataSource" runat="server" OnSelected="cztDataSource_Selected"

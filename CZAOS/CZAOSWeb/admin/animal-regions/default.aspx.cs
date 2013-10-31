@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ using KT.Extensions;
 using CZBizObjects;
 using CZDataObjects;
 using CZAOSCore.basepages;
+using CZAOSWeb.controls;
 
 namespace CZAOSWeb.admin.AnimalRegions
 {
@@ -35,7 +37,53 @@ namespace CZAOSWeb.admin.AnimalRegions
 
         protected void cztDataSource_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
         {
-            
+            string freeText = txtFreeText.HtmlEncodedText();
+
+            if (freeText.IsNullOrEmpty())
+            {
+                if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
+                {
+                    e.InputParameters["filterExpression"] = "AnimalRegion LIKE '" + AlphabetFilter.Filter + "%'";
+                }
+                else
+                {
+                    e.InputParameters["filterExpression"] = string.Empty;
+                }
+            }
+            else
+            {
+                StringBuilder sb = new StringBuilder();
+
+                sb.AppendFormat("AnimalRegionCode LIKE '%{0}%' OR ", freeText);
+                sb.AppendFormat("AnimalRegion LIKE '%{0}%' OR ", freeText);
+                sb.AppendFormat("RegionName LIKE '%{0}%' OR ", freeText);
+                sb.AppendFormat("Active LIKE '%{0}%'", freeText);
+
+                e.InputParameters["filterExpression"] = sb.ToString();
+            }
+        }
+
+        protected void AlphabetFilter_AlphabetSelected(object sender, EventArgs e)
+        {
+            txtFreeText.Clear();
+            gvAnimalRegions.PageIndex = 0;
+            gvAnimalRegions.DataBind();
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            gvAnimalRegions.DataBind();
+        }
+
+        protected void lnkClear_Click(object sender, EventArgs e)
+        {
+            txtFreeText.Clear();
+            gvAnimalRegions.DataBind();
+        }
+
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            gvAnimalRegions.DataBind();
         }
 
         protected void gvAnimalRegions_RowDataBound(object sender, GridViewRowEventArgs e)

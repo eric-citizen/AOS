@@ -40,6 +40,33 @@ namespace CZAOSWeb.admin.Behavior {
         protected global::CZAOSWeb.controls.AlphabetFilter AlphabetFilter;
         
         /// <summary>
+        /// txtFreeText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.RequiredTextBox txtFreeText;
+        
+        /// <summary>
+        /// btnSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.WaitButton btnSearch;
+        
+        /// <summary>
+        /// lnkClear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkClear;
+        
+        /// <summary>
         /// cztDataSource control.
         /// </summary>
         /// <remarks>

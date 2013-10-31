@@ -38,14 +38,14 @@ namespace CZAOSWeb.admin.weather
 
         protected void cztDataSource_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
         {
-            if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
-            {
-                e.InputParameters["filterExpression"] = "Wind LIKE '" + AlphabetFilter.Filter + "%'";
-            }
-            else
-            {
-                e.InputParameters["filterExpression"] = string.Empty;
-            }
+            //if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
+            //{
+            //    e.InputParameters["filterExpression"] = "Wind LIKE '" + AlphabetFilter.Filter + "%'";
+            //}
+            //else
+            //{
+            //    e.InputParameters["filterExpression"] = string.Empty;
+            //}
 
         }
 
@@ -72,11 +72,11 @@ namespace CZAOSWeb.admin.weather
 
         }
 
-        protected void AlphabetFilter_AlphabetSelected(object sender, EventArgs e)
-        {
-            gvData.PageIndex = 0;
-            gvData.DataBind();
-        }
+        //protected void AlphabetFilter_AlphabetSelected(object sender, EventArgs e)
+        //{
+        //    gvData.PageIndex = 0;
+        //    gvData.DataBind();
+        //}
 
         protected void gvData_RowCommand(object sender, GridViewCommandEventArgs e)
         {

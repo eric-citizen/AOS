@@ -15,9 +15,16 @@
 
     <a class="add-link ui-dialog-link" href="/admin/exhibits/edit-exhibit-location.aspx?exId=<%= this.ExhibitID %>" data-args="225, 250, true, null, 1" title="Add New Exhibit Location">Add New Exhibit Location</a>        
 
-    <div class="alphabet-container">  
+    <div class="alphabet-container pt10">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
     </div>    
+
+    <div class="animalSearch floatRight pb5">
+        <label class="required">Free Text Search:</label>
+        <mack:RequiredTextBox runat="server" CssClass="" ID="txtFreeText" MaxLength="50" Width="150px" ValidationGroup="freetext" ValidatorCssClass="error" ValidatorToolTip="Please enter search text"></mack:RequiredTextBox>
+        <mack:WaitButton runat="server" ID="btnSearch" Text="Search" CssClass="button" ValidationGroup="freetext" OnClick="btnSearch_Click"/>
+        <asp:LinkButton runat="server" CssClass="edit-button button" ID="lnkClear" Text="Clear" OnClick="lnkClear_Click"></asp:LinkButton>
+    </div>
 
     <asp:ObjectDataSource ID="cztDataSource" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting"
         SelectMethod="GetItemCollection" TypeName="CZBizObjects.ExhibitLocationList"
@@ -59,7 +66,7 @@
 
     <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvExhibitLocations" />
 
-    <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvExhibitLocations" Text="No records found!"></mack:MessageDiv>
+    <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvExhibitLocations" CssClass="w750" Text="No records found!"></mack:MessageDiv>
 
      
 

@@ -10,10 +10,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
     <a class="add-link ui-dialog-link" href="/admin/weather/edit-weather.aspx" title="Add New Weather Condition" data-width="250" data-height="175" data-rp="1">Add Weather Condition</a>    
+    <a class="wind-link" href="/admin/weather/wind.aspx" title="View Wind Conditions">View Wind Conditions</a>    
     
-    <div class="alphabet-container">  
+<%--<div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
-    </div>    
+    </div>--%>
 
     <asp:ObjectDataSource ID="cztDataSource" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting"
         SelectMethod="GetItemCollection" TypeName="CZBizObjects.WeatherConditionList"
