@@ -64,9 +64,11 @@ namespace CZAOSWeb.admin.observation
                 else
                 {
 
-
+                    litObservationDate.Text = obs.ObserveStart.ToShortDateString();
+                    litObservationID.Text = obs.ObservationID.ToString();
+                    litObservationType.Text = obs.ObservationTypeName;
+                    litObservationExhibit.Text = obs.Exhibit;
                     var strDetail = obs.ObserveStart.ToShortDateString() + " // " + obs.ObservationID + " // " + obs.ObservationTypeName + " // " + obs.Exhibit;
-                    litHead.Text = strDetail;
                     litFoot.Text = strDetail;
                     lnkHeadEdit.NavigateUrl = String.Format("~/admin/observation/edit-observation.aspx?observationId={0}", obs.ObservationID);
                     lnkFootEdit.NavigateUrl = String.Format("~/admin/observation/edit-observation.aspx?observationId={0}", obs.ObservationID);

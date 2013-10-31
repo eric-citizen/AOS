@@ -54,6 +54,11 @@ select {
     padding: 9.9px;
     text-align: center;*/
 }
+.obsInfo {
+    display:inline-block;
+    padding: 20px;
+    padding-bottom: 0;
+}
 select, textarea  {
     font-size:12px;
     padding: 2px 0 2px 3px;
@@ -123,7 +128,6 @@ select{
     width: 15px;
     height: 30px;
     display: inline-block;
-    float: right;
     margin-left: 5px;
 }
 .edit a {
@@ -138,7 +142,6 @@ select{
     width: 30px;
     height: 30px;
     display: inline-block;
-    float: right;
     margin-left: 5px;
 }
 .view a {
@@ -153,7 +156,6 @@ select{
     width: 30px;
     height: 30px;
     display: inline-block;
-    float: right;
     margin-left: 5px;
 }
 .records a {
@@ -204,7 +206,6 @@ select{
     width:30px; 
     height:30px;
     display: inline-block;
-    float:right;
     margin-left: 5px;
 }
 .delete a {
@@ -246,7 +247,6 @@ select{
     width:30px; 
     height:30px;
     display: inline-block;
-    float:right;
     margin-left: 5px;
 }
 .print a {
@@ -256,9 +256,9 @@ select{
     height: 30px;
 }
 .vr{
+    display:inline-block;
     border-left: 2px solid #a2a6ad;
     height: 28px;
-    float: right;
 }
 #filterUp, #filterRec {
     display:none;
