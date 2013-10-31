@@ -379,18 +379,71 @@ tr.hilite-row:nth-child(even) td{
     background-size: 30px 30px;
 	color: #fff;
 }
+nav {
+    display:inline-block;    
+}
 #app-title {
     display:inline-block;
-    width:91.5%;
-    font-size: 18px;
+    font-size: 1.2em;
 }
 #menu {
     text-decoration: none;
 }
-nav {
-    display:inline-block;
+.dropDownDiv {
+    position:relative;
+    display: inline-block;
 }
-nav ul ul {
+.menu {
+    background: #efefef; 
+	border-radius: 5px;  
+	color: #757575; 
+	display: inline-block;
+	list-style: none;
+    padding: 2px 8px;
+	position: relative;
+    text-decoration: none;
+    vertical-align: top;
+}
+.menu:after {
+	content: ""; 
+    clear: both; 
+}
+.menu:hover {
+    background: #4b545f;
+	color: #fff;
+}
+.hiddenDropDown {
+	background: #5f6975; 
+    border-radius:0;
+	display: none;
+	list-style: none;
+    padding: 0;
+	position: absolute; 
+    right: 0%;
+    top: 100%;
+    vertical-align: top;
+    z-index: 500;
+}
+.hiddenDropDown li {
+	float: none; 
+    width: 15em;
+	border-top: 1px solid #6b727c;
+	border-bottom: 1px solid #575f6a; 
+}
+.hiddenDropDown li a {
+	padding: 5px 20px;
+    display: block;
+	color: #fff;
+}
+.hiddenDropDown li a:hover {
+	background: #4b545f;
+    text-decoration: none;
+}
+.hiddenDropDown li a:active {
+    text-decoration: none;
+	background: #4b545f;
+}	
+/*nav ul ul {
 	display: none;
     z-index: 500;
 	background: #5f6975; 
@@ -398,9 +451,9 @@ nav ul ul {
     padding: 0;
 	position: absolute; 
     top: 100%;
-    right: -15%;
-}
-nav ul{
+    right: 0%;
+}*/
+/*nav ul{
     background: #efefef; 
 	padding: 0;
 	border-radius: 5px;  
@@ -408,17 +461,17 @@ nav ul{
 	position: relative;
 	display: inline-block;
     vertical-align: top;
-}
-nav ul:after {
+}*/
+/*nav ul:after {
 	content: ""; 
     clear: both; 
     display: block;
-}
+}*/
 
-nav ul li {
+/*nav ul li {
 	float: left;
-}
-nav ul li:hover {
+}*/
+/*nav ul li:hover {
 	background: #4b545f;
 }
 nav ul li:hover a {
@@ -430,6 +483,10 @@ nav ul li a {
     padding: 2px 8px;
 	color: #757575; 
     text-decoration: none;
+}
+nav ul li a:active {
+    text-decoration: none;
+	background: #4b545f;
 }	
 nav ul ul li {
 	float: none; 
@@ -437,23 +494,14 @@ nav ul ul li {
 	border-top: 1px solid #6b727c;
 	border-bottom: 1px solid #575f6a; 
     position: relative;
-}
-nav ul ul li a {
+}*/
+/*nav ul ul li a {
 	padding: 5px 20px;
 	color: #fff;
-}	
-nav ul ul li a:hover {
+}*/	
+/*nav ul ul li a:hover {
 	background: #4b545f;
-}
-#lnkLogout{
-    background: #efefef; 
-	padding: 1.5px;
-	border-radius: 5px;  
-    text-decoration: none;
-    display: inline-block;
-    color: #757575; 
-
-}
+}*/
 #lnkLogout:hover {
     background: #4b545f;
 	background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
@@ -759,8 +807,7 @@ body{
 header, footer{
     background: #4a525c;
     color: #fff;
-    padding: .5em;
-    padding-right: 0
+    width: 100%;
 }
 #backdrop{
     background: url(../images/background/gradient.png), url(../images/background/sky.jpg);
