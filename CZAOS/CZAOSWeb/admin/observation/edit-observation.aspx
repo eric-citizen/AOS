@@ -284,7 +284,7 @@
                         <br /><br />
 
                         <label>Animals (By Region)</label><br />
-                        <uc1:GroupControl runat="server" ID="schoolAnimalGroup" GroupNameVisible="false" />
+                        <uc1:GroupControl runat="server" ID="schoolAnimalGroup"  GroupNameVisible="false" />
                     </div>
                     <div id="schExhibitInfo" class="obsSectionInnerRight">
                         <label>Exhibit</label><br />

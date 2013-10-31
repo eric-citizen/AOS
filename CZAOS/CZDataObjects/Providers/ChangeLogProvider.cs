@@ -33,6 +33,7 @@ namespace CZDataObjects
 		List<ChangeLog> GetItemCollection(int startRowIndex, int maximumRows, string sortExpression, string filterExpression);
 		ChangeLog GetItem(int id);
 		ChangeLog AddItem(ChangeLog item);		
+		void DeleteItem(int id);		
 		int GetCount(string filterExpression);		 
 	}
 

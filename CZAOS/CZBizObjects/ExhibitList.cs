@@ -33,7 +33,7 @@ namespace CZBizObjects
 		[DataObjectMethod(DataObjectMethodType.Select, false)]
 		public static ExhibitList GetItemCollection(int startRowIndex, int maximumRows, string sortExpression, string filterExpression)
 		{
-            sortExpression = sortExpression.EnsureNotNull("AnimalRegion, Exhibit");
+            sortExpression = sortExpression.EnsureNotNull("Exhibit");
 			return new ExhibitList(ExhibitProvider.Instance().GetItemCollection(startRowIndex, maximumRows, sortExpression, filterExpression));
 		}
 

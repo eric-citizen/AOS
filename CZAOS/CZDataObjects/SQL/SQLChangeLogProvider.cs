@@ -102,11 +102,11 @@ namespace CZDataObjects
 			return base.GetFilteredCount("czt_ChangeLog_GetCount", filterExpression);
 		}
 
-        //public void DeleteItem(int id)
-        //{
-        //    base.AddParameter("@Id", id);
-        //    base.ExecuteNonQuery("czt_ChangeLog_Delete", CommandType.StoredProcedure, ConnectionState.CloseOnExit);
-        //}
+        public void DeleteItem(int id)
+        {
+            base.AddParameter("@Id", id);
+            base.ExecuteNonQuery("czt_ChangeLog_Delete", CommandType.StoredProcedure, ConnectionState.CloseOnExit);
+        }
 
 		private void AddParameters(ChangeLog item)
         {            

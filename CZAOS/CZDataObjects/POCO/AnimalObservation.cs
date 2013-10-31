@@ -59,6 +59,15 @@ namespace CZDataObjects
             private set;
         }
 
+        [DataMember(Name = "DisplayName")]
+        public string DisplayName
+        {
+            get
+            {
+                return string.Format("{0} : {1} : {2}", CommonName, HouseName, ZooID);
+            }
+        }
+
         public string HouseName
         {
             get;

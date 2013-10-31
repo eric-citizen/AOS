@@ -6,7 +6,7 @@
     
     <div class="group-checkboxlist">
         <asp:ListBox runat="server" ID="lstAnimals" DataTextField="DisplayName" SelectionMode="Multiple" Rows="10"
-            DataValueField="AnimalID" CssClass="listbox" AutoPostBack="false" ></asp:ListBox>
+            DataValueField="AnimalID" CssClass="listbox group-cbx" AutoPostBack="false" ></asp:ListBox>
     </div>
     <span class="gc-count">0</span><span class="pl5">Animals Selected:</span><span class="pl5 fs10 i">(<asp:Literal runat="server" ID="litMax">0</asp:Literal> maximum)</span>
 </div>
