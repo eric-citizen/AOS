@@ -140,7 +140,7 @@ namespace CZBizObjects
                 filter = "Active = 0";
             }
 
-            return GetItemCollection(0, 0, "SortOrder ASC", filter);
+            return GetItemCollection(0, 0, "Description", filter);
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]

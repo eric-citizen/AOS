@@ -75,13 +75,21 @@ namespace CZBizObjects
 
 		[DataObjectMethod(DataObjectMethodType.Insert, false)]
         public static ChangeLog AddItem(ChangeLog item)
-        {          
-            return ChangeLogProvider.Instance().AddItem(item);
-        }		
+		{
+		    var changelog = ChangeLogProvider.Instance().AddItem(item);
 
-		#endregion
-		
-	}   
+            //only keep the 10,000 newest change log items
+            if (ChangeLogList.GetCount() > 10000)
+            {
+                var log = ChangeLogList.GetItemCollection(0, 1, "ChangeDate");
+                ChangeLogProvider.Instance().DeleteItem(log.First().ID);
+            }
+
+            return changelog;
+        }
+        #endregion
+
+    }   
 	
     //public class ChangeLogRepository : ICZAOSRepository<ChangeLog>
     //{

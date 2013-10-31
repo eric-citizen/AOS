@@ -4,11 +4,9 @@
     <span class="pr5">Group</span> <asp:Literal runat="server" ID="litID"></asp:Literal>
     <mack:RequiredTextBox runat="server" ID="txtGroupName" MaxLength="20" ErrorMessage="&nbsp;" ValidatorCssClass="error" CssClass="ml10" ></mack:RequiredTextBox>
     
-    <div class="group-listbox">
+    <div class="group-checkboxlist">
         <asp:ListBox runat="server" ID="lstAnimals" DataTextField="DisplayName" SelectionMode="Multiple" Rows="10"
-            DataValueField="AnimalID" CssClass="listbox" AutoPostBack="false" ValidationGroup="animals" ></asp:ListBox>
-        <mack:ListBoxValidator runat="server" ControlToValidate="lstAnimals" MinimumNumberOfItems="1" ErrorMessage="Please select at least one animal"
-            ID="lstAnimalValidator" SetFocusOnError="true" ValidationGroup="animals"></mack:ListBoxValidator>
+            DataValueField="AnimalID" CssClass="listbox group-cbx" AutoPostBack="false" ></asp:ListBox>
     </div>
     <span class="gc-count">0</span><span class="pl5">Animals Selected:</span><span class="pl5 fs10 i">(<asp:Literal runat="server" ID="litMax">0</asp:Literal> maximum)</span>
 </div>

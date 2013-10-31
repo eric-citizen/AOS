@@ -397,9 +397,10 @@ namespace CZAOSWeb.admin.observation
         {
             if (this.ObservationID == 0)
             {
-                if (this.CreateNewProObservation())
+                var obsId = CreateNewProObservation();
+                if (obsId > 0)
                 {
-                    var strRedirect = string.Format("view-observation.aspx?observationId={0}", ObservationID);
+                    var strRedirect = string.Format("view-observation.aspx?observationId={0}", obsId);
                     Response.Redirect(strRedirect, false);
                 }
 
@@ -415,7 +416,7 @@ namespace CZAOSWeb.admin.observation
             }
         }
 
-        private bool CreateNewProObservation()
+        private int CreateNewProObservation()
         {
             Observation obs = new Observation();
 
@@ -444,7 +445,7 @@ namespace CZAOSWeb.admin.observation
             if (!end.IsAfterDate(start))
             {
                 this.Toast(PageExtensions.ToastMessageType.error, "End time must be after start time.", "Data Error");
-                return false;
+                return -1;
             }
 
             obs.Category = ddCategory.SelectedItem.Text;
@@ -516,7 +517,7 @@ namespace CZAOSWeb.admin.observation
 
             this.Toast(PageExtensions.ToastMessageType.success, "Observation created successfully", "Record Created");
 
-            return true;
+            return newObs.ObservationID;
         }
 
         private bool UpdateProObservation()
@@ -812,9 +813,10 @@ namespace CZAOSWeb.admin.observation
         {
             if (this.ObservationID == 0)
             {
-                if (this.CreateNewEduObservation())
+                var obsId = CreateNewEduObservation();
+                if (obsId > 0)
                 {
-                    var strRedirect = string.Format("view-observation.aspx?observationId={0}", ObservationID);
+                    var strRedirect = string.Format("view-observation.aspx?observationId={0}", obsId);
                     Response.Redirect(strRedirect, false);
                 }
 
@@ -830,7 +832,7 @@ namespace CZAOSWeb.admin.observation
             }
         }
 
-        private bool CreateNewEduObservation()
+        private int CreateNewEduObservation()
         {
             Observation obs = new Observation();
 
@@ -859,7 +861,7 @@ namespace CZAOSWeb.admin.observation
             if (!end.IsAfterDate(start))
             {
                 this.Toast(PageExtensions.ToastMessageType.error, "End time must be after start time.", "Data Error");
-                return false;
+                return -1;
             }
 
             obs.Category = ddSchoolCat.SelectedItem.Text;
@@ -907,7 +909,7 @@ namespace CZAOSWeb.admin.observation
 
             this.Toast(PageExtensions.ToastMessageType.success, "Observation created successfully", "Record Created");
 
-            return true;
+            return newObs.ObservationID;
         }
 
         private bool UpdateEduObservation()

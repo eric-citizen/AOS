@@ -184,7 +184,7 @@
                 <label>Animal(s)</label>
                 <asp:Repeater runat="server" ID="rptAnimal">
                     <ItemTemplate>
-                        <asp:Literal runat="server" ID="litAnimal" Text='<%#Bind("CommonName") %>'></asp:Literal><br />
+                        <asp:Literal runat="server" ID="litAnimal" Text='<%#Bind("DisplayName") %>'></asp:Literal><br />
                     </ItemTemplate>
                 </asp:Repeater>
 
@@ -199,7 +199,7 @@
                             <asp:Repeater runat="server" ID="rptGroupAnimals">
                                 <ItemTemplate>
                                     <span class="group-animal-name">
-                                        <asp:Literal runat="server" ID="litGroupAnimalName" Text='<%#Bind("CommonName") %>'></asp:Literal></span>
+                                        <asp:Literal runat="server" ID="litGroupAnimalName" Text='<%#Bind("DisplayName") %>'></asp:Literal></span>
                                     <br />
                                 </ItemTemplate>
                             </asp:Repeater>

@@ -33,7 +33,7 @@ namespace CZBizObjects
 		[DataObjectMethod(DataObjectMethodType.Select, false)]
 		public static ExhibitLocationList GetItemCollection(int startRowIndex, int maximumRows, string sortExpression, string filterExpression)
 		{
-            sortExpression = sortExpression.EnsureNotNull("Exhibit, Location");
+            sortExpression = sortExpression.EnsureNotNull("Location");
 			return new ExhibitLocationList(ExhibitLocationProvider.Instance().GetItemCollection(startRowIndex, maximumRows, sortExpression, filterExpression));
 		}
 
@@ -128,7 +128,7 @@ namespace CZBizObjects
                 filter = "Active = 0";
             }
 
-            return GetItemCollection(0, 0, "Exhibit ASC, Location ASC", filter);
+            return GetItemCollection(0, 0, "Location", filter);
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]

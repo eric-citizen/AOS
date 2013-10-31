@@ -139,7 +139,7 @@ namespace CZBizObjects
 
             if (schools == null)
             {
-                schools = SchoolList.GetItemCollection(true).ToList();
+                schools = SchoolList.GetItemCollection(true).OrderBy(x => x.SchoolName).ToList();
                 AddToCache(schools);
             }
 
