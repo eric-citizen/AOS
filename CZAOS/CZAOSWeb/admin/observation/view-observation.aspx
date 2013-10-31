@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="view-observation.aspx.cs" Inherits="CZAOSWeb.admin.observation.view_observation" %>
+
 <%@ Register Src="~/controls/GridConfirmControl.ascx" TagPrefix="uc1" TagName="GridConfirmControl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -19,16 +20,24 @@
 
         <div id="detailHead" class="obsSection" style="border-top: 2px solid #a2a6ad">
             <h2>Observation Details</h2>
-            <div style="padding-left: 15px">
-                <asp:Literal runat="server" ID="litHead" />
-                <span class="print"><a href="javascript:void(0)" onclick="window.print();"></a></span>
-                <div class="vr"></div>
-                <uc1:GridConfirmControl runat="server" ID="GridConfirmControl" CommandName="DeleteObservation" />
-                <asp:ImageButton runat="server" ID="btnHeadDelete" ImageUrl="~/assets/images/icons/admin/delete.png" OnClick="btnHeadDelete_Click" CssClass="delete" Text="Delete"></asp:ImageButton>
-                <span class="records">
-                    <asp:HyperLink runat="server" ID="lnkHeadRecords" Text="" ToolTip="View Observation Records"></asp:HyperLink></span>
-                <span class="edit">
-                    <asp:HyperLink runat="server" ID="lnkHeadEdit" Text="" ToolTip="Edit this item"></asp:HyperLink></span>
+            <asp:Literal runat="server" ID="litHead" />
+            <div>
+                <a href="javascript:void(0)" class="print ml10" onclick="window.print();"></a>
+                <div class="vr ml10"></div>
+                <%--delete button--%>
+                <div class="deleteDiv">
+                    <div onclick="$(this).parent().children('div').toggle();" class="delete w36 ml10"></div>
+                    <div class="floatRight w36 ml10" style="display: none; padding-top: 8px">
+                        <asp:LinkButton ID="lnkDelete" runat="server" CausesValidation="false"
+                            Text="" ToolTip="Confirm" CssClass="confirmDelete"
+                            OnClick="btnHeadDelete_Click">
+                        </asp:LinkButton>
+                        <a href="javascript: void(0);" onclick="$(this).parent().parent().children('div').toggle();" title="Cancel" id="lnkCancel" class="cancelDelete"></a>
+                    </div>
+                </div>
+                <%--end delete button--%>
+                <asp:HyperLink runat="server" CssClass="records ml10" ID="lnkHeadRecords" Text="" ToolTip="View Observation Records"></asp:HyperLink>
+                <asp:HyperLink runat="server" CssClass="edit ml10" ID="lnkHeadEdit" Text="" ToolTip="Edit this item"></asp:HyperLink>
             </div>
         </div>
 

@@ -44,7 +44,6 @@ namespace CZAOSWeb.admin.observation
             if (!this.IsPostBack)
             {                
                 this.LoadData();
-                GridConfirmControl.CommandArgument = ObservationID.ToString();
             }
         }
 
@@ -146,7 +145,7 @@ namespace CZAOSWeb.admin.observation
             {
                 Observation obs = ObservationList.Get(this.ObservationID);
                 ObservationList.DeleteItem(obs);
-                this.Toast(PageExtensions.ToastMessageType.success, "Observation permanently deleted.", "Record Deleted");
+                Response.Redirect("default.aspx");
             }
         }
     }
