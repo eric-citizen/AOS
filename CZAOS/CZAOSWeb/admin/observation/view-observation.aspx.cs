@@ -44,6 +44,7 @@ namespace CZAOSWeb.admin.observation
             if (!this.IsPostBack)
             {                
                 this.LoadData();
+                GridConfirmControl.CommandArgument = ObservationID.ToString();
             }
         }
 
