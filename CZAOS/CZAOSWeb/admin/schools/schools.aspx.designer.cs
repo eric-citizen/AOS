@@ -22,6 +22,15 @@ namespace CZAOSWeb.admin.schools {
         protected global::KT.WebControls.HiddenID hdnItemID;
         
         /// <summary>
+        /// litDistrictName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litDistrictName;
+        
+        /// <summary>
         /// AlphabetFilter control.
         /// </summary>
         /// <remarks>

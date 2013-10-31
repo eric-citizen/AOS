@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CZAOSWeb.controls;
 using KT.Extensions;
 using CZBizObjects;
 using CZDataObjects;
@@ -44,7 +45,6 @@ namespace CZAOSWeb.admin.observation
             if (!this.IsPostBack)
             {                
                 this.LoadData();
-                GridConfirmControl.CommandArgument = ObservationID.ToString();
             }
         }
 

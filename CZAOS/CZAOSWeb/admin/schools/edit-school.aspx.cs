@@ -28,10 +28,23 @@ namespace CZAOSWeb.admin.schools
             }
         }
 
+        private int DistrictID
+        {
+            get
+            {
+                if (Request.QueryString.Contains("districtId"))
+                {
+                    hdnDistrictID.Value = Request.QueryString["districtId"];
+                }
+
+                return hdnDistrictID.ItemID;
+            }
+        }
+
         protected override void Page_Init(object sender, EventArgs e)
         {
             base.Page_Init(sender, e);
-            this.LoadDistricts();
+            //this.LoadDistricts();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -52,15 +65,15 @@ namespace CZAOSWeb.admin.schools
             }
         }
 
-        private void LoadDistricts()
-        {
-            SchoolDistrictList districts = SchoolDistrictList.GetItemCollection(true);
-            ddlDistrict.DataSource = districts;
-            ddlDistrict.DataBind();
+        //private void LoadDistricts()
+        //{
+        //    SchoolDistrictList districts = SchoolDistrictList.GetItemCollection(true);
+        //    ddlDistrict.DataSource = districts;
+        //    ddlDistrict.DataBind();
 
-            ddlDistrict.AddEmptyListItem("Select District", "-1");
+        //    ddlDistrict.AddEmptyListItem("Select District", "-1");
 
-        }
+        //}
 
         private void LoadData()
         {
@@ -74,7 +87,7 @@ namespace CZAOSWeb.admin.schools
             {
                 txtSchool.Text = item.SchoolName;         
                 chkActive.Checked = item.Active;
-                ddlDistrict.SelectListItemByValue(item.DistrictID.ToString()); 
+                //ddlDistrict.SelectListItemByValue(item.DistrictID.ToString()); 
             }
 
         }
@@ -82,7 +95,13 @@ namespace CZAOSWeb.admin.schools
         protected void btnSave_Click(object sender, EventArgs e)
         {
             if (this.IsValid)
-            {               
+            {
+
+                if (SchoolList.ItemExists(txtSchool.HtmlEncodedText().Trim(), DistrictID, SchoolID))
+                {
+                    this.DisplayError("A school with this name already exists for this district.");
+                    return;
+                }
 
                 if (this.SchoolID == 0)
                 {
@@ -91,7 +110,7 @@ namespace CZAOSWeb.admin.schools
 
                     item.SchoolName = txtSchool.HtmlEncodedText().Trim();
                     item.Active = chkActive.Checked;
-                    item.DistrictID = ddlDistrict.SelectedValue.ToInt32();   
+                    item.DistrictID = DistrictID;   
 
                     SchoolList.AddItem(item);
 
@@ -106,7 +125,7 @@ namespace CZAOSWeb.admin.schools
 
                     item.SchoolName = txtSchool.HtmlEncodedText().Trim();                    
                     item.Active = chkActive.Checked;
-                    item.DistrictID = ddlDistrict.SelectedValue.ToInt32();   
+                    item.DistrictID = DistrictID;   
 
                     SchoolList.UpdateItem(item);
 

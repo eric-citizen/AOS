@@ -89,6 +89,12 @@ namespace CZAOSWeb.admin.dialogs
             {
                 Exhibit item = null;
 
+                if (ExhibitList.ItemExists(txtExhibit.HtmlEncodedText().Trim(), ddlRegion.SelectedValue.Trim(), ExhibitID))
+                {
+                    this.DisplayError("This exhibit already exists for this region.");
+                    return;
+                }
+
                 if (this.ExhibitID == 0)
                 {    
                     item = new CZDataObjects.Exhibit();

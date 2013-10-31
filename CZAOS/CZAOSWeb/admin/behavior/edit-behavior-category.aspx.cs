@@ -77,14 +77,14 @@ namespace CZAOSWeb.admin.dialogs
             {
                 BehaviorCategory item = null;
 
+                if (BehaviorCategoryList.ItemExists(txtCategory.HtmlEncodedText().Trim(), txtCategoryCode.HtmlEncodedText().Trim(), CategoryID))
+                {
+                    this.DisplayError("This category name/code combination already exists.");
+                    return;
+                }
+
                 if (this.CategoryID == 0)
                 {
-                    if (BehaviorCategoryList.ItemExists(txtCategory.HtmlEncodedText().Trim(), txtCategoryCode.HtmlEncodedText().Trim()))
-                    {
-                        this.DisplayError("This category name/code combination already exists.");
-                        return;
-                    }
-
                     item = new BehaviorCategory();
                     item.BvrCat = txtCategory.HtmlEncodedText().Trim();
                     item.BvrCatCode = txtCategoryCode.HtmlEncodedText().Trim();

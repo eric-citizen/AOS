@@ -4,6 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
     <mack:HiddenID runat="server" ID="hdnItemID" />
+    <mack:HiddenID runat="server" ID="hdnDistrictID" />
 
     <fieldset class="form-fieldset">
 
@@ -17,12 +18,12 @@
                 <mack:RequiredTextBox runat="server" ID="txtSchool" CssClass="alphanumeric focusme" MaxLength="100" Width="200px" Required="true" 
                     ErrorMessage="*" ValidatorCssClass="error" ValidatorToolTip="Enter school name" ></mack:RequiredTextBox>     
             </li>   
-            <li class="required">
+<%--            <li class="required">
                 <label>District:</label>
                  <mack:RequiredDropDownList runat="server" ID="ddlDistrict" Required="true" DataTextField="District" DataValueField="DistrictID" 
                      SetFocusOnError="true" ErrorMessage="*" ValidatorCssClass="error" ValidatorToolTip="select a district" InitialValue="-1" >                                                        
                 </mack:RequiredDropDownList>
-            </li>             
+            </li>    --%>         
             <li>
                 <label>Active:</label>   
                 <asp:CheckBox runat="server" ID="chkActive" Checked="true" />  

@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
-    <a class="add-link ui-dialog-link" href="/admin/schools/edit-district.aspx" data-args="175, 250, true, null, 1">Add New District</a>    
+    <a class="add-link ui-dialog-link" href="/admin/schools/edit-district.aspx" data-args="175, 300, true, null, 1">Add New District</a>    
 
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />

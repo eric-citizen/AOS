@@ -14,7 +14,7 @@
         <h2>Behavior Category:&nbsp;<asp:Literal runat="server" ID="litCatName"></asp:Literal></h2>
     </div>
 
-    <a class="add-link ui-dialog-link" href="/admin/behavior/edit-behavior.aspx?bcatId=<%= this.CategoryID %>" data-args="350, 450, true, null, 1">Add New Behavior</a>
+    <a class="add-link ui-dialog-link" href="/admin/behavior/edit-behavior.aspx?bcatId=<%= this.CategoryID %>" data-args="400, 450, true, null, 1">Add New Behavior</a>
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
     </div>    

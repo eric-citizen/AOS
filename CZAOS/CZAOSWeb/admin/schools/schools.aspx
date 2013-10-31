@@ -10,7 +10,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
     <mack:HiddenID runat="server" ID="hdnItemID" ClientIDMode="Static" />
-    <a class="add-link ui-dialog-link" href="/admin/schools/edit-school.aspx" title="Add New School" data-width="300" data-height="250" data-rp="1">Add New School</a>        
+    
+    <div>
+        <h2>School District:&nbsp;<asp:Literal runat="server" ID="litDistrictName"></asp:Literal></h2>
+    </div>
+
+    <a class="add-link ui-dialog-link" href="/admin/schools/edit-school.aspx?districtId=<%= this.DistrictID %>" title="Add New School" data-width="300" data-height="250" data-rp="1">Add New School</a>        
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
     </div>    
