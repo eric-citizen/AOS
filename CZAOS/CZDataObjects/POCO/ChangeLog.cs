@@ -352,7 +352,7 @@ namespace CZDataObjects
 
                 if (_updatedValues.ContainsKey(field))
                 {
-                    if (!_dataDictionary[field].Equals(_updatedValues[field], StringComparison.InvariantCultureIgnoreCase))
+                    if (!_dataDictionary[field].Equals(_updatedValues[field], StringComparison.InvariantCulture))
                     {
                         _changedValues.Add(field, string.Format("original value: {0} - new value: {1}", _dataDictionary[field], _updatedValues[field]));
                     }
@@ -375,7 +375,7 @@ namespace CZDataObjects
                 if (_dataDictionary.ContainsKey(field))
                 {
                     string strUpdatedValue = Convert.ToString(this.GetObjectPropertyValue(obj, field));
-                    if (!_dataDictionary[field].Equals(strUpdatedValue, StringComparison.InvariantCultureIgnoreCase))
+                    if (!_dataDictionary[field].Equals(strUpdatedValue, StringComparison.InvariantCulture))
                     {
                         _changedValues.Add(field, string.Format("original value: {0} - new value: {1}", _dataDictionary[field], strUpdatedValue));
                     }
@@ -399,7 +399,7 @@ namespace CZDataObjects
                 if (_dataDictionary.ContainsKey(field))
                 {
                     string strUpdatedValue = Convert.ToString(this.GetObjectPropertyValue(compare, field));
-                    if (!_dataDictionary[field].Equals(strUpdatedValue, StringComparison.InvariantCultureIgnoreCase))
+                    if (!_dataDictionary[field].Equals(strUpdatedValue, StringComparison.InvariantCulture))
                     {
                         _changedValues.Add(field, string.Format("original value: {0} - new value: {1}", _dataDictionary[field], strUpdatedValue));
                     }

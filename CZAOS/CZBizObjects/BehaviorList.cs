@@ -124,6 +124,12 @@ namespace CZBizObjects
             RemoveCacheList();    
         }
 
+        public static bool ItemExists(string behavior, string code, int categoryId, int itemId)
+        {
+            BehaviorList list = GetItemCollection(0, 1, "", "Behavior = '{0}' AND BehaviorCode = '{1}'".FormatWith(behavior, code));
+            return list.Any(x => (x.BvrCatID == categoryId && x.BehaviorID != itemId));
+        }
+
 
 		#endregion
 

@@ -94,6 +94,12 @@ namespace CZAOSWeb.admin.dialogs
             {
                 CZDataObjects.Behavior item = null;
 
+                if (BehaviorList.ItemExists(txtBehavior.HtmlEncodedText().Trim(), txtBehaviorCode.HtmlEncodedText().Trim(), CategoryID, BehaviorID))
+                {
+                    this.DisplayError("This behavior name/code combination already exists for this category.");
+                    return;
+                }
+
                 if (this.BehaviorID == 0)
                 {                   
     //                @Behavior varchar(100),

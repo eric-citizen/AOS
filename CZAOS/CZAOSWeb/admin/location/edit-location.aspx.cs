@@ -76,6 +76,12 @@ namespace CZAOSWeb.admin.dialogs
             {
                 CZDataObjects.Location item = null;
 
+                if (LocationList.ItemExists(txtDescription.HtmlEncodedText().Trim(), txtLocationCode.HtmlEncodedText().Trim(), LocationID))
+                {
+                    this.DisplayError("A location with this description and code already exists.");
+                    return;
+                }
+
                 if (this.LocationID == 0)
                 {
                     

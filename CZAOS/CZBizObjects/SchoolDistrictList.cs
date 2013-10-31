@@ -107,6 +107,12 @@ namespace CZBizObjects
             RemoveCacheList();               
         }
 
+        public static bool ItemExists(string district, int itemId)
+        {
+            SchoolDistrictList list = GetItemCollection(0, 1, "", "District = '{0}'".FormatWith(district));
+            return list.Any(x => x.DistrictID != itemId);
+        }
+
 		#endregion
 
 		#region PUBLIC METHODS

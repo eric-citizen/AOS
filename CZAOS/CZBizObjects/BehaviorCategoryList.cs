@@ -115,10 +115,10 @@ namespace CZBizObjects
             RemoveCacheList();                   
         }
 
-        public static bool ItemExists(string name, string code)
+        public static bool ItemExists(string name, string code, int itemId)
         {
             BehaviorCategoryList list = GetItemCollection(0, 1, "", "BvrCat = '{0}' AND BvrCatCode = '{1}'".FormatWith(name, code));
-            return list.Count > 0;
+            return list.Any(x => x.BvrCatID != itemId);
 
         }
 

@@ -260,20 +260,26 @@ namespace CZAOSWeb.controls
 
         protected void nextImageButton_Click(object sender, ImageClickEventArgs e)
         {
-            mDataGrid.PageIndex += 1;
-            if (PageIndexChanged != null)
+            if (mDataGrid.PageCount < mDataGrid.PageIndex)
             {
-                PageIndexChanged(this, new PageChangeEventArgs(mDataGrid.PageIndex, 1));
+                mDataGrid.PageIndex += 1;
+                if (PageIndexChanged != null)
+                {
+                    PageIndexChanged(this, new PageChangeEventArgs(mDataGrid.PageIndex, 1));
+                }
             }
 
         }
 
         protected void previousImageButton_Click(object sender, ImageClickEventArgs e)
         {
-            mDataGrid.PageIndex -= 1;
-            if (PageIndexChanged != null)
+            if (mDataGrid.PageIndex != 0)
             {
-                PageIndexChanged(this, new PageChangeEventArgs(mDataGrid.PageIndex, -1));
+                mDataGrid.PageIndex -= 1;
+                if (PageIndexChanged != null)
+                {
+                    PageIndexChanged(this, new PageChangeEventArgs(mDataGrid.PageIndex, -1));
+                }
             }
 
         }

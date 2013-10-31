@@ -116,6 +116,12 @@ namespace CZBizObjects
             RemoveCacheList(); 
         }
 
+        public static bool ItemExists(string description, string locationCode, int itemId)
+        {
+            LocationList list = GetItemCollection(0, 1, "", "Description = '{0}' AND LocationCode = '{1}'".FormatWith(description, locationCode));
+            return list.Any(x => x.LocationID != itemId);
+        }
+
 		#endregion
 
 		#region PUBLIC METHODS

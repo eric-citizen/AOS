@@ -22,6 +22,15 @@ namespace CZAOSWeb.admin.schools {
         protected global::KT.WebControls.HiddenID hdnItemID;
         
         /// <summary>
+        /// hdnDistrictID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.HiddenID hdnDistrictID;
+        
+        /// <summary>
         /// fieldsetLegend control.
         /// </summary>
         /// <remarks>
@@ -38,15 +47,6 @@ namespace CZAOSWeb.admin.schools {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::KT.WebControls.RequiredTextBox txtSchool;
-        
-        /// <summary>
-        /// ddlDistrict control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddlDistrict;
         
         /// <summary>
         /// chkActive control.

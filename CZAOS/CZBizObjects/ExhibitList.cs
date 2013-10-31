@@ -109,6 +109,12 @@ namespace CZBizObjects
             
         }
 
+        public static bool ItemExists(string exhibit, string regionCode, int itemId)
+        {
+            ExhibitList list = GetItemCollection(0, 1, "", "Exhibit = '{0}' AND AnimalRegionCode = '{1}'".FormatWith(exhibit, regionCode));
+            return list.Any(x => x.ExhibitID != itemId);
+        }
+
 		#endregion
 
 		#region PUBLIC METHODS

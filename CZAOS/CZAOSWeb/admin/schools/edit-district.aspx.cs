@@ -69,6 +69,12 @@ namespace CZAOSWeb.admin.schools
             {
                 SchoolDistrict item = null;
 
+                if (SchoolDistrictList.ItemExists(txtDistrict.HtmlEncodedText().Trim(), DistrictID))
+                {
+                    this.DisplayError("A district with this name already exists.");
+                    return;
+                }
+
                 if (this.DistrictID == 0)
                 {
 
