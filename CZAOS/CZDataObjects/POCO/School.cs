@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Web;
 using KT.Extensions;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
@@ -21,12 +22,12 @@ namespace CZDataObjects
 			public School(DbDataReader record, bool isNew = false) // : base(record)
 			{
 				mintSchoolID = record.Get<int>("SchoolID");
-                mstrSchool = record.Get<string>("School");
+                mstrSchool = HttpUtility.HtmlDecode(record.Get<string>("School"));
                 mintDistrictID = record.Get<int>("DistrictID");
                 mblnActive = record.Get<bool>("Active");
 
                 if(!isNew)
-                    mstrDistrictName = record.Get<string>("DistrictName");
+                    mstrDistrictName = HttpUtility.HtmlDecode(record.Get<string>("DistrictName"));
           
 			}
 

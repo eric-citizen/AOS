@@ -129,7 +129,7 @@ namespace CZBizObjects
                 filter = "Active = 0";
             }
 
-            return GetItemCollection(0, 0, "Wind", filter);
+            return GetItemCollection(0, 0, "WindID", filter);
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]

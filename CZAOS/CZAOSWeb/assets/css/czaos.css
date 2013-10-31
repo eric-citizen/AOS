@@ -824,10 +824,23 @@ hr{
     background-size: 100% 100%;
 }
 #weatherControl li{
+    font-family: 'Syncopate';
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     padding: 10%;
     text-align: center;
+}
+#windControl li {
+     box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 10%;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Syncopate', sans-serif;
+    text-transform: uppercase;
+}
+#windControl li img{
+    /*width:30%;*/
 }
 #behaviorControl li{
     box-sizing: border-box;
@@ -854,6 +867,11 @@ h2{
     font-size: 1.6em;
     font-weight: bold;
     color: #4b2008;
+}
+#windControl li.selected{
+    font-size: 16px;
+}#windControl li.selected div span{
+    border-bottom: 4px solid #4a525c;
 }
 #crowdControl li.selected{
     font-size: 20px;
@@ -1101,6 +1119,35 @@ header li img{
     width: 60%;
 }
 
+#temperature-slider {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+}
+
+#temparture-label {
+    margin-bottom: 15px;
+}
+
+#temparture-label label {
+    font-family: 'Syncopate';
+}
+
+#temparture-label input {
+    width: 25px
+}
+
+.ui-slider .ui-slider-handle{
+    background: #5195a3 !important;
+    width: 1.7em !important;
+    height: 1.6em !important;
+}
+.ui-slider .ui-slider-handle:hover{
+    background: #62b7c7 !important;
+}
+.ui-slider-horizontal {
+    height: 1em !important; 
+}
 
 /*--------------------------*/
 

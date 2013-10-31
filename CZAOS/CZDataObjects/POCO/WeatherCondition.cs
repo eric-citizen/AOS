@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Web;
 using KT.Extensions;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
@@ -21,7 +22,7 @@ namespace CZDataObjects
 			public WeatherCondition(DbDataReader record) // : base(record)
 			{
 				mintWeatherID = record.Get<int>("WeatherID");
-                mstrWeather = record.Get<string>("Weather");
+                mstrWeather = HttpUtility.HtmlDecode(record.Get<string>("Weather"));
                 mblnActive = record.Get<bool>("Active");
           
 			}

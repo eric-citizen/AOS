@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Web;
 using KT.Extensions;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
@@ -21,7 +22,7 @@ namespace CZDataObjects
 			public Wind(DbDataReader record) // : base(record)
 			{
 				mintWindID = record.Get<int>("WindID");
-                mstrWind = record.Get<string>("Wind");
+                mstrWind = HttpUtility.HtmlDecode(record.Get<string>("Wind"));
                 mblnActive = record.Get<bool>("Active");          
 			}
 

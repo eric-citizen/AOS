@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Web;
 using KT.Extensions;
 using CZDataObjects.Interfaces;
 using System.Runtime.Serialization;
@@ -22,10 +23,10 @@ namespace CZDataObjects
 			public Behavior(DbDataReader record, bool isNew = false) // : base(record)
 			{
 				mintBehaviorID = record.Get<int>("BehaviorID");
-                mstrBehavior = record.Get<string>("Behavior");
+                mstrBehavior = HttpUtility.HtmlDecode(record.Get<string>("Behavior"));
                 mintBvrCatID = record.Get<int>("BvrCatID");
-                mstrBehaviorCode = record.Get<string>("BehaviorCode");
-                mstrDescription = record.Get<string>("Description");
+                mstrBehaviorCode = HttpUtility.HtmlDecode(record.Get<string>("BehaviorCode"));
+                mstrDescription = HttpUtility.HtmlDecode(record.Get<string>("Description"));
                 mintSortOrder = record.Get<int>("SortOrder");
                 mblnActive = record.Get<bool>("Active");
 

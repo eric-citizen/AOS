@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Web;
 using KT.Extensions;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
@@ -19,7 +20,7 @@ namespace CZDataObjects
         public Grade(DbDataReader record) // : base(record)
         {
             mintGradeID = record.Get<int>("GradeID");
-            mstrGrade = record.Get<string>("Grade");
+            mstrGrade = HttpUtility.HtmlDecode(record.Get<string>("Grade"));
             mblnActive = record.Get<bool>("Active");
 
         }

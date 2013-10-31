@@ -21,7 +21,7 @@ namespace CZDataObjects
 			{
 				mintWeatherID = record.Get<int>("WeatherID");
                 mintObservationID = record.Get<int>("ObservationID");
-                mstrUsername = record.Get<string>("Username");
+                mstrUsername = HttpUtility.HtmlDecode(record.Get<string>("Username"));
                 mintWeatherConditionID = record.Get<int>("WeatherConditionID");
                 mintTemperature = record.Get<int>("Temperature");
                 mintWindID = record.Get<int>("WindID");
@@ -32,9 +32,9 @@ namespace CZDataObjects
           
                 //read only
                 if (!isNew) {
-                    mstrWeatherDescription = record.Get<string>("WeatherDescription");
-                    mstrCrowd = record.Get<string>("Crowd");
-                    mstrWind = record.Get<string>("Wind");     
+                    mstrWeatherDescription = HttpUtility.HtmlDecode(record.Get<string>("WeatherDescription"));
+                    mstrCrowd = HttpUtility.HtmlDecode(record.Get<string>("Crowd"));
+                    mstrWind = HttpUtility.HtmlDecode(record.Get<string>("Wind"));     
                 }                         
 
 			}	

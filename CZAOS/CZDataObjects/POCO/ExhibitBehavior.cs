@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Web;
 using KT.Extensions;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
@@ -27,9 +28,9 @@ namespace CZDataObjects
 
                 if (!isNew)
                 {
-                    mstrExhibitName = record.Get<string>("ExhibitName");
-                    mstrBehavior = record.Get<string>("Behavior");
-                    mstrBehaviorCode = record.Get<string>("BehaviorCode");
+                    mstrExhibitName = HttpUtility.HtmlDecode(record.Get<string>("ExhibitName"));
+                    mstrBehavior = HttpUtility.HtmlDecode(record.Get<string>("Behavior"));
+                    mstrBehaviorCode = HttpUtility.HtmlDecode(record.Get<string>("BehaviorCode"));
                     mintBvrCatID = record.Get<int>("BvrCatID");
                 }
           

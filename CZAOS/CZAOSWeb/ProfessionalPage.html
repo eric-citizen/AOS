@@ -46,6 +46,11 @@
                         <ul id="weatherControl" class="slide-strip" style="width: 20%">
                         </ul>
                     </section>
+                    <h2>Wind</h2>
+                    <section class="slider">
+                        <ul id="windControl" class="slide-strip" style="width: 20%">
+                        </ul>
+                    </section>
                     <h2>Crowd</h2>
                     <section class="slider">
                         <ul id="crowdControl" class="slide-strip" style="width: 33%">
@@ -191,6 +196,9 @@
 </script>
         <script id="weatherCondition" type="simple/template">
     <li name="%WeatherID%"><img src="assets/images/icons/weather/%WeatherID%.png"/>%Weather%</li>
+</script>
+        <script id="windCondition" type="simple/template">
+    <li name="%WindID%"><img src="assets/images/icons/weather/%WindID%.png"/>%Wind%</li>
 </script>
         <script id="exhibitlocation" type="simple/template">
     <option value=%LocationID%>%Location%</option>

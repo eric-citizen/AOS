@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Web;
 using KT.Extensions;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
@@ -20,7 +21,7 @@ namespace CZDataObjects
 			public Crowd(DbDataReader record) // : base(record)
 			{
 				mintCrowdID = record.Get<int>("CrowdID");
-                mstrCrowd = record.Get<string>("Crowd");
+                mstrCrowd = HttpUtility.HtmlDecode(record.Get<string>("Crowd"));
                 mblnActive = record.Get<bool>("Active");
           
 			}

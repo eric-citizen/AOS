@@ -22,6 +22,45 @@ $(function () {
         $.removeCookie('CZAOSCookie');
         $.cookie('CZAOSCookie') == null;
     };
+    
+    window.AOS.czaos_get_no_slide = function (api, params, who, strip, data2) {
+        var params = params || {};
+        $.ajax({
+            url: 'api/' + api,
+            beforeSend: function (request) {
+                request.setRequestHeader("CZAOSToken", window.AOS.getToken());
+                for (var i in data2) {
+                    request.setRequestHeader(i, data2[i]);
+                }
+            },
+            cache: false,
+            type: 'GET',
+            data: $.toJSON(params),
+            contentType: 'application/json; charset=utf-8'
+        }).done(function (data) {
+            console.log(data);
+            if (who) {
+                $(who).html(SimpleTemplate.fill(api.split('/')[0], data));
+                if (strip) {
+                    setupSlideStrip(who, params);
+                }
+            }
+        });
+    };
+    
+    function setupSlideStrip(who, stripParams) {
+        $(who).find('li').click(function () {
+            $(who).find('li').removeClass('selected');
+            $(who).find('img').each(function () {
+                $(this).attr('src', $(this).attr('src').split('-active').join(''));
+            });
+            $(this).addClass('selected');
+            if (!stripParams.noActiveImage) {
+                $(this).find('img').attr('src', $(this).find('img').attr('src').split('.pn').join('-active.pn'));
+            }
+        });
+        $(who).slideStrip({ slide: true, touch: stripParams.touch });
+    }
 
     window.AOS.czaos_get = function(api, params, who, strip, data2) {
         var params = params || {};
@@ -49,12 +88,11 @@ $(function () {
                         });
                         $(this).addClass('selected');
                         $(this).find('img').attr('src', $(this).find('img').attr('src').split('.pn').join('-active.pn'));
-                    })
+                    });
                     $(who).slideStrip({ slide: true });
                 }
             }
         });
-
     };
     
     window.AOS.czaos_get_student_filtered_list = function (api, params, who, strip, data2) {
