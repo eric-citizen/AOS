@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="view-observation.aspx.cs" Inherits="CZAOSWeb.admin.observation.view_observation" %>
-<%@ Register Src="~/controls/GridConfirmControl.ascx" TagPrefix="uc1" TagName="GridConfirmControl" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="view-observation.aspx.cs" Inherits="CZAOSWeb.teacher.observation.view_observation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -23,12 +22,8 @@
                 <asp:Literal runat="server" ID="litHead" />
                 <span class="print"><a href="javascript:void(0)" onclick="window.print();"></a></span>
                 <div class="vr"></div>
-                <uc1:GridConfirmControl runat="server" ID="GridConfirmControl" CommandName="DeleteObservation" />
-                <asp:ImageButton runat="server" ID="btnHeadDelete" ImageUrl="~/assets/images/icons/admin/delete.png" OnClick="btnHeadDelete_Click" CssClass="delete" Text="Delete"></asp:ImageButton>
                 <span class="records">
                     <asp:HyperLink runat="server" ID="lnkHeadRecords" Text="" ToolTip="View Observation Records"></asp:HyperLink></span>
-                <span class="edit">
-                    <asp:HyperLink runat="server" ID="lnkHeadEdit" Text="" ToolTip="Edit this item"></asp:HyperLink></span>
             </div>
         </div>
 
@@ -191,11 +186,8 @@
                 <asp:Literal runat="server" ID="litFoot" />
                 <span class="print"><a href="javascript:void(0)" onclick="window.print();" class="print-link"></a></span>
                 <div class="vr"></div>
-                <asp:ImageButton runat="server" ID="btnFootDelete" ImageUrl="~/assets/images/icons/admin/delete.png" OnClick="btnHeadDelete_Click" CssClass="delete" Text=""></asp:ImageButton>
                 <span class="records">
                     <asp:HyperLink runat="server" ID="lnkFootRecords" CssClass="gv-edit-link" Text="" ToolTip="View Observation Records"></asp:HyperLink></span>
-                <span class="edit">
-                    <asp:HyperLink runat="server" ID="lnkFootEdit" CssClass="gv-edit-link" Text="" ToolTip="Edit this item"></asp:HyperLink></span>
             </div>
         </div>
 

@@ -139,6 +139,14 @@ namespace CZDataObjects
                 mstrCommonName = value.EnsureNotNull(100);
             }
         }
+        [DataMember(Name = "DisplayName")]
+        public string DisplayName
+        {
+            get
+            {
+                return string.Format("{0} : {1} : {2}", CommonName, HouseName, ZooID);
+            }
+        }
 
         [DataMember(Name = "HouseName")]
         public string HouseName

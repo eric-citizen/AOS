@@ -7,23 +7,24 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
+    <button id="btnHeadBack" class="mb10" onclick="history.go(-1);return false;">Back</button>
+
     <div id="ObservationRecordList" style="width: 100%">
         <header style="border: 1px solid #cccccc">
             <label>Observation Data</label><br />
             <asp:Literal runat="server" ID="litHeader"></asp:Literal>
-            <button id="btnHeadBack" class="floatRight" onclick="history.go(-1);return false;">Back</button>
         </header>
         <br />
 
         <div class="weather" id="weather">
-            <label>Weather Conditions</label>
-            <div class="innerWeather">
-                <label>Temprature</label>
-                <asp:Literal runat="server" ID="litTemp"></asp:Literal>
-            </div>
+            <label>Environment Conditions</label>
             <div class="innerWeather">
                 <label>Weather Condition</label>
                 <asp:Literal runat="server" ID="litWeatherCond"></asp:Literal>
+            </div>
+            <div class="innerWeather">
+                <label>Temprature</label>
+                <asp:Literal runat="server" ID="litTemp"></asp:Literal>
             </div>
             <div class="innerWeather">
                 <label>Wind</label>

@@ -56,6 +56,10 @@ namespace CZAOSWeb.controls
             {
                 userGridView.Columns[userGridView.Columns.Count - 1].Visible = false; //hide delete column from all but master admins
             }
+            if (UserType == "MasterAdmin")
+            {
+                userGridView.Columns[(int)DataColumns.UserType].Visible = false;
+            }
         }
 
        

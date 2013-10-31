@@ -11,7 +11,7 @@ using CZAOSCore;
 using CZAOSCore.basepages;
 using CZAOSWeb.masterpages;
 
-namespace CZAOSWeb.admin.observation
+namespace CZAOSWeb.teacher.observation
 {
     public partial class view_observation : MainBase
     {
@@ -44,7 +44,6 @@ namespace CZAOSWeb.admin.observation
             if (!this.IsPostBack)
             {                
                 this.LoadData();
-                GridConfirmControl.CommandArgument = ObservationID.ToString();
             }
         }
 
@@ -69,10 +68,8 @@ namespace CZAOSWeb.admin.observation
                     var strDetail = obs.ObserveStart.ToShortDateString() + " // " + obs.ObservationID + " // " + obs.ObservationTypeName + " // " + obs.Exhibit;
                     litHead.Text = strDetail;
                     litFoot.Text = strDetail;
-                    lnkHeadEdit.NavigateUrl = String.Format("~/admin/observation/edit-observation.aspx?observationId={0}", obs.ObservationID);
-                    lnkFootEdit.NavigateUrl = String.Format("~/admin/observation/edit-observation.aspx?observationId={0}", obs.ObservationID);
-                    lnkHeadRecords.NavigateUrl = String.Format("~/admin/observation/view-observation-records.aspx?observationId={0}", obs.ObservationID);
-                    lnkFootRecords.NavigateUrl = String.Format("~/admin/observation/view-observation-records.aspx?observationId={0}", obs.ObservationID);
+                    lnkHeadRecords.NavigateUrl = String.Format("~/teacher/observation/view-observation-records.aspx?observationId={0}", obs.ObservationID);
+                    lnkFootRecords.NavigateUrl = String.Format("~/teacher/observation/view-observation-records.aspx?observationId={0}", obs.ObservationID);
 
                     fieldsetLegend.Text = obs.ObservationTypeName;
                     litDate.Text = obs.ObserveStart.ToShortDateString();

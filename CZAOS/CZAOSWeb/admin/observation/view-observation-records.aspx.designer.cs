@@ -22,15 +22,6 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.Literal litHeader;
         
         /// <summary>
-        /// litTemp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litTemp;
-        
-        /// <summary>
         /// litWeatherCond control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace CZAOSWeb.admin.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litWeatherCond;
+        
+        /// <summary>
+        /// litTemp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litTemp;
         
         /// <summary>
         /// litWind control.

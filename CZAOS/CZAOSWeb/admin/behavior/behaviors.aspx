@@ -8,13 +8,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
     <mack:HiddenID runat="server" ID="hdnItemID" ClientIDMode="Static" />
-    <a class="add-link ui-dialog-link" href="/admin/behavior/edit-behavior.aspx?bcatId=<%= this.CategoryID %>" data-args="400, 500, true, null, 1">Add New Behavior</a>
 <%--    <a class="sort-link ui-dialog-link" href="/admin/behavior/sort-behavior.aspx?bcatId=<%= this.CategoryID %>" data-args="600, 500, true, null, 1">Edit Sort Order</a>--%>
     
     <div>
-        <span class="b pr5">Behavior Category:</span><asp:Literal runat="server" ID="litCatName"></asp:Literal>
+        <h2>Behavior Category:&nbsp;<asp:Literal runat="server" ID="litCatName"></asp:Literal></h2>
     </div>
 
+    <a class="add-link ui-dialog-link" href="/admin/behavior/edit-behavior.aspx?bcatId=<%= this.CategoryID %>" data-args="350, 450, true, null, 1">Add New Behavior</a>
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
     </div>    
@@ -52,7 +52,7 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="400, 500, true, null, 1" Text="" ToolTip="Edit this item" ></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="350, 450, true, null, 1" Text="" ToolTip="Edit this item" ></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>

@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
-    <a class="add-link ui-dialog-link" href="/admin/behavior/edit-behavior-category.aspx" data-args="400, 700, true, null, 0" title="Add New Behavior Category">Add New Behavior Category</a>
+    <a class="add-link ui-dialog-link" href="/admin/behavior/edit-behavior-category.aspx" data-args="400, 300, true, null, 0" title="Add New Behavior Category">Add New Behavior Category</a>
 <%--    <a class="add-link ui-dialog-link" href="/admin/behavior/sort-behavior-category.aspx" data-args="600, 700, true, null, 0">Edit Sort Order</a>--%>
 
     <div class="alphabet-container">  
@@ -40,9 +40,10 @@
                 <ItemStyle Width="60px" />
             </asp:BoundField> 
 
-            <asp:TemplateField ItemStyle-Width="100px" HeaderText="Behavior Count" SortExpression="BehaviorCount">                    
-                <ItemTemplate>                    
-                    <asp:HyperLink runat="server" ID="lnkBehaviorEdit" CssClass="ui-dialog-link" data-args="775, 650, true, null, 1" Text='<%#Bind("BehaviorCount") %>' ToolTip="Edit this category's behaviors" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/behaviors.aspx?bcatId={0}") %>'></asp:HyperLink>                
+            <asp:TemplateField ItemStyle-Width="50px" HeaderText="Behavior Count" SortExpression="BehaviorCount" HeaderStyle-CssClass="tac" ItemStyle-CssClass="tar">                    
+                <ItemTemplate>   
+                    <asp:Literal runat="server" ID="litBvrCt" Text='<%#Bind("BehaviorCount") %>'></asp:Literal>                 
+                    <asp:HyperLink runat="server" ID="lnkBehaviorEdit" CssClass="edit-button ui-dialog-link" data-args="775, 650, true, null, 1" Text="Edit Behaviors" ToolTip="Edit this category's behaviors" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/behaviors.aspx?bcatId={0}") %>'></asp:HyperLink>                
                 </ItemTemplate> 
             </asp:TemplateField>
 
@@ -54,7 +55,7 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="400, 400, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/edit-behavior-category.aspx?bcatId={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="400, 300, true, null, 1" Text="" ToolTip="Edit this item" NavigateUrl='<%# Bind("BvrCatID","~/admin/behavior/edit-behavior-category.aspx?bcatId={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CZAOSWeb.admin.observation {
+namespace CZAOSWeb.teacher.observation {
     
     
     public partial class view_observation {
@@ -40,24 +40,6 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.Literal litHead;
         
         /// <summary>
-        /// GridConfirmControl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CZAOSWeb.controls.GridConfirmControl GridConfirmControl;
-        
-        /// <summary>
-        /// btnHeadDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnHeadDelete;
-        
-        /// <summary>
         /// lnkHeadRecords control.
         /// </summary>
         /// <remarks>
@@ -65,15 +47,6 @@ namespace CZAOSWeb.admin.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkHeadRecords;
-        
-        /// <summary>
-        /// lnkHeadEdit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkHeadEdit;
         
         /// <summary>
         /// litObsCount control.
@@ -310,15 +283,6 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.Literal litFoot;
         
         /// <summary>
-        /// btnFootDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnFootDelete;
-        
-        /// <summary>
         /// lnkFootRecords control.
         /// </summary>
         /// <remarks>
@@ -326,14 +290,5 @@ namespace CZAOSWeb.admin.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkFootRecords;
-        
-        /// <summary>
-        /// lnkFootEdit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkFootEdit;
     }
 }
