@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Web;
 using KT.Extensions;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
@@ -21,9 +22,9 @@ namespace CZDataObjects
         public AdminNavigation(DbDataReader record) // : base(record)
         {
             mintID = record.Get<int>("ID");
-            mstrFolder = record.Get<string>("Folder");
+            mstrFolder = HttpUtility.HtmlDecode(record.Get<string>("Folder"));
             mstrRoles = record.Get<string>("Roles");
-            mstrNavText = record.Get<string>("NavText");
+            mstrNavText = HttpUtility.HtmlDecode(record.Get<string>("NavText"));
         }
 
         

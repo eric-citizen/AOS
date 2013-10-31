@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Web;
 using CZDataObjects.Extensions;
 using KT.Extensions;
 using System.Runtime.Serialization;
@@ -29,8 +30,8 @@ namespace CZDataObjects
                 {
                     mblnMaskAma = record.Get<string>("MaskAma").FromYesNoString();
                     mblnMaskProf = record.Get<string>("MaskProf").FromYesNoString();
-                    mstrLocation = record.Get<string>("Location");
-                    mstrExhibit = record.Get<string>("Exhibit");
+                    mstrLocation = HttpUtility.HtmlDecode(record.Get<string>("Location"));
+                    mstrExhibit = HttpUtility.HtmlDecode(record.Get<string>("Exhibit"));
                 }
           
 			}

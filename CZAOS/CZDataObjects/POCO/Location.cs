@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Web;
 using KT.Extensions;
 using CZDataObjects.Extensions;
 using CZDataObjects.Interfaces;
@@ -22,8 +23,8 @@ namespace CZDataObjects
 			public Location(DbDataReader record) // : base(record)
 			{
 				mintLocationID = record.Get<int>("LocationID");
-                mstrDescription = record.Get<string>("Description");
-                mstrLocationCode = record.Get<string>("LocationCode");
+                mstrDescription = HttpUtility.HtmlDecode(record.Get<string>("Description"));
+                mstrLocationCode = HttpUtility.HtmlDecode(record.Get<string>("LocationCode"));
                 mblnMaskAma = record.Get<string>("MaskAma").FromYesNoString();
                 mblnMaskProf = record.Get<string>("MaskProf").FromYesNoString();
                 mintSortOrder = record.Get<int>("SortOrder");

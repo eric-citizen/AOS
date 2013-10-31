@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Web;
 using KT.Extensions;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
@@ -20,14 +21,14 @@ namespace CZDataObjects
 			public Exhibit(DbDataReader record, bool isNew = false) // : base(record)
 			{
 				mintExhibitID = record.Get<int>("ExhibitID");
-                mstrAnimalRegionCode = record.Get<string>("AnimalRegionCode");
-                mstrExhibit = record.Get<string>("Exhibit");
+                mstrAnimalRegionCode = HttpUtility.HtmlDecode(record.Get<string>("AnimalRegionCode"));
+                mstrExhibit = HttpUtility.HtmlDecode(record.Get<string>("Exhibit"));
                 mblnActive = record.Get<bool>("Active");
 
                 if (!isNew)
                 {
-                    mstrAnimalRegion = record.Get<string>("AnimalRegion");
-                    mstrRegionName = record.Get<string>("RegionName");
+                    mstrAnimalRegion = HttpUtility.HtmlDecode(record.Get<string>("AnimalRegion"));
+                    mstrRegionName = HttpUtility.HtmlDecode(record.Get<string>("RegionName"));
                     mintBehaviorCount = record.Get<int>("BehaviorCount");
                     mintLocationCount = record.Get<int>("LocationCount");
                 }          

@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Web;
 using KT.Extensions;
 using CZDataObjects.Extensions;
 using CZDataObjects.Interfaces;
@@ -20,9 +21,9 @@ namespace CZDataObjects
 			public BehaviorCategory(DbDataReader record, bool isNew = false) // : base(record)
 			{
 				mintBvrCatID = record.Get<int>("BvrCatID");
-                mstrBvrCat = record.Get<string>("BvrCat");
-                mstrBvrCatCode = record.Get<string>("BvrCatCode");
-                mstrDescription = record.Get<string>("Description");
+                mstrBvrCat = HttpUtility.HtmlDecode(record.Get<string>("BvrCat"));
+                mstrBvrCatCode = HttpUtility.HtmlDecode(record.Get<string>("BvrCatCode"));
+                mstrDescription = HttpUtility.HtmlDecode(record.Get<string>("Description"));
                 mblnMaskAma = record.Get<string>("MaskAma").FromYesNoString();
                 mblnMaskProf = record.Get<string>("MaskProf").FromYesNoString();
                 mintSortOrder = record.Get<int>("SortOrder");

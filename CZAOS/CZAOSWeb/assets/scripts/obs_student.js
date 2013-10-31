@@ -52,8 +52,9 @@ $(function () {
                 window.AOS.czaos_get('animalObservation', {}, '#observationAnimals', false, { observationId: observationID });
                 window.AOS.czaos_get_student_filtered_list('behaviorCategory', {}, '#behaviorControl', true, { exhibitId: exhibitID });
                 window.AOS.czaos_get_student_filtered_list('exhibitlocation', {}, '#zoneControl', false, { exhibitId: exhibitID });
-                window.AOS.czaos_get('crowd/', {}, '#crowdControl', true);
-                window.AOS.czaos_get('weatherCondition/', {}, '#weatherControl', true);
+                window.AOS.czaos_get_no_slide('crowd/', {noActiveImage: true, touch: false}, '#crowdControl', true);
+                window.AOS.czaos_get_no_slide('weatherCondition/', {touch: false}, '#weatherControl', true);
+                window.AOS.czaos_get_no_slide('wind/', { noActiveImage: true, touch: false }, '#windControl', true);
 
             } else {
                 alert('Sorry wrong password. Try again.');
@@ -89,11 +90,29 @@ function gotoWeather() {
         $('#enviromentData').fadeIn(0);
              
         username = $("#studentNumber").val();
+    
+    //set up the slider for the temperature
+        $(function () {
+            $("#temperature-slider").slider({
+                //range: "max",
+                min: 0,
+                max: 120,
+                value: 60,
+                slide: function (event, ui) {
+                    $("#temperature").val(ui.value);
+                }
+            });
+            $("#temperature").val($("#temperature-slider").slider("value"));
+        });
 
         $("#saveWeather").click(function () {
-            obsWeather = new weather({ Temperature: $(".temp").text(), weatherID: $("#weatherControl li.selected").attr('name'), CrowdID: $("#crowdControl li.selected").attr('name') });
+            obsWeather = new weather({ Temperature: $("#temperature-slider").slider("value"), weatherID: $("#weatherControl li.selected").attr('name'), CrowdID: $("#crowdControl li.selected").attr('name'), WindID: $("#windControl li.selected").attr('name') });
             console.log(obsWeather);
-            startObservation();
+            window.AOS.czaos_post('weather', obsWeather, {}).done(function() {
+                startObservation();
+            }).fail(function() {
+                toastr.error("Please try again.", "There was an error saving your weather information");
+            });
         });
 }
 
@@ -132,8 +151,8 @@ function displayTime(count) {
 
 function startObservation() {
     //check to make sure weather and crowd have been selected
-    if (!obsWeather.weatherID || !obsWeather.CrowdID) {
-        alert('Please select an option for both weather and crowd');
+    if (!obsWeather.weatherID || !obsWeather.CrowdID || !obsWeather.WindID) {
+        alert('Please select a value for all options.');
     } else {
         $('#enviromentPanel').fadeOut(0);
         $('#observationPanel').fadeIn(0);
@@ -213,14 +232,14 @@ function handleSave() {
     });
 }
 
-function getWeatherHere(){
-    var loc="//api.forecast.io/forecast/6edffeaac741bd27f996522ead02a772/"+me.lat+','+me.long;
-    $.getJSON(loc + "?callback=?", function(data) {
-        data.currently.temperature=Math.round(data.currently.temperature);
-        data.currently.windSpeed=Math.round(data.currently.windSpeed);
-        $('#weatherAPIoutput').html(SimpleTemplate.fill('weatherAPI',data.currently));
-    });
-};
+//function getWeatherHere(){
+//    var loc="//api.forecast.io/forecast/6edffeaac741bd27f996522ead02a772/"+me.lat+','+me.long;
+//    $.getJSON(loc + "?callback=?", function(data) {
+//        data.currently.temperature=Math.round(data.currently.temperature);
+//        data.currently.windSpeed=Math.round(data.currently.windSpeed);
+//        $('#weatherAPIoutput').html(SimpleTemplate.fill('weatherAPI',data.currently));
+//    });
+//};
 var me = { long: 0, lat: 0 };
 
 function showPosition(point){
@@ -228,7 +247,7 @@ function showPosition(point){
         lat:point.coords.latitude,
         long:point.coords.longitude
     };
-    getWeatherHere();
+    //getWeatherHere();
 }
 
 var record = function(ref) {
