@@ -40,22 +40,13 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.Literal litHead;
         
         /// <summary>
-        /// GridConfirmControl control.
+        /// lnkDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CZAOSWeb.controls.GridConfirmControl GridConfirmControl;
-        
-        /// <summary>
-        /// btnHeadDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnHeadDelete;
+        protected global::System.Web.UI.WebControls.LinkButton lnkDelete;
         
         /// <summary>
         /// lnkHeadRecords control.

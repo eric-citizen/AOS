@@ -256,6 +256,7 @@
 
 /* general width */
 
+.w30{width: 30px!important;}
 .w36{width:36px!important}
 .w50{width:50px!important}
 .w100{width:100px!important}
@@ -273,6 +274,7 @@
 .w708{width:708px!important}
 .w700{width:700px!important}
 .w800{width:800px!important}
+.w960{width:960px!important}
 .w100pc{width:100%!important}
 /* height */
 
