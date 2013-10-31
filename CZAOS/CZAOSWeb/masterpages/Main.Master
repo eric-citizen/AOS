@@ -8,7 +8,9 @@
 <!--[if IE 7 ]> <html class="ie7"> <![endif]-->
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
 <head runat="server">
     <title></title>
 
@@ -25,8 +27,8 @@
     <link href="/assets/css/helpers.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,500' rel='stylesheet' type='text/css'>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script> 
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src="/assets/scripts/modernizr-2.6.2.js"></script>
     <script src="/Scripts/knockout-2.3.0.js"></script>
     <script src="/Scripts/knockout.mapping-latest.js"></script>
@@ -35,41 +37,46 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 
 </head>
-<body style="width:960px;margin-left:auto;margin-right:auto"> 
+<body style="width: 960px; margin-left: auto; margin-right: auto">
     <form id="form1" runat="server">
-        
-     <mack:AutoLogout ID="AutoLogout2" runat="server" 
-            RedirectUrl="~/default.aspx" 
-            CustomExpirationSeconds="2700" 
-            ShowWarningSeconds="120" 
-            UseJavascript="true" WarnInMinutes="true" Enabled="true"  /> 
 
-        
-    <header>
-        <div id="app-title">
-            Columbus Zoo &amp; Aquarium Animal Observation System : Administration
-        </div>
-			<nav>
-                <asp:LinkButton runat="server" ID="lnkLogout" Text="Logout" CausesValidation="false" OnClick="lnkLogout_Click" CssClass="logout-link"></asp:LinkButton>
-                <ul>
-				    <li><a id="menu" href="#">&#9776</a>
-					    <ul id="menuDropDown">
+        <mack:AutoLogout ID="AutoLogout2" runat="server"
+            RedirectUrl="~/default.aspx"
+            CustomExpirationSeconds="2700"
+            ShowWarningSeconds="120"
+            UseJavascript="true" WarnInMinutes="true" Enabled="true" />
+
+
+        <header class="pt5 pb5">
+            <div class="pl5 h30" id="app-title">
+                <h3>Columbus Zoo &amp; Aquarium Animal Observation System : Administration</h3>
+            </div>
+            <nav class="floatRight h30">
+                <asp:LinkButton runat="server" ID="lnkLogout" CssClass="edit-button menu" Text="Logout" CausesValidation="false" OnClick="lnkLogout_Click" />
+<%--                <ul>
+                    <li><a id="menu" class="menu" href="#">&#9776</a>
+                        <ul id="menuDropDown">
                             <uc1:AdminNav runat="server" ID="AdminNav" />
-					    </ul>
-				    </li>
-			    </ul>
+                        </ul>
+                    </li>
+                </ul>--%>
+                <div class="dropDownDiv pr5">
+                    <a class="edit-button menu" id="menu2" href="#">&#9776</a>
+                    <ul id="menuDropDown2" class="hiddenDropDown">
+                        <uc1:AdminNav runat="server" ID="AdminNav1" />
+                    </ul>
+                </div>
             </nav>
-    </header>
-    <div class="clear" id="titleborder"></div>
-    <div id="body-container">
-                   
-        <h1><asp:Literal runat="server" ID="litContentTitle"></asp:Literal></h1>
-        <asp:ContentPlaceHolder ID="body" runat="server"> 
-        
+        </header>
+        <div class="clear" id="titleborder"></div>
+        <div id="body-container">
 
-        </asp:ContentPlaceHolder>
+            <h1>
+                <asp:Literal runat="server" ID="litContentTitle"></asp:Literal></h1>
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
 
-    </div>
+        </div>
 
         <script src="/assets/scripts/simplemodal/js/jquery.simplemodal.1.4.4.min.js"></script>
         <script src="/assets/scripts/toastr/toastr.js"></script>
@@ -87,11 +94,11 @@
         <script>
             $(function () {
                 $("html").click(function () {
-                    $("#menuDropDown").hide("");
+                    $("#menuDropDown2").hide("");
                 });
-                $("#menu").click(function (event) {
+                $("#menu2").click(function (event) {
                     event.stopPropagation();
-                    $("#menuDropDown").toggle("");
+                    $("#menuDropDown2").toggle("");
                 });
             });
 
