@@ -219,7 +219,8 @@ namespace CZAOSWeb.admin.users
                         PageMessageOptions options = new PageMessageOptions();
                         options.UrlRedirect = "function:CZAOSUIDialogs.refreshParent()";
 
-                        this.DisplayMessage("User created successfully.", options);
+                        this.Toast(PageExtensions.ToastMessageType.success, "User was successfully created.", "User Created");
+                        //this.DisplayMessage("User created successfully.", options);
                     }
                 }
                 else
@@ -231,7 +232,8 @@ namespace CZAOSWeb.admin.users
                         PageMessageOptions options = new PageMessageOptions();
                         options.UrlRedirect = "function:CZAOSUIDialogs.refreshParent()";
 
-                        this.DisplayMessage("User updated successfully.", options);
+                        this.Toast(PageExtensions.ToastMessageType.success, "User was successfully updated.", "User Updated");
+                        //this.DisplayMessage("User updated successfully.", options);
                     }
                 }
             }
