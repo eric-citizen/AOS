@@ -10,7 +10,7 @@
     <button id="btnHeadBack" class="mb10" onclick="history.go(-1);return false;">Back</button>
 
     <div id="ObservationRecordList" style="width: 100%">
-        <header style="border: 1px solid #cccccc">
+        <header>
             <label>Observation Data</label><br />
             <asp:Literal runat="server" ID="litHeader"></asp:Literal>
         </header>
@@ -80,9 +80,9 @@
 
         <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvObs" />
 
-        <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvObs" Text="No records found!"></mack:MessageDiv>
+        <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvObs" CssClass="pr30" Text="No records found!"></mack:MessageDiv>
         <br />
-        <footer style="border: 1px solid #cccccc">
+        <footer>
             <label>Observation Data</label><br />
             <asp:Literal runat="server" ID="litFooter"></asp:Literal>
         </footer>
