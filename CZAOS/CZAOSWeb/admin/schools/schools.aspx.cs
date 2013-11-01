@@ -37,7 +37,7 @@ namespace CZAOSWeb.admin.schools
                 {
                     gvSchools.Columns[gvSchools.Columns.Count - 1].Visible = false; //hide delete column from all but master admins
                 }
-
+                litDistrict.Text = SchoolDistrictList.GetItem(DistrictID).District;
             }
         }
 
@@ -51,15 +51,45 @@ namespace CZAOSWeb.admin.schools
 
         protected void cztDataSource_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
         {
-            if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
+            string freeText = txtFreeText.HtmlEncodedText();
+
+            if (freeText.IsNullOrEmpty())
             {
-                e.InputParameters["filterExpression"] = "DistrictID = " + this.DistrictID + " AND School LIKE '" + AlphabetFilter.Filter + "%'";
+                if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
+                {
+                    e.InputParameters["filterExpression"] = "School LIKE '" + AlphabetFilter.Filter + "%' AND DistrictID = " + DistrictID;
+                }
+                else
+                {
+                    e.InputParameters["filterExpression"] = "DistrictID = " + DistrictID;
+                }
             }
             else
             {
-                e.InputParameters["filterExpression"] = "DistrictID = " + this.DistrictID;
-            }
+                StringBuilder sb = new StringBuilder();
 
+                sb.AppendFormat("School LIKE '%{0}%' OR ", freeText);
+                sb.AppendFormat("DistrictName LIKE '%{0}%' OR ", freeText);
+                sb.AppendFormat("Active LIKE '%{0}%'", freeText);
+
+                e.InputParameters["filterExpression"] = sb.ToString();
+            }
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            gvSchools.DataBind();
+        }
+
+        protected void lnkClear_Click(object sender, EventArgs e)
+        {
+            txtFreeText.Clear();
+            gvSchools.DataBind();
+        }
+
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            gvSchools.DataBind();
         }
 
         protected void IsActiveCheckChanged(object sender, EventArgs e)

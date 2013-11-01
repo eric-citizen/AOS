@@ -10,10 +10,23 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
     <mack:HiddenID runat="server" ID="hdnItemID" ClientIDMode="Static" />
+
+    <div>
+        <h2>District:&nbsp;<asp:Literal runat="server" ID="litDistrict"></asp:Literal></h2>
+    </div>
+
     <a class="add-link ui-dialog-link" href="/admin/schools/edit-school.aspx" title="Add New School" data-width="300" data-height="250" data-rp="1">Add New School</a>        
-    <div class="alphabet-container">  
+
+    <div class="alphabet-container pt10">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
     </div>    
+
+    <div class="animalSearch pb5 floatRight">
+        <label class="required">Free Text Search:</label>
+        <mack:RequiredTextBox runat="server" CssClass="" ID="txtFreeText" MaxLength="50" Width="150px" ValidationGroup="freetext" ValidatorCssClass="error" ValidatorToolTip="Please enter search text"></mack:RequiredTextBox>
+        <mack:WaitButton runat="server" ID="btnSearch" Text="Search" CssClass="button" ValidationGroup="freetext" OnClick="btnSearch_Click"/>
+        <asp:LinkButton runat="server" CssClass="edit-button button" ID="lnkClear" Text="Clear" OnClick="lnkClear_Click"></asp:LinkButton>
+    </div>
 
     <asp:ObjectDataSource ID="cztDataSource" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting"
         SelectMethod="GetItemCollection" TypeName="CZBizObjects.SchoolList"
@@ -33,9 +46,9 @@
         DataKeyNames="SchoolID" OnRowCommand="gvSchools_RowCommand" OnRowDataBound="gvSchools_RowDataBound">
         <Columns>
 
-            <asp:BoundField DataField="SchoolName" SortExpression="School" HeaderText="School">                
+            <asp:BoundField DataField="SchoolName" SortExpression="School" HeaderText="School" ItemStyle-Width="200px">                
             </asp:BoundField>            
-            <asp:BoundField DataField="DistrictName" SortExpression="DistrictName" HeaderText="District" ItemStyle-Width="300px">                
+            <asp:BoundField DataField="DistrictName" SortExpression="DistrictName" HeaderText="District" ItemStyle-Width="200px">                
             </asp:BoundField>  
             <asp:TemplateField SortExpression="Active" HeaderText="Active" ItemStyle-Width="50px" HeaderStyle-CssClass="tac" ItemStyle-CssClass="tac cell-wait-click">                    
                 <ItemTemplate>

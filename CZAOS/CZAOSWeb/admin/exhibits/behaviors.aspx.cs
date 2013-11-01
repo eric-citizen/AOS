@@ -56,14 +56,45 @@ namespace CZAOSWeb.admin.Behavior
 
         protected void cztDataSource_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
         {
-            if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
+            string freeText = txtFreeText.HtmlEncodedText();
+
+            if (freeText.IsNullOrEmpty())
             {
-                e.InputParameters["filterExpression"] = "ExhibitID = " + this.ExhibitID + " AND Behavior LIKE '" + AlphabetFilter.Filter + "%'";
+                if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
+                {
+                    e.InputParameters["filterExpression"] = "Behavior LIKE '" + AlphabetFilter.Filter + "%' AND ExhibitID = " + ExhibitID;
+                }
+                else
+                {
+                    e.InputParameters["filterExpression"] = "ExhibitID = " + ExhibitID;
+                }
             }
             else
             {
-                e.InputParameters["filterExpression"] = "ExhibitID = " + this.ExhibitID;
+                StringBuilder sb = new StringBuilder();
+
+                sb.AppendFormat("Behavior LIKE '%{0}%' OR ", freeText);
+                sb.AppendFormat("BehaviorCode LIKE '%{0}%' OR ", freeText);
+                sb.AppendFormat("Active LIKE '%{0}%' ", freeText);
+
+                e.InputParameters["filterExpression"] = sb.ToString();
             }
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            gvExhibitBehaviors.DataBind();
+        }
+
+        protected void lnkClear_Click(object sender, EventArgs e)
+        {
+            txtFreeText.Clear();
+            gvExhibitBehaviors.DataBind();
+        }
+
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            gvExhibitBehaviors.DataBind();
         }
 
         protected void gvExhibitBehaviors_RowDataBound(object sender, GridViewRowEventArgs e)

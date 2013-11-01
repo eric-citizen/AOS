@@ -39,9 +39,25 @@ select {
     background: #fff;
     border-radius: 0em;
 }
+.animalSearch {
+    /*width: 50%;*/
+    display:inline-block;
+}
 .alphabet-container {
-    float:right;
     display: inline-block;
+    float:right;
+}
+.alphabet-letter {
+    /*font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 9.9px;
+    text-align: center;*/
+}
+.obsInfo {
+    display:inline-block;
+    padding: 20px;
+    padding-bottom: 0;
 }
 select, textarea  {
     font-size:12px;
@@ -97,7 +113,6 @@ select{
 }
 .innerWeather {
     display: inline-block;
-    /*margin-right: 5px;*/
     width: 23%
 }
 .innerWeather label {
@@ -113,7 +128,6 @@ select{
     width: 15px;
     height: 30px;
     display: inline-block;
-    float: right;
     margin-left: 5px;
 }
 .edit a {
@@ -128,7 +142,6 @@ select{
     width: 30px;
     height: 30px;
     display: inline-block;
-    float: right;
     margin-left: 5px;
 }
 .view a {
@@ -143,7 +156,6 @@ select{
     width: 30px;
     height: 30px;
     display: inline-block;
-    float: right;
     margin-left: 5px;
 }
 .records a {
@@ -194,7 +206,6 @@ select{
     width:30px; 
     height:30px;
     display: inline-block;
-    float:right;
     margin-left: 5px;
 }
 .delete a {
@@ -236,7 +247,6 @@ select{
     width:30px; 
     height:30px;
     display: inline-block;
-    float:right;
     margin-left: 5px;
 }
 .print a {
@@ -246,13 +256,9 @@ select{
     height: 30px;
 }
 .vr{
+    display:inline-block;
     border-left: 2px solid #a2a6ad;
     height: 28px;
-    float: right;
-}
-.animalSearch {
-    width: 50%;
-    display:inline-block;
 }
 #filterUp, #filterRec {
     display:none;
@@ -287,7 +293,7 @@ textarea  {
     text-transform: uppercase;
     color: #fff;
     background: #5195a3;
-    padding: .5em 1em .3em;
+    padding: .5em 1em;
     font-size: 14px;
     cursor: pointer;
 }
@@ -300,7 +306,7 @@ textarea  {
     font-family: "Syncopate";
     text-transform: uppercase;
     color: #fff;
-    padding: .5em 1em .3em;
+    padding: .5em 1em;
     font-size: 14px;
     background: #999999;
 }
@@ -579,6 +585,19 @@ nav ul ul li {
     background: url(../images/add.png) center left no-repeat;
 }
 .add-link:hover{
+    color: #444;
+}
+.wind-link{
+    display: inline-block;
+    padding: 1em;
+    padding-left: 3em;
+    border-radius: .5em;
+    margin: .5em 0;
+    color: #a4a7ad;
+    background: url(../images/icons/observation/wind/wind-39more.png) center left no-repeat;
+    background-size: 30px 15px;
+}
+.wind-link:hover{
     color: #444;
 }
 /*#region simple confirm control */

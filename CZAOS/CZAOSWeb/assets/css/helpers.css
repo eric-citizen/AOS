@@ -273,6 +273,7 @@
 .w696{width:696px!important}
 .w708{width:708px!important}
 .w700{width:700px!important}
+.w750{width:750px!important}
 .w800{width:800px!important}
 .w960{width:960px!important}
 .w100pc{width:100%!important}
@@ -294,9 +295,9 @@
 .mh100{min-height:100px!important}
 .mh200{min-height:200px!important}
 
-.upper {
-    text-transform: uppercase;
-}
+.upper{text-transform: uppercase;}
+
+.vBase{vertical-align:baseline}
 
 /* developer */
 
