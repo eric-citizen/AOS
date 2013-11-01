@@ -143,10 +143,12 @@ function populateObservationInfo(observation) {
 
     $('body').addClass(observation.Exhibit);
     var date = new Date;
-    $('#date').html(date.getDay() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear());
+    //$('#date').html(date.getMonth() + '-' + (date.getDay() + 1) + '-' + date.getFullYear());
+    $('#date').html(observation.Date);
     $('#observationId').html(observation.ObservationID);
     var start = new Date(observation.ObserveStart),
         end = new Date(observation.ObserveEnd);
+    $('#date').html((start.getMonth() + 1) + '-' + (start.getDate()) + '-' + start.getFullYear());
     $('#time').html(start.time() + ' - ' + end.time());
     $('#interval').html(observation.Interval + ' Minute(s)');
     $('#observerCount').html(observation.ObserverNo);

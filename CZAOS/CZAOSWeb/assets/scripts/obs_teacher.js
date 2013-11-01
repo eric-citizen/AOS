@@ -72,12 +72,11 @@ function populateObservationInfo(observation) {
     });
     
     //set fields from observation object
-    var date = new Date;
-    $('#date').html(date.getDay() + '-' + (date.getMonth()+1) + '-' + date.getFullYear());
     $('#observationId').html(observation.ObservationID);
     var start = new Date(observation.ObserveStart),
         end = new Date(observation.ObserveEnd);
     $('#time').html(start.time() + ' - ' + end.time());
+    $('#date').html((start.getMonth() + 1) + '-' + (start.getDate()) + '-' + start.getFullYear());
     $('#interval').html(observation.Interval + ' Minute(s)');
     $('#studentPass').html(observation.StudentPass);
     $('#observerCount').html(observation.ObserverNo);
