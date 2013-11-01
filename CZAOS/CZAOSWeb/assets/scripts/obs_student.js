@@ -106,7 +106,7 @@ function gotoWeather() {
         });
 
         $("#saveWeather").click(function () {
-            obsWeather = new weather({ Temperature: $("#temperature-slider").slider("value"), weatherID: $("#weatherControl li.selected").attr('name'), CrowdID: $("#crowdControl li.selected").attr('name'), WindID: $("#windControl li.selected").attr('name') });
+            obsWeather = new weather({ Temperature: $("#temperature-slider").slider("value"), WeatherConditionID: $("#weatherControl li.selected").attr('name'), CrowdID: $("#crowdControl li.selected").attr('name'), WindID: $("#windControl li.selected").attr('name')});
             console.log(obsWeather);
             window.AOS.czaos_post('weather', obsWeather, {}).done(function() {
                 startObservation();
@@ -151,7 +151,7 @@ function displayTime(count) {
 
 function startObservation() {
     //check to make sure weather and crowd have been selected
-    if (!obsWeather.weatherID || !obsWeather.CrowdID || !obsWeather.WindID) {
+    if (!obsWeather.WeatherConditionID || !obsWeather.CrowdID || !obsWeather.WindID) {
         alert('Please select a value for all options.');
     } else {
         $('#enviromentPanel').fadeOut(0);
@@ -267,12 +267,11 @@ var record = function(ref) {
 var weather = function(ref) {
     this.ObservationID = observationID;
     this.Username = username;
-    this.weatherID = ref.weatherID;
+    this.WeatherConditionID = ref.WeatherConditionID;
     this.Temperature = ref.Temperature;
     this.WindID = ref.WindID;
     this.CrowdID = ref.CrowdID;
     this.WeatherTime = new Date();
-    ;
     this.Deleted = 0;
     this.Flagged = 0;
 };
