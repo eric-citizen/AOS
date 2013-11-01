@@ -64,12 +64,12 @@
                     <div id="attending" class="obsSectionInnerRight">
 
                         <asp:ListBox runat="server" ID="lstObservers" ClientIDMode="Static" SelectionMode="Multiple" Rows="10"
-                            DataTextField="DisplayName" DataValueField="UserName" CssClass="listbox"></asp:ListBox><br />
+                            DataTextField="DisplayName" DataValueField="UserName" CssClass="listbox" ValidationGroup="attending"></asp:ListBox><br />
 
                         Selected Observers:<span id="user-count" class="pl10">0</span>
                         <mack:ListBoxValidator runat="server" ID="lstval" ControlToValidate="lstObservers"
-                            CssClass="error" ToolTip="Select {0} observers" SetFocusOnError="true"
-                            MinimumNumberOfSelectedCheckBoxes="1"></mack:ListBoxValidator>
+                            CssClass="error" ToolTip="Select {0} observers" SetFocusOnError="true" ValidationGroup="attending"
+                            MinimumNumberOfItems="1"></mack:ListBoxValidator>
                     </div>
                 </div>
 
@@ -145,21 +145,13 @@
                         <br />
                         <br />
 
-
-                        <label>Exhibit</label>
-                        <mack:RequiredDropDownList runat="server" ID="ddExhibit" ClientIDMode="Static" DataValueField="ExhibitID" DataTextField="ExhibitName"
-                            Required="false" OnPreRender="ddExhibit_PreRender">
-                        </mack:RequiredDropDownList>
-                        <br />
-                        <br />
-
                         <label>Groups</label>
                         <mack:RequiredDropDownList runat="server" ID="ddGroupCount" ValidatorToolTip="select the number of groups" Required="true" InitialValue="-1"
                             ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" AutoPostBack="true" OnSelectedIndexChanged="ddGroupCount_SelectedIndexChanged">
                         </mack:RequiredDropDownList>
+                        <br />
+                        <br />
 
-                    </div>
-                    <div id="groupInfo" class="obsSectionInnerRight">
                         <asp:PlaceHolder runat="server" ID="groupsPlaceHolder">
                             <uc1:GroupControl runat="server" ID="GroupControl1" />
                             <uc1:GroupControl runat="server" ID="GroupControl2" />
@@ -175,6 +167,12 @@
                         <br />
 
                         <span id="gc-grand-total">0</span> of 40 total animals selected.
+                    </div>
+                    <div id="exhibitInfo" class="obsSectionInnerRight">
+                        <label>Exhibit</label>
+                        <mack:RequiredDropDownList runat="server" ID="ddExhibit" ClientIDMode="Static" DataValueField="ExhibitID" DataTextField="ExhibitName"
+                            Required="true" OnPreRender="ddExhibit_PreRender">
+                        </mack:RequiredDropDownList>
                     </div>
                 </div>
 
