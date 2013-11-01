@@ -54,6 +54,10 @@ select {
     padding: 9.9px;
     text-align: center;*/
 }
+.password_strength {
+    color: red;
+    font-weight: bold;
+}
 .obsInfo {
     display:inline-block;
     padding: 20px;
