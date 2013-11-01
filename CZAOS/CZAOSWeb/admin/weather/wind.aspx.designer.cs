@@ -13,15 +13,6 @@ namespace CZAOSWeb.admin.weather {
     public partial class wind {
         
         /// <summary>
-        /// AlphabetFilter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CZAOSWeb.controls.AlphabetFilter AlphabetFilter;
-        
-        /// <summary>
         /// cztDataSource control.
         /// </summary>
         /// <remarks>

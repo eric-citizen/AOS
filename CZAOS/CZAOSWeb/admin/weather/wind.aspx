@@ -9,11 +9,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
-    <a class="add-link ui-dialog-link" href="/admin/weather/edit-wind.aspx" title="Add New Wind Condition" data-width="600" data-height="240" data-rp="1">Add Wind Condition</a>    
+    <a class="add-link ui-dialog-link" href="/admin/weather/edit-wind.aspx" title="Add New Wind Condition" data-width="250" data-height="175" data-rp="1">Add Wind Condition</a>    
     
-    <div class="alphabet-container">  
+<%--<div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
-    </div>    
+    </div>--%>
 
     <asp:ObjectDataSource ID="cztDataSource" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting"
         SelectMethod="GetItemCollection" TypeName="CZBizObjects.WindList"
@@ -29,7 +29,7 @@
         AscendingImageUrl="~/images/down.png" DescendingImageUrl="~/images/up.png" GridViewID="gvData" TransparentImageUrl="~/images/transparent.png" />
 
     <asp:GridView ID="gvData" runat="server" DataSourceID="cztDataSource" AllowSorting="True" AllowPaging="True" CssClass="gridview"
-        PageSize="20" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false" 
+        PageSize="10" AutoGenerateColumns="False" Width="100%" PagerSettings-Visible="false" 
         DataKeyNames="WindID" OnRowCommand="gvData_RowCommand" OnRowDataBound="gvData_RowDataBound">
         <Columns>
 
@@ -43,7 +43,7 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link gv-edit-link" data-args="240, 600, true, null, 1" Text="Edit" ToolTip="Edit Condition" NavigateUrl='<%# Bind("WindID","~/admin/weather/edit-wind.aspx?windId={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="lnkEdit" CssClass="ui-dialog-link edit" data-args="175, 250, true, null, 1" Text="" ToolTip="Edit Condition" NavigateUrl='<%# Bind("WindID","~/admin/weather/edit-wind.aspx?windId={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
                 <ItemStyle Width="60px" CssClass="tac" />               
             </asp:TemplateField>

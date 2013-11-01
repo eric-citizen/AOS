@@ -82,6 +82,7 @@
                     <li class="required">
                         <label>Expiration Date:</label>
                         <mack:DatePicker runat="server" ID="dteExpiration" Required="true" ValidationGroup="profile" ValidatorCssClass="error" ComparerCssClass="ComparerCssClass" RangeValidatorCssClass="RangeValidatorCssClass" ></mack:DatePicker>
+                        <asp:CheckBox runat="server" Checked="false" ID="chkNoExpire" ToolTip="Check this box to have the user never expire" AutoPostBack="true" OnCheckedChanged="chkNoExpire_CheckedChanged" />Never Expire
                     </li>
                     
                     <li>

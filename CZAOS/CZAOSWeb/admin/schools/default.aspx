@@ -8,6 +8,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
     <a class="add-link ui-dialog-link" href="/admin/schools/edit-district.aspx" data-args="175, 300, true, null, 1">Add New District</a>    
+    <br />
+
+    <div class="animalSearch">
+        <label class="required">Free Text Search:</label>
+        <mack:RequiredTextBox runat="server" CssClass="" ID="txtFreeText" MaxLength="50" Width="150px" ValidationGroup="freetext" ValidatorCssClass="error" ValidatorToolTip="Please enter search text"></mack:RequiredTextBox>
+        <mack:WaitButton runat="server" ID="btnSearch" Text="Search" CssClass="button" ValidationGroup="freetext" OnClick="btnSearch_Click"/>
+        <asp:LinkButton runat="server" CssClass="edit-button button" ID="lnkClear" Text="Clear" OnClick="lnkClear_Click"></asp:LinkButton>
+    </div>
 
     <div class="alphabet-container">  
         <uc1:AlphabetFilter runat="server" id="AlphabetFilter" OnAlphabetSelected="AlphabetFilter_AlphabetSelected" />
@@ -36,7 +44,7 @@
             
             <asp:TemplateField ItemStyle-Width="110px" ItemStyle-CssClass="tac">                    
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" CssClass="edit-button ui-dialog-link"  data-args="800, 700, true, null, 0" ID="btnSchools" AutoPostBack="true" Text="Edit Schools" NavigateUrl='<%# Bind("DistrictID","~/admin/schools/schools.aspx?dID={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" CssClass="edit-button ui-dialog-link"  data-args="775, 700, true, null, 0" ID="btnSchools" AutoPostBack="true" Text="Edit Schools" NavigateUrl='<%# Bind("DistrictID","~/admin/schools/schools.aspx?dID={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
             </asp:TemplateField>
 

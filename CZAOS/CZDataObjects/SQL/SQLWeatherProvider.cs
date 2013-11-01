@@ -79,7 +79,7 @@ namespace CZDataObjects
 			{
 				if (reader.Read())
 				{
-					newItem = new Weather(reader);							
+					newItem = new Weather(reader, true);							
 				}
 			}
 			

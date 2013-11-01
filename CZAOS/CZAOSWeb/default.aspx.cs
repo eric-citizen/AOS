@@ -166,7 +166,7 @@ namespace CZAOSWeb
             {
                 if ((user == null))
                 {
-                    this.ShowMessage("null user");
+                    this.ShowMessage("Invalid Username/Password");
 
                 }
                 else

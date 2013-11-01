@@ -31,22 +31,49 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.Literal fieldsetLegend;
         
         /// <summary>
-        /// litHead control.
+        /// litObservationDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litHead;
+        protected global::System.Web.UI.WebControls.Literal litObservationDate;
         
         /// <summary>
-        /// lnkDelete control.
+        /// litObservationID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkDelete;
+        protected global::System.Web.UI.WebControls.Literal litObservationID;
+        
+        /// <summary>
+        /// litObservationType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litObservationType;
+        
+        /// <summary>
+        /// litObservationExhibit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litObservationExhibit;
+        
+        /// <summary>
+        /// lnkHeadEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkHeadEdit;
         
         /// <summary>
         /// lnkHeadRecords control.
@@ -58,13 +85,13 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.HyperLink lnkHeadRecords;
         
         /// <summary>
-        /// lnkHeadEdit control.
+        /// lnkDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkHeadEdit;
+        protected global::System.Web.UI.WebControls.LinkButton lnkDelete;
         
         /// <summary>
         /// litObsCount control.
@@ -301,13 +328,13 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.Literal litFoot;
         
         /// <summary>
-        /// btnFootDelete control.
+        /// lnkFootEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnFootDelete;
+        protected global::System.Web.UI.WebControls.HyperLink lnkFootEdit;
         
         /// <summary>
         /// lnkFootRecords control.
@@ -319,12 +346,12 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.HyperLink lnkFootRecords;
         
         /// <summary>
-        /// lnkFootEdit control.
+        /// lnkDelete2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkFootEdit;
+        protected global::System.Web.UI.WebControls.LinkButton lnkDelete2;
     }
 }

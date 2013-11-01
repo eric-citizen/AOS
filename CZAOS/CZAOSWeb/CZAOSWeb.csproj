@@ -282,10 +282,10 @@
     <Content Include="assets\images\icons\observation\weather\sunny.png" />
     <Content Include="assets\images\icons\observation\weather\windy-active.png" />
     <Content Include="assets\images\icons\observation\weather\windy.png" />
-    <Content Include="assets\images\icons\observation\wind\wind-19to38.png" />
-    <Content Include="assets\images\icons\observation\wind\wind-39more.png" />
-    <Content Include="assets\images\icons\observation\wind\wind-7less.png" />
-    <Content Include="assets\images\icons\observation\wind\wind-8to18.png" />
+    <Content Include="assets\images\icons\observation\wind\1.png" />
+    <Content Include="assets\images\icons\observation\wind\2.png" />
+    <Content Include="assets\images\icons\observation\wind\3.png" />
+    <Content Include="assets\images\icons\observation\wind\4.png" />
     <Content Include="assets\images\icons\weather\api-cloudy.png" />
     <Content Include="assets\images\icons\weather\api-rainy.png" />
     <Content Include="assets\images\icons\weather\api-snowy.png" />
@@ -368,6 +368,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery.ui.touch-punch.min.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="StudentPage.html" />

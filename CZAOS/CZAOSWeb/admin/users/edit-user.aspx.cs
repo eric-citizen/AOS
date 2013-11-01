@@ -78,7 +78,13 @@ namespace CZAOSWeb.admin.users
                 }
                 else
                 {
-                    txtUsername.Text = user.Username;                   
+                    txtUsername.Text = user.Username;
+
+                    if (user.ExpirationDate.ToString() == "1/1/2999 12:00:00 AM")
+                    {
+                        chkNoExpire.Checked = true;
+                        dteExpiration.Enabled = false;
+                    }
 
                     txtDisplayName.Text = user.DisplayName;
                     dteExpiration.DateValue = (DateTime)user.ExpirationDate;
@@ -375,8 +381,7 @@ namespace CZAOSWeb.admin.users
                 user.UserId = (Guid)editUser.ProviderUserKey;
                 user.DisplayName = txtDisplayName.Text;
 
-                if (pwdchanged)
-                    user.ExpirationDate = System.DateTime.Now.AddDays(90);
+                user.ExpirationDate = dteExpiration.DateValue;
 
                 user.NewEmail = chkNewEmail.Checked;
                 user.CompEmail = chkCompEmail.Checked;
@@ -399,8 +404,7 @@ namespace CZAOSWeb.admin.users
             {
                 user.DisplayName = txtDisplayName.Text;
 
-                if (pwdchanged)
-                    user.ExpirationDate = System.DateTime.Now.AddDays(90);
+                user.ExpirationDate = dteExpiration.DateValue;
 
                 user.NewEmail = chkNewEmail.Checked;
                 user.CompEmail = chkCompEmail.Checked;
@@ -513,6 +517,17 @@ namespace CZAOSWeb.admin.users
         protected void btnSaveRegions_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void chkNoExpire_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkNoExpire.Checked == true)
+            {
+                dteExpiration.Text = "01/01/2999";
+                dteExpiration.Enabled = false;
+            }
+            else
+                dteExpiration.Enabled = true;
         }
 
     }

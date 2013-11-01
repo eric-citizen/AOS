@@ -202,15 +202,6 @@ namespace CZAOSWeb.admin.observation {
         protected global::KT.WebControls.RequiredDropDownList ddAnimalRegion;
         
         /// <summary>
-        /// ddExhibit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddExhibit;
-        
-        /// <summary>
         /// ddGroupCount control.
         /// </summary>
         /// <remarks>
@@ -317,6 +308,15 @@ namespace CZAOSWeb.admin.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::CZAOSWeb.controls.GroupControl GroupControl10;
+        
+        /// <summary>
+        /// ddExhibit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::KT.WebControls.RequiredDropDownList ddExhibit;
         
         /// <summary>
         /// btnSave control.
