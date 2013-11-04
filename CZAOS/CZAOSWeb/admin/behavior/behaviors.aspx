@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Manage Animals" Language="C#" MasterPageFile="~/masterpages/Dialog.Master" AutoEventWireup="true" CodeBehind="behaviors.aspx.cs" Inherits="CZAOSWeb.admin.Behavior.behaviors" %>
+﻿<%@ Page Title="Manage Behaviors" Language="C#" MasterPageFile="~/masterpages/Dialog.Master" AutoEventWireup="true" CodeBehind="behaviors.aspx.cs" Inherits="CZAOSWeb.admin.Behavior.behaviors" %>
 <%@ Register Src="~/controls/GridConfirmControl.ascx" TagPrefix="uc1" TagName="GridConfirmControl" %>
 <%@ Register Src="~/controls/GridPager.ascx" TagPrefix="uc1" TagName="GridPager" %>
 <%@ Register Src="~/controls/AlphabetFilter.ascx" TagPrefix="uc1" TagName="AlphabetFilter" %>

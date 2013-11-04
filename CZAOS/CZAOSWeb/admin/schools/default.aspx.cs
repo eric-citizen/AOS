@@ -24,7 +24,7 @@ namespace CZAOSWeb.admin.schools
                 {
                     gvDistricts.Columns[gvDistricts.Columns.Count - 1].Visible = false; //hide delete column from all but master admins
                 }
-                
+
             }
         }
 
@@ -44,7 +44,7 @@ namespace CZAOSWeb.admin.schools
             {
                 if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
                 {
-                    e.InputParameters["filterExpression"] = "CommonName LIKE '" + AlphabetFilter.Filter + "%'";
+                    e.InputParameters["filterExpression"] = "District LIKE '" + AlphabetFilter.Filter + "%'";
                 }
                 else
                 {
@@ -55,12 +55,7 @@ namespace CZAOSWeb.admin.schools
             {
                 StringBuilder sb = new StringBuilder();
 
-                sb.AppendFormat("CommonName LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("ZooID LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("HouseName LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("ScientificName LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("AnimalRegion LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("RegionName LIKE '%{0}%' ", freeText);
+                sb.AppendFormat("District LIKE '%{0}%' ", freeText);
 
                 e.InputParameters["filterExpression"] = sb.ToString();
             }
@@ -102,7 +97,7 @@ namespace CZAOSWeb.admin.schools
             }
 
             gvDistricts.DataBind();
-            
+
         }
 
         protected void AlphabetFilter_AlphabetSelected(object sender, EventArgs e)
@@ -135,6 +130,6 @@ namespace CZAOSWeb.admin.schools
         {
 
         }
-       
+
     }
 }

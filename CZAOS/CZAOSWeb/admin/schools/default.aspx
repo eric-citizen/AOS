@@ -44,7 +44,7 @@
             
             <asp:TemplateField ItemStyle-Width="110px" ItemStyle-CssClass="tac">                    
                 <ItemTemplate>
-                    <asp:HyperLink runat="server" CssClass="edit-button ui-dialog-link"  data-args="775, 700, true, null, 0" ID="btnSchools" AutoPostBack="true" Text="Edit Schools" NavigateUrl='<%# Bind("DistrictID","~/admin/schools/schools.aspx?dID={0}") %>'></asp:HyperLink>
+                    <asp:HyperLink runat="server" CssClass="edit-button ui-dialog-link"  data-args="800, 700, true, null, 0" ID="btnSchools" AutoPostBack="true" Text="Edit Schools" NavigateUrl='<%# Bind("DistrictID","~/admin/schools/schools.aspx?dID={0}") %>'></asp:HyperLink>
                 </ItemTemplate> 
             </asp:TemplateField>
 

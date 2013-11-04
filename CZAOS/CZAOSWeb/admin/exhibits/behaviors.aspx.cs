@@ -75,6 +75,7 @@ namespace CZAOSWeb.admin.Behavior
 
                 sb.AppendFormat("Behavior LIKE '%{0}%' OR ", freeText);
                 sb.AppendFormat("BehaviorCode LIKE '%{0}%' OR ", freeText);
+                sb.AppendFormat("BehaviorCode LIKE '%{0}%' OR ", freeText);
                 sb.AppendFormat("Active LIKE '%{0}%' ", freeText);
 
                 e.InputParameters["filterExpression"] = sb.ToString();
