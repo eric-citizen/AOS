@@ -35,6 +35,7 @@ select {
     background-size: 400px;
     background: #fff url(../images/dropdown-arrow.png) center right no-repeat;
 }
+
 .listbox {
     background: #fff;
     border-radius: 0em;
@@ -809,7 +810,7 @@ ul.slide-strip li {
 
 body{
     margin: 0;
-    background: #e4e5e9;
+    background: #eaebef;
     font-family: "ABeeZee", Arial, sans-serif;
 }
 #slide, #slide2, #slide3{
@@ -915,6 +916,7 @@ hr{
     -moz-box-sizing: border-box;
     padding: 10%;
     text-align: center;
+    text-transform: uppercase;
 }
 #windControl li {
      box-sizing: border-box;
@@ -1023,10 +1025,15 @@ header li img{
     color: #fff;
 }
 
-#enviromentData{
+#observation-page {
     background: url("../images/background/gradient.png"), url("../images/background/sky.jpg");
     background-size: 100% 100%, 100% 100%;
 }
+
+/*#enviromentData{
+    background: url("../images/background/gradient.png"), url("../images/background/sky.jpg");
+    background-size: 100% 100%, 100% 100%;
+}*/
 #enviromentData h1{
     padding-top: 20px;
     margin-left: 20px;
@@ -1217,6 +1224,7 @@ header li img{
 
 #temparture-label label {
     font-family: 'Syncopate';
+    text-transform: uppercase;
 }
 
 #temparture-label input {
@@ -1233,6 +1241,82 @@ header li img{
 }
 .ui-slider-horizontal {
     height: 1em !important; 
+}
+
+.group-checkboxlist {
+    border: solid 2px #a2a6ad;
+    overflow: scroll;
+    height: 200px;
+    width: 500px;
+}
+.group-cbx label{
+    font-size: 10px;
+    display: inline;
+    /*margin-bottom: 0;*/
+}
+
+.group-cbx input{
+    vertical-align: bottom;
+}
+
+
+/*-----Error Styles----------*/
+
+.form-fieldset ul li.required, label.required
+{
+    background-image: url(/images/required.png);
+    background-position: left 7px;
+    background-repeat: no-repeat;
+}
+
+label.required
+{
+    padding-left: 10px;
+}
+.form-fieldset ul li.required:hover
+{
+    
+}
+/*.form-fieldset input[type=text], .form-fieldset input[type=password],  input[type=text]
+{
+    padding: 2px;
+    height: 20px;    
+    font-family: Raleway, Verdana, Geneva, 'DejaVu Sans', sans-serif;
+    font-size:12px;
+    color: #333;
+}*/
+
+/*.form-fieldset textarea 
+{
+    padding: 2px;
+    display: block;
+    min-width: 130px;
+}*/
+
+.form-fieldset span.error, span.error
+{
+    background-image: url(/images/err-required.png);
+    background-position: left 2px;
+    background-repeat: no-repeat;
+    text-indent: -9999px; 
+    /* text-indent: -9999px;    
+    display: inline-block!important;
+    width:15px!important; */
+    height: 15px;    
+    margin-left:5px;
+    padding: 0 15px 3px;
+    white-space: nowrap;
+    color: transparent;
+}
+
+.form-fieldset span.verbose-error, span.verbose-error
+{
+    color: red;    
+    background-image: url(/images/err-required.png);
+    background-position: left 2px;
+    background-repeat: no-repeat;
+    padding: 0 0 3px 20px;
+    margin-left: 5px;
 }
 
 /*--------------------------*/

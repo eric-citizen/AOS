@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div id="observationPanel" style="display: none">
-                    <h1>Observation</h1>
+                    <h1 id="animal-name"></h1>
                     <hr>
                     <div id="timer">
                         <div class="timebar"></div>
@@ -142,7 +142,7 @@
     <option value="%AnimalID%">%HouseName%</option>
 </script>
         <script id="animalObservation" type="simple/template">
-    <option value="%ZooID%">%HouseName% : %CommonName% : %ZooID%</option>
+    <option data-name="%HouseName%" value="%ZooID%">%HouseName% : %CommonName% : %ZooID%</option>
 </script>
         <script id="crowd" type="simple/template">
     <li name="%CrowdID%"><img src="assets/images/icons/observation/crowd/%CrowdID%.png"/><div><span>%CrowdName%</span></div></li>

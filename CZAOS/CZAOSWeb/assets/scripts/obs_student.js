@@ -154,6 +154,7 @@ function startObservation() {
     if (!obsWeather.WeatherConditionID || !obsWeather.CrowdID || !obsWeather.WindID) {
         alert('Please select a value for all options.');
     } else {
+        $('#animal-name').html($("#observationAnimals option:selected").attr('data-name'));
         $('#enviromentPanel').fadeOut(0);
         $('#observationPanel').fadeIn(0);
         $(window).trigger('resize');
@@ -253,12 +254,12 @@ function showPosition(point){
 var record = function(ref) {
     this.ObservationID = observationID;
     this.Username = username;
-    this.AnimalID = ref.AnimalID;
+    //this.AnimalID = ref.AnimalID;
     this.ZooID = ref.ZooID;
     this.BvrCat = ref.BvrCat;
     this.BvrCatCode = ref.BvrCatCode;
-    this.Behavior = ref.Behavior;
-    this.BehaviorCode = ref.BehaviorCode;
+    this.Behavior = "";
+    this.BehaviorCode = "";
     this.LocationID = ref.LocationID;
     this.ObserverTime = new Date();
     this.Deleted = 0;

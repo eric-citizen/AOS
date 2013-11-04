@@ -12,7 +12,7 @@
     <mack:HiddenID runat="server" ID="hdnItemID" ClientIDMode="Static" />
     
     <div>
-        <h2>School District:&nbsp;<asp:Literal runat="server" ID="litDistrictName"></asp:Literal></h2>
+        <h2>School District:&nbsp;<asp:Literal runat="server" ID="litDistrict"></asp:Literal></h2>
     </div>
 
     <a class="add-link ui-dialog-link" href="/admin/schools/edit-school.aspx?districtId=<%= this.DistrictID %>" title="Add New School" data-width="300" data-height="250" data-rp="1">Add New School</a>        

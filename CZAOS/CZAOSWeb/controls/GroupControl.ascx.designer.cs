@@ -31,22 +31,13 @@ namespace CZAOSWeb.controls {
         protected global::KT.WebControls.RequiredTextBox txtGroupName;
         
         /// <summary>
-        /// lstAnimals control.
+        /// cblAnimals control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstAnimals;
-        
-        /// <summary>
-        /// lstAnimalValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::KT.WebControls.ListBoxValidator lstAnimalValidator;
+        protected global::System.Web.UI.WebControls.CheckBoxList cblAnimals;
         
         /// <summary>
         /// litMax control.

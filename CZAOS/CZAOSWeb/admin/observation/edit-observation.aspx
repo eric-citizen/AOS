@@ -62,14 +62,25 @@
                         </mack:RequiredDropDownList>
                     </div>
                     <div id="attending" class="obsSectionInnerRight">
+                       
+                        <div style="height: 130px; width:300px;overflow: auto; border: solid 1px #dcdcdc;" class="p5 mt5">
+                        <asp:CheckBoxList runat="server" ID="cbxObservers" ClientIDMode="Static" DataTextField="DisplayName" DataValueField="UserName" CssClass="checkbox-list"></asp:CheckBoxList>
+                        </div>
+                        
+                        Selected Observers:<span id="user-count" class="pl10">0</span>
+                        <mack:CheckBoxListValidator runat="server" ID="cboxval" ControlToValidate="cbxObservers"
+                            CssClass="error" ToolTip="Select {0} observers" SetFocusOnError="true"
+                            MinimumNumberOfSelectedCheckBoxes="1" ></mack:CheckBoxListValidator>
+                        
+                        
 
-                        <asp:ListBox runat="server" ID="lstObservers" ClientIDMode="Static" SelectionMode="Multiple" Rows="10"
+<%--                        <asp:ListBox runat="server" ID="lstObservers" ClientIDMode="Static" SelectionMode="Multiple" Rows="10"
                             DataTextField="DisplayName" DataValueField="UserName" CssClass="listbox" ValidationGroup="attending"></asp:ListBox><br />
 
                         Selected Observers:<span id="user-count" class="pl10">0</span>
                         <mack:ListBoxValidator runat="server" ID="lstval" ControlToValidate="lstObservers"
                             CssClass="error" ToolTip="Select {0} observers" SetFocusOnError="true" ValidationGroup="attending"
-                            MinimumNumberOfItems="1"></mack:ListBoxValidator>
+                            MinimumNumberOfItems="1"></mack:ListBoxValidator>--%>
                     </div>
                 </div>
 
@@ -171,7 +182,7 @@
                     <div id="exhibitInfo" class="obsSectionInnerRight">
                         <label>Exhibit</label>
                         <mack:RequiredDropDownList runat="server" ID="ddExhibit" ClientIDMode="Static" DataValueField="ExhibitID" DataTextField="ExhibitName"
-                            Required="true" OnPreRender="ddExhibit_PreRender">
+                            ErrorMessage="&nbsp;" ValidatorCssClass="error" InitialValue="-1" Required="true" OnPreRender="ddExhibit_PreRender" ToolTip="Please select an exhibit">
                         </mack:RequiredDropDownList>
                     </div>
                 </div>
@@ -202,7 +213,7 @@
                     <div id="numOfObservers" class="obsSectionInnerRight">
                         <label>Number of Observers</label><br />
                         <mack:RequiredTextBox runat="server" ID="txtSchoolObserverCount" ValidatorToolTip="Enter the number of observers"
-                            Required="true" ErrorMessage="*" SetFocusOnError="true" TextMode="Number"></mack:RequiredTextBox>
+                            Required="true" ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" TextMode="Number"></mack:RequiredTextBox>
                     </div>
 
                 </div>
@@ -307,8 +318,8 @@
                     </div>
                     <div id="schExhibitInfo" class="obsSectionInnerRight">
                         <label>Exhibit</label><br />
-                        <mack:RequiredDropDownList runat="server" ID="ddSchoolExhibit" ClientIDMode="Static" DataValueField="ExhibitID"
-                            DataTextField="ExhibitName" Required="false" OnPreRender="ddSchoolExhibit_PreRender">
+                        <mack:RequiredDropDownList runat="server" ID="ddSchoolExhibit" ClientIDMode="Static" DataValueField="ExhibitID" InitialValue="-1"
+                            ToolTip="Please select an exhibit" ValidatorCssClass="error" ErrorMessage="&nbsp;" SetFocusOnError="True" DataTextField="ExhibitName" Required="true" OnPreRender="ddSchoolExhibit_PreRender">
                         </mack:RequiredDropDownList>
                     </div>
 
@@ -445,8 +456,8 @@
                 $('.endtime').timepicker('setTime', ddd);
             });
         });
-
-        $('#lstObservers :selected').click(function () {
+        
+        $('#cbxObservers :checkbox').click(function () {
             var $this = $(this);
             var count = parseInt($("#user-count").html());
             // $this will contain a reference to the checkbox   
@@ -465,16 +476,46 @@
         $(function () {
 
             var count = parseInt($("#user-count").html());
-            $('#cbxObservers :selected').each(function () {
+            $('#cbxObservers :checkbox').each(function () {
 
                 var $this = $(this);
-                if ($this.is(':selected')) {
+                if ($this.is(':checked')) {
                     count++;
                 }
             });
 
             $("#user-count").html(count)
         });
+
+        //$('#lstObservers :selected').click(function () {
+        //    var $this = $(this);
+        //    var count = parseInt($("#user-count").html());
+        //    // $this will contain a reference to the checkbox   
+        //    if ($this.is(':checked')) {
+        //        count++;
+
+        //    } else {
+        //        // the checkbox was unchecked
+        //        if (count > 0)
+        //            count--;
+        //    }
+        //    $("#user-count").html(count)
+
+        //});
+
+        //$(function () {
+
+        //    var count = parseInt($("#user-count").html());
+        //    $('#cbxObservers :selected').each(function () {
+
+        //        var $this = $(this);
+        //        if ($this.is(':selected')) {
+        //            count++;
+        //        }
+        //    });
+
+        //    $("#user-count").html(count)
+        //});
 
         $(".group-cbx input").on('change', function () {
 
