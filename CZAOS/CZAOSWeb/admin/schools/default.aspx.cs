@@ -24,7 +24,7 @@ namespace CZAOSWeb.admin.schools
                 {
                     gvDistricts.Columns[gvDistricts.Columns.Count - 1].Visible = false; //hide delete column from all but master admins
                 }
-                
+
             }
         }
 
@@ -38,16 +38,44 @@ namespace CZAOSWeb.admin.schools
 
         protected void cztDataSource_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
         {
-            if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
+            string freeText = txtFreeText.HtmlEncodedText();
+
+            if (freeText.IsNullOrEmpty())
             {
-                e.InputParameters["filterExpression"] = "District LIKE '" + AlphabetFilter.Filter + "%'";
+                if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
+                {
+                    e.InputParameters["filterExpression"] = "District LIKE '" + AlphabetFilter.Filter + "%'";
+                }
+                else
+                {
+                    e.InputParameters["filterExpression"] = string.Empty;
+                }
             }
             else
             {
-                e.InputParameters["filterExpression"] = string.Empty;
-            }
+                StringBuilder sb = new StringBuilder();
 
-        }        
+                sb.AppendFormat("District LIKE '%{0}%' ", freeText);
+
+                e.InputParameters["filterExpression"] = sb.ToString();
+            }
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            gvDistricts.DataBind();
+        }
+
+        protected void lnkClear_Click(object sender, EventArgs e)
+        {
+            txtFreeText.Clear();
+            gvDistricts.DataBind();
+        }
+
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            gvDistricts.DataBind();
+        }
 
         protected void IsActiveCheckChanged(object sender, EventArgs e)
         {
@@ -69,7 +97,7 @@ namespace CZAOSWeb.admin.schools
             }
 
             gvDistricts.DataBind();
-            
+
         }
 
         protected void AlphabetFilter_AlphabetSelected(object sender, EventArgs e)
@@ -102,6 +130,6 @@ namespace CZAOSWeb.admin.schools
         {
 
         }
-       
+
     }
 }

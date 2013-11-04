@@ -1262,7 +1262,7 @@ header li img{
 
 /*-----Error Styles----------*/
 
-.form-fieldset ul li.required, label.required
+/*.form-fieldset ul li.required, label.required
 {
     background-image: url(/images/required.png);
     background-position: left 7px;
@@ -1276,7 +1276,7 @@ label.required
 .form-fieldset ul li.required:hover
 {
     
-}
+}*/
 /*.form-fieldset input[type=text], .form-fieldset input[type=password],  input[type=text]
 {
     padding: 2px;

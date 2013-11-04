@@ -44,7 +44,7 @@ namespace CZAOSWeb.admin.Location
             {
                 if (AlphabetFilter.Filter != AlphabetFilter.CLEAR_FILTER_KEY)
                 {
-                    e.InputParameters["filterExpression"] = "CommonName LIKE '" + AlphabetFilter.Filter + "%'";
+                    e.InputParameters["filterExpression"] = "Description LIKE '" + AlphabetFilter.Filter + "%'";
                 }
                 else
                 {
@@ -55,12 +55,8 @@ namespace CZAOSWeb.admin.Location
             {
                 StringBuilder sb = new StringBuilder();
 
-                sb.AppendFormat("CommonName LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("ZooID LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("HouseName LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("ScientificName LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("AnimalRegion LIKE '%{0}%' OR ", freeText);
-                sb.AppendFormat("RegionName LIKE '%{0}%' ", freeText);
+                sb.AppendFormat("Description LIKE '%{0}%' OR ", freeText);
+                sb.AppendFormat("LocationCode LIKE '%{0}%' ", freeText);
 
                 e.InputParameters["filterExpression"] = sb.ToString();
             }
