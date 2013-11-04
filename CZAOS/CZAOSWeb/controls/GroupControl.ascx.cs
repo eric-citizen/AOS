@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CZBizObjects;
 using CZDataObjects;
+
 using KT.Extensions;
 
 namespace CZAOSWeb.controls
@@ -15,13 +16,13 @@ namespace CZAOSWeb.controls
         public string Count
         {
             get
-            {                
+            {
                 return litID.Text;
             }
 
             set
             {
-                 litID.Text = value;
+                litID.Text = value;
             }
         }
 
@@ -56,7 +57,7 @@ namespace CZAOSWeb.controls
             get
             {
                 List<int> ids = new List<int>();
-                foreach (ListItem item in lstAnimals.Items)
+                foreach (ListItem item in cblAnimals.Items)
                 {
                     if (item.Selected)
                         ids.Add(item.Value.ToInt32());
@@ -68,7 +69,7 @@ namespace CZAOSWeb.controls
             {
                 List<int> ids = value;
 
-                foreach (ListItem item in lstAnimals.Items)
+                foreach (ListItem item in cblAnimals.Items)
                 {
                     if (ids.Contains(item.Value.ToInt32()))
                         item.Selected = true;
@@ -80,10 +81,12 @@ namespace CZAOSWeb.controls
 
         public string AnimalRegionCode
         {
-            get {
+            get
+            {
                 return Convert.ToString(ViewState["AnimalRegionCode"]);
             }
-            set {
+            set
+            {
                 ViewState["AnimalRegionCode"] = value;
             }
 
@@ -92,7 +95,7 @@ namespace CZAOSWeb.controls
         public string ErrorMessage
         {
             get
-            {                
+            {
                 return "Too many animals selected for group {0} - {1}".FormatWith(this.GroupName, this.SelectedCount);
             }
             set
@@ -119,7 +122,7 @@ namespace CZAOSWeb.controls
             get
             {
                 int count = 0;
-                foreach (ListItem item in lstAnimals.Items)
+                foreach (ListItem item in cblAnimals.Items)
                 {
                     if (item.Selected)
                         count++;
@@ -159,7 +162,7 @@ namespace CZAOSWeb.controls
 
         public void DeselectLastOption()
         {
-            lstAnimals.Items[lstAnimals.SelectedIndex].Selected = false;
+            cblAnimals.Items[cblAnimals.SelectedIndex].Selected = false;
         }
 
         public void LoadGroup(string animalRegionCode)
@@ -168,12 +171,12 @@ namespace CZAOSWeb.controls
 
             AnimalList list = AnimalList.GetActiveAnimals(animalRegionCode);
 
-            lstAnimals.DataSource = list;
-            lstAnimals.DataBind();
+            cblAnimals.DataSource = list;
+            cblAnimals.DataBind();
 
         }
 
-        //protected void lstAnimals_SelectedIndexChanged(object sender, EventArgs e)
+        //protected void cblAnimals_SelectedIndexChanged(object sender, EventArgs e)
         //{
         //    int selected = this.SelectedCount;
         //    SysCode config = SysCodeList.Get("maxanimalgroupcount");
@@ -187,20 +190,18 @@ namespace CZAOSWeb.controls
         //    }
         //    else
         //    {
-        //        lstAnimals.Items[lstAnimals.SelectedIndex].Selected = false;
+        //        cblAnimals.Items[cblAnimals.SelectedIndex].Selected = false;
         //    }            
-            
+
         //}
 
         public void Clear()
         {
-            lstAnimals.Items.Clear();
-            //foreach (ListItem item in lstAnimals.Items)
+            cblAnimals.Items.Clear();
+            //foreach (ListItem item in cblAnimals.Items)
             //{
             //    item.Selected = false;
             //}
         }
-
-
     }
 }

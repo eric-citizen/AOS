@@ -142,7 +142,7 @@ namespace CZAOSWeb.admin.schools
 
                 //NavigateUrl='<%# Bind("BehaviorID","~/admin/dialogs/edit-behavior.aspx?bcatId=<%= this.CategoryID %>&bId={0}") %>'
                 lnkEdit.NavigateUrl = "~/admin/schools/edit-school.aspx?schoolId={0}&districtId={1}".FormatWith(item.SchoolID, DistrictID);
-                litDistrictName.Text = item.DistrictName;
+                litDistrict.Text = item.DistrictName;
             }
         }
 

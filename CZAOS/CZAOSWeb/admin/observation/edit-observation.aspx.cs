@@ -187,7 +187,7 @@ namespace CZAOSWeb.admin.observation
 
                     ObserverList olist = ObserverList.GetActive(obs.ObservationID);
 
-                    foreach (ListItem lio in lstObservers.Items)
+                    foreach (ListItem lio in cbxObservers.Items)
                     {
                         if (olist.ContainsUser(lio.Value))
                         {
@@ -262,8 +262,8 @@ namespace CZAOSWeb.admin.observation
             //    users = UserList.GetActiveAmateurUsers();
             //}
 
-            lstObservers.DataSource = users;
-            lstObservers.DataBind();
+            cbxObservers.DataSource = users;
+            cbxObservers.DataBind();
 
         }
 
@@ -314,8 +314,8 @@ namespace CZAOSWeb.admin.observation
 
         protected void ddNumObs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lstval.MinimumNumberOfItems = ddNumObs.SelectedValue.ToInt32();
-            lstval.ToolTip = "Select {0} observers".FormatWith(lstval.MinimumNumberOfItems);
+            cboxval.MinimumNumberOfSelectedCheckBoxes = ddNumObs.SelectedValue.ToInt32();
+            cboxval.ToolTip = "Select {0} observers".FormatWith(cboxval.MinimumNumberOfSelectedCheckBoxes);
         }
 
         protected void ddGroupCount_SelectedIndexChanged(object sender, EventArgs e)
@@ -496,7 +496,7 @@ namespace CZAOSWeb.admin.observation
 
             }
 
-            foreach (ListItem observer in lstObservers.Items)
+            foreach (ListItem observer in cbxObservers.Items)
             {
                 if (observer.Selected)
                 {
@@ -602,7 +602,7 @@ namespace CZAOSWeb.admin.observation
 
             //clear out observers then add selected
             ObserverList.DeleteByObservation(this.ObservationID);
-            foreach (ListItem observer in lstObservers.Items)
+            foreach (ListItem observer in cbxObservers.Items)
             {
                 if (observer.Selected)
                 {

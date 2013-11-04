@@ -103,22 +103,22 @@ namespace CZAOSWeb.admin.observation {
         protected global::KT.WebControls.RequiredDropDownList ddNumObs;
         
         /// <summary>
-        /// lstObservers control.
+        /// cbxObservers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstObservers;
+        protected global::System.Web.UI.WebControls.CheckBoxList cbxObservers;
         
         /// <summary>
-        /// lstval control.
+        /// cboxval control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.ListBoxValidator lstval;
+        protected global::KT.WebControls.CheckBoxListValidator cboxval;
         
         /// <summary>
         /// dteDate control.
