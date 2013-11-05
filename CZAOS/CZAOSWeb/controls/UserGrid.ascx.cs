@@ -99,10 +99,10 @@ namespace CZAOSWeb.controls
                     {
                         e.Row.Cells[(int)DataColumns.Username].ToolTip = "User is locked out!";
                     }
-                    else
-                    {
-                        e.Row.Cells[(int)DataColumns.Username].ToolTip = user.GetPassword();
-                    }
+                    //else
+                    //{
+                    //    e.Row.Cells[(int)DataColumns.Username].ToolTip = user.GetPassword();
+                    //}
 
                 }
 

@@ -59,6 +59,9 @@ $(function () {
             } else {
                 alert('Sorry wrong password. Try again.');
             }
+        }).fail(function() {
+            $('#studentLogin').removeAttr('disabled');
+            $('#studentLogin').val('Submit');
         });
     };
 
@@ -78,7 +81,10 @@ observationRecords.data.records=[];
 var hasTakenRecord = false;
 
 
-function loginStudent(){
+function loginStudent() {
+    $('#studentLogin').attr('disabled', 'disabled');
+    $('#studentLogin').val('Please Wait');
+
     var id=observationID= $("#obsID").val();
     var pass= $("#pass").val();
     checkLogin('observation/'+id,pass);
@@ -108,11 +114,22 @@ function gotoWeather() {
         $("#saveWeather").click(function () {
             obsWeather = new weather({ Temperature: $("#temperature-slider").slider("value"), WeatherConditionID: $("#weatherControl li.selected").attr('name'), CrowdID: $("#crowdControl li.selected").attr('name'), WindID: $("#windControl li.selected").attr('name')});
             console.log(obsWeather);
-            window.AOS.czaos_post('weather', obsWeather, {}).done(function() {
-                startObservation();
-            }).fail(function() {
-                toastr.error("Please try again.", "There was an error saving your weather information");
-            });
+            
+            //check to make sure weather and crowd have been selected
+            if (!obsWeather.WeatherConditionID || !obsWeather.CrowdID || !obsWeather.WindID) {
+                alert('Please select a value for all options.');
+            } else {
+                $('#saveWeather').attr('disabled', 'disabled');
+                $('#saveWeather').val('Please Wait');
+                
+                window.AOS.czaos_post('weather', obsWeather, {}).done(function() {
+                    startObservation();
+                }).fail(function() {
+                    toastr.error("Please try again.", "There was an error saving your weather information");
+                    $('#saveWeather').removeAttr('disabled');
+                    $('#saveWeather').val('Submit');
+                });
+            }
         });
 }
 
@@ -150,10 +167,6 @@ function displayTime(count) {
 }
 
 function startObservation() {
-    //check to make sure weather and crowd have been selected
-    if (!obsWeather.WeatherConditionID || !obsWeather.CrowdID || !obsWeather.WindID) {
-        alert('Please select a value for all options.');
-    } else {
         $('#animal-name').html($("#observationAnimals option:selected").attr('data-name'));
         $('#enviromentPanel').fadeOut(0);
         $('#observationPanel').fadeIn(0);
@@ -168,10 +181,10 @@ function startObservation() {
                 updateRecordToBeSaved();
                 toastr.success("Your observation was updated successfully", "Record Updated");
             }
+            updatePreviouslySavedFields();
         });
 
         startTime(timerInterval);
-    }
 }
 
 function finishObservation() {
@@ -233,14 +246,11 @@ function handleSave() {
     });
 }
 
-//function getWeatherHere(){
-//    var loc="//api.forecast.io/forecast/6edffeaac741bd27f996522ead02a772/"+me.lat+','+me.long;
-//    $.getJSON(loc + "?callback=?", function(data) {
-//        data.currently.temperature=Math.round(data.currently.temperature);
-//        data.currently.windSpeed=Math.round(data.currently.windSpeed);
-//        $('#weatherAPIoutput').html(SimpleTemplate.fill('weatherAPI',data.currently));
-//    });
-//};
+function updatePreviouslySavedFields() {
+    $('#previous-behavior').html($("#behaviorControl li.selected").attr('data-category'));
+    $('#previous-location').html($("#zoneControl :selected").html());
+}
+
 var me = { long: 0, lat: 0 };
 
 function showPosition(point){

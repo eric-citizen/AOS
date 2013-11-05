@@ -8,7 +8,8 @@
         <link href="assets/css/helpers.css" rel="stylesheet" />
         <link href="assets/css/messaging.css" rel="stylesheet" />
         <link href="assets/scripts/toastr/toastr.css" rel="stylesheet" />
-        <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+        <link href="Content/themes/base/jquery-ui.css" rel="stylesheet" />
+        <!--<link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" />-->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" type="text/javascript"> </script> 
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"> </script> 
@@ -56,12 +57,12 @@
                     <div style="text-align: center">
                         <div id="temparture-label">
                             <label for="temperature">Temperature:</label>
-                            <input readonly="readonly" type="text" id="temperature" />
+                            <input readonly="readonly" type="text" id="temperature" /><label> &deg;F</label>
                         </div>
                         <div id="temperature-slider"></div>
                     </div>
                     <div style="text-align: right">
-                        <div id='saveWeather' class="button">Save & Continue</div>
+                        <input type="button" id='saveWeather' value="Save & Continue" class="button"/>
                     </div>
                 </div>
                 <div id="observationPanel" style="display: none">
@@ -71,17 +72,16 @@
                         <div class="timebar"></div>
                         <div class="time"></div>
                     </div>
-                    <h2 style="margin-left: 20px">Behavior</h2>
+                    <h2 style="margin-left: 20px">Behavior: <span style="font-weight: normal" id="previous-behavior"></span></h2>
                     <section class="slider">
-                        <ul id="behaviorControl" class="slide-strip" style="width: 20%">
-                        </ul>
+                        <div id="behavior-slider">
+                            <ul id="behaviorControl" class="slide-strip" style="width: 33%">
+                            </ul>
+                        </div>
                     </section>
-                    <h2 style="margin-top: 15px; text-align: center;">Zone</h2>
+                    <h2 style="margin-top: 15px; text-align: center;">Zone: <span style="font-weight: normal"  id="previous-location"></span></h2>
                     <div style="text-align: center"><select id="zoneControl"></select></div>
-                    <!--            <section class="slider">
-                                        <ul id="zoneControl" class="slide-strip" style="width:20%">
-                                        </ul>
-                                    </section>-->
+                    
                     <div style="float: left; text-align: left;">
                         <div id='gotoFinalizationPage' class="button" onclick=" finishObservation() ">Finish Observation</div>
                     </div>
@@ -92,15 +92,11 @@
             </div>
 
 
-
-            <!-- <select id="animalsControl">
-                 </select> -->
-
             <div id="loginPanel">
                 <div id="step1">
                     <div class="logo">The Animal<br>Observation System</div>
-                    <div style="margin-bottom: 10px"><span>Observation #</span><br><input id="obsID"value="19"/></div>
-                    <div><span>Password</span><br><input id="pass" value="g90l0a7o"/></div>
+                    <div style="margin-bottom: 10px"><span>Observation #</span><br><input id="obsID"value="27"/></div>
+                    <div><span>Password</span><br><input id="pass" type="text" value="o0056731" autocorrect="off" autocapitalization="off"/></div>
                     <div style="text-align: right"><input type='submit' id="studentLogin" class="button" onclick=" loginStudent(); "/></div>
                 </div>
                 <div id="step2" style="display: none">
@@ -120,10 +116,6 @@
                 </div>
             </div>
     
-    
-
-
-            19:g90l0a7o
         </div>
 
         <!-- Templates -->

@@ -1,4 +1,4 @@
-﻿@import url(http://fonts.googleapis.com/css?family=ABeeZee|Syncopate:400,700);
+﻿@import url(https://fonts.googleapis.com/css?family=ABeeZee|Syncopate:400,700);
 
 body {
     font-family: 'ABeeZee', Geneva, 'DejaVu Sans', sans-serif;
@@ -35,6 +35,8 @@ select {
     background-size: 400px;
     background: #fff url(../images/dropdown-arrow.png) center right no-repeat;
 }
+
+
 
 .listbox {
     background: #fff;
@@ -911,17 +913,17 @@ hr{
     background-size: 100% 100%;
 }
 #weatherControl li{
-    font-family: 'Syncopate';
+    font-family: 'ABeeZee';
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    padding: 10%;
+    padding: 20%;
     text-align: center;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 #windControl li {
      box-sizing: border-box;
     -moz-box-sizing: border-box;
-    padding: 10%;
+    padding: 20%;
     text-align: center;
     font-size: 14px;
     font-family: 'Syncopate', sans-serif;
@@ -930,10 +932,23 @@ hr{
 #windControl li img{
     /*width:30%;*/
 }
+
+#behavior-slider {
+    margin-left: 15px;
+    margin-right: 15px;
+    background: url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-next.png) right no-repeat, url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-back.png) left no-repeat;
+    -moz-background-size: 50px 200px;
+    -o-background-size: 50px 200px;
+    -webkit-background-size: 50px 200px;
+    background-size: 50px 200px;
+    /*background: url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-back.png) left no-repeat;*/
+}
+
 #behaviorControl li{
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    padding: 10%;
+    padding: 20%;
+    font-size: 16px;
     text-align: center;
 }
 #crowdControl li{
@@ -974,7 +989,14 @@ h2{
 }
 
 #observation-page {
-    font-size: 14px;
+    font-size: 16px;
+}
+
+#observation-page select {
+    -moz-background-size: 45px 50px;
+    -o-background-size: 45px 50px;
+    -webkit-background-size: 45px 50px;
+    background-size: 45px 50px;
 }
 
 #login{
@@ -1010,7 +1032,7 @@ header li img{
     /*background:  url(../images/icons/observation/account-white.png) no-repeat bottom center;*/
 }
 #loginPanel input, #loginPanel select{
-    font-size: 14px;
+    font-size: inherit;
     width: 100%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1129,7 +1151,7 @@ header li img{
 }
 
 #observationPanel select {
-    font-size: 14px;
+    font-size: inherit;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     min-width: 250px;
@@ -1228,6 +1250,7 @@ header li img{
 }
 
 #temparture-label input {
+    font-size: inherit;
     width: 25px
 }
 
@@ -1320,6 +1343,11 @@ label.required
 }
 
 /*--------------------------*/
+
+/*Fix Safari button styling*/
+input[type=button], input[type=submit] {
+    -webkit-appearance: none;
+}
 
 .clearfix:before,
 .clearfix:after {
