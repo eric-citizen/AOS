@@ -139,17 +139,20 @@ function startTime(time) {
     var interval = setInterval(function () {
         if (!paused) {
             displayTime(count);
-            $(".timebar").css('width', ((count / time) * 100) + '%');
+            updateTimeBar(count, time);
             if (count == time) {
                 //if the user did not save the record for this interval, go ahead and take whatever values are currently selected as the record
-                if (!hasTakenRecord) {
-                    updateRecordToBeSaved();
-                }
+                //if (!hasTakenRecord) {
+                //    updateRecordToBeSaved();
+                //}
                 //save record to local storage and display message
-                observationRecords.data.records.push(recordToBeSaved);
+                var observation = getRecordToBeSaved();
+                console.log(observation);
+                observationRecords.data.records.push(observation);
                 observationRecords.saveToLocal();
                 toastr.success("Your observation for this interval has been saved", "Record Saved");
                 
+                //reset timebar
                 hasTakenRecord = false;
                 clearInterval(interval);
                 startTime(time);
@@ -166,25 +169,50 @@ function displayTime(count) {
     $('.time').html(minutes + ':' + ((seconds < 10) ? "0" : "") + seconds);
 }
 
+function updateTimeBar(count, time) {
+    var timeLeft = time - count;
+    
+    $(".timebar").css('width', ((count / time) * 100) + '%');
+    if (10 < timeLeft && timeLeft < 20) {
+        $('.timebar').css('background', 'yellow');
+    } else if (timeLeft < 10) {
+        $('.timebar').css('background', 'red');
+    } else if (timeLeft == time) {
+        $('.timebar').css('background', 'green');
+    }
+}
+
 function startObservation() {
-        $('#animal-name').html($("#observationAnimals option:selected").attr('data-name'));
-        $('#enviromentPanel').fadeOut(0);
-        $('#observationPanel').fadeIn(0);
-        $(window).trigger('resize');
+    $('#animal-name').html($("#observationAnimals option:selected").attr('data-name'));
+    $('#common-name').html($("#observationAnimals option:selected").attr('data-common-name'));
+    $('#enviromentPanel').fadeOut(0);
+    $('#observationPanel').fadeIn(0);
+    $(window).trigger('resize');
 
-        $("#saveRecord").click(function() {
-            if (!hasTakenRecord) {
-                updateRecordToBeSaved();
-                toastr.success("Your observation has been saved", "Record Saved");
-                hasTakenRecord = true;
-            } else {
-                updateRecordToBeSaved();
-                toastr.success("Your observation was updated successfully", "Record Updated");
-            }
-            updatePreviouslySavedFields();
-        });
+    //register buttons
+    $("#saveRecord").click(function() {
+        if (!hasTakenRecord) {
+            //getRecordToBeSaved();
+            toastr.success("Your observation has been saved", "Record Saved");
+            hasTakenRecord = true;
+        } else {
+            //getRecordToBeSaved();
+            toastr.success("Your observation was updated successfully", "Record Updated");
+        }
+        updatePreviouslySavedFields();
+    });
 
-        startTime(timerInterval);
+    $('.pause-button').click(function() {
+        if (paused) {
+            this.src = "/assets/images/icons/observation/pause.png";
+        } else {
+            this.src = "/assets/images/icons/observation/paused.png";
+        }
+
+        paused = !paused;
+    });
+
+    startTime(timerInterval);
 }
 
 function finishObservation() {
@@ -248,7 +276,9 @@ function handleSave() {
 
 function updatePreviouslySavedFields() {
     $('#previous-behavior').html($("#behaviorControl li.selected").attr('data-category'));
+    $('#previous-behavior').attr('data-cateogry-code', $("#behaviorControl li.selected").attr('name'));
     $('#previous-location').html($("#zoneControl :selected").html());
+    $('#previous-location').attr('data-value', $("#zoneControl").val());
 }
 
 var me = { long: 0, lat: 0 };
@@ -290,7 +320,7 @@ var watch = navigator.geolocation.getCurrentPosition(showPosition);
 
 var recordToBeSaved;
 
-function updateRecordToBeSaved() {
-    recordToBeSaved = new record({ ZooID: $("#observationAnimals").val(), LocationID: $("#zoneControl").val(), BvrCat: $("#behaviorControl li.selected").attr('data-category'), BvrCatCode: $("#behaviorControl li.selected").attr('name') });
-    console.log(recordToBeSaved);
+function getRecordToBeSaved() {
+    return new record({ ZooID: $("#observationAnimals").val(), LocationID: $('#previous-location').attr('data-value'), BvrCat: $("#previous-behavior").html(), BvrCatCode: $('#previous-behavior').attr('data-cateogry-code') });
+    //return new record({ ZooID: $("#observationAnimals").val(), LocationID: $("#zoneControl").val(), BvrCat: $("#behaviorControl li.selected").attr('data-category'), BvrCatCode: $("#behaviorControl li.selected").attr('name') });
 }

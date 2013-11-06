@@ -905,6 +905,12 @@ hr{
     border-top: 4px #4b525c solid;
     box-sizing: border-box;
 }
+
+#common-name {
+    padding-top: 10px;
+    font-size: 24px;
+}
+
 #div-dialog{
     background: #e4e5e9!important;
 }
@@ -933,16 +939,30 @@ hr{
     /*width:30%;*/
 }
 
-#behavior-slider {
+#behavior-slider{
     margin-left: 15px;
     margin-right: 15px;
-    background: url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-next.png) right no-repeat, url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-back.png) left no-repeat;
+    background: url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-back.png) left no-repeat, url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-next.png) right no-repeat;
     -moz-background-size: 50px 200px;
     -o-background-size: 50px 200px;
     -webkit-background-size: 50px 200px;
     background-size: 50px 200px;
     /*background: url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-back.png) left no-repeat;*/
 }
+
+#behavior-slider div {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+/*#behavior-slider-right{
+    margin-right: 15px;
+    background: url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-next.png) right no-repeat;
+    -moz-background-size: 50px 200px;
+    -o-background-size: 50px 200px;
+    -webkit-background-size: 50px 200px;
+    background-size: 50px 200px;
+    background: url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-back.png) left no-repeat;
+}*/
 
 #behaviorControl li{
     box-sizing: border-box;
@@ -1112,25 +1132,68 @@ header li img{
     height: 40px;
 }
 
+#timer #time-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#timer span {
+    font-size: 60px;
+    font-style: normal;
+    font-family: 'Syncopate';
+}
+
 /*#finalizeObservation .disabled {
     background: #444444;
     border-color: #444444;
 }*/
-#timer .timebar{
-    /*width:50%;*/
+
+#timer #timer-box {
     position: absolute;
+    top: 38px;
+    margin-left: 30px;
+    margin-right: 10%;
+    width: 60%;
+    border-radius: 2em;
+    border: 2px solid white;
+    background: white;
+    height: 20px;
+    padding: 1.5px 2px 2px 2px;
+}
+
+#timer .pause-button {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    height: 80px;
+}
+
+#timer .timebar{
+    width: 0;
+    /*position: absolute;*/
+    border-radius: 2em;
     top: 0;
     left: 0;
     height: 20px;
-    background: red;
+    background: green;
     z-index: 1;
 }
 #timer .time{
+    color: #5c646e;
+    width: 200px;
+    right: 100px;
     position: absolute;
+    top: 39px;
+    /*position: absolute;
     top: 2px;
     right: 5px;
     z-index: 2;
-    font-size: 18px;
+    font-size: 18px;*/
+}
+
+#timer .time:before {
+    content: ':'
 }
 #weatherAPIoutput .temp:after{
     content:'°F';

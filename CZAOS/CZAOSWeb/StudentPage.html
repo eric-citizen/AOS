@@ -68,16 +68,20 @@
                 <div id="observationPanel" style="display: none">
                     <h1 id="animal-name"></h1>
                     <hr>
+                    <h1 id="common-name"></h1>
                     <div id="timer">
-                        <div class="timebar"></div>
-                        <div class="time"></div>
+                        <div id="timer-box">
+                            <div class="timebar"></div>
+                        </div>
+                        <div id="time-info"><span class="time"></span><img class="pause-button" src="/assets/images/icons/observation/pause.png"/></div>
                     </div>
-                    <h2 style="margin-left: 20px">Behavior: <span style="font-weight: normal" id="previous-behavior"></span></h2>
+                    <h2 style="margin-left: 20px; margin-top: 10%;">Behavior: <span style="font-weight: normal" id="previous-behavior"></span></h2>
                     <section class="slider">
                         <div id="behavior-slider">
                             <ul id="behaviorControl" class="slide-strip" style="width: 33%">
                             </ul>
                         </div>
+                        <div id="behavior-slider-right"></div>
                     </section>
                     <h2 style="margin-top: 15px; text-align: center;">Zone: <span style="font-weight: normal"  id="previous-location"></span></h2>
                     <div style="text-align: center"><select id="zoneControl"></select></div>
@@ -96,7 +100,7 @@
                 <div id="step1">
                     <div class="logo">The Animal<br>Observation System</div>
                     <div style="margin-bottom: 10px"><span>Observation #</span><br><input id="obsID"value="27"/></div>
-                    <div><span>Password</span><br><input id="pass" type="text" value="o0056731" autocorrect="off" autocapitalization="off"/></div>
+                    <div><span>Password</span><br><input id="pass" type="text" value="o0056731" autocorrect="off" autocapitalize="off"/></div>
                     <div style="text-align: right"><input type='submit' id="studentLogin" class="button" onclick=" loginStudent(); "/></div>
                 </div>
                 <div id="step2" style="display: none">
@@ -134,7 +138,7 @@
     <option value="%AnimalID%">%HouseName%</option>
 </script>
         <script id="animalObservation" type="simple/template">
-    <option data-name="%HouseName%" value="%ZooID%">%HouseName% : %CommonName% : %ZooID%</option>
+    <option data-name="%HouseName%" data-common-name="%CommonName%" value="%ZooID%">%HouseName% : %CommonName% : %ZooID%</option>
 </script>
         <script id="crowd" type="simple/template">
     <li name="%CrowdID%"><img src="assets/images/icons/observation/crowd/%CrowdID%.png"/><div><span>%CrowdName%</span></div></li>
@@ -151,7 +155,7 @@
     <li name="%WindID%"><img src="assets/images/icons/observation/wind/%WindID%.png"/><div><span>%Description%</span></div></li>
 </script>
         <script id="behaviorCategory" type="simple/template">
-    <li name="%BvrCatCode%" data-category=%BvrCat%><img src="assets/images/icons/observation/behaviors/%BvrCatCode%.png"/>%BvrCat%</li>
+    <li name="%BvrCatCode%" data-category='%BvrCat%'><img src="assets/images/icons/observation/behaviors/%BvrCatCode%.png"/>%BvrCat%</li>
 </script>
         <script id="exhibitlocation" type="simple/template">
     <option value=%LocationID%>%Location%</option>
