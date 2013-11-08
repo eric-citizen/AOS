@@ -46,7 +46,7 @@ $(function () {
                 for (var i = 0; i != parseInt(data.ObserverNo); i++) {
                     $(sn).append("<option val='" + (i + 1) + "'>Student #" + (i + 1) + "</option>");
                 }
-                $('body').addClass(data.Exhibit);
+                exhibitName = data.Exhibit;
                 $('#step2').fadeIn(0);
                 $('#step1').fadeOut(0);
                 window.AOS.czaos_get('animalObservation', {}, '#observationAnimals', false, { observationId: observationID });
@@ -57,7 +57,9 @@ $(function () {
                 window.AOS.czaos_get_no_slide('wind/', { noActiveImage: true, touch: false }, '#windControl', true);
 
             } else {
-                alert('Sorry wrong password. Try again.');
+                toastr.error('Sorry, wrong password. Please try again.', 'Password Incorrect');
+                $('#studentLogin').removeAttr('disabled');
+                $('#studentLogin').val('Submit');
             }
         }).fail(function() {
             $('#studentLogin').removeAttr('disabled');
@@ -72,9 +74,8 @@ $(function () {
 var observationID=0;
 var exhibitID=0;
 var obsWeather;
+var exhibitName;
 var username = 'none';
-var paused = true;
-var timerInterval = 0;
 var observationRecords = new Locus("observationRecords");
 observationRecords.clear();
 observationRecords.data.records=[];
@@ -133,56 +134,8 @@ function gotoWeather() {
         });
 }
 
-function startTime(time) {
-    paused = false;
-    var count=0;
-    var interval = setInterval(function () {
-        if (!paused) {
-            displayTime(count);
-            updateTimeBar(count, time);
-            if (count == time) {
-                //if the user did not save the record for this interval, go ahead and take whatever values are currently selected as the record
-                //if (!hasTakenRecord) {
-                //    updateRecordToBeSaved();
-                //}
-                //save record to local storage and display message
-                var observation = getRecordToBeSaved();
-                console.log(observation);
-                observationRecords.data.records.push(observation);
-                observationRecords.saveToLocal();
-                toastr.success("Your observation for this interval has been saved", "Record Saved");
-                
-                //reset timebar
-                hasTakenRecord = false;
-                clearInterval(interval);
-                startTime(time);
-            }
-            count++;
-        }
-    }, 1000);
-}
-
-function displayTime(count) {
-    var time = timerInterval - count;
-    var minutes = Math.floor(time / 60);
-    var seconds = time % 60;
-    $('.time').html(minutes + ':' + ((seconds < 10) ? "0" : "") + seconds);
-}
-
-function updateTimeBar(count, time) {
-    var timeLeft = time - count;
-    
-    $(".timebar").css('width', ((count / time) * 100) + '%');
-    if (10 < timeLeft && timeLeft < 20) {
-        $('.timebar').css('background', 'yellow');
-    } else if (timeLeft < 10) {
-        $('.timebar').css('background', 'red');
-    } else if (timeLeft == time) {
-        $('.timebar').css('background', 'green');
-    }
-}
-
 function startObservation() {
+    $('#observation-page').addClass(exhibitName);
     $('#animal-name').html($("#observationAnimals option:selected").attr('data-name'));
     $('#common-name').html($("#observationAnimals option:selected").attr('data-common-name'));
     $('#enviromentPanel').fadeOut(0);
@@ -201,18 +154,21 @@ function startObservation() {
         }
         updatePreviouslySavedFields();
     });
+    
+    $('.pause-button').click(Timer.pause);
+    
+    Timer.startTime(timerInterval, timerSaveFunction);
+}
 
-    $('.pause-button').click(function() {
-        if (paused) {
-            this.src = "/assets/images/icons/observation/pause.png";
-        } else {
-            this.src = "/assets/images/icons/observation/paused.png";
-        }
+function timerSaveFunction() {
+    var observation = getRecordToBeSaved();
+    console.log(observation);
+    observationRecords.data.records.push(observation);
+    observationRecords.saveToLocal();
+    toastr.success("Your observation for this interval has been saved", "Record Saved");
 
-        paused = !paused;
-    });
-
-    startTime(timerInterval);
+    //reset timebar
+    hasTakenRecord = false;
 }
 
 function finishObservation() {

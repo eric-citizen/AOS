@@ -1,32 +1,40 @@
 ﻿(function (app) {
-    var apiURL = "behaviorcategory",
-        exhibitID = 0;
-    app.BehaviorCategoryControl = ko.observable({});
-    app.BehaviorCategoryControl().SelectedCategory = ko.observable({});
+    var apiURL = "behaviorcategory";
+    
 
-    var configure = function (id) {
-        exhibitID = id;
-
+    var configure = function (id, controller, scope) {
+        var owner = controller || app;
+        var bindingScope = scope || '#behavior-category-knockout-scope';
+        owner.BehaviorCategoryControl = ko.observable({});
+        owner.BehaviorCategoryControl().SelectedCategory = ko.observable({});
+        
         return $.Deferred(function(dfd) {
-            load(dfd.resolve);
+            load(id, owner, bindingScope, dfd.resolve);
         });
 
     };
 
-    var load = function (callback) {
+    var load = function (exhibitID, owner, bindingScope, callback) {
         app.get(apiURL, { exhibitId: exhibitID }).done(function (data) {
             //get the categories that aren't masked for professionals
             data = _.filter(data, function(category) {
                 return !category.MaskProf;
             });
             data = JSON.stringify(data);
-            app.BehaviorCategoryControl().SelectableCategories = ko.mapping.fromJSON(data);
-            ko.applyBindings(app.BehaviorCategoryControl, $('#behavior-category-knockout-scope')[0]);
-            app.BehaviorControl().Configure(exhibitID);
+            owner.BehaviorCategoryControl().SelectableCategories = ko.mapping.fromJSON(data);
+
+            if (bindingScope != 'false') {
+                ko.applyBindings(app.BehaviorCategoryControl, $(bindingScope)[0]);
+            }
+
             callback();
+
+            //app.ConfigureBehaviorControl(exhibitID, owner, 'false').done(function() {
+            //    callback();
+            //});
         });
 
     };
 
-    app.BehaviorCategoryControl().Configure = configure;
+    app.ConfigureBehaviorCategoryControl = configure;
 })(window.AOS);

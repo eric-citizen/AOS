@@ -213,7 +213,7 @@
                     <div id="numOfObservers" class="obsSectionInnerRight">
                         <label>Number of Observers</label><br />
                         <mack:RequiredTextBox runat="server" ID="txtSchoolObserverCount" ValidatorToolTip="Enter the number of observers"
-                            Required="true" ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" TextMode="Number"></mack:RequiredTextBox>
+                            Required="true" ErrorMessage="&nbsp;" ValidatorCssClass="error" SetFocusOnError="true" TextMode="Number" ></mack:RequiredTextBox>
                     </div>
 
                 </div>

@@ -37,6 +37,7 @@
                 <asp:Literal runat="server" ID="litObservationExhibit" />
             </div>
             <div class="obsInfo floatRight">
+                <asp:HyperLink runat="server" CssClass="start-observation ml10" ID="lnkStartObs" Text="" ToolTip="Start the Observation"></asp:HyperLink>
                 <asp:HyperLink runat="server" CssClass="edit ml10" ID="lnkHeadEdit" Text="" ToolTip="Edit this item"></asp:HyperLink>
                 <asp:HyperLink runat="server" CssClass="records ml10" ID="lnkHeadRecords" Text="" ToolTip="View Observation Records"></asp:HyperLink>
                 <%--delete button--%>

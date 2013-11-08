@@ -1,38 +1,46 @@
 ﻿(function(app) {
-    var apiURL = "exhibitbehavior",
-        exhibitID = 0;
-    app.BehaviorControl = ko.observable({});
-    app.BehaviorControl().SelectableBehaviors = ko.observableArray([]);
-    app.BehaviorControl().SelectedBehavior = ko.observable({});
+    var apiURL = "exhibitbehavior";
+    
 
-    var configure = function (id) {
-        exhibitID = id;
+    var configure = function (id, controller, scope) {
+        var bindingScope = scope || '#behavior-knockout-scope';
+        var owner = controller || app;
+        owner.BehaviorControl = ko.observable({});
+        owner.BehaviorControl().SelectableBehaviors = ko.observableArray([]);
+        owner.BehaviorControl().SelectedBehavior = ko.observable({});
         
-        app.BehaviorCategoryControl().SelectedCategory.subscribe(function() {
-            updateSelectableBehaviors();
+        owner.BehaviorCategoryControl().SelectedCategory.subscribe(function() {
+            updateSelectableBehaviors(owner);
         });
-        
-        load();
+
+        return $.Deferred(function(dfd) {
+            load(id, owner, bindingScope, dfd.resolve);
+        });
     };
 
-    var updateSelectableBehaviors = function () {
-        app.BehaviorControl().SelectableBehaviors.removeAll();
-        _.each(app.BehaviorControl().Behaviors(), function(item) {
-            if (item.BvrCatID() == app.BehaviorCategoryControl().SelectedCategory().BvrCatID()) {
-                app.BehaviorControl().SelectableBehaviors.push(item);
+    var updateSelectableBehaviors = function (owner) {
+        owner.BehaviorControl().SelectableBehaviors.removeAll();
+        _.each(owner.BehaviorControl().Behaviors(), function(item) {
+            if (item.BvrCatID() == owner.BehaviorCategoryControl().SelectedCategory().BvrCatID()) {
+                owner.BehaviorControl().SelectableBehaviors.push(item);
             }
         });
     };
 
-    var load = function() {
+    var load = function(exhibitID, owner, bindingScope, callback) {
         app.get(apiURL, { exhibitId: exhibitID }).done(function (data) {
             //need to stringify data before ko.mapping will work
             data = JSON.stringify(data);
-            app.BehaviorControl().Behaviors = ko.mapping.fromJSON(data);
-            ko.applyBindings(app.BehaviorControl, $('#behavior-knockout-scope')[0]);
-            updateSelectableBehaviors();
+            owner.BehaviorControl().Behaviors = ko.mapping.fromJSON(data);
+
+            if (bindingScope != 'false') {
+                ko.applyBindings(owner.BehaviorControl, $(bindingScope)[0]);
+            }
+            //updateSelectableBehaviors();
+
+            callback();
         });
     };
 
-    app.BehaviorControl().Configure = configure;
+    app.ConfigureBehaviorControl = configure;
 })(window.AOS);

@@ -21,6 +21,7 @@
         <script src="Scripts/knockout-2.3.0.js"> </script>
         <script src="Scripts/knockout.mapping-latest.js"> </script>
         <script src="Scripts/jquery.ui.touch-punch.min.js"> </script>
+        <script src="Scripts/jquery.url.js"> </script>
     
         <script src="assets/scripts/Locus.js"> </script>
         <script src="assets/scripts/SimpleTemplate.js"> </script>
@@ -47,11 +48,11 @@
                         <ul id="weatherControl" class="slide-strip" style="width: 20%">
                         </ul>
                     </section>
-                    <h2>Wind</h2>
+<!--                    <h2>Wind</h2>
                     <section class="slider">
                         <ul id="windControl" class="slide-strip" style="width: 20%">
                         </ul>
-                    </section>
+                    </section>-->
                     <h2>Crowd</h2>
                     <section class="slider">
                         <ul id="crowdControl" class="slide-strip" style="width: 33%">
@@ -61,13 +62,21 @@
                         <div id='saveWeather' class="button">Save & Continue</div>
                     </div>
                 </div>
+                
+                
                 <div id="observationPanel" style="display: none">
                     <div class="clearfix">
                         <h1 style="margin-left: 20px">Observation</h1>
                         <hr>
+                        <!--                        <div id="timer">
+                                                        <div class="timebar"></div>
+                                                        <div class="time"></div>
+                                                    </div>-->
                         <div id="timer">
+                        <div id="timer-box">
                             <div class="timebar"></div>
-                            <div class="time"></div>
+                        </div>
+                        <div id="time-info"><span class="time"></span><img class="pause-button" src="/assets/images/icons/observation/pause.png"/></div>
                         </div>
                 
                         <div id="animalgroup-knockout-scope">
@@ -131,7 +140,7 @@
             <!-- Login Area !-->
 
             <div id="loginPanel">
-                <div id="step1">
+                <!--<div id="step1">
                     <div class="logo">The Animal<br>Observation System</div>
                     <div style="margin-bottom: 10px"><span>UserName</span><br><input id="username" value="proobserver"/></div>
                     <div><span>Password</span><br><input id="pass" value="1212asas"/></div>
@@ -161,7 +170,7 @@
                     </div>
                     <div style="text-align: center"><input type='submit' value="Start Observation" id="startObs" class="button" onclick=" gotoWeather(); "/></div>
 
-                </div>
+                </div>-->
         
                 <div id="finalizePanel" style="display: none">
                     <div class="logo">The Animal<br>Observation System</div>
@@ -193,7 +202,7 @@
         <script id="weatherAPI" type="simple/template">
     <div class="temp">%temperature%</div>
     <div class="summary">%summary%</div>
-    <div class="windspeed">%windSpeed%mph Winds</div>
+    <div class="windspeed" data-wind="%windSpeed%">%windSpeed%mph Winds</div>
 </script>
         <script id="weatherCondition" type="simple/template">
     <li name="%WeatherID%"><img src="assets/images/icons/weather/%WeatherID%.png"/>%Weather%</li>

@@ -17,83 +17,106 @@
     //initialize obs_student
     SimpleTemplate.loadTemplates();
 
-    window.AOS.deleteToken();
+    observationID = $.url.param('observationId');
 
-    checkObservationLogin = function(api, params) {
-        params = params || {};
-        $.ajax({
-            url: 'api/' + api,
-            beforeSend: function(request) {
-                request.setRequestHeader("CZAOSToken", window.AOS.getToken());
-                for (var i in params) {
-                    request.setRequestHeader(i, params[i]);
-                }
-            },
-            cache: false,
-            type: 'GET',
-            data: $.toJSON(params),
-            contentType: 'application/json; charset=utf-8',
-            statusCode: {
-                404: function(data) {
-                    alert('Could not find the observation.');
-                }
-            }
-        }).done(function(data) {
-            //check if the user is set up for this observation
-            if (userCanAccessObservation(data)) {
-                //if yes make all api calls
-                window.AOS.get('observation/' + observationID, {}).done(function(observation) {
+    window.AOS.get('observation/' + observationID, {}).done(function(observation) {
+        $('body').addClass(observation.Exhibit);
 
-                    populateObservationInfo(observation);
-                    gotoObservationDetails();
+        //populateObservationInfo(observation);
+        //gotoObservationDetails();
 
-                    getObservationData();
+        getObservationData();
 
-                    //transition to next step
-                    $('body').addClass(observation.Exhibit);
-                    $('#step2').fadeIn(0);
-                    $('#step1').fadeOut(0);
+        //transition to next step
+        //$('body').addClass(observation.Exhibit);
+        //$('#step2').fadeIn(0);
+        //$('#step1').fadeOut(0);
 
-                    exhibitID = observation.ExhibitID;
-                    timerInterval = observation.Interval * 60;
-                    console.log(observation);
-                });
-            }
-        });
-    };
+        gotoWeather();
 
-    login = function(username, password) {
-        var API_URL = "api/security/login";
-        var creds = Base64.encode(username + ':' + password);
-        $.ajax({
-            type: "GET",
-            cache: false,
-            url: API_URL,
-            beforeSend: function(request) {
-                request.setRequestHeader("Authorization", creds);
-            },
-            processData: false,
-            statusCode: {
-                401: function(data) {
-                    alert("Login unsuccessful");
-                },
-                200: function(data) {
-                    window.AOS.setToken(data);
-                    $('#step1').fadeOut(0);
-                    $('#step2').fadeIn(0);
+        exhibitID = observation.ExhibitID;
+        timerInterval = observation.Interval * 60;
+        console.log(observation);
+        
+    });
 
-                    username = $("#username").val();
-                }
-            }
-        }).done(function(result) {
-            console.log("done: " + result);
-        }).fail(function(jqxhr, textStatus, error) {
-            var err = textStatus + ', ' + error;
-            console.log("Request Failed: " + API_URL + " Err: " + err);
-        }).always(function() {
-            console.log("login - always");
-        });
-    };
+    //window.AOS.deleteToken();
+
+    //checkObservationLogin = function(api, params) {
+    //    params = params || {};
+    //    $.ajax({
+    //        url: 'api/' + api,
+    //        beforeSend: function(request) {
+    //            request.setRequestHeader("CZAOSToken", window.AOS.getToken());
+    //            for (var i in params) {
+    //                request.setRequestHeader(i, params[i]);
+    //            }
+    //        },
+    //        cache: false,
+    //        type: 'GET',
+    //        data: $.toJSON(params),
+    //        contentType: 'application/json; charset=utf-8',
+    //        statusCode: {
+    //            404: function(data) {
+    //                alert('Could not find the observation.');
+    //            }
+    //        }
+    //    }).done(function(data) {
+    //        //check if the user is set up for this observation
+    //        if (userCanAccessObservation(data)) {
+    //            //if yes make all api calls
+    //            window.AOS.get('observation/' + observationID, {}).done(function(observation) {
+
+    //                populateObservationInfo(observation);
+    //                gotoObservationDetails();
+
+    //                getObservationData();
+
+    //                //transition to next step
+    //                $('body').addClass(observation.Exhibit);
+    //                $('#step2').fadeIn(0);
+    //                $('#step1').fadeOut(0);
+
+    //                exhibitID = observation.ExhibitID;
+    //                timerInterval = observation.Interval * 60;
+    //                console.log(observation);
+    //            });
+    //        }
+    //    });
+    //};
+
+    //login = function(username, password) {
+    //    var API_URL = "api/security/login";
+    //    var creds = Base64.encode(username + ':' + password);
+    //    $.ajax({
+    //        type: "GET",
+    //        cache: false,
+    //        url: API_URL,
+    //        beforeSend: function(request) {
+    //            request.setRequestHeader("Authorization", creds);
+    //        },
+    //        processData: false,
+    //        statusCode: {
+    //            401: function(data) {
+    //                alert("Login unsuccessful");
+    //            },
+    //            200: function(data) {
+    //                window.AOS.setToken(data);
+    //                $('#step1').fadeOut(0);
+    //                $('#step2').fadeIn(0);
+
+    //                username = $("#username").val();
+    //            }
+    //        }
+    //    }).done(function(result) {
+    //        console.log("done: " + result);
+    //    }).fail(function(jqxhr, textStatus, error) {
+    //        var err = textStatus + ', ' + error;
+    //        console.log("Request Failed: " + API_URL + " Err: " + err);
+    //    }).always(function() {
+    //        console.log("login - always");
+    //    });
+    //};
 
 });
 
@@ -168,10 +191,36 @@ function gotoWeather() {
     $('#observationInfo').fadeOut(0);
     $('#enviromentData').fadeIn(0);
 
-    $("#saveWeather").click(function() {
-        obsWeather = new weather({ Temperature: $(".temp").text(), weatherID: $("#weatherControl li.selected").attr('name'), CrowdID: $("#crowdControl li.selected").attr('name') });
+    $("#saveWeather").click(function () {
+        var wind = $('.windspeed').attr('data-wind');
+        var windID = 0;
+        if (wind <= 7) {
+            windID = 1;
+        } else if (windID <= 18) {
+            windID = 2;
+        } else if (windID <= 38) {
+            windID = 3;
+        } else {
+            windID = 4;
+        }
+        obsWeather = new weather({ Temperature: $(".temp").text(), WeatherConditionID: $("#weatherControl li.selected").attr('name'), WindID: windID, CrowdID: $("#crowdControl li.selected").attr('name') });
         console.log(obsWeather);
-        startObservation();
+        
+        //check to make sure weather and crowd have been selected
+        if (!obsWeather.WeatherConditionID || !obsWeather.CrowdID || !obsWeather.WindID) {
+            alert('Please select a value for all options.');
+        } else {
+            $('#saveWeather').attr('disabled', 'disabled');
+            $('#saveWeather').val('Please Wait');
+
+            window.AOS.czaos_post('weather', obsWeather, {}).done(function () {
+                startObservation();
+            }).fail(function () {
+                toastr.error("Please try again.", "There was an error saving your weather information");
+                $('#saveWeather').removeAttr('disabled');
+                $('#saveWeather').val('Submit');
+            });
+        }
     });
 }
 
@@ -181,7 +230,7 @@ function startTime(time) {
     var interval = setInterval(function() {
         if (!paused) {
             displayTime(count);
-            $(".timebar").css('width', ((count / time) * 100) + '%');
+            updateTimeBar(count, time);
             if (count == time) {
                 //if the user did not save the record for this interval, go ahead and take whatever values are currently selected as the record
                 if (!hasTakenRecord) {
@@ -210,37 +259,54 @@ function displayTime(count) {
     $('.time').html(minutes + ':'+ ((seconds < 10) ? "0" : "") + seconds );
 }
 
-function startObservation() {
-    //check to make sure weather and crowd have been selected
-    if (!obsWeather.weatherID || !obsWeather.CrowdID) {
-        alert('Please select an option for both weather and crowd');
-    } else {
-        window.AOS.AnimalControl().Configure(observationID);
-        window.AOS.LocationControl().Configure(exhibitID);
-        window.AOS.BehaviorCategoryControl().Configure(exhibitID).done(function () {
-            //show appropriate objects and start the timer
-            $('#enviromentPanel').fadeOut(0);
-            $('#observationPanel').fadeIn(0);
-            $('#button-container').fadeIn(0);
-            startTime(timerInterval);
-        });
-        //window.AOS.BehaviorControl().Configure(exhibitID);
+function updateTimeBar(count, time) {
+    var timeLeft = time - count;
 
-        $(window).trigger('resize');
-
-        $("#saveRecord").click(function () {
-            updateRecordsToBeSaved();
-            
-            if (!hasTakenRecord) {
-                toastr.success("Your observation has been saved", "Record Saved");
-                hasTakenRecord = true;
-            } else {
-                toastr.success("Your observation was updated successfully", "Record Updated");
-            }
-        });
-
-        //startTime(10);
+    $(".timebar").css('width', ((count / time) * 100) + '%');
+    if (10 < timeLeft && timeLeft < 20) {
+        $('.timebar').css('background', 'yellow');
+    } else if (timeLeft < 10) {
+        $('.timebar').css('background', 'red');
+    } else if (timeLeft == time) {
+        $('.timebar').css('background', 'green');
     }
+}
+
+function startObservation() {
+    window.AOS.AnimalControl().Configure(observationID);
+    window.AOS.LocationControl().Configure(exhibitID);
+    window.AOS.BehaviorCategoryControl().Configure(exhibitID).done(function () {
+        //show appropriate objects and start the timer
+        $('#enviromentPanel').fadeOut(0);
+        $('#observationPanel').fadeIn(0);
+        $('#button-container').fadeIn(0);
+        startTime(timerInterval);
+    });
+    //window.AOS.BehaviorControl().Configure(exhibitID);
+
+    $(window).trigger('resize');
+
+    //register buttons
+    $("#saveRecord").click(function () {
+        updateRecordsToBeSaved();
+            
+        if (!hasTakenRecord) {
+            toastr.success("Your observation has been saved", "Record Saved");
+            hasTakenRecord = true;
+        } else {
+            toastr.success("Your observation was updated successfully", "Record Updated");
+        }
+    });
+        
+    $('.pause-button').click(function () {
+            if (paused) {
+                this.src = "/assets/images/icons/observation/pause.png";
+            } else {
+                this.src = "/assets/images/icons/observation/paused.png";
+            }
+
+            paused = !paused;
+        });
 }
 
 function updateRecordsToBeSaved() {
@@ -307,9 +373,9 @@ function handleSave() {
         toastr.clear($infoToast);
         toastr.options.timeOut = 0;
         toastr.options.onclick = function () {
-            location.reload();
+            window.location = '/admin/observation/default.aspx';
         };
-        toastr.success("Please click to refresh page.", "Observation Records Successfully Saved");
+        toastr.success("Please click to return to your observations.", "Observation Records Successfully Saved");
     }).fail(function (data) {
         //$('#finalizeObservation').toggleClass('disabled');
         //$('#finalizeObservation').removeAttr('disabled');
@@ -383,12 +449,11 @@ var recordsToBeSaved = [];
 var weather = function(ref) {
     this.ObservationID = observationID;
     this.Username = username;
-    this.weatherID = ref.weatherID;
+    this.WeatherConditionID = ref.WeatherConditionID;
     this.Temperature = ref.Temperature;
     this.WindID = ref.WindID;
     this.CrowdID = ref.CrowdID;
     this.WeatherTime = new Date();
-    ;
     this.Deleted = 0;
     this.Flagged = 0;
 };

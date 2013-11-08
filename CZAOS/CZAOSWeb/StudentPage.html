@@ -20,6 +20,7 @@
         <script src="Scripts/underscore.min.js"> </script>
         <script src="assets/scripts/toastr/toastr.js"> </script>
         <script src="Scripts/jquery.ui.touch-punch.min.js"> </script>
+        <script src="assets/scripts/TimerControl.js"> </script>
     
         <script src="assets/scripts/Locus.js"> </script>
         <script src="assets/scripts/SimpleTemplate.js"> </script>
@@ -48,11 +49,6 @@
                         <ul id="windControl" class="slide-strip" style="width: 25%">
                         </ul>
                     </section>
-                    <h2>Crowd</h2>
-                    <section class="slider">
-                        <ul id="crowdControl" class="slide-strip" style="width: 33%">
-                        </ul>
-                    </section>
                     <h2>Temperature</h2>
                     <div style="text-align: center">
                         <div id="temparture-label">
@@ -61,6 +57,11 @@
                         </div>
                         <div id="temperature-slider"></div>
                     </div>
+                    <h2>Crowd</h2>
+                    <section class="slider">
+                        <ul id="crowdControl" class="slide-strip" style="width: 33%">
+                        </ul>
+                    </section>
                     <div style="text-align: right">
                         <input type="button" id='saveWeather' value="Save & Continue" class="button"/>
                     </div>
@@ -73,7 +74,7 @@
                         <div id="timer-box">
                             <div class="timebar"></div>
                         </div>
-                        <div id="time-info"><span class="time"></span><img class="pause-button" src="/assets/images/icons/observation/pause.png"/></div>
+                        <div id="time-info"><span class="time"></span><img class="pause-button" src="/assets/images/icons/observation/play.png"/></div>
                     </div>
                     <h2 style="margin-left: 20px; margin-top: 10%;">Behavior: <span style="font-weight: normal" id="previous-behavior"></span></h2>
                     <section class="slider">

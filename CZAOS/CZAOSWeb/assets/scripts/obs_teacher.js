@@ -80,5 +80,8 @@ function populateObservationInfo(observation) {
     $('#interval').html(observation.Interval + ' Minute(s)');
     $('#studentPass').html(observation.StudentPass);
     $('#observerCount').html(observation.ObserverNo);
-    $('#viewRecords').attr('href', 'teacher/view-observation-records.aspx?observationid=' + $("#obsID").val() + '&login=' + $("#login").val() + '&pass=' + $("#pass").val());
+    $('#viewRecords').click(function() {
+        window.location = '/teacher/view-observation-records.aspx?observationid=' + $("#obsID").val() + '&login=' + $("#login").val() + '&pass=' + $("#pass").val()
+    });
+    //$('#viewRecords').attr('href', 'teacher/view-observation-records.aspx?observationid=' + $("#obsID").val() + '&login=' + $("#login").val() + '&pass=' + $("#pass").val());
 }

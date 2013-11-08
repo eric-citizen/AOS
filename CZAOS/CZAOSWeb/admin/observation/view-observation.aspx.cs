@@ -71,6 +71,18 @@ namespace CZAOSWeb.admin.observation
                     litObservationExhibit.Text = obs.Exhibit;
                     var strDetail = obs.ObserveStart.ToShortDateString() + " // " + obs.ObservationID + " // " + obs.ObservationTypeName + " // " + obs.Exhibit;
                     litFoot.Text = strDetail;
+                    if (obs.ObserveType == Observation.ObservationTypeEnum.Professional)
+                    {
+                        lnkStartObs.NavigateUrl = obs.Category == "Behavior"
+                                                      ? String.Format("/ProfessionalPage.html?observationId={0}",
+                                                                      obs.ObservationID)
+                                                      : String.Format("/TimedProfessionalPage.html?observationId={0}",
+                                                                      obs.ObservationID);
+                    }
+                    else
+                    {
+                        lnkStartObs.Visible = false;
+                    }
                     lnkHeadEdit.NavigateUrl = String.Format("~/admin/observation/edit-observation.aspx?observationId={0}", obs.ObservationID);
                     lnkFootEdit.NavigateUrl = String.Format("~/admin/observation/edit-observation.aspx?observationId={0}", obs.ObservationID);
                     lnkHeadRecords.NavigateUrl = String.Format("~/admin/observation/view-observation-records.aspx?observationId={0}", obs.ObservationID);

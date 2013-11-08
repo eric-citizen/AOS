@@ -332,6 +332,7 @@
     <Content Include="assets\scripts\modernizr-2.6.2.js" />
     <Content Include="assets\scripts\Observation.FrontEnd.Common.js" />
     <Content Include="assets\scripts\obs_professional.js" />
+    <Content Include="assets\scripts\obs_professional_timed.js" />
     <Content Include="assets\scripts\obs_student.js" />
     <Content Include="assets\scripts\obs_teacher.js" />
     <Content Include="assets\scripts\RegionControl.js" />
@@ -341,6 +342,7 @@
     <Content Include="assets\scripts\simplemodal\js\jquery.simplemodal.1.4.4.min.js" />
     <Content Include="assets\scripts\AnimalControl.js" />
     <Content Include="assets\scripts\SimpleTemplate.js" />
+    <Content Include="assets\scripts\TimerControl.js" />
     <Content Include="assets\scripts\toastr\index.html" />
     <Content Include="assets\scripts\toastr\TimeControl.js" />
     <Content Include="assets\scripts\toastr\toastr-responsive.css" />
@@ -437,6 +439,7 @@
     <Content Include="Scripts\jquery-ui-1.10.3.js" />
     <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
     <Content Include="Scripts\jquery.ui.touch-punch.min.js" />
+    <Content Include="Scripts\jquery.url.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="StudentPage.html" />
@@ -484,6 +487,7 @@
     <Content Include="TeacherPage.html" />
     <Content Include="teacher\view-observation-records.aspx" />
     <Content Include="teacher\view-observation.aspx" />
+    <Content Include="TimedProfessionalPage.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

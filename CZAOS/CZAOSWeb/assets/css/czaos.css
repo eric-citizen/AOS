@@ -157,6 +157,23 @@ select{
     width: 30px;
     height: 30px;
 }
+
+.start-observation {
+    background: url('/assets/images/icons/observation/take-notes.png') center left no-repeat;
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.start-observation a{
+    display: inline-block;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+}
+
 .records {
     background: url('../images/icons/admin/data.png') center left no-repeat;
     background-size: 30px 30px;
@@ -940,19 +957,19 @@ hr{
 }
 
 #behavior-slider{
-    margin-left: 15px;
-    margin-right: 15px;
+    /*margin-left: 15px;
+    margin-right: 15px;*/
     background: url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-back.png) left no-repeat, url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-next.png) right no-repeat;
-    -moz-background-size: 50px 200px;
+    /*-moz-background-size: 50px 200px;
     -o-background-size: 50px 200px;
     -webkit-background-size: 50px 200px;
-    background-size: 50px 200px;
+    background-size: 50px 200px;*/
     /*background: url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-back.png) left no-repeat;*/
 }
 
 #behavior-slider div {
-    margin-left: 80px;
-    margin-right: 80px;
+    /*margin-left: 40px;
+    margin-right: 40px;*/
 }
 /*#behavior-slider-right{
     margin-right: 15px;
@@ -1003,13 +1020,9 @@ h2{
 }
 .slideStrip{
     position: relative;
-    overflow: hidden;
+    /*overflow: hidden;*/
     -webkit-transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
-}
-
-#observation-page {
-    font-size: 16px;
 }
 
 #observation-page select {
@@ -1017,6 +1030,26 @@ h2{
     -o-background-size: 45px 50px;
     -webkit-background-size: 45px 50px;
     background-size: 45px 50px;
+}
+#observation-page {
+    background: url("../images/background/gradient.png"), url("../images/background/sky.jpg");
+    background-size: 100% 100%, 100% 100%;
+    font-size: 16px;
+}
+
+#observation-page[class*=Bear] {
+    background: url("../images/background/gradient.png"), url("../images/background/bear.jpg");
+    background-size: 100% 100%, 100% 100%;
+}
+
+#observation-page[class*=Elephant] {
+    background: url("../images/background/gradient.png"), url("../images/background/elephant.jpg");
+    background-size: 100% 100%, 100% 100%;
+}
+
+#observation-page[class*=Tiger] {
+    background: url("../images/background/gradient.png"), url("../images/background/tiger.jpg");
+    background-size: 100% 100%, 100% 100%;
 }
 
 #login{
@@ -1031,7 +1064,7 @@ header li img{
     width: 100%;
 }
 #loginPanel{
-    width: 350px;
+    width: 440px;
     margin:  0 auto;
     padding-top: 5em;
 }
@@ -1040,21 +1073,23 @@ header li img{
     text-transform: uppercase;
     font-weight: bold;
     color:#4b2008;
+    font-size: 20px;
 }
 #loginPanel .logo{
     font-family: "Syncopate";
     text-transform: uppercase;
     text-align: center;
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 30px;
+    line-height: 1.5em;
     color: #4a525c;
     padding-bottom: 3em;
     /*background:  url(../images/icons/observation/account-white.png) no-repeat bottom center;*/
 }
 #loginPanel input, #loginPanel select{
-    font-size: inherit;
+    font-size: 20px;
     width: 100%;
     box-sizing: border-box;
+    margin-bottom: 1em;
     -moz-box-sizing: border-box;
 }
 #loginPanel input[type='submit']{
@@ -1065,11 +1100,6 @@ header li img{
     background: #5096a4;
     border-color: #5096a4;
     color: #fff;
-}
-
-#observation-page {
-    background: url("../images/background/gradient.png"), url("../images/background/sky.jpg");
-    background-size: 100% 100%, 100% 100%;
 }
 
 /*#enviromentData{
@@ -1176,7 +1206,7 @@ header li img{
     top: 0;
     left: 0;
     height: 20px;
-    background: green;
+    background: #9e9e26;
     z-index: 1;
 }
 #timer .time{
@@ -1192,9 +1222,6 @@ header li img{
     font-size: 18px;*/
 }
 
-#timer .time:before {
-    content: ':'
-}
 #weatherAPIoutput .temp:after{
     content:'°F';
     font-size: 120px;
@@ -1228,6 +1255,7 @@ header li img{
     float: left;
     width: 50%;
     margin-left: 20px;
+    margin-top: 10%;
 }
 
 #button-container {
@@ -1254,9 +1282,29 @@ header li img{
 }
 
 .animal-group-header {
-    /*background-color: rgba(0, 0, 0, 0.18);*/
+    position: relative;
+    z-index: 1000;
+    padding-left: 10px;
+    background-color: #a2a6ad;
+    border-radius: 20px;
+}
+
+.animal-group-list {
+    position: relative;
+    margin-top: -10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-top: 25px;
+    padding-bottom: 0px;
+}
+
+/*.animal-group-header {
     padding-left: 5px;
-    background-color: #5096a4;
+    background-color: #6b727c;
     border-radius: 10px 10px 0 0;
     border-right: 1px solid rgba(2, 2, 2, 0.28);
     border-left: 1px solid rgba(2, 2, 2, 0.28);
@@ -1265,11 +1313,11 @@ header li img{
     box-shadow: rgba(255,255,255,0.3) 0 1px 0, rgba(0,0,0,0.3) 0 -1px 0;
     -webkit-box-shadow: 0 0 3px rgba(1, 1, 1, 0.7);
     box-shadow: 0 0 5px rgba(1, 1, 1, 0.7);
-}
+}*/
 
 
 
-.animal-group-list {
+/*.animal-group-list {
     background-color: #fff;
     -webkit-box-shadow: -3px 0 5px -3px rgba(1, 1, 1, 0.87), 3px 0 5px -3px rgba(1, 1, 1, 0.87);
     box-shadow: -3px 0 5px -3px rgba(1, 1, 1, 0.87), 3px 0 5px -3px rgba(1, 1, 1, 0.87);
@@ -1281,11 +1329,12 @@ header li img{
     padding-left: 10px;
     padding-bottom: 0px;
     border-bottom: 1px solid;
-}
+}*/
 
 #entry-panel {
-    float: right; 
-    width: 45%
+    float: right;
+    width: 45%;
+    margin-top: 10%;
 }
 
 #entry-panel h2 {
