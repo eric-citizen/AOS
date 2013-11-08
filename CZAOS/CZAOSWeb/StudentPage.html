@@ -37,7 +37,7 @@
                 <header></header>
                 <div id="enviromentPanel">
                     <h1>Enviroment</h1>
-                    <hr>
+                    <hr/>
                     <h2>Weather</h2>
                     <!--<div id="weatherAPIoutput"></div>-->
                     <section class="slider">
@@ -52,8 +52,8 @@
                     <h2>Temperature</h2>
                     <div style="text-align: center">
                         <div id="temparture-label">
-                            <label for="temperature">Temperature:</label>
-                            <input readonly="readonly" type="text" id="temperature" /><label> &deg;F</label>
+                            <!--<label for="temperature">Temperature:</label>-->
+                            <div id="temperature" /></div>
                         </div>
                         <div id="temperature-slider"></div>
                     </div>
@@ -68,7 +68,7 @@
                 </div>
                 <div id="observationPanel" style="display: none">
                     <h1 id="animal-name"></h1>
-                    <hr>
+                    <hr/>
                     <h1 id="common-name"></h1>
                     <div id="timer">
                         <div id="timer-box">
@@ -84,9 +84,10 @@
                         </div>
                         <div id="behavior-slider-right"></div>
                     </section>
-                    <h2 style="margin-top: 15px; text-align: center;">Zone: <span style="font-weight: normal"  id="previous-location"></span></h2>
-                    <div style="text-align: center"><select id="zoneControl"></select></div>
+                    <h2 style="margin-left: 20px; margin-top: 2em;">Zone: <span style="font-weight: normal"  id="previous-location"></span></h2>
+                    <div><select id="zoneControl"></select></div>
                     
+                    <hr/>
                     <div style="float: left; text-align: left;">
                         <div id='gotoFinalizationPage' class="button" onclick=" finishObservation() ">Finish Observation</div>
                     </div>

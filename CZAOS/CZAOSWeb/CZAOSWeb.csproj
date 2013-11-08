@@ -181,8 +181,11 @@
     <Content Include="assets\email-templates\password-reminder.htm" />
     <Content Include="assets\email-templates\pwdReminder.txt" />
     <Content Include="assets\images\add.png" />
+    <Content Include="assets\images\background\bear.jpg" />
+    <Content Include="assets\images\background\elephant.jpg" />
     <Content Include="assets\images\background\gradient.png" />
     <Content Include="assets\images\background\sky.jpg" />
+    <Content Include="assets\images\background\tiger.jpg" />
     <Content Include="assets\images\control\slide.png" />
     <Content Include="assets\images\dropdown-arrow.png" />
     <Content Include="assets\images\icons\admin\account-gray.png" />
@@ -208,6 +211,8 @@
     <Content Include="assets\images\icons\admin\unflagged.png" />
     <Content Include="assets\images\icons\admin\upload.png" />
     <Content Include="assets\images\icons\admin\verified.png" />
+    <Content Include="assets\images\icons\alert.png" />
+    <Content Include="assets\images\icons\app-icon.png" />
     <Content Include="assets\images\icons\arrows\dropdown-arrow.png" />
     <Content Include="assets\images\icons\arrows\setup-data-big-phone-arrow-back.png" />
     <Content Include="assets\images\icons\arrows\setup-data-big-phone-arrow-next.png" />
@@ -259,6 +264,7 @@
     <Content Include="assets\images\icons\observation\pause-sticky.png" />
     <Content Include="assets\images\icons\observation\pause.png" />
     <Content Include="assets\images\icons\observation\paused.png" />
+    <Content Include="assets\images\icons\observation\play.png" />
     <Content Include="assets\images\icons\observation\see-less.png" />
     <Content Include="assets\images\icons\observation\see-more.png" />
     <Content Include="assets\images\icons\observation\select-all-group-active.png" />
@@ -290,6 +296,8 @@
     <Content Include="assets\images\icons\observation\wind\2.png" />
     <Content Include="assets\images\icons\observation\wind\3.png" />
     <Content Include="assets\images\icons\observation\wind\4.png" />
+    <Content Include="assets\images\icons\start-observation.png" />
+    <Content Include="assets\images\icons\unflagged.png" />
     <Content Include="assets\images\icons\weather\api-cloudy.png" />
     <Content Include="assets\images\icons\weather\api-rainy.png" />
     <Content Include="assets\images\icons\weather\api-snowy.png" />
@@ -342,6 +350,7 @@
     <Content Include="assets\scripts\simplemodal\js\jquery.simplemodal.1.4.4.min.js" />
     <Content Include="assets\scripts\AnimalControl.js" />
     <Content Include="assets\scripts\SimpleTemplate.js" />
+    <Content Include="assets\scripts\TimedAnimalGroupControl.js" />
     <Content Include="assets\scripts\TimerControl.js" />
     <Content Include="assets\scripts\toastr\index.html" />
     <Content Include="assets\scripts\toastr\TimeControl.js" />

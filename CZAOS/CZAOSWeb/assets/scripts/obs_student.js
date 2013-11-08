@@ -93,26 +93,26 @@ function loginStudent() {
 }
 
 function gotoWeather() {
-        $('#step2').fadeOut(0);
-        $('#enviromentData').fadeIn(0);
+    $('#step2').fadeOut(0);
+    $('#enviromentData').fadeIn(0);
              
-        username = $("#studentNumber").val();
+    username = $("#studentNumber").val();
     
     //set up the slider for the temperature
-        $(function () {
-            $("#temperature-slider").slider({
-                //range: "max",
-                min: 0,
-                max: 120,
-                value: 60,
-                slide: function (event, ui) {
-                    $("#temperature").val(ui.value);
-                }
-            });
-            $("#temperature").val($("#temperature-slider").slider("value"));
+    $(function () {
+        $("#temperature-slider").slider({
+            //range: "max",
+            min: 0,
+            max: 120,
+            value: 60,
+            slide: function (event, ui) {
+                $("#temperature").html(ui.value);
+            }
         });
+        $("#temperature").html($("#temperature-slider").slider("value"));
+    });
 
-        $("#saveWeather").click(function () {
+    $("#saveWeather").click(function () {
             obsWeather = new weather({ Temperature: $("#temperature-slider").slider("value"), WeatherConditionID: $("#weatherControl li.selected").attr('name'), CrowdID: $("#crowdControl li.selected").attr('name'), WindID: $("#windControl li.selected").attr('name')});
             console.log(obsWeather);
             
@@ -173,10 +173,12 @@ function timerSaveFunction() {
 
 function finishObservation() {
     paused = true;
+    $('#observation-page').toggleClass(exhibitName);
     $('#observationPanel').fadeOut(0);
     $('#finalizePanel').fadeIn(0);
     $(window).trigger('resize');
     $('#backToObservation').click(function () {
+        $('#observation-page').toggleClass(exhibitName);
         $('#observationPanel').fadeIn(0);
         $('#finalizePanel').fadeOut(0);
         paused = false;

@@ -2,6 +2,11 @@
 Timer.paused = true;
 
 Timer.startTime = function (time, saveFunction) {
+    displayTime(0);
+    startInterval(time, saveFunction);
+};
+
+var startInterval = function (time, saveFunction) {
     var count = 0;
     var interval = setInterval(function () {
         if (!Timer.paused) {
@@ -10,7 +15,8 @@ Timer.startTime = function (time, saveFunction) {
             if (count == time) {
                 saveFunction();
                 clearInterval(interval);
-                Timer.startTime(time, saveFunction);
+                count = 0;
+                startInterval(time, saveFunction);
             }
             count++;
         }
