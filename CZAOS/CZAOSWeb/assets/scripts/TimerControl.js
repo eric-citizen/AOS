@@ -1,9 +1,13 @@
 ﻿var Timer = {};
 Timer.paused = true;
+var minuteCount = 0;
+var totalMinuteString;
 
-Timer.startTime = function (time, saveFunction) {
+Timer.startTime = function (time, totalTime, saveFunction) {
     displayTime(0);
+    totalMinuteString = (totalTime < 10 ? '0' + totalTime + ':00' : totalTime + ':00');
     startInterval(time, saveFunction);
+    updateTotalMinutes();
 };
 
 var startInterval = function (time, saveFunction) {
@@ -16,6 +20,7 @@ var startInterval = function (time, saveFunction) {
                 saveFunction();
                 clearInterval(interval);
                 count = 0;
+                updateTotalMinutes();
                 startInterval(time, saveFunction);
             }
             count++;
@@ -38,6 +43,11 @@ var displayTime = function(count) {
     var minutes = Math.floor(time / 60);
     var seconds = time % 60;
     $('.time').html(minutes + ':' + ((seconds < 10) ? "0" : "") + seconds);
+};
+
+var updateTotalMinutes = function () {
+    $('#minutes').html((minuteCount < 10 ? '0' + minuteCount : minuteCount) + ':00/' + totalMinuteString);
+    minuteCount++;
 };
 
 var updateTimeBar = function(count, time) {

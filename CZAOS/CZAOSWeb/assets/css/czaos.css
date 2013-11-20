@@ -1,4 +1,4 @@
-﻿@import url(https://fonts.googleapis.com/css?family=ABeeZee|Syncopate:400,700);
+﻿/*@import url(https://fonts.googleapis.com/css?family=ABeeZee|Syncopate:400,700);*/
 
 body {
     font-family: 'ABeeZee', Geneva, 'DejaVu Sans', sans-serif;
@@ -1055,6 +1055,11 @@ h2{
     background-size: 100% 50%, 100% 50%;
 }
 
+#observation-page.timed-observation label{
+    font-weight: bold;
+    color: #4b2008;
+}
+
 #login{
     margin: 0 auto;
     margin-top: 20px;
@@ -1142,6 +1147,10 @@ header li img{
     margin: 1em;
 }
 
+.timed-observation #gotoFinalizationPage {
+    margin: 0;
+}
+
 #observation-page .button {
     font-size: 20px;
     font-weight: bold;
@@ -1157,7 +1166,7 @@ header li img{
 #button-container #saveRecord, #button-container #gotoFinalizationPage{
     text-align: center;
     float: left;
-    width: 60%;
+    width: 80%;
     margin-left: 20px;
     margin-bottom: 15px;
 }
@@ -1184,6 +1193,16 @@ header li img{
     background: #444444;
     border-color: #444444;
 }*/
+
+#timer #minutes {
+    position: absolute;
+    top: 20px;
+    margin-left: 40px;
+    font-size: 20px;
+    color: #5c646e;
+    font-family: 'ABeeZee';
+    font-weight: bold;
+}
 
 #timer #timer-box {
     position: absolute;
@@ -1243,7 +1262,7 @@ header li img{
 }*/
 
 #observationPanel input[type='checkbox'] {
-    vertical-align: bottom;
+    /*vertical-align: bottom;*/
 }
 
 #observationPanel select {
@@ -1253,6 +1272,7 @@ header li img{
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     min-width: 250px;
+    margin-bottom: 1.5em;
 }
 
 /*#observationInfo span + div{
@@ -1268,6 +1288,13 @@ header li img{
     float: left;
     width: 50%;
     margin-left: 20px;
+    margin-top: 10%;
+}
+
+.timed-observation #animalgroup-knockout-scope {
+    float: left;
+    width: 100%;
+    margin-left: 10%;
     margin-top: 10%;
 }
 
@@ -1290,6 +1317,8 @@ header li img{
 }
 
 .animal-group-list span {
+    line-height: 1.5em;
+    font-size: 18px;
     font-weight: bold;
     color:#4b2008;
 }
@@ -1309,11 +1338,16 @@ header li img{
     margin-right: 10px;
     background-color: #fff;
     border-radius: 0 0 10px 10px;
-    margin-bottom: 20px;
+    margin-bottom: 2.5em;
     padding-left: 10px;
     padding-top: 25px;
-    padding-bottom: 0px;
+    padding-bottom: 2em;
 }
+
+.timed-observation .animal-group-list {
+    padding-bottom: 0;
+}
+
 
 /*.animal-group-header {
     padding-left: 5px;

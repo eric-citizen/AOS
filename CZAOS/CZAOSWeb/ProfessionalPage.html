@@ -7,6 +7,7 @@
         <link href="assets/css/czaos.css" rel="stylesheet" />
         <link href="assets/css/helpers.css" rel="stylesheet" />
         <link href="assets/css/messaging.css" rel="stylesheet" />
+        <link href="assets/css/googlefonts.css" rel="stylesheet" />
         <link href="assets/scripts/toastr/toastr.css" rel="stylesheet" />
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" type="text/javascript"> </script> 
@@ -48,11 +49,6 @@
                         <ul id="weatherControl" class="slide-strip" style="width: 20%">
                         </ul>
                     </section>
-<!--                    <h2>Wind</h2>
-                    <section class="slider">
-                        <ul id="windControl" class="slide-strip" style="width: 20%">
-                        </ul>
-                    </section>-->
                     <h2>Crowd</h2>
                     <section class="slider">
                         <ul id="crowdControl" class="slide-strip" style="width: 33%">
@@ -68,16 +64,6 @@
                     <div class="clearfix">
                         <h1 style="margin-left: 20px">Observation</h1>
                         <hr>
-                        <!--                        <div id="timer">
-                                                        <div class="timebar"></div>
-                                                        <div class="time"></div>
-                                                    </div>-->
-                        <div id="timer">
-                        <div id="timer-box">
-                            <div class="timebar"></div>
-                        </div>
-                        <div id="time-info"><span class="time"></span><img class="pause-button" src="/assets/images/icons/observation/pause.png"/></div>
-                        </div>
                 
                         <div id="animalgroup-knockout-scope">
                             <h1>Animals</h1>
@@ -121,14 +107,7 @@
                             <div id="button-container" class="clearfix" style="display: none">
                             
                                 <input type="button" style="text-align: center" id="saveRecord" class="button" value="Save Record"/>
-                                <!--<div style="text-align: center"><span>Click to Finish Observation</span></div>-->
                                 <input type="button" style="text-align: center" id="gotoFinalizationPage" class="button" onclick=" finishObservation()" value="Finish Observation"/>
-                                <!--                            <div style="float: left">
-                                                                    <div id='saveRecord' class="button">Save Record</div>
-                                                                </div>-->
-                                <!--                            <div style="float: right">
-                                                                    <div id='gotoFinalizationPage' class="button" onclick=" finishObservation() ">Finalize Observation</div>
-                                                                </div>-->
                             
                             </div>
                         </div>
@@ -140,45 +119,10 @@
             <!-- Login Area !-->
 
             <div id="loginPanel">
-                <!--<div id="step1">
-                    <div class="logo">The Animal<br>Observation System</div>
-                    <div style="margin-bottom: 10px"><span>UserName</span><br><input id="username" value="proobserver"/></div>
-                    <div><span>Password</span><br><input id="pass" value="1212asas"/></div>
-                    <div style="text-align: right"><input type='submit' id="Submit1" class="button" onclick=" loginProfessional(); "/></div>
-                </div>
-                <div id="step2" style="display: none">
-                    <div class="logo">The Animal<br>Observation System</div>
-                    <div><span>Observation #</span><br><input id="obsID" value="16"/></div>
-                    <div style="margin-bottom: 15px; text-align: center;"><input type='submit' id="studentLogin" class="button" onclick=" loginToObservation(); "/></div>
-                </div>
-                <div id="observationInfo" style="border-top: 1px solid; display: none; text-align: center;">
-                    <div>
-                        <div>
-                            <h2>Observation</h2>
-                            <span>Observation ID:</span><div id="observationId"></div>
-                            <span>Date:</span><div id="date"></div>
-                            <span>Time:</span><div id="time"></div>
-                            <span>Observation Interval:</span><div id="interval"></div>
-                            <span># of Observers</span><div id="observerCount"></div>
-                        </div>
-                        <div style="border-style: solid; border-top: 2px; margin-top: 15px">
-                            <h2>Animals</h2>
-                            <span>Region:</span><div id="region"></div>
-                            <span>Exhibit:</span><div id="exhibit"></div>
-                            <span>Animals:</span><div id="animal-list"></div>
-                        </div>
-                    </div>
-                    <div style="text-align: center"><input type='submit' value="Start Observation" id="startObs" class="button" onclick=" gotoWeather(); "/></div>
-
-                </div>-->
-        
                 <div id="finalizePanel" style="display: none">
                     <div class="logo">The Animal<br>Observation System</div>
-                    <!--<input type="button" style="text-align: center" id="backToObservation" class="button" value="Back To Observation"/>-->
                     <div class="button" style="text-align: center" id="backToObservation">Back To Observation</div>
                     <div class="button" style="text-align: center" id="finalizeObservation">Finalize</div>
-                    <!--<div style="text-align: center"><span>Click to Finish Observation</span></div>-->
-                    <!--<input type="button" style="text-align: center" id="finalizeObservation" class="button" value="Finalize"/>-->
                 </div>
             </div>
     

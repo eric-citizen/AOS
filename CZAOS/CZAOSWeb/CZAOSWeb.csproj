@@ -221,6 +221,7 @@
     <Content Include="assets\images\icons\arrows\setup-data-button-arrow.png" />
     <Content Include="assets\images\icons\observation\account-white.png" />
     <Content Include="assets\images\icons\observation\alert.png" />
+    <Content Include="assets\images\icons\observation\behaviors\body-movement-active.png" />
     <Content Include="assets\images\icons\observation\behaviors\body-movement.png" />
     <Content Include="assets\images\icons\observation\behaviors\elimination-active.png" />
     <Content Include="assets\images\icons\observation\behaviors\elimination.png" />
@@ -246,9 +247,9 @@
     <Content Include="assets\images\icons\observation\close-white.png" />
     <Content Include="assets\images\icons\observation\complete.png" />
     <Content Include="assets\images\icons\observation\controls-white.png" />
-    <Content Include="assets\images\icons\observation\crowd\crowd-10orless.png" />
-    <Content Include="assets\images\icons\observation\crowd\crowd-11to20.png" />
-    <Content Include="assets\images\icons\observation\crowd\crowd-21ormore.png" />
+    <Content Include="assets\images\icons\observation\crowd\1.png" />
+    <Content Include="assets\images\icons\observation\crowd\2.png" />
+    <Content Include="assets\images\icons\observation\crowd\3.png" />
     <Content Include="assets\images\icons\observation\edit-during-observation.png" />
     <Content Include="assets\images\icons\observation\environment-active.png" />
     <Content Include="assets\images\icons\observation\environment.png" />
@@ -313,6 +314,7 @@
     <Content Include="assets\images\icons\weather\sunny.png" />
     <Content Include="assets\images\icons\weather\windy-active.png" />
     <Content Include="assets\images\icons\weather\windy.png" />
+    <Content Include="assets\images\observation-logo.png" />
     <Content Include="assets\scripts\AnimalGroupControl.js" />
     <Content Include="assets\scripts\api.js" />
     <Content Include="assets\scripts\app.js" />
@@ -440,6 +442,8 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="masterpages\Teacher.Master" />
+    <Content Include="Welcome.html" />
+    <Content Include="assets\Web.config" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

@@ -105,9 +105,12 @@ namespace CZAOSWeb.admin.observation
 
             if (id > 0)//Get location name.
             {
-                var location = ExhibitLocationList.Get(id);
+                var location = LocationList.Get(id);
 
-                e.Row.Cells[4].Text = location.Location;
+                if (location != null)
+                {
+                    e.Row.Cells[4].Text = location.Description;
+                }
             }
 
         }

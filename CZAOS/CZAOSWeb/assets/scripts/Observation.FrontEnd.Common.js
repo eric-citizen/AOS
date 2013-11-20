@@ -87,7 +87,9 @@ $(function () {
                             $(this).attr('src', $(this).attr('src').split('-active').join(''));
                         });
                         $(this).addClass('selected');
-                        $(this).find('img').attr('src', $(this).find('img').attr('src').split('.pn').join('-active.pn'));
+                        if (!params.noActiveImage) {
+                            $(this).find('img').attr('src', $(this).find('img').attr('src').split('.pn').join('-active.pn'));
+                        }
                     });
                     $(who).slideStrip({ slide: true });
                 }
@@ -172,7 +174,7 @@ $(function () {
     window.AOS.login = function() {
         var API_URL = "api/security/login";
         var creds = "YXBpdXNlcjphYmNkMTIzNA==";
-        $.ajax({
+        return $.ajax({
             type: "GET",
             cache: false,
             url: API_URL,
@@ -204,5 +206,19 @@ $(function () {
                 console.log("login - always");
             });
     };
-    
+
+    window.AOS.preloadIcons = function (dir, fileextension) {
+        $.ajax({
+            //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+            url: dir,
+            success: function (data) {
+                //Lsit all png file names in the page
+                $(data).find("a:contains(" + fileextension + ")").each(function () {
+                    //var filename = this.href.replace(window.location.host, "").replace("http:///", "");
+                    $("#preload").append($("<img src=" + this.href + "></img>"));
+                });
+            }
+        });
+    };
+
 });

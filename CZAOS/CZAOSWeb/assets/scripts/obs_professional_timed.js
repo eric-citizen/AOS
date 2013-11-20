@@ -28,6 +28,7 @@
 
         exhibitID = observation.ExhibitID;
         timerInterval = observation.Interval * 60;
+        totalTime = (new Date(observation.ObserveEnd) - new Date(observation.ObserveStart)) / 60000;
         console.log(observation);
     });
 });
@@ -38,6 +39,7 @@ var obsWeather;
 var username = 'none';
 var paused = true;
 var timerInterval = 0;
+var totalTime = 0;
 var observationRecords = new Locus("observationRecords");
 observationRecords.clear();
 observationRecords.data.records = [];
@@ -47,7 +49,7 @@ function getObservationData() {
     window.AOS.czaos_get('animalObservation', {}, '#observationAnimals', false, { observationId: observationID });
     window.AOS.czaos_get('behaviorCategory', {}, '#behaviorControl', true, { exhibitId: exhibitID });
     window.AOS.czaos_get('exhibitlocation', {}, '#zoneControl', false, { exhibitId: exhibitID });
-    window.AOS.czaos_get('crowd/', {}, '#crowdControl', true);
+    window.AOS.czaos_get('crowd/', {noActiveImage: true}, '#crowdControl', true);
     window.AOS.czaos_get('weatherCondition/', {}, '#weatherControl', true);
 }
 
@@ -97,13 +99,13 @@ function startObservation() {
     $('#enviromentPanel').fadeOut(0);
     $('#observationPanel').fadeIn(0);
     $('#button-container').fadeIn(0);
-    Timer.startTime(timerInterval, saveFunction);
+    Timer.startTime(timerInterval, totalTime,saveFunction);
 
     $(window).trigger('resize');
 
     //register buttons
     $("#saveRecord").click(function () {
-        updateRecordsToBeSaved();
+        //updateRecordsToBeSaved();
 
         if (!hasTakenRecord) {
             toastr.success("Your observation has been saved", "Record Saved");
@@ -118,6 +120,8 @@ function startObservation() {
 
 function saveFunction() {
     //todo: save a record for each animal group 
+    updateRecordsToBeSaved();
+
     _.each(recordsToBeSaved, function (record) {
         observationRecords.data.records.push(record);
     });
@@ -127,29 +131,31 @@ function saveFunction() {
     hasTakenRecord = false;
 }
 
-//todo update/fix this function
 function updateRecordsToBeSaved() {
-    var aos = window.AOS;
     //clear current items in array
     recordsToBeSaved = [];
     //add record to recordsToBeSaved foreach animal selected
-    _.each(window.AOS.AnimalControl().SelectedAnimals(), function (animal) {
-        recordsToBeSaved.push(
-        new record(
-            {
-                ZooID: animal.ZooID,
-                LocationID: aos.LocationControl().SelectedLocation().LocationID(),
-                BvrCat: aos.BehaviorCategoryControl().SelectedCategory().BvrCat(),
-                BvrCatCode: aos.BehaviorCategoryControl().SelectedCategory().BvrCatCode(),
-                Behavior: aos.BehaviorControl().SelectedBehavior().Behavior(),
-                BehaviorCode: aos.BehaviorControl().SelectedBehavior().BehaviorCode()
-            }));
+    _.each(window.AOS.AnimalControl().AnimalGroups(), function (group) {
+        _.each(group.Animals, function(animal) {
+            recordsToBeSaved.push(
+            new record(
+                {
+                    ZooID: animal.ZooID,
+                    LocationID: group.LocationControl().SelectedLocation().LocationID(),
+                    BvrCat: group.BehaviorCategoryControl().SelectedCategory().BvrCat(),
+                    BvrCatCode: group.BehaviorCategoryControl().SelectedCategory().BvrCatCode(),
+                    Behavior: group.BehaviorControl().SelectedBehavior().Behavior(),
+                    BehaviorCode: group.BehaviorControl().SelectedBehavior().BehaviorCode()
+                }));
+        });
+        
     });
     console.log(recordsToBeSaved);
 }
 
 function finishObservation() {
-    paused = true;
+    //paused = true;
+    Timer.pause();
     $('#observationPanel').fadeOut(0);
     $('#finalizePanel').fadeIn(0);
     $(window).trigger('resize');
@@ -164,7 +170,8 @@ function finishObservation() {
 function returnToObservation() {
     $('#observationPanel').fadeIn(0);
     $('#finalizePanel').fadeOut(0);
-    paused = false;
+    //paused = false;
+    Timer.pause();
     $('#finalizeObservation').unbind('click');
     $('#backToObservation').unbind('click');
 }

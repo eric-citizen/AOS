@@ -17,6 +17,8 @@ $(function () {
 
     //initialize obs_student
     SimpleTemplate.loadTemplates();
+    
+    
 
     window.AOS.deleteToken();
 
@@ -40,6 +42,7 @@ $(function () {
             if (data.StudentPass == pass) {
                 exhibitID = data.ExhibitID;
                 timerInterval = data.Interval * 60;
+                totalTime = (new Date(data.ObserveEnd) - new Date(data.ObserveStart)) / 60000;
                 console.log(data);
                 alert('Welcome Student');
                 var sn = $("#studentNumber");
@@ -67,7 +70,14 @@ $(function () {
         });
     };
 
-    window.AOS.login();
+    window.AOS.login().done(function() {
+        //preload weather screen icons
+        window.AOS.preloadIcons("/assets/images/icons/observation/weather", ".png");
+        window.AOS.preloadIcons("/assets/images/icons/observation/wind", ".png");
+        window.AOS.preloadIcons("/assets/images/icons/observation/crowd", ".png");
+    });
+    
+
 
 });
 
@@ -76,6 +86,8 @@ var exhibitID=0;
 var obsWeather;
 var exhibitName;
 var username = 'none';
+var timerInterval;
+var totalTime;
 var observationRecords = new Locus("observationRecords");
 observationRecords.clear();
 observationRecords.data.records=[];
@@ -131,7 +143,10 @@ function gotoWeather() {
                     $('#saveWeather').val('Submit');
                 });
             }
-        });
+    });
+
+    //preload the observation screen icons
+    window.AOS.preloadIcons("/assets/images/icons/observation/behaviors", ".png");
 }
 
 function startObservation() {
@@ -157,7 +172,7 @@ function startObservation() {
     
     $('.pause-button').click(Timer.pause);
     
-    Timer.startTime(timerInterval, timerSaveFunction);
+    Timer.startTime(timerInterval, totalTime,timerSaveFunction);
 }
 
 function timerSaveFunction() {
@@ -172,7 +187,8 @@ function timerSaveFunction() {
 }
 
 function finishObservation() {
-    paused = true;
+    Timer.pause();
+    //paused = true;
     $('#observation-page').toggleClass(exhibitName);
     $('#observationPanel').fadeOut(0);
     $('#finalizePanel').fadeIn(0);
@@ -181,7 +197,8 @@ function finishObservation() {
         $('#observation-page').toggleClass(exhibitName);
         $('#observationPanel').fadeIn(0);
         $('#finalizePanel').fadeOut(0);
-        paused = false;
+        Timer.pause();
+        //paused = false;
         $('#finalizeObservation').unbind('click');
         $('#backToObservation').unbind('click');
     });

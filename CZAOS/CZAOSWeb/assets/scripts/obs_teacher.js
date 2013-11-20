@@ -55,7 +55,7 @@ function populateObservationInfo(observation) {
     window.AOS.get('exhibit/' + observation.ExhibitID, {}).done(function(data) {
         //display AnimalRegion or RegionName?
         $('#region').html(data.RegionName);
-        $('#exhibit').html(data.Exhibit);
+        $('#exhibit').html(data.ExhibitName);
     });
     window.AOS.get('school/' + observation.SchoolID, {}).done(function(data) {
         //School and DistrictName\
@@ -81,7 +81,7 @@ function populateObservationInfo(observation) {
     $('#studentPass').html(observation.StudentPass);
     $('#observerCount').html(observation.ObserverNo);
     $('#viewRecords').click(function() {
-        window.location = '/teacher/view-observation-records.aspx?observationid=' + $("#obsID").val() + '&login=' + $("#login").val() + '&pass=' + $("#pass").val()
+        window.location = '/teacher/view-observation-records.aspx?observationid=' + $("#obsID").val() + '&login=' + $("#login").val() + '&pass=' + $("#pass").val();
     });
     //$('#viewRecords').attr('href', 'teacher/view-observation-records.aspx?observationid=' + $("#obsID").val() + '&login=' + $("#login").val() + '&pass=' + $("#pass").val());
 }

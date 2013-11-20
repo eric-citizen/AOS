@@ -35,8 +35,8 @@
 
             if (bindingScope != 'false') {
                 ko.applyBindings(owner.BehaviorControl, $(bindingScope)[0]);
+                updateSelectableBehaviors(owner);
             }
-            //updateSelectableBehaviors();
 
             callback();
         });

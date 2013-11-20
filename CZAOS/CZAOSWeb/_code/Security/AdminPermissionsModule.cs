@@ -52,7 +52,7 @@ namespace CZAOSWeb.Security
                 }
                 else
                 {
-                    if (!props.IsPage && !props.IsExtensionless)
+                    if (!props.IsPage)
                     {
                         return;
                     }

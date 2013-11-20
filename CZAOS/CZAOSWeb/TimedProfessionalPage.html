@@ -7,6 +7,7 @@
         <link href="assets/css/czaos.css" rel="stylesheet" />
         <link href="assets/css/helpers.css" rel="stylesheet" />
         <link href="assets/css/messaging.css" rel="stylesheet" />
+        <link href="assets/css/googlefonts.css" rel="stylesheet" />
         <link href="assets/scripts/toastr/toastr.css" rel="stylesheet" />
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" type="text/javascript"> </script> 
@@ -35,7 +36,7 @@
 
     </head>
     <body>
-        <div id="observation-page">
+        <div id="observation-page" class="timed-observation">
             <div id="observationData">
             </div>
             <div id="enviromentData" style='display: none;'>
@@ -67,44 +68,33 @@
                         <hr>
 
                         <div id="timer">
+                            <div id="minutes"></div>
                             <div id="timer-box">
                                 <div class="timebar"></div>
                             </div>
-                            <div id="time-info"><span class="time"></span><img class="pause-button" src="/assets/images/icons/observation/pause.png"/></div>
+                            <div id="time-info"><span class="time"></span><img class="pause-button" src="/assets/images/icons/observation/play.png"/></div>
                         </div>
                 
-                        <div id="animalgroup-knockout-scope">
+                        <div id="animalgroup-knockout-scope" style="display: none" data-bind="visible: true">
                             <h1>Animals</h1>
                             <div class="animal-group" data-bind="foreach: AnimalGroups">
                                 <div data-bind="attr: { 'data-group' : $data.id}"></div>
-                                <h2 class="animal-group-header" data-bind="text: 'Group ' + $data.id"></h2>
-                                <!--<h2 class="animal-group-header" data-bind="text: 'Group ' + $data.id"></h2>-->
+                                <h2 class="animal-group-header" data-bind="text: Animals[0].HouseName + ': ' + Animals[0].CommonName"></h2>
                                 <div class="animal-group-list">
-                                    <ul  data-bind="foreach: Animals">
-                                        <li>
-                                            <label>
-                                                <!-- bind the name property of our object as the checkbox value -->
-                                                <!--<input type="checkbox" data-bind="value: ZooID, checked: $root.SelectedAnimals" />-->
-                                                <span data-bind="text: HouseName +  ':' + CommonName"></span>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                    
-                                    <!--This is the entry observation for the group-->
                                     <div>
-                                        <h2>Behavior Category</h2>
+                                        <label>Behavior Category</label>
                                         <!--Drop down list of Selectable Behavior Categories-->
                                         <div id="Div1">
                                             <select data-bind="options: $data.BehaviorCategoryControl().SelectableCategories, optionsText: 'BvrCat', value: $data.BehaviorCategoryControl().SelectedCategory"></select>
                                         </div>
                         
-                                        <h2>Behavior</h2>
+                                        <label>Behavior</label>
                                         <!--Drop down list of Selectable Behaviors-->
                                         <div id="Div2">
                                             <select data-bind="options: $data.BehaviorControl().SelectableBehaviors, optionsText: 'Behavior', value: $data.BehaviorControl().SelectedBehavior"></select>
                                         </div>
 
-                                        <h2>Zone</h2>
+                                        <label>Zone</label>
                                         <!--Drop down list of Selectable Zones-->
                                         <div data-bind="attr: { id : 'location-control-' + $data.id}">
                                             <select data-bind="options: $data.LocationControl().SelectableLocations, optionsText: 'Location', value: $data.LocationControl().SelectedLocation"></select>
@@ -113,7 +103,11 @@
                                     <!--<div class="button" data-bind="click: $root.AddAllFromGroup">All</div><div class="button" data-bind="    click: $root.RemoveAllFromGroup">None</div>-->
                                 </div>
                             </div>
+                            <div>
+                                <input type="button" style="text-align: center; width: 80%" id="gotoFinalizationPage" class="button" onclick=" finishObservation()" value="Finish Observation"/>
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -124,11 +118,8 @@
             <div id="loginPanel">
                 <div id="finalizePanel" style="display: none">
                     <div class="logo">The Animal<br>Observation System</div>
-                    <!--<input type="button" style="text-align: center" id="backToObservation" class="button" value="Back To Observation"/>-->
                     <div class="button" style="text-align: center" id="backToObservation">Back To Observation</div>
                     <div class="button" style="text-align: center" id="finalizeObservation">Finalize</div>
-                    <!--<div style="text-align: center"><span>Click to Finish Observation</span></div>-->
-                    <!--<input type="button" style="text-align: center" id="finalizeObservation" class="button" value="Finalize"/>-->
                 </div>
             </div>
     
