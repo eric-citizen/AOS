@@ -51,10 +51,18 @@ namespace CZAOSWeb.admin.observation
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                txtStartTime.Text = obs.ObserveStart.ToShortTimeString();
 
-            txtStartTime.Text = obs.ObserveStart.ToShortTimeString();
+                LoadEnvironment();
+            }
+        }
 
-            LoadEnvironment();
+        protected void LoadData()
+        {
+
+            
         }
 
         protected void LoadEnvironment()
