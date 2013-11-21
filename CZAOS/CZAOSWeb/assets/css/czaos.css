@@ -72,8 +72,8 @@ select{
     border: 2px solid #a2a6ad;
     font-family: "ABeeZee";
     border-radius: 2em;
-    padding: .4em 1em;
-    padding-right: 4em;
+    padding: .5em 1em;
+    padding-right: 3.5em;
 }
 
 .obsSection {
@@ -125,7 +125,19 @@ select{
     display:block;
     font-size: 1em;
 }
-
+.environment {
+    width:100%;
+    display:block;
+}
+.environmentInner {
+    width:auto;
+    padding: 5px;
+    display:inline-block;
+}
+select::-ms-expand{
+    display:none;
+    /*padding: .5em 1.2em;*/    
+}
 .edit {
     background: url('../images/icons/admin/edit.png') center left no-repeat;
     background-size: 15px 30px;

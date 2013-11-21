@@ -64,16 +64,7 @@ namespace CZAOSWeb.admin.observation {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddlWeather;
-        
-        /// <summary>
-        /// ddlWind control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddlWind;
+        protected global::System.Web.UI.WebControls.DropDownList ddlWeather;
         
         /// <summary>
         /// txtTemp control.
@@ -85,22 +76,40 @@ namespace CZAOSWeb.admin.observation {
         protected global::KT.WebControls.RequiredTextBox txtTemp;
         
         /// <summary>
+        /// ddlWind control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlWind;
+        
+        /// <summary>
         /// ddlCrowd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::KT.WebControls.RequiredDropDownList ddlCrowd;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCrowd;
         
         /// <summary>
-        /// btnSubEnv control.
+        /// enviroValidation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubEnv;
+        protected global::System.Web.UI.WebControls.ValidationSummary enviroValidation;
+        
+        /// <summary>
+        /// btnbEnv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnbEnv;
         
         /// <summary>
         /// vwRecords control.
