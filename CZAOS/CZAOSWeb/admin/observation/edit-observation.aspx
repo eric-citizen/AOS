@@ -440,7 +440,7 @@
                 console.log(d);
                 var dd = new Date(d);
                 console.log(dd);
-                var ddd = new Date(dd.setHours(dd.getHours() + 1));
+                var ddd = new Date(dd.setMinutes(dd.getMinutes() + 15));
                 console.log(ddd);
                 $('.endtime').timepicker('setTime', ddd);
             });
