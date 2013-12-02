@@ -260,7 +260,8 @@ namespace CZAOSWeb.controls
 
         protected void nextImageButton_Click(object sender, ImageClickEventArgs e)
         {
-            if (mDataGrid.PageCount > mDataGrid.PageIndex)
+
+            if (mDataGrid.PageCount > mDataGrid.PageIndex + 1)
             {
                 mDataGrid.PageIndex += 1;
                 if (PageIndexChanged != null)

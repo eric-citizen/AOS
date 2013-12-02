@@ -244,7 +244,7 @@ var record = function (ref) {
     this.Behavior = ref.Behavior;
     this.BehaviorCode = ref.BehaviorCode;
     this.LocationID = ref.LocationID;
-    this.ObserverTime = new Date().toUTCString();
+    this.ObserverTime = new Date();
     this.Deleted = 0;
     this.Flagged = 0;
 };

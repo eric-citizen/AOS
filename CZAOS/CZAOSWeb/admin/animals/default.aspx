@@ -86,7 +86,7 @@
         </ContentTemplate>
     </asp:UpdatePanel>
 
-    <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvAnimals" />
+    <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvAnimals" HideOnEmpty="False"/>
     <asp:Button ID="btnRefresh" Text="refresh" runat="server" onclick="btnRefresh_Click" />
 
     <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvAnimals" Text="No records found!"></mack:MessageDiv>

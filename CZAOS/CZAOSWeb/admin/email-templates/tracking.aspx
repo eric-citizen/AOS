@@ -62,7 +62,7 @@
 
     </asp:GridView>
 
-    <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvEmailTemplate" />
+    <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvEmailTemplate" HideOnEmpty="False"/>
 
     <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvEmailTemplate" Text="No records found!"></mack:MessageDiv>
 

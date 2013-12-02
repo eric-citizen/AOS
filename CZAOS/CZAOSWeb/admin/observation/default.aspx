@@ -24,7 +24,7 @@
                         <input type="date" id="dateFromUp" runat="server" /> -- <input type="date" id="dateToUp" runat="server"/><br /><br />
 
                         <label>Observation Category</label><br />
-                        <asp:checkbox runat="server" AutoPostBack="false" id="timedUp" Text="Timed" Checked="true" /><br />
+                        <asp:checkbox runat="server" AutoPostBack="false" id="timedUp" Text="Timed" Checked="False" /><br />
                         <asp:checkbox runat="server" AutoPostBack="false" id="behaviorUp" Text="Behavior"/><br />
 
                     </div>
@@ -51,7 +51,7 @@
             <hr />
             <a class="add-link" href="/admin/observation/edit-observation.aspx">Add New Observation</a>
 
-            <asp:ObjectDataSource ID="cztDataSourceUpcoming" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting_Upcoming"
+            <asp:ObjectDataSource ID="cztDataSourceUpcoming" runat="server" OnSelected="cztUpDataSource_Selected" OnSelecting="cztDataSource_Selecting_Upcoming"
                 SelectMethod="GetItemCollection" TypeName="CZBizObjects.ObservationList"
                 EnablePaging="True" SortParameterName="sortExpression" SelectCountMethod="GetCount" OldValuesParameterFormatString="original_{0}">
 
@@ -73,6 +73,13 @@
                     <asp:BoundField DataField="ObservationID" SortExpression="ObservationID" HeaderText="Obs.ID" ItemStyle-Width="100px"></asp:BoundField>
                     <asp:BoundField DataField="ObserveType" SortExpression="ObserveType" HeaderText="User Type" ItemStyle-Width="150px"></asp:BoundField>
                     <asp:BoundField DataField="Exhibit" SortExpression="Exhibit" HeaderText="Exhibit" ItemStyle-Width="150px"></asp:BoundField>
+                    
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:HyperLink runat="server" ID="lnkStart" CssClass="start-observation" Text="" ToolTip="Start this Observation" NavigateUrl='<%# Bind("Category","{0}") %>'></asp:HyperLink>
+                        </ItemTemplate>
+                        <ItemStyle Width="60px" CssClass="tac" />
+                    </asp:TemplateField>
 
                     <asp:TemplateField>
                         <ItemTemplate>
@@ -107,7 +114,7 @@
 
             </asp:GridView>
 
-            <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvObsUp" />
+            <uc1:GridPager runat="server" ID="upPagerControl" GridViewID="gvObsUp" HideOnEmpty="False"/>
 
             <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvObsUp" Text="No records found!"></mack:MessageDiv>
         </div>
@@ -123,7 +130,7 @@
                         <input type="date" id="dateFromRec" runat="server" /> -- <input type="date" id="dateToRec" runat="server"/><br /><br />
 
                         <label>Observation Category</label><br />
-                        <asp:Checkbox id="timedRec" runat="server" Checked="True" Text="Timed" AutoPostBack="false" /><br />
+                        <asp:Checkbox id="timedRec" runat="server" Checked="False" Text="Timed" AutoPostBack="false" /><br />
                         <asp:Checkbox ID="behaviorRec" runat="server" Text="Behavior" AutoPostBack="false" /><br />
                     </div>
 
@@ -149,7 +156,7 @@
             <hr />
             <a class="add-link" href="/admin/observation/edit-observation.aspx">Add New Observation</a>
 
-            <asp:ObjectDataSource ID="cztDataSourceRecent" runat="server" OnSelected="cztDataSource_Selected" OnSelecting="cztDataSource_Selecting_Recent"
+            <asp:ObjectDataSource ID="cztDataSourceRecent" runat="server" OnSelected="cztRecDataSource_Selected" OnSelecting="cztDataSource_Selecting_Recent"
                 SelectMethod="GetItemCollection" TypeName="CZBizObjects.ObservationList"
                 EnablePaging="True" SortParameterName="sortExpression" SelectCountMethod="GetCount" OldValuesParameterFormatString="original_{0}">
 
@@ -170,6 +177,13 @@
                     <asp:BoundField DataField="ObservationID" SortExpression="ObservationID" HeaderText="Obs.ID" ItemStyle-Width="100px"></asp:BoundField>
                     <asp:BoundField DataField="ObserveType" SortExpression="ObserveType" HeaderText="User Type" ItemStyle-Width="150px"></asp:BoundField>
                     <asp:BoundField DataField="Exhibit" SortExpression="Exhibit" HeaderText="Exhibit" ItemStyle-Width="150px"></asp:BoundField>
+                    
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:HyperLink runat="server" ID="lnkStart" CssClass="start-observation" Text="" ToolTip="Start this Observation" NavigateUrl='<%# Bind("ObservationID","~/ProfessionalPage.html?observationId={0}") %>'></asp:HyperLink>
+                        </ItemTemplate>
+                        <ItemStyle Width="60px" CssClass="tac" />
+                    </asp:TemplateField>
 
                     <asp:TemplateField>
                         <ItemTemplate>
@@ -204,7 +218,7 @@
 
             </asp:GridView>
 
-            <uc1:GridPager runat="server" ID="GridPager1" GridViewID="gvObsRec" />
+            <uc1:GridPager runat="server" ID="recPagerControl" GridViewID="gvObsRec" HideOnEmpty="False"/>
 
             <mack:MessageDiv runat="server" ID="MessageDiv1" ListControlID="gvObsRec" Text="No records found!"></mack:MessageDiv>
         </div>

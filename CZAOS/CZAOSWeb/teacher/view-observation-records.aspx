@@ -33,6 +33,7 @@
                 DataKeyNames="ObservationID" OnRowDataBound="gvObs_RowDataBound" OnRowCommand="gvObs_RowCommand">
                 <Columns>
 
+                    <asp:BoundField DataField="Username" SortExpression="Username" HeaderText="Username" ItemStyle-Width="60px"></asp:BoundField>
                     <asp:BoundField DataField="ObserverTime" SortExpression="ObserverTime" HeaderText="Time" ItemStyle-Width="60px"></asp:BoundField>
                     <asp:BoundField DataField="ZooID" SortExpression="ZooID" HeaderText="Animal" ItemStyle-Width="150px"></asp:BoundField>
                     <asp:BoundField DataField="BvrCat" SortExpression="BvrCat" HeaderText="Behavior Category" ItemStyle-Width="150px"></asp:BoundField>
@@ -54,7 +55,7 @@
 
             </asp:GridView>
 
-            <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvObs" />
+            <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvObs" HideOnEmpty="False"/>
 
             <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvObs" Text="No records found!"></mack:MessageDiv><br />
             <footer style="border:1px solid #cccccc">

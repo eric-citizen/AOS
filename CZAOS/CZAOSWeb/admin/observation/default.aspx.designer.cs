@@ -130,13 +130,13 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.GridView gvObsUp;
         
         /// <summary>
-        /// gvPagerControl control.
+        /// upPagerControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CZAOSWeb.controls.GridPager gvPagerControl;
+        protected global::CZAOSWeb.controls.GridPager upPagerControl;
         
         /// <summary>
         /// divEmpty control.
@@ -265,13 +265,13 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.GridView gvObsRec;
         
         /// <summary>
-        /// GridPager1 control.
+        /// recPagerControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CZAOSWeb.controls.GridPager GridPager1;
+        protected global::CZAOSWeb.controls.GridPager recPagerControl;
         
         /// <summary>
         /// MessageDiv1 control.

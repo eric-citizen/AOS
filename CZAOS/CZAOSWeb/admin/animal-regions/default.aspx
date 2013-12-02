@@ -75,7 +75,7 @@
 
     </asp:GridView>
 
-    <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvAnimalRegions" />
+    <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvAnimalRegions" HideOnEmpty="False"/>
 
     <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvAnimalRegions" Text="No records found!"></mack:MessageDiv>
 

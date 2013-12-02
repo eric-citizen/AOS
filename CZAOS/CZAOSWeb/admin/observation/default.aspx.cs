@@ -80,17 +80,27 @@ namespace CZAOSWeb.admin.observation
             SchoolListUp.DataBind();
         }
 
-        protected void cztDataSource_Selected(object sender, ObjectDataSourceStatusEventArgs e)
+        protected void cztRecDataSource_Selected(object sender, ObjectDataSourceStatusEventArgs e)
         {
             if (e.ReturnValue is int)
             {
-                gvPagerControl.Total = Convert.ToInt32(e.ReturnValue);
+                recPagerControl.Total = Convert.ToInt32(e.ReturnValue);
+            }
+        }
+
+        protected void cztUpDataSource_Selected(object sender, ObjectDataSourceStatusEventArgs e)
+        {
+            if (e.ReturnValue is int)
+            {
+                upPagerControl.Total = Convert.ToInt32(e.ReturnValue);
             }
         }
 
         protected void cztDataSource_Selecting_Recent(object sender, ObjectDataSourceSelectingEventArgs e)
         {
             DateTime date = DateTime.Now;
+            
+            //it this isn't a postpack, then there are not any active filter or sort expressions
             if (!this.IsPostBack)
             {
                 e.InputParameters["filterExpression"] = "ObserveStart < '" + date + "'";
@@ -98,28 +108,31 @@ namespace CZAOSWeb.admin.observation
             else
             {
                 string filterExpression = string.Empty;
-                if (searchStudentObservationsRec.Checked)
-                    filterExpression = "ObserveType = 'School' AND SchoolID = '" + SchoolListRec.SelectedValue + "'";
-                else
-                    filterExpression = "ObserveType = 'Professional'";
-
-                if (timedRec.Checked)
-                    filterExpression += " AND Category = 'Timed'";
-                else if (behaviorRec.Checked)
-                    filterExpression += " AND Category = 'Behavior'";
-                else
-                    filterExpression += " AND Category = 'Timed' OR Category = 'Behavior'";
-
-                //filterExpression += "Animal = " + AnimalListRec.SelectedValue;
 
                 if (dateFromRec.Value == "" || dateToRec.Value == "")
                 {
-                    filterExpression += " AND ObserveStart < '" + date + "'";
+                    filterExpression += "ObserveStart < '" + date + "'";
                 }
                 else
                 {
-                    filterExpression += " AND ObserveStart > '" + dateFromRec.Value + "' AND ObserveStart < '" + dateToRec.Value + "'";
+                    filterExpression += " ObserveStart > '" + dateFromRec.Value + "' AND ObserveStart < '" + dateToRec.Value + "'";
                 }
+
+                if (searchStudentObservationsRec.Checked)
+                {
+                    filterExpression += "AND ObserveType = 'School' ";
+                    if(SchoolListRec.SelectedValue.IsNotNullOrEmpty())
+                        filterExpression += "AND SchoolID = '" + SchoolListRec.SelectedValue + "'";
+                }
+
+                if (timedRec.Checked && behaviorRec.Checked)
+                    filterExpression += "AND Category in ('Timed', 'Behavior')";
+                else if (timedRec.Checked)
+                    filterExpression += " AND Category = 'Timed'";
+                else if (behaviorRec.Checked)
+                    filterExpression += " AND Category = 'Behavior'";
+                
+                
 
                 e.InputParameters["filterExpression"] = filterExpression;
 
@@ -129,6 +142,8 @@ namespace CZAOSWeb.admin.observation
         protected void cztDataSource_Selecting_Upcoming(object sender, ObjectDataSourceSelectingEventArgs e)
         {
             DateTime date = DateTime.Now;
+
+            //it this isn't a postpack, then there are not any active filter or sort expressions
             if (!this.IsPostBack)
             {
                 e.InputParameters["filterExpression"] = "ObserveStart > '" + date + "'";
@@ -136,28 +151,32 @@ namespace CZAOSWeb.admin.observation
             else
             {
                 string filterExpression = string.Empty;
-                if (searchStudentObservationsUp.Checked)
-                    filterExpression = "ObserveType = 'School' AND SchoolID = '" + SchoolListUp.SelectedValue + "'";
-                else
-                    filterExpression = "ObserveType = 'Professional'";
-
-                if (timedUp.Checked)
-                    filterExpression += " AND Category = 'Timed'";
-                else if (behaviorUp.Checked)
-                    filterExpression += " AND Category = 'Behavior'";
-                else
-                    filterExpression += " AND Category = 'Timed' OR Category = 'Behavior'";
-
-                //filterExpression += "Animal = " + AnimalListRec.SelectedValue;
 
                 if (dateFromUp.Value == "" || dateToUp.Value == "")
                 {
-                    filterExpression += " AND ObserveStart > '" + date + "'";
+                    filterExpression += "ObserveStart > '" + date + "'";
                 }
                 else
                 {
-                    filterExpression += " AND ObserveStart > '" + dateFromUp.Value + "' AND ObserveStart < '" + dateToUp.Value + "'";
+                    filterExpression += "ObserveStart > '" + dateFromUp.Value + "' AND ObserveStart < '" + dateToUp.Value + "'";
                 }
+
+                if (searchStudentObservationsUp.Checked)
+                {
+                    filterExpression += "AND ObserveType = 'School' "; 
+                    if(SchoolListUp.SelectedValue.IsNotNullOrEmpty())
+                        filterExpression += "AND SchoolID = '" + SchoolListUp.SelectedValue + "'";
+                }
+
+                if (timedUp.Checked && behaviorUp.Checked)
+                    filterExpression += "AND Category in ('Timed', 'Behavior')";
+                else if (timedUp.Checked)
+                    filterExpression += " AND Category = 'Timed'";
+                else if (behaviorUp.Checked)
+                    filterExpression += " AND Category = 'Behavior'";
+
+
+                
 
                 e.InputParameters["filterExpression"] = filterExpression;
 
@@ -192,7 +211,25 @@ namespace CZAOSWeb.admin.observation
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-
+                if (e.Row.Cells[2].Text == "School")
+                {
+                    e.Row.FindControl("lnkStart").Visible = false;
+                }
+                else
+                {
+                    var link = (HyperLink) e.Row.FindControl("lnkStart");
+                    var category = link.NavigateUrl.ToLower();
+                    if (category == "timed")
+                    {
+                        link.NavigateUrl = String.Format("/TimedProfessionalPage.html?observationId={0}",
+                            e.Row.Cells[1].Text);
+                    }
+                    else
+                    {
+                        link.NavigateUrl = String.Format("/ProfessionalPage.html?observationId={0}",
+                            e.Row.Cells[1].Text);
+                    }
+                }
             }
         }
 
@@ -200,7 +237,25 @@ namespace CZAOSWeb.admin.observation
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-
+                if (e.Row.Cells[2].Text == "School")
+                {
+                    e.Row.FindControl("lnkStart").Visible = false;
+                }
+                else
+                {
+                    var link = (HyperLink)e.Row.FindControl("lnkStart");
+                    var category = link.NavigateUrl.ToLower();
+                    if (category == "timed")
+                    {
+                        link.NavigateUrl = String.Format("/TimedProfessionalPage.html?observationId={0}",
+                            e.Row.Cells[1].Text);
+                    }
+                    else
+                    {
+                        link.NavigateUrl = String.Format("/ProfessionalPage.html?observationId={0}",
+                            e.Row.Cells[1].Text);
+                    }
+                }
             }
         }
 

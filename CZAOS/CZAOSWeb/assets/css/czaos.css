@@ -1528,6 +1528,10 @@ input[type=button], input[type=submit] {
     -webkit-appearance: none;
 }
 
+select::-ms-expand {
+    display: none;
+}
+
 .clearfix:before,
 .clearfix:after {
   content: '.';

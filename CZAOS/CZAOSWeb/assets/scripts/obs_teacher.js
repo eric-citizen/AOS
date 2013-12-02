@@ -60,7 +60,7 @@ function populateObservationInfo(observation) {
     window.AOS.get('school/' + observation.SchoolID, {}).done(function(data) {
         //School and DistrictName\
         $('#district').html(data.DistrictName);
-        $('#schoolName').html(data.School);
+        $('#schoolName').html(data.SchoolName);
         console.log(data);
     });
     window.AOS.get('animalobservation', { observationId: observation.ObservationID }).done(function (data) {

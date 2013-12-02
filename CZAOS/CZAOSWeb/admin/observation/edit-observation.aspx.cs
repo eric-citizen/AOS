@@ -424,10 +424,10 @@ namespace CZAOSWeb.admin.observation
             obs.ObserveType = Observation.ObservationTypeEnum.Professional;
 
             PasswordGenerator pg = new PasswordGenerator();
-            pg.IncludeLower = true;
+            pg.IncludeLower = false;
             pg.IncludeNumber = true;
             pg.IncludeSpecial = false;
-            pg.IncludeUpper = true;
+            pg.IncludeUpper = false;
             pg.MinimumLength = 8;
             pg.MaximumLength = 8;
 
@@ -436,11 +436,32 @@ namespace CZAOSWeb.admin.observation
             obs.TeacherPass = pg.Create();
             obs.StudentPass = pg.Create();
 
-            DateTime start = Convert.ToDateTime(txtStartTime.Text);
-            obs.ObserveStart = dteDate.DateValue.AddHours(start.Hour).AddMinutes(start.Minute);
+            DateTime temp;
+            DateTime start;
+            DateTime end;
+            if (!DateTime.TryParse(txtStartTime.Text, out temp))
+            {
+                //throw error because datetime not valid
+                this.Toast(PageExtensions.ToastMessageType.error, "Start time is not a valid time.", "Please enter a valid time");
+                return -1;
+            }
+            else
+            {
+                start = Convert.ToDateTime(txtStartTime.Text);
+                obs.ObserveStart = dteDate.DateValue.AddHours(start.Hour).AddMinutes(start.Minute);
+            }
 
-            DateTime end = Convert.ToDateTime(txtEndTime.Text);
-            obs.ObserveEnd = dteDate.DateValue.AddHours(end.Hour).AddMinutes(end.Minute);
+            if (!DateTime.TryParse(txtEndTime.Text, out temp))
+            {
+                //throw error because datetime not valid
+                this.Toast(PageExtensions.ToastMessageType.error, "End time is not a valid time.", "Please enter a valid time");
+                return -1;
+            }
+            else
+            {
+                end = Convert.ToDateTime(txtEndTime.Text);
+                obs.ObserveEnd = dteDate.DateValue.AddHours(end.Hour).AddMinutes(end.Minute);
+            }
 
             if (!end.IsAfterDate(start))
             {
@@ -539,11 +560,32 @@ namespace CZAOSWeb.admin.observation
 
             obs.ObserveType = Observation.ObservationTypeEnum.Professional;
 
-            DateTime start = Convert.ToDateTime(txtStartTime.Text);
-            obs.ObserveStart = dteDate.DateValue.AddHours(start.Hour).AddMinutes(start.Minute);
+            DateTime temp;
+            DateTime start;
+            DateTime end;
+            if (!DateTime.TryParse(txtStartTime.Text, out temp))
+            {
+                //throw error because datetime not valid
+                this.Toast(PageExtensions.ToastMessageType.error, "Start time is not a valid time.", "Please enter a valid time");
+                return false;
+            }
+            else
+            {
+                start = Convert.ToDateTime(txtStartTime.Text);
+                obs.ObserveStart = dteDate.DateValue.AddHours(start.Hour).AddMinutes(start.Minute);
+            }
 
-            DateTime end = Convert.ToDateTime(txtEndTime.Text);
-            obs.ObserveEnd = dteDate.DateValue.AddHours(end.Hour).AddMinutes(end.Minute);
+            if (!DateTime.TryParse(txtEndTime.Text, out temp))
+            {
+                //throw error because datetime not valid
+                this.Toast(PageExtensions.ToastMessageType.error, "End time is not a valid time.", "Please enter a valid time");
+                return false;
+            }
+            else
+            {
+                end = Convert.ToDateTime(txtEndTime.Text);
+                obs.ObserveEnd = dteDate.DateValue.AddHours(end.Hour).AddMinutes(end.Minute);
+            }
 
             if (!end.IsAfterDate(start))
             {
@@ -840,7 +882,7 @@ namespace CZAOSWeb.admin.observation
             obs.ObserveType = Observation.ObservationTypeEnum.School;
 
             PasswordGenerator pg = new PasswordGenerator();
-            pg.IncludeLower = true;
+            pg.IncludeLower = false;
             pg.IncludeNumber = true;
             pg.IncludeSpecial = false;
             pg.IncludeUpper = false;
@@ -852,12 +894,33 @@ namespace CZAOSWeb.admin.observation
             obs.TeacherPass = pg.Create();
             obs.StudentPass = pg.Create();
 
-            DateTime start = Convert.ToDateTime(txtSchoolStart.Text);
-            obs.ObserveStart = dteSchoolDate.DateValue.AddHours(start.Hour).AddMinutes(start.Minute);
+            DateTime temp;
+            DateTime start;
+            DateTime end;
+            if (!DateTime.TryParse(txtSchoolStart.Text, out temp))
+            {
+                //throw error because datetime not valid
+                this.Toast(PageExtensions.ToastMessageType.error, "Start time is not a valid time.", "Please enter a valid time");
+                return -1;
+            }
+            else
+            {
+                start = Convert.ToDateTime(txtSchoolStart.Text);
+                obs.ObserveStart = dteSchoolDate.DateValue.AddHours(start.Hour).AddMinutes(start.Minute);
+            }
 
-            DateTime end = Convert.ToDateTime(txtSchoolEnd.Text);
-            obs.ObserveEnd = dteSchoolDate.DateValue.AddHours(end.Hour).AddMinutes(end.Minute);
-
+            if (!DateTime.TryParse(txtSchoolEnd.Text, out temp))
+            {
+                //throw error because datetime not valid
+                this.Toast(PageExtensions.ToastMessageType.error, "End time is not a valid time.", "Please enter a valid time");
+                return -1;
+            }
+            else
+            {
+                end = Convert.ToDateTime(txtSchoolEnd.Text);
+                obs.ObserveEnd = dteSchoolDate.DateValue.AddHours(end.Hour).AddMinutes(end.Minute);
+            }
+            
             if (!end.IsAfterDate(start))
             {
                 this.Toast(PageExtensions.ToastMessageType.error, "End time must be after start time.", "Data Error");
@@ -918,11 +981,32 @@ namespace CZAOSWeb.admin.observation
 
             obs.ObserveType = Observation.ObservationTypeEnum.School;
 
-            DateTime start = Convert.ToDateTime(txtSchoolStart.Text);
-            obs.ObserveStart = dteSchoolDate.DateValue.AddHours(start.Hour).AddMinutes(start.Minute);
+            DateTime temp;
+            DateTime start;
+            DateTime end;
+            if (!DateTime.TryParse(txtSchoolStart.Text, out temp))
+            {
+                //throw error because datetime not valid
+                this.Toast(PageExtensions.ToastMessageType.error, "Start time is not a valid time.", "Please enter a valid time");
+                return false;
+            }
+            else
+            {
+                start = Convert.ToDateTime(txtSchoolStart.Text);
+                obs.ObserveStart = dteSchoolDate.DateValue.AddHours(start.Hour).AddMinutes(start.Minute);
+            }
 
-            DateTime end = Convert.ToDateTime(txtSchoolEnd.Text);
-            obs.ObserveEnd = dteSchoolDate.DateValue.AddHours(end.Hour).AddMinutes(end.Minute);
+            if (!DateTime.TryParse(txtSchoolEnd.Text, out temp))
+            {
+                //throw error because datetime not valid
+                this.Toast(PageExtensions.ToastMessageType.error, "End time is not a valid time.", "Please enter a valid time");
+                return false;
+            }
+            else
+            {
+                end = Convert.ToDateTime(txtSchoolEnd.Text);
+                obs.ObserveEnd = dteSchoolDate.DateValue.AddHours(end.Hour).AddMinutes(end.Minute);
+            }
 
             if (!end.IsAfterDate(start))
             {

@@ -88,26 +88,26 @@ namespace CZAOSWeb.teacher.observation
 
         protected void gvObs_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.Cells[0].Text != "")//Format the date correctly
-                e.Row.Cells[0].Text = e.Row.Cells[0].Text.ToDate().ToShortTimeString();
+            if (e.Row.Cells[1].Text != "")//Format the date correctly
+                e.Row.Cells[1].Text = e.Row.Cells[1].Text.ToDate().ToShortTimeString();
 
 
-            var animal = AnimalList.GetItemByZooID(e.Row.Cells[1].Text);
+            var animal = AnimalList.GetItemByZooID(e.Row.Cells[2].Text);
             if (animal != null)
             {
-                e.Row.Cells[1].Text = animal.HouseName;
+                e.Row.Cells[2].Text = animal.HouseName;
             }
             //if (e.Row.Cells[1].Text != "")//Get animal Housename
             //    e.Row.Cells[1].Text = AnimalList.GetItemByZooID(e.Row.Cells[1].Text).HouseName;
 
 
-            var id = e.Row.Cells[4].Text.ToInt32();
+            var id = e.Row.Cells[5].Text.ToInt32();
 
             if (id > 0)//Get location name.
             {
                 var location = LocationList.Get(id);
 
-                e.Row.Cells[4].Text = location.Description;
+                e.Row.Cells[5].Text = location.Description;
             }
 
         }

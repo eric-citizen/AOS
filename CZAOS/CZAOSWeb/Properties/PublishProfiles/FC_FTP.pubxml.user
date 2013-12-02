@@ -10,7 +10,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="admin/animal-regions/default.aspx">
-      <publishTime>11/01/2013 13:36:14</publishTime>
+      <publishTime>11/21/2013 10:40:51</publishTime>
     </File>
     <File Include="admin/animal-regions/edit-region.aspx">
       <publishTime>10/01/2013 11:54:35</publishTime>
@@ -19,7 +19,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/30/2013 11:49:31</publishTime>
     </File>
     <File Include="admin/animals/default.aspx">
-      <publishTime>11/01/2013 13:36:15</publishTime>
+      <publishTime>11/21/2013 10:41:02</publishTime>
     </File>
     <File Include="admin/animals/edit-animal.aspx">
       <publishTime>10/03/2013 16:44:41</publishTime>
@@ -31,10 +31,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/29/2013 21:49:12</publishTime>
     </File>
     <File Include="admin/behavior/behaviors.aspx">
-      <publishTime>11/04/2013 15:20:50</publishTime>
+      <publishTime>11/21/2013 10:41:08</publishTime>
     </File>
     <File Include="admin/behavior/default.aspx">
-      <publishTime>11/04/2013 15:20:50</publishTime>
+      <publishTime>11/21/2013 10:41:13</publishTime>
     </File>
     <File Include="admin/behavior/edit-behavior-category.aspx">
       <publishTime>10/31/2013 21:17:53</publishTime>
@@ -52,13 +52,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2013 11:54:35</publishTime>
     </File>
     <File Include="admin/changes/default.aspx">
-      <publishTime>11/01/2013 13:36:15</publishTime>
+      <publishTime>11/21/2013 10:41:18</publishTime>
     </File>
     <File Include="admin/changes/view-changes.aspx">
       <publishTime>10/01/2013 11:54:35</publishTime>
     </File>
     <File Include="admin/crowds/default.aspx">
-      <publishTime>10/31/2013 21:17:54</publishTime>
+      <publishTime>11/21/2013 10:41:24</publishTime>
     </File>
     <File Include="admin/crowds/edit-crowd.aspx">
       <publishTime>10/01/2013 11:54:35</publishTime>
@@ -121,13 +121,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/11/2013 11:55:37</publishTime>
     </File>
     <File Include="admin/email-templates/default.aspx">
-      <publishTime>10/01/2013 11:54:35</publishTime>
+      <publishTime>11/21/2013 10:41:30</publishTime>
     </File>
     <File Include="admin/email-templates/edit-template.aspx">
       <publishTime>10/01/2013 11:54:35</publishTime>
     </File>
     <File Include="admin/email-templates/tracking.aspx">
-      <publishTime>10/01/2013 11:54:35</publishTime>
+      <publishTime>11/21/2013 10:41:35</publishTime>
     </File>
     <File Include="admin/email-templates/view-tracking.aspx">
       <publishTime>10/01/2013 11:54:35</publishTime>
@@ -136,10 +136,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2013 11:54:35</publishTime>
     </File>
     <File Include="admin/exhibits/behaviors.aspx">
-      <publishTime>11/01/2013 13:36:15</publishTime>
+      <publishTime>11/21/2013 10:41:48</publishTime>
     </File>
     <File Include="admin/exhibits/default.aspx">
-      <publishTime>11/04/2013 15:20:50</publishTime>
+      <publishTime>11/21/2013 10:41:54</publishTime>
     </File>
     <File Include="admin/exhibits/edit-exhibit-behavior.aspx">
       <publishTime>10/31/2013 21:17:54</publishTime>
@@ -154,10 +154,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2013 21:17:54</publishTime>
     </File>
     <File Include="admin/exhibits/locations.aspx">
-      <publishTime>11/04/2013 13:27:01</publishTime>
+      <publishTime>11/21/2013 10:41:59</publishTime>
     </File>
     <File Include="admin/location/default.aspx">
-      <publishTime>11/04/2013 13:36:00</publishTime>
+      <publishTime>11/21/2013 10:42:05</publishTime>
     </File>
     <File Include="admin/location/edit-location.aspx">
       <publishTime>10/31/2013 21:17:54</publishTime>
@@ -187,7 +187,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2013 11:54:35</publishTime>
     </File>
     <File Include="admin/nav/default.aspx">
-      <publishTime>11/04/2013 13:27:01</publishTime>
+      <publishTime>11/21/2013 10:42:10</publishTime>
     </File>
     <File Include="admin/nav/edit-nav.aspx">
       <publishTime>10/31/2013 21:17:54</publishTime>
@@ -196,34 +196,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2013 21:17:54</publishTime>
     </File>
     <File Include="admin/observation/default.aspx">
-      <publishTime>10/31/2013 21:17:54</publishTime>
+      <publishTime>11/21/2013 11:42:09</publishTime>
     </File>
     <File Include="admin/observation/edit-animalgroups.aspx">
       <publishTime>10/01/2013 11:54:35</publishTime>
     </File>
     <File Include="admin/observation/edit-observation.aspx">
-      <publishTime>11/06/2013 12:20:47</publishTime>
+      <publishTime>11/21/2013 10:16:00</publishTime>
     </File>
     <File Include="admin/observation/edit-timedinfo.aspx">
       <publishTime>10/01/2013 11:54:35</publishTime>
     </File>
     <File Include="admin/observation/observers.aspx">
-      <publishTime>10/01/2013 11:54:35</publishTime>
+      <publishTime>11/21/2013 10:42:28</publishTime>
     </File>
     <File Include="admin/observation/reports.aspx">
       <publishTime>10/01/2013 11:54:35</publishTime>
     </File>
     <File Include="admin/observation/timedinfo.aspx">
-      <publishTime>10/01/2013 11:54:35</publishTime>
+      <publishTime>11/21/2013 10:42:33</publishTime>
     </File>
     <File Include="admin/observation/view-observation-records.aspx">
-      <publishTime>11/04/2013 13:50:07</publishTime>
+      <publishTime>11/21/2013 10:42:38</publishTime>
     </File>
     <File Include="admin/observation/view-observation.aspx">
-      <publishTime>11/06/2013 12:24:19</publishTime>
+      <publishTime>11/21/2013 09:51:39</publishTime>
     </File>
     <File Include="admin/schools/default.aspx">
-      <publishTime>11/04/2013 15:20:50</publishTime>
+      <publishTime>11/21/2013 10:54:47</publishTime>
     </File>
     <File Include="admin/schools/districts.aspx">
       <publishTime>09/08/2013 12:46:53</publishTime>
@@ -238,10 +238,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/04/2013 13:55:01</publishTime>
     </File>
     <File Include="admin/schools/grades.aspx">
-      <publishTime>11/04/2013 13:46:57</publishTime>
+      <publishTime>11/21/2013 10:42:48</publishTime>
     </File>
     <File Include="admin/schools/schools.aspx">
-      <publishTime>11/04/2013 14:05:22</publishTime>
+      <publishTime>11/21/2013 10:42:53</publishTime>
     </File>
     <File Include="admin/services/services.asmx">
       <publishTime>10/01/2013 11:54:35</publishTime>
@@ -253,7 +253,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/01/2013 13:36:15</publishTime>
     </File>
     <File Include="admin/weather/default.aspx">
-      <publishTime>11/04/2013 13:36:09</publishTime>
+      <publishTime>11/21/2013 10:55:06</publishTime>
     </File>
     <File Include="admin/weather/edit-weather.aspx">
       <publishTime>10/01/2013 11:54:36</publishTime>
@@ -262,7 +262,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2013 11:54:36</publishTime>
     </File>
     <File Include="admin/weather/wind.aspx">
-      <publishTime>11/01/2013 13:36:15</publishTime>
+      <publishTime>11/21/2013 10:43:12</publishTime>
     </File>
     <File Include="admin/web.config">
       <publishTime>10/01/2013 11:54:36</publishTime>
@@ -271,10 +271,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2013 11:54:36</publishTime>
     </File>
     <File Include="assets/css/czaos.css">
-      <publishTime>11/08/2013 16:48:21</publishTime>
+      <publishTime>11/21/2013 10:21:57</publishTime>
     </File>
     <File Include="assets/css/googlefonts.css">
-      <publishTime>11/05/2013 10:57:29</publishTime>
+      <publishTime>11/21/2013 09:51:39</publishTime>
     </File>
     <File Include="assets/css/helpers.css">
       <publishTime>11/04/2013 13:52:10</publishTime>
@@ -325,10 +325,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2013 11:16:42</publishTime>
     </File>
     <File Include="assets/images/background/bear.jpg">
-      <publishTime>11/07/2013 12:59:13</publishTime>
+      <publishTime>11/21/2013 09:51:40</publishTime>
     </File>
     <File Include="assets/images/background/elephant.jpg">
-      <publishTime>11/07/2013 13:00:42</publishTime>
+      <publishTime>11/21/2013 09:51:41</publishTime>
     </File>
     <File Include="assets/images/background/gradient.png">
       <publishTime>10/07/2013 11:16:40</publishTime>
@@ -337,7 +337,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2013 11:16:40</publishTime>
     </File>
     <File Include="assets/images/background/tiger.jpg">
-      <publishTime>11/07/2013 12:59:29</publishTime>
+      <publishTime>11/21/2013 09:51:42</publishTime>
     </File>
     <File Include="assets/images/control/slide.png">
       <publishTime>10/07/2013 11:16:40</publishTime>
@@ -415,10 +415,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2013 11:16:40</publishTime>
     </File>
     <File Include="assets/images/icons/alert.png">
-      <publishTime>11/07/2013 14:45:39</publishTime>
+      <publishTime>11/21/2013 09:51:42</publishTime>
     </File>
     <File Include="assets/images/icons/app-icon.png">
-      <publishTime>11/07/2013 14:45:39</publishTime>
+      <publishTime>11/21/2013 09:51:42</publishTime>
     </File>
     <File Include="assets/images/icons/arrows/dropdown-arrow.png">
       <publishTime>10/07/2013 11:16:40</publishTime>
@@ -439,97 +439,97 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2013 11:16:40</publishTime>
     </File>
     <File Include="assets/images/icons/observation/account-white.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:01</publishTime>
     </File>
     <File Include="assets/images/icons/observation/alert.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:01</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/body-movement-active.png">
       <publishTime>10/31/2013 21:17:57</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/body-movement.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:05</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/elimination-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:05</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/elimination.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:05</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/inactive-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:04</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/inactive.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:04</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/intake-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:04</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/intake.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:03</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/locomotion-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:03</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/locomotion.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:03</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/object-interaction-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:02</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/object-interaction.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:02</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/out-of-sight-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:02</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/out-of-sight.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:02</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/reproductive-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:02</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/reproductive.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:02</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/social-interaction-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:02</publishTime>
     </File>
     <File Include="assets/images/icons/observation/behaviors/social-interaction.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:01</publishTime>
     </File>
     <File Include="assets/images/icons/observation/bookmark-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:01</publishTime>
     </File>
     <File Include="assets/images/icons/observation/bookmark.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:01</publishTime>
     </File>
     <File Include="assets/images/icons/observation/bookmarked.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:01</publishTime>
     </File>
     <File Include="assets/images/icons/observation/clear-group-selection.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:01</publishTime>
     </File>
     <File Include="assets/images/icons/observation/close-gray.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:01</publishTime>
     </File>
     <File Include="assets/images/icons/observation/close-white.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:01</publishTime>
     </File>
     <File Include="assets/images/icons/observation/complete.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:01</publishTime>
     </File>
     <File Include="assets/images/icons/observation/controls-white.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:00</publishTime>
     </File>
     <File Include="assets/images/icons/observation/crowd/1.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>11/21/2013 09:51:42</publishTime>
     </File>
     <File Include="assets/images/icons/observation/crowd/2.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>11/21/2013 09:51:42</publishTime>
     </File>
     <File Include="assets/images/icons/observation/crowd/3.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>11/21/2013 09:51:42</publishTime>
     </File>
     <File Include="assets/images/icons/observation/crowd/crowd-10orless.png">
       <publishTime>10/07/2013 11:16:40</publishTime>
@@ -541,133 +541,133 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2013 11:16:40</publishTime>
     </File>
     <File Include="assets/images/icons/observation/edit-during-observation.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:00</publishTime>
     </File>
     <File Include="assets/images/icons/observation/environment-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:00</publishTime>
     </File>
     <File Include="assets/images/icons/observation/environment.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:00</publishTime>
     </File>
     <File Include="assets/images/icons/observation/group/group-all.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:06</publishTime>
     </File>
     <File Include="assets/images/icons/observation/group/group-none.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:06</publishTime>
     </File>
     <File Include="assets/images/icons/observation/group/group-partial.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:06</publishTime>
     </File>
     <File Include="assets/images/icons/observation/index-2.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:00</publishTime>
     </File>
     <File Include="assets/images/icons/observation/index-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:00</publishTime>
     </File>
     <File Include="assets/images/icons/observation/index.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:00</publishTime>
     </File>
     <File Include="assets/images/icons/observation/info-white.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:00</publishTime>
     </File>
     <File Include="assets/images/icons/observation/map-2.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:00</publishTime>
     </File>
     <File Include="assets/images/icons/observation/map.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:00</publishTime>
     </File>
     <File Include="assets/images/icons/observation/pause-sticky.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:42:59</publishTime>
     </File>
     <File Include="assets/images/icons/observation/pause.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:42:59</publishTime>
     </File>
     <File Include="assets/images/icons/observation/paused.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:42:59</publishTime>
     </File>
     <File Include="assets/images/icons/observation/play.png">
-      <publishTime>11/07/2013 13:29:30</publishTime>
+      <publishTime>11/21/2013 09:51:43</publishTime>
     </File>
     <File Include="assets/images/icons/observation/see-less.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:42:59</publishTime>
     </File>
     <File Include="assets/images/icons/observation/see-more.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:42:59</publishTime>
     </File>
     <File Include="assets/images/icons/observation/select-all-group-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:42:59</publishTime>
     </File>
     <File Include="assets/images/icons/observation/select-all-groups.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:42:58</publishTime>
     </File>
     <File Include="assets/images/icons/observation/submitted.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:42:58</publishTime>
     </File>
     <File Include="assets/images/icons/observation/take-notes.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:42:58</publishTime>
     </File>
     <File Include="assets/images/icons/observation/temp/temp-32orless.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:07</publishTime>
     </File>
     <File Include="assets/images/icons/observation/temp/temp-33to50.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:07</publishTime>
     </File>
     <File Include="assets/images/icons/observation/temp/temp-51to65.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:06</publishTime>
     </File>
     <File Include="assets/images/icons/observation/temp/temp-66to80.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:06</publishTime>
     </File>
     <File Include="assets/images/icons/observation/temp/temp-81ormore.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:06</publishTime>
     </File>
     <File Include="assets/images/icons/observation/temp/temp-unselected.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:06</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/api-cloudy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:08</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/api-rainy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:08</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/api-snowy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:08</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/api-sunny.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:08</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/api-windy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:08</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/cloudy-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:08</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/cloudy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:08</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/rainy-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:08</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/rainy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:08</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/snowy-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:07</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/snowy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:07</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/sunny-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:07</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/sunny.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:07</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/windy-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:07</publishTime>
     </File>
     <File Include="assets/images/icons/observation/weather/windy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:07</publishTime>
     </File>
     <File Include="assets/images/icons/observation/wind/1.png">
       <publishTime>10/31/2013 21:22:28</publishTime>
@@ -682,58 +682,58 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2013 21:22:28</publishTime>
     </File>
     <File Include="assets/images/icons/start-observation.png">
-      <publishTime>11/07/2013 14:45:39</publishTime>
+      <publishTime>11/21/2013 09:51:43</publishTime>
     </File>
     <File Include="assets/images/icons/unflagged.png">
-      <publishTime>11/07/2013 14:45:39</publishTime>
+      <publishTime>11/21/2013 09:51:43</publishTime>
     </File>
     <File Include="assets/images/icons/weather/api-cloudy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:11</publishTime>
     </File>
     <File Include="assets/images/icons/weather/api-rainy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:10</publishTime>
     </File>
     <File Include="assets/images/icons/weather/api-snowy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:10</publishTime>
     </File>
     <File Include="assets/images/icons/weather/api-sunny.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:10</publishTime>
     </File>
     <File Include="assets/images/icons/weather/api-windy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:10</publishTime>
     </File>
     <File Include="assets/images/icons/weather/cloudy-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:10</publishTime>
     </File>
     <File Include="assets/images/icons/weather/cloudy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:10</publishTime>
     </File>
     <File Include="assets/images/icons/weather/rainy-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:10</publishTime>
     </File>
     <File Include="assets/images/icons/weather/rainy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:10</publishTime>
     </File>
     <File Include="assets/images/icons/weather/snowy-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:09</publishTime>
     </File>
     <File Include="assets/images/icons/weather/snowy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:09</publishTime>
     </File>
     <File Include="assets/images/icons/weather/sunny-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:09</publishTime>
     </File>
     <File Include="assets/images/icons/weather/sunny.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:09</publishTime>
     </File>
     <File Include="assets/images/icons/weather/windy-active.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:09</publishTime>
     </File>
     <File Include="assets/images/icons/weather/windy.png">
-      <publishTime>10/07/2013 11:16:40</publishTime>
+      <publishTime>10/21/2013 16:43:09</publishTime>
     </File>
     <File Include="assets/images/observation-logo.png">
-      <publishTime>11/18/2013 09:38:47</publishTime>
+      <publishTime>11/21/2013 09:51:43</publishTime>
     </File>
     <File Include="assets/scripts/AnimalControl.js">
       <publishTime>10/31/2013 21:17:57</publishTime>
@@ -751,10 +751,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2013 21:17:57</publishTime>
     </File>
     <File Include="assets/scripts/BehaviorCategoryControl.js">
-      <publishTime>11/08/2013 07:36:56</publishTime>
+      <publishTime>11/21/2013 09:51:43</publishTime>
     </File>
     <File Include="assets/scripts/BehaviorControl.js">
-      <publishTime>11/08/2013 13:38:03</publishTime>
+      <publishTime>11/21/2013 09:51:43</publishTime>
     </File>
     <File Include="assets/scripts/controls.js">
       <publishTime>10/01/2013 11:54:36</publishTime>
@@ -802,7 +802,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2013 11:54:36</publishTime>
     </File>
     <File Include="assets/scripts/LocationControl.js">
-      <publishTime>11/08/2013 07:37:57</publishTime>
+      <publishTime>11/21/2013 09:51:43</publishTime>
     </File>
     <File Include="assets/scripts/Locus.js">
       <publishTime>10/31/2013 21:17:58</publishTime>
@@ -814,19 +814,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2013 11:54:36</publishTime>
     </File>
     <File Include="assets/scripts/Observation.FrontEnd.Common.js">
-      <publishTime>11/18/2013 14:42:35</publishTime>
+      <publishTime>11/21/2013 09:51:44</publishTime>
     </File>
     <File Include="assets/scripts/obs_professional.js">
-      <publishTime>11/18/2013 14:40:39</publishTime>
+      <publishTime>11/21/2013 11:27:09</publishTime>
     </File>
     <File Include="assets/scripts/obs_professional_timed.js">
-      <publishTime>11/18/2013 14:58:41</publishTime>
+      <publishTime>11/21/2013 11:25:05</publishTime>
     </File>
     <File Include="assets/scripts/obs_student.js">
-      <publishTime>11/18/2013 15:31:45</publishTime>
+      <publishTime>11/21/2013 09:51:44</publishTime>
     </File>
     <File Include="assets/scripts/obs_teacher.js">
-      <publishTime>11/08/2013 16:21:13</publishTime>
+      <publishTime>11/21/2013 10:09:30</publishTime>
     </File>
     <File Include="assets/scripts/plupload/admin-plupload.js">
       <publishTime>09/16/2013 12:02:07</publishTime>
@@ -991,10 +991,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2013 21:17:58</publishTime>
     </File>
     <File Include="assets/scripts/TimedAnimalGroupControl.js">
-      <publishTime>11/07/2013 17:21:16</publishTime>
+      <publishTime>11/21/2013 09:51:44</publishTime>
     </File>
     <File Include="assets/scripts/TimerControl.js">
-      <publishTime>11/08/2013 16:52:51</publishTime>
+      <publishTime>11/21/2013 09:51:44</publishTime>
     </File>
     <File Include="assets/scripts/toastr/index.html">
       <publishTime>10/01/2013 11:54:36</publishTime>
@@ -1012,7 +1012,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2013 11:54:36</publishTime>
     </File>
     <File Include="assets/Web.config">
-      <publishTime>11/18/2013 10:22:44</publishTime>
+      <publishTime>11/21/2013 09:51:39</publishTime>
     </File>
     <File Include="bin/AntiXSSLibrary.dll">
       <publishTime>10/01/2013 11:54:37</publishTime>
@@ -1021,19 +1021,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2013 11:54:36</publishTime>
     </File>
     <File Include="bin/CZAOSCore.dll">
-      <publishTime>11/18/2013 16:39:48</publishTime>
+      <publishTime>11/21/2013 11:51:25</publishTime>
     </File>
     <File Include="bin/CZAOSMail.dll">
-      <publishTime>11/18/2013 16:39:51</publishTime>
+      <publishTime>11/21/2013 11:51:28</publishTime>
     </File>
     <File Include="bin/CZAOSWeb.dll">
-      <publishTime>11/18/2013 16:39:54</publishTime>
+      <publishTime>11/21/2013 11:51:30</publishTime>
     </File>
     <File Include="bin/CZBizObjects.dll">
-      <publishTime>11/18/2013 16:39:51</publishTime>
+      <publishTime>11/21/2013 11:51:27</publishTime>
     </File>
     <File Include="bin/CZDataObjects.dll">
-      <publishTime>11/18/2013 16:39:49</publishTime>
+      <publishTime>11/21/2013 11:51:26</publishTime>
     </File>
     <File Include="bin/Elmah.dll">
       <publishTime>10/01/2013 11:54:37</publishTime>
@@ -1114,190 +1114,190 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2013 21:17:52</publishTime>
     </File>
     <File Include="Content/themes/base/images/animated-overlay.gif">
-      <publishTime>11/05/2013 10:52:46</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
-      <publishTime>11/05/2013 10:52:45</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
-      <publishTime>11/05/2013 10:52:45</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
-      <publishTime>11/05/2013 10:52:45</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
-      <publishTime>11/05/2013 10:52:45</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
-      <publishTime>11/05/2013 10:52:45</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
-      <publishTime>11/05/2013 10:52:45</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
-      <publishTime>11/05/2013 10:52:45</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
-      <publishTime>11/05/2013 10:52:45</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_222222_256x240.png">
-      <publishTime>11/05/2013 10:52:45</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_2e83ff_256x240.png">
-      <publishTime>11/05/2013 10:52:45</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_454545_256x240.png">
-      <publishTime>11/05/2013 10:52:44</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_888888_256x240.png">
-      <publishTime>11/05/2013 10:52:44</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-icons_cd0a0a_256x240.png">
-      <publishTime>11/05/2013 10:52:44</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery-ui.css">
-      <publishTime>11/05/2013 10:52:41</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.accordion.css">
-      <publishTime>11/05/2013 10:52:44</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.all.css">
-      <publishTime>11/05/2013 10:52:44</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.autocomplete.css">
-      <publishTime>11/05/2013 10:52:44</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.base.css">
-      <publishTime>11/05/2013 10:52:44</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.button.css">
-      <publishTime>11/05/2013 10:52:44</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.core.css">
-      <publishTime>11/05/2013 10:52:44</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.datepicker.css">
-      <publishTime>11/05/2013 10:52:43</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.dialog.css">
-      <publishTime>11/05/2013 10:52:43</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.menu.css">
-      <publishTime>11/05/2013 10:52:43</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.progressbar.css">
-      <publishTime>11/05/2013 10:52:43</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.resizable.css">
-      <publishTime>11/05/2013 10:52:43</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.selectable.css">
-      <publishTime>11/05/2013 10:52:43</publishTime>
+      <publishTime>11/21/2013 09:51:37</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.slider.css">
-      <publishTime>11/05/2013 10:52:43</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.spinner.css">
-      <publishTime>11/05/2013 10:52:43</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.tabs.css">
-      <publishTime>11/05/2013 10:52:43</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.theme.css">
-      <publishTime>11/05/2013 10:52:42</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.tooltip.css">
-      <publishTime>11/05/2013 10:52:41</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/animated-overlay.gif">
-      <publishTime>11/05/2013 10:52:41</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png">
-      <publishTime>11/05/2013 10:52:41</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png">
-      <publishTime>11/05/2013 10:52:41</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png">
-      <publishTime>11/05/2013 10:52:41</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png">
-      <publishTime>11/05/2013 10:52:41</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png">
-      <publishTime>11/05/2013 10:52:41</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png">
-      <publishTime>11/05/2013 10:52:40</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png">
-      <publishTime>11/05/2013 10:52:40</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
-      <publishTime>11/05/2013 10:52:40</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-icons_222222_256x240.png">
-      <publishTime>11/05/2013 10:52:40</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png">
-      <publishTime>11/05/2013 10:52:40</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-icons_454545_256x240.png">
-      <publishTime>11/05/2013 10:52:40</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-icons_888888_256x240.png">
-      <publishTime>11/05/2013 10:52:40</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-icons_cd0a0a_256x240.png">
-      <publishTime>11/05/2013 10:52:40</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery-ui.min.css">
-      <publishTime>11/05/2013 10:52:36</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.accordion.min.css">
-      <publishTime>11/05/2013 10:52:40</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.autocomplete.min.css">
-      <publishTime>11/05/2013 10:52:40</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.button.min.css">
-      <publishTime>11/05/2013 10:52:39</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.core.min.css">
-      <publishTime>11/05/2013 10:52:39</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.datepicker.min.css">
-      <publishTime>11/05/2013 10:52:39</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.dialog.min.css">
-      <publishTime>11/05/2013 10:52:39</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.menu.min.css">
-      <publishTime>11/05/2013 10:52:39</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.progressbar.min.css">
-      <publishTime>11/05/2013 10:52:39</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.resizable.min.css">
-      <publishTime>11/05/2013 10:52:39</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.selectable.min.css">
-      <publishTime>11/05/2013 10:52:39</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.slider.min.css">
-      <publishTime>11/05/2013 10:52:39</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.spinner.min.css">
-      <publishTime>11/05/2013 10:52:39</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.tabs.min.css">
-      <publishTime>11/05/2013 10:52:39</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
-      <publishTime>11/05/2013 10:52:38</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Content/themes/base/minified/jquery.ui.tooltip.min.css">
-      <publishTime>11/05/2013 10:52:37</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="controls/AdminNav.ascx">
       <publishTime>10/31/2013 21:20:27</publishTime>
@@ -1321,7 +1321,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2013 11:54:36</publishTime>
     </File>
     <File Include="controls/UserGrid.ascx">
-      <publishTime>10/31/2013 21:17:58</publishTime>
+      <publishTime>11/21/2013 10:43:19</publishTime>
     </File>
     <File Include="default.aspx">
       <publishTime>10/07/2013 11:18:14</publishTime>
@@ -1450,25 +1450,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2013 21:27:41</publishTime>
     </File>
     <File Include="masterpages/Dialog.Master">
-      <publishTime>11/05/2013 11:04:06</publishTime>
+      <publishTime>11/21/2013 09:51:44</publishTime>
     </File>
     <File Include="masterpages/Main.Master">
-      <publishTime>11/05/2013 11:12:46</publishTime>
+      <publishTime>11/21/2013 09:51:44</publishTime>
     </File>
     <File Include="masterpages/Public.Master">
-      <publishTime>11/05/2013 11:05:02</publishTime>
+      <publishTime>11/21/2013 09:51:44</publishTime>
     </File>
     <File Include="masterpages/Teacher.Master">
-      <publishTime>11/05/2013 11:05:36</publishTime>
+      <publishTime>11/21/2013 09:51:44</publishTime>
     </File>
     <File Include="open.aspx">
       <publishTime>08/30/2013 16:06:32</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>11/06/2013 12:36:52</publishTime>
+      <publishTime>11/21/2013 09:51:44</publishTime>
     </File>
     <File Include="ProfessionalPage.html">
-      <publishTime>11/18/2013 16:34:38</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>10/31/2013 21:17:52</publishTime>
@@ -1486,16 +1486,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2013 21:17:53</publishTime>
     </File>
     <File Include="Scripts/jquery-ui-1.10.3.js">
-      <publishTime>11/05/2013 10:52:33</publishTime>
+      <publishTime>11/21/2013 09:51:38</publishTime>
     </File>
     <File Include="Scripts/jquery-ui-1.10.3.min.js">
-      <publishTime>11/05/2013 10:52:32</publishTime>
+      <publishTime>11/21/2013 09:51:39</publishTime>
     </File>
     <File Include="Scripts/jquery.ui.touch-punch.min.js">
       <publishTime>11/01/2013 13:36:14</publishTime>
     </File>
     <File Include="Scripts/jquery.url.js">
-      <publishTime>11/06/2013 12:36:52</publishTime>
+      <publishTime>11/21/2013 09:51:39</publishTime>
     </File>
     <File Include="Scripts/knockout-2.3.0.debug.js">
       <publishTime>10/31/2013 21:17:53</publishTime>
@@ -1519,25 +1519,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2013 21:17:53</publishTime>
     </File>
     <File Include="StudentPage.html">
-      <publishTime>11/18/2013 16:33:40</publishTime>
+      <publishTime>11/21/2013 09:51:39</publishTime>
     </File>
     <File Include="teacher/view-observation-records.aspx">
-      <publishTime>10/31/2013 21:17:59</publishTime>
+      <publishTime>11/21/2013 10:43:44</publishTime>
     </File>
     <File Include="teacher/view-observation.aspx">
       <publishTime>10/31/2013 21:17:59</publishTime>
     </File>
     <File Include="TeacherPage.html">
-      <publishTime>11/18/2013 16:35:57</publishTime>
+      <publishTime>11/21/2013 10:10:37</publishTime>
     </File>
     <File Include="TimedProfessionalPage.html">
-      <publishTime>11/18/2013 16:35:08</publishTime>
+      <publishTime>11/21/2013 09:51:39</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>10/31/2013 21:32:49</publishTime>
     </File>
     <File Include="Welcome.html">
-      <publishTime>11/18/2013 16:37:57</publishTime>
+      <publishTime>11/21/2013 09:51:39</publishTime>
     </File>
   </ItemGroup>
 </Project>

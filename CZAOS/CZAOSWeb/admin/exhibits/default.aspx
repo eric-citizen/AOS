@@ -93,7 +93,7 @@
     </asp:UpdatePanel>
 
 
-    <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvExhibit" />
+    <uc1:GridPager runat="server" ID="gvPagerControl" GridViewID="gvExhibit" HideOnEmpty="False"/>
 
     <mack:MessageDiv runat="server" ID="divEmpty" ListControlID="gvExhibit" Text="No records found!"></mack:MessageDiv>
 
