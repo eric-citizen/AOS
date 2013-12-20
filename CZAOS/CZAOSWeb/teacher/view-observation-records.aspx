@@ -5,12 +5,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+        <asp:Button ID="btnHeadBack" runat="server" PostBackUrl="~/Welcome.html" Visible="True" Text="Back" ></asp:Button>
     
         <div id="ObservationRecordList" style="width:100%">
             <header style="border:1px solid #cccccc">
                 <label>Observation Data</label><br />
                 <asp:Literal runat="server" ID="litHeader"></asp:Literal>
-                <asp:Button ID="btnHeadBack" runat="server" PostBackUrl="~/admin/observation/default.aspx" Visible="True" Text="Back" ></asp:Button>
                 <%--<button ID="btnHeadBack" Class="floatRight" OnClick="history.go(-1);return false;">Back</button>--%>
             </header>
             <br />
@@ -68,8 +68,6 @@
 
 
         </div>
-
-     
 
 </asp:Content>
 

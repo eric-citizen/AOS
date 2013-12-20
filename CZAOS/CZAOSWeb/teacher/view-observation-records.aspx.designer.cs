@@ -13,15 +13,6 @@ namespace CZAOSWeb.teacher.observation {
     public partial class view_observation_records {
         
         /// <summary>
-        /// litHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litHeader;
-        
-        /// <summary>
         /// btnHeadBack control.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace CZAOSWeb.teacher.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnHeadBack;
+        
+        /// <summary>
+        /// litHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litHeader;
         
         /// <summary>
         /// hdnID control.

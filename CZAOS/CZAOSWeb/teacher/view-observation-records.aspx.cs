@@ -20,7 +20,7 @@ namespace CZAOSWeb.teacher.observation
         protected void Page_Load(object sender, EventArgs e)
         {
             if (obs.ObserveType.ToString() == "School")
-                gvObs.Columns[3].Visible = false;
+                gvObs.Columns[4].Visible = false;
 
             var metaString = obs.ObserveStart.ToShortDateString() + " // " + obs.ObservationID.ToString() + " // " + obs.ObserveType.ToString() + " // " + obs.Exhibit.ToString();
             litHeader.Text = metaString;
