@@ -31,6 +31,15 @@ namespace CZAOSWeb.admin.observation {
         protected global::System.Web.UI.WebControls.Literal fieldsetLegend;
         
         /// <summary>
+        /// btnHeadBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHeadBack;
+        
+        /// <summary>
         /// hdnType control.
         /// </summary>
         /// <remarks>
@@ -173,15 +182,6 @@ namespace CZAOSWeb.admin.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rdoManual;
-        
-        /// <summary>
-        /// rdoTimer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rdoTimer;
         
         /// <summary>
         /// ddTimeInterval control.
@@ -506,6 +506,15 @@ namespace CZAOSWeb.admin.observation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::KT.WebControls.WaitButton btnSchSave;
+        
+        /// <summary>
+        /// btnFootBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFootBack;
         
         /// <summary>
         /// Master property.

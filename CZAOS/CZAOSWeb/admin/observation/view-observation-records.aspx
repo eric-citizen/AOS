@@ -6,8 +6,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-
-    <button id="btnHeadBack" class="mb10" onclick="history.go(-1);return false;">Back</button>
+    
+    <asp:Button ID="btnHeadBack" runat="server" PostBackUrl="~/admin/observation/default.aspx" Visible="True" Text="Back" ></asp:Button>
+    <%--<button id="btnHeadBack" class="mb10" onclick="history.go(-1);return false;">Back</button>--%>
 
     <div id="ObservationRecordList" style="width: 100%">
         <header>
@@ -68,7 +69,8 @@
                         <span class="flaggable">
                             <asp:LinkButton runat="server" ID="btnFlag" SortExpression="Flagged" HeaderText="Flagged" CausesValidation="false"
                                 CommandArgument='<%#Bind("ObservationRecordID") %>' CommandName="FlagRecord" ToolTip="Flag Record"
-                                Text='<%#Bind("Flagged") %>'></asp:LinkButton></span>
+                                Text='<%#Bind("Flagged") %>'></asp:LinkButton>
+                        </span>
                     </ItemTemplate>
                     <ItemStyle Width="30px" />
                 </asp:TemplateField>
@@ -100,7 +102,7 @@
     <script>
         $(function () {
             $.each($(".flaggable"), function (i, obj) {
-                if ($(this).text() == "True")
+                if ($.trim($(this).text()) == "True")
                     $(this).addClass('flagged');
                 else
                     $(this).addClass('not-flagged');

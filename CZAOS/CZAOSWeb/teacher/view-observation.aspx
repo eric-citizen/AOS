@@ -13,7 +13,7 @@
             <asp:Literal runat="server" ID="fieldsetLegend"></asp:Literal>
             Observation
         </legend>
-
+        
         <button id="btnHeadBack" class="floatLeft" style="margin-bottom: 20px" onclick="history.go(-1);return false;">Back</button>
 
         <div id="detailHead" class="obsSection" style="border-top: 2px solid #a2a6ad">
@@ -126,10 +126,10 @@
                         <br />
                         <br />
 
-                        <label>Show Timer</label>
+<%--                        <label>Show Timer</label>
                         <asp:Literal runat="server" ID="litTimer"></asp:Literal>
                         <br />
-                        <br />
+                        <br />--%>
                     </asp:Panel>
                     <label>Timed Interval</label>
                     <asp:Literal runat="server" ID="litInterval"></asp:Literal>
@@ -190,7 +190,7 @@
                     <asp:HyperLink runat="server" ID="lnkFootRecords" CssClass="gv-edit-link" Text="" ToolTip="View Observation Records"></asp:HyperLink></span>
             </div>
         </div>
-
+        
         <button id="btnFootBack" class="floatLeft" onclick="history.go(-1);return false;">Back</button>
 
     </fieldset>

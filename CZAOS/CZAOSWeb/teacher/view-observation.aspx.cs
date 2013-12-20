@@ -81,7 +81,6 @@ namespace CZAOSWeb.teacher.observation
                     if (pnlTimer.Visible)
                     {
                         litInterval.Text = obs.Interval.ToString() +" minutes.";
-                        litTimer.Text = obs.Timer ? "Yes" : "No";
                         litManual.Text = obs.Manual ? "Yes" : "No";
                     }
 

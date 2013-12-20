@@ -17,6 +17,9 @@
         <legend>
             <asp:Literal runat="server" ID="fieldsetLegend">Edit Observation</asp:Literal>
         </legend>
+        
+        <%--<input type="button" id="btnHeadBack" class="floatLeft" style="margin-bottom: 20px" onclick="history.go(-1);return false;" value="Back" />--%>
+        <asp:Button ID="btnHeadBack" runat="server" PostBackUrl="~/admin/observation/default.aspx" Visible="True" CssClass="btnHeadBack" Text="Back" ></asp:Button>
 
         <asp:HiddenField runat="server" ID="hdnType" />
 
@@ -45,7 +48,7 @@
                 <div id="proHeader" class="obsSection" style="border-top: 2px solid #a2a6ad">
                     <label>Observation Type:</label>
                     <asp:Literal runat="server" ID="litType"></asp:Literal>
-                    <button id="btnHeadBack" class="floatRight" onclick="history.go(-1);return false;">Back</button>
+                    <%--<button id="btnHeadBack" class="floatRight" onclick="history.go(-1);return false;">Back</button>--%>
                     <br />
                     <br />
                 </div>
@@ -125,14 +128,14 @@
                             </asp:RadioButtonList>
                             <br />
                             <br />
-
+<%--
                             <label>Timer</label><br />
                             <asp:RadioButtonList runat="server" ID="rdoTimer" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table" CssClass="rdo-table">
                                 <asp:ListItem Value="Show" Text="Show" Selected="True"></asp:ListItem>
                                 <asp:ListItem Value="Hide" Text="Hide"></asp:ListItem>
                             </asp:RadioButtonList>
                             <br />
-                            <br />
+                            <br />--%>
 
                             <label>Time Interval (Minutes)</label><br />
                             <mack:RequiredDropDownList runat="server" ID="ddTimeInterval" ValidatorToolTip="select an interval" Required="true" InitialValue="-1"
@@ -372,6 +375,8 @@
 
             </asp:View>
         </asp:MultiView>
+        
+        <asp:Button ID="btnFootBack" runat="server" PostBackUrl="~/admin/observation/default.aspx" Visible="True" CssClass="floatLeft" Text="Back" ></asp:Button>
 
     </fieldset>
 

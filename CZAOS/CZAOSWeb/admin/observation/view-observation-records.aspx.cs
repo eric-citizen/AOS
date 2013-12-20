@@ -123,7 +123,7 @@ namespace CZAOSWeb.admin.observation
 
         protected void gvObs_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "FlagRecord" && base.IsMasterAdmin)
+            if (e.CommandName == "FlagRecord")
             {
                 int id = Convert.ToInt32(e.CommandArgument);
 

@@ -10,7 +10,8 @@
             <header style="border:1px solid #cccccc">
                 <label>Observation Data</label><br />
                 <asp:Literal runat="server" ID="litHeader"></asp:Literal>
-                <button ID="btnHeadBack" Class="floatRight" OnClick="history.go(-1);return false;">Back</button>
+                <asp:Button ID="btnHeadBack" runat="server" PostBackUrl="~/admin/observation/default.aspx" Visible="True" Text="Back" ></asp:Button>
+                <%--<button ID="btnHeadBack" Class="floatRight" OnClick="history.go(-1);return false;">Back</button>--%>
             </header>
             <br />
             <asp:HiddenField runat="server" ID="hdnID" />
@@ -42,9 +43,11 @@
 
                     <asp:TemplateField HeaderText="Flagged">
                         <ItemTemplate>
-                            <span class="flaggable"><asp:LinkButton runat="server" ID="btnFlag" SortExpression="Flagged" HeaderText="Flagged" CausesValidation="false" 
-                                CommandArgument='<%#Bind("ObservationRecordID") %>' CommandName="FlagRecord" ToolTip="Flag Record" 
-                                Text='<%#Bind("Flagged") %>'></asp:LinkButton></span>
+                            <span class="flaggable">
+                                <asp:LinkButton runat="server" ID="btnFlag" SortExpression="Flagged" HeaderText="Flagged" CausesValidation="false" 
+                                    CommandArgument='<%#Bind("ObservationRecordID") %>' CommandName="FlagRecord" ToolTip="Flag Record" 
+                                    Text='<%#Bind("Flagged") %>'></asp:LinkButton>
+                            </span>
                         </ItemTemplate>
                         <ItemStyle Width="30px" />
                     </asp:TemplateField>
@@ -74,17 +77,12 @@
 
     <script>
         $(function () {
-            //if ($(".flaggable a").InnerText == "False")
-            //    $(".flaggable").addClass("not-flagged").removeClass("flagged");
             $.each($(".flaggable"), function (i , obj) {
-                if ($(this).text() == "True")
+                if ($.trim($(this).text()) == "True")
                     $(this).addClass('flagged');
                 else
                     $(this).addClass('not-flagged');
             });
-            //if ($("span.flaggable a").Text() == "True")
-            //    $("span.flaggable").addClass("flagged");//.removeClass("not-flagged");
-
         });
     </script>
 </asp:Content>

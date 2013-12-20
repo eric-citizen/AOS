@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/masterpages/Main.Master" AutoEventWireup="true" CodeBehind="view-observation.aspx.cs" Inherits="CZAOSWeb.admin.observation.view_observation" %>
+<%@ Import Namespace="System.Security.Policy" %>
+<%@ Import Namespace="System.Web.UI.Design" %>
 <%@ Register Src="~/controls/GridConfirmControl.ascx" TagPrefix="uc1" TagName="GridConfirmControl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -14,8 +16,8 @@
             <asp:Literal runat="server" ID="fieldsetLegend"></asp:Literal>
             Observation
         </legend>
-
-        <button id="btnHeadBack" class="floatLeft" style="margin-bottom: 20px" onclick="history.go(-1);return false;">Back</button>
+        
+        <asp:Button runat="server" PostBackUrl="~/admin/observation/default.aspx" Visible="True" CssClass="btnHeadBack" Text="Back" ></asp:Button>
 
         <div id="detailHead" class="obsSection" style="border-top: 2px solid #a2a6ad">
             <h2>Observation Details</h2>
@@ -156,10 +158,10 @@
                         <br />
                         <br />
 
-                        <label>Show Timer</label>
+<%--                        <label>Show Timer</label>
                         <asp:Literal runat="server" ID="litTimer"></asp:Literal>
                         <br />
-                        <br />
+                        <br />--%>
                     </asp:Panel>
                     <label>Timed Interval</label>
                     <asp:Literal runat="server" ID="litInterval"></asp:Literal>
@@ -233,8 +235,8 @@
                     <span class="print ml10"><a href="javascript:void(0)" onclick="window.print();" class="print-link"></a></span>
                 </div>            </div>
         </div>
-
-        <button id="btnFootBack" class="floatLeft" onclick="history.go(-1);return false;">Back</button>
+        
+        <asp:Button ID="btnFootBack" runat="server" PostBackUrl="~/admin/observation/default.aspx" Visible="True" CssClass="floatLeft" Text="Back" ></asp:Button>
 
     </fieldset>
 </asp:Content>

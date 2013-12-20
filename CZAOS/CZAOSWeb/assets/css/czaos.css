@@ -1525,6 +1525,7 @@ label.required
 
 /*Fix Safari button styling*/
 input[type=button], input[type=submit] {
+    cursor: pointer;
     -webkit-appearance: none;
 }
 
