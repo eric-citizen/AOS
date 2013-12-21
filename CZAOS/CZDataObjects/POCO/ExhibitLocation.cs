@@ -28,6 +28,7 @@ namespace CZDataObjects
 
                 if (!isNew)
                 {
+                    mstrLocationCode = HttpUtility.HtmlDecode(record.Get<string>("LocationCode"));
                     mblnMaskAma = record.Get<string>("MaskAma").FromYesNoString();
                     mblnMaskProf = record.Get<string>("MaskProf").FromYesNoString();
                     mstrLocation = HttpUtility.HtmlDecode(record.Get<string>("Location"));
@@ -53,6 +54,7 @@ namespace CZDataObjects
         private string mstrExhibit; 
         private bool mblnMaskAma;
         private bool mblnMaskProf;
+	    private string mstrLocationCode;
 			
         public string Location
         {
@@ -135,6 +137,14 @@ namespace CZDataObjects
             set
             {
                 mblnActive = value;
+            }
+        }
+
+        public string LocationCode
+        {
+            get
+            {
+                return mstrLocationCode;
             }
         }
 

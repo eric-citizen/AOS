@@ -66,20 +66,20 @@ function populateObservationInfo(observation) {
     window.AOS.get('animalobservation', { observationId: observation.ObservationID }).done(function (data) {
         //display all of the animals CommmonName or house name?
         for (var i in data) {
-            $('#animal-list').append('<div>' + data[i].CommonName + '</div>');
+            $('#animal-list').append('<div>' + data[i].HouseName + '</div>');
         }
         console.log(data);
     });
     
     //set fields from observation object
     $('#observationId').html(observation.ObservationID);
-    var start = new Date(observation.ObserveStart),
-        end = new Date(observation.ObserveEnd);
-    $('#time').html(start.time() + ' - ' + end.time());
-    $('#date').html((start.getMonth() + 1) + '-' + (start.getDate()) + '-' + start.getFullYear());
+    //var start = new Date(observation.ObserveStart),
+    //    end = new Date(observation.ObserveEnd);
+    //$('#time').html(start.time() + ' - ' + end.time());
+    //$('#date').html((start.getMonth() + 1) + '-' + (start.getDate()) + '-' + start.getFullYear());
     $('#interval').html(observation.Interval + ' Minute(s)');
     $('#studentPass').html(observation.StudentPass);
-    $('#observerCount').html(observation.ObserverNo);
+    //$('#observerCount').html(observation.ObserverNo);
     $('#viewRecords').click(function() {
         window.location = '/teacher/view-observation-records.aspx?observationid=' + $("#obsID").val() + '&login=' + $("#login").val() + '&pass=' + $("#pass").val();
     });

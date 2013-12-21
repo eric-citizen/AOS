@@ -134,6 +134,39 @@ $(function () {
 
     };
     
+    window.AOS.czaos_get_locations = function (api, params, who, strip, data2) {
+        var params = params || {};
+        $.ajax({
+            url: 'api/' + api,
+            beforeSend: function (request) {
+                request.setRequestHeader("CZAOSToken", window.AOS.getToken());
+                for (var i in data2) {
+                    request.setRequestHeader(i, data2[i]);
+                }
+            },
+            cache: false,
+            type: 'GET',
+            data: $.toJSON(params),
+            contentType: 'application/json; charset=utf-8'
+        }).done(function (data) {
+            data = _.filter(data, function (category) {
+                return !category.MaskAma;
+            });
+            console.log(data);
+            if (who) {
+                $(who).html(SimpleTemplate.fill(api.split('/')[0], data));
+                if (strip) {
+                    $(who).find('li').click(function () {
+                        $(who).find('li').removeClass('selected');
+                        $(this).addClass('selected');
+                    });
+                    $(who).slideStrip({ slide: true });
+                }
+            }
+        });
+
+    };
+
     window.AOS.czaos_post = function (api, params, data2) {
         params = params || {};
         return $.ajax({

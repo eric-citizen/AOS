@@ -958,7 +958,7 @@ hr{
     /*width:30%;*/
 }
 
-#behavior-slider{
+#behavior-slider, #location-slider{
     /*margin-left: 15px;
     margin-right: 15px;*/
     background: url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-back.png) left no-repeat, url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-next.png) right no-repeat;
@@ -967,6 +967,22 @@ hr{
     -webkit-background-size: 50px 200px;
     background-size: 50px 200px;*/
     /*background: url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-back.png) left no-repeat;*/
+}
+
+#zoneControl {
+    font-family: 'Syncopate';
+    text-transform: uppercase;
+}
+
+#zoneControl div{
+    margin: 30px;
+    font-size: 60pt;
+    color: #a2a6ad;
+}
+
+#zoneControl .selected span{
+    border-bottom: 4px solid #4a525c;
+    font-size: 20px;
 }
 
 #behavior-slider div {
@@ -983,7 +999,7 @@ hr{
     background: url(/assets/images/icons/arrows/setup-data-big-tablet-arrow-back.png) left no-repeat;
 }*/
 
-#behaviorControl li{
+#behaviorControl li, #zoneControl li{
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     padding: 20%;
@@ -1278,11 +1294,6 @@ header li img{
 /*#observationInfo span + div{
     margin-left: 20px;
 }*/
-
-#zoneControl {
-    margin-bottom: 3em;
-    font-size: 20px !important;
-}
 
 #animalgroup-knockout-scope {
     float: left;

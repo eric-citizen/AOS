@@ -54,7 +54,7 @@ $(function () {
                 $('#step1').fadeOut(0);
                 window.AOS.czaos_get('animalObservation', {}, '#observationAnimals', false, { observationId: observationID });
                 window.AOS.czaos_get_student_filtered_list('behaviorCategory', {}, '#behaviorControl', true, { exhibitId: exhibitID });
-                window.AOS.czaos_get_student_filtered_list('exhibitlocation', {}, '#zoneControl', false, { exhibitId: exhibitID });
+                window.AOS.czaos_get_locations('exhibitlocation', {}, '#zoneControl', true, { exhibitId: exhibitID });
                 window.AOS.czaos_get_no_slide('crowd/', {noActiveImage: true, touch: false}, '#crowdControl', true);
                 window.AOS.czaos_get_no_slide('weatherCondition/', {touch: false}, '#weatherControl', true);
                 window.AOS.czaos_get_no_slide('wind/', { noActiveImage: true, touch: false }, '#windControl', true);
@@ -71,10 +71,10 @@ $(function () {
     };
 
     window.AOS.login().done(function() {
-        //preload weather screen icons
-        window.AOS.preloadIcons("/assets/images/icons/observation/weather", ".png");
-        window.AOS.preloadIcons("/assets/images/icons/observation/wind", ".png");
-        window.AOS.preloadIcons("/assets/images/icons/observation/crowd", ".png");
+        ////preload weather screen icons
+        //window.AOS.preloadIcons("/assets/images/icons/observation/weather", ".png");
+        //window.AOS.preloadIcons("/assets/images/icons/observation/wind", ".png");
+        //window.AOS.preloadIcons("/assets/images/icons/observation/crowd", ".png");
     });
     
 
@@ -252,8 +252,8 @@ function handleSave() {
 function updatePreviouslySavedFields() {
     $('#previous-behavior').html($("#behaviorControl li.selected").attr('data-category'));
     $('#previous-behavior').attr('data-cateogry-code', $("#behaviorControl li.selected").attr('name'));
-    $('#previous-location').html($("#zoneControl :selected").html());
-    $('#previous-location').attr('data-value', $("#zoneControl").val());
+    $('#previous-location').html($("#zoneControl li.selected").attr('data-category'));
+    $('#previous-location').attr('data-value', $("#zoneControl li.selected").attr('name'));
 }
 
 var me = { long: 0, lat: 0 };

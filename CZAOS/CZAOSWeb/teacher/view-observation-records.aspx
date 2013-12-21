@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-        <asp:Button ID="btnHeadBack" runat="server" PostBackUrl="~/Welcome.html" Visible="True" Text="Back" ></asp:Button>
+        <input type="button" id="btnHeadBack" onclick="window.location = '/welcome.html'" value="Logout"/>
     
         <div id="ObservationRecordList" style="width:100%">
             <header style="border:1px solid #cccccc">

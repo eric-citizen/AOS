@@ -81,13 +81,20 @@
                 <h2 style="margin-left: 20px; margin-top: 10%;">Behavior: <span style="font-weight: normal" id="previous-behavior"></span></h2>
                 <section class="slider">
                     <div id="behavior-slider">
-                        <ul id="behaviorControl" class="slide-strip" style="width: 33%">
+                        <ul id="behaviorControl" class="slide-strip" style="width: 34%">
                         </ul>
                     </div>
                     <div id="behavior-slider-right"></div>
                 </section>
                 <h2 style="margin-left: 20px; margin-top: 2em;">Zone: <span style="font-weight: normal"  id="previous-location"></span></h2>
-                <div><select id="zoneControl"></select></div>
+                <section class="slider">
+                    <div id="location-slider">
+                        <ul id="zoneControl" class="slide-strip" style="width: 34%">
+                        </ul>
+                    </div>
+                    <!--<div id="location-slider-right"></div>-->
+                </section>
+                <!--<div><select id="zoneControl"></select></div>-->
                     
                 <hr/>
                 <div style="float: left; text-align: left;">
@@ -159,9 +166,12 @@
         <script id="behaviorCategory" type="simple/template">
     <li name="%BvrCatCode%" data-category='%BvrCat%'><img src="assets/images/icons/observation/behaviors/%BvrCatCode%.png"/>%BvrCat%</li>
 </script>
-        <script id="exhibitlocation" type="simple/template">
+<!--        <script id="exhibitlocation" type="simple/template">
     <option value=%LocationID%>%Location%</option>
-</script>
+</script>-->
+        <script id="exhibitlocation" type="simple/template">
+            <li name="%LocationID%" data-category='%Location%'><div>%LocationCode%</div><span>%Location%</span></li>
+        </script>
         <!--<script id="location" type="simple/template">
     <li name="%LocationID%"><img src="assets/images/icons/observation/behaviors/%Description%.png"/><div><span>%Description%</span></div></li>
 </script>-->
